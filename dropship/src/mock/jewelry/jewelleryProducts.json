@@ -1,0 +1,211 @@
+[
+    {
+        "id": "1a6d27f6-fec7-4b55-92b7-f0805b5f5d5c",
+        "title": "Classic Leather Strap Watch",
+        "price": 89,
+        "description": "A timeless timepiece that combines a sleek, minimalist design with a genuine leather strap for a sophisticated look.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.5,
+            "count": 250
+        }
+    },
+    {
+        "id": "2f2a4e10-f346-4a92-b282-02b8d9edbd4c",
+        "title": "Sporty Digital Watch",
+        "price": 55,
+        "description": "A high-performance watch that features a digital display, multiple timers, and water resistance up to 50 meters.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.0,
+            "count": 150
+        }
+    },
+    {
+        "id": "3c096f9a-27b6-414b-a60c-6ec8e1d12d19",
+        "title": "Rose Gold Mesh Strap Watch",
+        "price": 99,
+        "description": "A stunning watch that combines a rose gold-tone stainless steel case with a mesh strap for a look that's both elegant and modern.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.8,
+            "count": 80
+        }
+    },
+    {
+        "id": "4c2a4e17-346f-4a29-8282-02b8d9edbd4c",
+        "title": "Smartwatch with GPS",
+        "price": 199,
+        "description": "A cutting-edge smartwatch that not only tracks your fitness goals but also features GPS, allowing you to navigate without your phone.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.2,
+            "count": 200
+        }
+    },
+    {
+        "id": "5a6d27f8-fec7-4b77-92b7-f0805b5f5d5c",
+        "title": "Stylish Chronograph Watch",
+        "price": 119,
+        "description": "A sophisticated watch that features a chronograph function and a polished stainless steel case, perfect for formal occasions.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.6,
+            "count": 120
+        }
+    },
+    {
+        "id": "6c2a4e17-346f-4a92-b282-02b8d9edbd4c",
+        "title": "Vintage Leather Watch",
+        "price": 79,
+        "description": "A classic timepiece that features a genuine leather strap and a vintage-inspired design that adds a touch of nostalgia to any outfit.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.1,
+            "count": 180
+        }
+    },
+    {
+        "id": "8c096f9a-27b6-414b-a60c-6ec8e1d12d19",
+        "title": "Minimalist Square Face Watch",
+        "price": 69,
+        "description": "A sleek and modern watch that features a minimalist design with a square face, perfect for those who prefer a simple and understated look.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.3,
+            "count": 90
+        }
+    },
+    {
+        "id": "9f2a4e10-f346-4a92-b282-02b8d9edbd4c",
+        "title": "Diamond-Accented Watch",
+        "price": 149,
+        "description": "A luxurious watch that features diamond accents and a mother-of-pearl dial, perfect for special occasions and dressy events.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.9,
+            "count": 60
+        }
+    },
+    {
+        "id": "10a6d27f8-fec7-4b77-92b7-f0805b5f5d5c",
+        "title": "Dual-Time Zone Watch",
+        "price": 109,
+        "description": "A functional watch that features dual time zones, making it ideal for frequent travelers or those who need to keep track of time in different locations.",
+        "category": "watches",
+        "rating": {
+            "rate": 4.4,
+            "count": 100
+        }
+    },
+    {
+        "id": "f9e6e4d6-4db6-4e7e-9865-861f8b5c0576",
+        "title": "Engraved Cuff Bracelet",
+        "price": 49,
+        "description": "A stylish and personalized bracelet that features an engraved message on a sleek metal cuff, perfect for adding a special touch to your look.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.4,
+            "count": 90
+        }
+    },
+    {
+        "id": "c401b956-463e-4a13-9b05-712caaa1edba",
+        "title": "Pearl Bracelet Set",
+        "price": 69,
+        "description": "A delicate and feminine bracelet set that features dainty pearls and a mix of gold and silver tones, perfect for dressing up any outfit.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.5,
+            "count": 85
+        }
+    },
+    {
+        "id": "1a02e6f2-b251-4eb6-a52e-94c04bfb50da",
+        "title": "Adjustable Friendship Bracelet",
+        "price": 19,
+        "description": "A fun and colorful bracelet that features an adjustable cord and a cute charm, perfect for sharing with your best friend or adding a pop of color to your look.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.0,
+            "count": 100
+        }
+    },
+    {
+        "id": "4c23b2fd-20fd-4a33-9d67-14b7e4c91434",
+        "title": "Leather and Metal Cuff Bracelet",
+        "price": 39,
+        "description": "A stylish and edgy bracelet that features a combination of leather and metal, perfect for adding a touch of coolness to any outfit.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.5,
+            "count": 85
+        }
+    },
+    {
+        "id": "e0d8f1e1-6fc7-4aa5-8dc8-9fc9c5f6e5c6",
+        "title": "Beaded Charm Bracelet",
+        "price": 29,
+        "description": "A colorful and fun bracelet that features a variety of beads and charms, perfect for adding some whimsy to your style.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.2,
+            "count": 120
+        }
+    },
+    {
+        "id": "3b3a023c-8d22-44c3-b35c-57e799fc37af",
+        "title": "Silver Bangle Bracelet",
+        "price": 79,
+        "description": "A classic and elegant bracelet that features a simple silver bangle design, perfect for dressing up any outfit.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.8,
+            "count": 70
+        }
+    },
+    {
+        "id": "b32ba28b-73d4-4f04-9fbf-50d2127d84b8",
+        "title": "Braided Leather Bracelet",
+        "price": 49,
+        "description": "A rugged and masculine bracelet that features a braided leather design, perfect for adding a touch of toughness to your look.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.3,
+            "count": 95
+        }
+    },
+    {
+        "id": "e83fc15d-11eb-41b2-b05d-6d8af06e9f89",
+        "title": "Chunky Chain Link Bracelet",
+        "price": 89,
+        "description": "A bold and statement-making bracelet that features chunky chain links, perfect for adding some attitude to your style.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.6,
+            "count": 80
+        }
+    },
+    {
+        "id": "6b8e6b92-656f-4a7a-9d8e-d1e10a78447d",
+        "title": "Crystal Stretch Bracelet",
+        "price": 59,
+        "description": "A dazzling and glamorous bracelet that features crystal beads and a stretchy design, perfect for adding some sparkle to your look.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.7,
+            "count": 75
+        }
+    },
+    {
+        "id": "9aeb5087-79a4-4e7a-b89c-1d138f13a2d1",
+        "title": "Braided Leather Bracelet",
+        "price": 39,
+        "description": "A rugged and masculine bracelet that features braided leather and a magnetic clasp, perfect for adding a touch of edge to your look.",
+        "category": "bracelets",
+        "rating": {
+            "rate": 4.2,
+            "count": 75
+        }
+    }
+]
