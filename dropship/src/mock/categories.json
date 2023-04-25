@@ -1,0 +1,62 @@
+[
+    {
+        "id": "technology",
+        "title": "Technology",
+        "sub": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "image": "../imgs/cat/tech/technology.png"
+    },
+    {
+        "id": "jewellery",
+        "title": "Jewellery",
+        "sub": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "image": "../imgs/cat/jewels/jewellery.png"
+    },
+    {
+        "id": "menswear",
+        "title": "Men's clothing",
+        "sub": [
+            11,
+            12,
+            13,
+            14,
+            15
+        ],
+        "image": "../imgs/cat/mWear/mensWear.png"
+    },
+    {
+        "id": "womenswear",
+        "title": "Women's clothing",
+        "sub": [
+            16,
+            17,
+            18,
+            19,
+            20
+        ],
+        "image": "../imgs/cat/fWear/womensWear.png"
+    },
+    {
+        "id": "lowercaseID",
+        "title": "Capitalized Title",
+        "sub": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "image": "../imgs/cat/etc/etc.png"
+    }
+]
