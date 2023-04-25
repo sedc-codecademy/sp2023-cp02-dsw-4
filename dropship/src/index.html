@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dropshipping</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js" defer></script>
+    <script src="js/header/_dependencies.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
+
 </head>
 
 <body>
@@ -13,23 +20,126 @@
     <!-- EXAMPLE FOR HOME PAGE
     https://www.skroutz.gr/
     -->
+
     <main>
-        <header> <!-- HEADER -->
-            <figure>LOGO</figure> <!-- LOGO -->
+        <header> 
+            <div class="backgroundImage">
+                <div class="gradient"></div>
+            </div>
+
+            <figure class="logo">LOGO</figure> 
+
             <nav>
-                <ul> <!-- NAVIGATION LISTS -->
-                    <li>Login</li>
-                    <li>Extra</li>
-                    <li>Cart</li>
+                <ul class="navigationLists"> 
+                    <li><span class="material-symbols-outlined">
+                            login
+                        </span></li>
+                    <li class="darkButton"><span id="dbutton" class="material-symbols-outlined">
+                            dark_mode
+                        </span>
+                    </li>
+                    <div class="divider"></div>
+                    <li><span class="material-symbols-outlined">
+                            shopping_cart
+                        </span></li>
                 </ul>
-                <form action=""><input type="search"><button>SEARCH</button><button>
-                    <a href="/Components/categories.html">CATEGORIES</a>
-                </button></form>
-                <!-- SEARCH AND CATEGORIES BUTTON-->
+
+                <div class="cartNotification"> 
+                    <ul>
+                        <li>
+                            <h4>Product Title</h4>
+                        </li>
+                        <li>Amount: 3 / Price: 399$</li>
+                        <li>
+                            <h5>Added to cart</h5>
+                        </li>
+                        <button class="notifCancel">CANCEL</button>
+                    </ul>
+                </div>
             </nav>
+
+            <form class="search-form" action=""> 
+                <div class="search-bar-container">
+                    <input class="search-bar" type="search" placeholder="Search for products and categories">
+                    <button class="clearButton">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </button>
+                    <button id="searchButton" class="searchButton">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
+                    <div class="divider"></div>
+                    <button class="categoriesButton">
+                        <span id="ctButtonSf" class="material-symbols-outlined">
+                            category
+                        </span>
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <ul class="suggestions-items">
+                    </ul>
+                    <div class="search-buttons">
+                        <button class="searchButton">Search</button>
+                        <button class="lucky">Choose Randomly</button>
+                    </div>
+                </div>
+                <div class="ctDropDown">
+
+                    <ul class="categories-ul">
+                        <li class="ctLiDt activeCat" id="electronics">Electronics</li>
+                        <li class="ctLiDt" id="jewellery">Jewelery</li>
+                        <li class="ctLiDt" id="mensWear">Men's clothing</li>
+                        <li class="ctLiDt" id="womensWear">Women's clothing</li>
+                        <li class="ctLiDt" id="jewellery">mock-category-1</li>
+                        <li class="ctLiDt" id="electronics">mock-category-1</li>
+                        <li class="ctLiDt" id="mensWear">mock-category-1</li>
+                        <li class="ctLiDt" id="jewellery">mock-category-1</li>
+                        <li class="ctLiDt" id="womensWear">mock-category-1</li>
+
+                    </ul>
+
+                    <ul class="sub-categories-ul">
+                        <li class="sub-one">
+                            <section>
+                                <h3>Sub Cat 1</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, id.</p>
+                        </li>
+                        </section>
+                        <li class="sub-two">
+                            <section>
+                                <h3>Sub Cat 1</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, id.</p>
+                        </li>
+                        <li class="sub-three">
+                            <section>
+                                <h3>Sub Cat 1</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, id.</p>
+                        </li>
+                        <li class="sub-four">
+                            <section>
+                                <h3>Sub Cat 1</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, id.</p>
+                        </li>
+                        <li class="sub-five">
+                            <section>
+                                <h3>Sub Cat 1</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, id.</p>
+                        </li>
+                        <li class="see-all">See All Sub-Categories</li>
+                    </ul>
+                    <ul class="relevant-products">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </form>
+
         </header>
-        <hr>
-        <div> <!-- CATEGORIES -->
+        
+        <div class="mainCategories"> <!-- CATEGORIES -->
             <button>SCROLL LEFT</button>
             <section>CAT 1</section>
             <section>CAT 2</section>
@@ -110,7 +220,7 @@
                     <li> About Alibaba.com</li>
                 </ul>
             </section>
-        </footer> 
+        </footer>
     </main>
 </body>
 

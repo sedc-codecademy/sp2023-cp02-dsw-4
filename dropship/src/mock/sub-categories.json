@@ -1,0 +1,229 @@
+[
+    {
+        "id": 1,
+        "title": "Personal Computers",
+        "description": "Get pc's, the latest components, pc accesories and everything else related to pc's.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/tech/sub/pc.png"
+    },
+    {
+        "id": 2,
+        "title": "Mobile Telephony",
+        "description": "The latest mobile phones, cases and mobile phone accesories at amaizng prices!",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/tech/sub/phone.png"
+    },
+    {
+        "id": 3,
+        "title": "Home Appliance",
+        "description": "Stoves, washing machines, refrigerators and everthing else you can think of new or used.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/tech/sub/wmachine.png"
+    },
+    {
+        "id": 4,
+        "title": "Entertainment Appliances",
+        "description": "Tv's, blu-rays, video game consoles and even older entertainment appliances all at a very cheap price!",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/tech/sub/xbox.png"
+    },
+    {
+        "id": 5,
+        "title": "HandHeld entertainment",
+        "description": "Tablets, and other stuff.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/tech/sub/switch.png"
+    },
+    {
+        "id": 6,
+        "title": "Neck wear",
+        "description": "Necklaces, and other neck wear in gold silver and diamond linen.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/jewels/sub/necklase.png"
+    },
+    {
+        "id": 7,
+        "title": "Hand wear",
+        "description": "Bracelets, rings, wedding rings other stuff in gold silver and diamond linen.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/jewels/sub/ring.png"
+    },
+    {
+        "id": 8,
+        "title": "Pearcings",
+        "description": "All kinds of pearcings in gold silver and diamond linen",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/jewels/sub/pearcing.png"
+    },
+    {
+        "id": 9,
+        "title": "Some other stuff",
+        "description": "A lot of other stuff in gold silver and diamond linen",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/jewels/sub/rings.png"
+    },
+    {
+        "id": 10,
+        "title": "Even more stuff",
+        "description": "An abundance of other stuff in gold silver and diamond linen",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/jewels/sub/diamondRings.png"
+    },
+    {
+        "id": 11,
+        "title": "Shirts",
+        "description": "Polos, long-sleeved, short-sleeved, long-sleeved polos and all other shirts",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/mWear/sub/stripe-shirt.png"
+    },
+    {
+        "id": 12,
+        "title": "Foot Wear",
+        "description": "Boots, jordans, sketchers adidas, nike and everyhing inbetween.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/mWear/sub/mboots.png"
+    },
+    {
+        "id": 13,
+        "title": "Leg wear",
+        "description": "Jeans, pants, joggers and every other kind of leg wear.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/mWear/sub/mjeans.png"
+    },
+    {
+        "id": 14,
+        "title": "Head wear",
+        "description": "Head wear, all kinds of hats. Stay protected in the summer and warm in the winter!",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/mWear/sub/cap.png"
+    },
+    {
+        "id": 15,
+        "title": "Space Suits",
+        "description": "For when you want to go to the moon or even mars",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/mWear/sub/spaceSuit.png"
+    },
+    {
+        "id": 16,
+        "title": "Dresses",
+        "description": "All kinds of dresses and in all the colors they come in. We even have wedding dresses!",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/fWear/sub/dress.png"
+    },
+    {
+        "id": 17,
+        "title": "Foot wear",
+        "description": "Every kind of shue you can think of at great prices.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/fWear/sub/wboots.png"
+    },
+    {
+        "id": 18,
+        "title": "Carry-ons",
+        "description": "All the purses you can think of at great prices.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/fWear/sub/purse.png"
+    },
+    {
+        "id": 19,
+        "title": "Leg wear",
+        "description": "Jeans, pants, joggers and every other kind of leg wear, but for women",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/fWear/sub/wjeans.png"
+    },
+    {
+        "id": 20,
+        "title": "Accessories",
+        "description": "All kinds of accessories you could ever need or want.",
+        "products": [
+            1,
+            2,
+            3
+        ],
+        "image": "../imgs/cat/fWear/sub/teddy.png"
+    },
+    {
+        "id": "UNIQUE_NUMBER",
+        "title": "Capitalized Title",
+        "description": "description",
+        "products": "ARRAY OF CONTAIINING PRODUCT IDS",
+        "image": "../imgs/cat/etc/sub/etc.png"
+    }
+]
