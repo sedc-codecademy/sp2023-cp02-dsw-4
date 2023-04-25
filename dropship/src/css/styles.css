@@ -53,19 +53,6 @@ button {
   border: none;
 }
 
-/*
-
-@include flexbox($placeItems: flex-end);
-
-@include flexbox($placeItems: center);
-
-@include flexbox($placeContent: flex-start);
-
-@include flexbox($placeContent: flex-end);
-
-@include flexbox($placeContent: center);
-
-*/
 .backgroundImage {
   position: absolute;
   width: inherit;
@@ -88,10 +75,10 @@ button {
 
 .divider {
   position: relative;
-  border-left: 0.2vmax solid var(--accent);
-  height: 1.8vmax;
-  border-radius: 1vmax;
-  margin: 0 0.2vmax 0 0.2vmax;
+  border-left: 0.2rem solid var(--accent);
+  height: 1.8rem;
+  border-radius: 1rem;
+  margin: 0 0.2vrem 0 0.2rem;
 }
 
 header {
@@ -99,7 +86,6 @@ header {
   height: 60svh;
   width: 100svw;
   position: relative;
-  overflow: hidden;
 }
 
 .material-symbols-outlined {
@@ -107,11 +93,8 @@ header {
   font-weight: 550;
   color: var(--secColor);
   display: flex;
-  flex-direction: row;
-  place-content: center;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -124,7 +107,7 @@ header {
 }
 
 .search-form {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 13rem;
   transform: translateX(-50%);
@@ -212,7 +195,7 @@ header {
 }
 
 .opCt {
-  top: -3rem;
+  top: -2.9rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 0;
@@ -344,10 +327,11 @@ header {
   border-bottom-left-radius: 0.3vmax;
   border-bottom-right-radius: 1.7vmax;
   background-color: var(--tpPri);
+  border: 0.15vmax solid var(--tertColor) !important;
   backdrop-filter: blur(0.5vmax);
   overflow: hidden;
   padding: 1rem;
-  transform: scaleY(0.4);
+  transform: scaleX(0.4);
   transform-origin: 150% 15%;
 }
 .ctDropDown ul {
@@ -629,10 +613,4 @@ nav .navigationLists li:hover .material-symbols-outlined {
 }
 nav .navigationLists li:hover ::before {
   background-color: var(--accent);
-}
-
-main {
-  position: relative;
-  width: 100vw;
-  overflow: auto;
 }/*# sourceMappingURL=styles.css.map */

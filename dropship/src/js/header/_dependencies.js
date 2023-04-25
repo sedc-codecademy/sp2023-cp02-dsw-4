@@ -150,7 +150,7 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         suggestionsCard.classList.remove('opCtS2g')
         classSwitcher.focusBlur()
         categoryDropDown.animate([
-            { transform: 'scaleY(0.4)', opacity: 0 },
+            { transform: 'scaleX(0.4)', opacity: 0 },
         ], { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
         ctButtonSf.innerHTML = 'category'
         toggle = true
@@ -160,7 +160,7 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         suggestionsCard.classList.add('opCt')
         categoryDropDown.animate(
             [
-                { transform: 'scaleY(1)', opacity: 1 }
+                { transform: 'scaleX(1)', opacity: 1 }
             ]
             , { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
         suggestionsCard.classList.add('opCtS2g')

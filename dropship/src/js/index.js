@@ -1,6 +1,7 @@
-import './_mode.js'
-import './_notification.js'
-import './_searchIndex.js'
-import './_categoriesDropDown.js'
+import './header/_mode.js'
+import './header/_notification.js'
+import './header/_searchIndex.js'
+import './header/_categoriesDropDown.js'
+import './footer/_contact.js'
 
 
