@@ -1,20 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap");
 :root {
   --priColor: rgb(243, 243, 243);
-  --tpPri: rgba(243, 243, 243, 0.483);
+  --tpPri: rgba(255, 255, 255, 0.703);
   --secColor: rgba(0, 0, 0, 0.822);
-  --accent: rgb(255, 115, 0);
-  --secAccent: rgba(255, 225, 0, 0.818);
+  --secAccent: rgb(255, 0, 225);
+  --accent: rgb(255, 0, 72);
+  --tertAccent: rgb(255, 217, 0);
   --tertColor: rgba(128, 128, 128, 0.598);
   --paleAccent: rgba(255, 115, 0, 0.113);
 }
 
 .dark-mode {
-  --priColor: #111111;
-  --tpPri: rgba(0, 0, 0, 0.483);
+  --priColor: #020202f0;
+  --tpPri: rgba(0, 0, 0, 0.667);
   --secColor: rgb(243, 243, 243);
   --accent: rgb(0, 255, 180);
   --secAccent: rgba(9, 255, 0, 0.834);
+  --tertAccent: rgb(255, 0, 174);
   --paleAccent: rgba(0, 255, 179, 0.092);
 }
 
@@ -53,24 +55,38 @@ button {
   border: none;
 }
 
-.backgroundImage {
-  position: absolute;
-  width: inherit;
-  height: 100%;
-  background-color: var(--priColor);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%232134ed' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23dc00ff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23c100c3' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23008bff' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23fd008f' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%2300beff' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23ff005d' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%2300ddff' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23ff6431' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%2300f1e4' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23ff9b00' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%2300ffa0' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center bottom -2vmax;
-  transform: rotate(180deg);
+header {
+  height: 70vh;
+  height: 70svh;
+  width: 100svw;
+  position: relative;
 }
-
-.gradient {
+header .headerGradient {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right top, transparent 70%, var(--priColor) 130%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+}
+
+.headerBackgroundImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -9;
+}
+.headerBackgroundImage svg {
+  fill: transparent;
+  transform: rotate(180deg);
+}
+.headerBackgroundImage svg #polgOne {
+  fill: var(--accent);
+}
+.headerBackgroundImage svg #polgTwo {
+  fill: var(--secAccent);
+}
+.headerBackgroundImage svg #polgThree {
+  fill: var(--tertAccent);
 }
 
 .divider {
@@ -79,13 +95,6 @@ button {
   height: 1.8rem;
   border-radius: 1rem;
   margin: 0 0.2vrem 0 0.2rem;
-}
-
-header {
-  height: 60vh;
-  height: 60svh;
-  width: 100svw;
-  position: relative;
 }
 
 .material-symbols-outlined {
@@ -104,6 +113,7 @@ header {
   font-size: 3vmax;
   top: 1vmax;
   left: 1vmax;
+  mix-blend-mode: difference;
 }
 
 .search-form {
@@ -317,6 +327,7 @@ header {
 }
 
 .ctDropDown {
+  position: relative;
   opacity: 0;
   width: 80rem;
   height: 42rem;
@@ -331,8 +342,9 @@ header {
   backdrop-filter: blur(0.5vmax);
   overflow: hidden;
   padding: 1rem;
-  transform: scaleX(0.4);
+  transform: scaleX(0);
   transform-origin: 150% 15%;
+  z-index: -10;
 }
 .ctDropDown ul {
   position: relative;
@@ -511,7 +523,6 @@ header {
   align-items: center;
   width: 15rem;
   height: 15rem;
-  backdrop-filter: blur(2rem);
   border-top-left-radius: 2vmax;
   border-top-right-radius: 1vmax;
   border-bottom-left-radius: 1vmax;
@@ -532,22 +543,14 @@ header {
 
 .cartNotification {
   position: relative;
-  max-width: 10rem;
   border-radius: 0.3vmax;
-  backdrop-filter: blur(0.2vmax);
-  background: linear-gradient(to right, var(--secAccent), var(--accent));
+  backdrop-filter: blur(2rem);
+  background: linear-gradient(to right, var(--accent), var(--secAccent));
   max-height: 0;
   color: black;
 }
 .cartNotification ul {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  place-content: flex-start;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0;
-  flex-direction: column;
   padding: 0.3vmax;
 }
 .cartNotification .notifCancel {
@@ -578,14 +581,10 @@ nav {
   backdrop-filter: blur(1vmax);
   border-radius: 0.5vmax;
   overflow: hidden;
+  z-index: 10;
 }
 nav .navigationLists {
   display: flex;
-  flex-direction: row;
-  place-content: center;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0;
   justify-content: space-between;
   gap: 0.5vmax;
   margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
@@ -613,4 +612,56 @@ nav .navigationLists li:hover .material-symbols-outlined {
 }
 nav .navigationLists li:hover ::before {
   background-color: var(--accent);
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  height: 70vh;
+  height: 70svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+footer section {
+  height: 10rem;
+  width: 20rem;
+  background-color: var(--tpPri);
+}
+footer .footerGradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+}
+
+.footerBackgroundImage {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  transform: rotate(180deg);
+  z-index: -9;
+}
+.footerBackgroundImage svg {
+  position: absolute;
+  fill: transparent;
+}
+.footerBackgroundImage svg #polgOne {
+  fill: var(--accent);
+}
+.footerBackgroundImage svg #polgTwo {
+  fill: var(--secAccent);
+}
+.footerBackgroundImage svg #polgThree {
+  fill: var(--tertAccent);
+}
+
+main {
+  min-height: 100vh;
+}
+main div {
+  height: 50vh;
 }/*# sourceMappingURL=styles.css.map */

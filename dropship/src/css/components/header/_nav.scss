@@ -1,0 +1,52 @@
+@use '../../abstracts' as *;
+
+// NAVIGATION BAR
+
+nav {
+    position: fixed;
+    right: 1.5vmax;
+    top: 1vmax;
+    user-select: none;
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1vmax);
+    border-radius: 0.5vmax;
+    overflow: hidden;
+    z-index: 10;
+
+    .navigationLists {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5vmax;
+        margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
+        transition: all 300ms ease;
+
+        li {
+            position: relative;
+
+            .material-symbols-outlined {
+                font-size: 1.7rem;
+            }
+
+            ::before {
+                content: '';
+                inset: 0;
+                position: absolute;
+                filter: blur(2vmax);
+                transition: 300ms all ease;
+            }
+
+            &:hover {
+                color: var(--accent);
+                transition: 300ms all ease;
+
+                .material-symbols-outlined {
+                    color: var(--accent);
+                }
+
+                ::before {
+                    background-color: var(--accent);
+                }
+            }
+        }
+    }
+}
