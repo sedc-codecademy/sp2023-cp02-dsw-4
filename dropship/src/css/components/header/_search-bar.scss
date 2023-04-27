@@ -1,0 +1,103 @@
+@use '../../abstracts' as *;
+
+// SEARCH BAR
+
+.search-bar-container {
+    position: absolute;
+    top: 0;
+    height: 3rem;
+    width: 35rem;
+    @include flexbox($placeItems: center);
+    border-top-left-radius: 1.7vmax;
+    border-top-right-radius: 0.3vmax;
+    border-bottom-left-radius: 0.3vmax;
+    border-bottom-right-radius: 1.7vmax;
+    border: 0.15vmax solid var(--tertColor);
+    background-color: var(--tpPri);
+    backdrop-filter: blur(2vmax);
+    overflow: hidden;
+    transition: 300ms all ease;
+    z-index: 6;
+
+    .search-bar {
+        font-size: 1.4rem;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: inherit;
+        border: none;
+        outline: none;
+        text-indent: 1vmax;
+        color: var(--secColor);
+    }
+
+    button {
+        position: relative;
+        height: 100%;
+
+        ::before {
+            content: '';
+            inset: 0;
+            position: absolute;
+            filter: blur(1.5vmax);
+            transition: 300ms all ease;
+        }
+
+        &.clearButton,
+        &#searchButton {
+            margin-left: 0.3vmax;
+            display: none;
+        }
+
+        &.categoriesButton {
+            position: relative;
+            margin-right: 0.6vmax;
+        }
+
+        &:hover {
+            color: var(--accent);
+            transition: 300ms all ease;
+
+            .material-symbols-outlined {
+                color: var(--accent);
+            }
+
+            ::before {
+                background-color: var(--accent);
+            }
+        }
+    }
+
+    .divider {
+        position: relative;
+        border-left: 0.2vmax solid var(--accent);
+        height: 70%;
+        border-radius: 1vmax;
+        margin: 0 0.3vmax 0 0.3vmax;
+    }
+}
+
+.visible {
+    display: block !important;
+}
+
+// SEACH BAR STATES
+
+.active {
+    border: 0.15vmax solid var(--accent) !important;
+}
+
+.opCt {
+    top: -2.9rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: border 300ms all ease-in-out;
+    transition: top 300ms ease-in-out;
+}
+
+.opSg {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}

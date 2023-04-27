@@ -1,0 +1,261 @@
+@use '../../abstracts' as *;
+
+// Categories Drop Down
+
+.ctDropDown {
+    position: relative;
+    opacity: 0;
+    width: 80rem;
+    height: 42rem;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: 1.7vmax;
+    border-top-right-radius: 0.3vmax;
+    border-bottom-left-radius: 0.3vmax;
+    border-bottom-right-radius: 1.7vmax;
+    background-color: var(--tpPri);
+    border: 0.15vmax solid var(--tertColor) !important;
+    backdrop-filter: blur(0.5vmax);
+    overflow: hidden;
+    padding: 1rem;
+    transform: scaleX(0);
+    transform-origin: 150% 15%;
+    z-index: -10;
+
+    ul {
+        position: relative;
+    }
+
+    .categories-ul {
+        display: flex;
+        min-width: 14rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0.5rem 0 0.5rem 0.5rem;
+        user-select: none;
+
+        li {
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            padding-block: 0.5rem;
+            margin-right: 0.7rem;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 0.6vmax;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2vmax;
+            --opacity: 1;
+            transition: all 300ms ease;
+
+            &::before {
+                content: "";
+                display: block;
+                opacity: var(--opacity);
+                width: 3rem;
+                height: 3em;
+                border-radius: 50%;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 0.5rem;
+                transition: all 300ms ease;
+            }
+
+            &:hover {
+                font-weight: 600;
+                color: var(--accent);
+                cursor: pointer;
+                transition: all 300ms ease;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: var(--tertColor);
+            width: 0.1rem;
+            height: 95%;
+            right: -0.5rem;
+        }
+
+        #electronics {
+            &::before {
+                background-color: #78f5b2;
+                background-image: url(../imgs/cat/tech/technology.png);
+            }
+        }
+
+        #jewellery {
+            &::before {
+                background-color: #fff6ae;
+                background-image: url(../imgs/cat/jewels/jewellery.png);
+                background-size: 2.5rem;
+            }
+        }
+
+        #mensWear {
+            &::before {
+                background-color: #ffaeef;
+                background-image: url(../imgs/cat/mWear/mensWear.png);
+
+            }
+        }
+
+        #womensWear {
+            &::before {
+                background-color: #aeecff;
+                background-image: url(../imgs/cat/fWear/womensWear.png);
+                background-position: 0.5rem 0.5rem;
+            }
+        }
+    }
+
+    .activeCat {
+        color: var(--accent);
+        font-weight: 600;
+        background-color: var(--paleAccent);
+    }
+
+    .sub-categories-ul {
+        display: flex;
+        width: 45rem;
+        flex-wrap: wrap;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--paleAccent);
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 3vmax;
+            border-bottom-left-radius: 3rem;
+            border-bottom-right-radius: 2vmax;
+            width: 45%;
+            height: 30%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0.5rem 0 0.5rem 1rem;
+            transition: 500ms all ease;
+
+            section {
+                margin-right: 1rem;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 18rem;
+                height: 8rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 0.5rem;
+            }
+
+            &.see-all {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: underline;
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+                &::before {
+                    display: none;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: var(--accent);
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: transparent;
+
+                h3 {
+                    color: var(--accent);
+                }
+
+                transition: 500ms all ease;
+            }
+        }
+
+        .sub-one {
+            --bgimg: url("../imgs/cat/tech/sub/pc.png");
+
+            &::before {
+                background-image: var(--bgimg);
+            }
+        }
+
+        .sub-two {
+            --bgimg: url("../imgs/cat/tech/sub/phone.png");
+
+            &::before {
+                background-image: var(--bgimg);
+            }
+        }
+
+        .sub-three {
+            --bgimg: url("../imgs/cat/tech/sub/wmachine.png");
+
+            &::before {
+                background-image: var(--bgimg);
+            }
+        }
+
+        .sub-four {
+            --bgimg: url("../imgs/cat/tech/sub/xbox.png");
+
+            &::before {
+                background-image: var(--bgimg);
+            }
+        }
+
+        .sub-five {
+            --bgimg: url("../imgs/cat/tech/sub/switch.png");
+
+            &::before {
+                background-image: var(--bgimg);
+            }
+        }
+    }
+
+    .relevant-products {
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15rem;
+            height: 15rem;
+            border-top-left-radius: 2vmax;
+            border-top-right-radius: 1vmax;
+            border-bottom-left-radius: 1vmax;
+            border-bottom-right-radius: 2vmax;
+            background-image: url(../imgs/cat/sub/4090.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: var(--tertColor);
+            width: 0.1rem;
+            height: 95%;
+            left: -0.5rem;
+        }
+    }
+}
