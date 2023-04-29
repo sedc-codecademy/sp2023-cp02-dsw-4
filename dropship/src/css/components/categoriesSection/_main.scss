@@ -1,10 +1,13 @@
 // CATEGORIES SECTION
 .mainCategories{
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 10px;
     section{
         display: flex;
         align-items: center;
+        justify-content: center;
+        height: 10rem;
+        width: 10rem;
     }
 }
