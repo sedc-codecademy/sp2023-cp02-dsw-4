@@ -119,6 +119,7 @@ header .headerGradient {
   position: absolute;
   left: 50%;
   top: 13rem;
+  height: 0 !important;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -142,7 +143,8 @@ header .headerGradient {
   border-bottom-right-radius: 1.7vmax;
   border: 0.15vmax solid var(--tertColor);
   background-color: var(--tpPri);
-  backdrop-filter: blur(2vmax);
+  -webkit-backdrop-filter: blur(2vmax);
+          backdrop-filter: blur(2vmax);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 6;
@@ -235,7 +237,8 @@ header .headerGradient {
   border-bottom: none;
   border-top: none !important;
   background-color: var(--tpPri);
-  backdrop-filter: blur(0.2vmax);
+  -webkit-backdrop-filter: blur(0.2vmax);
+          backdrop-filter: blur(0.2vmax);
   z-index: 6;
   transition: 300ms all ease;
 }
@@ -280,7 +283,9 @@ header .headerGradient {
 }
 .search-suggestions ul li:hover {
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: var(--accent);
   background-color: var(--tpPri);
   transition: 300ms all ease;
@@ -291,7 +296,8 @@ header .headerGradient {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding-block-end: 0.5rem;
+  -webkit-padding-after: 0.5rem;
+          padding-block-end: 0.5rem;
 }
 .search-suggestions .search-buttons button {
   position: relative;
@@ -330,7 +336,7 @@ header .headerGradient {
   opacity: 0;
   width: 80rem;
   height: 42rem;
-  display: flex;
+  display: none;
   justify-content: space-between;
   border-top-left-radius: 1.7vmax;
   border-top-right-radius: 0.3vmax;
@@ -338,7 +344,8 @@ header .headerGradient {
   border-bottom-right-radius: 1.7vmax;
   background-color: var(--tpPri);
   border: 0.15vmax solid var(--tertColor) !important;
-  backdrop-filter: blur(0.5vmax);
+  -webkit-backdrop-filter: blur(0.5vmax);
+          backdrop-filter: blur(0.5vmax);
   overflow: hidden;
   padding: 1rem;
   transform: scaleX(0);
@@ -355,7 +362,9 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -543,7 +552,8 @@ header .headerGradient {
 .cartNotification {
   position: relative;
   border-radius: 0.3vmax;
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--accent), var(--secAccent));
   max-height: 0;
   color: black;
@@ -575,9 +585,12 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   background-color: var(--tpPri);
-  backdrop-filter: blur(1vmax);
+  -webkit-backdrop-filter: blur(1vmax);
+          backdrop-filter: blur(1vmax);
   border-radius: 0.5vmax;
   overflow: hidden;
   z-index: 10;
@@ -661,6 +674,16 @@ footer .footerGradient {
 main {
   min-height: 100vh;
 }
-main div {
-  height: 50vh;
+
+.mainCategories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainCategories section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  width: 10rem;
 }/*# sourceMappingURL=styles.css.map */
