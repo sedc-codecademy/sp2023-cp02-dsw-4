@@ -1,1 +1,13 @@
 // CATEGORIES SECTION
+.mainCategories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        width: 10rem;
+    }
+}
