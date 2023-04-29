@@ -1,19 +1,131 @@
 @use '../../abstracts' as *;
 
-footer{
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+footer {
     position: relative;
     bottom: 0;
-    height: 70vh;
-    height: 70svh;
+    // height: 70vh;
+    // height: 70svh;
+    height: 70rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 
-    section{
-        height: 10rem;
-        width: 20rem;
-        background-color: var(--tpPri);
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: var(--tertColor);
+        height: 0.1rem;
+        width: 97%;
+        bottom: 4.5rem;
+    }
+
+    .contact{
+        position: absolute;
+        left: 30rem;
+        bottom: 15rem;
+        width: 60%;
+
+        div{
+            font-size: 2rem;
+            height: 10rem;
+            width: 20rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .footFooter {
+        position: absolute;
+        bottom: 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .legal {
+            gap: 2rem;
+            
+            a {
+                color: var(--tertColor);
+                transition: 300ms all ease;
+                // font-family: 'Fugaz One', cursive;
+
+                &:hover {
+                    color: var(--secColor);
+                    transition: 300ms all ease;
+                }
+            }
+        }
+
+        .socials {
+            gap: 0.2rem;
+
+            legend {
+                transition: 300ms all ease;
+                color: var(--tertColor);
+                font-size: 1.1rem;
+                font-weight: 550;
+                font-family: 'Oleo Script', cursive;
+                margin-right: 1rem;
+
+                &:hover {
+                    color: var(--secColor);
+                    transition: 300ms all ease;
+                    cursor: default;
+                }
+            }
+
+            svg {
+                height: 2.5rem;
+                width: 2.5rem;
+                fill: var(--tertColor);
+                transition: 300ms all ease;
+
+                &:hover {
+                    transition: 300ms all ease;
+                }
+            }
+
+            #insta:hover{
+                fill: rgb(255, 0, 191);
+            }
+            #facebook:hover{
+                fill: rgb(0, 162, 255);
+            }
+            #git:hover{
+                fill: var(--secColor);
+            }
+            #youtube:hover{
+                fill: rgb(255, 0, 0);
+            }
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+
+
+        li {
+            display: flex;
+            justify-content: center;
+
+
+            &:hover {
+                color: var(--secColor);
+
+            }
+        }
     }
 
     .footerGradient {
@@ -21,7 +133,7 @@ footer{
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left bottom, transparent 50%, rgba(0, 0, 0, 0),var(--priColor) 120%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
     }
 }
 
@@ -31,7 +143,6 @@ footer{
     top: 0;
     height: 100%;
     transform: rotate(180deg);
-    
     z-index: -9;
 
     svg {
@@ -51,4 +162,3 @@ footer{
         }
     }
 }
-

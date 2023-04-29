@@ -150,8 +150,8 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         suggestionsCard.classList.remove('opCtS2g')
         classSwitcher.focusBlur()
         categoryDropDown.animate([
-            { transform: 'scaleX(0.4)', opacity: 0 },
-        ], { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+            { transform: 'translateY(100vh)', opacity: 0 },
+        ], { duration: 300, easing: 'ease-in-out', fill: 'forwards'})
         setTimeout(() => {
             categoryDropDown.style.display = 'none'
         }, 500)
@@ -165,9 +165,9 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         setTimeout(() => {
             categoryDropDown.animate(
                 [
-                    { transform: 'scaleX(1)', opacity: 1 }
+                    { transform: 'translateY(0)', opacity: 1 }
                 ]
-                , { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+                , { duration: 300, easing: 'ease-in-out', fill: 'forwards'})
         }, 200)
         suggestionsCard.classList.add('opCtS2g')
         classSwitcher.focusBlur()

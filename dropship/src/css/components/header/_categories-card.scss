@@ -18,9 +18,10 @@
     backdrop-filter: blur(0.5vmax);
     overflow: hidden;
     padding: 1rem;
-    transform: scaleX(0);
+    transform: translateY(100vh);
     transform-origin: 150% 15%;
     z-index: -10;
+    display: none;
 
     ul {
         position: relative;
