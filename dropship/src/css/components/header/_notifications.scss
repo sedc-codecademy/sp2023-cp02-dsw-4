@@ -1,13 +1,15 @@
 @use '../../abstracts' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 // NOTIFICATION CARD
 
 .cartNotification {
     position: relative;
-    // max-width: 10rem;
+    min-width: 10rem;
     border-radius: 0.3vmax;
     backdrop-filter: blur(2rem);
-    background: linear-gradient(to right ,var(--accent), var(--secAccent));
+    background: linear-gradient(to right, var(--accent), var(--secAccent));
     max-height: 0;
     color: black;
 
@@ -22,8 +24,9 @@
         width: 100%;
         color: red;
         background-color: white;
-        font-size: 0.9rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+        font-family: 'Share Tech', sans-serif;
         padding: 0.2vmax;
         border-radius: 0.5vmax;
         transition: 300ms all ease;
