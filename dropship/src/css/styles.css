@@ -140,14 +140,13 @@ header .headerGradient {
   flex-wrap: nowrap;
   flex-shrink: 0;
   flex-grow: 0;
-  border-top-left-radius: 1.7vmax;
-  border-top-right-radius: 0.3vmax;
-  border-bottom-left-radius: 0.3vmax;
-  border-bottom-right-radius: 1.7vmax;
-  border: 0.15vmax solid var(--tertColor);
+  border-top-left-radius: 1.7rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 1.7rem;
+  border: 0.15rem solid var(--tertColor);
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2vmax);
-          backdrop-filter: blur(2vmax);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 6;
@@ -160,7 +159,7 @@ header .headerGradient {
   border-radius: inherit;
   border: none;
   outline: none;
-  text-indent: 1vmax;
+  text-indent: 1rem;
   color: var(--secColor);
 }
 .search-bar-container button {
@@ -171,16 +170,16 @@ header .headerGradient {
   content: "";
   inset: 0;
   position: absolute;
-  filter: blur(1.5vmax);
+  filter: blur(1.5rem);
   transition: 300ms all ease;
 }
 .search-bar-container button.clearButton, .search-bar-container button#searchButton {
-  margin-left: 0.3vmax;
+  margin-left: 0.3rem;
   display: none;
 }
 .search-bar-container button.categoriesButton {
   position: relative;
-  margin-right: 0.6vmax;
+  margin-right: 0.6rem;
 }
 .search-bar-container button:hover {
   color: var(--accent);
@@ -194,10 +193,10 @@ header .headerGradient {
 }
 .search-bar-container .divider {
   position: relative;
-  border-left: 0.2vmax solid var(--accent);
+  border-left: 0.2rem solid var(--accent);
   height: 70%;
-  border-radius: 1vmax;
-  margin: 0 0.3vmax 0 0.3vmax;
+  border-radius: 1rem;
+  margin: 0 0.3rem 0 0.3rem;
 }
 
 .visible {
@@ -205,7 +204,7 @@ header .headerGradient {
 }
 
 .active {
-  border: 0.15vmax solid var(--accent) !important;
+  border: 0.15rem solid var(--accent) !important;
   transition: 300ms all ease;
 }
 
@@ -240,8 +239,7 @@ header .headerGradient {
   border-bottom: none;
   border-top: none !important;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(0.2vmax);
-          backdrop-filter: blur(0.2vmax);
+  backdrop-filter: blur(0.2vmax);
   z-index: 6;
   transition: 300ms all ease;
 }
@@ -286,9 +284,7 @@ header .headerGradient {
 }
 .search-suggestions ul li:hover {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   color: var(--accent);
   background-color: var(--tpPri);
   transition: 300ms all ease;
@@ -300,7 +296,6 @@ header .headerGradient {
   align-items: center;
   gap: 1rem;
   margin-block-end: 0.5rem;
-
 }
 .search-suggestions .search-buttons button {
   position: relative;
@@ -335,26 +330,24 @@ header .headerGradient {
 }
 
 .ctDropDown {
-  position: relative;
+  position: absolute;
   opacity: 0;
+  display: flex;
   width: 80rem;
   height: 42rem;
-  display: none;
   justify-content: space-between;
-  border-top-left-radius: 1.7vmax;
-  border-top-right-radius: 0.3vmax;
-  border-bottom-left-radius: 0.3vmax;
-  border-bottom-right-radius: 1.7vmax;
+  border-top-left-radius: 1.7rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
-  border: 0.15vmax solid var(--tertColor) !important;
-  -webkit-backdrop-filter: blur(0.5vmax);
-          backdrop-filter: blur(0.5vmax);
+  border: 0.15rem solid var(--tertColor) !important;
+  backdrop-filter: blur(0.5rem);
   overflow: hidden;
   padding: 1rem;
   transform: translateY(100vh);
   transform-origin: 150% 15%;
   z-index: -10;
-  display: none;
 }
 .ctDropDown ul {
   position: relative;
@@ -366,9 +359,7 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -377,9 +368,9 @@ header .headerGradient {
   padding-block: 0.5rem;
   margin-right: 0.7rem;
   border-top-left-radius: 2rem;
-  border-top-right-radius: 0.6vmax;
+  border-top-right-radius: 0.6rem;
   border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2vmax;
+  border-bottom-right-radius: 2rem;
   --opacity: 1;
   transition: all 300ms ease;
 }
@@ -444,9 +435,9 @@ header .headerGradient {
   align-items: center;
   background-color: var(--paleAccent);
   border-top-left-radius: 2rem;
-  border-top-right-radius: 3vmax;
+  border-top-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
-  border-bottom-right-radius: 2vmax;
+  border-bottom-right-radius: 2rem;
   width: 45%;
   height: 30%;
   overflow: hidden;
@@ -535,10 +526,10 @@ header .headerGradient {
   align-items: center;
   width: 15rem;
   height: 15rem;
-  border-top-left-radius: 2vmax;
-  border-top-right-radius: 1vmax;
-  border-bottom-left-radius: 1vmax;
-  border-bottom-right-radius: 2vmax;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 2rem;
   background-image: url(../imgs/cat/sub/4090.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -557,8 +548,7 @@ header .headerGradient {
   position: relative;
   min-width: 10rem;
   border-radius: 0.3vmax;
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--accent), var(--secAccent));
   max-height: 0;
   color: black;
@@ -591,12 +581,9 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(1vmax);
-          backdrop-filter: blur(1vmax);
+  backdrop-filter: blur(1vmax);
   border-radius: 0.5vmax;
   overflow: hidden;
   z-index: 10;

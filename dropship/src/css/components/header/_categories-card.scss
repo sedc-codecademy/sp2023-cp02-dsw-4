@@ -3,26 +3,25 @@
 // Categories Drop Down
 
 .ctDropDown {
-    position: relative;
+    position: absolute;
     opacity: 0;
+    display: flex;
     width: 80rem;
     height: 42rem;
-    display: none;
     justify-content: space-between;
-    border-top-left-radius: 1.7vmax;
-    border-top-right-radius: 0.3vmax;
-    border-bottom-left-radius: 0.3vmax;
-    border-bottom-right-radius: 1.7vmax;
+    border-top-left-radius: 1.7rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 1.7rem;
     background-color: var(--tpPri);
-    border: 0.15vmax solid var(--tertColor) !important;
-    backdrop-filter: blur(0.5vmax);
+    border: 0.15rem solid var(--tertColor) !important;
+    backdrop-filter: blur(0.5rem);
     overflow: hidden;
     padding: 1rem;
     transform: translateY(100vh);
     transform-origin: 150% 15%;
     z-index: -10;
-    display: none;
-
+    
     ul {
         position: relative;
     }
@@ -43,9 +42,9 @@
             padding-block: 0.5rem;
             margin-right: 0.7rem;
             border-top-left-radius: 2rem;
-            border-top-right-radius: 0.6vmax;
+            border-top-right-radius: 0.6rem;
             border-bottom-left-radius: 2rem;
-            border-bottom-right-radius: 2vmax;
+            border-bottom-right-radius: 2rem;
             --opacity: 1;
             transition: all 300ms ease;
 
@@ -129,9 +128,9 @@
             align-items: center;
             background-color: var(--paleAccent);
             border-top-left-radius: 2rem;
-            border-top-right-radius: 3vmax;
+            border-top-right-radius: 3rem;
             border-bottom-left-radius: 3rem;
-            border-bottom-right-radius: 2vmax;
+            border-bottom-right-radius: 2rem;
             width: 45%;
             height: 30%;
             overflow: hidden;
@@ -240,10 +239,10 @@
             align-items: center;
             width: 15rem;
             height: 15rem;
-            border-top-left-radius: 2vmax;
-            border-top-right-radius: 1vmax;
-            border-bottom-left-radius: 1vmax;
-            border-bottom-right-radius: 2vmax;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 2rem;
             background-image: url(../imgs/cat/sub/4090.jpg);
             background-position: center;
             background-repeat: no-repeat;

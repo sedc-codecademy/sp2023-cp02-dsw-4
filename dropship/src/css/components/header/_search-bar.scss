@@ -8,13 +8,13 @@
     height: 3rem;
     width: 35rem;
     @include flexbox($placeItems: center);
-    border-top-left-radius: 1.7vmax;
-    border-top-right-radius: 0.3vmax;
-    border-bottom-left-radius: 0.3vmax;
-    border-bottom-right-radius: 1.7vmax;
-    border: 0.15vmax solid var(--tertColor);
+    border-top-left-radius: 1.7rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 1.7rem;
+    border: 0.15rem solid var(--tertColor);
     background-color: var(--tpPri);
-    backdrop-filter: blur(2vmax);
+    backdrop-filter: blur(2rem);
     overflow: hidden;
     transition: 300ms all ease;
     z-index: 6;
@@ -27,7 +27,7 @@
         border-radius: inherit;
         border: none;
         outline: none;
-        text-indent: 1vmax;
+        text-indent: 1rem;
         color: var(--secColor);
     }
 
@@ -39,19 +39,19 @@
             content: '';
             inset: 0;
             position: absolute;
-            filter: blur(1.5vmax);
+            filter: blur(1.5rem);
             transition: 300ms all ease;
         }
 
         &.clearButton,
         &#searchButton {
-            margin-left: 0.3vmax;
+            margin-left: 0.3rem;
             display: none;
         }
 
         &.categoriesButton {
             position: relative;
-            margin-right: 0.6vmax;
+            margin-right: 0.6rem;
         }
 
         &:hover {
@@ -70,10 +70,10 @@
 
     .divider {
         position: relative;
-        border-left: 0.2vmax solid var(--accent);
+        border-left: 0.2rem solid var(--accent);
         height: 70%;
-        border-radius: 1vmax;
-        margin: 0 0.3vmax 0 0.3vmax;
+        border-radius: 1rem;
+        margin: 0 0.3rem 0 0.3rem;
     }
 }
 
@@ -84,7 +84,7 @@
 // SEACH BAR STATES
 
 .active {
-    border: 0.15vmax solid var(--accent) !important;
+    border: 0.15rem solid var(--accent) !important;
     transition: 300ms all ease;
 }
 
