@@ -5,21 +5,20 @@
   --priColor: rgb(243, 243, 243);
   --tpPri: rgba(255, 255, 255, 0.703);
   --secColor: rgba(0, 0, 0, 0.822);
-  --secAccent: rgb(255, 0, 225);
-  --accent: rgb(255, 0, 72);
-  --tertAccent: rgb(255, 217, 0);
+  --secAccent: rgb(255, 85, 235);
+  --accent: rgb(255, 79, 129);
+  --tertAccent: rgb(255, 228, 78);
   --tertColor: rgba(128, 128, 128, 0.598);
   --paleAccent: rgba(255, 115, 0, 0.113);
-  --something: linear-gradient(to right ,var(--accent), var(--secAccent));
 }
 
 .dark-mode {
   --priColor: #020202f0;
   --tpPri: rgba(0, 0, 0, 0.475);
   --secColor: rgb(243, 243, 243);
-  --accent: rgb(0, 255, 180);
-  --secAccent: rgba(9, 255, 0, 0.834);
-  --tertAccent: rgb(255, 0, 174);
+  --accent: rgb(84, 255, 204);
+  --secAccent: rgba(95, 255, 89, 0.834);
+  --tertAccent: rgb(255, 70, 196);
   --paleAccent: rgba(0, 255, 179, 0.092);
 }
 
@@ -62,6 +61,9 @@ header {
   height: 70svh;
   width: 100svw;
   position: relative;
+  display: grid;
+  place-content: center;
+  align-items: center;
 }
 header .headerGradient {
   position: absolute;
@@ -146,7 +148,8 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.15rem solid var(--tertColor);
   background-color: var(--tpPri);
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 6;
@@ -239,7 +242,8 @@ header .headerGradient {
   border-bottom: none;
   border-top: none !important;
   background-color: var(--tpPri);
-  backdrop-filter: blur(0.2vmax);
+  -webkit-backdrop-filter: blur(0.2vmax);
+          backdrop-filter: blur(0.2vmax);
   z-index: 6;
   transition: 300ms all ease;
 }
@@ -284,7 +288,9 @@ header .headerGradient {
 }
 .search-suggestions ul li:hover {
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: var(--accent);
   background-color: var(--tpPri);
   transition: 300ms all ease;
@@ -295,7 +301,8 @@ header .headerGradient {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-block-end: 0.5rem;
+  -webkit-margin-after: 0.5rem;
+          margin-block-end: 0.5rem;
 }
 .search-suggestions .search-buttons button {
   position: relative;
@@ -342,7 +349,8 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.15rem solid var(--tertColor) !important;
-  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   overflow: hidden;
   padding: 1rem;
   transform: translateY(100vh);
@@ -359,7 +367,9 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -548,7 +558,8 @@ header .headerGradient {
   position: relative;
   min-width: 10rem;
   border-radius: 0.3vmax;
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--accent), var(--secAccent));
   max-height: 0;
   color: black;
@@ -581,9 +592,12 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   background-color: var(--tpPri);
-  backdrop-filter: blur(1vmax);
+  -webkit-backdrop-filter: blur(1vmax);
+          backdrop-filter: blur(1vmax);
   border-radius: 0.5vmax;
   overflow: hidden;
   z-index: 10;
@@ -767,4 +781,137 @@ main {
   justify-content: center;
   height: 10rem;
   width: 10rem;
+}
+
+.loginDropdown {
+  display: flex;
+  justify-content: center;
+  border: 0.15rem solid var(--tertColor);
+  border-radius: 1.5rem;
+  width: 45rem;
+  height: 35rem;
+  overflow: hidden;
+  z-index: 15;
+  transform: translateY(-100vh);
+  opacity: 0;
+  transition: 400ms all ease-in-out;
+}
+.loginDropdown form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.loginDropdown form div {
+  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loginDropdown form button {
+  position: relative;
+  bottom: -0.5vmax;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 0.5vmax;
+  transition: 300ms all ease;
+}
+.loginDropdown form button:hover {
+  background-color: var(--accent);
+  transition: 300ms all ease;
+}
+.loginDropdown a {
+  color: var(--secColor);
+}
+.loginDropdown .loginUi {
+  gap: 1rem;
+  background-color: var(--tpPri);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+}
+.loginDropdown .loginUi section {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-top: -5rem;
+}
+.loginDropdown .loginUi section div {
+  flex-direction: row;
+}
+.loginDropdown .loginUi .loginInput div {
+  position: relative;
+}
+.loginDropdown .loginUi .loginInput input {
+  position: relative;
+  width: 14rem;
+  height: 2.5rem;
+  text-indent: 0.5rem;
+  background-color: transparent;
+  color: var(--secColor);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  border: 0.15rem solid var(--tertColor);
+  border-radius: 0.5rem;
+  outline: none;
+  caret-color: var(--secColor);
+  margin: 0.2rem;
+}
+.loginDropdown .loginUi .loginInput input:focus {
+  border: 0.15rem solid var(--accent);
+}
+.loginDropdown .loginUi .loginInput input::-moz-placeholder {
+  color: var(--secColor);
+}
+.loginDropdown .loginUi .loginInput input::placeholder {
+  color: var(--secColor);
+}
+.loginDropdown .loginUi .loginInput label {
+  position: absolute;
+  top: 0.7rem;
+  z-index: 1;
+  pointer-events: none;
+  transition: 300ms all ease;
+}
+.loginDropdown .loginUi .loginFunc {
+  margin-top: 1rem;
+}
+.loginDropdown .loginUi .loginFunc section a {
+  font-size: 0.8rem;
+}
+.loginDropdown .registerUi {
+  background-color: var(--paleAccent);
+  -webkit-backdrop-filter: blur(3rem);
+          backdrop-filter: blur(3rem);
+  gap: 2rem;
+}
+.loginDropdown svg {
+  height: 2.4rem;
+  width: 2.4rem;
+  fill: var(--secColor);
+  transition: 300ms all ease;
+}
+.loginDropdown svg:hover {
+  transition: 300ms all ease;
+}
+.loginDropdown svg#facebook:hover {
+  fill: rgb(0, 162, 255);
+}
+.loginDropdown svg#git:hover {
+  fill: var(--accent);
+}
+.loginDropdown svg#google:hover {
+  fill: rgb(255, 0, 0);
+}
+
+.on {
+  transform: translateY(0vh);
+  opacity: 1;
+  transition: 400ms all ease-in-out;
 }/*# sourceMappingURL=styles.css.map */
