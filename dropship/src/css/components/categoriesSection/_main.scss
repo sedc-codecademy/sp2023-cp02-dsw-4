@@ -3,11 +3,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    section{
+    // section{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     height: 10rem;
+    //     width: 10rem;
+    //     img{
+    //         width: 10px;
+    //         height: 10px;
+    //     }
+    // }
+    .scroll-images {
+        width: 100%;
+        height: auto;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 10rem;
-        width: 10rem;
-    }
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+    
+    .scroll-images::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: #aaa;
+      }
+      
+    
+    .scroll-images::-webkit-scrollbar-thumb {
+        background-color: black;
+      }
+    
+      .catSection{
+        width: 120px;
+        height: 100px;
+        margin: 1px 10px;
+        overflow: hidden;
+    
+      }
+    
 }
