@@ -4,7 +4,6 @@
 
 .ctDropDown {
     position: absolute;
-    opacity: 0;
     display: flex;
     width: 80rem;
     height: 42rem;
@@ -15,12 +14,12 @@
     border-bottom-right-radius: 1.7rem;
     background-color: var(--tpPri);
     border: 0.15rem solid var(--tertColor) !important;
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(2rem);
     overflow: hidden;
     padding: 1rem;
     transform: translateY(100vh);
     transform-origin: 150% 15%;
-    z-index: -10;
+    visibility: collapse;
     
     ul {
         position: relative;

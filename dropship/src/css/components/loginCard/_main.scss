@@ -1,0 +1,87 @@
+@use "../../abstracts";
+
+.loginDropdown {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -250%);
+    display: flex;
+    justify-content: center;
+    border: 0.2rem solid var(--accent);
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1rem;
+    border-top-left-radius: 1.7rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 1.7rem;
+    width: 50rem;
+    height: 40rem;
+    overflow: hidden;
+    z-index: 15;
+    opacity: 0;
+    transition: 400ms all ease-in-out;
+    z-index: 5;
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        div {
+            gap: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            position: relative;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: 300ms all ease;
+        }
+
+        span{
+            font-weight: 650;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        a {
+            color: var(--secColor);
+        }
+    }
+
+    svg {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: var(--secColor);
+        transition: 300ms all ease;
+
+        &:hover {
+            fill: var(--accent);
+            transition: 300ms all ease;
+        }
+
+        &#google {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}
+
+.on {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: 400ms all ease-in-out;
+}
+
+@media (max-width: 1440px) {
+    .loginDropdown{
+        top: 50%;
+    }
+}
