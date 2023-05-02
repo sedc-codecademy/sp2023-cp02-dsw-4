@@ -770,65 +770,44 @@ main {
   min-height: 100vh;
 }
 
-.menu-wrapper {
-  margin: 3em;
+#masterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+}
+#masterContainer img {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+#masterContainer .arrow {
+  border-radius: 20px 6px;
+  position: absolute;
+  top: 30%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+#container {
+  border: 1px solid var(--accent);
+  border-radius: 10px;
   position: relative;
-  max-width: 500px;
-  height: 100px;
-  margin: 1em auto;
-  border: 1px solid black;
+  display: flex;
+  width: 50vw;
+  height: 10vw;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-.menu-wrapper * {
-  padding: 0;
-  margin: 0;
+
+#left-arrow {
+  left: 400px;
 }
 
-.menu {
-  height: 120px;
-  background: #f3f3f3;
-  box-sizing: border-box;
-  white-space: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-.menu .item {
-  display: inline-block;
-  width: 100px;
-  height: 100%;
-  outline: 1px solid gray;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.paddle {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3em;
-}
-
-.left-paddle {
-  left: 0;
-}
-
-.right-paddle {
-  right: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-.print {
-  margin: auto;
-  max-width: 500px;
-}
-.print span {
-  display: inline-block;
-  width: 100px;
+#right-arrow {
+  right: 400px;
 }
 
 .loginDropdown {
