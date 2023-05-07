@@ -1,0 +1,1102 @@
+[
+    {
+        "title": "Dell Inspiron 15",
+        "price": 999.99,
+        "description": "The Dell Inspiron 15 is a powerful and reliable laptop that is perfect for both work and play.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "HP Pavilion 14",
+        "price": 799.99,
+        "description": "The HP Pavilion 14 is a slim and stylish laptop that is great for everyday use.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 100,
+        "rating": {
+            "rate": 4.0,
+            "count": 200
+        }
+    },
+    {
+        "title": "Apple MacBook Pro",
+        "price": 1499.99,
+        "description": "The Apple MacBook Pro is a high-end laptop that is perfect for professionals who need a powerful and reliable computer.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 800
+        }
+    },
+    {
+        "title": "Acer Aspire 5",
+        "price": 699.99,
+        "description": "The Acer Aspire 5 is an affordable and reliable laptop that is perfect for students and casual users.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 200,
+        "rating": {
+            "rate": 4.2,
+            "count": 300
+        }
+    },
+    {
+        "title": "Lenovo IdeaPad 3",
+        "price": 599.99,
+        "description": "The Lenovo IdeaPad 3 is a budget-friendly laptop that is perfect for basic computing tasks.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 300,
+        "rating": {
+            "rate": 3.9,
+            "count": 100
+        }
+    },
+    {
+        "title": "Dell XPS 13",
+        "price": 1199.99,
+        "description": "The Dell XPS 13 is a premium laptop that offers excellent performance and a sleek design.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 30,
+        "rating": {
+            "rate": 4.7,
+            "count": 400
+        }
+    },
+    {
+        "title": "Microsoft Surface Pro 7",
+        "price": 899.99,
+        "description": "The Microsoft Surface Pro 7 is a versatile 2-in-1 laptop that can be used as a tablet or a laptop.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 21,
+        "rating": {
+            "rate": 4.1,
+            "count": 211
+        }
+    },
+    {
+        "title": "ASUS ROG Strix G15",
+        "price": 1399.99,
+        "description": "The ASUS ROG Strix G15 is a high-performance gaming laptop that offers top-of-the-line graphics and processing power.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 10,
+        "rating": {
+            "rate": 4.9,
+            "count": 1000
+        }
+    },
+    {
+        "title": "HP Spectre x360",
+        "price": 1299.99,
+        "description": "The HP Spectre x360 is a premium 2-in-1 laptop that offers excellent performance and a stunning design.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 600
+        }
+    },
+    {
+        "title": "Acer Nitro 5",
+        "price": 899.99,
+        "description": "The Acer Nitro 5 is a budget-friendly gaming laptop that offers impressive performance and a sleek design.",
+        "category": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "stock": 50,
+        "rating": {
+            "rate": 4.3,
+            "count": 400
+        }
+    },
+    {
+        "title": "Apple iPhone 13 Pro Max",
+        "price": 1299.99,
+        "description": "The iPhone 13 Pro Max is the latest flagship smartphone from Apple, featuring a stunning 6.7-inch Super Retina XDR display and a powerful A15 Bionic chip.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 100,
+        "rating": {
+            "rate": 4.9,
+            "count": 1000
+        }
+    },
+    {
+        "title": "Samsung Galaxy S21 Ultra",
+        "price": 1199.99,
+        "description": "The Samsung Galaxy S21 Ultra is a premium Android smartphone with a stunning 6.8-inch Dynamic AMOLED display and a powerful Exynos 2100 processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 50,
+        "rating": {
+            "rate": 4.8,
+            "count": 900
+        }
+    },
+    {
+        "title": "Google Pixel 6 Pro",
+        "price": 1099.99,
+        "description": "The Google Pixel 6 Pro is a high-end Android smartphone with a beautiful 6.7-inch OLED display and the latest Google Tensor processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 25,
+        "rating": {
+            "rate": 4.7,
+            "count": 800
+        }
+    },
+    {
+        "title": "OnePlus 9 Pro",
+        "price": 999.99,
+        "description": "The OnePlus 9 Pro is a premium Android smartphone with a 6.7-inch Fluid AMOLED display and a Snapdragon 888 processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 75,
+        "rating": {
+            "rate": 4.6,
+            "count": 700
+        }
+    },
+    {
+        "title": "Apple iPhone SE (2020)",
+        "price": 399.99,
+        "description": "The iPhone SE (2020) is a budget-friendly iPhone with a 4.7-inch Retina display and the A13 Bionic chip.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 200,
+        "rating": {
+            "rate": 4.5,
+            "count": 600
+        }
+    },
+    {
+        "title": "Xiaomi Mi 11",
+        "price": 799.99,
+        "description": "The Xiaomi Mi 11 is a flagship Android smartphone with a 6.81-inch AMOLED display and a Snapdragon 888 processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 100,
+        "rating": {
+            "rate": 4.8,
+            "count": 500
+        }
+    },
+    {
+        "title": "Sony Xperia 1 III",
+        "price": 1299.99,
+        "description": "The Sony Xperia 1 III is a high-end Android smartphone with a 6.5-inch 4K OLED display and a Snapdragon 888 processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 50,
+        "rating": {
+            "rate": 4.7,
+            "count": 400
+        }
+    },
+    {
+        "title": "Apple iPhone 12 mini",
+        "price": 699.99,
+        "description": "The iPhone 12 mini is a compact iPhone with a 5.4-inch Super Retina XDR display and the A14 Bionic chip.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 150,
+        "rating": {
+            "rate": 4.6,
+            "count": 300
+        }
+    },
+    {
+        "title": "Samsung Galaxy Z Fold3 5G",
+        "price": 1799.99,
+        "description": "The Samsung Galaxy Z Fold3 5G is a foldable Android smartphone with a 7.6-inch Dynamic AMOLED display and a Snapdragon 888 processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 25,
+        "rating": {
+            "rate": 4.5,
+            "count": 200
+        }
+    },
+    {
+        "title": "Google Pixel 5a",
+        "price": 449.99,
+        "description": "The Google Pixel 5a is a mid-range Android smartphone with a 6.34-inch OLED display and a Snapdragon 765G processor.",
+        "category": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "stock": 100,
+        "rating": {
+            "rate": 4.4,
+            "count": 150
+        }
+    },
+    {
+        "title": "HP Color LaserJet Pro MFP M283fdw",
+        "price": 499.99,
+        "description": "The HP Color LaserJet Pro MFP M283fdw is a multi-function color laser printer that can print, copy, scan, and fax.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 100
+        }
+    },
+    {
+        "title": "Dell UltraSharp U2720Q",
+        "price": 699.99,
+        "description": "The Dell UltraSharp U2720Q is a 27-inch 4K monitor with a wide color gamut and USB-C connectivity.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 25,
+        "rating": {
+            "rate": 4.8,
+            "count": 75
+        }
+    },
+    {
+        "title": "Logitech MX Keys",
+        "price": 99.99,
+        "description": "The Logitech MX Keys is a wireless keyboard with backlit keys and a comfortable typing experience.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 100,
+        "rating": {
+            "rate": 4.6,
+            "count": 200
+        }
+    },
+    {
+        "title": "Fujitsu ScanSnap iX1600",
+        "price": 449.99,
+        "description": "The Fujitsu ScanSnap iX1600 is a high-speed document scanner with automatic document feeder and WiFi connectivity.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 20,
+        "rating": {
+            "rate": 4.7,
+            "count": 50
+        }
+    },
+    {
+        "title": "Sony WH-1000XM4",
+        "price": 349.99,
+        "description": "The Sony WH-1000XM4 is a noise-cancelling Bluetooth headphone with exceptional sound quality and comfort.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 50,
+        "rating": {
+            "rate": 4.9,
+            "count": 150
+        }
+    },
+    {
+        "title": "HP EliteBook 840 G8",
+        "price": 1299.99,
+        "description": "The HP EliteBook 840 G8 is a high-performance business laptop with a durable chassis and long battery life.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Epson EcoTank ET-3760",
+        "price": 399.99,
+        "description": "The Epson EcoTank ET-3760 is an all-in-one printer with a large ink tank that can last for up to 2 years of printing.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 30,
+        "rating": {
+            "rate": 4.4,
+            "count": 80
+        }
+    },
+    {
+        "title": "LG 27UL850-W",
+        "price": 549.99,
+        "description": "The LG 27UL850-W is a 27-inch 4K monitor with USB-C connectivity and a wide color gamut.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 90
+        }
+    },
+    {
+        "title": "Logitech C920s HD Pro Webcam",
+        "price": 89.99,
+        "description": "The Logitech C920s HD Pro Webcam is a high-quality webcam with 1080p resolution and built-in privacy shutter.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 40,
+        "rating": {
+            "rate": 4.6,
+            "count": 150
+        }
+    },
+    {
+        "title": "Anker PowerCore+ 26800mAh PD",
+        "price": 129.99,
+        "description": "The Anker PowerCore+ 26800mAh PD is a portable power bank with USB-C Power Delivery and fast charging technology.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 100,
+        "rating": {
+            "rate": 4.8,
+            "count": 300
+        }
+    },
+    {
+        "title": "HP EliteBook 840 G8",
+        "price": 1299.99,
+        "description": "The HP EliteBook 840 G8 is a high-performance business laptop with a durable chassis and long battery life.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Epson EcoTank ET-3760",
+        "price": 399.99,
+        "description": "The Epson EcoTank ET-3760 is an all-in-one printer with a large ink tank that can last for up to 2 years of printing.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 30,
+        "rating": {
+            "rate": 4.4,
+            "count": 80
+        }
+    },
+    {
+        "title": "LG 27UL850-W",
+        "price": 549.99,
+        "description": "The LG 27UL850-W is a 27-inch 4K monitor with USB-C connectivity and a wide color gamut.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 90
+        }
+    },
+    {
+        "title": "Logitech C920s HD Pro Webcam",
+        "price": 89.99,
+        "description": "The Logitech C920s HD Pro Webcam is a high-quality webcam with 1080p resolution and built-in privacy shutter.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 40,
+        "rating": {
+            "rate": 4.6,
+            "count": 150
+        }
+    },
+    {
+        "title": "Anker PowerCore+ 26800mAh PD",
+        "price": 129.99,
+        "description": "The Anker PowerCore+ 26800mAh PD is a portable power bank with USB-C Power Delivery and fast charging technology.",
+        "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "stock": 100,
+        "rating": {
+            "rate": 4.8,
+            "count": 300
+        }
+    },
+    {
+        "title": "PlayStation VR",
+        "price": 399.99,
+        "description": "The PlayStation VR is a virtual reality headset that offers a truly immersive gaming experience.",
+        "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+        "stock": 15,
+        "rating": {
+            "rate": 4.4,
+            "count": 100
+        }
+    },
+    {
+        "title": "Xbox Elite Wireless Controller Series 2",
+        "price": 179.99,
+        "description": "The Xbox Elite Wireless Controller Series 2 is a premium gamepad with customizable components and adjustable tension thumbsticks.",
+        "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+        "stock": 20,
+        "rating": {
+            "rate": 4.9,
+            "count": 150
+        }
+    },
+    {
+        "title": "Logitech G Pro X Mechanical Gaming Keyboard",
+        "price": 129.99,
+        "description": "The Logitech G Pro X Mechanical Gaming Keyboard is a high-performance keyboard with swappable mechanical switches and customizable RGB lighting.",
+        "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 100
+        }
+    },
+    {
+        "title": "Nintendo Switch Pro Controller",
+        "price": 69.99,
+        "description": "The Nintendo Switch Pro Controller is a premium gamepad with motion controls and HD rumble.",
+        "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+        "stock": 25,
+        "rating": {
+            "rate": 4.7,
+            "count": 200
+        }
+    },
+    {
+        "title": "Astro A40 TR Gaming Headset",
+        "price": 149.99,
+        "description": "The Astro A40 TR Gaming Headset is a high-quality headset with Dolby Atmos surround sound and customizable speaker tags.",
+        "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+        "stock": 15,
+        "rating": {
+            "rate": 4.6,
+            "count": 150
+        }
+    },
+    {
+        "title": "Nintendo Switch Lite",
+        "price": 199.99,
+        "description": "Handheld gaming system with built-in controllers, HD rumble, and amiibo support.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "Sony PSP",
+        "price": 149.99,
+        "description": "Portable gaming console with 4.3-inch LCD screen, Wi-Fi, and Bluetooth.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 50,
+        "rating": {
+            "rate": 3.8,
+            "count": 250
+        }
+    },
+    {
+        "title": "Nintendo 3DS XL",
+        "price": 179.99,
+        "description": "Dual-screen handheld gaming system with glasses-free 3D display, StreetPass and SpotPass communication, and built-in software.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 75,
+        "rating": {
+            "rate": 4.2,
+            "count": 300
+        }
+    },
+    {
+        "title": "PlayStation Vita",
+        "price": 199.99,
+        "description": "Handheld game console with front and rear cameras, Wi-Fi, and Bluetooth capabilities.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 60,
+        "rating": {
+            "rate": 3.9,
+            "count": 200
+        }
+    },
+    {
+        "title": "Nintendo Game & Watch: Super Mario Bros",
+        "price": 49.99,
+        "description": "Portable electronic game featuring Super Mario Bros, with a color LCD screen and modern features.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 30,
+        "rating": {
+            "rate": 4.7,
+            "count": 100
+        }
+    },
+    {
+        "title": "Game Boy Advance SP",
+        "price": 79.99,
+        "description": "A classic handheld gaming device with a backlit screen and rechargeable battery.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 250,
+        "rating": {
+            "rate": 4.0,
+            "count": 250
+        }
+    },
+    {
+        "title": "PSP Go",
+        "price": 149.99,
+        "description": "A sleek and portable gaming device with a slide-out control pad and digital downloads.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 150,
+        "rating": {
+            "rate": 3.5,
+            "count": 150
+        }
+    },
+    {
+        "title": "Nintendo DSi XL",
+        "price": 129.99,
+        "description": "A larger version of the popular Nintendo DSi handheld device with dual screens and a touchpad.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 200,
+        "rating": {
+            "rate": 4.2,
+            "count": 200
+        }
+    },
+    {
+        "title": "Sony PSP-3000",
+        "price": 169.99,
+        "description": "A high-quality handheld gaming device with a large screen and built-in microphone.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 100,
+        "rating": {
+            "rate": 4.1,
+            "count": 100
+        }
+    },
+    {
+        "title": "Steam Deck Portable Gaming Console",
+        "price": 399.99,
+        "description": "The Steam Deck is a powerful and portable gaming console that allows you to play your favorite PC games on-the-go.",
+        "category": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "Wireless Noise-Cancelling Headphones",
+        "price": 199.99,
+        "description": "Experience immersive sound without any distractions with these wireless noise-cancelling headphones.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "4K Ultra HD Smart TV",
+        "price": 899.99,
+        "description": "Get the ultimate viewing experience with this 4K Ultra HD Smart TV. With built-in apps and voice control, you can easily access your favorite content.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 50,
+        "rating": {
+            "rate": 4.8,
+            "count": 300
+        }
+    },
+    {
+        "title": "Bluetooth Soundbar",
+        "price": 149.99,
+        "description": "Upgrade your home theater system with this Bluetooth soundbar. With high-quality sound and wireless connectivity, you can enjoy your favorite movies and shows like never before.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 200,
+        "rating": {
+            "rate": 4.3,
+            "count": 700
+        }
+    },
+    {
+        "title": "Portable Wireless Speaker",
+        "price": 79.99,
+        "description": "Take your music anywhere with this portable wireless speaker. With a compact design and long battery life, you can enjoy your tunes on the go.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 300,
+        "rating": {
+            "rate": 4.6,
+            "count": 1000
+        }
+    },
+    {
+        "title": "Wireless Video Doorbell",
+        "price": 199.99,
+        "description": "Keep an eye on your home with this wireless video doorbell. With motion detection and two-way audio, you can see and speak to anyone at your doorstep from your smartphone.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 50,
+        "rating": {
+            "rate": 4.2,
+            "count": 400
+        }
+    },
+    {
+        "title": "Bose QuietComfort 35 II Wireless Headphones",
+        "price": 299.99,
+        "description": "Noise-cancelling wireless headphones with up to 20 hours of battery life.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 1200
+        }
+    },
+    {
+        "title": "Sony SRS-XB43 Portable Bluetooth Speaker",
+        "price": 249.99,
+        "description": "Waterproof and dustproof portable speaker with up to 24 hours of battery life.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 30,
+        "rating": {
+            "rate": 4.2,
+            "count": 800
+        }
+    },
+    {
+        "title": "LG OLED65C1PUB 65-Inch 4K Smart OLED TV",
+        "price": 1999.99,
+        "description": "65-inch 4K OLED TV with AI ThinQ technology and HDMI 2.1 for gaming.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 10,
+        "rating": {
+            "rate": 4.8,
+            "count": 300
+        }
+    },
+    {
+        "title": "JBL TUNE 125TWS True Wireless Earbuds",
+        "price": 99.99,
+        "description": "True wireless earbuds with up to 32 hours of battery life and JBL Pure Bass sound.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 70,
+        "rating": {
+            "rate": 4.1,
+            "count": 500
+        }
+    },
+    {
+        "title": "Samsung HW-Q60T 5.1ch Soundbar with Acoustic Beam",
+        "price": 499.99,
+        "description": "5.1-channel soundbar with Acoustic Beam technology and built-in Alexa voice control.",
+        "category": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "stock": 20,
+        "rating": {
+            "rate": 4.4,
+            "count": 700
+        }
+    },
+    {
+        "title": "Smartwatch X",
+        "price": 149.99,
+        "description": "The Smartwatch X is a high-tech device that combines the best features of a fitness tracker and a smartwatch.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "Fitness Tracker Y",
+        "price": 79.99,
+        "description": "The Fitness Tracker Y is the ultimate workout companion, with advanced features such as heart rate monitoring and GPS tracking.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 200,
+        "rating": {
+            "rate": 4.0,
+            "count": 250
+        }
+    },
+    {
+        "title": "Smart Glasses Z",
+        "price": 199.99,
+        "description": "The Smart Glasses Z are the perfect combination of fashion and technology, with features such as voice commands and AR capabilities.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 50,
+        "rating": {
+            "rate": 3.8,
+            "count": 100
+        }
+    },
+    {
+        "title": "Sleep Tracker W",
+        "price": 59.99,
+        "description": "The Sleep Tracker W helps you get a better night's sleep by tracking your sleep patterns and providing personalized recommendations.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 150,
+        "rating": {
+            "rate": 4.2,
+            "count": 300
+        }
+    },
+    {
+        "title": "Smart Ring V",
+        "price": 129.99,
+        "description": "The Smart Ring V is a stylish and discreet way to stay connected, with features such as message notifications and mobile payments.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 75,
+        "rating": {
+            "rate": 3.9,
+            "count": 200
+        }
+    },
+    {
+        "title": "Fitness Tracker Pro",
+        "price": 79.99,
+        "description": "Track your fitness goals with our new Fitness Tracker Pro",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "Wireless Headset",
+        "price": 129.99,
+        "description": "Experience high-quality audio with our new Wireless Headset",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 50,
+        "rating": {
+            "rate": 4.2,
+            "count": 300
+        }
+    },
+    {
+        "title": "Smart Eyewear",
+        "price": 299.99,
+        "description": "Experience augmented reality and stay connected with our Smart Eyewear",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 20,
+        "rating": {
+            "rate": 4.7,
+            "count": 50
+        }
+    },
+    {
+        "title": "Noise Cancelling Smart Headband",
+        "price": 149.99,
+        "description": "Experience a new level of peace and quiet with our noise-cancelling smart headband. It's the perfect companion for studying, meditating, or just enjoying your music in peace.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 23
+        }
+    },
+    {
+        "title": "Smart Cycling Glasses",
+        "price": 199.99,
+        "description": "Our smart cycling glasses combine high-quality optics with advanced features to enhance your ride. The built-in sensors provide real-time data on your speed, distance, and heart rate, while the voice control system allows you to stay focused on the road ahead.",
+        "category": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "stock": 30,
+        "rating": {
+            "rate": 4.2,
+            "count": 18
+        }
+    },
+    {
+        "title": "Ergonomic VR Headset",
+        "price": 249.99,
+        "description": "Experience virtual reality like never before with our ergonomic VR headset. Designed to fit comfortably on your head, it features high-quality lenses and an immersive audio system.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "VR Gaming Chair",
+        "price": 399.99,
+        "description": "Get the ultimate gaming experience with our VR gaming chair. Equipped with built-in haptic feedback and motion tracking technology, it's the perfect addition to any VR setup.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 20,
+        "rating": {
+            "rate": 4.2,
+            "count": 80
+        }
+    },
+    {
+        "title": "Wireless VR Controllers",
+        "price": 149.99,
+        "description": "Take control of your virtual world with our wireless VR controllers. They feature precision sensors and ergonomic design for a seamless experience.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 100,
+        "rating": {
+            "rate": 4.7,
+            "count": 200
+        }
+    },
+    {
+        "title": "VR Fitness Kit",
+        "price": 299.99,
+        "description": "Get in shape while having fun with our VR fitness kit. It includes a VR headset, motion controllers, and a library of fitness games designed to get your heart pumping.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 30,
+        "rating": {
+            "rate": 4.4,
+            "count": 60
+        }
+    },
+    {
+        "title": "VR Education Kit",
+        "price": 199.99,
+        "description": "Bring learning to life with our VR education kit. It includes a VR headset and a library of educational experiences designed to make learning fun and engaging.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 25,
+        "rating": {
+            "rate": 4.8,
+            "count": 40
+        }
+    },
+    {
+        "title": "Virtual Reality Headset with Hand Tracking",
+        "price": 499.99,
+        "description": "Experience virtual reality like never before with our latest headset that includes hand tracking technology. Get lost in immersive gaming worlds with smooth tracking and stunning graphics.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 200
+        }
+    },
+    {
+        "title": "Virtual Reality Treadmill",
+        "price": 2499.99,
+        "description": "Take your VR experience to the next level with our cutting-edge virtual reality treadmill. Walk, run, and jump in any direction with complete freedom of movement.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 10,
+        "rating": {
+            "rate": 4.8,
+            "count": 50
+        }
+    },
+    {
+        "title": "Virtual Reality Gloves",
+        "price": 299.99,
+        "description": "Interact with virtual objects like never before with our high-tech virtual reality gloves. Feel the texture and shape of objects in the virtual world for a more immersive experience.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 100,
+        "rating": {
+            "rate": 4.7,
+            "count": 150
+        }
+    },
+    {
+        "title": "Virtual Reality Exercise Bike",
+        "price": 899.99,
+        "description": "Get fit while exploring virtual reality worlds with our innovative exercise bike. Pedal your way through stunning landscapes while getting a workout.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 20,
+        "rating": {
+            "rate": 4.3,
+            "count": 80
+        }
+    },
+    {
+        "title": "Virtual Reality Haptic Suit",
+        "price": 1499.99,
+        "description": "Experience virtual reality like never before with our high-tech haptic suit. Feel the physical sensations of the virtual world, including impacts, vibrations, and temperature changes.",
+        "category": "58b31959-1232-453f-b631-6411be333ed3",
+        "stock": 30,
+        "rating": {
+            "rate": 4.9,
+            "count": 25
+        }
+    },
+    {
+        "title": "Nikon D850 DSLR Camera",
+        "price": 2999,
+        "description": "This professional-level DSLR camera offers exceptional image quality, high-speed performance, and advanced features.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 10,
+        "rating": {
+            "rate": 4.9,
+            "count": 120
+        }
+    },
+    {
+        "title": "Canon EOS Rebel T8i DSLR Camera",
+        "price": 799,
+        "description": "With a 24.2 megapixel APS-C CMOS sensor and 45-point all cross-type AF system, this camera delivers stunning image quality and fast autofocus performance.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 20,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Fujifilm X-T4 Mirrorless Camera",
+        "price": 1699,
+        "description": "This mirrorless camera features a 26.1MP X-Trans CMOS 4 sensor, in-body image stabilization, and advanced video recording capabilities.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 80
+        }
+    },
+    {
+        "title": "Sony Alpha a7 III Mirrorless Camera",
+        "price": 1999,
+        "description": "This mirrorless camera features a 24.2MP full-frame Exmor R BSI CMOS sensor and advanced autofocus system, delivering exceptional image quality and fast performance.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 8,
+        "rating": {
+            "rate": 4.8,
+            "count": 100
+        }
+    },
+    {
+        "title": "GoPro HERO9 Black Action Camera",
+        "price": 449,
+        "description": "This action camera features a 23.6MP sensor and HyperSmooth 3.0 video stabilization, enabling you to capture smooth and steady footage in a variety of environments.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 30,
+        "rating": {
+            "rate": 4.6,
+            "count": 200
+        }
+    },
+    {
+        "title": "Canon EOS R6 Mirrorless Camera",
+        "price": 2499.99,
+        "description": "The Canon EOS R6 is a versatile mirrorless camera designed for both photography and videography. It features a 20.1-megapixel full-frame CMOS sensor, DIGIC X image processor, and Dual Pixel CMOS AF system.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 10,
+        "rating": {
+            "rate": 4.8,
+            "count": 30
+        }
+    },
+    {
+        "title": "Nikon Z7 II Mirrorless Camera",
+        "price": 3399.95,
+        "description": "The Nikon Z7 II is a high-resolution mirrorless camera that features a 45.7-megapixel full-frame sensor, 4K UHD video recording, and advanced autofocus system. It's designed to deliver outstanding image quality and performance in any shooting situation.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 5,
+        "rating": {
+            "rate": 4.5,
+            "count": 20
+        }
+    },
+    {
+        "title": "Sony Alpha A9 II Mirrorless Camera",
+        "price": 4499.99,
+        "description": "The Sony Alpha A9 II is a top-of-the-line mirrorless camera designed for professional photographers. It features a 24.2-megapixel full-frame sensor, 4K video recording, and an advanced autofocus system that delivers exceptional speed and accuracy.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 7,
+        "rating": {
+            "rate": 4.9,
+            "count": 15
+        }
+    },
+    {
+        "title": "Fujifilm X-T4 Mirrorless Camera",
+        "price": 1699.95,
+        "description": "The Fujifilm X-T4 is a high-performance mirrorless camera designed for photographers and videographers. It features a 26.1-megapixel APS-C sensor, in-body image stabilization, and 4K video recording. Its compact and lightweight design makes it easy to carry around.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 12,
+        "rating": {
+            "rate": 4.7,
+            "count": 25
+        }
+    },
+    {
+        "title": "Panasonic Lumix GH5 Mark II Mirrorless Camera",
+        "price": 1697.99,
+        "description": "The Panasonic Lumix GH5 Mark II is a high-end mirrorless camera designed for professional videographers. It features a 20.3-megapixel Micro Four Thirds sensor, 4K video recording, and a host of advanced video features like V-LogL and HDR recording. Its rugged and weather-sealed body makes it ideal for shooting in challenging conditions.",
+        "category": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "stock": 8,
+        "rating": {
+            "rate": 3.5,
+            "count": 36
+        }
+    },
+    {
+        "title": "Stainless Steel Watch Band",
+        "price": 25.99,
+        "description": "This stainless steel watch band is compatible with Apple Watch Series 6, 5, 4, 3, 2, 1, SE. It is easy to install and has a stylish and durable design.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "Laptop Cooling Pad",
+        "price": 39.99,
+        "description": "This laptop cooling pad has 5 high-speed fans that keep your laptop cool and prevent overheating. It has adjustable height settings and a sleek design.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 50,
+        "rating": {
+            "rate": 4.2,
+            "count": 200
+        }
+    },
+    {
+        "title": "Phone Case with Card Holder",
+        "price": 19.99,
+        "description": "This phone case is made of durable TPU and has a convenient card holder on the back. It fits iPhone X, XS, and 11 Pro.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 200,
+        "rating": {
+            "rate": 4.0,
+            "count": 300
+        }
+    },
+    {
+        "title": "Mechanical Keyboard Switches",
+        "price": 49.99,
+        "description": "These mechanical keyboard switches have a tactile feel and a long lifespan. They are compatible with Cherry MX mechanical keyboards.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 75,
+        "rating": {
+            "rate": 4.8,
+            "count": 100
+        }
+    },
+    {
+        "title": "Camera Tripod",
+        "price": 59.99,
+        "description": "This camera tripod is made of lightweight aluminum and has adjustable height settings. It is compatible with most cameras and camcorders.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 30,
+        "rating": {
+            "rate": 4.6,
+            "count": 150
+        }
+    },
+    {
+        "title": "Durable Phone Case",
+        "price": 15.99,
+        "description": "Protect your phone from scratches, drops, and bumps with this durable phone case. It's made of high-quality materials and features a shock-absorbent design.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 25
+        }
+    },
+    {
+        "title": "High-Speed USB-C Cable",
+        "price": 12.99,
+        "description": "Charge your devices quickly and easily with this high-speed USB-C cable. It's made of premium materials and features a tangle-free design.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 50,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "Ergonomic Mouse Pad",
+        "price": 8.99,
+        "description": "Make your computer use more comfortable with this ergonomic mouse pad. It features a non-slip base and a cushioned design that supports your wrist.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 75,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Adjustable Laptop Stand",
+        "price": 29.99,
+        "description": "Improve your posture and reduce eye strain with this adjustable laptop stand. It features a sturdy design and multiple height options to fit your needs.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 30,
+        "rating": {
+            "rate": 4.7,
+            "count": 5
+        }
+    },
+    {
+        "title": "Gaming Mouse",
+        "price": 49.99,
+        "description": "Get a competitive edge in your favorite games with this high-performance gaming mouse. It features customizable buttons and RGB lighting for a personalized experience.",
+        "category": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "stock": 20,
+        "rating": {
+            "rate": 4.9,
+            "count": 2
+        }
+    }
+]
