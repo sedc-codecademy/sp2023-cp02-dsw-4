@@ -18,7 +18,7 @@
   --tpPri: rgba(0, 0, 0, 0.475);
   --secColor: rgb(243, 243, 243);
   --accent: rgb(0, 255, 145);
-  --secAccent: rgba(8, 254, 0, 0.834);
+  --secAccent: rgba(17, 255, 0, 0.872);
   --tertAccent: rgb(255, 98, 0);
   --paleAccent: rgba(0, 255, 179, 0.092);
   --paleAccentTwo: rgba(0, 255, 145, 0.675);
@@ -78,6 +78,7 @@ header .headerGradient {
   width: 100%;
   height: 100%;
   z-index: -9;
+  top: -3rem;
 }
 .headerBackgroundImage svg {
   fill: transparent;
@@ -118,6 +119,7 @@ header .headerGradient {
   top: 1vmax;
   left: 1vmax;
   mix-blend-mode: difference;
+  pointer-events: none;
 }
 
 .search-form {
@@ -147,7 +149,7 @@ header .headerGradient {
   border-top-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 1.7rem;
-  border: 0.15rem solid var(--tertColor);
+  border: 0.15rem solid var(--paleAccent);
   background-color: var(--tpPri);
   backdrop-filter: blur(2rem);
   overflow: hidden;
@@ -228,23 +230,21 @@ header .headerGradient {
 .search-suggestions {
   position: absolute;
   top: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 35rem;
-  height: 0rem;
   overflow: hidden;
   border-bottom-left-radius: 0.3vmax;
   border-bottom-right-radius: 1.7vmax;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
-  border: 0.15vmax solid var(--tertColor);
+  border: 0.15rem solid var(--paleAccentTwo);
   border-bottom: none;
   border-top: none !important;
   background-color: var(--tpPri);
-  backdrop-filter: blur(3vmax);
+  backdrop-filter: blur(3rem);
   z-index: 6;
-  transition: 300ms all ease;
+  transition: 350ms all ease-in-out;
+  display: grid;
+  grid-template-rows: 0fr;
 }
 .search-suggestions ul {
   position: relative;
@@ -252,8 +252,8 @@ header .headerGradient {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: hidden;
   gap: 0.3rem;
-  margin: 1rem;
 }
 .search-suggestions ul li {
   height: 1.5rem;
@@ -266,6 +266,18 @@ header .headerGradient {
   border-bottom-left-radius: 0.3vmax;
   border-bottom-right-radius: 1.2vmax;
   transition: 300ms all ease;
+  opacity: 0;
+}
+.search-suggestions ul li:first-child {
+  margin-top: 0.5rem;
+}
+.search-suggestions ul li:last-child {
+  margin-bottom: 0.5rem;
+}
+.search-suggestions ul li.viewAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .search-suggestions ul li p {
   position: absolute;
@@ -277,7 +289,7 @@ header .headerGradient {
 }
 .search-suggestions ul li h6 {
   position: absolute;
-  left: 18rem;
+  left: 20rem;
   width: 25%;
 }
 .search-suggestions ul li h5 {
@@ -289,7 +301,7 @@ header .headerGradient {
   cursor: pointer;
   user-select: none;
   color: var(--accent);
-  background-color: var(--tpPri);
+  background-color: var(--paleAccent);
   transition: 300ms all ease;
 }
 .search-suggestions .search-buttons {
@@ -323,19 +335,28 @@ header .headerGradient {
   top: -0.5rem;
 }
 
+.lololo {
+  grid-template-rows: 1fr;
+  transition: all 300ms ease-in-out;
+}
+.lololo li {
+  opacity: 1 !important;
+}
+
 .opCtSg {
-  border-bottom: 0.15vmax solid var(--tertColor) !important;
+  border-bottom: 0.15vmax solid var(--paleAccentTwo) !important;
+  transition: all 300ms ease-in-out;
 }
 
 .opCtS2g {
   top: 0;
-  transition: top 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .ctDropDown {
   position: absolute;
   display: flex;
-  width: 80rem;
+  width: 85rem;
   height: 42rem;
   justify-content: space-between;
   border-top-left-radius: 1.7rem;
@@ -343,7 +364,7 @@ header .headerGradient {
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
-  border: 0.15rem solid var(--tertColor) !important;
+  border: 0.15rem solid var(--paleAccent) !important;
   backdrop-filter: blur(2rem);
   overflow: hidden;
   padding: 1rem;
@@ -370,27 +391,31 @@ header .headerGradient {
   padding-block: 0.5rem;
   margin-right: 0.7rem;
   border-top-left-radius: 2rem;
-  border-top-right-radius: 0.6rem;
+  border-top-right-radius: 1rem;
   border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
+  border-bottom-right-radius: 2.5rem;
+  border: 0.15rem solid var(--paleAccent);
   --opacity: 1;
+  font-weight: 550;
   transition: all 300ms ease;
 }
 .ctDropDown .categories-ul li::before {
   content: "";
   display: block;
   opacity: var(--opacity);
-  width: 3rem;
-  height: 3em;
+  width: 3.2rem;
+  height: 3.2em;
   border-radius: 50%;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
   transition: all 300ms ease;
+  position: relative;
+  left: -0.2rem;
+  border: 0.2rem solid var(--paleAccent);
 }
 .ctDropDown .categories-ul li:hover {
-  font-weight: 600;
   color: var(--accent);
   cursor: pointer;
   transition: all 300ms ease;
@@ -425,17 +450,24 @@ header .headerGradient {
   color: var(--accent);
   font-weight: 600;
   background-color: var(--paleAccent);
+  border-color: var(--paleAccentTwo) !important;
+}
+.ctDropDown .activeCat::before {
+  border: 0.2rem solid var(--paleAccentTwo) !important;
 }
 .ctDropDown .sub-categories-ul {
   display: flex;
-  width: 45rem;
+  width: 50rem;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 .ctDropDown .sub-categories-ul li {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--paleAccent);
+  border: 0.2rem solid var(--paleAccent);
   border-top-left-radius: 2rem;
   border-top-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
@@ -444,11 +476,14 @@ header .headerGradient {
   height: 30%;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0.5rem 0 0.5rem 1rem;
+  margin: 0.5rem 0 0.5rem 0rem;
   transition: 500ms all ease;
 }
 .ctDropDown .sub-categories-ul li section {
   margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 .ctDropDown .sub-categories-ul li::before {
   content: "";
@@ -479,7 +514,8 @@ header .headerGradient {
 .ctDropDown .sub-categories-ul li:hover {
   cursor: pointer;
   background-color: transparent;
-  transition: 500ms all ease;
+  border-color: var(--paleAccentTwo);
+  transition: 400ms all ease-in-out;
 }
 .ctDropDown .sub-categories-ul li:hover h3 {
   color: var(--accent);
@@ -515,7 +551,7 @@ header .headerGradient {
   background-image: var(--bgimg);
 }
 .ctDropDown .relevant-products {
-  width: 15rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -524,18 +560,28 @@ header .headerGradient {
 }
 .ctDropDown .relevant-products li {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
   width: 15rem;
-  height: 15rem;
+  height: 18rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 2rem;
   background-image: url(../imgs/cat/sub/4090.jpg);
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-color: var(--paleAccentTwo);
+  color: black;
+}
+.ctDropDown .relevant-products li p {
+  max-width: 70%;
+  font-weight: 550;
+}
+.ctDropDown .relevant-products li h1 {
+  margin-top: 1rem;
+  max-width: 70%;
 }
 .ctDropDown .relevant-products::after {
   content: "";
@@ -552,31 +598,44 @@ header .headerGradient {
   border-radius: 0.3vmax;
   backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--accent), var(--secAccent));
-  max-height: 0;
   color: black;
+  display: grid;
+  font-size: 1.1rem;
+  grid-template-rows: 0fr;
+  transition: 350ms all ease-in-out;
+  overflow: hidden;
 }
 .cartNotification ul {
   position: relative;
-  padding: 0.3vmax;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cartNotification ul :first-child {
+  margin-top: 0.2rem;
 }
 .cartNotification .notifCancel {
-  position: relative;
-  bottom: -0.5vmax;
-  width: 100%;
+  width: 90%;
   color: red;
   background-color: white;
   font-size: 1rem;
   letter-spacing: 0.2rem;
   font-family: "Share Tech", sans-serif;
   padding: 0.2vmax;
-  border-radius: 0.5vmax;
+  border-radius: 0.3vmax;
   transition: 300ms all ease;
-  margin-bottom: 0.7rem;
+  margin-block: 0.5rem;
 }
 .cartNotification .notifCancel:hover {
   color: white;
   background-color: red;
   transition: 300ms all ease;
+}
+
+.alertOn {
+  grid-template-rows: 1fr;
 }
 
 nav {
@@ -790,6 +849,8 @@ main svg {
   opacity: 0;
   transition: 400ms all ease-in-out;
   z-index: 5;
+  visibility: collapse;
+  transition: visibility 700ms all ease-in-out;
 }
 .loginDropdown form {
   display: flex;
@@ -921,11 +982,19 @@ main svg {
   fill: var(--priColor);
   background-color: var(--accent);
 }
+.loginDropdown .loginInput {
+  transform: translateY(-3rem) !important;
+  position: absolute;
+  visibility: visible;
+  transition: visiblity 100ms all ease-in-out;
+}
 
 .on {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: 500ms all ease-in-out;
+  visibility: visible;
+  transition: visiblity 100ms all ease-in-out;
 }
 
 @media (max-width: 1440px) {
@@ -949,12 +1018,14 @@ main svg {
 }
 .forgotPS .forgotPass {
   opacity: 1 !important;
-  transform: translateY(-10rem) !important;
+  transform: translateY(3rem) !important;
   transition: 1000ms all ease-in-out !important;
 }
 .forgotPS .loginInput {
   transform: translateY(-40rem) !important;
-  transition: 500ms all ease-in-out !important;
+  transition: 700ms all ease-in-out !important;
+  visibility: collapse;
+  transition: visibility 1500ms all ease-in-out !important;
 }
 .forgotPS .cancelFP {
   opacity: 1;
@@ -1031,6 +1102,7 @@ main svg {
   position: relative;
 }
 .loginUi .forgotPass {
+  position: absolute;
   opacity: 0;
   transform: translateY(30rem);
   gap: 1rem;

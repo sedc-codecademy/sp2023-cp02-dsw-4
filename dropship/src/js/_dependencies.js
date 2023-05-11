@@ -100,18 +100,24 @@ let dimeArray = [{ // Mock array for testing
 
 function suggestionsAnimate(origin, amount) { // Animating the searchbox
     if (origin === 'blur') {
-        suggestionsCard.animate({
-            height: `0rem`
-        }, { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+        // suggestionsCard.animate({
+        //     height: `0rem`
+        // }, { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+        // timeOut = setTimeout(() => {
+        //     suggestionsCard.classList.remove("opCtSg")
+        //     searchContainer.classList.remove("opSg")
+        // }, 300)
         timeOut = setTimeout(() => {
             suggestionsCard.classList.remove("opCtSg")
             searchContainer.classList.remove("opSg")
         }, 300)
+        suggestionsCard.classList.remove("lololo")
         return
     }
-    suggestionsCard.animate({
-        height: `${amount}rem`
-    }, { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+    // suggestionsCard.animate({
+    //     height: `${amount}rem`
+    // }, { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+    suggestionsCard.classList.add("lololo")
 }
 
 const classSwitcher = { // Handling class switches for searchContainer and the suggestionsCard
@@ -144,6 +150,7 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         if (searchInput.value === '') return
         clearBtn.classList.add('visible')
     },
+
     ctOff: () => {
         searchContainer.classList.remove('opCt')
         suggestionsCard.classList.remove('opCt')
@@ -160,6 +167,7 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         ctButtonSf.innerHTML = 'category'
         toggle = true
     },
+    
     ctOn: () => {
         searchContainer.classList.add('opCt')
         suggestionsCard.classList.add('opCt')

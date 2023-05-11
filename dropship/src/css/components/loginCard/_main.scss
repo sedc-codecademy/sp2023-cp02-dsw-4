@@ -17,6 +17,8 @@
     opacity: 0;
     transition: 400ms all ease-in-out;
     z-index: 5;
+    visibility: collapse;
+    transition: visibility 700ms all ease-in-out;
 
     form {
         display: flex;
@@ -175,12 +177,21 @@
             background-color: transparent;
         }
     }
+
+    .loginInput{
+        transform: translateY(-3rem) !important;
+        position: absolute;
+        visibility: visible;
+        transition: visiblity 100ms all ease-in-out;
+    }
 }
 
 .on {
     opacity: 1;
     transform: translate(-50%, -50%);
     transition: 500ms all ease-in-out;
+    visibility: visible;
+    transition: visiblity 100ms all ease-in-out;
 }
 
 @media (max-width: 1440px) {
@@ -210,13 +221,15 @@
 
     .forgotPass {
         opacity: 1 !important;
-        transform: translateY(-10rem) !important;
+        transform: translateY(3rem) !important;
         transition: 1000ms all ease-in-out !important;
     }
 
     .loginInput {
         transform: translateY(-40rem) !important;
-        transition: 500ms all ease-in-out !important;
+        transition: 700ms all ease-in-out !important;
+        visibility: collapse;
+        transition: visibility 1500ms all ease-in-out !important;
     }
 
     .cancelFP {

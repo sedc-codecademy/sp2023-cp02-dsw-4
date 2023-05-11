@@ -9,18 +9,18 @@ const forgotCancelBtn = document.querySelector(".cancelFP")
 
 let rgOn = false
 
-loginBtn.addEventListener("click", () => {
+loginBtn.addEventListener("click", () => { // Event for login dropdown
   loginDp.classList.toggle("on")
 })
 
-cancelBtn.addEventListener('click', (e) => {
+cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section 
   e.preventDefault()
   registerUi.classList.toggle('regOn')
   loginUi.classList.toggle('loginOff')
   rgOn = false
 })
 
-registerBtn.addEventListener('click', (e) => {
+registerBtn.addEventListener('click', (e) => { // Event for pressing the sign up button and handling it's states
   if(rgOn){
     console.log('Sign up button clicked')
     return
@@ -31,14 +31,18 @@ registerBtn.addEventListener('click', (e) => {
   rgOn = true
 })
 
-forgotCancelBtn.addEventListener('click', (e) => {
+forgotCancelBtn.addEventListener('click', (e) => { // Event for turning off forgot password section
+  e.preventDefault()
+  loginDp.classList.remove("forgotPS")
+})
+
+forgotBtn.addEventListener('click', (e) => { // Event for forgot password section
   e.preventDefault()
   loginDp.classList.toggle("forgotPS")
 })
 
-forgotBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  loginDp.classList.toggle("forgotPS")
+document.body.addEventListener('click', (e) => { // Event listener for turning off login drop down
+  if(e.target === loginBtn) return  
+  if (!loginDp.contains(e.target)) loginDp.classList.remove("on") 
 })
-
 

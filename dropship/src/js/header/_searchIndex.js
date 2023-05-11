@@ -58,10 +58,8 @@ function suggestions(arr) {  // Filling suggestions function
             if (arr[i].item.type === 'Product') {
                 let li = document.createElement("li")
                 let stock = 'N/A'
-                if (arr[i].item.stock !== 0) {
-                    stock = arr[i].item.stock
-                }
-                li.innerHTML = `<p>${arr[i].item.title}</p><h6>Price: ${arr[i].item.price}$ Stock: ${arr[i].item.stock}</h6><h5>${arr[i].item.type}</h5>`
+                if (arr[i].item.stock !== 0) stock = arr[i].item.stock
+                li.innerHTML = `<p>${arr[i].item.title}</p><h6>Price: ${arr[i].item.price}$ | Stock: ${stock}</h6><h5>${arr[i].item.type}</h5>`
                 suggestionsUl.appendChild(li)
             } else {
                 let li = document.createElement("li")
@@ -69,10 +67,13 @@ function suggestions(arr) {  // Filling suggestions function
                 suggestionsUl.appendChild(li)
             }
             increment++
-            let amnt = (increment * 1.5) + 6
+            let amnt = (increment * 1.5)
             suggestionsAnimate('increase', amnt)
         } else {
-            console.log(arr.length)
+            let li = document.createElement("li")
+            li.classList.add("viewAll")
+            li.innerHTML = `<a>View all</a>`
+            suggestionsUl.appendChild(li)
             prevLength = arr.length
             return
         }
