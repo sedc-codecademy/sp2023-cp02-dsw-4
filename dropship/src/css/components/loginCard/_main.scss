@@ -7,13 +7,9 @@
     transform: translate(-50%, -250%);
     display: flex;
     justify-content: center;
-    border: 0.2rem solid var(--accent);
+    border: 0.3rem solid var(--paleAccentTwo);
     backdrop-filter: blur(0.5rem);
     border-radius: 1rem;
-    border-top-left-radius: 1.7rem;
-    border-top-right-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem;
-    border-bottom-right-radius: 1.7rem;
     width: 50rem;
     height: 40rem;
     overflow: hidden;
@@ -45,7 +41,7 @@
             transition: 300ms all ease;
         }
 
-        span{
+        span {
             font-weight: 650;
             user-select: none;
             pointer-events: none;
@@ -54,6 +50,81 @@
         a {
             color: var(--secColor);
         }
+    }
+
+    input {
+        text-indent: 1rem;
+        width: 14rem;
+        height: 3rem;
+        font-size: 1.1rem;
+        text-indent: 0.5rem;
+        background-color: var(--tpPri);
+        color: var(--secColor);
+        border: 0.15rem solid var(--tertColor);
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 1.2rem;
+        outline: none;
+        margin: 0.5rem;
+        transition: 300ms all ease;
+
+        &#agree {
+            background: none;
+            width: auto;
+            height: auto;
+        }
+
+        &::selection {
+            background: var(--accent);
+            color: var(--priColor);
+        }
+
+        &:valid {
+            border-color: var(--accent) !important;
+
+            ~ {
+                label {
+                    opacity: 1 !important;
+                    color: var(--priColor) !important;
+                    background: var(--accent) !important;
+                    transform: translateY(-110%) !important;
+                }
+            }
+        }
+
+        &:not(:placeholder-shown) {
+            border-color: red;
+
+            ~ {
+                label {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &:focus {
+            border: 0.15rem solid var(--accent);
+            transition: 300ms all ease;
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: var(--accent);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+    }
+
+    label {
+        position: absolute;
+        pointer-events: none;
+        border-radius: 1rem;
+        padding-inline: 0.5rem;
+        transition: 300ms all ease;
+        opacity: 0.6;
     }
 
     svg {
@@ -72,16 +143,85 @@
             height: 2.4rem;
         }
     }
+
+    .cancelFP {
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        top: 1rem;
+        right: 1rem;
+        border: none;
+        visibility: hidden;
+        transition: 300ms all ease-in-out;
+
+        svg {
+            fill: var(--accent);
+            border-radius: 0.5rem;
+            outline: 0.2rem solid var(--accent);
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &:hover {
+            svg {
+                fill: var(--priColor);
+                background-color: var(--accent);
+            }
+
+            background-color: transparent;
+        }
+    }
 }
 
 .on {
     opacity: 1;
     transform: translate(-50%, -50%);
-    transition: 400ms all ease-in-out;
+    transition: 500ms all ease-in-out;
 }
 
 @media (max-width: 1440px) {
-    .loginDropdown{
+    .loginDropdown {
         top: 50%;
+    }
+}
+
+.forgotPS {
+    .loginUi {
+        width: 100%;
+    }
+
+    .registerUi {
+        width: 0;
+
+        * {
+            transform: translateX(-13rem) !important;
+            transition: 250ms transform ease-in-out;
+        }
+
+        .registerButton {
+            transform: translateX(-13rem) !important;
+            transition: 250ms transform ease-in-out;
+        }
+    }
+
+    .forgotPass {
+        opacity: 1 !important;
+        transform: translateY(-10rem) !important;
+        transition: 1000ms all ease-in-out !important;
+    }
+
+    .loginInput {
+        transform: translateY(-40rem) !important;
+        transition: 500ms all ease-in-out !important;
+    }
+
+    .cancelFP {
+        opacity: 1;
+        visibility: visible;
+        transition: 300ms all ease-in-out;
     }
 }

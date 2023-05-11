@@ -2,17 +2,31 @@
 
 .registerUi {
     width: 50%;
-    background-color: var(--accent);
+    background-color: var(--paleAccentTwo);
     color: var(--priColor);
     backdrop-filter: blur(0);
     gap: 2rem;
     transition: 500ms all ease-in-out;
+    overflow: hidden;
+
+    * {
+        transform: translateX(0rem);
+        transition: 300ms all ease-in-out;
+        transition: 1000ms transform ease-in-out;
+    }
+
+    .registerButton{
+        transition: 300ms all ease-in-out;
+        transition: 700ms transform ease-in-out;
+    }
 
     button {
         border: 0.15rem solid var(--priColor);
-        background-color: var(--accent);
+        background-color: transparent;
         color: var(--priColor);
+        transition: 300ms all ease-in-out;
         &:hover {
+            transition: 300ms all ease-in-out;
             background-color: var(--priColor);
             color: var(--accent);
         }
@@ -22,86 +36,10 @@
         color: var(--priColor);
     }
 
-    input {
-        text-indent: 1rem;
-        width: 14rem;
-        height: 3rem;
-        font-size: 1.1rem;
-        text-indent: 0.5rem;
-        background-color: var(--tpPri);
-        color: var(--secColor);
-        border: 0.15rem solid var(--tertColor);
-        border-top-left-radius: 1.2rem;
-        border-top-right-radius: 0.3rem;
-        border-bottom-left-radius: 0.3rem;
-        border-bottom-right-radius: 1.2rem;
-        outline: none;
-        margin: 0.5rem;
-        transition: 300ms all ease;
-
-        &#agree {
-            background: none;
-            width: auto;
-            height: auto;
-        }
-
-        &::selection {
-            background: var(--accent);
-            color: var(--priColor);
-        }
-
-        &:valid {
-            border-color: var(--accent) !important;
-
-            ~ {
-                label {
-                    opacity: 1 !important;
-                    color: var(--priColor) !important;
-                    background: var(--accent) !important;
-                    transform: translateY(-110%) !important;
-                }
-            }
-        }
-
-        &:not(:placeholder-shown) {
-            border-color: red;
-
-            ~ {
-                label {
-                    opacity: 0;
-                }
-            }
-        }
-
-        &:focus {
-            border: 0.15rem solid var(--accent);
-            transition: 300ms all ease;
-
-            ~ {
-                label {
-                    opacity: 1;
-                    color: var(--priColor);
-                    background: var(--accent);
-                    transform: translateY(-110%);
-                }
-            }
-        }
-    }
-
-    label {
-        position: absolute;
-        pointer-events: none;
-        border-radius: 1rem;
-        padding-inline: 0.5rem;
-        transition: 300ms all ease;
-        opacity: 0.6;
-    }
-
     .fields {
         display: none;
         opacity: 0;
         visibility: collapse;
-        transition: 500ms all ease-in-out;
 
         .checkBoxes {
             margin-top: 3rem;
@@ -235,7 +173,6 @@
         &:hover {
             background-color: var(--accent);
             color: var(--priColor);
-            transition: 300ms all ease;
         }
     }
 

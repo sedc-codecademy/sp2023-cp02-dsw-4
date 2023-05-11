@@ -43,6 +43,13 @@
 
         <section class="loginDropdown">
             <form class="loginUi">
+                <button class="cancelFP">
+                    <svg viewBox="0 0 48 48">
+                        <path
+                            d="M 39.486328 6.9785156 A 1.50015 1.50015 0 0 0 38.439453 7.4394531 L 24 21.878906 L 9.5605469 7.4394531 A 1.50015 1.50015 0 0 0 8.484375 6.984375 A 1.50015 1.50015 0 0 0 7.4394531 9.5605469 L 21.878906 24 L 7.4394531 38.439453 A 1.50015 1.50015 0 1 0 9.5605469 40.560547 L 24 26.121094 L 38.439453 40.560547 A 1.50015 1.50015 0 1 0 40.560547 38.439453 L 26.121094 24 L 40.560547 9.5605469 A 1.50015 1.50015 0 0 0 39.486328 6.9785156 z" />
+                    </svg>
+                </button>
+                
                 <div class="loginInput">
 
                     <h1>Sign <span>In</span> </h1>
@@ -82,13 +89,28 @@
                         </div>
                     </section>
 
-                </div>
-                <div>
-                    <a href="" target="_blank">Forgot Password</a>
-                    <button>Sign in</button>
+                    <div>
+                        <a href="" class="forgotPassButton" target="_blank">Forgot Password</a>
+                        <button>Sign in</button>
+                    </div>
+
                 </div>
 
+
+                <div class="forgotPass">
+                    <h1>Forgot <span>Password</span> </h1>
+                    <p>Enter recovery <span>email</span></p>
+                    <section class="fields">
+                        
+                        <div class="email">
+                            <input class="email" type="email" maxlength="16" required placeholder="">
+                            <label for="email">Enter email</label>
+                        </div>
+                        <button>Send Code</button>
+                    </section>
+                </div>
             </form>
+            
             <form class="registerUi">
                 <button class="cancel">
                     <svg viewBox="0 0 48 48">
@@ -147,9 +169,6 @@
                     </li>
                     <li>Amount: 3</li>
                     <li>Price: 399$</li>
-                    <!-- <li>
-                        <h5>Added to cart</h5>
-                    </li> -->
                     <button class="notifCancel">CANCEL</button>
                 </ul>
             </div>
@@ -315,130 +334,8 @@
             </g>
         </svg> -->
         <div class="mainCategories"> <!-- CATEGORIES DIV -->
-            <button id="left" ><span  class="material-symbols-outlined">chevron_left</span></button>
-            <section>
-                <div class="ctOne left">
-                    <ul>
-                        <li>
-                            <h2>Cat Title One</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctTwo left">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Two</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctThree">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Three</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctFour">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Four</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctFive">
-                    <ul>
-
-                        <li>
-                            <h2>Cat Title Five</h2>
-                        </li>
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctSix">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Six</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctSeven">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Seven</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctEight">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Eight</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctNine right">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Nine</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-                <div class="ctTen right">
-                    <ul>
-                        <li>
-                            <h2>Cat Title Ten</h2>
-                        </li>
-
-                        <li>Sub cat One</li>
-                        <li>Sub cat Two</li>
-                        <li>Sub cat Three</li>
-                    </ul>
-                    <img src="./imgs/cat/tech/technology.png" alt="tech">
-                </div>
-            </section>
-            <button id="right"><span  class="material-symbols-outlined">chevron_right</span></button>
+            <button id="left"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button id="right"><span class="material-symbols-outlined">chevron_right</span></button>
         </div>
         <hr>
         <div> <!-- DISCOUNT PRODUCTS -->

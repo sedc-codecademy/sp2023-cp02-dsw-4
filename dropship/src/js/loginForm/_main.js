@@ -4,6 +4,8 @@ const cancelBtn = document.querySelector(".cancel")
 const registerUi = document.querySelector(".registerUi")
 const loginUi = document.querySelector(".loginUi")
 const registerBtn = document.querySelector(".registerButton")
+const forgotBtn = document.querySelector(".forgotPassButton")
+const forgotCancelBtn = document.querySelector(".cancelFP")
 
 let rgOn = false
 
@@ -28,4 +30,15 @@ registerBtn.addEventListener('click', (e) => {
   loginUi.classList.toggle('loginOff')
   rgOn = true
 })
+
+forgotCancelBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  loginDp.classList.toggle("forgotPS")
+})
+
+forgotBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  loginDp.classList.toggle("forgotPS")
+})
+
 
