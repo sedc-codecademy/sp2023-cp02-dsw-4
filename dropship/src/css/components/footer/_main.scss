@@ -87,10 +87,11 @@ footer {
             svg {
                 height: 2.5rem;
                 width: 2.5rem;
-                fill: var(--tertColor);
+                filter: grayscale(100%);
                 transition: 300ms all ease;
 
                 &:hover {
+                    filter: grayscale(0%);
                     transition: 300ms all ease;
                 }
             }
@@ -101,9 +102,12 @@ footer {
             #facebook:hover{
                 fill: rgb(0, 162, 255);
             }
-            #git:hover{
-                fill: var(--secColor);
+            #git{
+                height: 2.4rem;
+                width: 2.4rem;
+                fill: var(--accent);
             }
+            
             #youtube:hover{
                 fill: rgb(255, 0, 0);
             }

@@ -2,9 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 
 header {
-    height: 70vh;
-    height: 70svh;
-    width: 100svw;
+    height: 45rem;
     position: relative;
     display: grid;
     place-content: center;
@@ -15,7 +13,7 @@ header {
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 90%, rgba(0, 0, 0, 0), var(--priColor) 120%);
     }
 }
 

@@ -5,21 +5,23 @@
   --priColor: rgb(243, 243, 243);
   --tpPri: rgba(255, 255, 255, 0.703);
   --secColor: rgba(0, 0, 0, 0.822);
-  --secAccent: rgb(255, 85, 235);
-  --accent: rgb(255, 79, 129);
-  --tertAccent: rgb(255, 228, 78);
+  --secAccent: rgb(183, 0, 255);
+  --accent: rgb(255, 0, 123);
+  --tertAccent: rgb(255, 157, 0);
   --tertColor: rgba(128, 128, 128, 0.598);
-  --paleAccent: rgba(255, 115, 0, 0.113);
+  --paleAccent: rgba(255, 0, 136, 0.072);
+  --paleAccentTwo: rgba(255, 0, 123, 0.67);
 }
 
 .dark-mode {
   --priColor: #020202f0;
   --tpPri: rgba(0, 0, 0, 0.475);
   --secColor: rgb(243, 243, 243);
-  --accent: rgb(84, 255, 204);
-  --secAccent: rgba(95, 255, 89, 0.834);
-  --tertAccent: rgb(255, 70, 196);
+  --accent: rgb(0, 255, 145);
+  --secAccent: rgba(8, 254, 0, 0.834);
+  --tertAccent: rgb(255, 98, 0);
   --paleAccent: rgba(0, 255, 179, 0.092);
+  --paleAccentTwo: rgba(0, 255, 145, 0.675);
 }
 
 * {
@@ -57,9 +59,7 @@ button {
 }
 
 header {
-  height: 70vh;
-  height: 70svh;
-  width: 100svw;
+  height: 45rem;
   position: relative;
   display: grid;
   place-content: center;
@@ -70,7 +70,7 @@ header .headerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 90%, rgba(0, 0, 0, 0), var(--priColor) 120%);
 }
 
 .headerBackgroundImage {
@@ -129,6 +129,7 @@ header .headerGradient {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 
 .search-bar-container {
@@ -148,8 +149,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.15rem solid var(--tertColor);
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 6;
@@ -242,8 +242,7 @@ header .headerGradient {
   border-bottom: none;
   border-top: none !important;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(0.2vmax);
-          backdrop-filter: blur(0.2vmax);
+  backdrop-filter: blur(3vmax);
   z-index: 6;
   transition: 300ms all ease;
 }
@@ -288,9 +287,7 @@ header .headerGradient {
 }
 .search-suggestions ul li:hover {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   color: var(--accent);
   background-color: var(--tpPri);
   transition: 300ms all ease;
@@ -301,8 +298,7 @@ header .headerGradient {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  -webkit-margin-after: 0.5rem;
-          margin-block-end: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 .search-suggestions .search-buttons button {
   position: relative;
@@ -338,7 +334,6 @@ header .headerGradient {
 
 .ctDropDown {
   position: absolute;
-  opacity: 0;
   display: flex;
   width: 80rem;
   height: 42rem;
@@ -349,13 +344,12 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.15rem solid var(--tertColor) !important;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   padding: 1rem;
   transform: translateY(100vh);
   transform-origin: 150% 15%;
-  z-index: -10;
+  visibility: collapse;
 }
 .ctDropDown ul {
   position: relative;
@@ -367,9 +361,7 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -558,8 +550,7 @@ header .headerGradient {
   position: relative;
   min-width: 10rem;
   border-radius: 0.3vmax;
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--accent), var(--secAccent));
   max-height: 0;
   color: black;
@@ -592,12 +583,9 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(1vmax);
-          backdrop-filter: blur(1vmax);
+  backdrop-filter: blur(1vmax);
   border-radius: 0.5vmax;
   overflow: hidden;
   z-index: 10;
@@ -706,10 +694,11 @@ footer .footFooter .socials legend:hover {
 footer .footFooter .socials svg {
   height: 2.5rem;
   width: 2.5rem;
-  fill: var(--tertColor);
+  filter: grayscale(100%);
   transition: 300ms all ease;
 }
 footer .footFooter .socials svg:hover {
+  filter: grayscale(0%);
   transition: 300ms all ease;
 }
 footer .footFooter .socials #insta:hover {
@@ -718,8 +707,10 @@ footer .footFooter .socials #insta:hover {
 footer .footFooter .socials #facebook:hover {
   fill: rgb(0, 162, 255);
 }
-footer .footFooter .socials #git:hover {
-  fill: var(--secColor);
+footer .footFooter .socials #git {
+  height: 2.4rem;
+  width: 2.4rem;
+  fill: var(--accent);
 }
 footer .footFooter .socials #youtube:hover {
   fill: rgb(255, 0, 0);
@@ -767,41 +758,44 @@ footer .footerGradient {
 }
 
 main {
-  min-height: 100vh;
+  overflow: hidden;
 }
-
-.mainCategories {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+main div {
+  min-height: 30vh;
 }
-.mainCategories section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10rem;
-  width: 10rem;
+main svg {
+  fill: transparent;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  z-index: -10;
 }
 
 .loginDropdown {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -250%);
   display: flex;
   justify-content: center;
-  border: 0.15rem solid var(--tertColor);
-  border-radius: 1.5rem;
-  width: 45rem;
-  height: 35rem;
+  border: 0.3rem solid var(--paleAccentTwo);
+  backdrop-filter: blur(0.5rem);
+  border-radius: 1rem;
+  width: 50rem;
+  height: 40rem;
   overflow: hidden;
   z-index: 15;
-  transform: translateY(-100vh);
   opacity: 0;
   transition: 400ms all ease-in-out;
+  z-index: 5;
 }
 .loginDropdown form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50%;
 }
 .loginDropdown form div {
   gap: 0.5rem;
@@ -812,106 +806,399 @@ main {
 }
 .loginDropdown form button {
   position: relative;
-  bottom: -0.5vmax;
-  background-color: white;
   font-size: 1rem;
   font-weight: 600;
   padding: 0.5rem;
-  border-radius: 0.5vmax;
-  transition: 300ms all ease;
-}
-.loginDropdown form button:hover {
-  background-color: var(--accent);
-  transition: 300ms all ease;
-}
-.loginDropdown a {
-  color: var(--secColor);
-}
-.loginDropdown .loginUi {
-  gap: 1rem;
-  background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
-}
-.loginDropdown .loginUi section {
-  gap: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  margin-top: -5rem;
-}
-.loginDropdown .loginUi section div {
-  flex-direction: row;
-}
-.loginDropdown .loginUi .loginInput div {
-  position: relative;
-}
-.loginDropdown .loginUi .loginInput input {
-  position: relative;
-  width: 14rem;
-  height: 2.5rem;
-  text-indent: 0.5rem;
-  background-color: transparent;
-  color: var(--secColor);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
-  border: 0.15rem solid var(--tertColor);
   border-radius: 0.5rem;
-  outline: none;
-  caret-color: var(--secColor);
-  margin: 0.2rem;
-}
-.loginDropdown .loginUi .loginInput input:focus {
-  border: 0.15rem solid var(--accent);
-}
-.loginDropdown .loginUi .loginInput input::-moz-placeholder {
-  color: var(--secColor);
-}
-.loginDropdown .loginUi .loginInput input::placeholder {
-  color: var(--secColor);
-}
-.loginDropdown .loginUi .loginInput label {
-  position: absolute;
-  top: 0.7rem;
-  z-index: 1;
-  pointer-events: none;
   transition: 300ms all ease;
 }
-.loginDropdown .loginUi .loginFunc {
-  margin-top: 1rem;
+.loginDropdown form span {
+  font-weight: 650;
+  user-select: none;
+  pointer-events: none;
 }
-.loginDropdown .loginUi .loginFunc section a {
-  font-size: 0.8rem;
+.loginDropdown form a {
+  color: var(--secColor);
 }
-.loginDropdown .registerUi {
-  background-color: var(--paleAccent);
-  -webkit-backdrop-filter: blur(3rem);
-          backdrop-filter: blur(3rem);
-  gap: 2rem;
+.loginDropdown input {
+  text-indent: 1rem;
+  width: 14rem;
+  height: 3rem;
+  font-size: 1.1rem;
+  text-indent: 0.5rem;
+  background-color: var(--tpPri);
+  color: var(--secColor);
+  border: 0.15rem solid var(--tertColor);
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 1.2rem;
+  outline: none;
+  margin: 0.5rem;
+  transition: 300ms all ease;
+}
+.loginDropdown input#agree {
+  background: none;
+  width: auto;
+  height: auto;
+}
+.loginDropdown input::selection {
+  background: var(--accent);
+  color: var(--priColor);
+}
+.loginDropdown input:valid {
+  border-color: var(--accent) !important;
+}
+.loginDropdown input:valid ~ label {
+  opacity: 1 !important;
+  color: var(--priColor) !important;
+  background: var(--accent) !important;
+  transform: translateY(-110%) !important;
+}
+.loginDropdown input:not(:placeholder-shown) {
+  border-color: red;
+}
+.loginDropdown input:not(:placeholder-shown) ~ label {
+  opacity: 0;
+}
+.loginDropdown input:focus {
+  border: 0.15rem solid var(--accent);
+  transition: 300ms all ease;
+}
+.loginDropdown input:focus ~ label {
+  opacity: 1;
+  color: var(--priColor);
+  background: var(--accent);
+  transform: translateY(-110%);
+}
+.loginDropdown label {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 1rem;
+  padding-inline: 0.5rem;
+  transition: 300ms all ease;
+  opacity: 0.6;
 }
 .loginDropdown svg {
-  height: 2.4rem;
-  width: 2.4rem;
+  height: 2.5rem;
+  width: 2.5rem;
   fill: var(--secColor);
   transition: 300ms all ease;
 }
 .loginDropdown svg:hover {
+  fill: var(--accent);
   transition: 300ms all ease;
 }
-.loginDropdown svg#facebook:hover {
-  fill: rgb(0, 162, 255);
+.loginDropdown svg#google {
+  width: 2.4rem;
+  height: 2.4rem;
 }
-.loginDropdown svg#git:hover {
+.loginDropdown .cancelFP {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  visibility: hidden;
+  transition: 300ms all ease-in-out;
+}
+.loginDropdown .cancelFP svg {
   fill: var(--accent);
+  border-radius: 0.5rem;
+  outline: 0.2rem solid var(--accent);
+  width: 2rem;
+  height: 2rem;
 }
-.loginDropdown svg#google:hover {
-  fill: rgb(255, 0, 0);
+.loginDropdown .cancelFP:hover {
+  background-color: transparent;
+}
+.loginDropdown .cancelFP:hover svg {
+  fill: var(--priColor);
+  background-color: var(--accent);
 }
 
 .on {
-  transform: translateY(0vh);
   opacity: 1;
-  transition: 400ms all ease-in-out;
+  transform: translate(-50%, -50%);
+  transition: 500ms all ease-in-out;
+}
+
+@media (max-width: 1440px) {
+  .loginDropdown {
+    top: 50%;
+  }
+}
+.forgotPS .loginUi {
+  width: 100%;
+}
+.forgotPS .registerUi {
+  width: 0;
+}
+.forgotPS .registerUi * {
+  transform: translateX(-13rem) !important;
+  transition: 250ms transform ease-in-out;
+}
+.forgotPS .registerUi .registerButton {
+  transform: translateX(-13rem) !important;
+  transition: 250ms transform ease-in-out;
+}
+.forgotPS .forgotPass {
+  opacity: 1 !important;
+  transform: translateY(-10rem) !important;
+  transition: 1000ms all ease-in-out !important;
+}
+.forgotPS .loginInput {
+  transform: translateY(-40rem) !important;
+  transition: 500ms all ease-in-out !important;
+}
+.forgotPS .cancelFP {
+  opacity: 1;
+  visibility: visible;
+  transition: 300ms all ease-in-out;
+}
+
+.loginUi {
+  position: relative;
+  width: 50%;
+  background-color: var(--tpPri);
+  backdrop-filter: blur(2rem);
+  overflow: hidden;
+  transition: 500ms all ease-in-out;
+}
+.loginUi * {
+  opacity: 1;
+  transition: 350ms all ease-in-out;
+}
+.loginUi button {
+  position: relative;
+  margin: 1rem;
+  border: 0.15rem solid var(--accent);
+  color: var(--accent);
+}
+.loginUi button:hover {
+  background-color: var(--accent);
+  color: var(--priColor);
+  transition: 300ms all ease;
+}
+.loginUi span {
+  color: var(--accent);
+}
+.loginUi div {
+  gap: 1.5rem;
+}
+.loginUi div a {
+  font-weight: 600;
+  transition: 300ms all ease;
+}
+.loginUi div a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: 300ms all ease;
+}
+.loginUi section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loginUi section:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.loginUi section:first-child h1 {
+  font-size: xx-large;
+  margin-top: -10rem;
+}
+.loginUi section:nth-child(2) {
+  margin-block-start: 1rem;
+  gap: 0.5rem;
+}
+.loginUi section:nth-child(2) div {
+  flex-direction: row;
+}
+.loginUi section:nth-child(3) {
+  margin: 1rem;
+  gap: 0.5rem;
+}
+.loginUi section:nth-child(3) div {
+  position: relative;
+}
+.loginUi .forgotPass {
+  opacity: 0;
+  transform: translateY(30rem);
+  gap: 1rem;
+  margin-top: -13rem;
+}
+
+.loginOff {
+  width: 0%;
+  transition: 500ms all ease-in-out;
+}
+.loginOff * {
+  opacity: 0 !important;
+  transition: 300ms all ease-in-out;
+}
+
+.registerUi {
+  width: 50%;
+  background-color: var(--paleAccentTwo);
+  color: var(--priColor);
+  backdrop-filter: blur(0);
+  gap: 2rem;
+  transition: 500ms all ease-in-out;
+  overflow: hidden;
+}
+.registerUi * {
+  transform: translateX(0rem);
+  transition: 300ms all ease-in-out;
+  transition: 1000ms transform ease-in-out;
+}
+.registerUi .registerButton {
+  transition: 300ms all ease-in-out;
+  transition: 700ms transform ease-in-out;
+}
+.registerUi button {
+  border: 0.15rem solid var(--priColor);
+  background-color: transparent;
+  color: var(--priColor);
+  transition: 300ms all ease-in-out;
+}
+.registerUi button:hover {
+  transition: 300ms all ease-in-out;
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.registerUi span {
+  color: var(--priColor);
+}
+.registerUi .fields {
+  display: none;
+  opacity: 0;
+  visibility: collapse;
+}
+.registerUi .fields .checkBoxes {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  user-select: none;
+}
+.registerUi .fields .checkBoxes span {
+  pointer-events: all !important;
+}
+.registerUi .fields .checkBoxes span:hover {
+  text-decoration: underline;
+}
+.registerUi .fields .checkBoxes #agree {
+  position: relative;
+  margin-top: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  appearance: none;
+  transition: 300ms all ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registerUi .fields .checkBoxes #agree::after {
+  content: "";
+  position: relative;
+  display: none;
+  top: -0.1rem;
+  width: 0.5rem;
+  height: 1rem;
+  border: solid var(--priColor);
+  border-width: 0 0.2rem 0.2rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+.registerUi .fields .checkBoxes #agree:checked {
+  opacity: 1 !important;
+}
+.registerUi .fields .checkBoxes #agree:checked::after {
+  visibility: visible;
+}
+.registerUi .fields .checkBoxes #agree:not(:checked) {
+  border-color: var(--accent) !important;
+}
+.registerUi .fields .checkBoxes #agree:hover {
+  opacity: 0.6;
+  transition: 300ms all ease;
+}
+.registerUi .fields .checkBoxes #agree:checked {
+  background-color: var(--accent);
+}
+.registerUi .cancel {
+  position: absolute;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  top: 0.5rem;
+  left: 0.5rem;
+  visibility: collapse;
+  border: none;
+}
+.registerUi .cancel svg {
+  fill: var(--accent);
+  border-radius: 0.5rem;
+  outline: 0.2rem solid var(--accent);
+  width: 2rem;
+  height: 2rem;
+}
+.registerUi .cancel:hover svg {
+  fill: var(--priColor);
+  background-color: var(--accent);
+}
+
+.regOn {
+  width: 100%;
+  background-color: var(--tpPri);
+  color: var(--secColor);
+  backdrop-filter: blur(2rem);
+  transition: 500ms all ease-in-out;
+}
+.regOn .fields {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: 500ms all ease-in-out;
+}
+.regOn .fields #agree {
+  visibility: visible;
+}
+.regOn .fields #agree::after {
+  display: block !important;
+  border-color: var(--priColor) !important;
+}
+.regOn .cancel {
+  visibility: visible;
+}
+.regOn .cancel:hover {
+  background-color: transparent;
+}
+.regOn button {
+  position: relative;
+  margin: 1rem;
+  border: 0.15rem solid var(--accent);
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.regOn button:hover {
+  background-color: var(--accent);
+  color: var(--priColor);
+}
+.regOn span {
+  color: var(--accent);
 }/*# sourceMappingURL=styles.css.map */

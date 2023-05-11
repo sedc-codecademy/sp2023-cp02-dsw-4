@@ -150,8 +150,12 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         suggestionsCard.classList.remove('opCtS2g')
         classSwitcher.focusBlur()
         categoryDropDown.animate(
-            [{ transform: 'translateY(100vh)', opacity: 0 }],
-            { duration: 300, easing: 'ease-in-out', fill: 'forwards' }
+            { visibility: "collapse" },
+            { duration: 200, easing: 'ease-in-out', fill: 'forwards' }
+        )
+        categoryDropDown.animate(
+            { transform: 'translateY(100vh)' },
+            { duration: 400, easing: 'ease-in-out', fill: 'forwards' }
         )
         ctButtonSf.innerHTML = 'category'
         toggle = true
@@ -160,9 +164,14 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         searchContainer.classList.add('opCt')
         suggestionsCard.classList.add('opCt')
         categoryDropDown.animate(
-            [{ transform: 'translateY(0)', opacity: 1 }],
-            { duration: 300, easing: 'ease-in-out', fill: 'forwards' }
+            { visibility: "visible" },
+            { duration: 200, easing: 'ease-in-out', fill: 'forwards' }
         )
+        categoryDropDown.animate(
+            { transform: 'translateY(0)' },
+            { duration: 500, easing: 'ease-in-out', fill: 'forwards' }
+        )
+
         suggestionsCard.classList.add('opCtS2g')
         classSwitcher.focusBlur();
         categoryDropDown.classList.add('activeDp')

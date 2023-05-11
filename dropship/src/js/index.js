@@ -8,3 +8,5 @@ import "./footer/_contact.js";
 import "./categoriesTab/_filters.js";
 //// LOGIN
 import "./loginForm/_main.js";
+//// CATGORIES SECTION
+import "./categoriesSection/_main.js";
