@@ -114,7 +114,7 @@ header .headerGradient {
 .logo {
   position: fixed;
   font-family: "Rubik Microbe", cursive;
-  color: var(--accent);
+  color: var(--tertAccent);
   font-size: 3vmax;
   top: 1vmax;
   left: 1vmax;

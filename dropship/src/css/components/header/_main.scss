@@ -8,7 +8,6 @@ header {
     place-content: center;
     align-items: center;
 
-
     .headerGradient {
         position: absolute;
         top: 0;
@@ -48,7 +47,6 @@ header {
     }
 }
 
-
 .divider {
     position: relative;
     border-left: 0.2rem solid var(--accent);
@@ -56,8 +54,6 @@ header {
     border-radius: 1rem;
     margin: 0 0.2vrem 0 0.2rem;
 }
-
-
 
 .material-symbols-outlined {
     font-size: clamp(1.8rem, 2.5vw, 2rem);
@@ -71,7 +67,7 @@ header {
 .logo {
     position: fixed;
     font-family: 'Rubik Microbe', cursive;
-    color: var(--accent);
+    color: var(--tertAccent);
     font-size: 3vmax;
     top: 1vmax;
     left: 1vmax;
