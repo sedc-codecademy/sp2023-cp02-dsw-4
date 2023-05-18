@@ -11119,64 +11119,64 @@
             "id": "ed5caf49-1f53-4915-8ed4-2f655fc02a5b"
         },
         {
-            "title": "HP EliteBook 840 G8",
-            "price": 1299.99,
-            "description": "The HP EliteBook 840 G8 is a high-performance business laptop with a durable chassis and long battery life.",
-            "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
-            "stock": 10,
+            "title": "PlayStation 5",
+            "price": 499.99,
+            "description": "The PlayStation 5 is a next-generation gaming console with lightning-fast loading times and immersive 3D audio.",
+            "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "stock": 20,
             "rating": {
-                "rate": 4.5,
-                "count": 50
+                "rate": 4.9,
+                "count": 500
             },
-            "id": "54cc1fe8-b457-4056-8f8e-0745d2c81aca"
+            "id": "dd307696-c13c-4a62-a640-0bde032fc1a5"
         },
         {
-            "title": "Epson EcoTank ET-3760",
-            "price": 399.99,
-            "description": "The Epson EcoTank ET-3760 is an all-in-one printer with a large ink tank that can last for up to 2 years of printing.",
-            "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
-            "stock": 30,
-            "rating": {
-                "rate": 4.4,
-                "count": 80
-            },
-            "id": "a1cd99f1-d1ee-49ab-b8c9-5adbca3c1a18"
-        },
-        {
-            "title": "LG 27UL850-W",
-            "price": 549.99,
-            "description": "The LG 27UL850-W is a 27-inch 4K monitor with USB-C connectivity and a wide color gamut.",
-            "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
-            "stock": 15,
-            "rating": {
-                "rate": 4.7,
-                "count": 90
-            },
-            "id": "3b3da9f6-7a88-4228-bee3-c8f1d5a60741"
-        },
-        {
-            "title": "Logitech C920s HD Pro Webcam",
-            "price": 89.99,
-            "description": "The Logitech C920s HD Pro Webcam is a high-quality webcam with 1080p resolution and built-in privacy shutter.",
-            "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
-            "stock": 40,
-            "rating": {
-                "rate": 4.6,
-                "count": 150
-            },
-            "id": "bd76f35b-ccca-464b-8a79-210a9cd7bd30"
-        },
-        {
-            "title": "Anker PowerCore+ 26800mAh PD",
-            "price": 129.99,
-            "description": "The Anker PowerCore+ 26800mAh PD is a portable power bank with USB-C Power Delivery and fast charging technology.",
-            "category": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
-            "stock": 100,
+            "title": "Xbox Series X",
+            "price": 499.99,
+            "description": "The Xbox Series X is a powerful gaming console with support for 4K gaming and fast load times.",
+            "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "stock": 25,
             "rating": {
                 "rate": 4.8,
+                "count": 400
+            },
+            "id": "4e841b8b-c743-448d-b5f0-e08440484bfb"
+        },
+        {
+            "title": "Nintendo Switch",
+            "price": 299.99,
+            "description": "The Nintendo Switch is a versatile gaming console that can be played on-the-go or on a TV.",
+            "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "stock": 30,
+            "rating": {
+                "rate": 4.7,
+                "count": 600
+            },
+            "id": "0388d5ab-abaf-4030-b045-1e17eea542aa"
+        },
+        {
+            "title": "Razer DeathAdder V2 Gaming Mouse",
+            "price": 69.99,
+            "description": "The Razer DeathAdder V2 Gaming Mouse is a high-precision mouse with customizable RGB lighting and programmable buttons.",
+            "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "stock": 50,
+            "rating": {
+                "rate": 4.6,
                 "count": 300
             },
-            "id": "8714a304-ca63-4590-85aa-04cf66162dc1"
+            "id": "172fd3d9-6370-4403-bd18-f595225b05a0"
+        },
+        {
+            "title": "HyperX Cloud II Gaming Headset",
+            "price": 99.99,
+            "description": "The HyperX Cloud II Gaming Headset is a comfortable and immersive headset with 7.1 surround sound and noise-cancelling microphone.",
+            "category": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "stock": 35,
+            "rating": {
+                "rate": 4.5,
+                "count": 200
+            },
+            "id": "904a4375-78ba-41b2-8fc2-15c290e18e22"
         },
         {
             "title": "PlayStation VR",
