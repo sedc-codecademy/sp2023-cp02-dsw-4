@@ -2609,18 +2609,6 @@
             "id": "703ebcb3-07f9-488c-b935-2c4f149ac0a8"
         },
         {
-            "title": "Where the Wild Things Are",
-            "price": 8.99,
-            "description": "A beloved children's book about a young boy's imaginative journey to a land of wild creatures.",
-            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 40,
-            "rating": {
-                "rate": 4.3,
-                "count": 75
-            },
-            "id": "b7b4dc9c-eff0-4f9e-b038-a5b24c71ad9c"
-        },
-        {
             "title": "The Giving Tree",
             "price": 12.99,
             "description": "A poignant tale about the relationship between a young boy and a tree, and the ways in which love and generosity can shape our lives.",
@@ -2633,76 +2621,64 @@
             "id": "cae16003-cd1f-460c-883f-82ceb815901c"
         },
         {
-            "title": "The Cat in the Hat",
-            "price": 7.99,
-            "description": "A classic Dr. Seuss story about the mischievous Cat in the Hat, who brings chaos to the home of two young children on a rainy day.",
+            "title": "The Adventures of Mr. Bear",
+            "price": 12.99,
+            "description": "Join Mr. Bear on his exciting adventures in the forest.",
             "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 35,
-            "rating": {
-                "rate": 4.2,
-                "count": 50
-            },
-            "id": "80b4efa6-89b1-4a3f-b1d9-c023afe57a62"
-        },
-        {
-            "title": "The Very Hungry Caterpillar",
-            "price": 9.99,
-            "description": "A classic picture book about a caterpillar's journey to become a butterfly.",
-            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 50,
+            "stock": 10,
             "rating": {
                 "rate": 4.5,
-                "count": 100
+                "count": 20
             },
-            "id": "267707f5-618d-4305-a841-996d4e0060bb"
+            "id": "adb40245-8bb8-4583-a72b-5bd2edc7172d"
         },
         {
-            "title": "Harry Potter and the Sorcerer's Stone",
-            "price": 14.99,
-            "description": "The first book in the bestselling Harry Potter series, following the young wizard's adventures at Hogwarts School of Witchcraft and Wizardry.",
+            "title": "Princess and the Dragon",
+            "price": 9.99,
+            "description": "Follow the brave princess as she faces a fearsome dragon.",
             "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 30,
-            "rating": {
-                "rate": 4.8,
-                "count": 500
-            },
-            "id": "462e2638-c840-4773-b4c5-f00e9ce09678"
-        },
-        {
-            "title": "Where the Wild Things Are",
-            "price": 8.99,
-            "description": "A beloved children's book about a young boy's imaginative journey to a land of wild creatures.",
-            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 40,
-            "rating": {
-                "rate": 4.3,
-                "count": 75
-            },
-            "id": "c517b4d6-c648-4afe-bb7b-b28a3caf062b"
-        },
-        {
-            "title": "The Giving Tree",
-            "price": 12.99,
-            "description": "A poignant tale about the relationship between a young boy and a tree, and the ways in which love and generosity can shape our lives.",
-            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 20,
-            "rating": {
-                "rate": 4.6,
-                "count": 150
-            },
-            "id": "7b2d491d-6a5b-4587-8735-0b9f5d5ff90e"
-        },
-        {
-            "title": "The Cat in the Hat",
-            "price": 7.99,
-            "description": "A classic Dr. Seuss story about the mischievous Cat in the Hat, who brings chaos to the home of two young children on a rainy day.",
-            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
-            "stock": 35,
+            "stock": 8,
             "rating": {
                 "rate": 4.2,
-                "count": 50
+                "count": 15
             },
-            "id": "b02f4517-9713-4f55-9fd9-fac909a44d30"
+            "id": "2959cd1e-6323-4d6c-a936-ca8348e2af87"
+        },
+        {
+            "title": "The Magic Treehouse",
+            "price": 14.99,
+            "description": "Embark on magical adventures with Jack and Annie in their time-traveling treehouse.",
+            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
+            "stock": 12,
+            "rating": {
+                "rate": 4.8,
+                "count": 25
+            },
+            "id": "6bb45bef-1a1b-4b71-b891-7a82084842ae"
+        },
+        {
+            "title": "Animal Friends",
+            "price": 6.99,
+            "description": "Meet adorable animal friends and learn about their habitats.",
+            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
+            "stock": 5,
+            "rating": {
+                "rate": 4.0,
+                "count": 10
+            },
+            "id": "c1702c44-638d-4e84-ab85-4b4b71686c18"
+        },
+        {
+            "title": "The Fantastic Voyage",
+            "price": 11.99,
+            "description": "Join a group of friends on an incredible journey through fantastical lands.",
+            "category": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
+            "stock": 15,
+            "rating": {
+                "rate": 4.6,
+                "count": 18
+            },
+            "id": "cd6ee7b6-e32c-4c61-9152-8c1e5637fd17"
         },
         {
             "title": "The Hitchhiker's Guide to the Galaxy",
@@ -7691,18 +7667,6 @@
                 "count": 10
             },
             "id": "d69d0822-9f64-405d-b4be-d25e61b3064a"
-        },
-        {
-            "title": "Kids Umbrella",
-            "price": 14.99,
-            "description": "A cute and compact umbrella for kids.",
-            "category": "3bbdaf55-e219-4a12-9ef0-78be6c140274",
-            "stock": 80,
-            "rating": {
-                "rate": 4.7,
-                "count": 25
-            },
-            "id": "e47da078-4f8b-4840-ab7e-ab673523ae7b"
         },
         {
             "title": "Kids Umbrella",
