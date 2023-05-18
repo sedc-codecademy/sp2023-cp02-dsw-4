@@ -1,0 +1,1102 @@
+[
+    {
+        "title": "Modern Sofa",
+        "price": 799.99,
+        "description": "A stylish and comfortable sofa for your living room.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 20
+        }
+    },
+    {
+        "title": "Wooden Dining Table",
+        "price": 499.99,
+        "description": "A sturdy dining table made from high-quality wood.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 5,
+        "rating": {
+            "rate": 4.2,
+            "count": 15
+        }
+    },
+    {
+        "title": "Leather Recliner Chair",
+        "price": 699.99,
+        "description": "An elegant and comfortable recliner chair made from genuine leather.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 8,
+        "rating": {
+            "rate": 4.8,
+            "count": 12
+        }
+    },
+    {
+        "title": "Queen Size Bed",
+        "price": 899.99,
+        "description": "A luxurious queen size bed with a beautiful headboard.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 3,
+        "rating": {
+            "rate": 4.7,
+            "count": 18
+        }
+    },
+    {
+        "title": "Modern Bookshelf",
+        "price": 349.99,
+        "description": "A sleek and contemporary bookshelf to display your favorite books and decor.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 6,
+        "rating": {
+            "rate": 4.3,
+            "count": 10
+        }
+    },
+    {
+        "title": "L-Shaped Sectional Sofa",
+        "price": 1199.99,
+        "description": "A spacious and comfortable sectional sofa perfect for your family room.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 4,
+        "rating": {
+            "rate": 4.6,
+            "count": 10
+        }
+    },
+    {
+        "title": "Rustic Coffee Table",
+        "price": 349.99,
+        "description": "A beautiful coffee table made from reclaimed wood and metal accents.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 7,
+        "rating": {
+            "rate": 4.1,
+            "count": 8
+        }
+    },
+    {
+        "title": "Mid-Century Armchair",
+        "price": 499.99,
+        "description": "A stylish and comfortable armchair with a retro design.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 6,
+        "rating": {
+            "rate": 4.4,
+            "count": 5
+        }
+    },
+    {
+        "title": "Contemporary Console Table",
+        "price": 299.99,
+        "description": "A sleek and modern console table with a minimalist design.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 9,
+        "rating": {
+            "rate": 4.0,
+            "count": 6
+        }
+    },
+    {
+        "title": "Upholstered Platform Bed",
+        "price": 799.99,
+        "description": "A comfortable and stylish platform bed with a soft upholstered headboard.",
+        "category": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "stock": 2,
+        "rating": {
+            "rate": 4.9,
+            "count": 3
+        }
+    },
+    {
+        "title": "Stainless Steel Cookware Set",
+        "price": 249.99,
+        "description": "A high-quality set of stainless steel pots and pans for all your cooking needs.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 3,
+        "rating": {
+            "rate": 4.8,
+            "count": 12
+        }
+    },
+    {
+        "title": "6-Piece Glass Bowl Set",
+        "price": 29.99,
+        "description": "A set of six durable glass bowls in different sizes, perfect for mixing and serving.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 8,
+        "rating": {
+            "rate": 4.2,
+            "count": 6
+        }
+    },
+    {
+        "title": "Non-Stick Frying Pan",
+        "price": 49.99,
+        "description": "A high-quality non-stick frying pan that makes cooking and cleaning a breeze.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 5,
+        "rating": {
+            "rate": 4.5,
+            "count": 9
+        }
+    },
+    {
+        "title": "Wooden Cutting Board",
+        "price": 39.99,
+        "description": "A sturdy and durable wooden cutting board with a beautiful design.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 10,
+        "rating": {
+            "rate": 4.1,
+            "count": 7
+        }
+    },
+    {
+        "title": "Electric Wine Opener",
+        "price": 69.99,
+        "description": "A sleek and easy-to-use electric wine opener that makes opening bottles a breeze.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 2,
+        "rating": {
+            "rate": 4.7,
+            "count": 4
+        }
+    },
+    {
+        "title": "12-Piece Dinnerware Set",
+        "price": 79.99,
+        "description": "A set of 12 elegant and durable porcelain plates, bowls, and mugs.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 4,
+        "rating": {
+            "rate": 4.4,
+            "count": 11
+        }
+    },
+    {
+        "title": "Stainless Steel Utensil Set",
+        "price": 29.99,
+        "description": "A set of 8 stainless steel utensils with ergonomic handles for comfortable use.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 7,
+        "rating": {
+            "rate": 4.3,
+            "count": 8
+        }
+    },
+    {
+        "title": "Programmable Coffee Maker",
+        "price": 119.99,
+        "description": "A high-quality coffee maker with programmable settings for brewing coffee just the way you like it.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 3,
+        "rating": {
+            "rate": 4.6,
+            "count": 5
+        }
+    },
+    {
+        "title": "Electric Kettle",
+        "price": 59.99,
+        "description": "A stylish and efficient electric kettle that boils water in minutes.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 6,
+        "rating": {
+            "rate": 4.2,
+            "count": 10
+        }
+    },
+    {
+        "title": "Ceramic Teapot",
+        "price": 49.99,
+        "description": "A beautiful and functional ceramic teapot for brewing and serving tea.",
+        "category": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "stock": 9,
+        "rating": {
+            "rate": 4.7,
+            "count": 6
+        }
+    },
+    {
+        "title": "Modern Geometric Wall Art",
+        "price": 29.99,
+        "description": "Add a touch of elegance to your home with this modern geometric wall art.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 25
+        }
+    },
+    {
+        "title": "Rustic Wooden Wall Shelf",
+        "price": 49.99,
+        "description": "Bring a bit of the outdoors into your home with this rustic wooden wall shelf.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 5,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Decorative Glass Vase Set",
+        "price": 39.99,
+        "description": "This set of three decorative glass vases is perfect for adding a pop of color to any room.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 8,
+        "rating": {
+            "rate": 4.8,
+            "count": 15
+        }
+    },
+    {
+        "title": "Luxury Throw Pillow",
+        "price": 24.99,
+        "description": "Snuggle up in style with this luxurious throw pillow.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 12,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Artificial Succulent Plant Set",
+        "price": 19.99,
+        "description": "Bring the beauty of nature indoors with this set of artificial succulent plants.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 15,
+        "rating": {
+            "rate": 4.5,
+            "count": 18
+        }
+    },
+    {
+        "title": "Boho Macrame Wall Hanging",
+        "price": 34.99,
+        "description": "Add a bohemian touch to your home with this handmade macrame wall hanging.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 6,
+        "rating": {
+            "rate": 4.6,
+            "count": 12
+        }
+    },
+    {
+        "title": "Elegant Table Lamp",
+        "price": 69.99,
+        "description": "Illuminate your living space with this elegant table lamp.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 3,
+        "rating": {
+            "rate": 4.9,
+            "count": 8
+        }
+    },
+    {
+        "title": "Decorative Woven Basket Set",
+        "price": 44.99,
+        "description": "Organize your space with this set of stylish decorative woven baskets.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 7,
+        "rating": {
+            "rate": 4.3,
+            "count": 16
+        }
+    },
+    {
+        "title": "Vintage Wall Clock",
+        "price": 39.99,
+        "description": "Add a touch of vintage charm to your home with this retro wall clock.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 4,
+        "rating": {
+            "rate": 4.1,
+            "count": 9
+        }
+    },
+    {
+        "title": "Decorative Ceramic Vase",
+        "price": 27.99,
+        "description": "This decorative ceramic vase is perfect for displaying your favorite flowers or greenery.",
+        "category": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "stock": 9,
+        "rating": {
+            "rate": 4.7,
+            "count": 14
+        }
+    },
+    {
+        "title": "Gardening Tool Set",
+        "price": 29.99,
+        "description": "Get all the essential gardening tools in this set, perfect for any green thumb.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 8,
+        "rating": {
+            "rate": 4.5,
+            "count": 11
+        }
+    },
+    {
+        "title": "Raised Garden Bed",
+        "price": 99.99,
+        "description": "Start your own garden with this easy-to-assemble raised garden bed.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 2,
+        "rating": {
+            "rate": 4.8,
+            "count": 6
+        }
+    },
+    {
+        "title": "Garden Hose",
+        "price": 24.99,
+        "description": "This durable garden hose is perfect for watering your plants and lawn.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 11,
+        "rating": {
+            "rate": 4.2,
+            "count": 19
+        }
+    },
+    {
+        "title": "Solar Garden Lights",
+        "price": 19.99,
+        "description": "Light up your garden with these energy-efficient solar-powered lights.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 6,
+        "rating": {
+            "rate": 4.4,
+            "count": 14
+        }
+    },
+    {
+        "title": "Compost Bin",
+        "price": 39.99,
+        "description": "Reduce waste and create nutrient-rich soil with this easy-to-use compost bin.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 3,
+        "rating": {
+            "rate": 4.6,
+            "count": 9
+        }
+    },
+    {
+        "title": "Gardening Gloves",
+        "price": 9.99,
+        "description": "Protect your hands while gardening with these durable gloves.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 14,
+        "rating": {
+            "rate": 4.3,
+            "count": 16
+        }
+    },
+    {
+        "title": "Garden Kneeler",
+        "price": 34.99,
+        "description": "Take the strain off your knees while gardening with this comfortable kneeler.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 5,
+        "rating": {
+            "rate": 4.7,
+            "count": 7
+        }
+    },
+    {
+        "title": "Garden Shears",
+        "price": 19.99,
+        "description": "Trim and shape your plants with ease using these sharp garden shears.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 9,
+        "rating": {
+            "rate": 4.1,
+            "count": 12
+        }
+    },
+    {
+        "title": "Plant Watering Spikes",
+        "price": 12.99,
+        "description": "Ensure your plants get the right amount of water with these handy watering spikes.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 17,
+        "rating": {
+            "rate": 4.0,
+            "count": 5
+        }
+    },
+    {
+        "title": "Garden Trellis",
+        "price": 49.99,
+        "description": "Support your climbing plants with this sturdy garden trellis.",
+        "category": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "stock": 4,
+        "rating": {
+            "rate": 4.9,
+            "count": 2
+        }
+    },
+    {
+        "title": "Dog Harness",
+        "price": 25.99,
+        "description": "A sturdy and comfortable harness for dogs of all sizes.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Cat Scratching Post",
+        "price": 39.99,
+        "description": "A durable and fun scratching post for cats.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 75,
+        "rating": {
+            "rate": 4.2,
+            "count": 30
+        }
+    },
+    {
+        "title": "Fish Tank",
+        "price": 99.99,
+        "description": "A spacious and stylish fish tank for all your aquatic pets.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 50,
+        "rating": {
+            "rate": 3.8,
+            "count": 20
+        }
+    },
+    {
+        "title": "Bird Cage",
+        "price": 49.99,
+        "description": "A cozy and secure bird cage for your feathered friend.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 60,
+        "rating": {
+            "rate": 4.0,
+            "count": 25
+        }
+    },
+    {
+        "title": "Hamster Wheel",
+        "price": 12.99,
+        "description": "A fun and durable wheel for your furry little friend to run on.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 150,
+        "rating": {
+            "rate": 4.3,
+            "count": 40
+        }
+    },
+    {
+        "title": "Cat Litter Box",
+        "price": 34.99,
+        "description": "A spacious and easy-to-clean litter box for your cat.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 80,
+        "rating": {
+            "rate": 4.6,
+            "count": 55
+        }
+    },
+    {
+        "title": "Dog Food Bowl",
+        "price": 12.99,
+        "description": "A sturdy and non-slip bowl for your dog's food and water.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 120,
+        "rating": {
+            "rate": 4.1,
+            "count": 35
+        }
+    },
+    {
+        "title": "Fish Food",
+        "price": 9.99,
+        "description": "A nutritious and delicious food for your fish.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 200,
+        "rating": {
+            "rate": 4.5,
+            "count": 60
+        }
+    },
+    {
+        "title": "Bird Food",
+        "price": 8.99,
+        "description": "A high-quality and healthy food for your bird.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 100,
+        "rating": {
+            "rate": 4.2,
+            "count": 45
+        }
+    },
+    {
+        "title": "Hamster Cage",
+        "price": 54.99,
+        "description": "A spacious and fun cage for your hamster to explore.",
+        "category": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "stock": 70,
+        "rating": {
+            "rate": 4.4,
+            "count": 50
+        }
+    },
+    {
+        "title": "Electric Drill",
+        "price": 69.99,
+        "description": "A powerful and versatile electric drill for all your DIY projects.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 25,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Paint Rollers",
+        "price": 14.99,
+        "description": "A set of high-quality paint rollers for a professional finish on your walls.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 50,
+        "rating": {
+            "rate": 4.0,
+            "count": 20
+        }
+    },
+    {
+        "title": "LED Light Bulbs",
+        "price": 19.99,
+        "description": "A pack of energy-efficient LED light bulbs for your home.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 100,
+        "rating": {
+            "rate": 4.8,
+            "count": 100
+        }
+    },
+    {
+        "title": "Cordless Screwdriver",
+        "price": 49.99,
+        "description": "A compact and lightweight cordless screwdriver for quick and easy repairs.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 30,
+        "rating": {
+            "rate": 4.3,
+            "count": 35
+        }
+    },
+    {
+        "title": "Digital Multimeter",
+        "price": 34.99,
+        "description": "A versatile and accurate digital multimeter for electrical testing.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 10,
+        "rating": {
+            "rate": 4.6,
+            "count": 15
+        }
+    },
+    {
+        "title": "Angle Grinder",
+        "price": 89.99,
+        "description": "A powerful angle grinder for cutting, grinding, and sanding metal, stone, and concrete.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 25
+        }
+    },
+    {
+        "title": "Ceramic Tile Cutter",
+        "price": 59.99,
+        "description": "A manual ceramic tile cutter for precise and clean cuts on all types of tiles.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 20,
+        "rating": {
+            "rate": 4.2,
+            "count": 10
+        }
+    },
+    {
+        "title": "Air Compressor",
+        "price": 149.99,
+        "description": "A powerful and quiet air compressor for inflating tires, powering pneumatic tools, and more.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 5,
+        "rating": {
+            "rate": 4.9,
+            "count": 30
+        }
+    },
+    {
+        "title": "Wood Router",
+        "price": 119.99,
+        "description": "A versatile wood router for cutting, shaping, and trimming wood with precision and ease.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 12,
+        "rating": {
+            "rate": 4.4,
+            "count": 18
+        }
+    },
+    {
+        "title": "Digital Laser Measure",
+        "price": 39.99,
+        "description": "A compact and accurate digital laser measure for precise measurements of distance, area, and volume.",
+        "category": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "stock": 18,
+        "rating": {
+            "rate": 4.6,
+            "count": 22
+        }
+    },
+    {
+        "title": "Luxury Egyptian Cotton Bed Sheets",
+        "price": 129.99,
+        "description": "Experience the comfort and luxury of these premium Egyptian cotton bed sheets. Available in various colors and sizes.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Fluffy White Bath Towels",
+        "price": 29.99,
+        "description": "Wrap yourself in the softness of these fluffy white bath towels. Made with 100% cotton for maximum absorbency.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 200,
+        "rating": {
+            "rate": 4.2,
+            "count": 30
+        }
+    },
+    {
+        "title": "Organic Bamboo Bath Mat",
+        "price": 39.99,
+        "description": "Step out of the shower onto this soft and absorbent organic bamboo bath mat. Non-slip backing keeps the mat in place.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 50,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "Silk Pillowcases",
+        "price": 49.99,
+        "description": "Sleep in ultimate luxury with these soft and smooth silk pillowcases. Hypoallergenic and gentle on skin and hair.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 150,
+        "rating": {
+            "rate": 4.6,
+            "count": 20
+        }
+    },
+    {
+        "title": "Extra Plush Down Alternative Comforter",
+        "price": 149.99,
+        "description": "Stay cozy and warm with this extra plush down alternative comforter. Hypoallergenic and easy to care for.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 75,
+        "rating": {
+            "rate": 4.4,
+            "count": 15
+        }
+    },
+    {
+        "title": "Memory Foam Bath Mat",
+        "price": 24.99,
+        "description": "Step out of the shower onto this comfortable and absorbent memory foam bath mat. Available in various colors.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 100,
+        "rating": {
+            "rate": 4.2,
+            "count": 25
+        }
+    },
+    {
+        "title": "Luxury Bathrobe",
+        "price": 99.99,
+        "description": "Wrap yourself in luxury with this plush and comfortable bathrobe. Available in various sizes and colors.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 50,
+        "rating": {
+            "rate": 4.7,
+            "count": 15
+        }
+    },
+    {
+        "title": "Hypoallergenic Down Alternative Pillow",
+        "price": 39.99,
+        "description": "Get a good night's sleep with this hypoallergenic down alternative pillow. Soft and supportive, perfect for any sleeping position.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 150,
+        "rating": {
+            "rate": 4.3,
+            "count": 20
+        }
+    },
+    {
+        "title": "Luxury Cotton Bath Towel Set",
+        "price": 89.99,
+        "description": "Upgrade your bath experience with this luxurious cotton bath towel set. Includes 2 bath towels, 2 hand towels, and 2 washcloths.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 75,
+        "rating": {
+            "rate": 4.5,
+            "count": 10
+        }
+    },
+    {
+        "title": "Floral Shower Curtain",
+        "price": 29.99,
+        "description": "Add a pop of color and style to your bathroom with this beautiful floral shower curtain. Made with durable and water-resistant material.",
+        "category": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "stock": 100,
+        "rating": {
+            "rate": 4.0,
+            "count": 5
+        }
+    },
+    {
+        "title": "Spacious Closet Organizer",
+        "price": 59.99,
+        "description": "Organize your closet with this spacious closet organizer. It has multiple shelves and compartments for storing clothes, shoes, and accessories.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 20,
+        "rating": {
+            "rate": 4.5,
+            "count": 50
+        }
+    },
+    {
+        "title": "Stackable Storage Bins",
+        "price": 19.99,
+        "description": "Keep your items organized with these stackable storage bins. They are perfect for storing toys, books, and other items.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 30,
+        "rating": {
+            "rate": 4.2,
+            "count": 35
+        }
+    },
+    {
+        "title": "Collapsible Fabric Storage Cubes",
+        "price": 12.99,
+        "description": "Maximize your storage space with these collapsible fabric storage cubes. They are great for storing clothes, toys, and other items.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 50,
+        "rating": {
+            "rate": 4.0,
+            "count": 25
+        }
+    },
+    {
+        "title": "Underbed Storage Bags",
+        "price": 24.99,
+        "description": "Store your extra bedding, clothes, and other items under your bed with these underbed storage bags. They are made of durable materials and have handles for easy carrying.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 10,
+        "rating": {
+            "rate": 3.8,
+            "count": 20
+        }
+    },
+    {
+        "title": "Hanging Closet Organizer",
+        "price": 16.99,
+        "description": "Maximize your closet space with this hanging closet organizer. It has multiple compartments for storing clothes, shoes, and accessories.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 15,
+        "rating": {
+            "rate": 4.1,
+            "count": 30
+        }
+    },
+    {
+        "title": "Adjustable Drawer Dividers",
+        "price": 14.99,
+        "description": "Organize your drawers with these adjustable dividers. They can be used in any drawer to separate and organize clothing, accessories, and other items.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 25,
+        "rating": {
+            "rate": 4.3,
+            "count": 40
+        }
+    },
+    {
+        "title": "Wire Storage Basket",
+        "price": 8.99,
+        "description": "This wire storage basket is great for organizing your pantry, kitchen, or bathroom. It can be used to store snacks, fruits, vegetables, and other items.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 40,
+        "rating": {
+            "rate": 3.9,
+            "count": 15
+        }
+    },
+    {
+        "title": "Wall-Mounted Storage Rack",
+        "price": 34.99,
+        "description": "This wall-mounted storage rack is perfect for organizing your garage, tools, and other items. It has multiple shelves and compartments for easy storage.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 5,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "Over-the-Door Shoe Organizer",
+        "price": 12.99,
+        "description": "This over-the-door shoe organizer is perfect for storing your shoes and keeping them organized. It has multiple compartments for easy storage.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 20,
+        "rating": {
+            "rate": 4.0,
+            "count": 25
+        }
+    },
+    {
+        "title": "Fridge Storage Bins",
+        "price": 22.99,
+        "description": "Organize your fridge with these storage bins. They are perfect for storing fruits, vegetables, and other items. They are made of durable materials and are easy to clean.",
+        "category": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "stock": 15,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Modern Pendant Light",
+        "price": 79.99,
+        "description": "A sleek and stylish pendant light with a modern design.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 25,
+        "rating": {
+            "rate": 4.5,
+            "count": 10
+        }
+    },
+    {
+        "title": "Rustic Table Lamp",
+        "price": 49.99,
+        "description": "A charming and rustic table lamp perfect for a cozy atmosphere.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 12,
+        "rating": {
+            "rate": 4.0,
+            "count": 6
+        }
+    },
+    {
+        "title": "LED Floor Lamp",
+        "price": 119.99,
+        "description": "A contemporary LED floor lamp that provides bright and energy-efficient lighting.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 8,
+        "rating": {
+            "rate": 3.5,
+            "count": 3
+        }
+    },
+    {
+        "title": "Globe Pendant Light",
+        "price": 69.99,
+        "description": "A stylish and versatile globe pendant light that complements any decor.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 18,
+        "rating": {
+            "rate": 4.2,
+            "count": 5
+        }
+    },
+    {
+        "title": "Crystal Chandelier",
+        "price": 299.99,
+        "description": "An elegant and glamorous crystal chandelier that adds a touch of luxury to any space.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 5,
+        "rating": {
+            "rate": 4.8,
+            "count": 15
+        }
+    },
+    {
+        "title": "Industrial Wall Sconce",
+        "price": 59.99,
+        "description": "A rugged and industrial-style wall sconce with a vintage look.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 20,
+        "rating": {
+            "rate": 4.1,
+            "count": 7
+        }
+    },
+    {
+        "title": "Adjustable Desk Lamp",
+        "price": 39.99,
+        "description": "A versatile and adjustable desk lamp with a sleek and modern design.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 15,
+        "rating": {
+            "rate": 3.8,
+            "count": 4
+        }
+    },
+    {
+        "title": "Flush Mount Ceiling Light",
+        "price": 89.99,
+        "description": "A low-profile and stylish flush mount ceiling light that provides ample illumination.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 10,
+        "rating": {
+            "rate": 4.3,
+            "count": 8
+        }
+    },
+    {
+        "title": "Crystal Table Lamp",
+        "price": 129.99,
+        "description": "An exquisite and sophisticated crystal table lamp with a classic design.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 7,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Dimmable LED Strip Lights",
+        "price": 29.99,
+        "description": "A versatile and energy-efficient LED strip light that can be dimmed to create the perfect ambiance.",
+        "category": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "stock": 25,
+        "rating": {
+            "rate": 4.0,
+            "count": 3
+        }
+    },
+    {
+        "title": "Tide Laundry Detergent",
+        "price": 15.99,
+        "description": "Powerful stain-fighting laundry detergent.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 500
+        }
+    },
+    {
+        "title": "Swiffer WetJet Mop",
+        "price": 29.99,
+        "description": "Multipurpose mop for cleaning floors.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 50,
+        "rating": {
+            "rate": 4.0,
+            "count": 200
+        }
+    },
+    {
+        "title": "Lysol Disinfectant Spray",
+        "price": 7.99,
+        "description": "Kills 99.9% of viruses and bacteria.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 150,
+        "rating": {
+            "rate": 4.8,
+            "count": 300
+        }
+    },
+    {
+        "title": "Clorox Bleach",
+        "price": 4.99,
+        "description": "Powerful bleach for cleaning and whitening clothes.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 200,
+        "rating": {
+            "rate": 4.2,
+            "count": 400
+        }
+    },
+    {
+        "title": "Dawn Dish Soap",
+        "price": 2.99,
+        "description": "Effective dish soap for cleaning dishes and surfaces.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 300,
+        "rating": {
+            "rate": 4.5,
+            "count": 600
+        }
+    },
+    {
+        "title": "Bounce Fabric Softener Sheets",
+        "price": 8.99,
+        "description": "Helps reduce static cling and wrinkles.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 100,
+        "rating": {
+            "rate": 4.4,
+            "count": 250
+        }
+    },
+    {
+        "title": "Febreze Air Freshener Spray",
+        "price": 5.49,
+        "description": "Eliminates tough odors and leaves a fresh scent.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 200,
+        "rating": {
+            "rate": 4.2,
+            "count": 400
+        }
+    },
+    {
+        "title": "OxiClean Stain Remover",
+        "price": 9.99,
+        "description": "Helps remove tough stains from clothes and carpets.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 150,
+        "rating": {
+            "rate": 4.6,
+            "count": 300
+        }
+    },
+    {
+        "title": "Windex Glass Cleaner",
+        "price": 4.49,
+        "description": "Effective cleaner for windows, mirrors, and glass surfaces.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 250,
+        "rating": {
+            "rate": 4.1,
+            "count": 350
+        }
+    },
+    {
+        "title": "Scrubbing Bubbles Bathroom Cleaner",
+        "price": 6.99,
+        "description": "Cleans and disinfects bathroom surfaces.",
+        "category": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "stock": 100,
+        "rating": {
+            "rate": 4.3,
+            "count": 200
+        }
+    }
+]
