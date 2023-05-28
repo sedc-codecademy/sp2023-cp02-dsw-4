@@ -70,7 +70,18 @@ header .headerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 90%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      var(--priColor)
+    ),
+    radial-gradient(
+      circle at left top,
+      transparent 90%,
+      rgba(0, 0, 0, 0),
+      var(--priColor) 120%
+    );
 }
 
 .headerBackgroundImage {
@@ -152,7 +163,7 @@ header .headerGradient {
   border: 0.15rem solid var(--paleAccent);
   background-color: var(--tpPri);
   -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 6;
@@ -179,7 +190,8 @@ header .headerGradient {
   filter: blur(1.5rem);
   transition: 300ms all ease;
 }
-.search-bar-container button.clearButton, .search-bar-container button#searchButton {
+.search-bar-container button.clearButton,
+.search-bar-container button#searchButton {
   margin-left: 0.3rem;
   display: none;
 }
@@ -242,7 +254,7 @@ header .headerGradient {
   border-top: none !important;
   background-color: var(--tpPri);
   -webkit-backdrop-filter: blur(3rem);
-          backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
   z-index: 6;
   transition: 350ms all ease-in-out;
   display: grid;
@@ -302,8 +314,8 @@ header .headerGradient {
 .search-suggestions ul li:hover {
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   color: var(--accent);
   background-color: var(--paleAccent);
   transition: 300ms all ease;
@@ -315,7 +327,7 @@ header .headerGradient {
   align-items: center;
   gap: 1rem;
   -webkit-margin-after: 0.5rem;
-          margin-block-end: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 .search-suggestions .search-buttons button {
   position: relative;
@@ -371,7 +383,7 @@ header .headerGradient {
   background-color: var(--tpPri);
   border: 0.15rem solid var(--paleAccent) !important;
   -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   padding: 1rem;
   transform: translateY(100vh);
@@ -389,8 +401,8 @@ header .headerGradient {
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -605,7 +617,7 @@ header .headerGradient {
   min-width: 10rem;
   border-radius: 0.3vmax;
   -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--accent), var(--secAccent));
   color: black;
   display: grid;
@@ -652,11 +664,11 @@ nav {
   right: 1.5vmax;
   top: 1vmax;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   background-color: var(--tpPri);
   -webkit-backdrop-filter: blur(1vmax);
-          backdrop-filter: blur(1vmax);
+  backdrop-filter: blur(1vmax);
   border-radius: 0.5vmax;
   overflow: hidden;
   z-index: 10;
@@ -803,7 +815,18 @@ footer .footerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      var(--priColor)
+    ),
+    radial-gradient(
+      circle at right bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0),
+      var(--priColor) 120%
+    );
 }
 
 .footerBackgroundImage {
@@ -831,9 +854,6 @@ footer .footerGradient {
 main {
   overflow: hidden;
 }
-main div {
-  min-height: 30vh;
-}
 main svg {
   fill: transparent;
   top: 0;
@@ -853,7 +873,7 @@ main svg {
   justify-content: center;
   border: 0.3rem solid var(--paleAccentTwo);
   -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   border-radius: 1rem;
   width: 50rem;
   height: 40rem;
@@ -889,8 +909,8 @@ main svg {
 .loginDropdown form span {
   font-weight: 650;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 .loginDropdown form a {
@@ -1063,7 +1083,7 @@ main svg {
   width: 50%;
   background-color: var(--tpPri);
   -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 500ms all ease-in-out;
 }
@@ -1115,7 +1135,7 @@ main svg {
 }
 .loginUi section:nth-child(2) {
   -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
+  margin-block-start: 1rem;
   gap: 0.5rem;
 }
 .loginUi section:nth-child(2) div {
@@ -1150,7 +1170,7 @@ main svg {
   background-color: var(--paleAccentTwo);
   color: var(--priColor);
   -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
   gap: 2rem;
   transition: 500ms all ease-in-out;
   overflow: hidden;
@@ -1190,8 +1210,8 @@ main svg {
   align-items: center;
   flex-direction: row;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .registerUi .fields .checkBoxes span {
   pointer-events: all !important;
@@ -1206,8 +1226,8 @@ main svg {
   height: 2rem;
   border-radius: 1rem;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   transition: 300ms all ease;
   display: flex;
   justify-content: center;
@@ -1269,7 +1289,7 @@ main svg {
   background-color: var(--tpPri);
   color: var(--secColor);
   -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   transition: 500ms all ease-in-out;
 }
 .regOn .fields {
@@ -1304,4 +1324,173 @@ main svg {
 }
 .regOn span {
   color: var(--accent);
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.title {
+  margin-bottom: 5vh;
+}
+
+.card {
+  margin: auto;
+  max-width: 950px;
+  width: 90%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
+}
+
+@media (max-width: 767px) {
+  .card {
+    margin: 3vh auto;
+  }
+}
+.cart {
+  background-color: #fff;
+  padding: 4vh 5vh;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+  .cart {
+    padding: 4vh;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 1rem;
+  }
+}
+.summary {
+  background-color: #ddd;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 4vh;
+  color: rgb(65, 65, 65);
+}
+
+@media (max-width: 767px) {
+  .summary {
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+  }
+}
+.summary .col-2 {
+  padding: 0;
+}
+
+.summary .col-10 {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.title b {
+  font-size: 1.5rem;
+}
+
+.main {
+  margin: 0;
+  padding: 2vh 0;
+  width: 100%;
+}
+
+.col-2,
+.col {
+  padding: 0 1vh;
+}
+
+a {
+  padding: 0 1vh;
+}
+
+.close {
+  margin-left: auto;
+  font-size: 0.7rem;
+}
+
+img {
+  width: 3.5rem;
+}
+
+.back-to-shop {
+  margin-top: 4.5rem;
+}
+
+h5 {
+  margin-top: 4vh;
+}
+
+hr {
+  margin-top: 1.25rem;
+}
+
+form {
+  padding: 2vh 0;
+}
+
+select {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1.5vh 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+input {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.btn {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+  width: 100%;
+  font-size: 0.7rem;
+  margin-top: 4vh;
+  padding: 1vh;
+  border-radius: 0;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  transition: none;
+}
+
+.btn:hover {
+  color: white;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+#code {
+  background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.253),
+      rgba(255, 255, 255, 0.185)
+    ),
+    url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
+} /*# sourceMappingURL=styles.css.map */
