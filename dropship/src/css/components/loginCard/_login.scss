@@ -6,23 +6,29 @@
     background-color: var(--tpPri);
     backdrop-filter: blur(2rem);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // opacity: 0;
     transition: 500ms all ease-in-out;
 
-    * {
-        opacity: 1;
-        transition: 350ms all ease-in-out;
-    }
+    // * {
+    //     opacity: 1;
+    //     // transition: 300ms all ease;
+    // }
 
     button {
         position: relative;
         margin: 1rem;
         border: 0.15rem solid var(--accent);
         color: var(--accent);
+        transition: 500ms all ease;
 
         &:hover {
             background-color: var(--accent);
             color: var(--priColor);
-            transition: 300ms all ease;
+            transition: 500ms all ease;
         }
     }
 
@@ -82,21 +88,13 @@
 
         }
     }
-
-    .forgotPass {
-        position: absolute;
-        opacity: 0;
-        transform: translateY(30rem);
-        gap: 1rem;
-        margin-top: -13rem;
-    }
 }
 
 .loginOff {
-    * {
-        opacity: 0 !important;
-        transition: 300ms all ease-in-out;
-    }
+    // * {
+    //     opacity: 0 !important;
+    //     // transition: 300ms all ease-in-out;
+    // }
 
     width: 0%;
     transition: 500ms all ease-in-out;
