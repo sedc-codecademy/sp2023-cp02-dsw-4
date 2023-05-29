@@ -75,7 +75,18 @@ header .headerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 90%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      var(--priColor)
+    ),
+    radial-gradient(
+      circle at left top,
+      transparent 90%,
+      rgba(0, 0, 0, 0),
+      var(--priColor) 120%
+    );
 }
 
 .headerBackgroundImage {
@@ -156,6 +167,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.2rem solid var(--paleAccentThree);
   background-color: var(--tpPri);
+  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
@@ -186,13 +198,17 @@ header .headerGradient {
   filter: blur(1.5rem);
   transition: 300ms all ease;
 }
+
 .search-bar-container button:active .material-symbols-outlined {
   color: var(--secAccent) !important;
 }
 .search-bar-container button:focus-visible span {
   color: var(--accent);
 }
-.search-bar-container button.clearButton, .search-bar-container button#searchButton {
+
+.search-bar-container button.clearButton,
+.search-bar-container button#searchButton {
+
   margin-left: 0.3rem;
   display: none;
 }
@@ -246,6 +262,8 @@ header .headerGradient {
   border-top-right-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 1.7rem;
+  z-index: 6;
+  transition: 350ms all ease-in-out;
   display: grid;
   grid-template-rows: 0fr;
   transition: 400ms all ease;
@@ -345,9 +363,58 @@ header .headerGradient {
   width: 25%;
 }
 .search-suggestions ul li:hover {
+
   color: var(--accent);
   background-color: var(--paleAccent);
   transition: 350ms all ease-in-out;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: var(--accent);
+  background-color: var(--paleAccent);
+  transition: 300ms all ease;
+}
+.search-suggestions .search-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  -webkit-margin-after: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+.search-suggestions .search-buttons button {
+  position: relative;
+  font-size: 0.9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--tertColor);
+  padding: 0.2vmax;
+  border-radius: 0.5vmax;
+  padding: 0.3rem;
+  transition: 300ms all ease;
+}
+.search-suggestions .search-buttons button:hover {
+  background-color: var(--tpPri);
+  transition: 300ms all ease;
+}
+.search-suggestions .search-buttons::before {
+  content: "";
+  position: absolute;
+  background-color: var(--tertColor);
+  width: 90%;
+  height: 0.1rem;
+  top: -0.5rem;
+}
+
+.lololo {
+  grid-template-rows: 1fr;
+  transition: all 300ms ease-in-out;
+}
+.lololo li {
+  opacity: 1 !important;
+
 }
 .search-suggestions ul li:hover::before {
   border-color: var(--paleAccentTwo);
@@ -370,6 +437,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.2rem solid var(--paleAccent);
+  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
   overflow: hidden;
   padding: 1rem;
@@ -390,6 +458,8 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
 }
 .ctDropDown .categories-ul li {
@@ -611,6 +681,7 @@ header .headerGradient {
   border-radius: 0.3vmax;
   backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--paleAccentTwo), var(--secAccent));
+  -webkit-backdrop-filter: blur(2rem);
   color: black;
   display: grid;
   font-size: 1.1rem;
@@ -664,11 +735,14 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  user-select: none;
   background-color: var(--tpPri);
   backdrop-filter: blur(1vmax);
   border: 0.2rem solid var(--paleAccent);
-  border-radius: 0.5vmax;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-backdrop-filter: blur(1vmax);
+  backdrop-filter: blur(1vmax);
   border-top-left-radius: 1rem;
   border-top-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
@@ -824,7 +898,18 @@ footer .footerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      var(--priColor)
+    ),
+    radial-gradient(
+      circle at right bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0),
+      var(--priColor) 120%
+    );
 }
 
 .footerBackgroundImage {
@@ -871,6 +956,7 @@ main svg {
   display: flex;
   justify-content: center;
   border: 0.3rem solid var(--paleAccent);
+  -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
   border-radius: 1rem;
   border-top-left-radius: 1.5rem;
@@ -915,6 +1001,8 @@ main svg {
 }
 .loginDropdown form span {
   font-weight: 650;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   pointer-events: none;
 }
@@ -1044,6 +1132,7 @@ main svg {
   position: relative;
   width: 50%;
   background-color: var(--tpPri);
+  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
   overflow: hidden;
   display: flex;
@@ -1096,6 +1185,7 @@ main svg {
   margin-top: -10rem;
 }
 .loginUi section:nth-child(2) {
+  -webkit-margin-before: 1rem;
   margin-block-start: 1rem;
   gap: 0.5rem;
 }
@@ -1119,6 +1209,7 @@ main svg {
   width: 50%;
   background-color: var(--paleAccentTwo);
   color: var(--priColor);
+  -webkit-backdrop-filter: blur(0);
   backdrop-filter: blur(0);
   gap: 2rem;
   transition: 500ms all ease-in-out;
@@ -1158,6 +1249,8 @@ main svg {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
 }
 .registerUi .fields .checkBoxes span {
@@ -1172,6 +1265,8 @@ main svg {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   transition: 300ms all ease;
   display: flex;
@@ -1237,7 +1332,9 @@ main svg {
   width: 100%;
   background-color: var(--tpPri);
   color: var(--secColor);
+  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
+  transition: 500ms all ease-in-out;
 }
 .regOn .fields {
   display: block;
@@ -1336,4 +1433,172 @@ main svg {
   fill: var(--priColor);
   transition: 350ms all ease-in-out;
   background-color: var(--accent);
-}/*# sourceMappingURL=styles.css.map */
+}
+.title {
+  margin-bottom: 5vh;
+}
+
+.card {
+  margin: auto;
+  max-width: 950px;
+  width: 90%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
+}
+
+@media (max-width: 767px) {
+  .card {
+    margin: 3vh auto;
+  }
+}
+.cart {
+  background-color: #fff;
+  padding: 4vh 5vh;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+  .cart {
+    padding: 4vh;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 1rem;
+  }
+}
+.summary {
+  background-color: #ddd;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 4vh;
+  color: rgb(65, 65, 65);
+}
+
+@media (max-width: 767px) {
+  .summary {
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+  }
+}
+.summary .col-2 {
+  padding: 0;
+}
+
+.summary .col-10 {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.title b {
+  font-size: 1.5rem;
+}
+
+.main {
+  margin: 0;
+  padding: 2vh 0;
+  width: 100%;
+}
+
+.col-2,
+.col {
+  padding: 0 1vh;
+}
+
+a {
+  padding: 0 1vh;
+}
+
+.close {
+  margin-left: auto;
+  font-size: 0.7rem;
+}
+
+img {
+  width: 3.5rem;
+}
+
+.back-to-shop {
+  margin-top: 4.5rem;
+}
+
+h5 {
+  margin-top: 4vh;
+}
+
+hr {
+  margin-top: 1.25rem;
+}
+
+form {
+  padding: 2vh 0;
+}
+
+select {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1.5vh 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+input {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.btn {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+  width: 100%;
+  font-size: 0.7rem;
+  margin-top: 4vh;
+  padding: 1vh;
+  border-radius: 0;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  transition: none;
+}
+
+.btn:hover {
+  color: white;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+#code {
+  background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.253),
+      rgba(255, 255, 255, 0.185)
+    ),
+    url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
+} /*# sourceMappingURL=styles.css.map */
