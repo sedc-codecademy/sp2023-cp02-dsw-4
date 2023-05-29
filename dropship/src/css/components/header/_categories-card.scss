@@ -13,13 +13,17 @@
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 1.7rem;
     background-color: var(--tpPri);
-    border: 0.15rem solid var(--paleAccent) !important;
+    border: 0.20rem solid var(--paleAccent);
     backdrop-filter: blur(2rem);
     overflow: hidden;
     padding: 1rem;
     transform: translateY(100vh);
     transform-origin: 150% 15%;
     visibility: collapse;
+    transition: transform 400ms ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+
 
     ul {
         position: relative;
@@ -284,4 +288,9 @@
             left: -0.5rem;
         }
     }
+}
+
+.ctDropDownOn{
+    transform: translateY(0);
+    transition: transform 500ms ease-in-out;
 }

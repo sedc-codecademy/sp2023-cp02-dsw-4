@@ -118,11 +118,13 @@
         left: 0.5rem;
         visibility: collapse;
         border: none;
-        svg{
+        opacity: 0;
+        svg {
             fill: var(--accent);
             border-radius: 0.5rem;
+            padding: 0.1rem;
             outline: 0.2rem solid var(--accent);
-            width: 2rem;
+            width: 2.5rem;
             height: 2rem;
         }
         &:hover{
@@ -139,13 +141,13 @@
     background-color: var(--tpPri);
     color: var(--secColor);
     backdrop-filter: blur(2rem);
-    transition: 500ms all ease-in-out;
+    // transition: 500ms all ease-in-out;
 
     .fields {
         display: block;
         opacity: 1;
         visibility: visible;
-        transition: 500ms all ease-in-out;
+        // transition: 500ms all ease-in-out;
 
         #agree {
             visibility: visible;
@@ -157,6 +159,7 @@
     }
 
     .cancel{
+        opacity: 1;
         visibility: visible;
         &:hover {
             background-color: transparent;
