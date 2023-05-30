@@ -2,9 +2,9 @@
     --priColor: rgb(243, 243, 243);
     --tpPri: rgba(255, 255, 255, 0.703);
     --secColor: rgba(0, 0, 0, 0.822);
-    --secAccent: rgb(183, 0, 255);
+    --secAccent: rgb(208, 0, 255);
     --accent: rgb(255, 52, 150);
-    --tertAccent: rgb(255, 157, 0);
+    --tertAccent: rgb(227, 255, 69);
     --tertColor: rgba(128, 128, 128, 0.598);
     --paleAccent: rgba(255, 0, 136, 0.072);
     --paleAccentTwo: rgba(255, 0, 123, 0.67);
@@ -12,12 +12,12 @@
 }
 
 .dark-mode {
-    --priColor: #020202f5;
+    --priColor: rgba(29,29,31,1);
     --tpPri: rgba(0, 0, 0, 0.475);
     --secColor: rgb(243, 243, 243);
-    --accent: rgb(0, 255, 128);
-    --secAccent: rgba(0, 255, 55, 0.872);
-    --tertAccent: rgb(255, 98, 0);
+    --accent: rgb(59, 255, 157);
+    --secAccent: rgba(0, 255, 55);
+    --tertAccent: rgb(65, 204, 255);
     --paleAccent: rgba(0, 255, 128, 0.060);
     --paleAccentTwo: rgba(0, 255, 128, 0.703);
     --paleAccentThree: rgba(0, 255, 128, 0.248);

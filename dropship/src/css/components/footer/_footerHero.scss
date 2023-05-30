@@ -1,0 +1,26 @@
+.footerHero {
+    width: 35rem;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .footerLogo {
+        position: relative;
+        top: -3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7rem;
+        font-family: 'Rubik Microbe', cursive;
+        color: var(--accent);
+        user-select: none;
+        width: 75%;
+        height: 70%;
+        border-radius: 50%;
+        backdrop-filter: blur(0.5rem);
+        border: .15rem solid var(--accent);
+        background-color: var(--tpPri);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
