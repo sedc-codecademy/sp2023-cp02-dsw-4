@@ -15,8 +15,8 @@
         font-family: 'Rubik Microbe', cursive;
         color: var(--accent);
         user-select: none;
-        width: 27rem;
-        height: 27rem;
+        width: 90%;
+        height: 90%;
         border-radius: 50%;
         outline: 0.1vmax solid transparent;
         background-color: var(--tpPri);
@@ -43,6 +43,16 @@
             background-color: var(--tertColor);
             filter: blur(5rem);
             transform: translateZ(-1.2rem);
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .footerHero {
+        width: 20rem;
+        height: 20rem;
+        .footerLogo{
+            font-size: 5rem;
         }
     }
 }

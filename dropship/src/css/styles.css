@@ -12,10 +12,11 @@
   --paleAccent: rgba(255, 0, 136, 0.072);
   --paleAccentTwo: rgba(255, 0, 123, 0.67);
   --paleAccentThree: rgba(227, 172, 199, 0.765);
+  --someColor: #ffffff;
 }
 
 .dark-mode {
-  --priColor: rgba(29,29,31,1);
+  --priColor: rgb(0, 0, 0);
   --tpPri: rgba(0, 0, 0, 0.475);
   --secColor: rgb(243, 243, 243);
   --accent: rgb(59, 255, 157);
@@ -24,6 +25,14 @@
   --paleAccent: rgba(0, 255, 128, 0.060);
   --paleAccentTwo: rgba(0, 255, 128, 0.703);
   --paleAccentThree: rgba(0, 255, 128, 0.248);
+  --someColor: #1f0048;
+  --secAccent: #0CA4A5;
+  --accent: #00eaff;
+  --tertAccent: #e71db1;
+  --priColor: #060315;
+  --paleAccent: #00eaff08;
+  --paleAccentTwo: #00eaff94;
+  --paleAccentThree: #00eaff3f;
 }
 
 * {
@@ -46,6 +55,7 @@ body {
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background-image: radial-gradient(circle, var(--someColor), var(--priColor) 35%);
 }
 
 img {
@@ -739,189 +749,6 @@ footer .footerMain {
   justify-content: space-evenly;
   gap: 3rem;
 }
-footer .footerMain section {
-  min-width: 30rem;
-  min-height: 20vmax;
-}
-footer .contact {
-  position: absolute;
-  left: 30rem;
-  bottom: 15rem;
-  width: 60%;
-}
-footer .contact div {
-  font-size: 2rem;
-  height: 10rem;
-  width: 20rem;
-  display: flex;
-  flex-direction: column;
-}
-footer .footFooter {
-  position: absolute;
-  bottom: 1.5rem;
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer .footFooter div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .footFooter .legal {
-  gap: 1.5rem;
-}
-footer .footFooter .legal a {
-  position: relative;
-  color: var(--secColor);
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: 300ms all ease;
-  font-size: 1.1rem;
-  opacity: 0.6;
-}
-footer .footFooter .legal a div {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  transform: scaleX(0);
-  inset: -0.5rem;
-  z-index: -1;
-  border-radius: 0.3rem;
-  background-color: var(--paleAccentTwo);
-  transition: transform 0.5s cubic-bezier(0, 0.5, 0.5, 1);
-  transition-delay: transform 0.35s;
-  transform-origin: left;
-}
-footer .footFooter .legal a:first-child div {
-  border-top-left-radius: 1.3rem;
-  border-top-right-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
-  transform-origin: left;
-}
-footer .footFooter .legal a:last-child div {
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-  border-bottom-right-radius: 1.3rem;
-  transform-origin: right;
-}
-footer .footFooter .socials {
-  gap: 0.3rem;
-}
-footer .footFooter .socials legend {
-  transition: 300ms all ease;
-  text-transform: uppercase;
-  color: var(--secColor);
-  opacity: 0.6;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-right: 1rem;
-}
-footer .footFooter .socials legend:hover {
-  opacity: 1;
-  color: var(--secColor);
-  transition: 300ms all ease;
-  cursor: default;
-}
-footer .footFooter .socials a {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .footFooter .socials a::before {
-  content: "";
-  inset: -0.35rem;
-  border-radius: 50%;
-  background-color: var(--accent);
-  opacity: 0;
-  position: absolute;
-  transition: scale 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
-  transform-origin: center;
-  scale: 0;
-  z-index: -1;
-}
-footer .footFooter .socials a:hover::before {
-  scale: 1;
-  opacity: 1;
-}
-footer .footFooter .socials a:hover svg {
-  fill: var(--priColor);
-}
-footer .footFooter .socials svg {
-  height: 3rem;
-  width: 3rem;
-  fill: var(--tertColor);
-  transition: 300ms all ease;
-}
-footer .footFooter .footerLanguage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-footer .footFooter .footerLanguage .divider {
-  height: 2rem;
-}
-footer .footFooter .footerLanguage a {
-  position: relative;
-  height: 1.5rem;
-  color: var(--secColor);
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: 300ms all ease;
-  font-size: 1.1rem;
-  opacity: 0.6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .footFooter .footerLanguage a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2rem;
-  background-color: var(--accent);
-  transition: width 0.7s cubic-bezier(0.2, 0.5, 0.3, 1);
-  z-index: -1;
-}
-footer .footFooter .footerLanguage a:hover {
-  opacity: 1;
-  color: var(--priColor);
-}
-footer .footFooter .footerLanguage a:hover::before {
-  width: 130%;
-}
-footer .footFooter .footerLanguage a.english::before {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  right: -0.5rem;
-}
-footer .footFooter .footerLanguage a.macedonian::before {
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  left: -0.5rem;
-}
-footer .footFooter .footerLanguage a.macedonian:hover::before {
-  width: 120%;
-}
-footer .footFooter ul {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-footer .footFooter li {
-  display: flex;
-  justify-content: center;
-}
-footer .footFooter li:hover {
-  color: var(--secColor);
-}
 
 .footerBackgroundImage {
   position: absolute;
@@ -952,6 +779,11 @@ footer .footFooter li:hover {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
 }
 
+@media (max-width: 1440px) {
+  footer::after {
+    bottom: 4.5rem;
+  }
+}
 .newsletter {
   display: flex;
   align-items: flex-start;
@@ -999,8 +831,6 @@ footer .footFooter li:hover {
   justify-content: center;
   height: 3rem;
   align-items: center;
-  font-size: 1rem;
-  font-weight: 600;
   padding: 0.45rem;
   border-bottom-right-radius: 1.5rem;
   border: 0.15rem solid var(--secColor);
@@ -1072,6 +902,33 @@ footer .footFooter li:hover {
   transition: 300ms all ease;
 }
 
+@media (max-width: 1440px) {
+  .newsletter {
+    width: min-content;
+  }
+  .newsletter p {
+    font-size: 0.9rem;
+  }
+  .newsletter h1 {
+    font-size: 4.5rem;
+    line-height: 3.5rem;
+  }
+  .newsletter input {
+    width: 13rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+  .newsletter label {
+    font-size: 0.9rem;
+  }
+  .newsletter form button {
+    height: 2.5rem;
+  }
+  .newsletter svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
 .footerHero {
   width: 35rem;
   height: 35rem;
@@ -1089,8 +946,8 @@ footer .footFooter li:hover {
   font-family: "Rubik Microbe", cursive;
   color: var(--accent);
   user-select: none;
-  width: 27rem;
-  height: 27rem;
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
   outline: 0.1vmax solid transparent;
   background-color: var(--tpPri);
@@ -1117,6 +974,15 @@ footer .footFooter li:hover {
   transform: translateZ(-1.2rem);
 }
 
+@media (max-width: 1440px) {
+  .footerHero {
+    width: 20rem;
+    height: 20rem;
+  }
+  .footerHero .footerLogo {
+    font-size: 5rem;
+  }
+}
 .getintouch {
   display: flex;
   flex-direction: column;
@@ -1214,6 +1080,219 @@ footer .footFooter li:hover {
   transform: scaleX(1);
 }
 
+@media (max-width: 1440px) {
+  .getintouch p {
+    top: -3rem;
+    font-size: 0.9rem;
+  }
+  .getintouch a {
+    top: -2rem;
+    font-size: 2.5rem;
+  }
+  .getintouch a.adress p {
+    font-size: 2.3rem;
+  }
+}
+.footFooter {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footFooter div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footFooter .legal {
+  gap: 1.5rem;
+}
+.footFooter .legal a {
+  position: relative;
+  color: var(--secColor);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 300ms all ease;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  --origin: center;
+  --scale: 0;
+}
+.footFooter .legal a:hover {
+  opacity: 0.8;
+}
+.footFooter .legal a::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  background-color: var(--paleAccentTwo);
+  transform: scaleX(var(--scale));
+  transition: transform 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+  transform-origin: var(--origin);
+  transition-delay: transform 0.35s;
+  z-index: -2;
+}
+.footFooter .legal a:first-child::before {
+  border-top-left-radius: 1.3rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+.footFooter .legal a:last-child::before {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 1.3rem;
+}
+.footFooter .socials {
+  gap: 0.3rem;
+}
+.footFooter .socials legend {
+  transition: 300ms all ease;
+  text-transform: uppercase;
+  color: var(--secColor);
+  opacity: 0.6;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+.footFooter .socials legend:hover {
+  opacity: 1;
+  color: var(--secColor);
+  transition: 300ms all ease;
+  cursor: default;
+}
+.footFooter .socials a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footFooter .socials a::before {
+  content: "";
+  inset: -0.35rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  opacity: 0;
+  position: absolute;
+  transition: scale 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+  transform-origin: center;
+  scale: 0;
+  z-index: -1;
+}
+.footFooter .socials a:hover::before {
+  scale: 1;
+  opacity: 1;
+}
+.footFooter .socials a:hover svg {
+  fill: var(--priColor);
+}
+.footFooter .socials svg {
+  height: 3rem;
+  width: 3rem;
+  fill: var(--tertColor);
+  transition: 300ms all ease;
+}
+.footFooter .footerLanguage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footFooter .footerLanguage .divider {
+  height: 2rem;
+}
+.footFooter .footerLanguage a {
+  position: relative;
+  height: 1.5rem;
+  color: var(--secColor);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 300ms all ease;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footFooter .footerLanguage a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2rem;
+  background-color: var(--accent);
+  transition: width 0.7s cubic-bezier(0.2, 0.5, 0.3, 1);
+  z-index: -1;
+}
+.footFooter .footerLanguage a:hover {
+  opacity: 1;
+  color: var(--priColor);
+}
+.footFooter .footerLanguage a:hover::before {
+  width: 130%;
+}
+.footFooter .footerLanguage a.english::before {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  right: -0.5rem;
+}
+.footFooter .footerLanguage a.macedonian::before {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  left: -0.5rem;
+}
+.footFooter .footerLanguage a.macedonian:hover::before {
+  width: 120%;
+}
+.footFooter ul {
+  display: flex;
+  align-items: center;
+}
+.footFooter li {
+  display: flex;
+  justify-content: center;
+}
+.footFooter li:hover {
+  color: var(--secColor);
+}
+
+@media (max-width: 1440px) {
+  .footFooter {
+    bottom: 1rem;
+  }
+  .footFooter .legal {
+    gap: 1rem;
+  }
+  .footFooter .legal a {
+    font-size: 0.9rem;
+  }
+  .footFooter .socials legend {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  .footFooter .socials svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .footFooter .socials a::before {
+    inset: -0.2rem;
+  }
+  .footFooter .footerLanguage .divider {
+    height: 1.5rem;
+  }
+  .footFooter .footerLanguage a {
+    font-size: 0.9rem;
+  }
+  .footFooter .footerLanguage a::before {
+    height: 1.5rem;
+  }
+}
 main {
   overflow: hidden;
 }
@@ -1236,7 +1315,7 @@ main svg {
   display: flex;
   justify-content: center;
   border: 0.3rem solid var(--paleAccent);
-  backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(5rem);
   border-radius: 1rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 0.5rem;

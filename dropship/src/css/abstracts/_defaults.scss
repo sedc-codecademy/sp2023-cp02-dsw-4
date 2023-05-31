@@ -4,11 +4,12 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+
     // &::-webkit-scrollbar {
     //     display: none;
     // }
     // scroll-behavior: smooth !important;
-    &:focus-visible{
+    &:focus-visible {
         outline: none;
     }
 }
@@ -22,6 +23,8 @@ body {
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    background-image: radial-gradient(circle, var(--someColor), var(--priColor) 35%);
 
     // &::-webkit-scrollbar {
     //     display: none;

@@ -11,58 +11,40 @@ for (let i = 0; i < links.length; i++) {
     })
 }
 
-function scaleElement(e, scale, direction) {
+function scaleElement(e, scale, coordinates) {
+    console.log(coordinates)
     // Apply scaling transformation
-    e.style.transformOrigin = direction;
-    e.style.transform = `scaleX(${scale})`;
+    e.style.setProperty('--origin', coordinates);
+    e.style.setProperty('--scale', scale);
 }
 
 // Function to handle mouseenter event
 function handleMouseEnter(event, e) {
-    let div = e.getElementsByTagName("div")[0]
-
-    // Get the coordinates of the mouse pointer
-    const mouseX = event.clientX
-
-    // Get the position and width of the element
-    const eRect = e.getBoundingClientRect()
-    const eX = eRect.left
-    const eWidth = eRect.width
-
-    // Calculate the distance from the mouse pointer to each side of the element
-    const distanceLeft = mouseX - eX
-    const distanceRight = eX + eWidth - mouseX
-
-    // Determine from which side the mouse entered the element
-    if (distanceLeft < distanceRight) {
-        scaleElement(div, 1, 'left')
-    } else {
-        scaleElement(div, 1, 'right')
-    }
+    const rect = e.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    const percentX = (mouseX / e.offsetWidth) * 100;
+    const percentY = (mouseY / e.offsetHeight) * 100;
+    const coordinates = `${percentX}% ${percentY}%`;
+    scaleElement(e, 1, coordinates);
 }
-
 
 // Function to handle mouseleave event
 function handleMouseLeave(event, e) {
-    let div = e.getElementsByTagName("div")[0]
-    // Get the X-coordinate of the mouse pointer
-    const mouseX = event.clientX
+    const rect = e.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
 
-    // Get the position and width of the element
-    const eRect = e.getBoundingClientRect()
-    const eX = eRect.left
-    const eWidth = eRect.width
+    // Ensure mouseX and mouseY are within the element's boundaries
+    const constrainedX = Math.max(0, Math.min(mouseX, e.offsetWidth));
+    const constrainedY = Math.max(0, Math.min(mouseY, e.offsetHeight));
 
-    // Determine from which side the mouse left the element
-    if (mouseX < eX) {
-        scaleElement(div, 0, 'left')
-        return
-    }
+    const percentX = ((constrainedX / e.offsetWidth) * 100);
+    const percentY = ((constrainedY / e.offsetHeight) * 100);
 
-    if (mouseX > eX + eWidth) {
-        scaleElement(div, 0, 'right')
-        return
-    }
-
-    scaleElement(div, 0, 'center')
+    const coordinates = `${percentX}% ${percentY}%`;
+    scaleElement(e, 0, coordinates);
 }
+
+
+

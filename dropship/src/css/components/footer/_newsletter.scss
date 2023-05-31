@@ -21,7 +21,6 @@
     h1 {
         font-size: 6.5rem;
         letter-spacing: -0.3rem;
-        // color: var(--secColor);
         line-height: 5rem;
         font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         text-transform: lowercase;
@@ -49,17 +48,10 @@
             justify-content: center;
             height: 3rem;
             align-items: center;
-            font-size: 1rem;
-            font-weight: 600;
             padding: .45rem;
-            // border-top-left-radius: 1.2rem;
-            // border-top-right-radius: .3rem;
-            // border-bottom-left-radius: .3rem;
             border-bottom-right-radius: 1.5rem;
-            // background-color: var(--tpPri);
             border: .15rem solid var(--secColor);
             transition: 300ms all ease;
-            // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
             &:hover {
                 border-color: var(--accent);
@@ -68,8 +60,6 @@
                     fill: var(--accent);
                     transition: 300ms all ease;
                 }
-
-
             }
         }
     }
@@ -84,12 +74,8 @@
         color: var(--secColor);
         border: 0.15rem solid var(--secColor);
         border-top-left-radius: 1.5rem;
-        // border-top-right-radius: .3rem;
-        // border-bottom-left-radius: .3rem;
-        // border-bottom-right-radius: 1.2rem;
         transition: 300ms all ease;
-        // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        
+
         &::selection {
             background: var(--accent);
             color: var(--priColor);
@@ -143,7 +129,6 @@
         padding-inline: .5rem;
         transition: 300ms all ease;
         font-size: 1.1rem;
-        // opacity: 0.6;
     }
 
     svg {
@@ -151,5 +136,40 @@
         width: 2.5rem;
         fill: var(--secColor);
         transition: 300ms all ease;
+    }
+}
+
+@media (max-width: 1440px) {
+    .newsletter {
+        width: min-content;
+        p {
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 3.5rem;
+            // max-width: 60%;
+        }
+
+        input{
+            width: 13rem;
+            height: 2.5rem;
+            font-size: 0.9rem;
+        }
+        label{
+            font-size: 0.9rem;
+        }
+
+        form{
+            button{
+                height: 2.5rem;
+            }
+        }
+
+        svg{
+            width: 1.8rem;
+            height: 1.8rem;
+        }
     }
 }
