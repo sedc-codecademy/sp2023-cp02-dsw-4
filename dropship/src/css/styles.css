@@ -770,7 +770,7 @@ footer .footFooter div {
   align-items: center;
 }
 footer .footFooter .legal {
-  gap: 1rem;
+  gap: 1.5rem;
 }
 footer .footFooter .legal a {
   position: relative;
@@ -781,34 +781,34 @@ footer .footFooter .legal a {
   font-size: 1.1rem;
   opacity: 0.6;
 }
-footer .footFooter .legal a:hover {
-  color: var(--accent);
-  transition: 300ms all ease;
-}
-footer .footFooter .legal a::before {
-  content: "";
+footer .footFooter .legal a div {
   position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
   inset: -0.5rem;
-  width: 0;
+  z-index: -1;
+  border-radius: 0.3rem;
+  background-color: var(--paleAccentTwo);
+  transition: transform 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+  transition-delay: transform 0.35s;
+  transform-origin: left;
+}
+footer .footFooter .legal a:first-child div {
   border-top-left-radius: 1.3rem;
   border-top-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  transform-origin: left;
+}
+footer .footFooter .legal a:last-child div {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 1.3rem;
-  background-color: var(--paleAccentTwo);
-  opacity: 0;
-  transition: width 0.7s cubic-bezier(0.2, 0.5, 0.5, 1), opacity 0.3s ease;
-  z-index: -1;
-}
-footer .footFooter .legal a:hover {
-  opacity: 1;
-  color: var(--priColor);
-}
-footer .footFooter .legal a:hover::before {
-  width: 110%;
-  opacity: 1;
-}
-footer .footFooter .legal a#disclaimer:hover::before {
-  width: 115%;
+  transform-origin: right;
 }
 footer .footFooter .socials {
   gap: 0.3rem;
@@ -887,7 +887,7 @@ footer .footFooter .footerLanguage a::before {
   width: 0;
   height: 2rem;
   background-color: var(--accent);
-  transition: width 0.7s cubic-bezier(0.2, 0.5, 0.3, 1), opacity 0.3s ease;
+  transition: width 0.7s cubic-bezier(0.2, 0.5, 0.3, 1);
   z-index: -1;
 }
 footer .footFooter .footerLanguage a:hover {
@@ -1089,13 +1089,32 @@ footer .footFooter li:hover {
   font-family: "Rubik Microbe", cursive;
   color: var(--accent);
   user-select: none;
-  width: 75%;
-  height: 70%;
+  width: 27rem;
+  height: 27rem;
   border-radius: 50%;
-  backdrop-filter: blur(0.5rem);
-  border: 0.15rem solid var(--accent);
+  outline: 0.1vmax solid transparent;
   background-color: var(--tpPri);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform-style: preserve-3d;
+  transform: perspective(50rem);
+  transform: rotateY(0deg) rotateX(0deg);
+}
+.footerHero .footerLogo::before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  inset: -0.5rem;
+  background-image: linear-gradient(45deg, var(--accent), var(--tertAccent), var(--secAccent));
+  transform: translateZ(-1rem);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 0.5rem 1.5rem;
+}
+.footerHero .footerLogo::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  inset: -1rem;
+  background-color: var(--tertColor);
+  filter: blur(5rem);
+  transform: translateZ(-1.2rem);
 }
 
 .getintouch {
@@ -1103,6 +1122,9 @@ footer .footFooter li:hover {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+.getintouch span {
+  color: var(--accent);
 }
 .getintouch p {
   position: relative;
@@ -1132,7 +1154,64 @@ footer .footFooter li:hover {
 }
 .getintouch a.adress {
   margin-top: 1rem;
+}
+.getintouch a.adress p {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: fit-content;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 600;
   letter-spacing: -0.3rem;
+  color: var(--secColor);
+  letter-spacing: -0.2rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-transform: lowercase;
+  text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
+  white-space: wrap;
+}
+.getintouch a.adress p::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  background-color: var(--secColor);
+  opacity: 0.8;
+  z-index: -1;
+  content: "";
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+}
+.getintouch a.adress p:nth-child(2)::before {
+  transition-delay: 350ms;
+}
+.getintouch a.adress::after {
+  display: none;
+}
+.getintouch a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  background-color: var(--secColor);
+  opacity: 0.8;
+  z-index: -1;
+  content: "";
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+}
+.getintouch a:hover::after {
+  transform: scaleX(1);
+}
+.getintouch a:hover p::before {
+  transform: scaleX(1);
 }
 
 main {
