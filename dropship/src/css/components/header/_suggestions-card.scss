@@ -37,7 +37,7 @@
             cursor: pointer;
             user-select: none;
             border-bottom: 0.2rem solid var(--paleAccent);
-            transition: all .8s cubic-bezier(.19, 1, .22, 1);
+            transition: 400ms all ease-in-out;
 
             &::before {
                 content: "";

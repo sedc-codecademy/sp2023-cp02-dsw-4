@@ -6,14 +6,11 @@
 
 .cartNotification {
     position: relative;
-    
-    border-radius: 0.3rem;
-    border-radius: inherit;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    min-width: 10rem;
+    border-radius: 0.3vmax;
     backdrop-filter: blur(2rem);
     background: linear-gradient(to right, var(--paleAccentTwo), var(--secAccent));
-    color: var(--priColor);
+    color: black;
     display: grid;
     font-size: 1.1rem;
     grid-template-rows: 0fr;
@@ -39,8 +36,8 @@
         font-size: 1.1rem;
         // letter-spacing: 0.1rem;  
         font-family: 'Share Tech', sans-serif;
-        padding: 0.2rem;
-        border-radius: inherit;
+        padding: 0.2vmax;
+        border-radius: 0.3vmax;
         transition: 300ms all ease;
         margin-block: 0.5rem;
         color: var(--secColor);
