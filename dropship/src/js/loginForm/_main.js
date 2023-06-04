@@ -10,6 +10,9 @@ const forgotCancelBtn = document.querySelector(".cancelFP")
 let rgOn = false
 let LDP = false
 
+let showLoginTimeout;
+let closeLoginTimeout;
+
 function tabSelect(element) {
   const children = element.querySelectorAll("*")
   if (!LDP) {
@@ -26,24 +29,27 @@ function tabSelect(element) {
   })
 }
 
-tabSelect(loginDp)
-
-function toggleLDP() {
-  if (LDP) {
-    LDP = false
-    return
-  }
-  LDP = true
-}
-
 loginBtn.addEventListener("click", (e) => { // Event for login dropdown
   e.preventDefault()
-  loginDp.classList.toggle("on")
-  toggleLDP()
-  tabSelect(loginDp)
+  showLogin(loginDp)
 })
 
-cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section 
+function closeLogin(element) {
+  clearTimeout(showLoginTimeout)
+  closeLoginTimeout = setTimeout(() => {
+    element.style.display = 'none'
+  }, 500)
+}
+
+function showLogin(element) {
+  clearTimeout(closeLoginTimeout)
+  element.style.display = 'flex'
+  showLoginTimeout = setTimeout(() => {
+    element.showModal()
+  }, 100)
+}
+
+cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section
   e.preventDefault()
   registerUi.classList.toggle('regOn')
   loginUi.classList.toggle('loginOff')
@@ -71,13 +77,8 @@ forgotBtn.addEventListener('click', (e) => { // Event for forgot password sectio
   loginDp.classList.toggle("forgotPS")
 })
 
-document.body.addEventListener('click', (e) => { // Event listener for turning off login drop down
-  if (e.target === loginBtn || loginBtn.contains(e.target)) return
-  if (!loginDp.contains(e.target)) {
-    loginDp.classList.remove("on")
-    if (!LDP) return
-    tabSelect(loginDp)
-    toggleLDP(LDP)
-  }
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeLogin(loginDp);
 })
+
 

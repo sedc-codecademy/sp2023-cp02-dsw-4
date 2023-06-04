@@ -4,145 +4,57 @@ const clearBtn = document.querySelector('.clearButton')
 const idSearchBtn = document.querySelector('#searchButton')
 const searchInput = document.querySelector('.search-bar')
 const suggestionsCard = document.querySelector(".search-suggestions")
-const suggestionsUl = document.querySelector(".suggestions-items")
 const searchContainer = document.querySelector(".search-bar-container")
 
 // CATEGORIES
 
 const categoriesBtn = document.querySelector(".categoriesButton")
 const categoryDropDown = document.querySelector(".ctDropDown")
-const ctLiDt = document.querySelectorAll(".ctLiDt")
-const electronics = document.querySelector("#electronics")
 const ctButtonSf = document.querySelector("#ctButtonSf")
-const subCategoryList = document.querySelector('.sub-categories-ul')
-const subCategoryItems = subCategoryList.querySelectorAll('li')
 
 let blurTimeout;
 let timeOut;
 let prevLength = 0
 let toggle = true
 
-let dimeArray = [{ // Mock array for testing
-    "id": 1,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    "type": 'Product',
-    "price": 109.95,
-    "stock": 3
-},
-{
-    "id": 2,
-    "title": "Mens Casual Premium Slim Fit T-Shirts ",
-    "price": 22.3,
-    "type": 'Product',
-    "stock": 0
-},
-{
-    "id": 3,
-    "title": "Mens Cotton Jacket",
-    "price": 55.99,
-    "type": 'Product',
-    "stock": 12
-},
-{
-    "id": 5,
-    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-    "price": 695,
-    "type": 'Product',
-    "stock": 0
-},
-{
-    "id": 8,
-    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    "price": 10.99,
-    "type": 'Product',
-    "stock": 5
-},
+async function fetchJSON(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching JSON:', error);
+        throw error;
+    }
+}
 
-{
-    "id": 10,
-    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "price": 109,
-    "type": 'Product',
-    "stock": 13
-},
-{
-    "id": 11,
-    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "price": 109,
-    "type": 'Product',
-    "stock": 234
-},
-{
-    "id": 5,
-    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-    "price": 695,
-    "type": 'Product',
-    "stock": 0
-},
-{
-    "id": 8,
-    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    "price": 10.99,
-    "type": 'Product',
-    "stock": 5
-},
+function flattenObjectArrays(object) {
+    const newArray = []
+    for (let key in object) {
+        if (Array.isArray(object[key])) {
+            newArray.push(...object[key])
+        }
+    }
+    return newArray
+}
 
-{
-    "id": 10,
-    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "price": 109,
-    "type": 'Product',
-    "stock": 13
-},
-{
-    "id": 11,
-    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "price": 109,
-    "type": 'Product',
-    "stock": 234
-},
-{
-    "id": 5,
-    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-    "price": 695,
-    "type": 'Product',
-    "stock": 0
-},
-{
-    "id": 8,
-    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    "price": 10.99,
-    "type": 'Product',
-    "stock": 5
-},
-
-{
-    "id": 10,
-    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "price": 109,
-    "type": 'Product',
-    "stock": 13
-},
-{
-    "id": 11,
-    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "price": 109,
-    "type": 'Product',
-    "stock": 234
-},
-]
-
-function suggestionsAnimate(origin, amount) { // Animating the searchbox
+function suggestionsAnimate(origin) { // Animating the searchbox
     if (origin === 'blur') {
         suggestionsCard.animate({
             gridTemplateRows: `0fr`
-        }, { duration: 400, easing: 'ease-in-out', fill: 'forwards', })
+        }, { duration: 400, easing: 'cubic-bezier(0.42, 0, 0.58, 1)', fill: 'forwards', })
         return
     }
     suggestionsCard.animate({
         gridTemplateRows: `1fr`,
-    }, { duration: 500, easing: 'ease-in-out', fill: 'forwards', })
+    }, { duration: 500, easing: 'cubic-bezier(0.42, 0, 0.58, 1)', fill: 'forwards', })
 }
+
+let closeCtTimeout;
+let showCtTimeout;
 
 const classSwitcher = { // Handling class switches for searchContainer and the suggestionsCard
     keyUPblur: () => {
@@ -174,160 +86,37 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
     },
 
     ctOff: () => {
+        clearTimeout(showCtTimeout)
+
         searchContainer.classList.remove('opCt')
         suggestionsCard.classList.remove('opCt')
         suggestionsCard.classList.remove('opCtS2g')
         classSwitcher.focusBlur()
-        categoryDropDown.animate(
-            { visibility: "collapse" },
-            { duration: 200, easing: 'ease-in-out', fill: 'forwards' }
-        )
-        // categoryDropDown.animate(
-        //     { transform: 'translateY(100vh)' },
-        //     { duration: 400, easing: 'ease-in-out', fill: 'forwards' }
-        // )
         categoryDropDown.classList.remove('ctDropDownOn')
         ctButtonSf.innerHTML = 'category'
         toggle = true
+
+        closeCtTimeout = setTimeout(() => {
+            categoryDropDown.style.display = 'none'
+        }, 200)
     },
 
     ctOn: () => {
-        searchContainer.classList.add('opCt')
-        suggestionsCard.classList.add('opCt')
-        categoryDropDown.animate(
-            { visibility: "visible" },
-            { duration: 300, easing: 'ease-in-out', fill: 'forwards' }
-        )
-        // categoryDropDown.animate(
-        //     { transform: 'translateY(0)' },
-        //     { duration: 500, easing: 'ease-in-out', fill: 'forwards' }
-        // )
+        clearTimeout(closeCtTimeout)
+        categoryDropDown.style.display = 'flex'
+        
+        showCtTimeout = setTimeout(() => {
+            searchContainer.classList.add('opCt')
+            suggestionsCard.classList.add('opCt')
+            suggestionsCard.classList.add('opCtS2g')
+            classSwitcher.focusBlur();
+            categoryDropDown.classList.add('ctDropDownOn')
+            ctButtonSf.innerHTML = 'close_fullscreen'
+            toggle = false
+        }, 100)
 
-        suggestionsCard.classList.add('opCtS2g')
-        classSwitcher.focusBlur();
-        categoryDropDown.classList.add('ctDropDownOn')
-        ctButtonSf.innerHTML = 'close_fullscreen'
-        toggle = false
     }
 }
-
-const subElectronics = {
-    id: 'electronics',
-    cats: [{
-        title: `Personal Computers`,
-        description: `Get pc's, the latest components, pc accesories and everything else related to pc's.`,
-        image: '../imgs/cat/tech/sub/pc.png'
-    },
-    {
-        title: `Mobile Telephony`,
-        description: `The latest mobile phones, cases and mobile phone accesories at amaizng prices!`,
-        image: '../imgs/cat/tech/sub/phone.png'
-    },
-    {
-        title: `Home Appliance`,
-        description: `Stoves, washing machines, refrigerators and everthing else you can think of new or used.`,
-        image: '../imgs/cat/tech/sub/wmachine.png'
-    },
-    {
-        title: `Entertainment Appliances`,
-        description: `Tv's, blu-rays, video game consoles and even older entertainment appliances all at a very cheap price!`,
-        image: '../imgs/cat/tech/sub/xbox.png'
-    },
-    {
-        title: `HandHeld entertainment`,
-        description: `Tablets, and other stuff.`,
-        image: '../imgs/cat/tech/sub/switch.png'
-    }]
-}
-
-const subJewlery = {
-    id: 'jewellery',
-    cats: [{
-        title: `Neck wear`,
-        description: `Necklaces, and other neck wear in gold silver and diamond linen.`,
-        image: '../imgs/cat/jewels/sub/necklase.png'
-    },
-    {
-        title: `Hand wear`,
-        description: `Bracelets, rings, wedding rings other stuff in gold silver and diamond linen.`,
-        image: '../imgs/cat/jewels/sub/ring.png'
-    },
-    {
-        title: `Pearcings`,
-        description: `All kinds of pearcings in gold silver and diamond linen`,
-        image: '../imgs/cat/jewels/sub/pearcing.png'
-    },
-    {
-        title: `Some other stuff`,
-        description: `A lot of other stuff in gold silver and diamond linen`,
-        image: '../imgs/cat/jewels/sub/rings.png'
-    },
-    {
-        title: `Even more stuff`,
-        description: `An abundance of other stuff in gold silver and diamond linen`,
-        image: '../imgs/cat/sub/teddy.png'
-    }]
-}
-
-const subMClothes = {
-    id: 'mensWear',
-    cats: [{
-        title: `Shirts`,
-        description: `Polos, long-sleeved, short-sleeved, long-sleeved polos and all other shirts`,
-        image: '../imgs/cat/mWear/sub/stripe-shirt.png'
-    },
-    {
-        title: `Foot Wear`,
-        description: `Boots, jordans, sketchers adidas, nike and everyhing inbetween.`,
-        image: '../imgs/cat/mWear/sub/mboots.png'
-    },
-    {
-        title: `Leg wear`,
-        description: `Jeans, pants, joggers and every other kind of leg wear.`,
-        image: '../imgs/cat/mWear/sub/mjeans.png'
-    },
-    {
-        title: `Head wear`,
-        description: `Head wear, all kinds of hats. Stay protected in the summer and warm in the winter!`,
-        image: '../imgs/cat/mWear/sub/cap.png'
-    },
-    {
-        title: `Space Suits`,
-        description: `For when you want to go to the moon or even mars`,
-        image: '../imgs/cat/mWear/sub/spaceSuit.png'
-    }]
-}
-
-const subWClothes = {
-    id: 'womensWear',
-    cats: [{
-        title: `Dresses`,
-        description: `All kinds of dresses and in all the colors they come in. We even have wedding dresses!`,
-        image: '../imgs/cat/fwear/sub/dress.png'
-    },
-    {
-        title: `Foot wear`,
-        description: `Every kind of shue you can think of at great prices.`,
-        image: '../imgs/cat/fwear/sub/wboots.png'
-    },
-    {
-        title: `Carry-ons`,
-        description: `All the purses you can think of at great prices.`,
-        image: '../imgs/cat/fwear/sub/purse.png'
-    },
-    {
-        title: `Leg wear`,
-        description: `Jeans, pants, joggers and every other kind of leg wear, but for women`,
-        image: '../imgs/cat/fwear/sub/wjeans.png'
-    },
-    {
-        title: `Accessories`,
-        description: `All kinds of accessories you could ever need or want.`,
-        image: '../imgs/cat/sub/teddy.png'
-    }]
-}
-
-let subCtArray = [subElectronics, subJewlery, subMClothes, subWClothes]
 
 document.body.addEventListener('click', (e) => { // Event listener for turning off categories adn loosing focus on searchInput
     if (!searchForm.contains(e.target)) classSwitcher.ctOff()

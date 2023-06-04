@@ -34,7 +34,7 @@ nav {
 
             .material-symbols-outlined {
                 font-size: 1.7rem;
-
+                transition: all .8s cubic-bezier(.19, 1, .22, 1);
             }
 
             ::before {
@@ -47,15 +47,25 @@ nav {
 
             a {
                 &:active {
-                    .material-symbols-outlined {
-                        // opacity: 0.6;
-                        color: var(--secAccent);
+                    span{
+                        &.material-symbols-outlined {
+                            color: var(--tertAccent);
+                        }
                     }
+                    
+                    
                 }
 
                 &:focus-visible{
-                    span {
+                    color: var(--accent);
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+    
+                    .material-symbols-outlined {
                         color: var(--accent);
+                    }
+    
+                    ::before {
+                        background-color: var(--accent);
                     }
                 }
             }

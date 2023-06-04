@@ -20,15 +20,36 @@
             color: var(--secColor);
             font-weight: 600;
             text-transform: uppercase;
-            transition: 300ms all ease;
+            transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
             font-size: 1.1rem;
             opacity: 0.6;
 
             --origin: center;
             --scale: 0;
 
+            &:focus-visible {
+                color: var(--secColor);
+                opacity: 1;
+
+                &::before {
+                    background-color: var(--paleAccentTwo);
+                    transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
+                    transform: scale(1);
+                    // transform-origin: center;
+                }
+            }
+
             &:hover {
-                opacity: 0.8;
+                opacity: 0.9;
+            }
+
+            &:active {
+                color: var(--priColor);
+
+                &::before {
+                    background-color: var(--accent);
+                    transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
+                }
             }
 
             &::before {
@@ -74,7 +95,7 @@
         gap: 0.3rem;
 
         legend {
-            transition: 300ms all ease;
+            transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
             text-transform: uppercase;
             color: var(--secColor);
             opacity: 0.6;
@@ -103,10 +124,21 @@
                 background-color: var(--accent);
                 opacity: 0;
                 position: absolute;
-                transition: scale .8s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
+                transition: scale .8s cubic-bezier(.19, 1, .22, 1), opacity .3s linear, background-color .5s cubic-bezier(.0, 0.5, .5, 1);
                 transform-origin: center;
                 scale: 0;
                 z-index: -1;
+            }
+
+            &:focus-visible {
+                &::before {
+                    scale: 0.9;
+                    opacity: 1;
+                }
+
+                svg {
+                    fill: var(--priColor);
+                }
             }
 
             &:hover {
@@ -118,7 +150,16 @@
                 svg {
                     fill: var(--priColor);
                 }
+            }
 
+            &:active {
+                &::before {
+                    background-color: var(--priColor);
+                }
+
+                svg {
+                    fill: var(--accent);
+                }
             }
         }
 
@@ -126,7 +167,7 @@
             height: 3rem;
             width: 3rem;
             fill: var(--tertColor);
-            transition: 300ms all ease;
+            transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
         }
     }
 
@@ -152,15 +193,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
 
             &::before {
                 content: "";
                 position: absolute;
                 width: 0;
                 height: 2rem;
-                background-color: var(--accent);
-                transition: width .7s cubic-bezier(.20, 0.5, .3, 1);
+                transition: width .7s cubic-bezier(.20, 0.5, .3, 1), background-color .5s cubic-bezier(.0, 0.5, .5, 1);
                 z-index: -1;
+            }
+
+            &:focus-visible{
+                opacity: 1;
+                color: var(--secColor);
+
+                &::before {
+                    width: 130%;
+                    background-color: var(--paleAccentTwo);
+                }
             }
 
             &:hover {
@@ -169,6 +220,15 @@
 
                 &::before {
                     width: 130%;
+                    background-color: var(--accent);
+                }
+            }
+
+            &:active{
+                color: var(--accent);
+                &::before {
+                    width: 130%;
+                    background-color: var(--priColor);
                 }
             }
 
@@ -228,27 +288,28 @@
                 font-size: 0.9rem;
                 margin-right: 0.5rem;
             }
-            svg{
+
+            svg {
                 height: 2.5rem;
                 width: 2.5rem;
             }
 
-            a{
-                &::before{
+            a {
+                &::before {
                     inset: -0.20rem;
                 }
             }
         }
 
-        .footerLanguage{
-            .divider{
+        .footerLanguage {
+            .divider {
                 height: 1.5rem;
             }
 
-            a{
+            a {
                 font-size: 0.9rem;
 
-                &::before{
+                &::before {
                     height: 1.5rem;
                 }
             }

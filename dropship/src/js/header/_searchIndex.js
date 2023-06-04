@@ -1,10 +1,24 @@
+const suggestionsUl = document.querySelector(".suggestions-items")
+const results = suggestionsUl.querySelectorAll("a");
+
+
+console.log(results,suggestionsUl)
+
+results.forEach(e =>{
+   
+})
+
 const options = { // Options for fuse.js, searcing based on the value for "title"
     shouldSort: true,
     threshold: 0.4,
     keys: ['title']
 }
 
-const fuse = new Fuse(dimeArray, options) // Creating an instance of fuse
+const productsArray = await fetchJSON('./mock/new-products.json')
+
+const flattenedProducts = flattenObjectArrays(productsArray)
+
+const fuse = new Fuse(flattenedProducts, options) // Creating an instance of fuse for fuzzy search
 
 clearBtn.addEventListener('click', (e) => { // Event listener for clicking the clear button
     e.preventDefault()
@@ -43,9 +57,6 @@ searchInput.addEventListener('keyup', (e) => { // Event listener for handling ke
 })
 
 function suggestions(arr) {  // Filling suggestions function
-    // if (arr.length === prevLength) {
-    //     return
-    // }
     if (!arr.length) {
         suggestionsAnimate('blur')
         return
@@ -53,26 +64,45 @@ function suggestions(arr) {  // Filling suggestions function
 
     suggestionsUl.innerHTML = ''
 
-    let increment = 0
+    // for (let i = 0; i < arr.length; i++) {
+    //     let a = document.createElement("a")
+    //     if (i < 6) {
+    //         a.innerHTML = `<p>${arr[i].item.title}</p><h5>${arr[i].item.categoryTitle}</h5><div class="divider"></div><h6>${arr[i].item.subCategoryTitle}</h6>`
+    //         suggestionsUl.appendChild(a)
+    //         a.addEventListener("click", () =>{
+    //             console.log(`Result ${arr[i].item.title} has been clicked`)
+    //         })
+    //         suggestionsAnimate('increase')
+    //     } else {
+    //         a.classList.add("viewAll")
+    //         a.innerHTML = `View all`
+    //         suggestionsUl.appendChild(a)
+    //         a.addEventListener("click", () =>{
+    //             console.log("view all has been clicked")
+    //         })
+    //         break
+    //     }
+    // }
 
     for (let i = 0; i < arr.length; i++) {
-        let li = document.createElement("li")
-        if (increment < 6) {
-
-            let stock = 'N/A'
-            if (arr[i].item.stock !== 0) stock = arr[i].item.stock
-            li.innerHTML = `<p>${arr[i].item.title}</p><h6>Price: ${arr[i].item.price}$ | Stock: ${stock}</h6`
-            suggestionsUl.appendChild(li)
-
-            increment++
-            let amnt = (increment * 3)
-            suggestionsAnimate('increase', amnt)
+        let a = document.createElement("a");
+        a.setAttribute("href", "");
+        if (i < 6) {
+            a.innerHTML = `<p>${arr[i].item.title}</p><h5>${arr[i].item.categoryTitle}</h5><div class="divider"></div><h6>${arr[i].item.subCategoryTitle}</h6>`;
+            suggestionsUl.appendChild(a);
+            a.addEventListener("click", () => {
+                console.log(`Result ${arr[i].item.title} has been clicked`);
+            });
+            suggestionsAnimate('increase');
         } else {
-            li.classList.add("viewAll")
-            li.innerHTML = `<a>View all</a>`
-            suggestionsUl.appendChild(li)
-            break
-            // prevLength = arr.length
+            a.classList.add("viewAll");
+            a.innerHTML = `View all`;
+            suggestionsUl.appendChild(a);
+            a.addEventListener("click", () => {
+                console.log("View all has been clicked");
+            });
+            break;
         }
     }
+    
 }

@@ -51,13 +51,26 @@
             padding: .45rem;
             border-bottom-right-radius: 1.5rem;
             border: .15rem solid var(--secColor);
-            transition: 300ms all ease;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+            &:focus-visible{  
+                background-color: var(--accent);
+            }
 
             &:hover {
                 border-color: var(--accent);
 
                 svg {
                     fill: var(--accent);
+                    transition: 300ms all ease;
+                }
+            }
+
+            &:active{
+                border-color: var(--priColor);
+
+                svg {
+                    fill: var(--priColor);
                     transition: 300ms all ease;
                 }
             }
@@ -74,7 +87,7 @@
         color: var(--secColor);
         border: 0.15rem solid var(--secColor);
         border-top-left-radius: 1.5rem;
-        transition: 300ms all ease;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
         &::selection {
             background: var(--accent);
@@ -127,7 +140,7 @@
         pointer-events: none;
         border-radius: 1rem;
         padding-inline: .5rem;
-        transition: 300ms all ease;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
         font-size: 1.1rem;
     }
 
@@ -135,7 +148,7 @@
         height: 2.5rem;
         width: 2.5rem;
         fill: var(--secColor);
-        transition: 300ms all ease;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
     }
 }
 
@@ -149,7 +162,6 @@
         h1 {
             font-size: 4.5rem;
             line-height: 3.5rem;
-            // max-width: 60%;
         }
 
         input{

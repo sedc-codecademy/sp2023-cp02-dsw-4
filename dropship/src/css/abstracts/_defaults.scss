@@ -35,9 +35,9 @@ img {
     image-rendering: crisp-edges;
 }
 
-a:hover,
-span:hover,
-button:hover {
+a,
+span,
+button {
     cursor: pointer;
 }
 
