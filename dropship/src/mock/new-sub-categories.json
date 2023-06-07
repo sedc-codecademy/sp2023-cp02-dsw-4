@@ -1,0 +1,1899 @@
+{
+    "technology": [
+        {
+            "id": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+            "title": "Personal Computers",
+            "description": "Get PCs, the latest components, PC accesories and everything else related to PCs.",
+            "products": [
+                "22a11570-fb04-4866-ab39-edf417e7b94b",
+                "1667664e-25f6-48cd-80c8-bec8a480e70a",
+                "e8a1f39a-91cc-4a4a-8370-140f870e3cbc",
+                "5e080519-afc4-4ad6-ad5e-822110c4a019",
+                "67450240-def8-486c-b5cd-87ffe7f5340a",
+                "c201c6f7-699c-4617-be74-a5b5ba9aa997",
+                "d3f02682-d6bf-41ef-9c0a-fe80bf8fbae6",
+                "dda6056e-58bf-404f-81c8-ccd06c9feab4",
+                "b44b054e-d18a-45a4-a315-39b9f2826b9d",
+                "c4a9663a-7687-4b2b-9af5-5dc4014374f3"
+            ],
+            "image": "../imgs/cat/tech/sub/pc.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+            "title": "Smartphones",
+            "description": "Discover the latest smartphones from top brands like Apple, Samsung, and more.",
+            "products": [
+                "bb555e1d-3d60-444b-9512-eff11675a02b",
+                "05ff3218-30d8-4dec-ba74-9a95abac28c7",
+                "8bac7b4e-710d-48bd-aee5-e99044f7d941",
+                "99ea52a4-85cd-4362-96ca-1bc9402024f1",
+                "660e78fc-9bfb-4f27-a9b1-13b5a0b6559d",
+                "c1cad756-7fab-4a3a-bdd4-ad4b764f8b92",
+                "7ce47165-f9e2-43b6-8743-4b78b4b9607e",
+                "6544897e-f518-40ba-9745-c95ea41912c7",
+                "cfab08a1-6cde-4085-bd69-6113c928f0b0",
+                "e266f2b6-b40e-4ce0-96a0-1c3bb0af485f"
+            ],
+            "image": "../imgs/cat/tech/sub/phone.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+            "title": "Office Electronics",
+            "description": "Get office electronics like printers, scanners, and projectors to help you run your business.",
+            "products": [
+                "20512450-3338-4601-a74f-0958aa76444e",
+                "44427aa3-5e24-4e0b-b5ea-82c6974846b7",
+                "f622519d-7bd4-4dfe-b316-b75ddf72e1f3",
+                "36391f42-375a-4299-90b1-a5fab3419832",
+                "447469cf-817b-4ec9-98de-736447b58871",
+                "1ff79b4b-369c-4110-a011-bfec6873f9ae",
+                "86a22be7-89c4-463d-a358-1d66a7df90fc",
+                "105f0af0-3fb3-4048-90af-8a6a75f2cfa4",
+                "51d35c88-459a-4e2e-a3e2-3f1c8a28af2f",
+                "ed5caf49-1f53-4915-8ed4-2f655fc02a5b"
+            ],
+            "image": "../imgs/cat/tech/sub/printer.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "title": "Gaming Consoles & Accessories",
+            "description": "Find the latest gaming consoles and accessories from top brands like Playstation, Xbox, and Nintendo.",
+            "products": [
+                "dd307696-c13c-4a62-a640-0bde032fc1a5",
+                "4e841b8b-c743-448d-b5f0-e08440484bfb",
+                "0388d5ab-abaf-4030-b045-1e17eea542aa",
+                "172fd3d9-6370-4403-bd18-f595225b05a0",
+                "904a4375-78ba-41b2-8fc2-15c290e18e22",
+                "e781c6ae-d092-4bb8-be9e-f52849cbe9ab",
+                "6d783733-7f10-49c4-8891-196dda14a1cf",
+                "e545632f-ef94-4d64-8b57-e34434f801cd",
+                "c6cd98ac-aad0-4ad9-b58b-ecda423f2ab7",
+                "8ca31e22-c529-4b38-8b77-523cf3c21999"
+            ],
+            "image": "../imgs/cat/tech/sub/xbox.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+            "title": "HandHeld entertainment",
+            "description": "Tablets, and other stuff.",
+            "products": [
+                "22454c0c-a011-40dd-9793-25875e893929",
+                "10a2b4ea-8e8e-4930-a074-db3e723ea8f3",
+                "a89dc721-0333-4c49-809c-2c990eab77ca",
+                "efca0d94-c36d-4eec-a9b9-13d31038d67c",
+                "dbb1f3dc-1a95-44ca-b59a-bb09fcab73f3",
+                "658d4fc3-e99c-4918-93ea-7f705524a2dd",
+                "fed8a2b5-05b1-443e-a8c1-f2c9c1d53e38",
+                "a9866ac7-0ada-4e39-8e35-5bbb207e2a05",
+                "016d34f8-67d3-4438-a620-911cf967cca2",
+                "117ce5b1-1a2a-48ba-97d3-767218999882"
+            ],
+            "image": "../imgs/cat/tech/sub/switch.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+            "title": "Audio & Video Equipment",
+            "description": "Shop for speakers, headphones, TVs, projectors, and other audio & video equipment.",
+            "products": [
+                "d9598be3-d111-43eb-ae63-3366e748fff8",
+                "66a02cf5-8013-4e00-b274-1a31d327860d",
+                "a4c513a5-4f9f-464c-9e9c-7755d68c65e0",
+                "e602d7df-b106-4dbc-aefc-010ba336a91c",
+                "e66ba3a8-7538-4f70-ab85-ab77eea810f1",
+                "75a7fd8e-5267-421f-b064-437b3350a6df",
+                "0f61a0ac-3000-4919-824c-07149ec07ba7",
+                "3963c579-a65b-46f6-b103-904573937530",
+                "568ee766-ee3a-4c5e-baa4-7206d699b1f3",
+                "ac1a7191-8f9c-477c-9454-6a8c1f9add61"
+            ],
+            "image": "../imgs/cat/tech/sub/audiovideo.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+            "title": "Wearable Technology",
+            "description": "Explore the latest wearable tech devices like smartwatches, fitness trackers, and more.",
+            "products": [
+                "ad66af8f-f72c-41ea-a027-f8e6ae6b9600",
+                "bebb2d60-6361-4589-b95b-7f958fbc82f3",
+                "e66fe696-03bb-4f70-a876-f7996d160509",
+                "b3d04b3d-971f-41ff-8261-98f1b27c3b2c",
+                "eb247a70-c988-4716-8341-514eaa5b4305",
+                "94d794b3-1f00-42f6-b855-6ae3e612f196",
+                "c5211973-9629-428b-b616-fd18dc63cbcb",
+                "13b3e93f-687f-4929-b424-172f0db4c2ea",
+                "8c267ca4-f7e7-48c4-a6e3-4539613587ce",
+                "8a1a92b6-8030-4562-96d6-5fd386a28a8e"
+            ],
+            "image": "../imgs/cat/tech/sub/smartwatch.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "58b31959-1232-453f-b631-6411be333ed3",
+            "title": "Virtual Reality",
+            "description": "Explore virtual reality technology and accessories to enhance your gaming and entertainment experiences.",
+            "products": [
+                "c7f7662b-4abd-4ff1-be2a-5536fb04f46d",
+                "0e9cf578-7644-4708-87c5-548447d2a3b8",
+                "675667ed-b14a-4f70-b681-5ce06039809c",
+                "05a4d4c0-d4c8-47d2-94d7-c9b7a69959c7",
+                "e4fc061a-bb0c-42f4-a2b8-d161a2797b06",
+                "8e4e17c0-a8eb-4535-aa35-ea8e8cc212a7",
+                "1b57015b-6fdf-4f56-b67d-e01ae9269407",
+                "391d2d71-c453-4855-9c7c-9451cd98be70",
+                "111060bd-c2f6-4059-863a-501d6dbeabb5",
+                "86bbe6c3-f4be-465c-9538-8dd620f9f486"
+            ],
+            "image": "../imgs/cat/tech/sub/vr-headset.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+            "title": "Cameras & Photography",
+            "description": "Shop for cameras, lenses, and other photography equipment for amateurs and professionals.",
+            "products": [
+                "8771f949-32b0-4bf9-b7fa-fd1ebd2c4310",
+                "6fddbad4-c7ad-4e2f-b1cb-3aadf68b5918",
+                "bcd60177-973c-4955-9032-14132c664732",
+                "9af0fe94-de57-46e6-acf6-3b65ed3b0bdf",
+                "2c5b908c-e853-4d18-bd2c-79ae11019e5f",
+                "8af2b8fe-5848-4973-b804-0b0b46f98933",
+                "00627762-dc62-4e7c-8b77-9f2ac687ea0e",
+                "83fc5312-f8ea-445a-b6e6-26463045d54b",
+                "32ac9cf6-67f0-4362-8065-4dc1880a305a",
+                "48db98cf-e7a0-44ee-be5a-d695e3af5a01"
+            ],
+            "image": "../imgs/cat/tech/sub/proffcamera.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+            "title": "Accessories & Parts",
+            "description": "Find accessories and replacement parts for your electronics, including chargers, cables, and batteries.",
+            "products": [
+                "4a6d3028-6263-40a5-b99e-f57e7157c958",
+                "5cde0716-3522-4490-95db-bc00ca571046",
+                "63171163-73e4-4287-bddc-71a48be47c3e",
+                "55610a1a-d658-4be5-9d23-f75b2bb5f9e9",
+                "7323c3ab-ec3d-4701-8c72-fcbde0df44da",
+                "d40c5db7-6ca2-4b11-a523-78735fa6ed48",
+                "fc8c1f7a-ddb8-4fd7-a803-5b8014f2dbee",
+                "49623bf3-fb6c-4f74-a290-932fd7cac8b5",
+                "26814796-f54c-4532-8f00-1cf5e758050b",
+                "47fa5cf3-936c-4184-ba8f-7aeb7a589ce3"
+            ],
+            "image": "../imgs/cat/tech/sub/charger.png",
+            "categoryTitle": "Technology"
+        }
+    ],
+    "jewellery": [
+        {
+            "id": "21f7bfb9-4636-448c-b574-f3de7d55cb57",
+            "title": "Necklaces",
+            "description": "Elevate your outfit with a stunning necklace, whether you prefer delicate chains or bold statement pieces.",
+            "products": [
+                "35391c5d-cd1f-4e1f-ab88-fc052db094e7",
+                "7cdfdb53-d395-46bc-9a2d-7101e6f1ae07",
+                "23046853-3442-4d69-8fdd-e63ddf6cf796",
+                "b030df21-32b0-4945-aed8-97e829232053",
+                "97807e38-905c-4876-94ab-2b37829ea3f6",
+                "b5ed922b-d16b-4f33-ac5a-b83aad8d3d52",
+                "4bde4b1d-8ee0-4ee5-9299-cf53541431cf",
+                "ddca59f5-86bf-4200-9b97-ccb8b5f50d89",
+                "e143ad70-eded-4ced-9b18-234caef72575",
+                "a8dcfd53-f65f-4aa8-8d8a-d5687ed0b10f"
+            ],
+            "image": "../imgs/cat/jewels/sub/necklase.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "4d183c44-1c80-4b8c-82a8-461bc19b2c1d",
+            "title": "Bracelets",
+            "description": "Add a touch of sophistication and style to your wrist with a variety of bracelet options, including bangles, cuffs, and chains.",
+            "products": [
+                "bf7842d8-6968-4ca3-ae9b-85a9fc237b11",
+                "4322ae45-bd89-478b-a05f-0eae91730cce",
+                "6a5b3f4a-c9da-46d3-b4aa-23ee3627a513",
+                "2ee083d7-9712-46cf-acdd-f1d3c6e99872",
+                "f3885857-27ce-4802-8ac8-148ee03c10af",
+                "3372cc4c-8981-4c79-b346-4fc77caa5c7b",
+                "be8af72b-8060-4db2-b2ca-1b225a171e11",
+                "f16c4299-1335-4a5d-8732-514157c3aa52",
+                "6d785d30-d4c4-4792-b3bf-bdd99266d6b5",
+                "0000cd1c-a6c5-4bbe-acd2-8409cf03ae2f"
+            ],
+            "image": "../imgs/cat/jewels/sub/bracelet.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "daf72d18-f4a3-4fb0-9156-2b5ac2ca15ce",
+            "title": "Earrings",
+            "description": "Accessorize with a touch of elegance and glam with a wide selection of earrings, from simple studs to dramatic hoops.",
+            "products": [
+                "f6fd0ca0-87e1-41cb-8f44-1c9d4f7c4bb6",
+                "eaa320ec-561f-44f9-82a8-a9211e11c43c",
+                "90b2abd9-078d-49d7-b733-af1c6d4f319e",
+                "6254bf1e-ed1f-4ce0-92a2-e063786eaebd",
+                "b97d2174-cf4b-40da-91ed-f8f6dc1de4c2",
+                "f156c781-daf7-4287-a973-f23769060cb6",
+                "84e87554-cee6-44b5-8583-e4475d28537a",
+                "b123fe0f-b34b-456d-868a-c634df4777cb",
+                "941a947b-881d-4f86-971d-61ef4af19e85",
+                "4be48640-021f-4f4a-9f8f-a249008bb98a"
+            ],
+            "image": "../imgs/cat/jewels/sub/earrings.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "c2e338cf-2e3b-443c-8a32-e915444b5b86",
+            "title": "Rings",
+            "description": "Make a statement with a variety of rings, from simple bands to dazzling cocktail rings, perfect for any occasion.",
+            "products": [
+                "c16985eb-3ea8-497e-9d35-a2fa3eceabec",
+                "9cd6b7b9-f864-42a4-a5a6-381be38c1d6a",
+                "5776ee6b-ff6a-4faa-9003-221f9d400012",
+                "293027ec-0949-4e2e-a11d-6dd337cc243d",
+                "82d2a862-7f11-487a-959b-924c1753ce94",
+                "1a8fe590-1698-4304-8a39-3a2e76629ae7",
+                "94d7764c-1ce6-4b12-bc36-69d84a3d4ef6",
+                "73622954-df17-4093-80c1-94737df23f46",
+                "56e78a9d-7eda-43eb-aa02-4217dd32415c",
+                "3fe48ff1-6b93-49ed-b851-8e0209b92d0e"
+            ],
+            "image": "../imgs/cat/jewels/sub/ring.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "779092fe-4730-453f-a24a-e9075c4468a1",
+            "title": "Anklets",
+            "description": "Give your feet a little extra sparkle with a dainty anklet, available in a variety of styles and materials.",
+            "products": [
+                "0fbb9457-e961-4988-ba46-32e1cff9ea6e",
+                "c3b50824-541a-4508-b805-f78b2ac15e02",
+                "72d16548-dc55-4d6c-af26-bfb2e2b1b5f8",
+                "fe52b3d1-eb4a-4efa-841a-2d7f939269ac",
+                "168ff2a2-3abf-4c7b-931d-b92abf80fb7c",
+                "9f86f7c7-c45e-4bfe-844a-22642b177b0c",
+                "cd48786c-66fa-43ee-a852-15a3e9ada110",
+                "8b9ef6f2-3d56-40e5-9e54-b3a10c4cb9f4",
+                "92e0b70a-93ed-40af-9f75-69bd8e66000f",
+                "533adb64-c822-458d-96f6-e815ff38faa7"
+            ],
+            "image": "../imgs/cat/jewels/sub/anklet.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "9a2faf53-f6f6-413e-b4cd-80263acf7461",
+            "title": "Brooches",
+            "description": "Add a vintage touch to your outfit with a stunning brooch, perfect for accenting a lapel, scarf, or bag.",
+            "products": [
+                "2b142c34-8c36-4355-8b24-b8bade95401a",
+                "ef2530c2-cdcd-4bea-84b3-17a88463b133",
+                "bec5cc78-862f-415f-8a3b-498b0ddd48e5",
+                "8a34997c-6d13-4b41-a8a8-8067624a2424",
+                "48f03631-b1a2-42cb-9f10-3b2b7e3a997a",
+                "3a0ea6f4-d9c5-412a-bef6-1819d3a3da30",
+                "16bcb8cf-45c8-405e-86a2-2f09866923c0",
+                "2f3ab14c-b7fe-4332-87ad-bcda10dca439",
+                "27595970-7e6c-4138-8449-5ecd53591255",
+                "bb5470a6-4b16-402e-a873-ce2740230818"
+            ],
+            "image": "../imgs/cat/jewels/sub/brooch.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "abe4b89f-0672-4cc7-95a5-a1d73e1f3fa3",
+            "title": "Charms",
+            "description": "Personalize your jewelry collection with a wide selection of charms, perfect for adding a touch of sentimentality to any piece.",
+            "products": [
+                "dbefd055-7a57-4e62-9fb9-302e703e174b",
+                "3808de07-33a0-4824-9828-a0263da15729",
+                "b8bf98a2-6b0e-4ab9-a0a1-4f5c04c02692",
+                "c9a7b894-43ce-43b3-a878-6b4e5413a64e",
+                "0ff3cb86-edb8-4da2-96e0-34d27645bed6",
+                "72212f8e-de43-4cb4-9d36-9cb79deb696a",
+                "d35ee850-1513-4fbd-8742-9cedc4f55a31",
+                "e4379a77-654b-420f-ab49-53d790be2112",
+                "c78709aa-8cf2-4276-8a1a-8e5c7a219147",
+                "8afc8a34-55ba-4458-8811-acdbc22d6f99"
+            ],
+            "image": "../imgs/cat/jewels/sub/charm.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "881406f9-f38f-46b9-841a-f7b44f309879",
+            "title": "Jewelry Sets",
+            "description": "Complete your look with a matching jewelry set, including earrings, necklaces, bracelets, and more, perfectly coordinated for any occasion.",
+            "products": [
+                "1904b45a-9828-4ac6-9df3-ffcb0197d5cf",
+                "cdc7b6bf-97f9-4d89-a647-54246a2b632e",
+                "9e761818-4804-4c34-8b88-e83e56ab1f23",
+                "6b9da62f-d8aa-4254-80cb-137054e9c1cb",
+                "a0d56919-f30f-42d5-9403-3a953bf02f6d",
+                "3a0d709b-f892-4c94-aeec-ef1520df6b87",
+                "0fcea324-4e92-4bf8-be30-490f7190a209",
+                "090c11c2-212f-44cd-9674-2d0de05654e3",
+                "aebd9da0-26dd-4f3b-8239-8ffe4a73022d",
+                "f711f181-31ae-4cf9-b7b2-3122ca48203a"
+            ],
+            "image": "../imgs/cat/jewels/sub/jewlsets.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
+            "title": "Body Jewelry",
+            "description": "Make a bold statement with unique body jewelry, perfect for adding a touch of edge to any outfit.",
+            "products": [
+                "d9960d9b-7a32-458b-b7e4-9c4ad1295fcb",
+                "3424225a-41d0-44ca-b835-ce1900d7add5",
+                "12477862-58eb-4445-9b64-e985c6970c22",
+                "e92db98c-c9c5-4107-8199-b372fe8d8ab6",
+                "97cefe7e-5717-4c88-a32a-f0e70c73dc13",
+                "57d11f15-87c8-4e30-b3d0-cafe10405138",
+                "7e02ac94-3533-4498-b54f-a2ca1015b751",
+                "2827e61f-acb2-4a87-9122-a977da009146",
+                "68d46bd2-56db-434c-b2a3-8fb107378208",
+                "b17d3bd7-dca4-4c6e-bbb1-aa1ba5fef316"
+            ],
+            "image": "../imgs/cat/jewels/sub/bodyjewl.png",
+            "categoryTitle": "Jewellery"
+        },
+        {
+            "id": "f365a269-fd48-4b0e-bc6e-456723b51192",
+            "title": "Watches",
+            "description": "Find your perfect timepiece with our wide selection of watches, from classic to modern styles.",
+            "products": [
+                "b58f584e-e5a7-42fb-b1bf-220d81419ced",
+                "5c897db4-a169-45d7-b5b6-6832e907600d",
+                "a7c27e24-d0e9-4002-8959-536c908c4651",
+                "2acc8bc4-5c6e-436e-be52-cc3d34f6a765",
+                "88d06d6b-a217-4aff-9fca-592f0b15e8f1",
+                "1229c34c-00fa-473f-ac3c-e571f96e8df9",
+                "4b866185-9751-44b1-a589-c61735c688e0",
+                "72cffb53-b7f9-4af7-8811-6fcfff963cf3",
+                "416fb907-7e7f-4813-8c40-3699477c0e24",
+                "b6cad357-d567-4fc5-a2a6-71eedf420aa8"
+            ],
+            "image": "../imgs/cat/jewels/sub/jewlwatch.png",
+            "categoryTitle": "Jewellery"
+        }
+    ],
+    "menswear": [
+        {
+            "id": "95448f8a-49ea-4930-b91f-193892a687e8",
+            "title": "T-Shirts",
+            "description": "Comfortable and versatile tops that come in a variety of styles, colors, and designs.",
+            "products": [
+                "90720ef6-51a0-473a-a013-864b2c1326d5",
+                "5879522e-cc0f-4928-b879-35730218862b",
+                "221fd769-6958-4460-9eff-6fbb012ef786",
+                "8bc28fcd-7893-4bc4-9ceb-40bd2c9d799b",
+                "42c3721e-0ec9-43b3-b59f-ad2332a4acab",
+                "2e7a7019-18f5-49b0-92ac-f77c504a6b68",
+                "736b0662-e834-4c59-a24a-9a3bf10581a9",
+                "470c7820-3875-4977-ac50-56d65af3528b",
+                "91088e44-4edf-4fb0-ae16-60e3ab2da122",
+                "31ba1718-aadb-49d2-80c2-6d26155ac5f8"
+            ],
+            "image": "../imgs/cat/mWear/sub/stripe-shirt.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "c05c19eb-f67b-48f3-b4ca-922326df53ff",
+            "title": "Foot Wear",
+            "description": "Boots, jordans, sketchers adidas, nike and everyhing inbetween.",
+            "products": [
+                "406e6538-9d31-46d7-a5a7-5af1305d6d22",
+                "562cee5d-d1e2-4c9e-a9af-1ae092d6c32d",
+                "e8ed9cc5-6ea0-4043-be87-7f4e749bf840",
+                "0b122172-2929-4101-bb61-c8ac2b091ca8",
+                "23207d4e-2653-4cee-a62c-34e72111b89e",
+                "b3943ba6-e2aa-46cd-a0d9-4308392dd1e8",
+                "6bbb2fbe-ab23-4969-9ee9-5a9ac889ea76",
+                "3534fb6d-b87d-4596-92a9-354af315b377",
+                "670f31ec-56f1-4e22-a2fd-b8f1c6ecba3d",
+                "15a81388-95eb-41a2-b0b9-aefa2368b68f"
+            ],
+            "image": "../imgs/cat/mWear/sub/mboots.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "fc160538-ed47-4b02-8ff9-32addec8b3a6",
+            "title": "Pants",
+            "description": "Versatile pants that come in a variety of styles, including khakis, chinos, and cargo pants.",
+            "products": [
+                "a60ec7c4-eeb4-4e02-8dde-57ad44cd05f3",
+                "2a9c461e-4716-4b01-94e6-71b424846426",
+                "5a299b0a-45e9-4ef4-81ab-f5022d6a486f",
+                "2160f50a-14e4-45ec-8b40-de083f1a2347",
+                "aa64f4ca-cd7e-4c12-92b8-8a552fc55c57",
+                "70f8cfa0-1ade-4ac9-9026-533208b19d9b",
+                "01bd4a50-1739-46be-8596-34ac4e9a85d1",
+                "314221b0-cd2c-43da-88ff-8d9659d9d2d1",
+                "f4f17274-93d9-4ea6-b31a-16b9539fa833",
+                "01b35b0e-53d7-4f14-a1b7-a831e431c6e0"
+            ],
+            "image": "../imgs/cat/mWear/sub/mpants.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "e1adeac0-4152-4a32-a789-ca9a2c99921b",
+            "title": "Head wear",
+            "description": "Head wear, all kinds of hats. Stay protected in the summer and warm in the winter!",
+            "products": [
+                "d58379f1-b7a2-4664-879f-5a39c7c64cd6",
+                "94b148f9-c7d4-4818-aedd-ccfda1754479",
+                "d9fa956b-7dc5-4ebf-8705-b7cef6853589",
+                "843f43bf-c70d-46e5-b183-38d7480b406d",
+                "b0799fd1-8774-46a7-9136-b6880e57b2e6",
+                "ea056d48-7fa5-4228-affc-ab8fedc2b2b1",
+                "dd56dbce-b6a2-42c0-98a8-268eb5ece73d",
+                "f749d982-b0fa-4111-bb2e-7c3b0398f5fa",
+                "a58f7a22-565b-4d33-9eb7-1f10d4223d32",
+                "287b4888-dea6-4237-9ffd-83b85c287453"
+            ],
+            "image": "../imgs/cat/mWear/sub/cap.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "2ec55d9f-c9dd-49c8-af86-10b7fd4f7dd3",
+            "title": "Suits",
+            "description": "Formal outfits that typically consist of a jacket and matching pants, worn for business or formal occasions.",
+            "products": [
+                "24e9f357-205d-4fc1-bb01-48dcbbd9c3c0",
+                "13592f59-3b39-4d48-bee5-b2b7cf36ce18",
+                "b45e3b05-50e4-4c65-bc44-ff0dd4b8bbf3",
+                "5a358579-957d-4dae-9dfd-8f3cc9ee9be9",
+                "3f4db19e-9dbb-4a3e-9232-4a878318e173",
+                "318c7871-a93a-48a7-96ce-42e9a8860eb1",
+                "57691e5a-d809-4e41-b934-51bf831ccfa0",
+                "45b420b8-c251-41fc-9a44-011b7cea8e06",
+                "f0e50f19-1401-4711-9490-a6357586ba36",
+                "8980f214-45d5-49f3-8272-a03e6eb4da21"
+            ],
+            "image": "../imgs/cat/mWear/sub/suit.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "e72f789f-3032-43b1-bb90-1faacbaa6c9c",
+            "title": "Jeans",
+            "description": "Casual and versatile pants that come in a variety of styles, cuts, and washes.",
+            "products": [
+                "7edcd41c-1315-42d0-9d12-9d62c7029511",
+                "e0db5821-ef6d-4388-a5d8-76ebe2917f96",
+                "5a5c9b91-1858-4687-a210-5f840b11abd5",
+                "91ec8947-7db3-4764-9fea-c40297ed58ea",
+                "6685940a-74d8-4b37-8276-543e0151194c",
+                "fc368348-dd64-404e-9715-2adbfe1f0a15",
+                "d7d6f15b-026b-4872-9c86-4cd98dfb8447",
+                "45fa0634-8e9d-4d48-8af9-d1d876d3eb9c",
+                "48d81b6e-0d10-401a-9440-f0f148aee499",
+                "be123bf6-7339-405b-b39c-71d4833f8dba"
+            ],
+            "image": "../imgs/cat/mWear/sub/mjeans.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "24b62ef4-3d30-4f01-b621-1a849edc5f5e",
+            "title": "Sweaters",
+            "description": "Warm and comfortable tops that come in a variety of styles, including pullovers, cardigans, and turtlenecks.",
+            "products": [
+                "3936c4ac-23f2-4e88-bff5-a7771a05e9f2",
+                "5f2ea225-0a06-45dc-8b85-9b7774329131",
+                "f200cbe9-7459-4170-a2af-f33f2e6de87c",
+                "d94991a6-a3b9-4882-9e29-95d60a59a383",
+                "9c444b75-90d5-4ac7-a7cf-2cc2f881ac00",
+                "ea4cb735-b674-4fd8-b3f5-de2daa90b88c",
+                "41fe8a4d-58f3-4622-b209-1a240d7f6dce",
+                "5d5989d3-4c5b-44b0-9ed9-cc75fcd334e8",
+                "9030de6e-2e2b-4d84-83f5-084e1e9d2713",
+                "676fef43-f437-45f6-a96e-5c79f2d4a734"
+            ],
+            "image": "../imgs/cat/mWear/sub/sweater.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "eac02249-e78d-4f89-b949-7b2bacdbfd2a",
+            "title": "Jackets",
+            "description": "Outerwear that provides warmth and protection from the elements, including leather jackets, denim jackets, and bomber jackets.",
+            "products": [
+                "9a799c0e-ea10-4464-8174-4d5b734382c2",
+                "611aac4f-fb75-4af1-b9ef-6d4631401646",
+                "8bc223fb-05d7-437f-88e7-de12fb02d460",
+                "0bd05b9c-3dc0-47d7-bf93-6f1b4a7ece2e",
+                "51908488-1972-4c98-9461-cac928aae60f",
+                "8232d7b5-8949-4d4e-a090-3a1e5c5ca23f",
+                "6d4023f4-5f6b-4ad5-b6a1-24f0d3f15fda",
+                "4917a635-7d02-4452-9e4a-ea8c9f92e26a",
+                "9ae49ef7-599c-4c2b-b523-30010ce4f6b8",
+                "02dfda9f-83bf-49c7-b286-de1a40a21ac7"
+            ],
+            "image": "../imgs/cat/mWear/sub/leatherjacket.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "c886c2eb-fc04-4d2a-8c9e-1cb71bbac941",
+            "title": "Dress Shirts",
+            "description": "Formal shirts that are typically worn with suits or dress pants for business or formal occasions.",
+            "products": [
+                "7c9399fb-3a2c-4fc4-b300-9097aea728c1",
+                "bb3b43ce-fa1a-4804-adfb-f5ec7e4683da",
+                "ec026424-ba63-4420-8fc5-a380e1bffd11",
+                "20b947d4-4410-44c8-8ae0-849e09e74844",
+                "ec10d3d5-9bb9-4c00-82a1-4ff3765b00da",
+                "7b52cecc-be2c-4929-b603-a81febdeaf92",
+                "637c931b-7ec2-4194-8e9b-abb54d7e33be",
+                "487c45d6-11c4-46cb-9775-9a289f6b8c03",
+                "1900d87d-8abf-4607-b041-a829025efb6e",
+                "992cd050-7e67-483c-bf63-970858f67d37"
+            ],
+            "image": "../imgs/cat/mWear/sub/dress-shirt.png",
+            "categoryTitle": "Men's Clothing"
+        },
+        {
+            "id": "af8cd7b9-683a-48d9-8be4-25eb2237ee39",
+            "title": "Hoodies",
+            "description": "Casual and comfortable tops that come with a hood and often feature a front pocket.",
+            "products": [
+                "9ace88e9-fe41-4d9c-80d6-949276b5f5dc",
+                "5b73d435-41b8-48c3-80c2-5fbcd694570e",
+                "37e13f57-fd5d-4064-b147-25087d83d702",
+                "28b27f20-a20e-4fda-8ba5-6dcc6a21544c",
+                "4a1ba0ba-b28d-4467-bfaf-005523f85fc9",
+                "ac4e0bdc-b33d-4f5d-b1c6-041cf92fd989",
+                "d059e7f9-f16b-479a-ab2c-6311b527fb5c",
+                "2f91d79f-aef2-4835-8eb6-79c68040f25e",
+                "267ea20b-c082-4f27-b01a-eb306bd29239",
+                "c19aeee6-f79e-414a-b470-4b160df69d06"
+            ],
+            "image": "../imgs/cat/mWear/sub/hoodies.png",
+            "categoryTitle": "Men's Clothing"
+        }
+    ],
+    "womenswear": [
+        {
+            "id": "a2bb30f6-be86-4e1c-b58f-e1599b8e30c3",
+            "title": "Dresses",
+            "description": "All kinds of dresses and in all the colors they come in. We even have wedding dresses!",
+            "products": [
+                "a1e6197a-d568-4bf2-90ba-36a7fca5c1b9",
+                "77cd1653-2bce-4782-95e5-8744bce4f127",
+                "f18ffd69-3923-4769-9b24-a624523ae515",
+                "462c1eba-9e88-4944-b3d7-2810162cf1a8",
+                "9afce601-6a30-4102-b90f-0c16de437ed4",
+                "bcec558e-8908-42d5-95e2-ac27b3733def",
+                "8d636032-854d-4880-a972-dc38cc1b328b",
+                "5e8473ca-e51f-4709-ad58-b8a799042dd4",
+                "1237e0f4-1c25-407d-8f63-eba374dfff9e",
+                "82406908-e436-4327-8293-e3da2ad11372",
+                "72c9d991-3699-4a48-9d4c-de02864ee1ed",
+                "7c01018a-bcfa-40f6-83da-1f292f1d39af"
+            ],
+            "image": "../imgs/cat/fWear/sub/dress.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "2986c60e-1876-4c73-84be-95855807a23e",
+            "title": "Foot wear",
+            "description": "Every kind of shoe you can think of at great prices.",
+            "products": [
+                "5b724e4f-d90f-4187-8480-29f98569ddaa",
+                "9a4cfc9b-ea66-48c9-88dd-67a411368d24",
+                "3c2cb010-6988-4230-b15d-15de7291d6b7",
+                "7c3bd953-20bf-40ef-bad3-d2dae30a0ecf",
+                "f0b54c36-3851-424c-9dc2-1a4f745fb70c",
+                "4e87df08-c5f7-4648-84c1-f9cd489f80e5",
+                "afc89490-3e21-4294-909e-b73d3a97a026",
+                "242e67f1-d749-4374-8fc5-34dd3c0c75f7",
+                "952f79bf-c0cc-44ce-aab2-c635a66e4764",
+                "49412e40-5d36-466c-bcea-533f4b5ef3c2"
+            ],
+            "image": "../imgs/cat/fWear/sub/wBoots.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "28bbdaaa-7997-4cf5-9336-0da1b3fc8026",
+            "title": "Carry-ons",
+            "description": "All the purses you can think of at great prices.",
+            "products": [
+                "81360461-198a-4fb0-be30-bb2efe99b07f",
+                "96f80d27-ac83-42dd-9d12-ec26f962f50a",
+                "1e8ba3c8-14f3-4321-a049-0a2db5265fdb",
+                "ca99d1c8-a962-4a9c-8ba2-e0aa4a15dd7a",
+                "01e09736-f39e-4274-a194-3e6083bbf303",
+                "c6813ac9-4383-45e6-bce7-3d1935c0c2bf",
+                "5c733cd5-a9db-403a-8259-63db6d83600d",
+                "cd744155-2ceb-4cba-b84f-7779cff13f19",
+                "6a481f74-8240-4890-8291-fe9fea5dbf15",
+                "076f6287-9872-4ff2-bdb4-4c162a3d7b07"
+            ],
+            "image": "../imgs/cat/fWear/sub/purse.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "56feed6d-93a3-4ff1-a28b-bba8337a2ade",
+            "title": "Jeans",
+            "description": "A range of styles, including jeans, leggings, and dress pants, suitable for various occasions and seasons.",
+            "products": [
+                "710a5b50-0ce3-45a1-aa17-53348ad59d8a",
+                "60ca4da0-c411-45da-83b3-f409181f1460",
+                "5f5d01e5-89ce-490e-8efa-445f52bc7472",
+                "b10980e4-6268-4807-840c-9b1b3295c907",
+                "3031b472-b297-4ace-823a-049602168b09",
+                "5a1c3d41-13d9-407b-957c-f1ec523a18aa",
+                "a46fc7c9-a8bf-4c8d-a24e-2cedd09f93a9",
+                "c1552105-b001-42ae-9988-ad0f5b64178f",
+                "27ca970b-e947-47e7-80f4-267ae9cd8623",
+                "79c70403-4b55-4545-a689-6c01e591d943"
+            ],
+            "image": "../imgs/cat/fWear/sub/wJeans.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "68fda0af-4632-4bf5-94bc-cb18f8aef5f9",
+            "title": "Sweaters",
+            "description": "Warm and comfortable tops that come in a variety of styles, including pullovers, cardigans, and turtlenecks.",
+            "products": [
+                "7d60d10f-44e0-4a73-8701-59b0888eba82",
+                "9f6040f8-0d88-4781-b128-0fbcbe0eed59",
+                "c3a72187-acfe-4a14-bf83-0413c74d03de",
+                "cf6e339b-62e8-4621-980e-ba32447e3171",
+                "f5dfcc66-966a-488e-b6d7-349587a646db",
+                "1f360790-ba8c-4dac-a255-5770327e0fa4",
+                "48623e5d-915a-4abb-ac13-b7f6687d1007",
+                "2aa5d75e-3c47-4637-9ada-ca0147f168f7",
+                "61376b5b-325e-48c0-8b47-fcabe7d3298b",
+                "a3786bf6-c263-46f9-8844-6b61bfeea1c3"
+            ],
+            "image": "../imgs/cat/fWear/sub/wSweater.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "4c9db19d-87b1-4380-846c-62547aeeb2de",
+            "title": "Tops",
+            "description": "A range of styles, from casual to formal, including t-shirts, blouses, and crop tops.",
+            "products": [
+                "971211e7-b0a8-4354-8d60-b13158aa1f1b",
+                "d15536c8-5085-4ca6-8cf5-2d282eb35002",
+                "993bc43d-2144-4f9c-b7b3-8b6d82628222",
+                "215ff37e-9809-46e1-82e4-c266ca0b694a",
+                "f5202b71-94e8-4027-acf0-fc9083965ba5",
+                "89c4cf40-c29a-43f5-a0c9-bc1339a4f7c2",
+                "665872ad-3d8e-494e-b579-52fe13b25a23",
+                "9c2726d6-804d-4b27-aad4-c2b4c3e0cfb4",
+                "86c25dd7-6fbe-4a2a-9d78-8f1bca5f0357",
+                "48b9ca54-a498-4b78-9dbf-79382fdf5c09",
+                "9f7e40e9-1dc2-47f1-bcb4-331e3711d81e",
+                "e3edcf7e-ad0f-47a9-8ceb-9fe5fd31902c",
+                "50cef0c5-d3a0-450a-a390-cc5d5dfdf252"
+            ],
+            "image": "../imgs/cat/fWear/sub/wTops.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "a39cf50b-b311-468e-8e43-eefb0ef53fe2",
+            "title": "Skirts",
+            "description": "A classic wardrobe staple that comes in a variety of lengths, styles, and materials, including pencil skirts, midi skirts, and maxi skirts.",
+            "products": [
+                "0c80f79d-3f59-4711-a8a6-549c63402ea9",
+                "5ce8397b-26e5-4215-ae02-04c8001c430f",
+                "963adbaf-388b-4eae-b981-20245bf47f05",
+                "485a2492-0977-4fec-b636-1cbfdcdd074a",
+                "b5da2783-1686-4e49-a03c-a42cfae484e1",
+                "443ec5fc-63d4-4e88-af81-48593b4505cc",
+                "5abce13d-9f7a-4773-b480-970a1ddca0b8",
+                "cb4f5b58-9e18-4762-92a4-0a8fd4060f68",
+                "79058d70-9c07-49ae-bad5-49379a5c4ec5",
+                "b7b3d6de-11ba-452b-b8e0-2c5311f37794",
+                "19729e0a-dc50-4334-b167-61c08d44e034",
+                "5a01136e-52e7-4195-867a-4a757360517f",
+                "8049a784-3b6e-456c-ad1b-9be1006c4e93"
+            ],
+            "image": "../imgs/cat/fWear/sub/skirt.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "f641cfb0-5506-46ee-bb60-0c8150df3585",
+            "title": "Jackets",
+            "description": "Outerwear that provides warmth and protection from the elements, including leather jackets, denim jackets, and blazers.",
+            "products": [
+                "450b8c8c-a1f7-4a4c-8c39-4974a0090afc",
+                "1ad12e08-01b1-4aaa-9bdc-eecedd7b31a4",
+                "6ac5ee52-c1b7-49ae-a2df-c5448b387600",
+                "aca08df3-4dab-424b-863d-4de820a2c113",
+                "53005018-a98e-4318-9320-20a177e96289",
+                "235c2fd7-398e-4836-b385-6e70feb7257c",
+                "0e2637d4-e9ce-465e-957a-ff0aa4b8b3f2",
+                "c495cf0e-5288-4a70-b9f2-3476ec4e7c0b",
+                "c453f606-e086-450d-a502-e2681ac76998",
+                "64d09b5d-9ed5-40ff-abf9-94ff4de5836b",
+                "1e2db744-537f-4017-af2f-70bda22a4ba2",
+                "541d2ee1-113e-4569-a71d-542e0b3b1f7f",
+                "5f2bdd1c-ea9f-41dd-8666-e0cd54dbd38e",
+                "03baf48a-6f40-4eed-87b4-247e7ad36d73"
+            ],
+            "image": "../imgs/cat/fWear/sub/wJacket.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "e666d9e6-3f05-410e-b93d-457a71cf0123",
+            "title": "Activewear",
+            "description": "Comfortable and functional clothing designed for athletic and sports activities, including yoga pants, sports bras, and workout shirts.",
+            "products": [
+                "6d338cf1-cd05-4ef9-87c5-1b6b32bcdd60",
+                "17d8a0d4-1c94-4353-9cca-5eb9c687dc05",
+                "ab9060e1-454b-4e5a-881a-36d54fdb36b7",
+                "383e0926-8ea9-4638-8b55-fb1fd261cb2b",
+                "f187b287-dbc1-4b54-80cc-c222b8ed51a8",
+                "e13c33d4-5782-490b-9e28-905801f67ea1",
+                "483cdde2-9033-44a5-9cf3-26cd90d24eeb",
+                "fe763f24-3815-4b71-a639-17d3ac7316f9",
+                "a11d6df8-afc2-4199-9f21-c920b837439b",
+                "2787fad6-8be9-43eb-94db-d52017d73bc7"
+            ],
+            "image": "../imgs/cat/fWear/sub/activewear.png",
+            "categoryTitle": "Women's Clothing"
+        },
+        {
+            "id": "8f1d8954-e266-49a4-a7a5-2ac1f8620aeb",
+            "title": "Lingerie",
+            "description": "Intimate apparel that comes in a variety of styles, including bras, panties, and sleepwear.",
+            "products": [
+                "9a565f10-2c42-4af1-80e1-79e107290805",
+                "fdc99c20-9e88-41e4-8730-408e75590ffb",
+                "b846ea51-a861-4e1d-80cf-be141adfab06",
+                "5004a9ea-b6d5-4259-84c4-d3448a371e34",
+                "845fdd82-f5a5-49fc-bc4a-1582e2231f14",
+                "96c3549b-d560-4b8f-b66a-980075bcd866",
+                "a8cdf51c-b1be-4569-8184-d320fbcd8ab5",
+                "473392bd-44ae-4846-8df2-d93f88e22d6f",
+                "8ec55f91-dd46-40ee-8de8-a977ac00108e",
+                "8e58feec-89e2-4185-a826-2090a2d36910"
+            ],
+            "image": "../imgs/cat/fWear/sub/lingerie.png",
+            "categoryTitle": "Women's Clothing"
+        }
+    ],
+    "books": [
+        {
+            "id": "3e4ad451-ae2b-4eaa-a176-fc6d0664ad19",
+            "title": "Romance",
+            "description": "Emotionally satisfying and optimistic ending.",
+            "products": [
+                "8df34855-39c5-451a-9647-6cbbe255fd17",
+                "934fc4ea-a0d5-4086-9426-53a5c3df5133",
+                "60f8f9d2-7c3f-4622-9570-c96c81505cad",
+                "30611445-52be-4910-b39f-75c477b1b2af",
+                "3b1d4f1a-6807-4e7c-a44b-86ea7493c291",
+                "856de448-a79e-4bcd-8f07-58af8b459696",
+                "71894162-eec3-48e8-af18-c76f4e406890",
+                "5c97cf8a-3c80-417d-9490-df9ce5624aa4",
+                "e903b7e0-a6c8-4add-9c2e-e14f535c13bc",
+                "3113cb3a-723c-4cf7-b2fb-d44bdb2bcf05"
+            ],
+            "image": "../imgs/cat/books/sub/romancebooks.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
+            "title": "Children's Books",
+            "description": "Books meant for all children to read.",
+            "products": [
+                "703a1ab4-bffe-4430-b1c5-971729c145e5",
+                "9c24627c-4ad8-4525-acbf-69fab566560e",
+                "adad081b-df39-49d2-a5bf-68cca80751bd",
+                "ea21a202-7ffd-4553-b486-561a7b1aabcb",
+                "d6c2f9a9-5beb-4a53-8fba-48d14db89d27",
+                "6251bdb9-fd23-414f-a1cd-0737293f8dfb",
+                "703ebcb3-07f9-488c-b935-2c4f149ac0a8",
+                "cae16003-cd1f-460c-883f-82ceb815901c",
+                "adb40245-8bb8-4583-a72b-5bd2edc7172d",
+                "2959cd1e-6323-4d6c-a936-ca8348e2af87",
+                "6bb45bef-1a1b-4b71-b891-7a82084842ae",
+                "c1702c44-638d-4e84-ab85-4b4b71686c18",
+                "cd6ee7b6-e32c-4c61-9152-8c1e5637fd17"
+            ],
+            "image": "../imgs/cat/books/sub/childrensbook.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "76ff71a3-1034-48a0-beb8-563b69adf1fe",
+            "title": "Science Fiction",
+            "description": "Worlds that are far advanced than ours but you can still envision them",
+            "products": [
+                "91c0b6e9-9d9d-46ba-b568-be0646438230",
+                "b15e372a-7464-4c7c-b58d-0d9b746e27f8",
+                "1e139921-9055-46f4-807c-9036667c8ae5",
+                "a1691b2b-772a-4882-acef-484862103c04",
+                "f892500d-6715-43ef-89ee-c6c1f38007f1",
+                "50b33ddc-53db-4625-a15a-fd612660505b",
+                "02a43789-dabd-4596-968f-c98d8592812d",
+                "45ef74f7-e110-4d99-b8b9-23b637e14a49",
+                "c854d94a-a4fc-4929-bdd0-ac8ce7ef383b",
+                "e1473f7d-aa43-4ea4-9ae3-772e4ee1bd4f"
+            ],
+            "image": "../imgs/cat/books/sub/sciencefiction.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "aae8dd04-d30a-4853-bcee-345e39ab2b66",
+            "title": "Fantasy",
+            "description": "Beautiful and never seen before worlds filled with magic and strange creatures",
+            "products": [
+                "408e1939-4ae5-4b19-bcb3-51f40edde1c1",
+                "1c61aa8a-39b8-4a82-b186-e70f4887b9b3",
+                "e31f5020-cb25-4ac6-8c1e-01c6026235bc",
+                "9e24be45-c2ae-4ee3-a7e1-9b19b66f722d",
+                "98215f84-976c-49ee-9bc5-531adfb9b5cd",
+                "a190e06e-03c5-4254-b513-ebde5803f4f7",
+                "de5dc601-a936-476d-92e1-57a30e6de3b4",
+                "85d5fbab-3797-438c-9fa5-f093a93da84c",
+                "b8e25430-c436-434b-bf64-4ee2d2821852",
+                "ca0be071-a041-49cf-ab5c-90d2b96b1df7"
+            ],
+            "image": "../imgs/cat/books/sub/fantasybooks.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "bcb5431f-92c8-4eb1-8417-8290c58f7723",
+            "title": "Cookbooks",
+            "description": "Recipes from all the prominent chefs, celebrities and grannies",
+            "products": [
+                "a493ea71-8b0c-4bb8-af4f-757bab909e52",
+                "80d93bb0-926a-4735-be38-43203aec4c97",
+                "48bb756e-b14e-4920-88a9-7f171665701e",
+                "a13042da-c53e-48f3-9009-f3da666b1620",
+                "19d1dee6-2cce-4b99-83a8-0ed89e6e9dff",
+                "1a07a0ce-30c4-4f2f-bb4d-5bd62be68518",
+                "32062536-1ee7-4fb4-b97c-9fe6ea078c53",
+                "877039c7-6ffc-4d6d-ab42-72f5bb991434",
+                "3437dc27-b779-420e-83b0-0a3f7511eb73",
+                "7b6d2494-282e-4db0-be02-7aca434516f0"
+            ],
+            "image": "../imgs/cat/books/sub/cookbooks.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "616e4f1e-546b-4e7c-bc1b-838d71efaaf4",
+            "title": "Biographies & Memoirs",
+            "description": "Books that tell the life stories of people or recount their personal experiences.",
+            "products": [
+                "e0231201-97bd-4a2d-84e3-82b57a134328",
+                "9cea89a4-8f2d-449a-b21a-ca75c22ec7a7",
+                "2a82958f-447d-408b-bb87-b814b108fa2e",
+                "f76b1588-a19c-4378-a0a0-3025cf48e808",
+                "a147ae2f-a3de-4566-8bd1-3fce5d94c41e",
+                "5099d8b4-db08-4912-babb-0975f048eadc",
+                "b8f89854-1141-46ae-b04c-d1975e17d8d6",
+                "fcba8e81-aa6a-4e91-bcb3-eb168f1c747f",
+                "c376329f-994a-41da-a7cb-89f4dd5fcce8",
+                "e55c7e16-aa63-4825-87c9-5ef2dd118b42"
+            ],
+            "image": "../imgs/cat/books/sub/biographybook.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "d25127a3-79f8-4b06-b45e-334a7eb373d0",
+            "title": "History",
+            "description": "Books that cover events, people, or societies of the past.",
+            "products": [
+                "69dc77f1-6a1e-4a5d-a99e-6eb8195e4993",
+                "61ecfa32-99b4-4c39-ac3b-8d877543513b",
+                "ef2a9efe-e36c-402c-a35d-f9f141abc7e5",
+                "de7e1ca7-5ade-4895-8249-1c5218d759c8",
+                "00ecaa00-eb81-4a1f-a229-96cf3f46aa30",
+                "29b0cead-84ad-41f6-894f-039a47dfdef0",
+                "b238a3df-16f2-41ed-9aac-03ada259bc87",
+                "cb9068f5-6c88-4338-a578-ec8f05eec385",
+                "8d8fb0c3-55fc-438f-b08d-f8d92f4717c2",
+                "960fdefc-fbac-492a-9b44-9a332b08ecdf"
+            ],
+            "image": "../imgs/cat/books/sub/historybooks.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "92053a8b-a0ad-47f5-857c-30d3362781db",
+            "title": "Travel",
+            "description": "Books that explore the world and provide insight into different cultures, countries, and regions.",
+            "products": [
+                "41e748a8-ad08-44cd-aca1-0ffac9a98afa",
+                "cfa7e87f-ba25-4c26-a21c-814c378d82c6",
+                "87dfe91e-30af-4e0d-870b-721e109d73f6",
+                "de31a23b-6c27-4ad3-8461-f789905639d6",
+                "1991e940-d9f1-4445-89fe-8f2ed5c7dc9a",
+                "e199a714-ebf1-4f21-9ee7-672ed97e83ef",
+                "d5e848cc-1d63-4495-926c-2d290a91cd6c",
+                "9cac82e1-8dd3-42c5-9c7b-c513951b250d",
+                "838c5ac4-eda6-4cff-abf3-3a01a724e0a2",
+                "91772c90-0f49-47c0-9b0d-086892fb9968"
+            ],
+            "image": "../imgs/cat/books/sub/travelbook.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "36a86b48-0d4c-423d-bc74-3fc176b3fe4c",
+            "title": " Self-Help",
+            "description": "Books that provide guidance and advice on personal growth, mental health, relationships, and more.",
+            "products": [
+                "fde26751-abd4-405a-8c5a-30d06eabe4ec",
+                "1222a497-a809-4faf-86d9-eb9a7c5eaa2e",
+                "278f8e13-a371-4178-8591-6f50b95f9861",
+                "ae367e9b-19e6-4cb8-be96-54fcf09ad836",
+                "818d3b0b-4faa-4d1b-8011-16ff3297e272",
+                "544170f6-e8db-47ca-9bd1-24969db25e26",
+                "f0a8953b-9014-4d74-b723-126388e9b3fe",
+                "d75be4d3-add9-4624-96bc-05ed966f6338",
+                "946626bd-3d7c-46d9-9212-b568a0e76712",
+                "b715857c-bc24-471f-80df-4ba67659c3f2"
+            ],
+            "image": "../imgs/cat/books/sub/selfhelpbook.png",
+            "categoryTitle": "Books"
+        },
+        {
+            "id": "2e189116-a7a3-41d0-897e-e68744e8ec82",
+            "title": "Art & Photography",
+            "description": "Books that showcase or discuss various forms of visual art, including painting, sculpture, photography, and more.",
+            "products": [
+                "1cb1eee3-2ef8-4e8f-8952-efc043498a81",
+                "fb94bcb8-34c4-4c93-82ce-5b87d7c21353",
+                "3c4b9e05-6e88-4df8-bee3-fdcd2c0f63de",
+                "e33bed79-b15d-49a3-b709-becfd2b5a5d8",
+                "5edce766-7d49-4b10-a7eb-82ea48d54a08",
+                "fe66a073-47fa-4006-920c-b7fd4591e809",
+                "72427548-5948-4054-8464-f5aeea71aacf",
+                "45b0da49-84eb-4a14-8380-969c8a3e9f8a",
+                "107b834e-5394-44df-a05c-ac3090f917a1",
+                "90bf29cd-01ee-4d6b-93c1-abae9145d78f"
+            ],
+            "image": "../imgs/cat/books/sub/visualartbook.png",
+            "categoryTitle": "Books"
+        }
+    ],
+    "kidsaccessories": [
+        {
+            "id": "024bd2a3-3f90-41f0-92ac-55c4bacef92c",
+            "title": "Baby Care",
+            "description": "Products that are gentle and used to moisturize and soften the skin of infants and children",
+            "products": [
+                "93b2e6af-80f9-452f-a59d-d668229775bc",
+                "c863479c-f5c3-4357-b734-d445cb9dc2b9",
+                "1d320cd9-d5e3-4dd8-b3e9-c52ab3334a69",
+                "06fee7d4-9164-4675-9203-eb6068924e52",
+                "84b34922-bc75-4318-a559-c341502fd41b",
+                "460ec722-32f0-4f7f-a3d1-25d6e9c877d1",
+                "66d83090-40ef-4a38-8df1-7c0971bcf76c",
+                "27f66481-0e5c-46d6-9cf0-a4a9bb39616d",
+                "ee209ae3-418d-4dc7-801d-e1b8b82c4470",
+                "836066e1-f5c5-49e7-8c8f-d3cd086b1fc2"
+            ],
+            "image": "../imgs/cat/kAndA/sub/babycare.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "159a8835-fb4a-43a0-8058-f41bcfe26475",
+            "title": "Baby Food",
+            "description": "Soft and easily consumed food meant for infants and toddlers",
+            "products": [
+                "d22d4849-4290-45b7-aae8-3caa53118473",
+                "7d17f857-8bff-48c4-be8f-400c343f84e0",
+                "ac1ca168-7d9a-4b03-9880-f69d14f167c7",
+                "5155d4fe-98a5-4008-a746-66684043cdb7",
+                "1c7de556-10b5-4891-bc42-55a13db1db51",
+                "4ff135ce-24de-418d-8b7b-24d2957c54eb",
+                "82ef9672-6f7c-4c85-aead-d9a28116ed27",
+                "3fcdcc1e-51c1-4123-8d40-40492641d288",
+                "1b4979e9-ae1d-4ca0-8fb2-46abfbc8e9d6",
+                "14051454-b34a-4d66-94dc-be9978bf8617"
+            ],
+            "image": "../imgs/cat/kAndA/sub/babyfood.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "3bbdaf55-e219-4a12-9ef0-78be6c140274",
+            "title": "Kids Accessories",
+            "description": "Accessories that are meant for children from ages 3 to 10",
+            "products": [
+                "884b022b-3d12-470e-b247-7d5fa957c70f",
+                "df98b77e-307d-4e34-8d60-e4be15293612",
+                "d69d0822-9f64-405d-b4be-d25e61b3064a",
+                "2d656061-4d0c-4f28-aebb-3dcf12ae6328",
+                "55c65f96-79e4-4404-992e-e07c0469907c",
+                "21cdd1e8-7705-445a-b8c8-c0d604664e34",
+                "5b222ed6-d68a-49ba-8a6a-9b848a3c616c",
+                "2ea34e37-ee3d-48d8-b005-48a52073ed23",
+                "a0e3118d-4c71-4c5a-987f-67947b7708f3",
+                "eeb7a2f1-807d-4c0f-ab9a-378cb96e255f"
+            ],
+            "image": "../imgs/cat/kAndA/sub/kidsclothes.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "3892c27d-945a-48d4-8bab-474d091b463a",
+            "title": "Toys & Games",
+            "description": "Fun toys and even more fun games for your children.",
+            "products": [
+                "194fcf95-222f-4f17-8e84-9cd99279af93",
+                "0a7fd22e-75ea-4639-b812-6927a387eb19",
+                "fe356452-14aa-4970-a806-d70e18cb2055",
+                "4924f9d0-3f3a-4cb1-8c30-ae38ea649985",
+                "ebd85012-2ba4-4f32-8fae-fef45c066127",
+                "22b021a7-2b96-4b73-94e6-e7517ed45f46",
+                "9bf62f25-2b89-4412-9e91-df051bf1dccc",
+                "f01dd466-33a1-4e0f-89bc-673397ec5e6b",
+                "ac9fd99d-6794-41bb-9271-53d57e42d18b",
+                "a3117b5f-4b7c-488c-be7f-175663f999a9"
+            ],
+            "image": "../imgs/cat/kAndA/sub/toysandgames.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "6b7f3c6e-a35d-4bd9-8ddd-fca926f86e13",
+            "title": "Dolls & Accessories",
+            "description": "Dolls, houses and many more accessories.",
+            "products": [
+                "b41b783a-2fbc-48a4-924f-4f422f5b96c3",
+                "ba64c451-6e90-4df4-b815-abd4b365b6b6",
+                "2814c1a6-d1c9-4c7b-bcd2-b14fdaf88883",
+                "cd7207ff-dee5-4e3a-abc8-77db34df541d",
+                "217018c8-434c-4e99-b8aa-820fff68f064",
+                "2880a4d6-c951-4611-9e76-d5d7892ec1b8",
+                "feedfa5e-8366-4802-bc89-edce24d070e3",
+                "4bcaffbd-8d96-4c12-b307-d87f7a9f1de2",
+                "132608cf-6eb0-45b2-ab5e-0b7cf6085f7f",
+                "a524f8ba-aa7c-4a4b-b3aa-a9483bafdf17"
+            ],
+            "image": "../imgs/cat/kAndA/sub/doll.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "679162a2-572c-4ae4-ac3f-704f93806462",
+            "title": "Car Seats & Accessories",
+            "description": "Safety seats and small accessories to help your children",
+            "products": [
+                "699fa7f7-dd97-43d7-af87-f9c1eb8bbc90",
+                "8f9ed310-f38d-408b-b72f-cf85d693cc0e",
+                "402831ef-5776-4f04-92fd-5c1116d19d3d",
+                "122788b0-98d3-4c16-8096-b10454a4dd5b",
+                "d5d1090b-15a5-4bee-8022-67b8c45fc0f3",
+                "09c6aede-beb9-43bd-b0be-5b461a77dbc6",
+                "48fcbc1d-0411-41a3-906d-44f68ed8872c",
+                "7f63334a-3590-4ad7-8119-06e44d7a0703",
+                "5def5c52-29c0-43c1-a815-337913988280",
+                "249431d9-ac08-4b84-870d-5bd57cc28cff"
+            ],
+            "image": "../imgs/cat/kAndA/sub/childcarseat.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "e6e020ac-bb0b-4300-abf4-1a410b995baa",
+            "title": "Boys Clothing",
+            "description": "Clothes for boys",
+            "products": [
+                "c46a9e40-31d4-4be6-b67b-6daf581c85bf",
+                "2be77e1e-475d-4418-9190-664fdc80685e",
+                "75e8f0ad-16d0-41ea-ac7e-6f7b6b773988",
+                "fb4bbf2f-0242-499f-90c4-603465a07f2d",
+                "0b96f3da-6073-4e86-bb18-f1dca49b6ab0",
+                "287b2672-bd5a-4cbe-9c94-0c3cb5f79f47",
+                "2c4f5768-93ea-4ca7-9999-1751d89e5a64",
+                "d25bdc4b-4116-4fc5-90a9-762666898238",
+                "9fcd0840-c066-48f0-9145-13f653e10b42",
+                "028d0ac3-43f4-4850-868a-c445463d3510"
+            ],
+            "image": "../imgs/cat/kAndA/sub/boyclothes.png",
+            "categoryTitle": "Kids & Accessories"
+        },
+        {
+            "id": "67695ff6-13cd-4a1e-b857-02553e1d5b00",
+            "title": "Girls Clothing",
+            "description": "description",
+            "products": [
+                "1dd4d73f-a739-44f4-9af0-32aeaec3a7fb",
+                "85c01583-0d33-4101-8927-86816f8b5e67",
+                "2ef52771-534f-4a47-8dd6-aa9bd611691c",
+                "daf9d089-23d0-4032-acd4-a138b0107a20",
+                "4a858045-96d5-444c-86ff-3c3011a5369f",
+                "bf8731ff-56ca-4e68-a315-86e7c915579a",
+                "c455a966-d7f0-4169-902d-4b3511f0b127",
+                "c867aa51-09d2-4627-8e9c-123ee60adb94",
+                "37108a49-34d7-4549-86ac-48289966c79a",
+                "5a409b07-8d88-4e25-a4ca-c4db71398282"
+            ],
+            "image": "../imgs/cat/kAndA/sub/girlsclothes.png",
+            "categoryTitle": "Kids & Accessories"
+        }
+    ],
+    "beauty": [
+        {
+            "id": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+            "title": "Makeup",
+            "description": "Find makeup products like foundation, lipstick, and mascara for any occasion.",
+            "products": [
+                "e6a77af5-deff-4588-82b3-3ef2ceb32acc",
+                "0dd75ab7-3c4a-42f7-bfe5-6847d7dbf2a9",
+                "4a703ee0-d2c0-48a1-be90-c95e7c90c351",
+                "bca6054a-2863-4e62-b93a-16a3ffec3223",
+                "b1dbe182-c16c-4134-a44a-bd495ee11302",
+                "549d79ba-a364-44de-9b99-3beb4e48575e",
+                "3db398c0-582e-4239-a20a-256e21f12f7a",
+                "387dffce-de9c-4462-8d17-266867220525",
+                "4f725d48-382f-4913-9d24-04ad7c0e3fda",
+                "9b051acb-783d-4611-9ec0-05a73c597c5d"
+            ],
+            "image": "../imgs/cat/beauty/sub/makeup.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+            "title": "Skincare",
+            "description": "Get skincare products like cleansers, moisturizers, and serums to keep your skin healthy and glowing.",
+            "products": [
+                "b536b695-b10a-4929-b02e-ae3556c0ad00",
+                "06e525f8-5f55-4978-9118-8652ff5c0ea3",
+                "3288f4e7-95e1-4d88-b5ac-9c66f4e07d07",
+                "7de449cf-149c-458f-8f87-d1927a022880",
+                "562d3b03-0e0f-41de-a54f-d75f4fc5e94d",
+                "3f5919c7-230a-4b26-94a8-35a8244bf2f0",
+                "504672d4-c1e1-4bc5-b89b-6a46ca300cd1",
+                "0050bd0a-0ff8-4f38-828b-73537a4a0309",
+                "b6220a60-efd5-4398-85d9-34698f5d906d",
+                "76ac86fc-481d-4ad3-8d6f-040bf1e9503f"
+            ],
+            "image": "../imgs/cat/beauty/sub/skincare.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+            "title": "Hair Care",
+            "description": "Shop for hair care products like shampoo, conditioner, and styling tools for any hair type.",
+            "products": [
+                "6dcc88e9-d1ea-4fc5-a983-86a65d1f7287",
+                "cca1a417-a03c-45ee-9262-b9ced2a10d51",
+                "bd3eaf8f-6026-4086-9f2b-0735a02146b3",
+                "06a33719-34d0-49cf-afb8-31fcc92d0249",
+                "07ad880f-4ef6-4abf-84b8-a0b68d001683",
+                "cb8b9144-f431-4c4d-a4ea-38b3aab7f273",
+                "d8ed5d59-f9b7-4b2d-9711-7273a7b260f2",
+                "d5e47541-17fa-43e9-b9c4-1dc203c85e98",
+                "00e5c0da-9c66-47a0-9c25-87852b92b37a",
+                "48d4de5e-2eab-49df-8a01-02a48ccfbcc9"
+            ],
+            "image": "../imgs/cat/beauty/sub/haircare.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+            "title": "Fragrances",
+            "description": "Find perfumes and colognes from top brands for men and women.",
+            "products": [
+                "111eae38-b48e-4b0d-98e5-1b0a797d03fe",
+                "cd0a95e2-0807-4f2e-aa6c-9f030584638f",
+                "08f67469-70cf-492c-9ecf-fb096bb6b8b0",
+                "0ff734c0-0de9-43c8-95d4-1873d4d610e8",
+                "3aa42418-0e41-4786-802c-d6c083b1e081",
+                "9319016d-870f-4ccb-8590-00da6f0f8e0d",
+                "4e43d7dd-28ab-4f35-85ca-4cf6ab39b23d",
+                "254832d6-5801-4d92-b3c1-a9fe501bfd68",
+                "8e00770e-c9d8-45fa-95f7-0090320e592c",
+                "2dd05b93-2f7c-4f62-af3c-42926a28f5a2"
+            ],
+            "image": "../imgs/cat/beauty/sub/fragrance.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "c8e24060-a3cc-4909-a295-a20490698732",
+            "title": "Bath & Body",
+            "description": "Get bath and body products like soaps, body wash, and lotions for a relaxing spa experience at home.",
+            "products": [
+                "3fe5e32b-ac5f-4440-9b39-ae0c3aaba3a4",
+                "8333fa63-6067-441c-a4b0-d86070b1237a",
+                "11c82cce-bfc8-4daa-8794-de26e2d5c914",
+                "2964dbe8-0425-4894-8c01-387ebc78c317",
+                "15649267-a811-4f41-994d-7108af204440",
+                "12c7f0de-acfa-42b6-bf6a-dce9aeb24738",
+                "e162a86a-65ee-47ab-ad72-b6b28a61d66f",
+                "b82aeb58-9716-490e-bec6-c87258a0a70b",
+                "f4ad94c5-388e-44d7-bd83-3921dd26713f",
+                "fbec6d48-fec0-4b8a-b771-1770f7c06f9b"
+            ],
+            "image": "../imgs/cat/beauty/sub/bathandbody.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "67447359-bb55-4510-a696-06207f11625b",
+            "title": "Men's Grooming",
+            "description": "Find grooming products for men like razors, shaving cream, and aftershave.",
+            "products": [
+                "64a08f9a-a2ec-4457-9f23-4b2c0d82b8d7",
+                "6066259a-89b2-477a-9baf-b73484a3c137",
+                "84443f51-c9f6-4bd4-96a7-076314d933c0",
+                "94c816e4-46fa-43ef-9939-8ac453fc2759",
+                "67b59372-aa95-4aee-9ab7-58fa2e331fb3",
+                "a917b142-ace0-4474-a44b-ae6bc2ec52ed",
+                "4ef7d65c-0fb6-4c60-a878-0697cc99901a",
+                "13a3c84f-51a3-470b-be4a-701d2a477b82",
+                "da6ca593-047d-46bf-a859-432ae16fa98b",
+                "c4138e2f-2f22-4827-aca7-cbcfe160a29f"
+            ],
+            "image": "../imgs/cat/beauty/sub/mensgroom.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "29a045e0-76cd-4fa8-9dd1-12a72fbac60b",
+            "title": "Beauty Tools & Accessories",
+            "description": "Shop for beauty tools like hair straighteners, curling irons, and makeup brushes.",
+            "products": [
+                "2c0cefcf-cce9-4959-b2a3-26b267ec13e6",
+                "8c38a498-f54d-49e5-8df5-bc17f7f66d77",
+                "95e59d04-9fe7-463e-8404-8511d99538e8",
+                "2a0e727c-fff9-4ce1-8e2f-5ff36998c171",
+                "bc1fa806-4e9e-4da4-bc15-2111cf0d4f78",
+                "c0b0d1da-e3f5-494b-a2bb-989bcabd6100",
+                "7c70ac56-c18e-47f3-818d-c4bae11a409f",
+                "5ccbddda-8528-400a-9411-30f5a2a9d463",
+                "c71d3903-4d42-4e5e-b9bb-8328c4bfbcd5",
+                "cecc5082-6cd5-4024-9525-a010e9717a18"
+            ],
+            "image": "../imgs/cat/beauty/sub/beautytools.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+            "title": "Personal Care",
+            "description": "Get personal care products like toothpaste, deodorant, and body powder.",
+            "products": [
+                "c648ba40-e3e8-4098-9389-acc0ee6a7dd2",
+                "221814f7-1e75-444f-8600-e4b177e72f87",
+                "8102cd7c-a0b7-44e2-836f-161004f80aee",
+                "239440d7-3b0d-4aff-8207-0d57dcdc3403",
+                "977b1b75-a415-4e7f-a63e-ab531e1d695b",
+                "acf947c8-3f54-48de-8f4c-ec0312b9c68f",
+                "8966a80c-7637-4002-8a71-dbfd1a7089ba",
+                "a17cf3a2-ae57-42b1-9424-84b44b108bbb",
+                "1836b7cf-6a9f-40b2-a54e-2d40ee023126",
+                "c2979f33-0c6e-4ab3-923c-bb3423791fdc"
+            ],
+            "image": "../imgs/cat/beauty/sub/personalcare.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+            "title": "Sun Care",
+            "description": "Find sun care products like sunscreen, after-sun lotion, and self-tanning products.",
+            "products": [
+                "ab570b53-2440-4fc0-8259-3ece2a426810",
+                "b2856daf-94e9-4f9a-92a8-3e600bd0a5a9",
+                "dda3ec6b-7596-4a15-8818-71f1afc85094",
+                "40978a89-2adb-474d-9341-e3c2c0364301",
+                "21b2a765-59d8-4715-8d45-822212115944",
+                "cb3a555e-648e-42ba-bdf7-f1aa97016c05",
+                "b3332953-b177-49e2-8f8c-0061d9aae166",
+                "0760ee3c-20f9-47ab-8514-2c4d4e7358f8",
+                "c698b541-54df-48fa-bd7a-47ca8892709f",
+                "225792cf-3089-4d22-bd5d-15ae384bc6f0"
+            ],
+            "image": "../imgs/cat/beauty/sub/suncare.png",
+            "categoryTitle": "Beauty"
+        },
+        {
+            "id": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+            "title": "Wellness",
+            "description": "Shop for wellness products like vitamins, supplements, and essential oils.",
+            "products": [
+                "aa2fa2ba-bba6-4122-84fb-ad9dbae78948",
+                "c2bd2bfe-b65d-40cc-946b-0b2ce9bc8b70",
+                "0325dec1-56e2-4de4-8b1f-b9e920381aed",
+                "b22a129a-f3ca-45ca-ace9-a582cf2638c5",
+                "e265badd-d12d-4b12-a796-e9a47c84d43f",
+                "2e18fe5f-3400-4fd7-b8d6-398c3cb2d402",
+                "4b527709-3bf1-4664-be52-6574f75332ba",
+                "ffe9c32d-251a-4b75-81de-6f358b156c41",
+                "3a16408a-ffee-4bc8-a910-e45aaf798324",
+                "e2235252-30ad-49ba-82b9-b8e25ad8f244"
+            ],
+            "image": "../imgs/cat/beauty/sub/wellness.png",
+            "categoryTitle": "Beauty"
+        }
+    ],
+    "autoaccessories": [
+        {
+            "id": "d3e3c11b-809b-4d22-98f8-58333377b784",
+            "title": "Car Covers",
+            "description": "Protective covers for cars to shield them from the elements and other hazards.",
+            "products": [
+                "aefa415c-82dc-4e6e-a7db-ac4c1525a742",
+                "0d92bd00-7f5b-4549-aec5-983ac4e40a99",
+                "9305a8a9-bb6c-4bba-ad49-d4dd867d3b4e",
+                "6dd4b8c5-9b5d-4de0-9d42-291b5d3d8743",
+                "9cd39fa5-78c1-4df8-945b-86a91a24a645",
+                "256c68b7-c5b6-40aa-9590-cdd2352e9713",
+                "15b3ed2a-5ce1-4b2d-a797-13ca67fc4e07",
+                "d0c944f7-29a9-4c90-98e3-4bb56b5da713",
+                "3a892cb6-a3c0-45cc-b38e-cc827d6ced33",
+                "8a5341d6-ba3f-4090-8b4b-49bd422c53e0"
+            ],
+            "image": "../imgs/cat/auto/sub/carcover.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+            "title": "Floor Mats",
+            "description": "Custom-fit floor mats to keep the interior of the car clean and tidy.",
+            "products": [
+                "83571611-c7af-4964-a28a-244b57b80d7c",
+                "a2fedcbc-de3e-447a-867d-d990f0bbcf4e",
+                "7846b4a7-5e97-425a-9ff1-3e6d92e64d98",
+                "5abd7e40-ad02-43eb-84c1-e66e2c4934f7",
+                "557a59d6-01ce-439e-879f-36fb91760ed4",
+                "b494ebdf-07cd-4172-9048-ab1092044205",
+                "8958df33-5ff0-4add-8f0b-2d13218ad14f",
+                "cd40a4ab-d893-44f4-82e9-9b7b8470990c",
+                "af224cf1-d6ac-4dc4-82b0-1190cc5d0238",
+                "3e1b097f-4aea-422e-ae4d-e1d66c7804ba"
+            ],
+            "image": "../imgs/cat/auto/sub/carmat.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+            "title": "Seat Covers",
+            "description": "Protective covers for car seats to prevent wear and tear, stains, and damage.",
+            "products": [
+                "40214fe3-84c7-47f0-ae07-acfbaf9882df",
+                "06650b12-63a7-4c69-96db-afd73f3ed83f",
+                "21379b0a-a999-4a3c-9c00-76027da1c14a",
+                "1c529959-3e4b-43e5-ba47-bbea884cbffd",
+                "d1f1719d-0060-4d00-9ac5-75a9175c00d8",
+                "4c5cd84c-08e7-4e40-bcbb-f5233dbab7b9",
+                "39f8dd73-83de-44bd-8219-ad0c25edb11d",
+                "347d49f7-518e-4b67-b9ad-56025e29afb9",
+                "0e69adc3-4dff-4988-864e-6876188a4301",
+                "6ffe533c-c2c6-4889-9325-acdfdd0d5e37"
+            ],
+            "image": "../imgs/cat/auto/sub/seatcover.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+            "title": "Car Organizers",
+            "description": "Storage solutions for cars, including trunk organizers, backseat organizers, and console organizers.",
+            "products": [
+                "c17c6757-91d0-47f8-99f8-65304cd3ef12",
+                "8946f4e7-e002-41aa-8586-d9add1ce4398",
+                "c68548b2-3ae3-46a1-ab9b-ac16b08787b8",
+                "ea6fe1dd-0e44-417f-a4de-23e8ea7115f2",
+                "e47935d8-4931-460c-8987-ff53d8408907",
+                "ff39b0aa-6ba3-4e9e-8f68-b80a17439234",
+                "697374a1-3441-44b2-a3a7-53bcc279d85d",
+                "7171a754-3941-4929-b70b-367140a739db",
+                "7c09df8a-10ae-4dde-9088-af24d8ea26fa",
+                "f8561800-68b8-4c09-8b98-72adca380b90"
+            ],
+            "image": "../imgs/cat/auto/sub/carstorage.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "dcc14cf4-623e-46a5-b993-06722b09a093",
+            "title": "Car Phone Mounts",
+            "description": "Mounts and holders for smartphones and other devices to keep them secure and accessible while driving.",
+            "products": [
+                "c9b091d2-f028-480a-902a-36c0e8321dda",
+                "a230dca0-2ce9-4cde-82bc-671de629f276",
+                "387425a7-6839-4ce2-8557-f62b66c1d56b",
+                "e065b994-0ec2-4f7e-bb7c-df3c68f7ef72",
+                "dcdd48e1-80b1-4d88-b5db-c6e01c5d3159",
+                "c08e9652-c239-4691-9ee6-bb947315f22f",
+                "ad066eec-38d3-4290-bc9f-6713260d146f",
+                "7330408e-bb6d-4fba-886d-176213392ef1",
+                "388a1ce8-8fc4-402c-8ddc-031ae3247dee",
+                "53402362-552c-4486-adb7-7779788e77b6"
+            ],
+            "image": "../imgs/cat/auto/sub/carphonemount.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+            "title": "Car Chargers",
+            "description": "Chargers and adapters for charging phones, tablets, and other devices in the car.",
+            "products": [
+                "9ea63a74-7a6e-440d-b04a-fe536d46287f",
+                "f73bce3d-5619-446b-a355-838249d4ea3a",
+                "73c5ab4b-d763-40ab-b623-a8c36c2f2d20",
+                "d198c2e5-90ab-44eb-b558-8d3606aef415",
+                "e2e73b1b-5e9a-42dd-a528-61b3268511d6",
+                "42632fd7-7357-47a3-b63b-4c0d7f699f35",
+                "d26d8e3e-9c48-4440-a0ff-6214a07cbbdf",
+                "4882168e-3cce-44f8-b4f8-456c2669e47d",
+                "0c520f02-89a9-45be-8498-462a95090002",
+                "0aa2a650-cc1a-4a04-8021-ac5d0a88619f"
+            ],
+            "image": "../imgs/cat/auto/sub/carcharger.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+            "title": "Car Cleaning Kits",
+            "description": "Kits containing everything needed to clean and detail the interior and exterior of a car.",
+            "products": [
+                "4bb1a122-8409-49f0-aa58-931f2f6ee16d",
+                "cb4bf7f2-fe9f-4505-9eab-29d7884e2897",
+                "b862183c-17a8-4fea-95b9-9c3fab7ad42a",
+                "f49dd188-a1cb-41d9-a6ca-59f6c47dfa63",
+                "81cabe25-8d69-4a1d-a272-6d95fd44d620",
+                "98f14232-d136-4acd-a36e-7fea7e08b1bd",
+                "0aafc2e5-501f-4be4-b615-90763c2b7d34",
+                "b894b3e5-fdef-481a-ac22-fced649e65d4",
+                "8266ad4c-d6ea-462b-9be9-540b7163f842",
+                "2fada069-31df-4399-b1c3-985c2583de90"
+            ],
+            "image": "../imgs/cat/auto/sub/cleaningkit.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+            "title": "Car Fragrances",
+            "description": "Air fresheners and scents to keep the car smelling fresh and pleasant.",
+            "products": [
+                "a89fb26b-a3fc-408f-bfa5-ae6670d5bb9f",
+                "a1ce6916-bf25-40f9-a541-8114ef654c38",
+                "b0b3b846-f546-414d-8575-28622baa103d",
+                "31c548a8-0c70-4af7-915f-952e13b9af9b",
+                "57449687-f54b-4303-b702-de3a7090b982",
+                "86a3e8d8-728b-4014-ae99-592e0fd68ae0",
+                "b5a6576c-3077-4097-acd2-e6dc5bd7abcb",
+                "66410024-67cb-4474-a84c-a6309529967d",
+                "219875ac-3356-4374-981d-fb929e1ec1c9",
+                "4cf69850-81ae-4925-85aa-74bd08b1da30"
+            ],
+            "image": "../imgs/cat/auto/sub/airfreshener.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+            "title": "Car Lights",
+            "description": "LED lights and bulbs for headlights, taillights, interior lighting, and decorative lighting.",
+            "products": [
+                "26fb2adb-a251-4a23-952d-bdef097a093c",
+                "ab86a0f5-6a33-472d-92fe-3a3256fd5b96",
+                "60878fe8-9fb3-4742-98ee-79dd8c60b568",
+                "92a2ce33-ab8d-4ecf-a78f-e1c1c0f9d118",
+                "f8bf4dc1-9fba-4cf8-90ff-e92b410ff348",
+                "94a63cc8-08d7-40e4-af94-e092a1ac8926",
+                "0aa9ce68-c88d-4a26-8179-0eaaf0656d42",
+                "df6e92f4-babf-4199-9626-543071fde04e",
+                "da1ec4f1-15ee-46de-a755-1620b2c99bc1",
+                "753e75a0-80a7-4771-8822-4200ba9af752"
+            ],
+            "image": "../imgs/cat/auto/sub/carlight.png",
+            "categoryTitle": "Automobile Accessories"
+        },
+        {
+            "id": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+            "title": "Car Styling",
+            "description": "Decorative and functional accessories to enhance the appearance and performance of a car, including spoilers, grilles, and rims.",
+            "products": [
+                "1a124178-5f74-41f6-8418-5bbb81935045",
+                "92767dd8-b3bc-4b63-a942-2b79ef97edc0",
+                "46c14887-6130-487e-8b61-d103236bdcf8",
+                "3ad73ecd-4251-47f1-aadc-89ff61c2d75c",
+                "5af4de67-ed2e-462f-b31b-f6dc05d8ae74",
+                "7b182881-e1ee-445b-bb9b-e6336aebc28a",
+                "18d3df04-9b36-4ab1-9941-3024c9a9750f",
+                "82fd5765-f2ee-4a3e-8eb3-6a9d203f82c1",
+                "f3030b7a-7be8-4db1-9053-f40255d4459d",
+                "6a845ac0-ad39-4962-be36-38afe0cf28fb"
+            ],
+            "image": "../imgs/cat/auto/sub/carspoiler.png",
+            "categoryTitle": "Automobile Accessories"
+        }
+    ],
+    "sports": [
+        {
+            "id": "bdfb4f4e-c9ae-4590-a62b-f491e4aea479",
+            "title": "Athletic Apparel",
+            "description": "Shop for athletic apparel like workout clothes, running shoes, and more.",
+            "products": [
+                "6b64614e-9057-46a1-be1b-559c3bf18653",
+                "c9b19bdf-24b5-4083-b991-ad5709c756d1",
+                "7e7c03e4-302c-4779-9529-335958cebbd2",
+                "cad6a09f-f9f6-4961-90f3-9ff27f208c87",
+                "a72459ce-a668-4ec5-8c7a-7ab4aba83094",
+                "fdb2151b-38bd-4837-90b7-25107ea3ee06",
+                "6836b617-75e4-41b5-b0b5-5433c4c77d26",
+                "2a676a3b-8135-4280-b182-ef03581e4cbd",
+                "f2ca60df-a1ef-45fb-a93b-3f0c81b60177",
+                "62db5a1e-c80f-4b74-9efc-c51cb59bb450"
+            ],
+            "image": "../imgs/cat/sports/sub/athleticapparel.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "a201ef9c-3206-4449-8eab-86ed6e2220a9",
+            "title": "Athletic Accessories",
+            "description": "Find athletic accessories like water bottles, yoga mats, and resistance bands.",
+            "products": [
+                "428c67a1-c1cd-4608-9755-2def2e739530",
+                "16301449-ca10-4c3e-b40e-141f989560d7",
+                "ff8b78ff-a1c3-4871-8b8a-af0297e8852f",
+                "241f10e3-88b4-4a24-b43f-dcb93c979cb1",
+                "8a8704ec-ceb8-40fd-95ef-dfe861783312",
+                "1423742b-6c72-4e75-89ed-162b7884487f",
+                "0a3732c2-c7d3-404c-9389-71b2284051da",
+                "43429cc9-51d1-4171-b98c-69150b8950b3",
+                "92829252-7951-4807-9f6b-b8cf4f78fb1d",
+                "dcae76f9-d7ce-4517-922f-08e28cf98f41"
+            ],
+            "image": "../imgs/cat/sports/sub/waterbottle.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "2fcef4d6-0f0a-490b-9b12-57ad0eb0bc9a",
+            "title": "Team Sports",
+            "description": "Get gear for team sports like basketball, soccer, and football.",
+            "products": [
+                "96235f6b-28dc-42ba-906c-5f1b74288ba5",
+                "c3b56e5d-690f-4a77-969c-10b215e1225b",
+                "928abb9b-4240-4010-b197-a54f4ee65429",
+                "ce8d3e52-3a85-4286-8a09-072022323340",
+                "4769ed58-b1aa-4965-8028-229773ce5491",
+                "7ba4e96d-9aa7-44f7-a98f-9b398b3fdc4d",
+                "32d2f64b-1318-402b-8715-1454846c99f9",
+                "c986a43d-8338-40ea-85fe-dd691509a345",
+                "5d1d98aa-c985-4632-9e25-74c06ba970a0",
+                "97c4561c-62f3-4add-b43b-b5da34899b98"
+            ],
+            "image": "../imgs/cat/sports/sub/gearsport.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "24ffe98a-3970-4226-9895-bc0267f73cef",
+            "title": "Outdoor Recreation",
+            "description": "Find outdoor gear like camping equipment, backpacks, and hiking boots.",
+            "products": [
+                "93fe6a92-22d6-462a-9237-b40891d4474f",
+                "e228ec77-05b6-469b-af84-18f0af368a38",
+                "345d35cb-d33d-445d-a64f-2ec50403727a",
+                "abd93056-c6b9-4449-bb31-56e60d39e270",
+                "c990dfb9-29d5-4189-bb6d-e9f8813837ba",
+                "861761d5-4b2c-49f3-a7ee-00510cac3061",
+                "9c88d09d-5a4c-4383-8ad6-f5f93e7a9918",
+                "0064f554-a7fd-4957-8cfe-eabec65104da",
+                "91ba62c2-cb39-4867-b80a-aed51a3a46ef",
+                "e4ed489a-2eee-4bca-b3bb-fe2be6788d78"
+            ],
+            "image": "../imgs/cat/sports/sub/campinggear.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "8cec5cb9-b7ac-480d-9c60-899307478643",
+            "title": "Fitness Equipment",
+            "description": "Shop for fitness equipment like treadmills, weights, and resistance machines.",
+            "products": [
+                "c410c4fd-0c00-4e9b-bab7-d6f4d24ab74c",
+                "2c54d011-3bfc-4b96-8967-7c372d08ea5b",
+                "e3e11080-7f98-4f97-81ba-7668feecab3d",
+                "33a146d8-ae36-4a0e-b93c-5398d0820362",
+                "da7572d3-e492-48af-8ce8-4937aa3f38c6",
+                "00eb7ac5-e8cc-4bf8-b4dc-10863f174eee",
+                "501e8540-c6ce-4d98-a5db-ab9d748ee33a",
+                "dc887bd5-890c-42ac-91df-cf36d2413b52",
+                "6128cf6f-fc40-4d93-afd2-760e6b3afaa7",
+                "d160dabd-4f4c-4af8-b09b-a00b366e68cb"
+            ],
+            "image": "../imgs/cat/sports/sub/fitnessgear.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "7407db30-6510-4b5e-8e1e-0e8e72e78f2f",
+            "title": "Bikes",
+            "description": "Find bikes for adults and kids, including road bikes, mountain bikes, and BMX bikes.",
+            "products": [
+                "4417cab0-a13b-4b9e-b692-510cbe902a0d",
+                "d039466b-4d11-486d-94ba-ed9a45b36bbe",
+                "745e07dc-43ef-4572-ac34-7b0331d3fa34",
+                "c9f40c1b-020a-4c42-9a00-57a6e43e73e8",
+                "ae048bef-952c-4720-908f-b483bf571364",
+                "4ee23557-7782-48be-8b63-7d89b92966fb",
+                "aa2d210a-f25a-4a10-936f-5779fc9c9e35",
+                "650f4732-52de-4259-abdb-16309c4aae0f",
+                "4c01a660-c193-4faf-8363-74131d773efc",
+                "6331d8fd-ce6a-47e0-afda-b32397f6e92c"
+            ],
+            "image": "../imgs/cat/sports/sub/bicycle.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "b29fd5c9-ea24-4d83-bf97-fc355f8c672c",
+            "title": "Scooters",
+            "description": "Get electric and manual scooters for kids and adults.",
+            "products": [
+                "140f7619-cb07-4325-b303-061a05eb37db",
+                "cd27ea96-f7ee-46eb-8570-5fd24bd54da0",
+                "6f44726a-8454-4733-9527-21b5a5616133",
+                "138a53aa-1faa-4bc1-89ae-5d9992fde4a6",
+                "ea5aa888-6984-4595-bb8d-249754fcee63",
+                "794549b5-2ddb-4eb3-89f3-571ca2798ec4",
+                "f59cb7dc-73b7-4fbd-84c1-8cbd1a1e63f6",
+                "20f9f9cd-9ece-4466-83bc-7d715cf12cb9",
+                "136d8449-f0b3-4483-8ca0-2aa70f911438",
+                "da6373e2-1876-4bfa-ad7f-7886def3fdbb"
+            ],
+            "image": "../imgs/cat/sports/sub/scooter.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "d3022cd3-e081-41f5-a7a9-06375898811e",
+            "title": "Water Sports",
+            "description": "Shop for water sports gear like paddleboards, kayaks, and snorkeling equipment.",
+            "products": [
+                "11f6e85b-3033-48e6-9fc6-9b5a7a1c0d2c",
+                "0b4049bf-e770-49db-8001-af0169d0e877",
+                "1fca0f65-70d2-454f-a7b7-336bd4477e49",
+                "6299e380-febe-41ce-9977-dde1f5f74e4f",
+                "91eccd60-e0db-4c12-9859-5d2ab96d3830",
+                "bdeeecd3-2d31-4565-866f-fe204b183d22",
+                "48e2b512-e183-4dc3-92c9-e02f540912ee",
+                "02955f34-59c7-487f-bfe4-3c2032039006",
+                "81c769bd-5139-4503-8da2-dc91fe888c47",
+                "4ad24d88-5101-47d7-be08-45a0505922bd"
+            ],
+            "image": "../imgs/cat/sports/sub/watergear.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "413916b7-99d7-4d46-bd9b-86169ca97373",
+            "title": "Golf",
+            "description": "Find golf clubs, bags, and accessories for your next round.",
+            "products": [
+                "854e6686-8dfd-4cd4-84ec-073b80c56dad",
+                "a33482f1-fa13-4793-b43e-9ad2be68a991",
+                "3935ba24-d7a8-447e-8c02-f15284f7972d",
+                "254b6aa8-888c-41c0-a586-79b4a016be15",
+                "d9793d20-5e2d-46dd-903c-a064be4d7ebf",
+                "99f2afd9-3699-475b-b240-33ce775dfac7",
+                "4ad934b0-5926-4068-9629-3492a96ac2cc",
+                "1b56ac51-4fb8-4b79-a428-c068631ee43b",
+                "6b10bcf6-d996-4330-b3a5-35d0ad7b37f2",
+                "0c509088-bd99-472d-a5e1-28e77579b919"
+            ],
+            "image": "../imgs/cat/sports/sub/golfgear.png",
+            "categoryTitle": "Sports"
+        },
+        {
+            "id": "d9c023b9-ead8-4a2c-8acb-68ee100831d3",
+            "title": "Winter Sports",
+            "description": "Get gear for winter sports like skiing, snowboarding, and ice skating.",
+            "products": [
+                "54a4275d-0fa9-4bb7-95da-9c29be43fe85",
+                "a6fbf5c8-3a24-42db-8dc8-f03bccebeea3",
+                "477f5240-0a09-4bbe-89fe-b9ac85bf6943",
+                "57cc56f2-5aeb-447d-a2d8-b5382cff15d5",
+                "5d58988c-2bec-44e4-af28-f93cfa14bc90",
+                "7c2cb64d-4b87-4753-b2f3-ec834ed74ebb",
+                "442f154a-f08c-4a27-8f65-7fe6916f3ff7",
+                "c0847fc6-d20f-4f0f-aa65-530af92849f9",
+                "d09a48bf-6c51-4b43-a606-28772e33fc5f",
+                "86f0ae70-d10a-460d-9b3b-acfb552ef0e3"
+            ],
+            "image": "../imgs/cat/sports/sub/wintergear.png",
+            "categoryTitle": "Sports"
+        }
+    ],
+    "homeandgarden": [
+        {
+            "id": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+            "title": "Furniture",
+            "description": "Shop for sofas, chairs, tables, and other furniture pieces for your home or office.",
+            "products": [
+                "8f97cd63-12e9-4c43-9dd2-34cc89a0391f",
+                "09468aa6-7cec-462c-a33f-396c48a38c24",
+                "0b3f984d-9729-40d6-a989-fe394b81dbb9",
+                "292de661-c7b9-4d9c-8448-18cb97bc7a5e",
+                "a51fdb74-e9f0-49fe-ad3a-c122f17b2359",
+                "46b8a9d8-a1dc-4d3a-a941-fef5371628a5",
+                "b3d954e1-349d-4d21-9721-e99510b6b352",
+                "b4905aa3-46f5-4837-8553-6d9ae55ef81f",
+                "bdceb30a-69b6-49ad-b86b-2d96e31009f2",
+                "21d32dfa-d3f6-41b4-b1f8-d7f2c51468f2"
+            ],
+            "image": "../imgs/cat/hAndG/sub/furniture.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "21010f6a-2891-4fc9-969f-4886c993e95c",
+            "title": "Kitchen & Dining",
+            "description": "Find kitchen appliances, cookware, and dining essentials for your home.",
+            "products": [
+                "65574c59-e13d-42a9-b8d4-28d63c0bc6cf",
+                "97a59fe0-53d0-4b35-a4c0-bf01a084fa38",
+                "16ae716d-0f23-46a8-ab78-95cd59a0f48e",
+                "7d87caab-5751-44df-b78d-b75e23f4b460",
+                "1b2408a1-ca43-42d3-8da8-51cdb1dded36",
+                "011adc8b-cf81-489f-af90-fca3d7e48a81",
+                "4ed1f13a-6d11-41e7-a56b-38bd82aefcf1",
+                "d39e1bfe-9ec3-4c13-a1ce-1c201c73d62b",
+                "9ecb5812-6c3c-41ad-86f9-3fc57bbcd3f5",
+                "e371a1a3-e89e-4a15-a5dc-485dc74c332a"
+            ],
+            "image": "../imgs/cat/hAndG/sub/cookware.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "86f9eabb-c453-4c95-bef2-e7538df76294",
+            "title": "Home Decor",
+            "description": "Shop for home decor items like curtains, rugs, wall art, and more.",
+            "products": [
+                "d571b609-4e4b-41af-b805-36f05c053e42",
+                "dc534408-3a7c-4b17-abe7-38b9a32f92a1",
+                "73c3099d-a145-4fcb-9323-fae62ca355b7",
+                "4766f120-76af-48ef-89bc-2dbed09a3206",
+                "10b03ead-6632-484a-a3c3-40ab41f0f45c",
+                "2a6f017e-6ebe-4713-8eda-67753f5cf2aa",
+                "bca1a6c2-bd96-4d52-853f-df21aa673737",
+                "128e811a-3c01-41e8-a53b-b292b0b8cd79",
+                "42407185-4f1b-4fbf-95e9-f5db3fa357f8",
+                "09cdf76b-e848-4294-942e-66555569a5c9"
+            ],
+            "image": "../imgs/cat/hAndG/sub/homedecor.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+            "title": "Gardening",
+            "description": "Discover gardening tools, plants, and other essentials for your garden.",
+            "products": [
+                "af4ac1b6-ca0e-4c18-a7f8-886147a51a9b",
+                "48e2b943-0421-4fdd-a8d0-3bc13bba00e7",
+                "8c90afea-2661-4271-aa50-60c030daa9c8",
+                "e9956393-7fc1-4c86-8614-2c506f29409d",
+                "c88a1fad-7d4a-4d5a-8b35-5bb993466834",
+                "e4dc2f63-2335-4807-83b5-a80ce16d4102",
+                "3f12ac53-2093-4ec3-9b19-caf994f7a798",
+                "d4f30663-c356-4345-a4a1-3b2716caccf5",
+                "e0fd8c3d-cabf-4c9b-adec-e74d74f15422",
+                "8293d34e-571c-4209-92e0-305234e98a9a"
+            ],
+            "image": "../imgs/cat/hAndG/sub/gardening.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+            "title": "Pet Supplies",
+            "description": "Find pet food, toys, and other supplies for your furry friends.",
+            "products": [
+                "7b639a81-ca6f-401a-bef1-4339abfcb59c",
+                "bb1e1da5-4638-4c4b-ad13-b091803f9322",
+                "9b1ae1f4-3bd6-4329-98e9-79149b1e87db",
+                "565391f5-f503-4df9-bb46-7ace424c77d0",
+                "e15b1eb6-adb3-408c-877b-30bd5b2e760b",
+                "ce218adb-5a31-4948-9353-3b610633100c",
+                "92633f59-1bca-4c15-88c8-3d22ef7e746c",
+                "c6383176-f9b0-49aa-a172-e1ba3dcc2820",
+                "b5b384a3-229b-4c59-b923-680a8decaa29",
+                "3ce23647-ee99-47fd-b1f7-e25070cff382"
+            ],
+            "image": "../imgs/cat/hAndG/sub/petsupplies.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+            "title": "Home Improvement",
+            "description": "Get tools and supplies for home improvement projects like painting, plumbing, and electrical work.",
+            "products": [
+                "f37939d9-d2e7-43ff-a538-6a49611f5fd9",
+                "c666b194-6cab-433c-b9c3-508f73087d32",
+                "222405cd-27f4-499e-8fae-14105a8208ac",
+                "8b570965-5f40-40f9-bdff-351f1bef90fc",
+                "599a4027-22d4-4476-abb1-ad001133e36e",
+                "3189f082-510a-4524-8ba1-922e431e1bcc",
+                "79cfb2b6-b33f-41ed-83f9-cd3492252246",
+                "23cf8bfe-286c-43d7-ba52-cb1526f7845a",
+                "e8b74a08-d61d-4508-8593-c4bdfd17cbe5",
+                "81b6e45a-0f3c-4125-9926-c4d1c74736dd"
+            ],
+            "image": "../imgs/cat/hAndG/sub/homeimprove.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+            "title": "Bedding & Bath",
+            "description": "Shop for bedding sets, towels, and other bath essentials for your home.",
+            "products": [
+                "720e8f32-5c73-4357-af37-d8dfe39fe37f",
+                "576237c9-2bea-44e0-9d35-08924a80dfa9",
+                "52c9eac2-60fc-4ca9-89d2-8c4e405b192a",
+                "4ccfea45-593d-45a1-9081-419f5c8a3a2a",
+                "1c298a0e-5d97-45e1-bca2-693467f5c2ba",
+                "e92ec724-9275-4abf-a2f6-a76103f8c534",
+                "af8d9bc0-a6d3-44eb-97fa-52b6395ba8a2",
+                "ede0800e-f361-4038-b49c-67f92d4cb06e",
+                "d8bc5934-5b0b-4eed-af75-e7f7d508f2ef",
+                "85002a8f-9837-4ed7-9093-d71d1353a9bb"
+            ],
+            "image": "../imgs/cat/hAndG/sub/bathessentials.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+            "title": "Storage & Organization",
+            "description": "Find storage solutions and organizational tools for your home or office.",
+            "products": [
+                "420b8f76-7c74-4016-a789-5ef5d6ab9ae1",
+                "5a8de596-cf80-4220-a2a3-c51e79dd7e75",
+                "431cad86-61b8-4168-a743-dd7d6f3c74ac",
+                "ffbcd9d4-b066-48d1-bd9c-a9871b8123da",
+                "de1f7a14-864d-45d4-af16-006a94f75c72",
+                "dc4e24dc-54dd-4848-8241-2542b2276f00",
+                "97e02ef3-1772-422b-aa65-4302f2c3a6cb",
+                "3f24b23c-c6fb-48bb-95d0-e983cc2e6f80",
+                "0c90daa9-52b4-4845-8672-e5167e4c8993",
+                "98e8f599-7856-49e2-9960-79a03646b740"
+            ],
+            "image": "../imgs/cat/hAndG/sub/storageorg.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+            "title": "Lighting",
+            "description": "Discover lighting solutions for your home, including lamps, light fixtures, and bulbs.",
+            "products": [
+                "1989df20-d9ca-4909-9f47-aafa28312ffa",
+                "b68d7f51-f023-4c2f-8e50-35eeed9226c4",
+                "887ce3cd-9c2e-4d3e-a3f6-a714e35b882b",
+                "3a02d8e4-6daf-447f-b2c7-d99a8cf4f7d3",
+                "d28f3cd7-e784-40a8-bff2-5055534b57b7",
+                "d67a96bb-6c5e-47ad-99d1-1650f5596d83",
+                "6511b4a2-ee64-4528-9524-5f0618edc943",
+                "9c27df05-6d64-49ba-a207-5ee65a7b65ba",
+                "9248b5b3-2fe5-449a-bd19-f1cff4db59c6",
+                "6b18ae25-5a06-40f6-b9a3-87530424b6cb"
+            ],
+            "image": "../imgs/cat/hAndG/sub/lighting.png",
+            "categoryTitle": "Home & Garden"
+        },
+        {
+            "id": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+            "title": "Cleaning & Laundry",
+            "description": "Get cleaning supplies and laundry essentials for your home.",
+            "products": [
+                "5da8b7fa-6ba8-406c-b4ae-1853e26e84e2",
+                "534b1307-7df2-47e7-bcd8-772184ee5055",
+                "7398f87e-9ad9-40d1-8af4-476b9b4a4585",
+                "062bb892-3692-4ee5-a6db-fa389131e875",
+                "ef55f744-1f1a-4ea8-97ec-0a734513d3ca",
+                "62d8671b-ead0-4ca2-851c-354dac46b933",
+                "59c11bce-df6a-4eac-89df-18997b4d12ff",
+                "8cc35811-4db3-4612-b278-c9faf58f7d17",
+                "9f6c7246-ca97-4adc-aae5-ae5d9a12d0f2",
+                "dc4d1fdb-5eee-4bdb-a079-16aebdde6ae2"
+            ],
+            "image": "../imgs/cat/hAndG/sub/laundry.png",
+            "categoryTitle": "Home & Garden"
+        }
+    ]
+}

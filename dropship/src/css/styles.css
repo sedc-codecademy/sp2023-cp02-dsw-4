@@ -831,9 +831,6 @@ footer .footerGradient {
 main {
   overflow: hidden;
 }
-main div {
-  min-height: 30vh;
-}
 main svg {
   fill: transparent;
   top: 0;
