@@ -964,6 +964,45 @@ main {
   overflow: hidden;
 }
 
+#masterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+}
+#masterContainer img {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+#masterContainer .arrow {
+  border-radius: 20px 6px;
+  position: absolute;
+  top: 30%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+#container {
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  width: 50vw;
+  height: 10vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#left-arrow {
+  left: 400px;
+}
+
+#right-arrow {
+  right: 400px;
+
 main svg {
   fill: transparent;
   top: 0;

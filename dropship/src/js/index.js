@@ -4,8 +4,8 @@ import "./header/_notification.js";
 import "./header/_searchIndex.js";
 import "./header/_categoriesDropDown.js";
 import "./footer/_contact.js";
-//// CATGORIES TAB
-import "./categoriesTab/_filters.js";
+//// CATGORIES SECTION
+import "./categoriesSection/_categoriesSection.js";
 //// LOGIN
 import "./loginForm/_main.js";
 //// CATGORIES SECTION
