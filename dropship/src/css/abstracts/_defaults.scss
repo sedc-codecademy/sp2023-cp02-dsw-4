@@ -24,7 +24,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 
-    background-image: radial-gradient(circle, var(--someColor), var(--priColor) 35%);
+    background-image: radial-gradient(circle, var(--priColor), var(--someColor), var(--priColor) 75%);
 
     // &::-webkit-scrollbar {
     //     display: none;

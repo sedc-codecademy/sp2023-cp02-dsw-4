@@ -14,6 +14,7 @@
   --paleAccentTwo: rgba(255, 0, 123, 0.67);
   --paleAccentThree: rgba(227, 172, 199, 0.765);
   --someColor: #ffffff;
+  --additionallAccent: rgb(0, 255, 119);
 }
 
 .dark-mode {
@@ -27,13 +28,14 @@
   --paleAccent: rgba(0, 255, 128, 0.060);
   --paleAccentTwo: rgba(0, 255, 128, 0.703);
   --paleAccentThree: rgba(0, 255, 128, 0.248);
-  --someColor: #001e48;
-  --secAccent: #0CA4A5;
+  --someColor: #2b0075;
+  --secAccent: #0099ff;
   --accent: #00eaff;
   --tertAccent: #e71db1;
-  --priColor: #030b15;
+  --additionallAccent: rgb(255, 187, 0);
+  --priColor: #000000e3;
   --paleAccent: #00eaff08;
-  --paleAccentTwo: #00eaff94;
+  --paleAccentTwo: #00eaffc8;
   --paleAccentThree: #00eaff3f;
   --backdropBackground: rgba(0, 0, 0, 0.475);
 }
@@ -66,7 +68,7 @@ body {
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-image: radial-gradient(circle, var(--someColor), var(--priColor) 35%);
+  background-image: radial-gradient(circle, var(--priColor), var(--someColor), var(--priColor) 75%);
 }
 
 img {
@@ -85,7 +87,7 @@ button {
 }
 
 header {
-  height: 45rem;
+  height: 30vmax;
   position: relative;
   display: grid;
   place-content: center;
@@ -96,19 +98,35 @@ header .headerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 90%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 100%);
 }
 
 .headerBackgroundImage {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -9;
-  top: -3rem;
 }
 .headerBackgroundImage svg {
+  position: absolute;
   fill: transparent;
-  transform: rotate(180deg);
+}
+.headerBackgroundImage svg #a :first-child {
+  stop-color: var(--accent);
+}
+.headerBackgroundImage svg #a :nth-child(2) {
+  stop-color: var(--secAccent);
+}
+.headerBackgroundImage svg #b :first-child {
+  stop-color: var(--tertAccent);
+}
+.headerBackgroundImage svg #b :nth-child(2) {
+  stop-color: var(--additionallAccent);
+}
+.headerBackgroundImage svg #c :first-child {
+  stop-color: var(--secAccent);
+}
+.headerBackgroundImage svg #c :nth-child(2) {
+  stop-color: var(--tertAccent);
 }
 .headerBackgroundImage svg #polgOne {
   fill: var(--accent);

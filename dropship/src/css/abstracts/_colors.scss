@@ -11,6 +11,7 @@
     --paleAccentTwo: rgba(255, 0, 123, 0.67);
     --paleAccentThree: rgba(227, 172, 199, 0.765);
     --someColor: #ffffff;
+    --additionallAccent: rgb(0, 255, 119);
 }
 
 .dark-mode {
@@ -25,14 +26,15 @@
     --paleAccentTwo: rgba(0, 255, 128, 0.703);
     --paleAccentThree: rgba(0, 255, 128, 0.248);
 
-    --someColor: #001e48;
-    --secAccent: #0CA4A5;
+    --someColor: #2b0075;
+    --secAccent: #0099ff;
     --accent: #00eaff;
     --tertAccent: #e71db1;
-    --priColor: #030b15;
+    --additionallAccent: rgb(255, 187, 0);
+    --priColor: #000000e3;
 
     --paleAccent: #00eaff08;
-    --paleAccentTwo: #00eaff94;
+    --paleAccentTwo: #00eaffc8;
     --paleAccentThree: #00eaff3f;
     --backdropBackground: rgba(0, 0, 0, 0.475);
 }

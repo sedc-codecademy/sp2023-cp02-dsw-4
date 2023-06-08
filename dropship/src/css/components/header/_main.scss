@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 
 header {
-    height: 45rem;
+    height: 30vmax;
     position: relative;
     display: grid;
     place-content: center;
@@ -13,12 +13,7 @@ header {
         top: 0;
         width: 100%;
         height: 100%;
-        // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%232134ed' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23dc00ff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23c100c3' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23008bff' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23fd008f' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%2300beff' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23ff005d' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%2300ddff' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23ff6431' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%2300f1e4' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23ff9b00' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%2300ffa0' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-        // background-attachment: fixed;
-        // background-size: cover;
-        // background-position: center bottom -2vmax;
-        // transform: rotate(180deg);
-        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at left top, transparent 90%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 100%);
     }
 }
 
@@ -26,12 +21,40 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -9;
-    top: -3rem;
 
     svg {
+        position: absolute;
         fill: transparent;
-        transform: rotate(180deg);
+        // transform: rotate(180deg);
+
+        #a {
+            :first-child {
+                stop-color: var(--accent)
+            }
+
+            :nth-child(2) {
+                stop-color: var(--secAccent)
+            }
+        }
+
+        #b {
+            :first-child {
+                stop-color: var(--tertAccent)
+            }
+
+            :nth-child(2) {
+                stop-color: var(--additionallAccent)
+            }
+        }
+        #c {
+            :first-child {
+                stop-color: var(--secAccent)
+            }
+
+            :nth-child(2) {
+                stop-color: var(--tertAccent)
+            }
+        }
 
         #polgOne {
             fill: var(--accent);
