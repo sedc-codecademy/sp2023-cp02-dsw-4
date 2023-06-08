@@ -1,5 +1,6 @@
 console.log("Test test")
 const testDiv = document.getElementById("test");
+console.log(testDiv)
 
 const subCategories_url = "./mock/subCatTest.json";
 const makeCall = (url) => {
@@ -26,12 +27,6 @@ const makeCall = (url) => {
 }
 
 makeCall(subCategories_url);
-
-
-
-
-
-
 
 function testFunc(object) {
     const newArray = []

@@ -156,8 +156,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.2rem solid var(--paleAccentThree);
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 3;
@@ -171,10 +170,6 @@ header .headerGradient {
   outline: none;
   text-indent: 1.5rem;
   color: var(--secColor);
-}
-.search-bar-container .search-bar::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
 }
 .search-bar-container .search-bar::selection {
   background: var(--accent);
@@ -246,8 +241,7 @@ header .headerGradient {
   top: 3.3rem;
   width: 40rem;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(3rem);
-          backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
   border-top-left-radius: 1.6rem;
   border-top-right-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
@@ -274,9 +268,7 @@ header .headerGradient {
   display: flex;
   align-items: center;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   border-bottom: 0.2rem solid var(--paleAccent);
   transition: 400ms all ease-in-out;
 }
@@ -378,8 +370,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.2rem solid var(--paleAccent);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   padding: 1rem;
   transform: translateY(100vh);
@@ -399,9 +390,7 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -620,8 +609,7 @@ header .headerGradient {
   position: relative;
   min-width: 10rem;
   border-radius: 0.3vmax;
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--paleAccentTwo), var(--secAccent));
   color: black;
   display: grid;
@@ -676,12 +664,9 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(1vmax);
-          backdrop-filter: blur(1vmax);
+  backdrop-filter: blur(1vmax);
   border: 0.2rem solid var(--paleAccent);
   border-radius: 0.5vmax;
   border-top-left-radius: 1rem;
@@ -1009,8 +994,7 @@ main svg {
   display: flex;
   justify-content: center;
   border: 0.3rem solid var(--paleAccent);
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   border-radius: 1rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 0.5rem;
@@ -1054,9 +1038,7 @@ main svg {
 }
 .loginDropdown form span {
   font-weight: 650;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 .loginDropdown form a {
@@ -1084,25 +1066,12 @@ main svg {
   width: auto;
   height: auto;
 }
-.loginDropdown input::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
-}
 .loginDropdown input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
-.loginDropdown input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .loginDropdown input:invalid:not(:placeholder-shown) {
   border-color: red;
-}
-.loginDropdown input:invalid:not(:-moz-placeholder-shown) ~ label {
-  opacity: 1;
-  color: var(--priColor);
-  background: rgb(255, 50, 50);
-  transform: translateY(-110%);
 }
 .loginDropdown input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -1198,8 +1167,7 @@ main svg {
   position: relative;
   width: 50%;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1251,8 +1219,7 @@ main svg {
   margin-top: -10rem;
 }
 .loginUi section:nth-child(2) {
-  -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
+  margin-block-start: 1rem;
   gap: 0.5rem;
 }
 .loginUi section:nth-child(2) div {
@@ -1275,8 +1242,7 @@ main svg {
   width: 50%;
   background-color: var(--paleAccentTwo);
   color: var(--priColor);
-  -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
   gap: 2rem;
   transition: 500ms all ease-in-out;
   overflow: hidden;
@@ -1315,9 +1281,7 @@ main svg {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .registerUi .fields .checkBoxes span {
   pointer-events: all !important;
@@ -1331,9 +1295,7 @@ main svg {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   transition: 300ms all ease;
   display: flex;
   justify-content: center;
@@ -1348,6 +1310,8 @@ main svg {
   height: 1rem;
   border: solid var(--priColor);
   border-width: 0 0.2rem 0.2rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   visibility: hidden;
 }
@@ -1396,8 +1360,7 @@ main svg {
   width: 100%;
   background-color: var(--tpPri);
   color: var(--secColor);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
 }
 .regOn .fields {
   display: block;
@@ -1437,8 +1400,7 @@ main svg {
   position: relative;
   width: 0%;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   gap: 1.5rem;
   transition: 500ms all ease-in-out;
