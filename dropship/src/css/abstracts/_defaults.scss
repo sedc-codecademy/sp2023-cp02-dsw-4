@@ -8,6 +8,9 @@
     //     display: none;
     // }
     // scroll-behavior: smooth !important;
+    &:focus-visible{
+        outline: none;
+    }
 }
 
 body {

@@ -23,7 +23,8 @@ idSearchBtn.addEventListener('click', () => { // Event listener for clicking the
     console.log("Search button")
 }) // TODO
 
-searchInput.addEventListener('keyup', () => { // Event listener for handling key press events in search input
+searchInput.addEventListener('keyup', (e) => { // Event listener for handling key press events in search input
+    console.log(e) // TODO ENTER key
     if (searchInput.value === '') {
         classSwitcher.keyUPblur()
         return
@@ -34,16 +35,17 @@ searchInput.addEventListener('keyup', () => { // Event listener for handling key
     const filteredProducts = fuse.search(searchString)
 
     if (!filteredProducts?.length) {
-        classSwitcher.focusBlur()
+        // classSwitcher.focusBlur()
+        suggestionsAnimate('blur')
         return
     }
     suggestions(filteredProducts)
 })
 
 function suggestions(arr) {  // Filling suggestions function
-    if (arr.length === prevLength) {
-        return
-    }
+    // if (arr.length === prevLength) {
+    //     return
+    // }
     if (!arr.length) {
         suggestionsAnimate('blur')
         return
@@ -54,28 +56,23 @@ function suggestions(arr) {  // Filling suggestions function
     let increment = 0
 
     for (let i = 0; i < arr.length; i++) {
-        if (increment < 10) {
-            if (arr[i].item.type === 'Product') {
-                let li = document.createElement("li")
-                let stock = 'N/A'
-                if (arr[i].item.stock !== 0) stock = arr[i].item.stock
-                li.innerHTML = `<p>${arr[i].item.title}</p><h6>Price: ${arr[i].item.price}$ | Stock: ${stock}</h6><h5>${arr[i].item.type}</h5>`
-                suggestionsUl.appendChild(li)
-            } else {
-                let li = document.createElement("li")
-                li.innerHTML = `<p>${arr[i].item.title}</p><h5>${arr[i].item.type}</h5>`
-                suggestionsUl.appendChild(li)
-            }
+        let li = document.createElement("li")
+        if (increment < 6) {
+
+            let stock = 'N/A'
+            if (arr[i].item.stock !== 0) stock = arr[i].item.stock
+            li.innerHTML = `<p>${arr[i].item.title}</p><h6>Price: ${arr[i].item.price}$ | Stock: ${stock}</h6`
+            suggestionsUl.appendChild(li)
+
             increment++
-            let amnt = (increment * 1.5)
+            let amnt = (increment * 3)
             suggestionsAnimate('increase', amnt)
         } else {
-            let li = document.createElement("li")
             li.classList.add("viewAll")
             li.innerHTML = `<a>View all</a>`
             suggestionsUl.appendChild(li)
-            prevLength = arr.length
-            return
+            break
+            // prevLength = arr.length
         }
     }
 }

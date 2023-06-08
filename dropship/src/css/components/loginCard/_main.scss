@@ -2,25 +2,30 @@
 
 .loginDropdown {
     position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -250%);
+    top: -20rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     display: flex;
     justify-content: center;
-    border: 0.3rem solid var(--paleAccentTwo);
+    border: 0.3rem solid var(--paleAccent);
     backdrop-filter: blur(0.5rem);
     border-radius: 1rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 1.5rem;
     width: 50rem;
     height: 40rem;
     overflow: hidden;
-    z-index: 15;
     opacity: 0;
     transition: 400ms all ease-in-out;
-    z-index: 5;
     visibility: collapse;
-    transition: visibility 700ms all ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.646) 0 0 5rem;
+    z-index: 15;
 
     form {
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,11 +40,17 @@
         }
 
         button {
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 1rem;
             font-weight: 600;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
+            padding: 0.45rem;
+            border-radius: 2rem;
+            border-top-left-radius: 0.8rem;
+            border-top-right-radius: 0.2rem;
+            border-bottom-left-radius: 0.2rem;
+            border-bottom-right-radius: 0.8rem;
             transition: 300ms all ease;
         }
 
@@ -62,7 +73,7 @@
         text-indent: 0.5rem;
         background-color: var(--tpPri);
         color: var(--secColor);
-        border: 0.15rem solid var(--tertColor);
+        border: 0.15rem solid var(--paleAccentThree);
         border-top-left-radius: 1.2rem;
         border-top-right-radius: 0.3rem;
         border-bottom-left-radius: 0.3rem;
@@ -82,25 +93,53 @@
             color: var(--priColor);
         }
 
-        &:valid {
-            border-color: var(--accent) !important;
+        // &:required:not(:placeholder-shown):valid {
+        //     border-color: red;
 
-            ~ {
-                label {
-                    opacity: 1 !important;
-                    color: var(--priColor) !important;
-                    background: var(--accent) !important;
-                    transform: translateY(-110%) !important;
-                }
-            }
-        }
+        //     ~ {
+        //         label {
+        //             opacity: 1;
+        //             color: var(--priColor);
+        //             background: rgb(255, 50, 50);
+        //             transform: translateY(-110%);
+        //         }
+        //     }
+        // }
 
-        &:not(:placeholder-shown) {
+        // &:invalid {
+        //     border-color: red;
+        //     ~ {
+        //         label {
+        //             opacity: 1;
+        //             color: var(--priColor);
+        //             background: rgb(255, 50, 50);
+        //             transform: translateY(-110%);
+        //         }
+        //     }
+        // }
+
+        &:invalid:not(:placeholder-shown) {
             border-color: red;
 
             ~ {
                 label {
-                    opacity: 0;
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: rgb(255, 50, 50);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+
+        &:valid {
+            border-color: var(--accent);
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: var(--accent);
+                    transform: translateY(-110%);
                 }
             }
         }
@@ -146,63 +185,32 @@
         }
     }
 
-    .cancelFP {
-        margin: 0;
-        opacity: 0;
-        position: absolute;
-        display: flex;
-        background-color: transparent;
-        justify-content: center;
-        align-items: center;
-        top: 1rem;
-        right: 1rem;
-        border: none;
-        visibility: hidden;
-        transition: 300ms all ease-in-out;
-
-        svg {
-            fill: var(--accent);
-            border-radius: 0.5rem;
-            outline: 0.2rem solid var(--accent);
-            width: 2rem;
-            height: 2rem;
-        }
-
-        &:hover {
-            svg {
-                fill: var(--priColor);
-                background-color: var(--accent);
-            }
-
-            background-color: transparent;
-        }
-    }
-
-    .loginInput{
+    .loginInput {
         transform: translateY(-3rem) !important;
         position: absolute;
         visibility: visible;
-        transition: visiblity 100ms all ease-in-out;
+        transition: visibility 100ms all ease-in-out;
     }
 }
 
 .on {
     opacity: 1;
-    transform: translate(-50%, -50%);
-    transition: 500ms all ease-in-out;
+    top: 5rem;
     visibility: visible;
-    transition: visiblity 100ms all ease-in-out;
+    transition: visibility 100ms all ease-in-out;
 }
 
 @media (max-width: 1440px) {
     .loginDropdown {
-        top: 50%;
+        width: 45rem;
+        height: 35rem;
+        top: 2rem;
     }
 }
 
 .forgotPS {
     .loginUi {
-        width: 100%;
+        width: 0%;
     }
 
     .registerUi {
@@ -220,21 +228,11 @@
     }
 
     .forgotPass {
-        opacity: 1 !important;
-        transform: translateY(3rem) !important;
-        transition: 1000ms all ease-in-out !important;
-    }
+        width: 100%;
 
-    .loginInput {
-        transform: translateY(-40rem) !important;
-        transition: 700ms all ease-in-out !important;
-        visibility: collapse;
-        transition: visibility 1500ms all ease-in-out !important;
-    }
-
-    .cancelFP {
-        opacity: 1;
-        visibility: visible;
-        transition: 300ms all ease-in-out;
+        *:not(label) {
+            transform: translateY(0);
+            transition: 550ms transform ease-in-out;
+        }
     }
 }
