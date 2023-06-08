@@ -1,0 +1,1102 @@
+[
+    {
+        "title": "Matte Lipstick",
+        "price": 9.99,
+        "description": "Get a bold, matte lip with this long-lasting lipstick. Available in a range of vibrant shades.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 50,
+        "rating": {
+            "rate": 4.2,
+            "count": 25
+        }
+    },
+    {
+        "title": "Eyeshadow Palette",
+        "price": 19.99,
+        "description": "Create endless eye looks with this versatile eyeshadow palette. Features a mix of matte and shimmer shades.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 30,
+        "rating": {
+            "rate": 4.5,
+            "count": 15
+        }
+    },
+    {
+        "title": "Foundation",
+        "price": 14.99,
+        "description": "Achieve a flawless complexion with this buildable, medium-coverage foundation. Available in a variety of shades.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 40,
+        "rating": {
+            "rate": 4.1,
+            "count": 20
+        }
+    },
+    {
+        "title": "Mascara",
+        "price": 12.99,
+        "description": "Get bold, voluminous lashes with this lengthening mascara. Features a tapered brush for easy application.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 30
+        }
+    },
+    {
+        "title": "Blush",
+        "price": 8.99,
+        "description": "Add a natural flush to your cheeks with this silky powder blush. Available in a range of shades.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Liquid Eyeliner",
+        "price": 11.99,
+        "description": "Create precise lines with this easy-to-use liquid eyeliner. Features a felt tip for effortless application.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Lip Gloss",
+        "price": 7.99,
+        "description": "Add shine to your lips with this non-sticky lip gloss. Available in a variety of shades and finishes.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Makeup Brushes",
+        "price": 29.99,
+        "description": "Achieve flawless makeup application with this set of high-quality makeup brushes. Includes brushes for face, eyes, and lips.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Concealer",
+        "price": 12.99,
+        "description": "Achieve flawless skin with this creamy concealer. Provides full coverage for dark circles, blemishes, and imperfections.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Setting Spray",
+        "price": 9.99,
+        "description": "Lock in your makeup with this refreshing setting spray. Keeps your makeup in place all day for a long-lasting finish.",
+        "category": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "stock": 50,
+        "rating": {
+            "rate": 4.7,
+            "count": 15
+        }
+    },
+    {
+        "title": "Hydrating Facial Moisturizer",
+        "price": 24.99,
+        "description": "Restore moisture and nourish your skin with this hydrating facial moisturizer. Lightweight and fast-absorbing formula for all skin types.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Gentle Cleansing Foam",
+        "price": 14.99,
+        "description": "Cleanse and refresh your skin with this gentle cleansing foam. Removes impurities without stripping the skin's natural moisture.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Anti-Aging Serum",
+        "price": 39.99,
+        "description": "Reduce the appearance of fine lines and wrinkles with this powerful anti-aging serum. Formulated with potent ingredients for visible results.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Exfoliating Facial Scrub",
+        "price": 19.99,
+        "description": "Revitalize your skin with this exfoliating facial scrub. Gently removes dead skin cells and promotes a smoother complexion.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Brightening Face Mask",
+        "price": 12.99,
+        "description": "Achieve a brighter, more radiant complexion with this brightening face mask. Infused with antioxidants and natural extracts.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Eye Cream",
+        "price": 29.99,
+        "description": "Treat the delicate skin around your eyes with this nourishing eye cream. Reduces puffiness, dark circles, and signs of aging.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "SPF 50 Sunscreen",
+        "price": 17.99,
+        "description": "Protect your skin from harmful UV rays with this SPF 50 sunscreen. Lightweight and non-greasy formula for daily sun protection.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Hydrating Sheet Mask",
+        "price": 8.99,
+        "description": "Give your skin a hydration boost with this revitalizing sheet mask. Infused with moisturizing ingredients for a plump and glowing complexion.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Vitamin C Serum",
+        "price": 29.99,
+        "description": "Brighten and even out your skin tone with this vitamin C serum. Boosts collagen production and provides antioxidant protection.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Night Cream",
+        "price": 32.99,
+        "description": "Nourish and repair your skin while you sleep with this luxurious night cream. Hydrates and rejuvenates for a refreshed morning complexion.",
+        "category": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "stock": 50,
+        "rating": {
+            "rate": 4.7,
+            "count": 15
+        }
+    },
+    {
+        "title": "Shampoo",
+        "price": 12.99,
+        "description": "Cleanse and nourish your hair with this revitalizing shampoo. Formulated with natural extracts to promote healthy and shiny locks.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Conditioner",
+        "price": 10.99,
+        "description": "Hydrate and detangle your hair with this replenishing conditioner. Restores moisture and leaves your hair smooth and manageable.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Hair Oil",
+        "price": 19.99,
+        "description": "Nourish and strengthen your hair with this luxurious hair oil. Adds shine, tames frizz, and protects against heat damage.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Hair Mask",
+        "price": 14.99,
+        "description": "Revitalize and repair your hair with this deep conditioning hair mask. Restores moisture, improves elasticity, and reduces breakage.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Heat Protectant Spray",
+        "price": 9.99,
+        "description": "Shield your hair from heat styling damage with this protective spray. Forms a barrier to prevent breakage and maintain hair health.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Hair Gel",
+        "price": 8.99,
+        "description": "Style your hair with precision using this strong-hold hair gel. Provides long-lasting hold and adds definition to your hairstyle.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Leave-In Conditioner",
+        "price": 11.99,
+        "description": "Treat and protect your hair with this nourishing leave-in conditioner. Detangles, moisturizes, and improves manageability for all hair types.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Hair Serum",
+        "price": 16.99,
+        "description": "Transform your hair with this smoothing and frizz-fighting hair serum. Adds shine, controls flyaways, and leaves your hair silky and lustrous.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Dry Shampoo",
+        "price": 13.99,
+        "description": "Refresh and revive your hair between washes with this convenient dry shampoo. Absorbs excess oil and adds volume for a clean and refreshed look.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Curl Enhancing Cream",
+        "price": 17.99,
+        "description": "Define and enhance your natural curls with this lightweight curl enhancing cream. Controls frizz, adds moisture, and promotes bouncy and defined curls.",
+        "category": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Eau de Parfum",
+        "price": 59.99,
+        "description": "Experience the allure of this exquisite eau de parfum. A captivating blend of floral and woody notes that lingers throughout the day.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Cologne Spray",
+        "price": 39.99,
+        "description": "Make a statement with this refreshing cologne spray. A harmonious fusion of citrus and aromatic accords for a burst of vitality.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Perfume Oil",
+        "price": 24.99,
+        "description": "Indulge in the luxury of this concentrated perfume oil. Infused with rich and sensual notes that create a lasting and intimate fragrance experience.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Body Mist",
+        "price": 19.99,
+        "description": "Refresh and invigorate your senses with this lightweight body mist. Leaves a delicate and lingering fragrance on your skin.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Solid Perfume",
+        "price": 14.99,
+        "description": "Experience the convenience of this portable solid perfume. A blend of enchanting notes in a compact and travel-friendly form.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Scented Candle",
+        "price": 29.99,
+        "description": "Create a cozy ambiance with this scented candle. Releases a soothing fragrance that fills the room with a warm and inviting atmosphere.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Eau de Toilette",
+        "price": 49.99,
+        "description": "Embrace a fresh and uplifting scent with this eau de toilette. A perfect balance of invigorating and delicate notes for everyday wear.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Roll-On Perfume",
+        "price": 12.99,
+        "description": "Experience a convenient and on-the-go fragrance application with this roll-on perfume. Easy to apply and fits perfectly in your purse or pocket.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Fragrance Gift Set",
+        "price": 69.99,
+        "description": "Discover a collection of captivating scents with this fragrance gift set. Perfect for gifting or indulging in a variety of fragrance experiences.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Aftershave Lotion",
+        "price": 34.99,
+        "description": "Soothe and refresh your skin after shaving with this invigorating aftershave lotion. Leaves a subtle and sophisticated fragrance on your skin.",
+        "category": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Body Wash",
+        "price": 8.99,
+        "description": "Cleanse and refresh your skin with this invigorating body wash. Formulated with nourishing ingredients to leave your skin feeling soft and hydrated.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Body Lotion",
+        "price": 12.99,
+        "description": "Moisturize and nourish your skin with this luxurious body lotion. Absorbs quickly and leaves your skin smooth, supple, and delicately scented.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Bath Bombs",
+        "price": 6.99,
+        "description": "Indulge in a relaxing bath experience with these delightful bath bombs. Effervescent and aromatic, they transform your bathwater into a soothing oasis.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Hand Soap",
+        "price": 4.99,
+        "description": "Keep your hands clean and nourished with this gentle and moisturizing hand soap. Leaves your hands feeling soft, refreshed, and lightly fragranced.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Body Scrub",
+        "price": 14.99,
+        "description": "Exfoliate and rejuvenate your skin with this invigorating body scrub. Removes dead skin cells and reveals smoother, brighter, and more radiant skin.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Shower Gel",
+        "price": 9.99,
+        "description": "Enjoy a luxurious shower experience with this indulgent shower gel. Cleanses and hydrates your skin, leaving it feeling refreshed and delicately scented.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Body Butter",
+        "price": 16.99,
+        "description": "Pamper your skin with this rich and creamy body butter. Deeply moisturizes, nourishes, and provides long-lasting hydration for a silky-smooth feel.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Bath Salt",
+        "price": 7.99,
+        "description": "Create a blissful and relaxing bath ritual with these soothing bath salts. Dissolve them in warm water to unwind and rejuvenate your body and mind.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Bubble Bath",
+        "price": 11.99,
+        "description": "Turn your bath into a luxurious bubble haven with this foaming bubble bath. Creates long-lasting and fragrant bubbles for a truly indulgent bath experience.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Hand Cream",
+        "price": 6.99,
+        "description": "Nourish and protect your hands with this moisturizing hand cream. Absorbs quickly, leaving your hands feeling soft, smooth, and beautifully hydrated.",
+        "category": "c8e24060-a3cc-4909-a295-a20490698732",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Beard Oil",
+        "price": 14.99,
+        "description": "Nourish and tame your beard with this conditioning beard oil. Softens and hydrates facial hair, promoting a healthy and well-groomed appearance.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Shaving Cream",
+        "price": 9.99,
+        "description": "Achieve a close and comfortable shave with this rich shaving cream. Creates a protective lather for a smooth glide and minimizes skin irritation.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Aftershave Balm",
+        "price": 12.99,
+        "description": "Soothe and moisturize your skin after shaving with this calming aftershave balm. Helps reduce razor burn, redness, and provides hydration.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Hair Styling Pomade",
+        "price": 11.99,
+        "description": "Style your hair with precision and hold using this versatile hair styling pomade. Provides a medium hold and a sleek, polished finish.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Cologne",
+        "price": 29.99,
+        "description": "Add a touch of sophistication with this captivating cologne. Leaves a long-lasting, alluring scent that complements your personal style.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Facial Cleanser",
+        "price": 13.99,
+        "description": "Cleanse and refresh your skin with this invigorating facial cleanser. Removes dirt, oil, and impurities, leaving your skin feeling clean and revitalized.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Beard Balm",
+        "price": 16.99,
+        "description": "Style and shape your beard with this nourishing beard balm. Provides a light hold, tames unruly hairs, and adds a healthy sheen to your beard.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Pre-Shave Oil",
+        "price": 8.99,
+        "description": "Prepare your skin for a smooth shave with this moisturizing pre-shave oil. Helps soften facial hair and provides a protective barrier against razor irritation.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Hair and Body Wash",
+        "price": 11.99,
+        "description": "Simplify your grooming routine with this all-in-one hair and body wash. Cleanses effectively while hydrating your hair and leaving your skin refreshed.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Beard Brush",
+        "price": 7.99,
+        "description": "Groom and shape your beard with this high-quality beard brush. Helps distribute beard oil evenly, detangles, and keeps your facial hair looking neat.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Makeup Brushes Set",
+        "price": 24.99,
+        "description": "Enhance your makeup application with this comprehensive set of high-quality makeup brushes. Includes a variety of brushes for face, eyes, and lips.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Eyelash Curler",
+        "price": 9.99,
+        "description": "Achieve stunning, curled lashes with this ergonomic eyelash curler. Designed to enhance the curl and lift of your lashes for a wide-eyed look.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Makeup Sponge",
+        "price": 6.99,
+        "description": "Achieve a flawless makeup application with this versatile and reusable makeup sponge. Helps blend foundation, concealer, and other complexion products seamlessly.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Hair Styling Tools Kit",
+        "price": 29.99,
+        "description": "Create beautiful hairstyles with this all-in-one hair styling tools kit. Includes a hairdryer, flat iron, curling wand, and various styling accessories.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Makeup Organizer",
+        "price": 14.99,
+        "description": "Keep your makeup collection neat and organized with this spacious makeup organizer. Features compartments, drawers, and dividers for easy storage.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "LED Vanity Mirror",
+        "price": 34.99,
+        "description": "Illuminate your beauty routine with this LED vanity mirror. Features adjustable brightness settings and a rotatable design for optimal visibility.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Makeup Brush Cleaner",
+        "price": 16.99,
+        "description": "Effortlessly clean and sanitize your makeup brushes with this handy brush cleaner. Helps remove makeup residue and bacteria for hygienic application.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "False Eyelashes",
+        "price": 8.99,
+        "description": "Enhance your eye look with these natural-looking false eyelashes. Lightweight, comfortable to wear, and easy to apply for instant glamour.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Nail Art Kit",
+        "price": 11.99,
+        "description": "Unleash your creativity with this complete nail art kit. Includes nail polish, stickers, rhinestones, and tools for designing unique nail looks.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Makeup Travel Case",
+        "price": 19.99,
+        "description": "Organize and protect your makeup essentials while traveling with this compact and durable makeup travel case. Features multiple compartments and a secure closure.",
+        "category": "67447359-bb55-4510-a696-06207f11625b",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Electric Toothbrush",
+        "price": 39.99,
+        "description": "Achieve optimal oral hygiene with this advanced electric toothbrush. Features multiple brushing modes, timer, and interchangeable brush heads.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Body Lotion",
+        "price": 12.99,
+        "description": "Nourish and moisturize your skin with this indulgent body lotion. Enriched with hydrating ingredients, it leaves your skin smooth and supple.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Hand Sanitizer",
+        "price": 4.99,
+        "description": "Keep your hands clean and germ-free with this effective hand sanitizer. Contains a high percentage of alcohol to kill bacteria and viruses.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Feminine Hygiene Products",
+        "price": 8.99,
+        "description": "Stay comfortable and confident with these essential feminine hygiene products. Offers reliable protection and freshness during your menstrual cycle.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Deodorant",
+        "price": 7.99,
+        "description": "Stay fresh and odor-free throughout the day with this long-lasting deodorant. Provides effective protection against sweat and body odor.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Shower Gel",
+        "price": 9.99,
+        "description": "Cleanse and refresh your body with this invigorating shower gel. Creates a rich lather and leaves your skin feeling revitalized and lightly scented.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Shampoo and Conditioner Set",
+        "price": 16.99,
+        "description": "Nourish and strengthen your hair with this revitalizing shampoo and conditioner set. Restores moisture, adds shine, and promotes healthy-looking hair.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Facial Mask",
+        "price": 8.99,
+        "description": "Treat yourself to a spa-like experience with this rejuvenating facial mask. Deeply cleanses, hydrates, and revitalizes your skin for a healthy glow.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Foot Cream",
+        "price": 11.99,
+        "description": "Pamper and soothe your feet with this moisturizing foot cream. Helps relieve dryness, cracked heels, and tired feet for soft and supple skin.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Sunscreen Lotion",
+        "price": 14.99,
+        "description": "Protect your skin from harmful UV rays with this broad-spectrum sunscreen lotion. Provides SPF 30 protection and absorbs quickly without leaving a greasy residue.",
+        "category": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "SPF 50 Sunscreen Lotion",
+        "price": 12.99,
+        "description": "Protect your skin from harmful UV rays with this high-SPF sunscreen lotion. Provides broad-spectrum protection and is water-resistant.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "After Sun Cooling Gel",
+        "price": 9.99,
+        "description": "Soothe and hydrate your skin after sun exposure with this cooling gel. Helps reduce redness, dryness, and discomfort caused by sunburn.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Sun Hat",
+        "price": 14.99,
+        "description": "Stay protected and stylish with this wide-brimmed sun hat. Provides shade for your face and neck while adding a fashionable touch to your outfit.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Aloe Vera Sunburn Relief Spray",
+        "price": 8.99,
+        "description": "Relieve sunburn discomfort with this soothing aloe vera spray. Provides instant relief and helps promote healing for sun-damaged skin.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Sun Protection Lip Balm",
+        "price": 4.99,
+        "description": "Keep your lips protected from the sun with this SPF lip balm. Nourishes and moisturizes your lips while shielding them from harmful UV rays.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Tinted Sunscreen",
+        "price": 19.99,
+        "description": "Get sun protection and a natural-looking tint with this tinted sunscreen. Provides SPF 30 coverage and evens out your skin tone.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Sun Protection Swim Shirt",
+        "price": 29.99,
+        "description": "Stay protected during water activities with this sun protection swim shirt. Offers UPF 50+ sun protection and dries quickly.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Sunless Tanning Lotion",
+        "price": 16.99,
+        "description": "Achieve a sun-kissed glow without the sun exposure with this sunless tanning lotion. Provides a natural-looking tan that lasts for days.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Sun Umbrella",
+        "price": 24.99,
+        "description": "Create your own shade with this portable sun umbrella. Provides UV protection and is perfect for outdoor activities and beach days.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Sunglasses with UV Protection",
+        "price": 39.99,
+        "description": "Protect your eyes from harmful UV rays with these stylish sunglasses. Offers 100% UV protection and reduces glare for clear vision.",
+        "category": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    },
+    {
+        "title": "Essential Oil Diffuser",
+        "price": 39.99,
+        "description": "Create a calming and aromatic environment with this essential oil diffuser. Releases a fine mist of essential oils to enhance relaxation and well-being.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 30
+        }
+    },
+    {
+        "title": "Yoga Mat",
+        "price": 29.99,
+        "description": "Enhance your yoga practice with this high-quality yoga mat. Provides cushioning and a non-slip surface for optimal comfort and stability.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 40,
+        "rating": {
+            "rate": 4.2,
+            "count": 20
+        }
+    },
+    {
+        "title": "Meditation Cushion",
+        "price": 19.99,
+        "description": "Support your meditation practice with this comfortable meditation cushion. Helps maintain proper posture and provides a soft and supportive seat.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 30,
+        "rating": {
+            "rate": 4.8,
+            "count": 25
+        }
+    },
+    {
+        "title": "Fitness Tracker",
+        "price": 79.99,
+        "description": "Track your daily activity and monitor your health with this advanced fitness tracker. Measures steps, heart rate, sleep quality, and more.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 60,
+        "rating": {
+            "rate": 4.3,
+            "count": 15
+        }
+    },
+    {
+        "title": "Herbal Tea Set",
+        "price": 14.99,
+        "description": "Experience the soothing benefits of herbal tea with this set of handcrafted blends. Includes a variety of flavors to support relaxation and well-being.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 70,
+        "rating": {
+            "rate": 4.0,
+            "count": 10
+        }
+    },
+    {
+        "title": "Acupressure Mat",
+        "price": 49.99,
+        "description": "Relieve muscle tension and promote relaxation with this acupressure mat. Features strategically placed spikes that stimulate pressure points on your body.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 25,
+        "rating": {
+            "rate": 4.6,
+            "count": 18
+        }
+    },
+    {
+        "title": "Aromatherapy Essential Oils Set",
+        "price": 24.99,
+        "description": "Immerse yourself in the healing scents of aromatherapy with this essential oils set. Includes a variety of pure essential oils for different purposes.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 80,
+        "rating": {
+            "rate": 4.2,
+            "count": 40
+        }
+    },
+    {
+        "title": "Resistance Bands Set",
+        "price": 34.99,
+        "description": "Enhance your workouts and build strength with this set of resistance bands. Offers different resistance levels for a versatile training experience.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 8
+        }
+    },
+    {
+        "title": "Wellness Journal",
+        "price": 12.99,
+        "description": "Track your wellness journey and reflect on your daily habits with this wellness journal. Includes prompts and space for goal setting and self-reflection.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 15,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "Healthy Recipe Book",
+        "price": 19.99,
+        "description": "Discover a collection of nutritious and delicious recipes with this healthy recipe book. Includes easy-to-follow recipes for balanced meals and snacks.",
+        "category": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "stock": 35,
+        "rating": {
+            "rate": 4.4,
+            "count": 22
+        }
+    }
+]

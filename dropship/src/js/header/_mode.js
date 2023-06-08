@@ -25,7 +25,8 @@ function applyDarkTheme() {
     darkButton.disabled = false
 }
 
-darkButton.addEventListener("click", () => {
+darkButton.addEventListener("click", (e) => {
+    e.preventDefault()
     darkButton.disabled = true
     applyDarkTheme()
 })

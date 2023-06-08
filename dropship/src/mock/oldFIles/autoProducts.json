@@ -1,0 +1,1102 @@
+[
+    {
+        "title": "Waterproof Car Cover",
+        "price": 89.99,
+        "description": "This car cover is made from waterproof material and is designed to protect your car from rain, snow, and other elements.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 10
+        }
+    },
+    {
+        "title": "Sun Shade Car Cover",
+        "price": 69.99,
+        "description": "This car cover is designed to protect your car from the sun's harmful rays, keeping your car's interior cool and preventing fading.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 30,
+        "rating": {
+            "rate": 4,
+            "count": 8
+        }
+    },
+    {
+        "title": "Heavy Duty Car Cover",
+        "price": 99.99,
+        "description": "This heavy-duty car cover is made from durable material and is designed to protect your car from dust, dirt, and scratches.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 20,
+        "rating": {
+            "rate": 4.5,
+            "count": 12
+        }
+    },
+    {
+        "title": "Indoor Car Cover",
+        "price": 49.99,
+        "description": "This indoor car cover is made from soft material and is designed to protect your car's paint from scratches and dust while it's parked in your garage.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 40,
+        "rating": {
+            "rate": 3.5,
+            "count": 6
+        }
+    },
+    {
+        "title": "Breathable Car Cover",
+        "price": 79.99,
+        "description": "This car cover is made from breathable material and is designed to prevent moisture buildup and mildew, making it ideal for long-term storage.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 15,
+        "rating": {
+            "rate": 4,
+            "count": 4
+        }
+    },
+    {
+        "title": "Custom-Fit Car Cover",
+        "price": 149.99,
+        "description": "This car cover is custom-fit for your specific make and model, ensuring a perfect fit and maximum protection from the elements.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 10,
+        "rating": {
+            "rate": 5,
+            "count": 2
+        }
+    },
+    {
+        "title": "Hail-Proof Car Cover",
+        "price": 199.99,
+        "description": "This car cover is designed to protect your car from hail damage with a special layer of impact-resistant material.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 5,
+        "rating": {
+            "rate": 4.5,
+            "count": 3
+        }
+    },
+    {
+        "title": "Reflective Car Cover",
+        "price": 59.99,
+        "description": "This car cover has a reflective coating to help keep your car cool and prevent overheating on hot sunny days.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 25,
+        "rating": {
+            "rate": 3.5,
+            "count": 5
+        }
+    },
+    {
+        "title": "All-Weather Car Cover",
+        "price": 129.99,
+        "description": "This car cover is designed to protect your car from all weather conditions, including rain, snow, hail, and wind.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 15,
+        "rating": {
+            "rate": 4,
+            "count": 7
+        }
+    },
+    {
+        "title": "Portable Car Cover",
+        "price": 79.99,
+        "description": "This portable car cover is lightweight and easy to store in your trunk, providing on-the-go protection from the elements.",
+        "category": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "stock": 20,
+        "rating": {
+            "rate": 3,
+            "count": 2
+        }
+    },
+    {
+        "title": "All-Weather Floor Mats",
+        "price": 49.99,
+        "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 20,
+        "rating": {
+            "rate": 4.5,
+            "count": 10
+        }
+    },
+    {
+        "title": "Carpeted Floor Mats",
+        "price": 39.99,
+        "description": "These carpeted floor mats provide a comfortable and stylish addition to your car's interior, while also protecting the original carpet from wear and tear.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 15,
+        "rating": {
+            "rate": 4,
+            "count": 5
+        }
+    },
+    {
+        "title": "Custom-Fit Floor Mats",
+        "price": 69.99,
+        "description": "These custom-fit floor mats are designed specifically for your make and model, ensuring a perfect fit and maximum protection for your car's interior.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 10,
+        "rating": {
+            "rate": 5,
+            "count": 2
+        }
+    },
+    {
+        "title": "Rubber Floor Mats",
+        "price": 29.99,
+        "description": "These rubber floor mats are perfect for heavy-duty use, protecting your car's interior from mud, water, and other debris.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 25,
+        "rating": {
+            "rate": 3.5,
+            "count": 7
+        }
+    },
+    {
+        "title": "Logo Floor Mats",
+        "price": 59.99,
+        "description": "These logo floor mats feature your favorite sports team or car brand logo, adding a personalized touch to your car's interior.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 5,
+        "rating": {
+            "rate": 4.5,
+            "count": 3
+        }
+    },
+    {
+        "title": "Clear Floor Mats",
+        "price": 19.99,
+        "description": "These clear floor mats are perfect for car owners who want to showcase the original carpet while still protecting it from wear and tear.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 30,
+        "rating": {
+            "rate": 3,
+            "count": 2
+        }
+    },
+    {
+        "title": "Leather Floor Mats",
+        "price": 99.99,
+        "description": "These luxurious leather floor mats provide a premium look and feel to your car's interior, while also protecting the original carpet from spills and stains.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 8,
+        "rating": {
+            "rate": 4.5,
+            "count": 4
+        }
+    },
+    {
+        "title": "Anti-Slip Floor Mats",
+        "price": 29.99,
+        "description": "These anti-slip floor mats are designed to keep your feet from slipping, even when your shoes are wet or muddy, making them perfect for rainy or snowy weather.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 12,
+        "rating": {
+            "rate": 3.5,
+            "count": 6
+        }
+    },
+    {
+        "title": "Universal Fit Floor Mats",
+        "price": 39.99,
+        "description": "These universal fit floor mats are designed to fit most cars, trucks, and SUVs, making them a versatile and affordable option for any car owner.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 20,
+        "rating": {
+            "rate": 4,
+            "count": 3
+        }
+    },
+    {
+        "title": "Camo Floor Mats",
+        "price": 49.99,
+        "description": "These camo floor mats are perfect for outdoor enthusiasts, providing a rugged and stylish addition to your car's interior.",
+        "category": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "stock": 6,
+        "rating": {
+            "rate": 4.5,
+            "count": 1
+        }
+    },
+    {
+        "title": "Leather Seat Covers",
+        "price": 149.99,
+        "description": "These premium leather seat covers add a luxurious and elegant touch to your car's interior, while also providing protection against spills and stains.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 5,
+        "rating": {
+            "rate": 4.5,
+            "count": 10
+        }
+    },
+    {
+        "title": "Sports Seat Covers",
+        "price": 99.99,
+        "description": "These sports-inspired seat covers provide a sleek and stylish look to your car's interior, while also offering protection and comfort during long drives.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 8,
+        "rating": {
+            "rate": 4,
+            "count": 5
+        }
+    },
+    {
+        "title": "Custom Fit Seat Covers",
+        "price": 129.99,
+        "description": "These custom fit seat covers are tailored to fit your car's seats perfectly, providing maximum protection and comfort for you and your passengers.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 3,
+        "rating": {
+            "rate": 5,
+            "count": 2
+        }
+    },
+    {
+        "title": "Universal Fit Seat Covers",
+        "price": 79.99,
+        "description": "These universal fit seat covers are designed to fit most cars, trucks, and SUVs, making them a versatile and affordable option for any car owner.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 12,
+        "rating": {
+            "rate": 3.5,
+            "count": 8
+        }
+    },
+    {
+        "title": "Neoprene Seat Covers",
+        "price": 119.99,
+        "description": "These neoprene seat covers provide a durable and waterproof barrier against spills and stains, while also offering a sporty and rugged look to your car's interior.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 6,
+        "rating": {
+            "rate": 4.5,
+            "count": 3
+        }
+    },
+    {
+        "title": "Sheepskin Seat Covers",
+        "price": 159.99,
+        "description": "These sheepskin seat covers provide a cozy and comfortable driving experience, while also adding a touch of luxury to your car's interior.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 4,
+        "rating": {
+            "rate": 4,
+            "count": 6
+        }
+    },
+    {
+        "title": "Pet-Friendly Seat Covers",
+        "price": 89.99,
+        "description": "These pet-friendly seat covers are made with durable and easy-to-clean materials, making them a great choice for pet owners who want to protect their car's interior.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 10,
+        "rating": {
+            "rate": 3.5,
+            "count": 4
+        }
+    },
+    {
+        "title": "Luxury Car Seat Covers",
+        "price": 299.99,
+        "description": "These luxury car seat covers are made with high-quality materials and feature intricate designs and details, making them a perfect choice for owners of high-end luxury cars.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 2,
+        "rating": {
+            "rate": 5,
+            "count": 1
+        }
+    },
+    {
+        "title": "Genuine Leather Seat Covers",
+        "price": 199.99,
+        "description": "These genuine leather seat covers are made with top-quality leather and provide a timeless and classic look to your car's interior, while also providing protection against wear and tear.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 7,
+        "rating": {
+            "rate": 4.5,
+            "count": 9
+        }
+    },
+    {
+        "title": "Mesh Seat Covers",
+        "price": 69.99,
+        "description": "These mesh seat covers provide a breathable and comfortable driving experience, while also protecting your car's seats from spills and stains.",
+        "category": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "stock": 15,
+        "rating": {
+            "rate": 3,
+            "count": 12
+        }
+    },
+    {
+        "title": "Trunk Organizer",
+        "price": 39.99,
+        "description": "Keep your trunk neat and organized with this spacious and durable trunk organizer. Features multiple compartments and foldable design for easy storage.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 8,
+        "rating": {
+            "rate": 4.5,
+            "count": 10
+        }
+    },
+    {
+        "title": "Backseat Organizer",
+        "price": 24.99,
+        "description": "This backseat organizer provides ample storage space for all your travel essentials, including water bottles, snacks, electronics, and more. Attaches easily to the back of the front seats.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 15,
+        "rating": {
+            "rate": 4,
+            "count": 6
+        }
+    },
+    {
+        "title": "Sun Visor Organizer",
+        "price": 9.99,
+        "description": "Keep your sunglasses, phone, and other small items within reach with this handy sun visor organizer. Features multiple pockets and a secure clip-on design.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 20,
+        "rating": {
+            "rate": 3.5,
+            "count": 8
+        }
+    },
+    {
+        "title": "Seat Gap Filler",
+        "price": 12.99,
+        "description": "This seat gap filler prevents items from falling in between the seats and is a great way to keep your car clean and organized. Fits most cars and is easy to install.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 30,
+        "rating": {
+            "rate": 4,
+            "count": 3
+        }
+    },
+    {
+        "title": "Center Console Organizer",
+        "price": 19.99,
+        "description": "Maximize your center console storage space with this handy organizer. Features multiple compartments and a non-slip bottom to keep items in place.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 12,
+        "rating": {
+            "rate": 3.5,
+            "count": 5
+        }
+    },
+    {
+        "title": "Car Trash Can",
+        "price": 14.99,
+        "description": "This compact and leak-proof car trash can is perfect for keeping your car tidy and organized. Fits easily in cup holders or console compartments.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 25,
+        "rating": {
+            "rate": 4,
+            "count": 7
+        }
+    },
+    {
+        "title": "Hanging Car Organizer",
+        "price": 29.99,
+        "description": "This versatile car organizer can be hung on the back of the front seats or placed on the center console. Features multiple pockets and a built-in tablet holder.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 12
+        }
+    },
+    {
+        "title": "Trunk Cargo Net",
+        "price": 19.99,
+        "description": "This heavy-duty cargo net keeps your groceries, sports equipment, and other items securely in place while driving. Easy to install and fits most cars.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 18,
+        "rating": {
+            "rate": 4,
+            "count": 4
+        }
+    },
+    {
+        "title": "Glove Box Document Organizer",
+        "price": 15.99,
+        "description": "This compact and durable organizer fits perfectly in your car's glove box and is designed to keep your important documents organized and easily accessible. Features multiple pockets and a secure zippered closure.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 20,
+        "rating": {
+            "rate": 4.5,
+            "count": 6
+        }
+    },
+    {
+        "title": "Glove Box Organizer",
+        "price": 11.99,
+        "description": "Organize your car's glove box with this compact and versatile organizer. Features multiple compartments for documents, sunglasses, and other small items.",
+        "category": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "stock": 22,
+        "rating": {
+            "rate": 3,
+            "count": 2
+        }
+    },
+    {
+        "title": "Belkin Car Vent Mount",
+        "price": 19.99,
+        "description": "The Belkin Car Vent Mount provides a safe, hands-free way to use your smartphone in the car. The adjustable brackets expand to fit most smartphones and keep them securely in place.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 200
+        }
+    },
+    {
+        "title": "Spigen Magnetic Phone Mount",
+        "price": 24.99,
+        "description": "The Spigen Magnetic Phone Mount uses powerful magnets to securely hold your phone in place while you drive. The mount can be attached to your car's dashboard or air vent for easy access.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 50,
+        "rating": {
+            "rate": 4.2,
+            "count": 150
+        }
+    },
+    {
+        "title": "iOttie Easy One Touch Car Mount",
+        "price": 29.99,
+        "description": "The iOttie Easy One Touch Car Mount features a universal design that fits most smartphones. The mount can be attached to your car's dashboard or windshield for maximum convenience.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 75,
+        "rating": {
+            "rate": 4.7,
+            "count": 300
+        }
+    },
+    {
+        "title": "WizGear Dashboard Phone Mount",
+        "price": 14.99,
+        "description": "The WizGear Dashboard Phone Mount provides a stable, non-slip surface for your phone while you drive. The mount can be attached to your car's dashboard with a strong adhesive.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 200,
+        "rating": {
+            "rate": 4.1,
+            "count": 100
+        }
+    },
+    {
+        "title": "Mpow Car Phone Holder",
+        "price": 18.99,
+        "description": "The Mpow Car Phone Holder features a flexible arm that can be adjusted to any angle for easy viewing. The mount can be attached to your car's air vent or dashboard for maximum convenience.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 150,
+        "rating": {
+            "rate": 4.3,
+            "count": 250
+        }
+    },
+    {
+        "title": "Magnetic Car Phone Mount",
+        "price": 12.99,
+        "description": "This magnetic phone mount can be attached to your car's air vent or dashboard and securely holds your phone in place with powerful magnets. It's compatible with most smartphones and is easy to install and use.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 50,
+        "rating": {
+            "rate": 4.8,
+            "count": 20
+        }
+    },
+    {
+        "title": "Universal Car Phone Mount",
+        "price": 9.99,
+        "description": "This universal phone mount can be attached to your car's windshield or dashboard and is compatible with most smartphones. It features a strong suction cup and an adjustable arm for easy viewing.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 75,
+        "rating": {
+            "rate": 4.2,
+            "count": 10
+        }
+    },
+    {
+        "title": "Flexible Car Phone Mount",
+        "price": 14.99,
+        "description": "This flexible phone mount can be attached to your car's dashboard or windshield and features an adjustable arm and a 360-degree rotating holder for easy viewing. It's compatible with most smartphones and is easy to install.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 30,
+        "rating": {
+            "rate": 4.6,
+            "count": 15
+        }
+    },
+    {
+        "title": "Wireless Charging Car Phone Mount",
+        "price": 29.99,
+        "description": "This wireless charging phone mount can be attached to your car's air vent or dashboard and features a built-in wireless charger that's compatible with most smartphones. It also has an adjustable arm and a 360-degree rotating holder for easy viewing.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 20,
+        "rating": {
+            "rate": 4.7,
+            "count": 8
+        }
+    },
+    {
+        "title": "CD Slot Car Phone Mount",
+        "price": 11.99,
+        "description": "This phone mount can be inserted into your car's CD slot and securely holds your phone in place. It's compatible with most smartphones and features an adjustable arm for easy viewing.",
+        "category": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "stock": 40,
+        "rating": {
+            "rate": 4.4,
+            "count": 12
+        }
+    },
+    {
+        "title": "Fast Charging USB Car Charger",
+        "price": 14.99,
+        "description": "Charge your devices quickly and efficiently with this fast charging USB car charger.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 25
+        }
+    },
+    {
+        "title": "Dual USB Car Charger",
+        "price": 12.99,
+        "description": "Charge two devices at once with this dual USB car charger.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 30,
+        "rating": {
+            "rate": 4.2,
+            "count": 15
+        }
+    },
+    {
+        "title": "Wireless Car Charger",
+        "price": 29.99,
+        "description": "Charge your phone wirelessly while on the go with this wireless car charger.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "USB-C Car Charger",
+        "price": 9.99,
+        "description": "Charge your USB-C devices in your car with this compact and affordable USB-C car charger.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 50,
+        "rating": {
+            "rate": 4.0,
+            "count": 5
+        }
+    },
+    {
+        "title": "Car Charger with Multiple Ports",
+        "price": 19.99,
+        "description": "Charge multiple devices at once with this car charger that has multiple ports.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 10,
+        "rating": {
+            "rate": 4.4,
+            "count": 20
+        }
+    },
+    {
+        "title": "PowerDrive Speed+ Duo",
+        "price": 29.99,
+        "description": "Charge multiple devices simultaneously with this high-speed dual USB car charger. Equipped with advanced safety features to protect your devices from overcharging and overheating.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "QuickCharge 3.0 Car Charger",
+        "price": 19.99,
+        "description": "This compact car charger features Qualcomm QuickCharge 3.0 technology, delivering lightning-fast charging speeds to your compatible devices. The sleek and durable design ensures reliable performance on-the-go.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 30,
+        "rating": {
+            "rate": 4.3,
+            "count": 90
+        }
+    },
+    {
+        "title": "USB-C Car Charger",
+        "price": 24.99,
+        "description": "Charge your USB-C devices on-the-go with this powerful car charger. Equipped with intelligent power allocation, it delivers the optimal charging speed to your devices while protecting them from overheating and overcharging.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 65
+        }
+    },
+    {
+        "title": "Anker PowerDrive 2 Elite",
+        "price": 25.99,
+        "description": "Power up your devices quickly and safely with this compact and powerful car charger. With dual USB ports and advanced safety features, you can charge two devices simultaneously without worrying about overcharging or overheating.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 40,
+        "rating": {
+            "rate": 4.6,
+            "count": 110
+        }
+    },
+    {
+        "title": "Belkin Boost Charge Car Charger",
+        "price": 29.99,
+        "description": "This sleek and stylish car charger delivers fast and efficient charging to your devices, with a compact design that fits easily into any car's power socket. The built-in USB-C cable and additional USB-A port let you charge multiple devices at once.",
+        "category": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "stock": 25,
+        "rating": {
+            "rate": 4.4,
+            "count": 75
+        }
+    },
+    {
+        "title": "Ultimate Car Cleaning Kit",
+        "price": 59.99,
+        "description": "Get your car looking like new with our ultimate car cleaning kit! Includes everything you need for a deep clean, inside and out.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 100,
+        "rating": {
+            "rate": 4.5,
+            "count": 25
+        }
+    },
+    {
+        "title": "Quick & Easy Car Cleaning Kit",
+        "price": 29.99,
+        "description": "Clean your car in no time with our quick and easy car cleaning kit! Perfect for a quick touch-up or regular maintenance.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 200,
+        "rating": {
+            "rate": 4.2,
+            "count": 15
+        }
+    },
+    {
+        "title": "Eco-Friendly Car Cleaning Kit",
+        "price": 49.99,
+        "description": "Clean your car while being kind to the environment with our eco-friendly car cleaning kit! Includes biodegradable cleaning products and reusable towels.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 50,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "Luxury Car Cleaning Kit",
+        "price": 99.99,
+        "description": "Treat your car to the ultimate luxury cleaning experience with our luxury car cleaning kit! Includes premium cleaning products and soft microfiber towels.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 75,
+        "rating": {
+            "rate": 5,
+            "count": 5
+        }
+    },
+    {
+        "title": "Professional Car Cleaning Kit",
+        "price": 149.99,
+        "description": "Get professional-grade cleaning results with our professional car cleaning kit! Includes heavy-duty cleaning products and detailing tools.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 30,
+        "rating": {
+            "rate": 4.7,
+            "count": 20
+        }
+    },
+    {
+        "title": "Exterior Car Cleaning Kit",
+        "price": 39.99,
+        "description": "Keep the outside of your car looking spotless with our exterior car cleaning kit! Includes high-quality cleaning products and a microfiber mitt for easy application.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 50,
+        "rating": {
+            "rate": 4.3,
+            "count": 10
+        }
+    },
+    {
+        "title": "Interior Car Cleaning Kit",
+        "price": 49.99,
+        "description": "Clean every nook and cranny of your car's interior with our interior car cleaning kit! Includes specialized cleaning products and brushes for different surfaces.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 40,
+        "rating": {
+            "rate": 4.6,
+            "count": 8
+        }
+    },
+    {
+        "title": "Car Detailing Kit",
+        "price": 79.99,
+        "description": "Take your car cleaning to the next level with our car detailing kit! Includes advanced cleaning products and detailing tools for a professional-grade finish.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 25,
+        "rating": {
+            "rate": 4.9,
+            "count": 5
+        }
+    },
+    {
+        "title": "Foaming Car Wash Kit",
+        "price": 29.99,
+        "description": "Get a rich and luxurious lather with our foaming car wash kit! Includes a foaming gun and concentrated soap for an easy and effective car wash.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 100,
+        "rating": {
+            "rate": 4.2,
+            "count": 15
+        }
+    },
+    {
+        "title": "Waterless Car Cleaning Kit",
+        "price": 59.99,
+        "description": "Clean your car without water with our waterless car cleaning kit! Includes specialized cleaning products and microfiber towels for a convenient and eco-friendly clean.",
+        "category": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "stock": 30,
+        "rating": {
+            "rate": 4.7,
+            "count": 12
+        }
+    },
+    {
+        "title": "New Car Scent Air Freshener",
+        "price": 5.99,
+        "description": "Bring the fresh scent of a new car to your vehicle with our new car scent air freshener! Easy to use and long-lasting.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 100,
+        "rating": {
+            "rate": 4.2,
+            "count": 25
+        }
+    },
+    {
+        "title": "Vanilla Bean Car Diffuser",
+        "price": 9.99,
+        "description": "Enjoy the warm and inviting scent of vanilla in your car with our vanilla bean car diffuser! Includes natural essential oils for a high-quality fragrance.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 50,
+        "rating": {
+            "rate": 4.5,
+            "count": 15
+        }
+    },
+    {
+        "title": "Leather Scented Car Perfume",
+        "price": 12.99,
+        "description": "Experience the luxurious scent of leather in your car with our leather scented car perfume! Designed to provide a long-lasting fragrance.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 30,
+        "rating": {
+            "rate": 4.0,
+            "count": 20
+        }
+    },
+    {
+        "title": "Citrus Grove Car Air Freshener",
+        "price": 7.99,
+        "description": "Refresh your car with the invigorating scent of citrus with our citrus grove car air freshener! Contains natural citrus essential oils.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 80,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "Lavender Fields Car Diffuser",
+        "price": 14.99,
+        "description": "Relax and unwind in your car with our lavender fields car diffuser! Contains natural lavender essential oils for a calming fragrance.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 20,
+        "rating": {
+            "rate": 4.6,
+            "count": 5
+        }
+    },
+    {
+        "title": "Ocean Breeze Car Air Freshener",
+        "price": 6.99,
+        "description": "Transform your car into a relaxing oasis with our ocean breeze car air freshener! Contains natural oceanic essential oils.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 75,
+        "rating": {
+            "rate": 4.4,
+            "count": 12
+        }
+    },
+    {
+        "title": "Cherry Blossom Car Diffuser",
+        "price": 8.99,
+        "description": "Enjoy the beautiful fragrance of cherry blossoms in your car with our cherry blossom car diffuser! Contains natural cherry blossom essential oils.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 60,
+        "rating": {
+            "rate": 4.7,
+            "count": 8
+        }
+    },
+    {
+        "title": "Pine Forest Car Air Freshener",
+        "price": 7.99,
+        "description": "Experience the refreshing scent of a pine forest in your car with our pine forest car air freshener! Contains natural pine essential oils.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 70,
+        "rating": {
+            "rate": 4.3,
+            "count": 18
+        }
+    },
+    {
+        "title": "Vanilla Cupcake Car Perfume",
+        "price": 11.99,
+        "description": "Indulge in the delicious scent of vanilla cupcakes in your car with our vanilla cupcake car perfume! Designed to provide a long-lasting fragrance.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 40,
+        "rating": {
+            "rate": 4.9,
+            "count": 7
+        }
+    },
+    {
+        "title": "Cedarwood Car Diffuser",
+        "price": 13.99,
+        "description": "Create a cozy and warm atmosphere in your car with our cedarwood car diffuser! Contains natural cedarwood essential oils for a woody fragrance.",
+        "category": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "stock": 25,
+        "rating": {
+            "rate": 4.1,
+            "count": 14
+        }
+    },
+    {
+        "title": "LED Headlight Conversion Kit",
+        "price": 99.99,
+        "description": "Upgrade your car's headlights with our LED headlight conversion kit! Provides brighter and more efficient lighting than traditional halogen bulbs.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 20,
+        "rating": {
+            "rate": 4.8,
+            "count": 10
+        }
+    },
+    {
+        "title": "Underglow LED Strip Lights",
+        "price": 39.99,
+        "description": "Add a stylish touch to your car with our underglow LED strip lights! Available in multiple colors and can be easily installed.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 50,
+        "rating": {
+            "rate": 4.2,
+            "count": 8
+        }
+    },
+    {
+        "title": "Fog Light Upgrade Kit",
+        "price": 79.99,
+        "description": "Improve your visibility in foggy conditions with our fog light upgrade kit! Designed to provide a wider and brighter beam pattern.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 15,
+        "rating": {
+            "rate": 4.5,
+            "count": 12
+        }
+    },
+    {
+        "title": "HID Xenon Headlight Bulbs",
+        "price": 49.99,
+        "description": "Experience brighter and clearer lighting with our HID xenon headlight bulbs! Available in multiple color temperatures to suit your preferences.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 25,
+        "rating": {
+            "rate": 4.3,
+            "count": 14
+        }
+    },
+    {
+        "title": "Interior LED Dome Light Kit",
+        "price": 29.99,
+        "description": "Light up the interior of your car with our LED dome light kit! Available in multiple colors and can be easily installed.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 30,
+        "rating": {
+            "rate": 4.0,
+            "count": 6
+        }
+    },
+    {
+        "title": "LED Daytime Running Lights",
+        "price": 59.99,
+        "description": "Enhance your car's safety and style with our LED daytime running lights! Designed to improve visibility and give your car a modern look.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 18,
+        "rating": {
+            "rate": 4.6,
+            "count": 9
+        }
+    },
+    {
+        "title": "HID Xenon Fog Light Bulbs",
+        "price": 39.99,
+        "description": "Upgrade your car's fog lights with our HID xenon bulbs! Provides brighter and more efficient lighting in foggy conditions.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 22,
+        "rating": {
+            "rate": 4.2,
+            "count": 11
+        }
+    },
+    {
+        "title": "LED Tail Light Conversion Kit",
+        "price": 89.99,
+        "description": "Upgrade your car's tail lights with our LED conversion kit! Provides brighter and more efficient lighting than traditional halogen bulbs.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 12,
+        "rating": {
+            "rate": 4.7,
+            "count": 7
+        }
+    },
+    {
+        "title": "Interior LED Accent Light Kit",
+        "price": 24.99,
+        "description": "Add a touch of color and style to your car's interior with our LED accent light kit! Available in multiple colors and can be easily installed.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 35,
+        "rating": {
+            "rate": 4.1,
+            "count": 10
+        }
+    },
+    {
+        "title": "High-Powered LED Spotlight",
+        "price": 69.99,
+        "description": "Illuminate the darkest roads with our high-powered LED spotlight! Provides a powerful and focused beam of light.",
+        "category": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "stock": 8,
+        "rating": {
+            "rate": 4.9,
+            "count": 5
+        }
+    },
+    {
+        "title": "Carbon Fiber Spoiler",
+        "price": 249.99,
+        "description": "Upgrade the look of your car with our carbon fiber spoiler! Lightweight and durable, and adds a sporty touch to your vehicle.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 15,
+        "rating": {
+            "rate": 4.8,
+            "count": 6
+        }
+    },
+    {
+        "title": "Alloy Wheel Set",
+        "price": 599.99,
+        "description": "Transform the look of your car with our high-quality alloy wheel set! Available in various sizes and finishes.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 8,
+        "rating": {
+            "rate": 4.5,
+            "count": 12
+        }
+    },
+    {
+        "title": "Performance Exhaust System",
+        "price": 899.99,
+        "description": "Upgrade the sound and performance of your car with our performance exhaust system! Made from high-quality materials and designed for maximum flow.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 5,
+        "rating": {
+            "rate": 4.9,
+            "count": 7
+        }
+    },
+    {
+        "title": "Racing Stripes Decal Kit",
+        "price": 69.99,
+        "description": "Give your car a racing-inspired look with our vinyl decal kit! Available in multiple colors and easy to install.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 25,
+        "rating": {
+            "rate": 4.2,
+            "count": 9
+        }
+    },
+    {
+        "title": "Custom Car Cover",
+        "price": 199.99,
+        "description": "Protect your car while showing off your style with our custom car cover! Available in various colors and designs, and made from high-quality materials.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 20,
+        "rating": {
+            "rate": 4.6,
+            "count": 11
+        }
+    },
+    {
+        "title": "LED Underglow Lights",
+        "price": 129.99,
+        "description": "Add some flair to your car with our LED underglow lights! Available in multiple colors and easy to install.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 12,
+        "rating": {
+            "rate": 4.4,
+            "count": 10
+        }
+    },
+    {
+        "title": "Billet Grille",
+        "price": 349.99,
+        "description": "Upgrade the front of your car with our billet grille! Made from high-quality materials and designed to fit perfectly.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 6,
+        "rating": {
+            "rate": 4.7,
+            "count": 8
+        }
+    },
+    {
+        "title": "Custom Steering Wheel",
+        "price": 599.99,
+        "description": "Personalize your driving experience with our custom steering wheel! Made from premium materials and available in various designs.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 3,
+        "rating": {
+            "rate": 4.9,
+            "count": 5
+        }
+    },
+    {
+        "title": "Aluminum Pedal Set",
+        "price": 99.99,
+        "description": "Upgrade the interior of your car with our aluminum pedal set! Easy to install and adds a sporty touch to your vehicle.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 18,
+        "rating": {
+            "rate": 4.2,
+            "count": 6
+        }
+    },
+    {
+        "title": "Universal Spoiler Lip",
+        "price": 119.99,
+        "description": "Improve the aerodynamics of your car with our universal spoiler lip! Made from high-quality materials and easy to install.",
+        "category": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "stock": 7,
+        "rating": {
+            "rate": 4.5,
+            "count": 9
+        }
+    }
+]

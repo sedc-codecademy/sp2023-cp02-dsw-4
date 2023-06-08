@@ -44,27 +44,11 @@ let dimeArray = [{ // Mock array for testing
     "stock": 12
 },
 {
-    "id": 4,
-    "title": "Pet accesories",
-    "type": 'Category',
-},
-{
     "id": 5,
     "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     "price": 695,
     "type": 'Product',
     "stock": 0
-},
-{
-    "id": 6,
-    "title": "Jewlery",
-    "price": 168,
-    "type": 'Category',
-},
-{
-    "id": 7,
-    "title": "Gadgets",
-    "type": 'Category',
 },
 {
     "id": 8,
@@ -73,11 +57,7 @@ let dimeArray = [{ // Mock array for testing
     "type": 'Product',
     "stock": 5
 },
-{
-    "id": 9,
-    "title": "Clothing",
-    "type": 'Category',
-},
+
 {
     "id": 10,
     "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
@@ -93,25 +73,75 @@ let dimeArray = [{ // Mock array for testing
     "stock": 234
 },
 {
-    "id": 12,
-    "title": "Electronics",
-    "type": 'Category',
-}]
+    "id": 5,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "type": 'Product',
+    "stock": 0
+},
+{
+    "id": 8,
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "type": 'Product',
+    "stock": 5
+},
+
+{
+    "id": 10,
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "type": 'Product',
+    "stock": 13
+},
+{
+    "id": 11,
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 109,
+    "type": 'Product',
+    "stock": 234
+},
+{
+    "id": 5,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "type": 'Product',
+    "stock": 0
+},
+{
+    "id": 8,
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "type": 'Product',
+    "stock": 5
+},
+
+{
+    "id": 10,
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "type": 'Product',
+    "stock": 13
+},
+{
+    "id": 11,
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 109,
+    "type": 'Product',
+    "stock": 234
+},
+]
 
 function suggestionsAnimate(origin, amount) { // Animating the searchbox
     if (origin === 'blur') {
         suggestionsCard.animate({
-            height: `0rem`
-        }, { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
-        timeOut = setTimeout(() => {
-            suggestionsCard.classList.remove("opCtSg")
-            searchContainer.classList.remove("opSg")
-        }, 300)
+            gridTemplateRows: `0fr`
+        }, { duration: 400, easing: 'ease-in-out', fill: 'forwards', })
         return
     }
     suggestionsCard.animate({
-        height: `${amount}rem`
-    }, { duration: 300, easing: 'ease-in-out', fill: 'forwards', })
+        gridTemplateRows: `1fr`,
+    }, { duration: 500, easing: 'ease-in-out', fill: 'forwards', })
 }
 
 const classSwitcher = { // Handling class switches for searchContainer and the suggestionsCard
@@ -121,9 +151,7 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         suggestionsAnimate('blur')
     },
     keyUPContinue: () => {
-        clearTimeout(timeOut)
         searchContainer.classList.add("opSg")
-        suggestionsCard.classList.add("opCtSg")
         idSearchBtn.classList.remove('visible')
         clearBtn.classList.add('visible')
     },
@@ -144,28 +172,40 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
         if (searchInput.value === '') return
         clearBtn.classList.add('visible')
     },
+
     ctOff: () => {
         searchContainer.classList.remove('opCt')
         suggestionsCard.classList.remove('opCt')
         suggestionsCard.classList.remove('opCtS2g')
         classSwitcher.focusBlur()
         categoryDropDown.animate(
-            [{ transform: 'translateY(100vh)', opacity: 0 }],
-            { duration: 300, easing: 'ease-in-out', fill: 'forwards' }
+            { visibility: "collapse" },
+            { duration: 200, easing: 'ease-in-out', fill: 'forwards' }
         )
+        // categoryDropDown.animate(
+        //     { transform: 'translateY(100vh)' },
+        //     { duration: 400, easing: 'ease-in-out', fill: 'forwards' }
+        // )
+        categoryDropDown.classList.remove('ctDropDownOn')
         ctButtonSf.innerHTML = 'category'
         toggle = true
     },
+
     ctOn: () => {
         searchContainer.classList.add('opCt')
         suggestionsCard.classList.add('opCt')
         categoryDropDown.animate(
-            [{ transform: 'translateY(0)', opacity: 1 }],
+            { visibility: "visible" },
             { duration: 300, easing: 'ease-in-out', fill: 'forwards' }
         )
+        // categoryDropDown.animate(
+        //     { transform: 'translateY(0)' },
+        //     { duration: 500, easing: 'ease-in-out', fill: 'forwards' }
+        // )
+
         suggestionsCard.classList.add('opCtS2g')
         classSwitcher.focusBlur();
-        categoryDropDown.classList.add('activeDp')
+        categoryDropDown.classList.add('ctDropDownOn')
         ctButtonSf.innerHTML = 'close_fullscreen'
         toggle = false
     }

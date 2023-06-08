@@ -12,23 +12,26 @@
     border-top-right-radius: 0.3rem;
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 1.7rem;
-    border: 0.15rem solid var(--tertColor);
+    border: 0.20rem solid var(--paleAccentThree);
     background-color: var(--tpPri);
     backdrop-filter: blur(2rem);
     overflow: hidden;
     transition: 300ms all ease;
-    z-index: 6;
+    z-index: 3;
 
     .search-bar {
         font-size: 1.4rem;
         width: 100%;
         height: 100%;
         background: transparent;
-        border-radius: inherit;
         border: none;
         outline: none;
-        text-indent: 1rem;
+        text-indent: 1.5rem;
         color: var(--secColor);
+        &::selection {
+            background: var(--accent);
+            color: var(--priColor);
+        }
     }
 
     button {
@@ -41,6 +44,18 @@
             position: absolute;
             filter: blur(1.5rem);
             transition: 300ms all ease;
+        }
+
+        &:active {
+            .material-symbols-outlined {
+                color: var(--secAccent)!important;
+            }
+        }
+
+        &:focus-visible{
+            span {
+                color: var(--accent);
+            }
         }
 
         &.clearButton,
@@ -84,20 +99,21 @@
 // SEACH BAR STATES
 
 .active {
-    border: 0.15rem solid var(--accent) !important;
+    border: 0.20rem solid var(--paleAccentTwo);
     transition: 300ms all ease;
 }
 
 .opCt {
-    top: -2.9rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    top: -2.8rem;
+    border-top-left-radius: 1rem!important;
+    border-top-right-radius: 1rem!important;
+    border-bottom-left-radius: 0.3rem!important;
+    border-bottom-right-radius: 0.3rem!important;
     transition: all 300ms ease-in-out;
 }
 
-.opSg {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
+// .opSg {
+    // border-bottom-left-radius: 0 !important;
+    // border-bottom-right-radius: 0 !important;
+    // transition: all 300ms ease-in-out;
+// }

@@ -1,3 +1,9 @@
+categoryDropDown.addEventListener('click', ()=>{
+    if(!searchContainer.classList.contains('active')) return
+    classSwitcher.focusBlur()
+    console.log("di2313")
+})
+
 categoriesBtn.addEventListener("click", (e) => {
     e.preventDefault()
     if (toggle === true) {

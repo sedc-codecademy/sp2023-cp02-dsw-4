@@ -4,9 +4,8 @@
 
 .ctDropDown {
     position: absolute;
-    opacity: 0;
     display: flex;
-    width: 80rem;
+    width: 85rem;
     height: 42rem;
     justify-content: space-between;
     border-top-left-radius: 1.7rem;
@@ -14,14 +13,18 @@
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 1.7rem;
     background-color: var(--tpPri);
-    border: 0.15rem solid var(--tertColor) !important;
-    backdrop-filter: blur(0.5rem);
+    border: 0.20rem solid var(--paleAccent);
+    backdrop-filter: blur(2rem);
     overflow: hidden;
     padding: 1rem;
     transform: translateY(100vh);
     transform-origin: 150% 15%;
-    z-index: -10;
-    
+    visibility: collapse;
+    transition: transform 400ms ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+
+
     ul {
         position: relative;
     }
@@ -42,28 +45,32 @@
             padding-block: 0.5rem;
             margin-right: 0.7rem;
             border-top-left-radius: 2rem;
-            border-top-right-radius: 0.6rem;
+            border-top-right-radius: 1rem;
             border-bottom-left-radius: 2rem;
-            border-bottom-right-radius: 2rem;
+            border-bottom-right-radius: 2.5rem;
+            border: 0.15rem solid var(--paleAccent);
             --opacity: 1;
+            font-weight: 550;
             transition: all 300ms ease;
 
             &::before {
                 content: "";
                 display: block;
                 opacity: var(--opacity);
-                width: 3rem;
-                height: 3em;
+                width: 3.2rem;
+                height: 3.2em;
                 border-radius: 50%;
                 background-position: bottom;
                 background-repeat: no-repeat;
                 background-size: contain;
-                margin-right: 0.5rem;
+                margin-right: 0.3rem;
                 transition: all 300ms ease;
+                position: relative;
+                left: -0.2rem;
+                border: 0.2rem solid var(--paleAccent);
             }
 
             &:hover {
-                font-weight: 600;
                 color: var(--accent);
                 cursor: pointer;
                 transition: all 300ms ease;
@@ -115,18 +122,25 @@
         color: var(--accent);
         font-weight: 600;
         background-color: var(--paleAccent);
+        border-color: var(--paleAccentTwo) !important;
+        &::before {
+            border: 0.2rem solid var(--paleAccentTwo) !important;
+        }
     }
 
     .sub-categories-ul {
         display: flex;
-        width: 45rem;
+        width: 50rem;
+        justify-content: center;
         flex-wrap: wrap;
+        gap: 0.5rem 1rem;
 
         li {
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: var(--paleAccent);
+            border: 0.2rem solid var(--paleAccent);
             border-top-left-radius: 2rem;
             border-top-right-radius: 3rem;
             border-bottom-left-radius: 3rem;
@@ -135,11 +149,14 @@
             height: 30%;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin: 0.5rem 0 0.5rem 1rem;
+            margin: 0.5rem 0 0.5rem 0rem;
             transition: 500ms all ease;
 
             section {
                 margin-right: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
             }
 
             &::before {
@@ -175,12 +192,13 @@
             &:hover {
                 cursor: pointer;
                 background-color: transparent;
+                border-color: var(--paleAccentTwo);
 
                 h3 {
                     color: var(--accent);
                 }
 
-                transition: 500ms all ease;
+                transition: 400ms all ease-in-out;
             }
         }
 
@@ -226,7 +244,7 @@
     }
 
     .relevant-products {
-        width: 15rem;
+        width: 18rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -235,18 +253,30 @@
 
         li {
             display: flex;
-            justify-content: center;
             align-items: center;
+            flex-direction: column;
+            gap: 1rem;
             width: 15rem;
-            height: 15rem;
+            height: 18rem;
             border-top-left-radius: 2rem;
             border-top-right-radius: 1rem;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 2rem;
             background-image: url(../imgs/cat/sub/4090.jpg);
-            background-position: center;
+            background-position: bottom;
             background-repeat: no-repeat;
-            background-size: contain;
+            background-color: var(--paleAccentTwo);
+            color: black;
+
+            p {
+                max-width: 70%;
+                font-weight: 550;
+            }
+
+            h1 {
+                margin-top: 1rem;
+                max-width: 70%;
+            }
         }
 
         &::after {
@@ -258,4 +288,9 @@
             left: -0.5rem;
         }
     }
+}
+
+.ctDropDownOn{
+    transform: translateY(0);
+    transition: transform 500ms ease-in-out;
 }

@@ -9,7 +9,12 @@ nav {
     user-select: none;
     background-color: var(--tpPri);
     backdrop-filter: blur(1vmax);
+    border: 0.20rem solid var(--paleAccent);
     border-radius: 0.5vmax;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 1rem;
     overflow: hidden;
     z-index: 10;
 
@@ -25,6 +30,7 @@ nav {
 
             .material-symbols-outlined {
                 font-size: 1.7rem;
+
             }
 
             ::before {
@@ -33,6 +39,21 @@ nav {
                 position: absolute;
                 filter: blur(2vmax);
                 transition: 300ms all ease;
+            }
+
+            a {
+                &:active {
+                    .material-symbols-outlined {
+                        // opacity: 0.6;
+                        color: var(--secAccent);
+                    }
+                }
+
+                &:focus-visible{
+                    span {
+                        color: var(--accent);
+                    }
+                }
             }
 
             &:hover {

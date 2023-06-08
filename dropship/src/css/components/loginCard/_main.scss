@@ -1,0 +1,238 @@
+@use "../../abstracts";
+
+.loginDropdown {
+    position: fixed;
+    top: -20rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    border: 0.3rem solid var(--paleAccent);
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 1.5rem;
+    width: 50rem;
+    height: 40rem;
+    overflow: hidden;
+    opacity: 0;
+    transition: 400ms all ease-in-out;
+    visibility: collapse;
+    box-shadow: rgba(0, 0, 0, 0.646) 0 0 5rem;
+    z-index: 15;
+
+    form {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        div {
+            gap: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.45rem;
+            border-radius: 2rem;
+            border-top-left-radius: 0.8rem;
+            border-top-right-radius: 0.2rem;
+            border-bottom-left-radius: 0.2rem;
+            border-bottom-right-radius: 0.8rem;
+            transition: 300ms all ease;
+        }
+
+        span {
+            font-weight: 650;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        a {
+            color: var(--secColor);
+        }
+    }
+
+    input {
+        text-indent: 1rem;
+        width: 14rem;
+        height: 3rem;
+        font-size: 1.1rem;
+        text-indent: 0.5rem;
+        background-color: var(--tpPri);
+        color: var(--secColor);
+        border: 0.15rem solid var(--paleAccentThree);
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 1.2rem;
+        outline: none;
+        margin: 0.5rem;
+        transition: 300ms all ease;
+
+        &#agree {
+            background: none;
+            width: auto;
+            height: auto;
+        }
+
+        &::selection {
+            background: var(--accent);
+            color: var(--priColor);
+        }
+
+        // &:required:not(:placeholder-shown):valid {
+        //     border-color: red;
+
+        //     ~ {
+        //         label {
+        //             opacity: 1;
+        //             color: var(--priColor);
+        //             background: rgb(255, 50, 50);
+        //             transform: translateY(-110%);
+        //         }
+        //     }
+        // }
+
+        // &:invalid {
+        //     border-color: red;
+        //     ~ {
+        //         label {
+        //             opacity: 1;
+        //             color: var(--priColor);
+        //             background: rgb(255, 50, 50);
+        //             transform: translateY(-110%);
+        //         }
+        //     }
+        // }
+
+        &:invalid:not(:placeholder-shown) {
+            border-color: red;
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: rgb(255, 50, 50);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+
+        &:valid {
+            border-color: var(--accent);
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: var(--accent);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+
+        &:focus {
+            border: 0.15rem solid var(--accent);
+            transition: 300ms all ease;
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: var(--accent);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+    }
+
+    label {
+        position: absolute;
+        pointer-events: none;
+        border-radius: 1rem;
+        padding-inline: 0.5rem;
+        transition: 300ms all ease;
+        opacity: 0.6;
+    }
+
+    svg {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: var(--secColor);
+        transition: 300ms all ease;
+
+        &:hover {
+            fill: var(--accent);
+            transition: 300ms all ease;
+        }
+
+        &#google {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    .loginInput {
+        transform: translateY(-3rem) !important;
+        position: absolute;
+        visibility: visible;
+        transition: visibility 100ms all ease-in-out;
+    }
+}
+
+.on {
+    opacity: 1;
+    top: 5rem;
+    visibility: visible;
+    transition: visibility 100ms all ease-in-out;
+}
+
+@media (max-width: 1440px) {
+    .loginDropdown {
+        width: 45rem;
+        height: 35rem;
+        top: 2rem;
+    }
+}
+
+.forgotPS {
+    .loginUi {
+        width: 0%;
+    }
+
+    .registerUi {
+        width: 0;
+
+        * {
+            transform: translateX(-13rem) !important;
+            transition: 250ms transform ease-in-out;
+        }
+
+        .registerButton {
+            transform: translateX(-13rem) !important;
+            transition: 250ms transform ease-in-out;
+        }
+    }
+
+    .forgotPass {
+        width: 100%;
+
+        *:not(label) {
+            transform: translateY(0);
+            transition: 550ms transform ease-in-out;
+        }
+    }
+}
