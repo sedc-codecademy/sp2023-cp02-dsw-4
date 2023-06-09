@@ -12,7 +12,6 @@ for (let i = 0; i < links.length; i++) {
 }
 
 function scaleElement(e, scale, coordinates) {
-    console.log(coordinates)
     // Apply scaling transformation
     e.style.setProperty('--origin', coordinates);
     e.style.setProperty('--scale', scale);

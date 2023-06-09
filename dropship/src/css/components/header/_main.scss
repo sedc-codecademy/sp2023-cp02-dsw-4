@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 
 header {
-    height: 30vmax;
+    height: 25vmax;
     position: relative;
     display: grid;
     place-content: center;
@@ -21,6 +21,7 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
     svg {
         position: absolute;
