@@ -1,7 +1,11 @@
-categoryDropDown.addEventListener('click', ()=>{
-    if(!searchContainer.classList.contains('active')) return
+const technology = document.querySelector("#technology")
+const ctLiDt = document.querySelectorAll(".ctLiDt")
+const subCategoryList = document.querySelector('.sub-categories-ul')
+const subCategoryItems = subCategoryList.querySelectorAll('li')
+
+categoryDropDown.addEventListener('click', () => {
+    if (!searchContainer.classList.contains('active')) return
     classSwitcher.focusBlur()
-    console.log("di2313")
 })
 
 categoriesBtn.addEventListener("click", (e) => {
@@ -38,20 +42,40 @@ ctLiDt.forEach((e) => {
     })
 })
 
-function setSubCats(currentCat) {
-    let tempCat
-    for (let i = 0; i < subCtArray.length; i++) {
-        if (subCtArray[i].id === currentCat.id) {
-            tempCat = subCtArray[i]
+async function setSubCats(currentCat) {
+    const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
+    const categories = await fetchJSON('./mock/categories.json')
+    const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
+
+    let tempCats = []
+
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].id === currentCat.id) {
+            for (let j = 0; j < flattenedSubCategories.length; j++) {
+                if (categories[i].sub.includes(flattenedSubCategories[j].id)) {
+                    tempCats.push(flattenedSubCategories[j])
+                }
+            }
             break
         }
     }
-    for (let i = 0; i < tempCat.cats.length; i++) {
-        subCategoryItems[i].querySelector('h3').innerHTML = tempCat.cats[i].title
-        subCategoryItems[i].querySelector('p').innerHTML = tempCat.cats[i].description
-        subCategoryItems[i].style.setProperty('--bgimg', `url(${tempCat.cats[i].image})`)
+
+    let randomCats = [...tempCats];
+
+    for (let i = 0; i < 5; i++) {
+        // Generate a random index within the remaining range of randomCats
+        const randomIndex = Math.floor(Math.random() * randomCats.length);
+
+        // Retrieve the random element and update the subCategoryItems
+        const randomCat = randomCats[randomIndex];
+        subCategoryItems[i].querySelector('h3').innerHTML = randomCat.title;
+        subCategoryItems[i].querySelector('p').innerHTML = randomCat.description;
+        subCategoryItems[i].style.setProperty('--bgimg', `url(${randomCat.image})`);
+
+        // Remove the chosen element from randomCats to avoid repetition
+        randomCats.splice(randomIndex, 1);
     }
 }
 
-setSubCats(electronics)
+setSubCats(technology)
 

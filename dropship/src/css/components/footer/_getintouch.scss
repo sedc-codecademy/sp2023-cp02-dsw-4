@@ -1,0 +1,158 @@
+.getintouch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    span {
+        color: var(--accent);
+        transition: all .8s cubic-bezier(.19, 1, .22, 1);
+    }
+
+    p {
+        position: relative;
+        left: 3.7rem;
+        top: -3.7rem;
+        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: .2rem;
+        color: var(--priColor);
+        user-select: none;
+        text-shadow: .1rem .1rem 0 var(--secColor);
+    }
+
+    a {
+        position: relative;
+        top: -3rem;
+        left: 3rem;
+        font-size: 3.5rem;
+        line-height: 1.2;
+        font-weight: 600;
+        color: var(--secColor);
+        letter-spacing: -0.2rem;
+        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        text-transform: lowercase;
+        text-shadow: .1rem .1rem 0 var(--tpPri);
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        &.adress {
+            margin-top: 1rem;
+
+            p {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: fit-content;
+                font-size: 3.5rem;
+                line-height: 1.2;
+                font-weight: 600;
+                letter-spacing: -0.3rem;
+                color: var(--secColor);
+                letter-spacing: -0.2rem;
+                font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                text-transform: capitalize;
+                text-shadow: .1rem .1rem 0 var(--tpPri);
+                white-space: wrap;
+
+                &::before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    height: .125rem;
+                    width: 100%;
+                    background-color: var(--secColor);
+                    opacity: 0.8;
+                    z-index: -1;
+                    content: "";
+                    transform-origin: left;
+                    transform: scaleX(0);
+                    transition: transform 1.4s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
+                }
+
+                &:nth-child(2) {
+                    &::before {
+                        transition-delay: 350ms;
+                    }
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            height: .125rem;
+            width: 100%;
+            background-color: var(--secColor);
+            opacity: 0.8;
+            z-index: -1;
+            content: "";
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 1.4s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
+        }
+
+        &:hover {
+            &::after {
+                transform: scaleX(1);
+            }
+
+            p::before {
+                transform: scaleX(1);
+            }
+        }
+
+        &:active{
+            color: var(--accent);
+            span{
+                color: var(--secColor);
+            }
+            p{
+                color: var(--accent);
+            }
+        }
+
+        &:focus-visible {
+            color: var(--accent);
+            span{
+                color: var(--secColor);
+            }
+            p{
+                color: var(--accent);
+            }
+            &::after,p::before {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .getintouch {
+        p {
+            // left: 5rem;
+            top: -3rem;
+            font-size: 0.9rem;
+        }
+
+        a {
+            // left: 3.5rem;
+            top: -2rem;
+            font-size: 2.5rem;
+
+            &.adress {
+                p {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@
 
 .ctDropDown {
     position: absolute;
-    display: flex;
+    display: none;
     width: 85rem;
     height: 42rem;
     justify-content: space-between;
@@ -13,17 +13,14 @@
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 1.7rem;
     background-color: var(--tpPri);
-    border: 0.20rem solid var(--paleAccent);
+    border: 0.20rem solid var(--paleAccentThree);
     backdrop-filter: blur(2rem);
-    overflow: hidden;
     padding: 1rem;
     transform: translateY(100vh);
     transform-origin: 150% 15%;
-    visibility: collapse;
-    transition: transform 400ms ease-in-out;
+    transition: transform 400ms cubic-bezier(0.42, 0, 0.58, 1);
     overflow: hidden;
     z-index: 2;
-
 
     ul {
         position: relative;
@@ -35,14 +32,14 @@
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        margin: 0.5rem 0 0.5rem 0.5rem;
+        margin: .5rem 0 .5rem .5rem;
         user-select: none;
 
         li {
             height: 3rem;
             display: flex;
             align-items: center;
-            padding-block: 0.5rem;
+            padding-block: .5rem;
             margin-right: 0.7rem;
             border-top-left-radius: 2rem;
             border-top-right-radius: 1rem;
@@ -58,7 +55,7 @@
                 display: block;
                 opacity: var(--opacity);
                 width: 3.2rem;
-                height: 3.2em;
+                height: 3.2rem;
                 border-radius: 50%;
                 background-position: bottom;
                 background-repeat: no-repeat;
@@ -80,13 +77,15 @@
         &::after {
             content: '';
             position: absolute;
-            background-color: var(--tertColor);
-            width: 0.1rem;
-            height: 95%;
-            right: -0.5rem;
+            background-color: var(--paleAccentThree);
+            border-top-left-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+            width: 0.4rem;
+            height: 98%;
+            right: -.5rem;
         }
 
-        #electronics {
+        #technology {
             &::before {
                 background-color: #78f5b2;
                 background-image: url(../imgs/cat/tech/technology.png);
@@ -97,11 +96,11 @@
             &::before {
                 background-color: #fff6ae;
                 background-image: url(../imgs/cat/jewels/jewellery.png);
-                background-size: 2.5rem;
+                background-size: 3.5rem;
             }
         }
 
-        #mensWear {
+        #menswear {
             &::before {
                 background-color: #ffaeef;
                 background-image: url(../imgs/cat/mWear/mensWear.png);
@@ -109,11 +108,64 @@
             }
         }
 
-        #womensWear {
+        #womenswear {
             &::before {
                 background-color: #aeecff;
                 background-image: url(../imgs/cat/fWear/womensWear.png);
-                background-position: 0.5rem 0.5rem;
+                background-position: .5rem .5rem;
+            }
+        }
+
+        #books {
+            &::before {
+                background-color: #b4fc80;
+                background-image: url(../imgs/cat/books/books.png);
+                background-position: .1rem .5rem;
+            }
+        }
+
+        #kidsaccessories {
+            &::before {
+                background-color: #e898ef;
+                background-image: url(../imgs/cat/kAndA/toddlertoys.png);
+                background-size: 4.5rem;
+                background-position: -.3rem .2rem;
+            }
+        }
+
+        #beauty {
+            &::before {
+                background-color: #ebe5e5;
+                background-image: url(../imgs/cat/beauty/beauty.png);
+                background-size: 4.3rem;
+                background-position: -.3rem -.3rem;
+            }
+        }
+
+        #autoaccessories{
+            &::before{
+                background-color: #d39ef6af;
+                background-image: url(../imgs/cat/auto/autoacc.png);
+                background-size: 4.5rem;
+                background-position: -.6rem .5rem;
+            }
+        }
+
+        #sports{
+            &::before{
+                background-color: #60fff7;
+                background-image: url(../imgs/cat/sports/sports.png);
+                background-size: 4rem;
+                background-position: -.1rem .2rem;
+            }
+        }
+
+        #homeandgarden{
+            &::before{
+                background-color: #ffd260;
+                background-image: url(../imgs/cat/hAndG/homegarden.png);
+                background-size: 5.5rem;
+                background-position: -.8rem -.55rem;
             }
         }
     }
@@ -133,7 +185,7 @@
         width: 50rem;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 0.5rem 1rem;
+        gap: .5rem 1rem;
 
         li {
             display: flex;
@@ -149,7 +201,7 @@
             height: 30%;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin: 0.5rem 0 0.5rem 0rem;
+            margin: .5rem 0 .5rem 0rem;
             transition: 500ms all ease;
 
             section {
@@ -167,7 +219,7 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: contain;
-                margin: 0.5rem;
+                margin: .5rem;
             }
 
             &.see-all {
@@ -282,15 +334,16 @@
         &::after {
             content: '';
             position: absolute;
-            background-color: var(--tertColor);
-            width: 0.1rem;
+            background-color: var(--paleAccentThree);
+            border-top-right-radius: .5rem;
+            border-bottom-left-radius: .5rem;
+            width: 0.4rem;
             height: 95%;
-            left: -0.5rem;
+            left: -.5rem;
         }
     }
 }
 
 .ctDropDownOn{
     transform: translateY(0);
-    transition: transform 500ms ease-in-out;
 }

@@ -28,7 +28,7 @@ const makeCall = (url) => {
 
 makeCall(subCategories_url);
 
-function testFunc(object) {
+function testFunc(object) { // Should remove after merging html files // Duplicate Functions
     const newArray = []
     for (let key in object) {
         if (Array.isArray(object[key])) {
@@ -38,10 +38,7 @@ function testFunc(object) {
     return newArray
 }
 
-
-
-
-async function fetchJSON(url) {
+async function fetchJSON(url) { // Should remove after merging html files // Duplicate Functions
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -55,12 +52,7 @@ async function fetchJSON(url) {
     }
 }
 
-
-
-
-
-
-async function setSubCatsTwo(ID) {
+async function setSubCatsTwoCtTab(ID) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
     const products = await fetchJSON('./mock/new-products.json')
     const flattenedSubCategories = testFunc(subCategoriesArray)
@@ -83,9 +75,6 @@ async function setSubCatsTwo(ID) {
 }
 
 
-
-
-
 async function printResults(subCat, element) {
 
     console.log(subCat)
@@ -95,15 +84,13 @@ async function printResults(subCat, element) {
         let a = document.createElement("a");
         a.addEventListener("click", () => {
             console.log(subCategory.id)
-            setSubCatsTwo(subCategory.id)
+            setSubCatsTwoCtTab(subCategory.id)
         })
 
         a.innerHTML += `
         <h3>${subCategory.title}</h3>
         <p>${subCategory.description}</p>
-        <p>${subCategory.categoryTitle}</p> 
-  
-          `
+        <p>${subCategory.categoryTitle}</p>`
 
         //     <div id="id_${index}">   
         //     <button value="${starship.films}" onclick="makeCallMovies(this, ${index})"> Show films </button>
