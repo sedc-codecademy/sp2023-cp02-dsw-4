@@ -4,7 +4,7 @@
 :root {
   --priColor: rgb(243, 243, 243);
   --tpPri: rgba(255, 255, 255, .65);
-  --tpSec: rgba(0, 0, 0, 0.475);
+  --tpSec: rgba(0, 0, 0, 0.650);
   --secColor: rgba(0, 0, 0, 0.822);
   --secAccent: rgb(208, 0, 255);
   --accent: rgb(255, 52, 150);
@@ -196,7 +196,8 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.2rem solid var(--paleAccentThree);
   background-color: var(--tpPri);
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 3;
@@ -210,6 +211,10 @@ header .headerGradient {
   outline: none;
   text-indent: 1.5rem;
   color: var(--secColor);
+}
+.search-bar-container .search-bar::-moz-selection {
+  background: var(--accent);
+  color: var(--priColor);
 }
 .search-bar-container .search-bar::selection {
   background: var(--accent);
@@ -289,7 +294,8 @@ header .headerGradient {
   top: 3.3rem;
   width: 40rem;
   background-color: var(--tpPri);
-  backdrop-filter: blur(3rem);
+  -webkit-backdrop-filter: blur(3rem);
+          backdrop-filter: blur(3rem);
   border-top-left-radius: 1.6rem;
   border-top-right-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
@@ -398,6 +404,7 @@ header .headerGradient {
 }
 .search-suggestions ul a h5,
 .search-suggestions ul a h6 {
+  width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
   overflow: hidden;
@@ -442,7 +449,8 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.2rem solid var(--paleAccentThree);
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   padding: 1rem;
   transform: translateY(100vh);
   transform-origin: 150% 15%;
@@ -460,7 +468,9 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -717,7 +727,8 @@ header .headerGradient {
   position: relative;
   min-width: 10rem;
   border-radius: 0.3vmax;
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   background: linear-gradient(to right, var(--paleAccentTwo), var(--secAccent));
   color: black;
   display: grid;
@@ -772,9 +783,12 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   background-color: var(--tpPri);
-  backdrop-filter: blur(1vmax);
+  -webkit-backdrop-filter: blur(1vmax);
+          backdrop-filter: blur(1vmax);
   border: 0.2rem solid var(--paleAccent);
   border-radius: 0.5vmax;
   border-top-left-radius: 1rem;
@@ -836,6 +850,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5vmax;
 }
 footer::after {
   content: "";
@@ -905,7 +920,9 @@ footer .footerMain {
   color: var(--priColor);
   text-indent: 0.5rem;
   margin-top: -1rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .newsletter h1 {
@@ -915,7 +932,9 @@ footer .footerMain {
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: lowercase;
   margin-bottom: 2rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
 }
 .newsletter form {
@@ -970,12 +989,25 @@ footer .footerMain {
   border-top-left-radius: 1.5rem;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+.newsletter input::-moz-selection {
+  background: var(--accent);
+  color: var(--priColor);
+}
 .newsletter input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
+.newsletter input:invalid:not(:-moz-placeholder-shown) {
+  border-color: red;
+}
 .newsletter input:invalid:not(:placeholder-shown) {
   border-color: red;
+}
+.newsletter input:invalid:not(:-moz-placeholder-shown) ~ label {
+  opacity: 1;
+  color: var(--priColor);
+  background: rgb(255, 50, 50);
+  transform: translateY(-105%);
 }
 .newsletter input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -1019,6 +1051,7 @@ footer .footerMain {
 
 @media (max-width: 1440px) {
   .newsletter {
+    width: -moz-min-content;
     width: min-content;
   }
   .newsletter p {
@@ -1060,7 +1093,9 @@ footer .footerMain {
   font-size: 7rem;
   font-family: "Rubik Microbe", cursive;
   color: var(--accent);
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -1118,7 +1153,9 @@ footer .footerMain {
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   color: var(--priColor);
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .getintouch a {
@@ -1142,6 +1179,7 @@ footer .footerMain {
   position: relative;
   left: 0;
   top: 0;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 3.5rem;
   line-height: 1.2;
@@ -1365,6 +1403,10 @@ footer .footerMain {
   width: 3rem;
   fill: var(--tertColor);
   transition: all 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+}
+.footFooter .socials svg#twitter, .footFooter .socials svg#git {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 .footFooter .footerLanguage {
   display: flex;
@@ -1619,7 +1661,8 @@ main svg {
   display: none;
   justify-content: center;
   border: 0.3rem solid var(--paleAccentThree);
-  backdrop-filter: blur(5rem);
+  -webkit-backdrop-filter: blur(5rem);
+          backdrop-filter: blur(5rem);
   border-radius: 1rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 0.5rem;
@@ -1634,7 +1677,8 @@ main svg {
   background: none;
 }
 .loginDropdown::backdrop {
-  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   background-color: var(--backdropBackground);
 }
 .loginDropdown form {
@@ -1666,7 +1710,9 @@ main svg {
 }
 .loginDropdown form span {
   font-weight: 650;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   pointer-events: none;
 }
 .loginDropdown form a {
@@ -1694,12 +1740,25 @@ main svg {
   width: auto;
   height: auto;
 }
+.loginDropdown input::-moz-selection {
+  background: var(--accent);
+  color: var(--priColor);
+}
 .loginDropdown input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
+.loginDropdown input:invalid:not(:-moz-placeholder-shown) {
+  border-color: red;
+}
 .loginDropdown input:invalid:not(:placeholder-shown) {
   border-color: red;
+}
+.loginDropdown input:invalid:not(:-moz-placeholder-shown) ~ label {
+  opacity: 1;
+  color: var(--priColor);
+  background: rgb(255, 50, 50);
+  transform: translateY(-110%);
 }
 .loginDropdown input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -1799,7 +1858,8 @@ main svg {
   position: relative;
   width: 50%;
   background-color: var(--tpPri);
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1851,7 +1911,8 @@ main svg {
   margin-top: -10rem;
 }
 .loginUi section:nth-child(2) {
-  margin-block-start: 1rem;
+  -webkit-margin-before: 1rem;
+          margin-block-start: 1rem;
   gap: 0.5rem;
 }
 .loginUi section:nth-child(2) div {
@@ -1874,7 +1935,8 @@ main svg {
   width: 50%;
   background-color: var(--paleAccentTwo);
   color: var(--priColor);
-  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+          backdrop-filter: blur(0);
   gap: 2rem;
   transition: 500ms all ease-in-out;
   overflow: hidden;
@@ -1913,7 +1975,9 @@ main svg {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .registerUi .fields .checkBoxes span {
   pointer-events: all !important;
@@ -1927,7 +1991,9 @@ main svg {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   transition: 300ms all ease;
   display: flex;
   justify-content: center;
@@ -1942,8 +2008,6 @@ main svg {
   height: 1rem;
   border: solid var(--priColor);
   border-width: 0 0.2rem 0.2rem 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   visibility: hidden;
 }
@@ -1992,7 +2056,8 @@ main svg {
   width: 100%;
   background-color: var(--tpPri);
   color: var(--secColor);
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
 }
 .regOn .fields {
   display: block;
@@ -2032,7 +2097,8 @@ main svg {
   position: relative;
   width: 0%;
   background-color: var(--tpPri);
-  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
   overflow: hidden;
   gap: 1.5rem;
   transition: 500ms all ease-in-out;
@@ -2091,4 +2157,75 @@ main svg {
   fill: var(--priColor);
   transition: 350ms all ease-in-out;
   background-color: var(--accent);
+}
+
+#products-div-one {
+  display: flex;
+  justify-content: center;
+  width: 90vmax;
+  align-items: center;
+  margin-inline: auto;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block: 20rem 10rem;
+}
+#products-div-one div {
+  display: flex;
+  gap: 0.5rem;
+}
+#products-div-one div section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vmax;
+  border: 0.2rem solid var(--paleAccentTwo);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  background-color: var(--tpSec);
+}
+#products-div-one div section img {
+  height: 9.5rem;
+  width: 9.5rem;
+}
+#products-div-one div section a {
+  color: var(--secColor);
+  overflow: hidden;
+}
+
+#products-div-two {
+  display: flex;
+  justify-content: center;
+  width: 90vmax;
+  align-items: center;
+  margin-inline: auto;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 10rem;
+}
+#products-div-two div {
+  display: flex;
+  gap: 0.5rem;
+}
+#products-div-two div section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vmax;
+  border: 0.2rem solid var(--paleAccentTwo);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  background-color: var(--tpSec);
+}
+#products-div-two div section img {
+  height: 19rem;
+  width: 19rem;
+}
+#products-div-two div section a {
+  color: var(--secColor);
+  overflow: hidden;
+}
+#products-div-two div section h4 {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

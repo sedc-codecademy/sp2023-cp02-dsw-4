@@ -11,9 +11,10 @@ import "./footer/_hero.js";
 import "./categoriesTab/_filters.js";
 //// LOGIN
 import "./loginForm/_main.js";
-//// CATGORIES SECTION
+//// CATEGORIES SECTION
 import "./categoriesSection/_categoriesSection.js";
-
+//// HOMEPAGE PRODUCTS
+import "./homePageProducts/_homePageProducts.js"
 
 
 
