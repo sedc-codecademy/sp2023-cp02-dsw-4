@@ -168,6 +168,11 @@
             width: 3rem;
             fill: var(--tertColor);
             transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
+
+            &#twitter, &#git {
+                height: 2.5rem;
+                width: 2.5rem;
+            }
         }
     }
 
