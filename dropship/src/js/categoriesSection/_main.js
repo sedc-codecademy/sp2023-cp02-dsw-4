@@ -104,10 +104,10 @@ function printProduct(product, element) {
         a.style.color = 'pink'
         a.innerHTML += `
         <h3>${product.title}</h3>
-        <p>${product.price}</p>
+        <p>Price: ${product.price}</p>
         <p>${product.description}</p>
-        <p>${product.rating.rate}</p>
-        <p>${product.stock}</p>
+        <p>Rating: ${product.rating.rate}</p>
+        <p>In Stock: ${product.stock}</p>
         `
         element.appendChild(a);
  
