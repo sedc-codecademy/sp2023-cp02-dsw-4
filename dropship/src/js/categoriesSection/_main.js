@@ -27,12 +27,6 @@ const makeCall = (url) => {
 
 makeCall(subCategories_url);
 
-
-
-
-
-
-
 function testFunc(object) {
     const newArray = []
     for (let key in object) {
@@ -40,11 +34,9 @@ function testFunc(object) {
             newArray.push(...object[key])
         }
     }
+    console.log(newArray)
     return newArray
 }
-
-
-
 
 async function fetchJSON(url) {
     try {
@@ -61,15 +53,15 @@ async function fetchJSON(url) {
 }
 
 
-
-
-
-
 async function setSubCatsTwo(ID) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
+    console.log(subCategoriesArray)
     const products = await fetchJSON('./mock/new-products.json')
+    console.log(products)
     const flattenedSubCategories = testFunc(subCategoriesArray)
     const flattenedProducts = testFunc(products)
+    console.log(flattenedSubCategories)
+    console.log(flattenedProducts)
 
     let tempCats = []
 
@@ -86,9 +78,6 @@ async function setSubCatsTwo(ID) {
     console.log(tempCats)
     console.log("Dime")
 }
-
-
-
 
 
 async function printResults(subCat, element) {
