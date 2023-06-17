@@ -1,0 +1,688 @@
+[
+    {
+        "id": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+        "title": "Personal Computers",
+        "description": "Get PCs, the latest components, PC accesories and everything else related to PCs.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/pc.png"
+    },
+    {
+        "id": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+        "title": "Smartphones",
+        "description": "Discover the latest smartphones from top brands like Apple, Samsung, and more.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/phone.png"
+    },
+    {
+        "id": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+        "title": "Office Electronics",
+        "description": "Get office electronics like printers, scanners, and projectors to help you run your business.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/printer.png"
+    },
+    {
+        "id": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+        "title": "Gaming Consoles & Accessories",
+        "description": "Find the latest gaming consoles and accessories from top brands like Playstation, Xbox, and Nintendo.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/xbox.png"
+    },
+    {
+        "id": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+        "title": "HandHeld entertainment",
+        "description": "Tablets, and other stuff.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/switch.png"
+    },
+    {
+        "id": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+        "title": "Audio & Video Equipment",
+        "description": "Shop for speakers, headphones, TVs, projectors, and other audio & video equipment.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/audiovideo.png"
+    },
+    {
+        "id": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+        "title": "Wearable Technology",
+        "description": "Explore the latest wearable tech devices like smartwatches, fitness trackers, and more.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/smartwatch.png"
+    },
+    {
+        "id": "58b31959-1232-453f-b631-6411be333ed3",
+        "title": "Virtual Reality",
+        "description": "Explore virtual reality technology and accessories to enhance your gaming and entertainment experiences.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/vr-headset.png"
+    },
+    {
+        "id": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+        "title": "Cameras & Photography",
+        "description": "Shop for cameras, lenses, and other photography equipment for amateurs and professionals.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/proffcamera.png"
+    },
+    {
+        "id": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+        "title": "Accessories & Parts",
+        "description": "Find accessories and replacement parts for your electronics, including chargers, cables, and batteries.",
+        "products": [],
+        "image": "../imgs/cat/tech/sub/charger.png"
+    },
+    {
+        "id": "21f7bfb9-4636-448c-b574-f3de7d55cb57",
+        "title": "Necklaces",
+        "description": "Elevate your outfit with a stunning necklace, whether you prefer delicate chains or bold statement pieces.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/necklase.png"
+    },
+    {
+        "id": "4d183c44-1c80-4b8c-82a8-461bc19b2c1d",
+        "title": "Bracelets",
+        "description": "Add a touch of sophistication and style to your wrist with a variety of bracelet options, including bangles, cuffs, and chains.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/bracelet.png"
+    },
+    {
+        "id": "daf72d18-f4a3-4fb0-9156-2b5ac2ca15ce",
+        "title": "Earrings",
+        "description": "Accessorize with a touch of elegance and glam with a wide selection of earrings, from simple studs to dramatic hoops.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/earrings.png"
+    },
+    {
+        "id": "c2e338cf-2e3b-443c-8a32-e915444b5b86",
+        "title": "Rings",
+        "description": "Make a statement with a variety of rings, from simple bands to dazzling cocktail rings, perfect for any occasion.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/ring.png"
+    },
+    {
+        "id": "779092fe-4730-453f-a24a-e9075c4468a1",
+        "title": "Anklets",
+        "description": "Give your feet a little extra sparkle with a dainty anklet, available in a variety of styles and materials.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/anklet.png"
+    },
+    {
+        "id": "9a2faf53-f6f6-413e-b4cd-80263acf7461",
+        "title": "Brooches",
+        "description": "Add a vintage touch to your outfit with a stunning brooch, perfect for accenting a lapel, scarf, or bag.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/brooch.png"
+    },
+    {
+        "id": "abe4b89f-0672-4cc7-95a5-a1d73e1f3fa3",
+        "title": "Charms",
+        "description": "Personalize your jewelry collection with a wide selection of charms, perfect for adding a touch of sentimentality to any piece.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/charm.png"
+    },
+    {
+        "id": "881406f9-f38f-46b9-841a-f7b44f309879",
+        "title": "Jewelry Sets",
+        "description": "Complete your look with a matching jewelry set, including earrings, necklaces, bracelets, and more, perfectly coordinated for any occasion.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/jewlsets.png"
+    },
+    {
+        "id": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
+        "title": "Body Jewelry",
+        "description": "Make a bold statement with unique body jewelry, perfect for adding a touch of edge to any outfit.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/bodyjewl.png"
+    },
+    {
+        "id": "f365a269-fd48-4b0e-bc6e-456723b51192",
+        "title": "Watches",
+        "description": "Find your perfect timepiece with our wide selection of watches, from classic to modern styles.",
+        "products": [],
+        "image": "../imgs/cat/jewels/sub/jewlwatch.png"
+    },
+    {
+        "id": "95448f8a-49ea-4930-b91f-193892a687e8",
+        "title": "T-Shirts",
+        "description": "Comfortable and versatile tops that come in a variety of styles, colors, and designs.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/stripe-shirt.png"
+    },
+    {
+        "id": "c05c19eb-f67b-48f3-b4ca-922326df53ff",
+        "title": "Foot Wear",
+        "description": "Boots, jordans, sketchers adidas, nike and everyhing inbetween.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/mboots.png"
+    },
+    {
+        "id": "fc160538-ed47-4b02-8ff9-32addec8b3a6",
+        "title": "Pants",
+        "description": "Versatile pants that come in a variety of styles, including khakis, chinos, and cargo pants.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/mpants.png"
+    },
+    {
+        "id": "e1adeac0-4152-4a32-a789-ca9a2c99921b",
+        "title": "Head wear",
+        "description": "Head wear, all kinds of hats. Stay protected in the summer and warm in the winter!",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/cap.png"
+    },
+    {
+        "id": "2ec55d9f-c9dd-49c8-af86-10b7fd4f7dd3",
+        "title": "Suits",
+        "description": "Formal outfits that typically consist of a jacket and matching pants, worn for business or formal occasions.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/suit.png"
+    },
+    {
+        "id": "e72f789f-3032-43b1-bb90-1faacbaa6c9c",
+        "title": "Jeans",
+        "description": "Casual and versatile pants that come in a variety of styles, cuts, and washes.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/mjeans.png"
+    },
+    {
+        "id": "24b62ef4-3d30-4f01-b621-1a849edc5f5e",
+        "title": "Sweaters",
+        "description": "Warm and comfortable tops that come in a variety of styles, including pullovers, cardigans, and turtlenecks.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/sweater.png"
+    },
+    {
+        "id": "eac02249-e78d-4f89-b949-7b2bacdbfd2a",
+        "title": "Jackets",
+        "description": "Outerwear that provides warmth and protection from the elements, including leather jackets, denim jackets, and bomber jackets.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/leatherjacket.png"
+    },
+    {
+        "id": "c886c2eb-fc04-4d2a-8c9e-1cb71bbac941",
+        "title": "Dress Shirts",
+        "description": "Formal shirts that are typically worn with suits or dress pants for business or formal occasions.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/dress-shirt.png"
+    },
+    {
+        "id": "af8cd7b9-683a-48d9-8be4-25eb2237ee39",
+        "title": "Hoodies",
+        "description": "Casual and comfortable tops that come with a hood and often feature a front pocket.",
+        "products": [],
+        "image": "../imgs/cat/mWear/sub/hoodies.png"
+    },
+    {
+        "id": "a2bb30f6-be86-4e1c-b58f-e1599b8e30c3",
+        "title": "Dresses",
+        "description": "All kinds of dresses and in all the colors they come in. We even have wedding dresses!",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/dress.png"
+    },
+    {
+        "id": "2986c60e-1876-4c73-84be-95855807a23e",
+        "title": "Foot wear",
+        "description": "Every kind of shoe you can think of at great prices.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/wBoots.png"
+    },
+    {
+        "id": "28bbdaaa-7997-4cf5-9336-0da1b3fc8026",
+        "title": "Carry-ons",
+        "description": "All the purses you can think of at great prices.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/purse.png"
+    },
+    {
+        "id": "56feed6d-93a3-4ff1-a28b-bba8337a2ade",
+        "title": "Jeans",
+        "description": "A range of styles, including jeans, leggings, and dress pants, suitable for various occasions and seasons.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/wJeans.png"
+    },
+    {
+        "id": "68fda0af-4632-4bf5-94bc-cb18f8aef5f9",
+        "title": "Sweaters",
+        "description": "Warm and comfortable tops that come in a variety of styles, including pullovers, cardigans, and turtlenecks.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/wSweater.png"
+    },
+    {
+        "id": "4c9db19d-87b1-4380-846c-62547aeeb2de",
+        "title": "Tops",
+        "description": "A range of styles, from casual to formal, including t-shirts, blouses, and crop tops.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/wTops.png"
+    },
+    {
+        "id": "a39cf50b-b311-468e-8e43-eefb0ef53fe2",
+        "title": "Skirts",
+        "description": "A classic wardrobe staple that comes in a variety of lengths, styles, and materials, including pencil skirts, midi skirts, and maxi skirts.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/skirt.png"
+    },
+    {
+        "id": "f641cfb0-5506-46ee-bb60-0c8150df3585",
+        "title": "Jackets",
+        "description": "Outerwear that provides warmth and protection from the elements, including leather jackets, denim jackets, and blazers.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/wJacket.png"
+    },
+    {
+        "id": "e666d9e6-3f05-410e-b93d-457a71cf0123",
+        "title": "Activewear",
+        "description": "Comfortable and functional clothing designed for athletic and sports activities, including yoga pants, sports bras, and workout shirts.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/activewear.png"
+    },
+    {
+        "id": "8f1d8954-e266-49a4-a7a5-2ac1f8620aeb",
+        "title": "Lingerie",
+        "description": "Intimate apparel that comes in a variety of styles, including bras, panties, and sleepwear.",
+        "products": [],
+        "image": "../imgs/cat/fWear/sub/lingerie.png"
+    },
+    {
+        "id": "3e4ad451-ae2b-4eaa-a176-fc6d0664ad19",
+        "title": "Romance",
+        "description": "Emotionally satisfying and optimistic ending.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/romancebooks.png"
+    },
+    {
+        "id": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
+        "title": "Children's Books",
+        "description": "Books meant for all children to read.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/childrensbook.png"
+    },
+    {
+        "id": "76ff71a3-1034-48a0-beb8-563b69adf1fe",
+        "title": "Science Fiction",
+        "description": "Worlds that are far advanced than ours but you can still envision them",
+        "products": [],
+        "image": "../imgs/cat/books/sub/sciencefiction.png"
+    },
+    {
+        "id": "aae8dd04-d30a-4853-bcee-345e39ab2b66",
+        "title": "Fantasy",
+        "description": "Beautiful and never seen before worlds filled with magic and strange creatures",
+        "products": [],
+        "image": "../imgs/cat/books/sub/fantasybooks.png"
+    },
+    {
+        "id": "bcb5431f-92c8-4eb1-8417-8290c58f7723",
+        "title": "Cookbooks",
+        "description": "Recipes from all the prominent chefs, celebrities and grannies",
+        "products": [],
+        "image": "../imgs/cat/books/sub/cookbooks.png"
+    },
+    {
+        "id": "616e4f1e-546b-4e7c-bc1b-838d71efaaf4",
+        "title": "Biographies & Memoirs",
+        "description": "Books that tell the life stories of people or recount their personal experiences.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/biographybook.png"
+    },
+    {
+        "id": "d25127a3-79f8-4b06-b45e-334a7eb373d0",
+        "title": "History",
+        "description": "Books that cover events, people, or societies of the past.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/historybooks.png"
+    },
+    {
+        "id": "92053a8b-a0ad-47f5-857c-30d3362781db",
+        "title": "Travel",
+        "description": "Books that explore the world and provide insight into different cultures, countries, and regions.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/travelbook.png"
+    },
+    {
+        "id": "36a86b48-0d4c-423d-bc74-3fc176b3fe4c",
+        "title": " Self-Help",
+        "description": "Books that provide guidance and advice on personal growth, mental health, relationships, and more.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/selfhelpbook.png"
+    },
+    {
+        "id": "2e189116-a7a3-41d0-897e-e68744e8ec82",
+        "title": "Art & Photography",
+        "description": "Books that showcase or discuss various forms of visual art, including painting, sculpture, photography, and more.",
+        "products": [],
+        "image": "../imgs/cat/books/sub/visualartbook.png"
+    },
+    {
+        "id": "024bd2a3-3f90-41f0-92ac-55c4bacef92c",
+        "title": "Baby Care",
+        "description": "Products that are gentle and used to moisturize and soften the skin of infants and children",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/babycare.png"
+    },
+    {
+        "id": "159a8835-fb4a-43a0-8058-f41bcfe26475",
+        "title": "Baby Food",
+        "description": "Soft and easily consumed food meant for infants and toddlers",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/babyfood.png"
+    },
+    {
+        "id": "3bbdaf55-e219-4a12-9ef0-78be6c140274",
+        "title": "Kids Accessories",
+        "description": "Accessories that are meant for children from ages 3 to 10",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/kidsclothes.png"
+    },
+    {
+        "id": "3892c27d-945a-48d4-8bab-474d091b463a",
+        "title": "Toys & Games",
+        "description": "Fun toys and even more fun games for your children.",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/toysandgames.png"
+    },
+    {
+        "id": "6b7f3c6e-a35d-4bd9-8ddd-fca926f86e13",
+        "title": "Dolls & Accessories",
+        "description": "Dolls, houses and many more accessories.",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/doll.png"
+    },
+    {
+        "id": "679162a2-572c-4ae4-ac3f-704f93806462",
+        "title": "Car Seats & Accessories",
+        "description": "Safety seats and small accessories to help your children",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/childcarseat.png"
+    },
+    {
+        "id": "e6e020ac-bb0b-4300-abf4-1a410b995baa",
+        "title": "Boys Clothing",
+        "description": "Clothes for boys",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/boyclothes.png"
+    },
+    {
+        "id": "67695ff6-13cd-4a1e-b857-02553e1d5b00",
+        "title": "Girls Clothing",
+        "description": "description",
+        "products": [],
+        "image": "../imgs/cat/kAndA/sub/girlsclothes.png"
+    },
+    {
+        "id": "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
+        "title": "Makeup",
+        "description": "Find makeup products like foundation, lipstick, and mascara for any occasion.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/makeup.png"
+    },
+    {
+        "id": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
+        "title": "Skincare",
+        "description": "Get skincare products like cleansers, moisturizers, and serums to keep your skin healthy and glowing.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/skincare.png"
+    },
+    {
+        "id": "f01b6cc6-1917-40ff-9344-184e978a68d8",
+        "title": "Hair Care",
+        "description": "Shop for hair care products like shampoo, conditioner, and styling tools for any hair type.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/haircare.png"
+    },
+    {
+        "id": "8d12a370-ad82-4c33-a99a-006b040abbe2",
+        "title": "Fragrances",
+        "description": "Find perfumes and colognes from top brands for men and women.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/fragrance.png"
+    },
+    {
+        "id": "c8e24060-a3cc-4909-a295-a20490698732",
+        "title": "Bath & Body",
+        "description": "Get bath and body products like soaps, body wash, and lotions for a relaxing spa experience at home.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/bathandbody.png"
+    },
+    {
+        "id": "67447359-bb55-4510-a696-06207f11625b",
+        "title": "Men's Grooming",
+        "description": "Find grooming products for men like razors, shaving cream, and aftershave.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/mensgroom.png"
+    },
+    {
+        "id": "29a045e0-76cd-4fa8-9dd1-12a72fbac60b",
+        "title": "Beauty Tools & Accessories",
+        "description": "Shop for beauty tools like hair straighteners, curling irons, and makeup brushes.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/beautytools.png"
+    },
+    {
+        "id": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
+        "title": "Personal Care",
+        "description": "Get personal care products like toothpaste, deodorant, and body powder.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/personalcare.png"
+    },
+    {
+        "id": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
+        "title": "Sun Care",
+        "description": "Find sun care products like sunscreen, after-sun lotion, and self-tanning products.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/suncare.png"
+    },
+    {
+        "id": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
+        "title": "Wellness",
+        "description": "Shop for wellness products like vitamins, supplements, and essential oils.",
+        "products": [],
+        "image": "../imgs/cat/beauty/sub/wellness.png"
+    },
+    {
+        "id": "d3e3c11b-809b-4d22-98f8-58333377b784",
+        "title": "Car Covers",
+        "description": "Protective covers for cars to shield them from the elements and other hazards.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carcover.png"
+    },
+    {
+        "id": "10884d4e-343f-43f8-9094-2c2e12f072ef",
+        "title": "Floor Mats",
+        "description": "Custom-fit floor mats to keep the interior of the car clean and tidy.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carmat.png"
+    },
+    {
+        "id": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
+        "title": "Seat Covers",
+        "description": "Protective covers for car seats to prevent wear and tear, stains, and damage.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/seatcover.png"
+    },
+    {
+        "id": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
+        "title": "Car Organizers",
+        "description": "Storage solutions for cars, including trunk organizers, backseat organizers, and console organizers.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carstorage.png"
+    },
+    {
+        "id": "dcc14cf4-623e-46a5-b993-06722b09a093",
+        "title": "Car Phone Mounts",
+        "description": "Mounts and holders for smartphones and other devices to keep them secure and accessible while driving.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carphonemount.png"
+    },
+    {
+        "id": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
+        "title": "Car Chargers",
+        "description": "Chargers and adapters for charging phones, tablets, and other devices in the car.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carcharger.png"
+    },
+    {
+        "id": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
+        "title": "Car Cleaning Kits",
+        "description": "Kits containing everything needed to clean and detail the interior and exterior of a car.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/cleaningkit.png"
+    },
+    {
+        "id": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
+        "title": "Car Fragrances",
+        "description": "Air fresheners and scents to keep the car smelling fresh and pleasant.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/airfreshener.png"
+    },
+    {
+        "id": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
+        "title": "Car Lights",
+        "description": "LED lights and bulbs for headlights, taillights, interior lighting, and decorative lighting.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carlight.png"
+    },
+    {
+        "id": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
+        "title": "Car Styling",
+        "description": "Decorative and functional accessories to enhance the appearance and performance of a car, including spoilers, grilles, and rims.",
+        "products": [],
+        "image": "../imgs/cat/auto/sub/carspoiler.png"
+    },
+    {
+        "id": "bdfb4f4e-c9ae-4590-a62b-f491e4aea479",
+        "title": "Athletic Apparel",
+        "description": "Shop for athletic apparel like workout clothes, running shoes, and more.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/athleticapparel.png"
+    },
+    {
+        "id": "a201ef9c-3206-4449-8eab-86ed6e2220a9",
+        "title": "Athletic Accessories",
+        "description": "Find athletic accessories like water bottles, yoga mats, and resistance bands.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/waterbottle.png"
+    },
+    {
+        "id": "2fcef4d6-0f0a-490b-9b12-57ad0eb0bc9a",
+        "title": "Team Sports",
+        "description": "Get gear for team sports like basketball, soccer, and football.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/gearsport.png"
+    },
+    {
+        "id": "24ffe98a-3970-4226-9895-bc0267f73cef",
+        "title": "Outdoor Recreation",
+        "description": "Find outdoor gear like camping equipment, backpacks, and hiking boots.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/campinggear.png"
+    },
+    {
+        "id": "8cec5cb9-b7ac-480d-9c60-899307478643",
+        "title": "Fitness Equipment",
+        "description": "Shop for fitness equipment like treadmills, weights, and resistance machines.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/fitnessgear.png"
+    },
+    {
+        "id": "7407db30-6510-4b5e-8e1e-0e8e72e78f2f",
+        "title": "Bikes",
+        "description": "Find bikes for adults and kids, including road bikes, mountain bikes, and BMX bikes.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/bicycle.png"
+    },
+    {
+        "id": "b29fd5c9-ea24-4d83-bf97-fc355f8c672c",
+        "title": "Scooters",
+        "description": "Get electric and manual scooters for kids and adults.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/scooter.png"
+    },
+    {
+        "id": "d3022cd3-e081-41f5-a7a9-06375898811e",
+        "title": "Water Sports",
+        "description": "Shop for water sports gear like paddleboards, kayaks, and snorkeling equipment.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/watergear.png"
+    },
+    {
+        "id": "413916b7-99d7-4d46-bd9b-86169ca97373",
+        "title": "Golf",
+        "description": "Find golf clubs, bags, and accessories for your next round.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/golfgear.png"
+    },
+    {
+        "id": "d9c023b9-ead8-4a2c-8acb-68ee100831d3",
+        "title": "Winter Sports",
+        "description": "Get gear for winter sports like skiing, snowboarding, and ice skating.",
+        "products": [],
+        "image": "../imgs/cat/sports/sub/wintergear.png"
+    },
+    {
+        "id": "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
+        "title": "Furniture",
+        "description": "Shop for sofas, chairs, tables, and other furniture pieces for your home or office.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/furniture.png"
+    },
+    {
+        "id": "21010f6a-2891-4fc9-969f-4886c993e95c",
+        "title": "Kitchen & Dining",
+        "description": "Find kitchen appliances, cookware, and dining essentials for your home.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/cookware.png"
+    },
+    {
+        "id": "86f9eabb-c453-4c95-bef2-e7538df76294",
+        "title": "Home Decor",
+        "description": "Shop for home decor items like curtains, rugs, wall art, and more.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/homedecor.png"
+    },
+    {
+        "id": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
+        "title": "Gardening",
+        "description": "Discover gardening tools, plants, and other essentials for your garden.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/gardening.png"
+    },
+    {
+        "id": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
+        "title": "Pet Supplies",
+        "description": "Find pet food, toys, and other supplies for your furry friends.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/petsupplies.png"
+    },
+    {
+        "id": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
+        "title": "Home Improvement",
+        "description": "Get tools and supplies for home improvement projects like painting, plumbing, and electrical work.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/homeimprove.png"
+    },
+    {
+        "id": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
+        "title": "Bedding & Bath",
+        "description": "Shop for bedding sets, towels, and other bath essentials for your home.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/bathessentials.png"
+    },
+    {
+        "id": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
+        "title": "Storage & Organization",
+        "description": "Find storage solutions and organizational tools for your home or office.",
+        "products": [],
+        "image": "../imgs/cat/hAngG/sub/storageorg.png"
+    },
+    {
+        "id": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
+        "title": "Lighting",
+        "description": "Discover lighting solutions for your home, including lamps, light fixtures, and bulbs.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/lighting.png"
+    },
+    {
+        "id": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
+        "title": "Cleaning & Laundry",
+        "description": "Get cleaning supplies and laundry essentials for your home.",
+        "products": [],
+        "image": "../imgs/cat/hAndG/sub/laundry.png"
+    }
+]

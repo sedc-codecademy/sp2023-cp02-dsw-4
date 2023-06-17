@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dropshipping</title>
+    <link rel="icon" type="image/png" href="/dropship/src/imgs/click.svg" />
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js" defer></script>
     <script src="js/_dependencies.js" defer></script>
     <script type="module" src="js/index.js" defer></script>
-
 </head>
 
 <body>
@@ -22,21 +22,22 @@
     -->
     <header>
         <div class="headerBackgroundImage">
-            <!-- <svg viewBox='50 0 1600 900'>
-                <polygon id="polgOne" points='957 450 539 900 1396 900' />
-                <polygon id="polgTwo" points='957 450 872.9 900 1396 900' />
-                <polygon id="polgTwo" points='-60 900 398 662 816 900' />
-                <polygon fill='#008bff' id="polgOne" points='337 900 398 662 816 900' />
-                <polygon id="polgThree" points='1203 546 1552 900 876 900' />
-                <polygon fill='#00beff' id="polgOne" points='1203 546 1552 900 1162 900' />
-                <polygon id="polgThree" points='641 695 886 900 367 900' />
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>
+                <rect width='1600' height='900' />
+                <polygon fill='#2134ed' points='957 450 539 900 1396 900' />
+                <polygon fill='#dc00ff' points='957 450 872.9 900 1396 900' />
+                <polygon fill='#c100c3' points='-60 900 398 662 816 900' />
+                <polygon fill='#008bff' points='337 900 398 662 816 900' />
+                <polygon fill='#fd008f' points='1203 546 1552 900 876 900' />
+                <polygon fill='#00beff' points='1203 546 1552 900 1162 900' />
+                <polygon fill='#ff005d' points='641 695 886 900 367 900' />
                 <polygon fill='#00ddff' points='587 900 641 695 886 900' />
                 <polygon fill='#ff6431' points='1710 900 1401 632 1096 900' />
-                <polygon id="polgTwo" points='1710 900 1401 632 1365 900' />
+                <polygon fill='#00f1e4' points='1710 900 1401 632 1365 900' />
                 <polygon fill='#ff9b00' points='1210 900 971 687 725 900' />
                 <polygon fill='#00ffa0' points='943 900 1210 900 971 687' />
-            </svg> -->
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>
+            </svg>
+            <!-- <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>
                 <rect width='1600' height='900' />
                 <polygon fill='#2134ed' points='957 450 539 900 1396 900' />
                 <polygon fill='#dc00ff' points='957 450 872.9 900 1396 900' />
@@ -50,20 +51,16 @@
                 <polygon fill='#00f1e4' points='1710 900 1401 632 1365 900' />
                 <polygon id="polgTwo" points='1210 900 971 687 725 900' />
                 <polygon fill='#00ffa0' points='943 900 1210 900 971 687' />
-            </svg>
+            </svg> -->
             <div class="headerGradient"></div>
         </div>
 
         <figure class="logo">LOGO</figure>
 
         <section class="loginDropdown">
+
             <form class="loginUi">
-                <button class="cancelFP">
-                    <svg viewBox="0 0 48 48">
-                        <path
-                            d="M 39.486328 6.9785156 A 1.50015 1.50015 0 0 0 38.439453 7.4394531 L 24 21.878906 L 9.5605469 7.4394531 A 1.50015 1.50015 0 0 0 8.484375 6.984375 A 1.50015 1.50015 0 0 0 7.4394531 9.5605469 L 21.878906 24 L 7.4394531 38.439453 A 1.50015 1.50015 0 1 0 9.5605469 40.560547 L 24 26.121094 L 38.439453 40.560547 A 1.50015 1.50015 0 1 0 40.560547 38.439453 L 26.121094 24 L 40.560547 9.5605469 A 1.50015 1.50015 0 0 0 39.486328 6.9785156 z" />
-                    </svg>
-                </button>
+
 
                 <div class="loginInput">
 
@@ -94,12 +91,12 @@
 
                     <section class="fields">
                         <div class="uname">
-                            <input class="uname" type="text" maxlength="22" required placeholder="">
+                            <input class="uname" type="text" maxlength="22" required placeholder="&nbsp">
                             <label for="uname">Enter username</label>
                         </div>
 
                         <div class="pass">
-                            <input class="password" type="password" maxlength="16" required placeholder="">
+                            <input class="password" type="password" maxlength="16" required placeholder="&nbsp">
                             <label for="password">Enter password</label>
                         </div>
                     </section>
@@ -110,42 +107,67 @@
                     </div>
 
                 </div>
+            </form>
 
+            <form class="forgotPass">
+                <button class="cancelFP">
+                    <svg viewBox="0 0 48 48">
+                        <g>
+                            <g>
+                                <path d="M8.532,18.531l8.955-8.999c-0.244-0.736-0.798-1.348-1.54-1.653c-1.01-0.418-2.177-0.185-2.95,0.591L1.047,20.479
+			c-1.396,1.402-1.396,3.67,0,5.073l11.949,12.01c0.771,0.775,1.941,1.01,2.951,0.592c0.742-0.307,1.295-0.918,1.54-1.652l-8.956-9
+			C6.07,25.027,6.071,21.003,8.532,18.531z" />
+                                <path d="M45.973,31.64c-1.396-5.957-5.771-14.256-18.906-16.01v-5.252c0-1.095-0.664-2.082-1.676-2.5
+			c-0.334-0.138-0.686-0.205-1.033-0.205c-0.705,0-1.398,0.276-1.917,0.796L10.49,20.479c-1.396,1.402-1.396,3.669-0.001,5.073
+			l11.95,12.009c0.517,0.521,1.212,0.797,1.92,0.797c0.347,0,0.697-0.066,1.031-0.205c1.012-0.418,1.676-1.404,1.676-2.5V30.57
+			c4.494,0.004,10.963,0.596,15.564,3.463c0.361,0.225,0.77,0.336,1.176,0.336c0.457,0,0.91-0.139,1.297-0.416
+			C45.836,33.429,46.18,32.515,45.973,31.64z" />
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <h1>Forgot <span>Password</span> </h1>
+                <p>Enter recovery <span>email</span></p>
+                <section class="fields">
 
-                <div class="forgotPass">
-                    <h1>Forgot <span>Password</span> </h1>
-                    <p>Enter recovery <span>email</span></p>
-                    <section class="fields">
-
-                        <div class="email">
-                            <input class="email" type="email" maxlength="16" required placeholder="">
-                            <label for="email">Enter email</label>
-                        </div>
-                        <button>Send Code</button>
-                    </section>
-                </div>
+                    <div class="email">
+                        <input class="email" type="email" maxlength="16" required placeholder="&nbsp">
+                        <label for="email">Enter email</label>
+                    </div>
+                    <button>Send Code</button>
+                </section>
             </form>
 
             <form class="registerUi">
                 <button class="cancel">
                     <svg viewBox="0 0 48 48">
-                        <path
-                            d="M 39.486328 6.9785156 A 1.50015 1.50015 0 0 0 38.439453 7.4394531 L 24 21.878906 L 9.5605469 7.4394531 A 1.50015 1.50015 0 0 0 8.484375 6.984375 A 1.50015 1.50015 0 0 0 7.4394531 9.5605469 L 21.878906 24 L 7.4394531 38.439453 A 1.50015 1.50015 0 1 0 9.5605469 40.560547 L 24 26.121094 L 38.439453 40.560547 A 1.50015 1.50015 0 1 0 40.560547 38.439453 L 26.121094 24 L 40.560547 9.5605469 A 1.50015 1.50015 0 0 0 39.486328 6.9785156 z" />
+                        <g>
+                            <g>
+                                <path d="M8.532,18.531l8.955-8.999c-0.244-0.736-0.798-1.348-1.54-1.653c-1.01-0.418-2.177-0.185-2.95,0.591L1.047,20.479
+			c-1.396,1.402-1.396,3.67,0,5.073l11.949,12.01c0.771,0.775,1.941,1.01,2.951,0.592c0.742-0.307,1.295-0.918,1.54-1.652l-8.956-9
+			C6.07,25.027,6.071,21.003,8.532,18.531z" />
+                                <path d="M45.973,31.64c-1.396-5.957-5.771-14.256-18.906-16.01v-5.252c0-1.095-0.664-2.082-1.676-2.5
+			c-0.334-0.138-0.686-0.205-1.033-0.205c-0.705,0-1.398,0.276-1.917,0.796L10.49,20.479c-1.396,1.402-1.396,3.669-0.001,5.073
+			l11.95,12.009c0.517,0.521,1.212,0.797,1.92,0.797c0.347,0,0.697-0.066,1.031-0.205c1.012-0.418,1.676-1.404,1.676-2.5V30.57
+			c4.494,0.004,10.963,0.596,15.564,3.463c0.361,0.225,0.77,0.336,1.176,0.336c0.457,0,0.91-0.139,1.297-0.416
+			C45.836,33.429,46.18,32.515,45.973,31.64z" />
+                            </g>
+                        </g>
                     </svg>
                 </button>
                 <h2>Create <span>account</span></h2>
                 <p>Don't have an account? Create <span>one!</span></p>
                 <section class="fields">
                     <div class="uname">
-                        <input class="uname" type="text" maxlength="22" required placeholder="">
+                        <input class="uname" type="text" maxlength="22" required placeholder="&nbsp">
                         <label for="uname">Enter username</label>
                     </div>
                     <div class="email">
-                        <input class="email" type="email" maxlength="22" required placeholder="">
+                        <input class="email" type="email" maxlength="22" required placeholder="&nbsp">
                         <label for="email">Enter email</label>
                     </div>
                     <div class="pass">
-                        <input class="password" type="password" maxlength="16" required placeholder="">
+                        <input class="password" type="password" maxlength="16" required placeholder="&nbsp">
                         <label for="password">Enter password</label>
                     </div>
                     <div class="checkBoxes">
@@ -155,23 +177,27 @@
                     </div>
                 </section>
                 <button class="registerButton">Sign Up</button>
-
             </form>
         </section>
 
         <nav>
             <ul class="navigationLists">
-                <li><span id="loginButton" class="material-symbols-outlined">
-                        login
-                    </span></li>
-                <li class="darkButton"><span id="dbutton" class="material-symbols-outlined">
-                        dark_mode
-                    </span>
+                <li>
+                    <a id="loginButton" href="">
+                        <span class="material-symbols-outlined">login</span>
+                    </a>
+                </li>
+                <li class="darkButton">
+                    <a href="">
+                        <span id="dbutton" class="material-symbols-outlined">dark_mode</span>
+                    </a>
                 </li>
                 <div class="divider"></div>
-                <li><span id="cartButton" class="material-symbols-outlined">
-                        shopping_cart
-                    </span></li>
+                <li>
+                    <a id="cartButton" href="">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </a>
+                </li>
             </ul>
 
             <div class="cartNotification">
@@ -179,11 +205,11 @@
                     <li>
                         <h4>Product Title</h4>
                     </li>
+                    <li>Amount: 3</li>
+                    <li>Price: 399$</li>
                     <li>
                         <h5>Added to cart</h5>
                     </li>
-                    <li>Amount: 3</li>
-                    <li>Price: 399$</li>
                     <button class="notifCancel">CANCEL</button>
                 </ul>
             </div>
@@ -191,7 +217,7 @@
 
         <form class="search-form" action="">
             <div class="search-bar-container">
-                <input class="search-bar" type="search" placeholder="Search for products and categories">
+                <input class="search-bar" type="search" placeholder="Search for products">
                 <button class="clearButton">
                     <span class="material-symbols-outlined">
                         close
@@ -271,96 +297,38 @@
         </form>
 
     </header>
-    <main class="cart">
 
+    <hr>
+    <main class="cart">
     </main>
     <main class="homePage">
-        <!-- <svg id="visual" viewBox="0 0 540 960" width="540" height="960" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-            <rect width="540" height="960"></rect>
-            <g>
-                <g transform="translate(454 223)">
-                    <path
-                        d="M0 -89.8L41.7 -79.5L73.9 -51L89.2 -10.8L84 31.9L59.6 67.2L21.5 87.2L-21.5 87.2L-59.6 67.2L-84 31.9L-89.2 -10.8L-73.9 -51L-41.7 -79.5Z"
-                        fill="#297EA6"></path>
-                </g>
-                <g transform="translate(71 344)">
-                    <path
-                        d="M0 -57L26.5 -50.5L46.9 -32.4L56.6 -6.9L53.3 20.2L37.8 42.7L13.6 55.3L-13.6 55.3L-37.8 42.7L-53.3 20.2L-56.6 -6.9L-46.9 -32.4L-26.5 -50.5Z"
-                        fill="#297EA6"></path>
-                </g>
-                <g transform="translate(114 783)">
-                    <path
-                        d="M0 -56L26 -49.6L46.1 -31.8L55.6 -6.8L52.4 19.9L37.1 41.9L13.4 54.4L-13.4 54.4L-37.1 41.9L-52.4 19.9L-55.6 -6.8L-46.1 -31.8L-26 -49.6Z"
-                        fill="#297EA6"></path>
-                </g>
-                <g transform="translate(415 539)">
-                    <path
-                        d="M0 -76L35.3 -67.3L62.5 -43.2L75.4 -9.2L71.1 26.9L50.4 56.9L18.2 73.8L-18.2 73.8L-50.4 56.9L-71.1 26.9L-75.4 -9.2L-62.5 -43.2L-35.3 -67.3Z"
-                        fill="#297EA6"></path>
-                </g>
-                <g transform="translate(281 938)">
-                    <path
-                        d="M0 -65L30.2 -57.6L53.5 -36.9L64.5 -7.8L60.8 23L43.1 48.7L15.6 63.1L-15.6 63.1L-43.1 48.7L-60.8 23L-64.5 -7.8L-53.5 -36.9L-30.2 -57.6Z"
-                        fill="#297EA6"></path>
-                </g>
-                <g transform="translate(35 108)">
-                    <path
-                        d="M0 -76L35.3 -67.3L62.5 -43.2L75.4 -9.2L71.1 26.9L50.4 56.9L18.2 73.8L-18.2 73.8L-50.4 56.9L-71.1 26.9L-75.4 -9.2L-62.5 -43.2L-35.3 -67.3Z"
-                        fill="#297EA6"></path>
-                </g>
-                <g transform="translate(370 720)">
-                    <path
-                        d="M0 -73L33.9 -64.6L60.1 -41.5L72.5 -8.8L68.3 25.9L48.4 54.6L17.5 70.9L-17.5 70.9L-48.4 54.6L-68.3 25.9L-72.5 -8.8L-60.1 -41.5L-33.9 -64.6Z"
-                        fill="#297EA6"></path>
-                </g>
-            </g>
-        </svg>
-        <svg id="visual" viewBox="0 0 540 960" width="540" height="960" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-            <rect width="540" height="960"></rect>
-            <g>
-                <g transform="translate(21 695)">
-                    <path
-                        d="M0 -141.2L83 -114.2L134.3 -43.6L134.3 43.6L83 114.2L0 141.2L-83 114.2L-134.3 43.6L-134.3 -43.6L-83 -114.2Z"
-                        fill="none" stroke="#297EA6" stroke-width="2"></path>
-                </g>
-                <g transform="translate(434 21)">
-                    <path
-                        d="M0 -83L48.8 -67.1L78.9 -25.6L78.9 25.6L48.8 67.1L0 83L-48.8 67.1L-78.9 25.6L-78.9 -25.6L-48.8 -67.1Z"
-                        fill="none" stroke="#297EA6" stroke-width="2"></path>
-                </g>
-                <g transform="translate(523 855)">
-                    <path
-                        d="M0 -138L81.1 -111.6L131.2 -42.6L131.2 42.6L81.1 111.6L0 138L-81.1 111.6L-131.2 42.6L-131.2 -42.6L-81.1 -111.6Z"
-                        fill="none" stroke="#297EA6" stroke-width="2"></path>
-                </g>
-                <g transform="translate(204 449)">
-                    <path
-                        d="M0 -83L48.8 -67.1L78.9 -25.6L78.9 25.6L48.8 67.1L0 83L-48.8 67.1L-78.9 25.6L-78.9 -25.6L-48.8 -67.1Z"
-                        stroke="#297EA6" fill="none" stroke-width="2"></path>
-                </g>
-                <g transform="translate(8 132)">
-                    <path
-                        d="M0 -106L62.3 -85.8L100.8 -32.8L100.8 32.8L62.3 85.8L0 106L-62.3 85.8L-100.8 32.8L-100.8 -32.8L-62.3 -85.8Z"
-                        stroke="#297EA6" fill="none" stroke-width="2"></path>
-                </g>
-                <g transform="translate(529 488)">
-                    <path
-                        d="M0 -122L71.7 -98.7L116 -37.7L116 37.7L71.7 98.7L0 122L-71.7 98.7L-116 37.7L-116 -37.7L-71.7 -98.7Z"
-                        stroke="#297EA6" fill="none" stroke-width="2"></path>
-                </g>
-                <g transform="translate(233 942)">
-                    <path
-                        d="M0 -86L50.5 -69.6L81.8 -26.6L81.8 26.6L50.5 69.6L0 86L-50.5 69.6L-81.8 26.6L-81.8 -26.6L-50.5 -69.6Z"
-                        stroke="#297EA6" fill="none" stroke-width="2"></path>
-                </g>
-            </g>
-        </svg> -->
-        <div class="mainCategories"> <!-- CATEGORIES DIV -->
-            <button id="left"><span class="material-symbols-outlined">chevron_left</span></button>
-            <button id="right"><span class="material-symbols-outlined">chevron_right</span></button>
+        <div id="masterContainer"> <!-- CATEGORIES SECTION -->
+            <button id="left-arrow" class="arrow"><span class="material-symbols-outlined">chevron_left</span></button>
+            <div id="container">
+                <section class="scrollCat" id="technology">
+                    <!-- vo h1 ime na kategorijata i h1 da bide vo a link -->
+                    <!-- <h1> Car Covers</h1> -->
+                    <!-- vo 3-te p elements sub cat random i da bidat vo a link -->
+                   <!-- <a href=""><p>Waterproof car covers</p></a>  -->
+                    <!-- <p></p>
+                    <p></p> -->
+                    <!-- vo img slikata na samata kategorija -->
+                    <!-- <img src="https://via.placeholder.com/200x200.png?text=Image+1"> -->
+                </section>
+                <section class="scrollCat" id="jewellery"></section>
+                <section class="scrollCat" id="menswear"></section>
+                <section class="scrollCat" id="womenswear"></section>
+                <section class="scrollCat" id="books"></section>
+                <section class="scrollCat" id="kidsaccessories"></section>
+                <section class="scrollCat" id="beauty"></section>
+                <section class="scrollCat" id="autoaccessories"></section>
+                <section class="scrollCat" id="sports"></section>
+                <section class="scrollCat" id="homeandgarden"></section>
+               
+            </div>
+            <button id="right-arrow" class="arrow"><span class="material-symbols-outlined">chevron_right</span></button>
         </div>
+
         <hr>
         <div class="productDivs" id="products-div-one"> <!-- DISCOUNT PRODUCTS -->
             <section>PRODUCT 1</section>
