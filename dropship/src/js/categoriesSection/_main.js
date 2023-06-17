@@ -1,8 +1,10 @@
 console.log("Test test")
-const testDiv = document.getElementById("test");
-console.log(testDiv)
+const subCategoriesDiv = document.getElementById("subCategories");
+const productsDiv = document.getElementById("products");
+const singleProductDiv = document.getElementById("singleProduct");
 
 const subCategories_url = "./mock/subCatTest.json";
+//const subCategories_url = "./mock/new-sub-categories.json";
 const makeCall = (url) => {
     fetch(url)
         .then((response) => {
@@ -14,9 +16,9 @@ const makeCall = (url) => {
             const technologiesSubs = result;
             console.log(technologiesSubs)
 
-            const products = testFunc(technologiesSubs)
-            console.log(products)
-            printResults(products, testDiv);
+            const subCategories = testFunc(technologiesSubs)
+            console.log(subCategories)
+            printResults(subCategories, subCategoriesDiv);
         })
         .catch((error) => {
             console.log(error)
@@ -52,28 +54,64 @@ async function fetchJSON(url) { // Should remove after merging html files // Dup
     }
 }
 
-async function setSubCatsTwoCtTab(ID) {
+
+async function setSubCatsTwoCtTab(ID, element) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
     const products = await fetchJSON('./mock/new-products.json')
+
     const flattenedSubCategories = testFunc(subCategoriesArray)
     const flattenedProducts = testFunc(products)
 
-    let tempCats = []
+
+    let tempProds = []
 
     for (let i = 0; i < flattenedSubCategories.length; i++) {
         if (flattenedSubCategories[i].id === ID) {
             for (let j = 0; j < flattenedProducts.length; j++) {
                 if (flattenedSubCategories[i].products.includes(flattenedProducts[j].id)) {
-                    tempCats.push(flattenedProducts[j])
+                    tempProds.push(flattenedProducts[j])
                 }
             }
             break
         }
     }
-    console.log(tempCats)
-    console.log("Dime")
+
+    element.innerHTML = "";
+    tempProds.forEach(product => {
+        let a = document.createElement("a");
+        a.style.color = 'green'
+        a.addEventListener("click", () => {
+            console.log(product.id) 
+            printProduct(product, singleProductDiv)         
+        })
+
+        a.innerHTML += `
+        <h3>${product.title}</h3>
+        <p>${product.description}</p>
+        <p>${product.subCategoryTitle}</p>`
+    
+        element.appendChild(a);
+    }) 
+
+    console.log(tempProds)
 }
 
+
+function printProduct(product, element) {
+    element.innerHTML = "";
+
+        let a = document.createElement("a");
+        a.style.color = 'pink'
+        a.innerHTML += `
+        <h3>${product.title}</h3>
+        <p>${product.price}</p>
+        <p>${product.description}</p>
+        <p>${product.rating.rate}</p>
+        <p>${product.stock}</p>
+        `
+        element.appendChild(a);
+ 
+}
 
 async function printResults(subCat, element) {
 
@@ -84,7 +122,7 @@ async function printResults(subCat, element) {
         let a = document.createElement("a");
         a.addEventListener("click", () => {
             console.log(subCategory.id)
-            setSubCatsTwoCtTab(subCategory.id)
+            setSubCatsTwoCtTab(subCategory.id, productsDiv)
         })
 
         a.innerHTML += `
@@ -92,49 +130,8 @@ async function printResults(subCat, element) {
         <p>${subCategory.description}</p>
         <p>${subCategory.categoryTitle}</p>`
 
-        //     <div id="id_${index}">   
-        //     <button value="${starship.films}" onclick="makeCallMovies(this, ${index})"> Show films </button>
-        //   </div> 
-
         element.appendChild(a);
     })
 
 }
 
-
-// const makeCallMovies = (btnElement, index) => {
-//     const parentTest = document.getElementById(`id_${index}`);
-//     console.log("btnElement", btnElement);
-//     console.log("btnElement.value", btnElement.value);
-//     console.log("Parent test:", parentTest);
-
-//     const movieTitle = [];
-
-//     const filmUrls = btnElement.value.split(",");
-//     console.log("Films url splited:", filmUrls)
-
-//     filmUrls.forEach((url) => {
-//         fetch(url)
-//          .then((response) => {
-//             console.log(response);
-//             return response.json();
-//          })
-//          .then((result) => {
-//             console.log(result);
-//             movieTitle.push(result.title);
-//             console.log(movieTitle);
-//             printMovie(movieTitle)
-//          })
-//          .catch((error) => {
-//             console.log(error)
-//          })
-//     })
-
-//     parentTest.innerHTML += "This starship occured in the following movies: ";
-
-//     let printMovie = (movieTitles) => {
-//         movieTitles.forEach((title) => {
-//             parentTest.innerHTML += `${title}`
-//         })
-//     }
-// };
