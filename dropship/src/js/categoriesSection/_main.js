@@ -24,7 +24,7 @@ const makeCall = (url) => {
             console.log(error)
         })
         .finally(() => {
-            console.log("Will be filfilled no matter if previous queries are fulfilled")
+            console.log("Will be fulfilled no matter if previous queries are fulfilled")
         })
 }
 
@@ -76,41 +76,45 @@ async function setSubCatsTwoCtTab(ID, element) {
         }
     }
 
-    element.innerHTML = "";
-    tempProds.forEach(product => {
+    printProducts(tempProds, element)
+
+    console.log(tempProds)
+}
+
+function printProducts(arrayOfProducts, elemetToPrint) {
+    elemetToPrint.innerHTML = "";
+    arrayOfProducts.forEach(product => {
         let a = document.createElement("a");
         a.style.color = 'green'
         a.addEventListener("click", () => {
-            console.log(product.id) 
-            printProduct(product, singleProductDiv)         
+            console.log(product.id)
+            printProduct(product, singleProductDiv)
         })
 
         a.innerHTML += `
         <h3>${product.title}</h3>
         <p>${product.description}</p>
         <p>${product.subCategoryTitle}</p>`
-    
-        element.appendChild(a);
-    }) 
 
-    console.log(tempProds)
+        elemetToPrint.appendChild(a);
+    })
 }
 
 
 function printProduct(product, element) {
     element.innerHTML = "";
 
-        let a = document.createElement("a");
-        a.style.color = 'pink'
-        a.innerHTML += `
+    let a = document.createElement("a");
+    a.style.color = 'pink'
+    a.innerHTML += `
         <h3>${product.title}</h3>
         <p>Price: ${product.price}</p>
         <p>${product.description}</p>
         <p>Rating: ${product.rating.rate}</p>
         <p>In Stock: ${product.stock}</p>
         `
-        element.appendChild(a);
- 
+    element.appendChild(a);
+
 }
 
 async function printResults(subCat, element) {
@@ -134,4 +138,7 @@ async function printResults(subCat, element) {
     })
 
 }
+
+
+
 
