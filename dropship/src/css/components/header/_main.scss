@@ -8,6 +8,8 @@ header {
     place-content: center;
     align-items: center;
 
+    display: none;
+
     .headerGradient {
         position: absolute;
         top: 0;
@@ -51,7 +53,6 @@ header {
 .divider {
     position: relative;
     border-left: 0.2rem solid var(--accent);
-    height: 1.8rem;
     border-radius: 1rem;
     margin: 0 0.2vrem 0 0.2rem;
 }

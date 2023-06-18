@@ -19,11 +19,11 @@
   --tpPri: rgba(0, 0, 0, 0.475);
   --secColor: rgb(243, 243, 243);
   --accent: rgb(0, 255, 128);
-  --secAccent: rgba(0, 255, 55, 0.872);
+  --secAccent: rgba(0, 208, 177, 0.872);
   --tertAccent: rgb(255, 98, 0);
   --paleAccent: rgba(0, 255, 128, 0.060);
   --paleAccentTwo: rgba(0, 255, 128, 0.703);
-  --paleAccentThree: rgba(0, 255, 128, 0.248);
+  --paleAccentThree: rgba(32, 148, 90, 0.472);
 }
 
 * {
@@ -69,6 +69,7 @@ header {
   display: grid;
   place-content: center;
   align-items: center;
+  display: none;
 }
 header .headerGradient {
   position: absolute;
@@ -102,7 +103,6 @@ header .headerGradient {
 .divider {
   position: relative;
   border-left: 0.2rem solid var(--accent);
-  height: 1.8rem;
   border-radius: 1rem;
   margin: 0 0.2vrem 0 0.2rem;
 }
@@ -1502,6 +1502,7 @@ main svg {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  display: none;
 }
 .cart .summary a {
   color: var(--paleAccentTwo);
@@ -1520,12 +1521,13 @@ main svg {
 }
 .cart .summary h2 {
   position: relative;
-  text-indent: 0.5rem;
   padding-block: 0.5rem 0.7rem;
+  padding-inline: 0.5rem;
   display: flex;
-  background-color: var(--paleAccent);
-  border: 0.2rem solid var(--paleAccentThree);
+  justify-content: end;
   border-radius: 0.5rem;
+  color: var(--priColor);
+  background: linear-gradient(45deg, var(--paleAccent) 0%, var(--secAccent) 30%, var(--accent) 0%, var(--secAccent) 70%, var(--accent) 100%);
 }
 .cart .summary h2.amount {
   margin: 0.3vmax;
@@ -1534,6 +1536,9 @@ main svg {
   padding-block: 0;
   outline: none;
   border-radius: 0.5rem;
+  background: var(--paleAccent);
+  color: var(--secColor);
+  border: 0.2rem solid var(--paleAccentThree);
 }
 .cart .summary ul {
   display: flex;
@@ -1545,8 +1550,7 @@ main svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 0.5rem;
-  padding-block: 0.5rem;
+  padding: 0.5rem;
 }
 .cart .summary ul li:first-child {
   border-bottom: 0.1rem solid var(--paleAccentThree);
@@ -1556,20 +1560,28 @@ main svg {
   padding-block: 1.2rem;
   border-top: 0.25rem solid var(--paleAccentThree);
 }
-.cart .summary ul:last-child {
+.cart .summary ul.summaryTwo {
   border: none;
 }
-.cart .summary ul:last-child li {
+.cart .summary ul.summaryTwo li {
   border-radius: 0.5vmax;
 }
-.cart .summary ul:last-child li:first-child {
+.cart .summary ul.summaryTwo li.buyerProtect {
   display: inline-block;
   border: 0.2rem solid var(--paleAccentThree);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   padding-block: 0.6rem;
 }
-.cart .summary ul:last-child li:last-child {
+.cart .summary ul.summaryTwo li.buyerProtect h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.cart .summary ul.summaryTwo li.buyerProtect h4 span {
+  pointer-events: none;
+}
+.cart .summary ul.summaryTwo li.toCheckout, .cart .summary ul.summaryTwo li.backToCart {
   justify-content: center;
   padding: 0;
   border-top-left-radius: 0;
@@ -1578,31 +1590,488 @@ main svg {
   border-top: none;
   overflow: hidden;
 }
-.cart .summary ul:last-child li:last-child button {
-  background-color: var(--paleAccentTwo);
+.cart .summary ul.summaryTwo li.toCheckout button, .cart .summary ul.summaryTwo li.backToCart button {
   color: var(--priColor);
   width: 100%;
-  font-size: 1rem;
   padding: 0.8rem 0.5rem;
+  position: relative;
+  align-items: center;
+  font-size: large;
+  color: var(--priColor);
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.cart .summary ul:last-child li:last-child button:hover {
+.cart .summary ul.summaryTwo li.toCheckout button::before, .cart .summary ul.summaryTwo li.backToCart button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(45deg, var(--paleAccent) 0%, var(--secAccent) 30%, var(--accent) 95%, var(--accent) 100%);
+  z-index: -1;
+}
+.cart .summary ul.summaryTwo li.toCheckout button:focus-visible, .cart .summary ul.summaryTwo li.backToCart button:focus-visible {
   background-color: var(--priColor);
   color: var(--accent);
 }
-.cart .summary ul:last-child li:last-child button:focus-visible {
+.cart .summary ul.summaryTwo li.toCheckout button:hover, .cart .summary ul.summaryTwo li.backToCart button:hover {
   background-color: var(--priColor);
   color: var(--accent);
 }
-.cart .summary ul:last-child li:last-child button:active {
+.cart .summary ul.summaryTwo li.toCheckout button:focus-visible, .cart .summary ul.summaryTwo li.backToCart button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.cart .summary ul.summaryTwo li.toCheckout button:active, .cart .summary ul.summaryTwo li.backToCart button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
+.cart .checkout {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cart .checkout .checkoutSection {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+.cart .checkout .checkoutSection.checkoutNav h2 {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--priColor);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cart .checkout .checkoutSection.checkoutNav div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.cart .checkout .checkoutSection.checkoutNav div .divider {
+  width: 100%;
+  height: 0.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+}
+.cart .checkout .checkoutSection.checkoutNav div .divider.One {
+  background: linear-gradient(to right, var(--paleAccent) 0%, var(--paleAccentTwo) 30%, var(--secAccent) 60%);
+}
+.cart .checkout .checkoutSection.checkoutNav div .divider.Two {
+  background: linear-gradient(to right, var(--secAccent) 0%, var(--paleAccentTwo) 60%, var(--paleAccent) 100%);
+}
+.cart .checkout .checkoutSection.checkoutNav div button {
+  border-radius: 50%;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.cart .checkout .checkoutSection.checkoutNav div button span {
+  pointer-events: none;
+  font-size: 1.8rem;
+  transition: 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.cart .checkout .checkoutSection.checkoutNav div button:active {
   scale: 1.1;
+}
+.cart .checkout .checkoutSection.checkoutNav div button:active .material-symbols-outlined {
+  color: var(--secAccent);
+}
+.cart .checkout .checkoutSection.checkoutNav div button:focus-visible {
+  background-color: var(--paleAccentTwo);
+}
+.cart .checkout .checkoutSection.checkoutNav div button:focus-visible span {
+  color: var(--priColor);
+}
+.cart .checkout .checkoutSection.checkoutNav div button:hover {
+  background-color: var(--paleAccent);
+}
+.cart .checkout .checkoutSection.checkoutNav div button:hover span {
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection.shippingAO, .cart .checkout .checkoutSection.paymentAO {
+  border: 0.2rem solid var(--paleAccentThree);
+  overflow: hidden;
+}
+.cart .checkout .checkoutSection.paymentAO, .cart .checkout .checkoutSection.reviewAO {
+  display: none;
+}
+.cart .checkout .checkoutSection.reviewAO {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSectionTitle {
+  display: flex;
+  color: var(--priColor);
+  padding: 0.5vmax;
+  border-bottom: 0.2rem solid var(--paleAccentThree);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSectionTitle.two {
+  background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  justify-content: end;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection {
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul {
+  display: flex;
+  flex-direction: column;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul li div {
+  display: flex;
+  gap: 0.5vmax;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul li h4 {
+  display: flex;
+  align-items: center;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview {
+  height: min-content;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a {
+  color: var(--paleAccentTwo);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+  text-decoration: underline;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a:active {
+  color: var(--secColor);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview .amount {
+  margin: 0.3vmax;
+  padding-inline: 0.3vmax;
+  border-radius: 0.5rem;
+  background: var(--paleAccent);
+  color: var(--secColor);
+  border: 0.2rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li {
+  padding: 0.5vmax;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li:first-child {
+  border-bottom: 0.1rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li:nth-child(2) {
+  border-bottom: 0.3rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li:nth-child(3) {
+  border-bottom: 0.3rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li {
+  border: none;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block: 0.5vmax;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li h4.premiumh4 {
+  margin-top: 0.5rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li h4.buyerproc {
+  margin-top: 0.5rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li h4.buyerproc span {
+  margin-left: -0.2rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li:first-child {
+  border-bottom: 0.1rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button {
+  color: var(--priColor);
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  position: relative;
+  align-items: center;
+  font-size: large;
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(45deg, var(--paleAccent) 0%, var(--secAccent) 30%, var(--accent) 95%, var(--accent) 100%);
+  z-index: -1;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul:last-child {
+  border-top: 0.3rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul {
+  gap: 0.5vmax;
+  padding: 0.5vmax;
+  max-height: 15rem;
+  overflow-y: scroll;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li {
+  outline: 0.15rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding-right: 0.5vmax;
+  min-height: 4rem;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li .pTitle {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li .pTitle p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li .pTitle::before {
+  content: "";
+  display: block;
+  background-color: var(--tpPri);
+  min-height: 4rem;
+  min-width: 4rem;
+  margin-right: 0.5rem;
+  outline: 0.15rem solid var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection.reviewAO .reviewInteract {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  padding: 0.5vmax;
+}
+.cart .checkout .checkoutSection form {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  width: 90%;
+  gap: 1rem;
+}
+.cart .checkout .checkoutSection form h3 {
+  position: relative;
+  display: flex;
+  margin-inline: 1.5rem;
+  margin-block: 1.3rem -0.4rem;
+  font-size: x-large;
+}
+.cart .checkout .checkoutSection form input {
+  order: 2;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+  text-indent: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--paleAccentThree);
+  background-color: var(--tpPri);
+  color: var(--secColor);
+  transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.cart .checkout .checkoutSection form input:focus-visible {
+  border-color: var(--paleAccentTwo);
+}
+.cart .checkout .checkoutSection form input:focus-visible ~ label {
+  color: var(--accent);
+  border-color: var(--paleAccentTwo);
+}
+.cart .checkout .checkoutSection form input::selection {
+  background: var(--paleAccentTwo);
+  color: var(--priColor);
+}
+.cart .checkout .checkoutSection form input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+.cart .checkout .checkoutSection form input:invalid:not(:placeholder-shown) ~ label {
+  color: var(--priColor);
+  background: linear-gradient(to right, rgb(230, 0, 0), rgb(190, 50, 50));
+  border-color: red;
+}
+.cart .checkout .checkoutSection form input:valid {
+  border-color: rgb(0, 220, 0);
+}
+.cart .checkout .checkoutSection form input:valid ~ label {
+  color: var(--accent);
+  border-color: rgb(0, 220, 0);
+  color: var(--priColor);
+  background-color: rgb(0, 220, 0);
+  border-color: rgb(0, 220, 0);
+  background: linear-gradient(to right, rgb(0, 255, 0), rgb(50, 190, 50));
+}
+.cart .checkout .checkoutSection form label {
+  margin-inline: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  order: 1;
+  transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  border: 0.15rem solid var(--paleAccentThree);
+  width: fit-content;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom: none;
+  padding: 0.1rem 0.6rem;
+}
+.cart .checkout .checkoutSection form section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.cart .checkout .checkoutSection form section div {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.cart .checkout .checkoutSection form .address,
+.cart .checkout .checkoutSection form .cardNum {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  align-self: center;
+}
+.cart .checkout .checkoutSection form .divider {
+  width: 96%;
+  margin-inline: auto;
+  height: 0.25rem;
+  border: none;
+  background-color: var(--paleAccentThree);
+}
+.cart .checkout .checkoutSection form button {
+  position: relative;
+  width: 50%;
+  padding: 1rem;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  font-size: large;
+  color: var(--priColor);
+  border: 0.2rem solid var(--paleAccentThree);
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.cart .checkout .checkoutSection form button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 85%, var(--paleAccent) 100%);
+  z-index: -1;
+}
+.cart .checkout .checkoutSection form button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection form button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.cart .checkout .checkoutSection form button:active {
+  border-color: var(--accent);
   color: var(--secColor);
 }
 
-.checkoutOn .summary ul:last-child li:first-child {
-  border-radius: 0.5vmax;
+.currentStage {
+  pointer-events: none;
+  background-color: var(--paleAccentTwo);
 }
-.checkoutOn .summary ul:last-child li:last-child {
+.currentStage span {
+  color: var(--priColor);
+}
+
+.finalStage {
+  max-width: 100vmax;
+}
+.finalStage .checkout {
+  width: 100%;
+}
+
+.currentStageAO {
+  display: flex !important;
+}
+
+.currentStageAONot {
+  display: none !important;
+}
+
+.checkoutOn {
+  flex-direction: row;
+}
+.checkoutOn .checkout {
+  max-width: 71%;
+}
+.checkoutOn .products {
+  display: none;
+}
+.checkoutOn .summary ul.summaryTwo li.toCheckout {
   display: none;
 }
 
@@ -1611,6 +2080,9 @@ main svg {
     width: 90%;
   }
   .cart .summary {
+    width: 90%;
+  }
+  .cart .checkout {
     width: 90%;
   }
   .cart.checkoutOn .summary {

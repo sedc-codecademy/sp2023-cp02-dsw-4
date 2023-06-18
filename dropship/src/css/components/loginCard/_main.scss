@@ -93,31 +93,6 @@
             color: var(--priColor);
         }
 
-        // &:required:not(:placeholder-shown):valid {
-        //     border-color: red;
-
-        //     ~ {
-        //         label {
-        //             opacity: 1;
-        //             color: var(--priColor);
-        //             background: rgb(255, 50, 50);
-        //             transform: translateY(-110%);
-        //         }
-        //     }
-        // }
-
-        // &:invalid {
-        //     border-color: red;
-        //     ~ {
-        //         label {
-        //             opacity: 1;
-        //             color: var(--priColor);
-        //             background: rgb(255, 50, 50);
-        //             transform: translateY(-110%);
-        //         }
-        //     }
-        // }
-
         &:invalid:not(:placeholder-shown) {
             border-color: red;
 
