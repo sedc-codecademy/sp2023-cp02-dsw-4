@@ -297,31 +297,33 @@
         </form>
 
     </header>
-    <main class="cart checkoutOn finalStage">
+
+
+    <main class="cart">
         <div class="checkout">
             <section class="checkoutSection checkoutNav">
                 <h2>Checkout</h2>
                 <div>
-                    <button class="currentStage">
+                    <button class="stageOne currentStage">
                         <span class="material-symbols-outlined">
                             local_shipping
                         </span>
                     </button>
                     <div class="divider One"></div>
-                    <button>
+                    <button class="stageTwo">
                         <span class="material-symbols-outlined">
                             credit_score
                         </span>
                     </button>
                     <div class="divider Two"></div>
-                    <button>
+                    <button class="stageThree">
                         <span class="material-symbols-outlined">
                             task_alt
                         </span>
                     </button>
                 </div>
             </section>
-            <section class="checkoutSection shippingAO currentStageAONot">
+            <section class="checkoutSection shippingAO">
                 <form>
                     <h3>Ship to</h3>
                     <div class="divider"></div>
@@ -362,7 +364,7 @@
                         </div>
                     </section>
                     <div class="divider"></div>
-                    <button>Continue to Payment</button>
+                    <button class="toPayment">Continue to Payment</button>
                 </form>
             </section>
             </form>
@@ -388,145 +390,8 @@
                         </div>
                     </section>
                     <div class="divider"></div>
-                    <button>Review Purchase </button>
+                    <button class="toReview">Review Purchase </button>
                 </form>
-            </section>
-            <section class="checkoutSection reviewAO currentStageAO">
-                
-                <div class="reviewDiv">
-                    <section class="reviewSection productsReview">
-                        <h3 class="reviewSectionTitle">Cart Content</h3>
-                        <ul>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <h3 class="pTitle">
-                                    Product Title Something
-                                </h3>
-                                <div>
-                                    <h2 class="amount">1</h2>
-                                    <div class="divider"></div>
-                                    <h2>399$</h2>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="reviewSection summaryReview">
-                        <h3 class="reviewSectionTitle two">Cart Summary</h3>
-                        <ul>
-                            <li>
-                                <h3>Cart Cost</h3>
-                                <h2 class="amount">399.59$</h2>
-                            </li>
-                            <li>
-                                <h3>Shipping</h3>
-                                <h2 class="amount">FREE</h2>
-                            </li>
-                            <li>
-                                <h2>Total</h2>
-                                <h2 class="amount">399.59$</h2>
-                            </li>
-                        </ul>
-                        <ul class="buyerProtectReview">
-                            <li>
-                                <h4 class="premiumh4">Free shipping with C&S+</h4>
-                                <p>For shipments over 20$ & reduced shipping price and time for heavy parcels. <a
-                                        href="">Get
-                                        C&S+</a></p>
-                            </li>
-                            <li>
-                                <h4 class="buyerproc">
-                                    <span class="material-symbols-outlined">
-                                        verified_user
-                                    </span>
-                                    C&S+ buyer protection
-                                </h4>
-                                <p>We guarantee that you will receive your order or get your money back. <a
-                                        href="">Learn More</a>
-                                </p>
-                            </li>
-                        </ul>
-                        <ul class="backToPayment">
-                            <button>Back to Payment</button>
-                        </ul>
-                    </section>
-                </div>
-                <div class="reviewInteract">
-                    <section>
-                        <input type="checkbox" id="agreeCart" required>
-                        <label for="agreeCart">I accept the <span>Terms of Use</span> & <span>Privacy
-                                Policy</span>.</label>
-                    </section>
-                    <button>Purchase</button>
-                </div>
             </section>
         </div>
         <div class="products">
@@ -542,7 +407,7 @@
                                 arrow_downward
                             </span>
                         </button>
-                        <h2 class="amount">1</h2>
+                        <h2 class="amount number">1</h2>
                         <button class="amoundBtn" id="plus">
                             <span class="material-symbols-outlined">
                                 arrow_upward
@@ -554,7 +419,7 @@
                                 delete
                             </span>
                         </button>
-                        <h2>399$</h2>
+                        <h2 class="amount">399$</h2>
                     </div>
                 </li>
                 <li>
@@ -567,7 +432,7 @@
                                 arrow_downward
                             </span>
                         </button>
-                        <h2 class="amount">10</h2>
+                        <h2 class="amount number">10</h2>
                         <button class="amoundBtn" id="plus">
                             <span class="material-symbols-outlined">
                                 arrow_upward
@@ -579,7 +444,7 @@
                                 delete
                             </span>
                         </button>
-                        <h2>399$</h2>
+                        <h2 class="amount">399$</h2>
                     </div>
                 </li>
                 <li>
@@ -592,7 +457,7 @@
                                 arrow_downward
                             </span>
                         </button>
-                        <h2 class="amount">33</h2>
+                        <h2 class="amount number">33</h2>
                         <button class="amoundBtn" id="plus">
                             <span class="material-symbols-outlined">
                                 arrow_upward
@@ -604,7 +469,7 @@
                                 delete
                             </span>
                         </button>
-                        <h2>33399$</h2>
+                        <h2 class="amount">33399$</h2>
                     </div>
                 </li>
                 <li>
@@ -620,7 +485,7 @@
                                 arrow_downward
                             </span>
                         </button>
-                        <h2 class="amount">33</h2>
+                        <h2 class="amount number">33</h2>
                         <button class="amoundBtn" id="plus">
                             <span class="material-symbols-outlined">
                                 arrow_upward
@@ -632,7 +497,57 @@
                                 delete
                             </span>
                         </button>
-                        <h2>33399$</h2>
+                        <h2 class="amount">33399$</h2>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="pTitle">
+                        <a href="">Product Title Something</a>
+                    </h3>
+                    <div>
+                        <button class="amoundBtn" id="minus">
+                            <span class="material-symbols-outlined">
+                                arrow_downward
+                            </span>
+                        </button>
+                        <h2 class="amount number">33</h2>
+                        <button class="amoundBtn" id="plus">
+                            <span class="material-symbols-outlined">
+                                arrow_upward
+                            </span>
+                        </button>
+                        <div class="divider"></div>
+                        <button class="remove">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                        <h2 class="amount">33399$</h2>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="pTitle">
+                        <a href="">Product Title Something</a>
+                    </h3>
+                    <div>
+                        <button class="amoundBtn" id="minus">
+                            <span class="material-symbols-outlined">
+                                arrow_downward
+                            </span>
+                        </button>
+                        <h2 class="amount number">33</h2>
+                        <button class="amoundBtn" id="plus">
+                            <span class="material-symbols-outlined">
+                                arrow_upward
+                            </span>
+                        </button>
+                        <div class="divider"></div>
+                        <button class="remove">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                        <h2 class="amount">33399$</h2>
                     </div>
                 </li>
                 <li>
@@ -657,57 +572,7 @@
                                 delete
                             </span>
                         </button>
-                        <h2>33399$</h2>
-                    </div>
-                </li>
-                <li>
-                    <h3 class="pTitle">
-                        <a href="">Product Title Something</a>
-                    </h3>
-                    <div>
-                        <button class="amoundBtn" id="minus">
-                            <span class="material-symbols-outlined">
-                                arrow_downward
-                            </span>
-                        </button>
-                        <h2 class="amount">33</h2>
-                        <button class="amoundBtn" id="plus">
-                            <span class="material-symbols-outlined">
-                                arrow_upward
-                            </span>
-                        </button>
-                        <div class="divider"></div>
-                        <button class="remove">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                        <h2>33399$</h2>
-                    </div>
-                </li>
-                <li>
-                    <h3 class="pTitle">
-                        <a href="">Product Title Something</a>
-                    </h3>
-                    <div>
-                        <button class="amoundBtn" id="minus">
-                            <span class="material-symbols-outlined">
-                                arrow_downward
-                            </span>
-                        </button>
-                        <h2 class="amount">33</h2>
-                        <button class="amoundBtn" id="plus">
-                            <span class="material-symbols-outlined">
-                                arrow_upward
-                            </span>
-                        </button>
-                        <div class="divider"></div>
-                        <button class="remove">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                        <h2>33399$</h2>
+                        <h2 class="amount">33399$</h2>
                     </div>
                 </li>
                 <li>
@@ -786,10 +651,11 @@
                     </div>
                 </li>
             </ul>
+            <h2 class="footerProducts"></h2>
         </div>
         <div class="summary">
-            <h2>Summary</h2>
-            <ul class="summaryOne">
+            <h2 class="headerSummary">Cart Summary</h2>
+            <ul>
                 <li>
                     <h3>Cart Cost</h3>
                     <h2 class="amount">399.59$</h2>
@@ -799,14 +665,18 @@
                     <h2 class="amount">FREE</h2>
                 </li>
                 <li>
-                    <h4>Free shipping with C&S+</h4>
+                    <h2 class="total">Total</h2>
+                    <h2 class="totalAmount">399.59$</h2>
+                </li>
+            </ul>
+            <ul class="buyerProtectReview">
+                <li>
+                    <h4 class="premiumh4">Free shipping with C&S+</h4>
                     <p>For shipments over 20$ & reduced shipping price and time for heavy parcels. <a href="">Get
                             C&S+</a></p>
                 </li>
-            </ul>
-            <ul class="summaryTwo">
-                <li class="buyerProtect">
-                    <h4>
+                <li>
+                    <h4 class="buyerproc">
                         <span class="material-symbols-outlined">
                             verified_user
                         </span>
@@ -815,14 +685,25 @@
                     <p>We guarantee that you will receive your order or get your money back. <a href="">Learn More</a>
                     </p>
                 </li>
-                <li class="toCheckout">
-                    <button>Proceed To Checkout</button>
-                </li>
-                <li class="backToCart">
-                    <button>Back To Cart</button>
-                </li>
             </ul>
+            <button class="makePurchase">Make Purchase</button>
+            <button class="proceedToCheckout">Proceed To Checkout</button>
+            <button class="backToCart">Back To Cart</button>
         </div>
+        <dialog class="purchaseConfirmation">
+            <h1>Are you sure</h1>
+            <div>
+                <p class="total">Total Price</p>
+                <h2 class="price">399$</h2>
+            </div>
+            <div>
+                <p>By confirming the purchase you accept the terms & conditions <a href="">Learn More</a>
+            </div>
+            <div>
+                <button>GO BACK</button>
+                <button>YES I AM</button>
+            </div>
+        </dialog>
     </main>
 </body>
 

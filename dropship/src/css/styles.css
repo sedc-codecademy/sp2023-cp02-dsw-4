@@ -69,7 +69,6 @@ header {
   display: grid;
   place-content: center;
   align-items: center;
-  display: none;
 }
 header .headerGradient {
   position: absolute;
@@ -1339,6 +1338,7 @@ main svg {
   position: relative;
   max-width: 90vmax;
   margin-inline: auto;
+  margin-block: 5vmax;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1347,752 +1347,191 @@ main svg {
 .cart span {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.cart .products {
-  position: relative;
-  width: 71%;
-  border-top-left-radius: 0.8vmax;
-  border-top-right-radius: 0.3vmax;
-  border-bottom-left-radius: 0.3vmax;
-  border-bottom-right-radius: 0.8vmax;
-}
-.cart .products h2 {
-  position: relative;
-  margin-bottom: 0.6rem;
-  text-indent: 0.5rem;
-  padding-block: 0.4vmax 0.6vmax;
-  background-color: var(--paleAccent);
-  outline: 0.15rem solid var(--paleAccentThree);
-  border-radius: 0.5rem;
-}
-.cart .products h2.amount {
-  margin: 0.3vmax;
-  text-indent: 0;
-  padding-inline: 0.2vmax;
-  padding-block: 0;
-  outline: none;
-  border-radius: 0.5rem;
-}
-.cart .products ul {
-  max-height: 37vmax;
-  border-top: 0.5rem solid var(--paleAccentThree);
-  border-bottom: 0.5rem solid var(--paleAccentThree);
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-block: 0.5rem;
-}
-.cart .products ul li {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-inline: 0.5rem;
-  overflow: hidden;
-  min-height: 8rem;
-  border-top-left-radius: 0.8vmax;
-  border-top-right-radius: 0.3vmax;
-  border-bottom-left-radius: 0.3vmax;
-  border-bottom-right-radius: 0.8vmax;
-  outline: 0.15rem solid var(--paleAccentThree);
-}
-.cart .products ul li .pTitle {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.cart .products ul li .pTitle p {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-.cart .products ul li .pTitle::before {
-  content: "";
-  display: block;
-  background-color: var(--tpPri);
-  min-height: 8rem;
-  min-width: 8rem;
-  margin-right: 0.5rem;
-  outline: 0.15rem solid var(--paleAccentThree);
-}
-.cart .products ul li:last-child {
-  border-bottom-left-radius: 0.3vmax;
-  border-bottom-right-radius: 1.3vmax;
-}
-.cart .products ul li:first-child {
-  border-top-left-radius: 1.3vmax;
-  border-top-right-radius: 0.3vmax;
-}
-.cart .products ul li h3 a {
-  width: fit-content;
-  position: relative;
-  color: var(--secColor);
-  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.cart .products ul li h3 a:hover {
-  color: var(--accent);
-}
-.cart .products ul li h3 a:active {
-  scale: 1.05;
-}
-.cart .products ul li h3 a:focus-visible {
-  color: var(--accent);
-  text-decoration: underline;
-}
-.cart .products ul li div {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.cart .products ul li div .divider {
-  margin-inline: 0.5vmax;
-}
-.cart .products ul li div button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.cart .products ul li div button::before {
-  content: "";
-  inset: -0.25rem;
-  border-radius: 50%;
-  background-color: var(--paleAccentTwo);
-  opacity: 0;
-  position: absolute;
-  transition: scale 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear, background-color 0.5s cubic-bezier(0, 0.5, 0.5, 1);
-  transform-origin: center;
-  scale: 0;
-  z-index: -1;
-}
-.cart .products ul li div button:focus-visible::before {
-  scale: 1;
-  opacity: 1;
-}
-.cart .products ul li div button:hover::before {
-  scale: 1;
-  opacity: 0.5;
-}
-.cart .products ul li div button:active {
-  scale: 1.1;
-}
-.cart .products ul li div button:active::before {
-  background-color: transparent;
-}
-.cart .products ul li div button:active span {
-  color: var(--accent);
-}
-.cart .products ul li div h4 {
-  margin-inline: 0.3vmax;
-}
-.cart .products ul li div h2:last-child {
-  margin-inline: 0.8vmax;
-  outline: none;
-  border-radius: 0.5rem;
-  padding: 0.2rem;
-  text-indent: 0;
-}
-.cart .summary {
-  position: relative;
-  width: 27%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  display: none;
-}
-.cart .summary a {
-  color: var(--paleAccentTwo);
-}
-.cart .summary a:hover {
-  text-decoration: underline;
-  color: var(--accent);
-}
-.cart .summary a:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-  text-decoration: underline;
-}
-.cart .summary a:active {
-  color: var(--secColor);
-}
-.cart .summary h2 {
-  position: relative;
-  padding-block: 0.5rem 0.7rem;
-  padding-inline: 0.5rem;
-  display: flex;
-  justify-content: end;
-  border-radius: 0.5rem;
-  color: var(--priColor);
-  background: linear-gradient(45deg, var(--paleAccent) 0%, var(--secAccent) 30%, var(--accent) 0%, var(--secAccent) 70%, var(--accent) 100%);
-}
-.cart .summary h2.amount {
-  margin: 0.3vmax;
-  text-indent: 0;
-  padding-inline: 0.3vmax;
-  padding-block: 0;
-  outline: none;
-  border-radius: 0.5rem;
-  background: var(--paleAccent);
-  color: var(--secColor);
-  border: 0.2rem solid var(--paleAccentThree);
-}
-.cart .summary ul {
-  display: flex;
-  flex-direction: column;
-  border: 0.2rem solid var(--paleAccentThree);
-  border-radius: 0.5rem;
-}
-.cart .summary ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem;
-}
-.cart .summary ul li:first-child {
-  border-bottom: 0.1rem solid var(--paleAccentThree);
-}
-.cart .summary ul li:last-child {
-  display: inline-block;
-  padding-block: 1.2rem;
-  border-top: 0.25rem solid var(--paleAccentThree);
-}
-.cart .summary ul.summaryTwo {
-  border: none;
-}
-.cart .summary ul.summaryTwo li {
-  border-radius: 0.5vmax;
-}
-.cart .summary ul.summaryTwo li.buyerProtect {
-  display: inline-block;
-  border: 0.2rem solid var(--paleAccentThree);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-block: 0.6rem;
-}
-.cart .summary ul.summaryTwo li.buyerProtect h4 {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.cart .summary ul.summaryTwo li.buyerProtect h4 span {
-  pointer-events: none;
-}
-.cart .summary ul.summaryTwo li.toCheckout, .cart .summary ul.summaryTwo li.backToCart {
-  justify-content: center;
-  padding: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border: 0.2rem solid var(--paleAccentThree);
-  border-top: none;
-  overflow: hidden;
-}
-.cart .summary ul.summaryTwo li.toCheckout button, .cart .summary ul.summaryTwo li.backToCart button {
-  color: var(--priColor);
-  width: 100%;
-  padding: 0.8rem 0.5rem;
-  position: relative;
-  align-items: center;
-  font-size: large;
-  color: var(--priColor);
-  font-family: "JetBrains Mono", monospace;
-  touch-action: manipulation;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.cart .summary ul.summaryTwo li.toCheckout button::before, .cart .summary ul.summaryTwo li.backToCart button::before {
-  content: "";
-  inset: -1rem;
-  position: absolute;
-  filter: blur(0.5vmax);
-  background: linear-gradient(45deg, var(--paleAccent) 0%, var(--secAccent) 30%, var(--accent) 95%, var(--accent) 100%);
-  z-index: -1;
-}
-.cart .summary ul.summaryTwo li.toCheckout button:focus-visible, .cart .summary ul.summaryTwo li.backToCart button:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .summary ul.summaryTwo li.toCheckout button:hover, .cart .summary ul.summaryTwo li.backToCart button:hover {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .summary ul.summaryTwo li.toCheckout button:focus-visible, .cart .summary ul.summaryTwo li.backToCart button:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .summary ul.summaryTwo li.toCheckout button:active, .cart .summary ul.summaryTwo li.backToCart button:active {
-  background-color: var(--paleAccentThree);
-  color: var(--secColor);
-}
-.cart .checkout {
-  width: 55%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.cart .checkout .checkoutSection {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.5rem;
-}
-.cart .checkout .checkoutSection.checkoutNav h2 {
-  position: relative;
-  padding: 0.5rem 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
-  border-radius: 0.5rem;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.cart .checkout .checkoutSection.checkoutNav div {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  border: 0.2rem solid var(--paleAccentThree);
-  border-radius: 0.5rem;
-  border-top: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.cart .checkout .checkoutSection.checkoutNav div .divider {
-  width: 100%;
-  height: 0.25rem;
-  padding: 0;
-  border: none;
-  border-radius: 1rem;
-}
-.cart .checkout .checkoutSection.checkoutNav div .divider.One {
-  background: linear-gradient(to right, var(--paleAccent) 0%, var(--paleAccentTwo) 30%, var(--secAccent) 60%);
-}
-.cart .checkout .checkoutSection.checkoutNav div .divider.Two {
-  background: linear-gradient(to right, var(--secAccent) 0%, var(--paleAccentTwo) 60%, var(--paleAccent) 100%);
-}
-.cart .checkout .checkoutSection.checkoutNav div button {
-  border-radius: 50%;
-  padding: 0.3rem;
-  margin: 0.2rem;
-  display: flex;
-  align-items: center;
-  transition: 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-.cart .checkout .checkoutSection.checkoutNav div button span {
-  pointer-events: none;
-  font-size: 1.8rem;
-  transition: 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-.cart .checkout .checkoutSection.checkoutNav div button:active {
-  scale: 1.1;
-}
-.cart .checkout .checkoutSection.checkoutNav div button:active .material-symbols-outlined {
-  color: var(--secAccent);
-}
-.cart .checkout .checkoutSection.checkoutNav div button:focus-visible {
-  background-color: var(--paleAccentTwo);
-}
-.cart .checkout .checkoutSection.checkoutNav div button:focus-visible span {
-  color: var(--priColor);
-}
-.cart .checkout .checkoutSection.checkoutNav div button:hover {
-  background-color: var(--paleAccent);
-}
-.cart .checkout .checkoutSection.checkoutNav div button:hover span {
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection.shippingAO, .cart .checkout .checkoutSection.paymentAO {
-  border: 0.2rem solid var(--paleAccentThree);
-  overflow: hidden;
-}
-.cart .checkout .checkoutSection.paymentAO, .cart .checkout .checkoutSection.reviewAO {
-  display: none;
-}
-.cart .checkout .checkoutSection.reviewAO {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSectionTitle {
-  display: flex;
-  color: var(--priColor);
-  padding: 0.5vmax;
-  border-bottom: 0.2rem solid var(--paleAccentThree);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSectionTitle.two {
-  background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
-  justify-content: end;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection {
-  border: 0.2rem solid var(--paleAccentThree);
-  border-radius: 0.5rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul {
-  display: flex;
-  flex-direction: column;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul li div {
-  display: flex;
-  gap: 0.5vmax;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection ul li h4 {
-  display: flex;
-  align-items: center;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview {
-  height: min-content;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a {
-  color: var(--paleAccentTwo);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a:hover {
-  text-decoration: underline;
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-  text-decoration: underline;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview a:active {
-  color: var(--secColor);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview .amount {
-  margin: 0.3vmax;
-  padding-inline: 0.3vmax;
-  border-radius: 0.5rem;
-  background: var(--paleAccent);
-  color: var(--secColor);
-  border: 0.2rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li {
-  padding: 0.5vmax;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li:first-child {
-  border-bottom: 0.1rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li:nth-child(2) {
-  border-bottom: 0.3rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul li:nth-child(3) {
-  border-bottom: 0.3rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li {
-  border: none;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-block: 0.5vmax;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li h4.premiumh4 {
-  margin-top: 0.5rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li h4.buyerproc {
-  margin-top: 0.5rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li h4.buyerproc span {
-  margin-left: -0.2rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.buyerProtectReview li:first-child {
-  border-bottom: 0.1rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button {
-  color: var(--priColor);
-  width: 100%;
-  padding: 0.8rem 0.5rem;
-  position: relative;
-  align-items: center;
-  font-size: large;
-  font-family: "JetBrains Mono", monospace;
-  touch-action: manipulation;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button::before {
-  content: "";
-  inset: -1rem;
-  position: absolute;
-  filter: blur(0.5vmax);
-  background: linear-gradient(45deg, var(--paleAccent) 0%, var(--secAccent) 30%, var(--accent) 95%, var(--accent) 100%);
-  z-index: -1;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:hover {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul.backToPayment button:active {
-  background-color: var(--paleAccentThree);
-  color: var(--secColor);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.summaryReview ul:last-child {
-  border-top: 0.3rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview {
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul {
-  gap: 0.5vmax;
-  padding: 0.5vmax;
-  max-height: 15rem;
-  overflow-y: scroll;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li {
-  outline: 0.15rem solid var(--paleAccentThree);
-  border-radius: 0.5rem;
-  overflow: hidden;
-  padding-right: 0.5vmax;
-  min-height: 4rem;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li .pTitle {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li .pTitle p {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-.cart .checkout .checkoutSection.reviewAO .reviewDiv .reviewSection.productsReview ul li .pTitle::before {
-  content: "";
-  display: block;
-  background-color: var(--tpPri);
-  min-height: 4rem;
-  min-width: 4rem;
-  margin-right: 0.5rem;
-  outline: 0.15rem solid var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection.reviewAO .reviewInteract {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-self: center;
-  border: 0.2rem solid var(--paleAccentThree);
-  border-radius: 0.5rem;
-  padding: 0.5vmax;
-}
-.cart .checkout .checkoutSection form {
-  display: flex;
-  flex-direction: column;
-  margin-inline: auto;
-  width: 90%;
-  gap: 1rem;
-}
-.cart .checkout .checkoutSection form h3 {
-  position: relative;
-  display: flex;
-  margin-inline: 1.5rem;
-  margin-block: 1.3rem -0.4rem;
-  font-size: x-large;
-}
-.cart .checkout .checkoutSection form input {
-  order: 2;
-  width: 100%;
-  height: 3rem;
-  font-size: 1.2rem;
-  text-indent: 0.5rem;
-  border-radius: 0.5rem;
-  border: 0.15rem solid var(--paleAccentThree);
-  background-color: var(--tpPri);
-  color: var(--secColor);
-  transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-.cart .checkout .checkoutSection form input:focus-visible {
-  border-color: var(--paleAccentTwo);
-}
-.cart .checkout .checkoutSection form input:focus-visible ~ label {
-  color: var(--accent);
-  border-color: var(--paleAccentTwo);
-}
-.cart .checkout .checkoutSection form input::selection {
-  background: var(--paleAccentTwo);
-  color: var(--priColor);
-}
-.cart .checkout .checkoutSection form input:invalid:not(:placeholder-shown) {
-  border-color: red;
-}
-.cart .checkout .checkoutSection form input:invalid:not(:placeholder-shown) ~ label {
-  color: var(--priColor);
-  background: linear-gradient(to right, rgb(230, 0, 0), rgb(190, 50, 50));
-  border-color: red;
-}
-.cart .checkout .checkoutSection form input:valid {
-  border-color: rgb(0, 220, 0);
-}
-.cart .checkout .checkoutSection form input:valid ~ label {
-  color: var(--accent);
-  border-color: rgb(0, 220, 0);
-  color: var(--priColor);
-  background-color: rgb(0, 220, 0);
-  border-color: rgb(0, 220, 0);
-  background: linear-gradient(to right, rgb(0, 255, 0), rgb(50, 190, 50));
-}
-.cart .checkout .checkoutSection form label {
-  margin-inline: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  order: 1;
-  transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  border: 0.15rem solid var(--paleAccentThree);
-  width: fit-content;
-  border-top-right-radius: 1rem;
-  border-top-left-radius: 1rem;
-  border-bottom: none;
-  padding: 0.1rem 0.6rem;
-}
-.cart .checkout .checkoutSection form section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-}
-.cart .checkout .checkoutSection form section div {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-}
-.cart .checkout .checkoutSection form .address,
-.cart .checkout .checkoutSection form .cardNum {
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  align-self: center;
-}
-.cart .checkout .checkoutSection form .divider {
-  width: 96%;
-  margin-inline: auto;
-  height: 0.25rem;
-  border: none;
-  background-color: var(--paleAccentThree);
-}
-.cart .checkout .checkoutSection form button {
-  position: relative;
-  width: 50%;
-  padding: 1rem;
-  margin-inline: auto;
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  align-items: center;
-  font-size: large;
-  color: var(--priColor);
-  border: 0.2rem solid var(--paleAccentThree);
-  font-family: "JetBrains Mono", monospace;
-  touch-action: manipulation;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.cart .checkout .checkoutSection form button::before {
-  content: "";
-  inset: -1rem;
-  position: absolute;
-  filter: blur(0.5vmax);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 85%, var(--paleAccent) 100%);
-  z-index: -1;
-}
-.cart .checkout .checkoutSection form button:hover {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection form button:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cart .checkout .checkoutSection form button:active {
-  border-color: var(--accent);
-  color: var(--secColor);
-}
 
 .currentStage {
   pointer-events: none;
-  background-color: var(--paleAccentTwo);
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
 }
 .currentStage span {
   color: var(--priColor);
 }
 
+.checkoutOn .checkout {
+  display: flex;
+}
+
+.shippingstage .summary button.makePurchase {
+  display: none;
+}
+.shippingstage .summary button.proceedToCheckout {
+  display: none;
+}
+.shippingstage .summary button.backToCart {
+  display: block;
+}
+.shippingstage .products {
+  display: none;
+}
+.shippingstage .checkout {
+  display: flex;
+}
+
+.paymentStage .summary button.makePurchase {
+  display: none;
+}
+.paymentStage .summary button.proceedToCheckout {
+  display: none;
+}
+.paymentStage .summary button.backToCart {
+  display: block;
+}
+.paymentStage .products {
+  display: none;
+}
+.paymentStage .checkout .checkoutSection.shippingAO {
+  display: none;
+}
+.paymentStage .checkout .checkoutSection.paymentAO {
+  display: flex;
+}
+
 .finalStage {
   max-width: 100vmax;
+  gap: 0;
 }
 .finalStage .checkout {
-  width: 100%;
+  width: 71%;
+  gap: 0;
 }
-
-.currentStageAO {
-  display: flex !important;
+.finalStage .checkout .checkoutSection.shippingAO {
+  display: none;
 }
-
-.currentStageAONot {
-  display: none !important;
+.finalStage .checkout .checkoutSection.paymentAO {
+  display: none;
 }
-
-.checkoutOn {
+.finalStage .checkout .checkoutSection.checkoutNav h2 {
+  text-align: center;
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+}
+.finalStage .checkout .checkoutSection.checkoutNav div {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+.finalStage .products,
+.finalStage .summary {
+  width: 71%;
+}
+.finalStage .products h2:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  text-align: center;
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+}
+.finalStage .products ul {
+  max-height: 20vmax;
+}
+.finalStage .products .footerProducts {
+  display: none;
+}
+.finalStage .summary .headerSummary {
+  background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  text-align: center;
+  margin-top: 0;
+}
+.finalStage .summary button.makePurchase {
+  display: block;
+}
+.finalStage .summary button.proceedToCheckout {
+  display: none;
+}
+.finalStage .summary button.backToCart {
+  display: none;
+}
+.finalStage .summary ul.buyerProtectReview li {
   flex-direction: row;
-}
-.checkoutOn .checkout {
-  max-width: 71%;
-}
-.checkoutOn .products {
-  display: none;
-}
-.checkoutOn .summary ul.summaryTwo li.toCheckout {
-  display: none;
 }
 
 @media (max-width: 1640px) {
   .cart .products {
-    width: 90%;
+    width: 95%;
   }
   .cart .summary {
-    width: 90%;
+    width: 95%;
   }
   .cart .checkout {
-    width: 90%;
+    width: 95%;
   }
-  .cart.checkoutOn .summary {
-    order: 1;
+}
+@media (max-width: 1000px) {
+  .cart {
+    max-width: 100vmax;
   }
-  .cart.checkoutOn .checkout {
-    order: 2;
+  .cart .summary {
+    width: 100%;
+    gap: 0;
   }
-  .cart.checkoutOn .products {
-    order: 3;
+  .cart .summary .headerSummary {
+    border-radius: 0;
+  }
+  .cart .summary ul {
+    border: none;
+    border-radius: 0;
+  }
+  .cart .summary ul.buyerProtectReview {
+    border-top: 0.3rem solid var(--paleAccentThree);
+  }
+  .cart .summary ul.buyerProtectReview li {
+    padding-block: 0.5rem;
+  }
+  .cart .summary button {
+    border: 0.2rem solid var(--paleAccentThree);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .cart .summary button:hover, .cart .summary button:focus-visible {
+    border-left: none;
+    border-right: none;
+  }
+  .cart .products {
+    width: 100%;
+  }
+  .cart .products h2 {
+    border-radius: 0;
+    margin-block: 0.4rem;
+    text-align: center;
+  }
+  .cart .products ul li {
+    min-height: 6rem;
+  }
+  .cart .products ul li .pTitle::before {
+    min-width: 6rem;
+    min-height: 6rem;
+  }
+  .cart .products ul li div {
+    gap: 0.45rem;
+    margin-right: 0.5vmax;
+  }
+  .cart .products ul li div .divider {
+    margin-inline: 0rem;
+  }
+  .cart .checkout {
+    width: 100%;
+  }
+  .cart .checkout .checkoutSection.checkoutNav h2 {
+    border-radius: 0;
+    text-align: center;
+    background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+  }
+  .cart .checkout .checkoutSection.checkoutNav div {
+    border: none;
+    border-radius: 0;
+  }
+  .cart .checkout .checkoutSection.shippingAO, .cart .checkout .checkoutSection.paymentAO {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
   }
 }
 @media (max-width: 600px) {
@@ -2109,28 +1548,24 @@ main svg {
   }
   .cart .products ul {
     min-height: 50vh;
+    padding-top: 0.1rem;
   }
   .cart .products ul li {
     flex-direction: column;
     align-items: flex-start;
-    min-height: 6rem;
-    border-radius: 0.1rem !important;
+    border-radius: 0.1rem;
   }
   .cart .products ul li h3 a {
     position: relative;
     font-size: 1rem;
     top: -1.5rem;
   }
-  .cart .products ul li .pTitle::before {
-    min-width: 6rem;
-    min-height: 6rem;
-  }
   .cart .products ul li div {
     position: absolute;
     align-self: flex-end;
-    bottom: 0;
-    margin-right: 0.5vmax;
-    gap: 0.2rem;
+    margin-right: 1vmax;
+    bottom: 0.5rem;
+    gap: 0.5rem;
   }
   .cart .products ul li div h2 {
     font-size: 1.2rem;
@@ -2140,6 +1575,641 @@ main svg {
   }
   .cart .products ul li div .divider {
     position: relative;
-    top: -0.8rem;
+    top: -0.25rem;
   }
+  .cart .checkout .checkoutSection.checkoutNav div button {
+    width: unset;
+  }
+  .cart .checkout .checkoutSection form {
+    gap: 1.5rem;
+  }
+  .cart .checkout .checkoutSection section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .cart .checkout .checkoutSection section div {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .cart .checkout .checkoutSection .address,
+  .cart .checkout .checkoutSection .cardNum {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart .checkout .checkoutSection input {
+    width: 100%;
+  }
+  .cart .checkout .checkoutSection input:focus-visible ~ label {
+    transform: translateY(-82%);
+    color: var(--priColor);
+    background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+  }
+  .cart .checkout .checkoutSection input:invalid:not(:placeholder-shown) ~ label {
+    transform: translateY(-82%);
+  }
+  .cart .checkout .checkoutSection input:valid ~ label {
+    transform: translateY(-82%);
+  }
+  .cart .checkout .checkoutSection label {
+    position: absolute;
+    color: var(--tertColor);
+    border-radius: 1rem;
+    border: 0.15rem transparent;
+  }
+  .cart .checkout .checkoutSection button {
+    width: 100%;
+  }
+}
+.checkout {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  display: none;
+}
+.checkout .checkoutSection {
+  display: flex;
+  flex-direction: column;
+}
+.checkout .checkoutSection.checkoutNav h2 {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  color: var(--priColor);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.checkout .checkoutSection.checkoutNav div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.checkout .checkoutSection.checkoutNav div .divider {
+  width: 100%;
+  height: 0.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+}
+.checkout .checkoutSection.checkoutNav div .divider.One {
+  background: linear-gradient(to right, var(--paleAccent) 0%, var(--paleAccentTwo) 30%, var(--secAccent) 60%);
+}
+.checkout .checkoutSection.checkoutNav div .divider.Two {
+  background: linear-gradient(to right, var(--secAccent) 0%, var(--paleAccentTwo) 60%, var(--paleAccent) 100%);
+}
+.checkout .checkoutSection.checkoutNav div button {
+  border-radius: 50%;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.checkout .checkoutSection.checkoutNav div button span {
+  pointer-events: none;
+  font-size: 1.8rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.checkout .checkoutSection.checkoutNav div button:active {
+  scale: 1.1;
+}
+.checkout .checkoutSection.checkoutNav div button:active .material-symbols-outlined {
+  color: var(--secAccent);
+}
+.checkout .checkoutSection.checkoutNav div button:focus-visible {
+  background-color: var(--paleAccentTwo);
+}
+.checkout .checkoutSection.checkoutNav div button:focus-visible span {
+  color: var(--priColor);
+}
+.checkout .checkoutSection.checkoutNav div button:hover {
+  background-color: var(--paleAccent);
+}
+.checkout .checkoutSection.checkoutNav div button:hover span {
+  color: var(--accent);
+}
+.checkout .checkoutSection.shippingAO, .checkout .checkoutSection.paymentAO {
+  border: 0.2rem solid var(--paleAccentThree);
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.checkout .checkoutSection.paymentAO {
+  display: none;
+}
+.checkout .checkoutSection form {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  width: 90%;
+  gap: 1rem;
+}
+.checkout .checkoutSection form h3 {
+  position: relative;
+  display: flex;
+  margin-inline: 1.5rem;
+  margin-block: 1.3rem -0.4rem;
+  font-size: x-large;
+}
+.checkout .checkoutSection form input {
+  order: 2;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+  text-indent: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--paleAccentThree);
+  background-color: var(--tpPri);
+  color: var(--secColor);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.checkout .checkoutSection form input:focus-visible {
+  border-color: var(--paleAccentTwo) !important;
+}
+.checkout .checkoutSection form input:focus-visible ~ label {
+  color: var(--accent);
+  border-color: var(--paleAccentTwo);
+}
+.checkout .checkoutSection form input::selection {
+  background: var(--paleAccentTwo);
+  color: var(--priColor);
+}
+.checkout .checkoutSection form input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+.checkout .checkoutSection form input:invalid:not(:placeholder-shown) ~ label {
+  color: var(--priColor);
+  background-color: red;
+  border-color: red;
+}
+.checkout .checkoutSection form input:valid {
+  border-color: rgb(0, 220, 0);
+}
+.checkout .checkoutSection form input:valid ~ label {
+  color: var(--priColor);
+  background-color: rgb(0, 220, 0);
+  border-color: rgb(0, 220, 0);
+}
+.checkout .checkoutSection form label {
+  margin-inline: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  order: 1;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 0.15rem solid var(--paleAccentThree);
+  width: fit-content;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom: none;
+  padding: 0.1rem 0.6rem;
+  pointer-events: none;
+}
+.checkout .checkoutSection form section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.checkout .checkoutSection form section div {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.checkout .checkoutSection form .address,
+.checkout .checkoutSection form .cardNum {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  align-self: center;
+}
+.checkout .checkoutSection form .divider {
+  width: 96%;
+  margin-inline: auto;
+  height: 0.25rem;
+  border: none;
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+}
+.checkout .checkoutSection form button {
+  position: relative;
+  width: 50%;
+  padding: 1rem;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  font-size: large;
+  color: var(--priColor);
+  border: 0.2rem solid var(--paleAccentThree);
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.checkout .checkoutSection form button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+  z-index: -1;
+}
+.checkout .checkoutSection form button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.checkout .checkoutSection form button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.checkout .checkoutSection form button:active {
+  border-color: var(--accent);
+  color: var(--secColor);
+}
+
+.products {
+  position: relative;
+  width: 61%;
+  border-top-left-radius: 0.8vmax;
+  border-top-right-radius: 0.3vmax;
+  border-bottom-left-radius: 0.3vmax;
+  border-bottom-right-radius: 0.8vmax;
+}
+.products h2 {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  color: var(--priColor);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  border-radius: 0.5rem;
+}
+.products h2.amount {
+  margin: 0.3vmax 0.5vmax;
+  text-indent: 0;
+  padding-inline: 0.2vmax;
+  padding-block: 0;
+  text-align: center;
+  outline: 0.15rem solid var(--paleAccent);
+  border-radius: 0.3rem;
+}
+.products h2.footerProducts {
+  background: var(--paleAccentTwo);
+  border-radius: 0.3rem;
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  margin-block: 0;
+}
+.products ul {
+  max-height: 37vmax;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 0.5rem;
+}
+.products ul li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 0.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  min-height: 7rem;
+  outline: 0.15rem solid var(--paleAccentThree);
+}
+.products ul li .pTitle {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.products ul li .pTitle p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.products ul li .pTitle::before {
+  content: "";
+  display: block;
+  background-color: var(--tpPri);
+  min-height: 8rem;
+  min-width: 8rem;
+  margin-right: 0.5rem;
+  outline: 0.15rem solid var(--paleAccentThree);
+}
+.products ul li h3 a {
+  width: fit-content;
+  position: relative;
+  color: var(--secColor);
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.products ul li h3 a:hover {
+  color: var(--accent);
+}
+.products ul li h3 a:active {
+  scale: 1.05;
+}
+.products ul li h3 a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.products ul li div {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.products ul li div .divider {
+  margin-inline: 0.5vmax;
+  border-radius: none;
+  width: 0.2rem;
+  height: 1.5rem;
+  border: none;
+  background: linear-gradient(to right, var(--paleAccentThree), var(--paleAccentTwo), var(--paleAccentThree));
+  background-color: red;
+}
+.products ul li div button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.products ul li div button::before {
+  content: "";
+  inset: -0.25rem;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
+  opacity: 0;
+  position: absolute;
+  transition: scale 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear, background-color 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+  transform-origin: center;
+  scale: 0;
+  z-index: -1;
+}
+.products ul li div button:focus-visible::before {
+  scale: 1;
+  opacity: 1;
+}
+.products ul li div button:hover::before {
+  scale: 1;
+  opacity: 0.5;
+}
+.products ul li div button:active {
+  scale: 1.1;
+}
+.products ul li div button:active::before {
+  background-color: transparent;
+}
+.products ul li div button:active span {
+  color: var(--accent);
+}
+.products ul li div h4 {
+  margin-inline: 0.3vmax;
+}
+.products ul li div .footerProducts {
+  margin-inline: 0.8vmax;
+  margin-block: 0;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  text-indent: 0;
+}
+
+.summary {
+  position: relative;
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.summary a {
+  color: var(--paleAccentTwo);
+}
+.summary a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+.summary a:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+  text-decoration: underline;
+  outline: 0.2rem solid var(--accent);
+  border-radius: 0.5rem;
+}
+.summary a:active {
+  color: var(--secColor);
+}
+.summary .headerSummary {
+  padding: 0.5rem 0.5rem;
+  color: var(--priColor);
+  text-align: end;
+  background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  border-radius: 0.5rem;
+}
+.summary h2 {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+}
+.summary h2.amount {
+  text-indent: 0;
+  padding-inline: 0.3vmax;
+  padding-block: 0;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+  background: var(--paleAccent);
+}
+.summary h2.totalAmount {
+  border: none;
+  color: var(--priColor);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+}
+.summary button {
+  color: var(--priColor);
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  position: relative;
+  align-items: center;
+  font-size: large;
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+}
+.summary button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  z-index: -1;
+}
+.summary button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.summary button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.summary button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.summary button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
+.summary button.makePurchase {
+  display: none;
+}
+.summary button.proceedToCheckout {
+  display: block;
+}
+.summary button.backToCart {
+  display: none;
+}
+.summary ul {
+  border: 0.15rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+}
+.summary ul li {
+  padding: 0.5vmax;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.summary ul li:first-child {
+  border-bottom: 0.1rem solid var(--paleAccentThree);
+}
+.summary ul li:nth-child(2) {
+  border-bottom: 0.3rem solid var(--paleAccentThree);
+}
+.summary ul.buyerProtectReview li {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  border: none;
+  padding-block: 0.5vmax;
+}
+.summary ul.buyerProtectReview li h4 {
+  display: flex;
+  align-items: center;
+}
+.summary ul.buyerProtectReview li h4.buyerproc span {
+  pointer-events: none;
+  color: var(--accent);
+  margin-left: -0.2rem;
+}
+.summary ul.buyerProtectReview li:first-child {
+  border-bottom: 0.1rem solid var(--paleAccentThree);
+}
+
+.purchaseConfirmation {
+  justify-content: center;
+  flex-direction: column;
+  margin-inline: auto;
+  margin-top: 10%;
+  padding: 1.5rem;
+  border: 0.2rem solid var(--paleAccentTwo);
+  gap: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--tpPri);
+  overflow: hidden;
+  color: var(--secColor);
+}
+.purchaseConfirmation h1 {
+  text-align: center;
+  z-index: 1;
+}
+.purchaseConfirmation a {
+  color: var(--paleAccentTwo);
+}
+.purchaseConfirmation a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+.purchaseConfirmation a:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+  text-decoration: underline;
+  outline: 0.2rem solid var(--accent);
+  border-radius: 0.5rem;
+}
+.purchaseConfirmation a:active {
+  color: var(--secColor);
+}
+.purchaseConfirmation div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+.purchaseConfirmation div .total {
+  padding: 0.5rem;
+}
+.purchaseConfirmation div .price {
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  color: var(--priColor);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+}
+.purchaseConfirmation button {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  font-size: large;
+  color: var(--priColor);
+  border: 0.2rem solid var(--paleAccentThree);
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.purchaseConfirmation button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  z-index: -1;
+}
+.purchaseConfirmation button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.purchaseConfirmation button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.purchaseConfirmation button:active {
+  border-color: var(--accent);
+  color: var(--secColor);
+}
+.purchaseConfirmation button:first-child::before {
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+}
+
+.purchaseConfirmation[open] {
+  display: flex;
+  top: 5rem;
+}
+.purchaseConfirmation[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.575);
+  backdrop-filter: blur(1.5rem);
 }/*# sourceMappingURL=styles.css.map */

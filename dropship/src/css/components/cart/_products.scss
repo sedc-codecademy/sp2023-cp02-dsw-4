@@ -1,0 +1,181 @@
+@use "../../abstracts";
+
+.products {
+    position: relative;
+    width: 61%;
+
+    border-top-left-radius: .8vmax;
+    border-top-right-radius: .3vmax;
+    border-bottom-left-radius: .3vmax;
+    border-bottom-right-radius: .8vmax;
+
+    h2 {
+        position: relative;
+        padding: .5rem .5rem;
+        color: var(--priColor);
+        background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+        border-radius: .5rem;
+
+        &.amount {
+            margin: 0.3vmax .5vmax;
+            text-indent: 0;
+            padding-inline: .2vmax;
+            padding-block: 0;
+            text-align: center;
+            outline: .15rem solid var(--paleAccent);
+            border-radius: .3rem;
+        }
+
+        &.footerProducts{
+            background: var(--paleAccentTwo);
+            border-radius: .3rem;
+            background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+            margin-block: 0;
+        }
+    }
+
+    ul {
+        max-height: 37vmax;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding-block: .5rem;
+
+        li {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-inline: .5rem;
+            overflow: hidden;
+            border-radius: .5rem;
+            min-height: 7rem;
+
+            outline: 0.15rem solid var(--paleAccentThree);
+
+            .pTitle {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                p {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    background-color: var(--tpPri);
+                    min-height: 8rem;
+                    min-width: 8rem;
+                    margin-right: .5rem;
+                    outline: 0.15rem solid var(--paleAccentThree);
+                }
+            }
+
+            h3 {
+                a {
+                    width: fit-content;
+                    position: relative;
+                    color: var(--secColor);
+                    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+                    &:hover {
+                        color: var(--accent);
+                    }
+
+                    &:active {
+                        scale: 1.05;
+                    }
+
+                    &:focus-visible {
+                        color: var(--accent);
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+
+                .divider {
+                    margin-inline: .5vmax;
+                    border-radius: none;
+                    width: 0.2rem;
+                    height: 1.5rem;
+                    border: none;
+                    background: linear-gradient(to right, var(--paleAccentThree), var(--paleAccentTwo), var(--paleAccentThree));
+                    background-color: red;
+                }
+
+                button {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+                    &::before {
+                        content: "";
+                        inset: -0.25rem;
+                        border-radius: 50%;
+                        background: linear-gradient(45deg, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
+                        opacity: 0;
+                        position: absolute;
+                        transition: scale .8s cubic-bezier(.19, 1, .22, 1), opacity .3s linear, background-color .5s cubic-bezier(.0, 0.5, .5, 1);
+                        transform-origin: center;
+                        scale: 0;
+                        z-index: -1;
+                    }
+
+                    &:focus-visible {
+                        &::before {
+                            scale: 1;
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover {
+                        &::before {
+                            scale: 1;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    &:active {
+                        scale: 1.1;
+
+                        &::before {
+                            background-color: transparent;
+                        }
+
+                        span {
+                            color: var(--accent);
+                        }
+                    }
+                }
+
+                h4 {
+                    margin-inline: .3vmax;
+                }
+
+                .footerProducts {
+                    margin-inline: .8vmax;
+                    margin-block: 0;
+                    // outline: none;
+                    border-radius: .5rem;
+                    padding: .2rem;
+                    text-indent: 0;
+                }
+            }
+        }
+    }
+}

@@ -10,3 +10,5 @@ import "./categoriesTab/_filters.js";
 import "./loginForm/_main.js";
 //// CATGORIES SECTION
 import "./categoriesSection/_main.js";
+//// CART
+import "./cart/_cart.js";
