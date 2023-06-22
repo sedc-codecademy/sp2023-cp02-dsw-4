@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js" defer></script>
     <script src="js/_dependencies.js" defer></script>
+    <script src="js/categoriesSection/main.js" defer></script>
     <script type="module" src="js/index.js" defer></script>
 </head>
 
@@ -324,6 +325,63 @@
         <div class="productDivs" id="products-div-two"> <!-- TOP PRODUCTS -->
             <h1>TOP PRODUCTS!!!</h1>
         </div>
+    </main>
+    <main>
+        <div class="categories-section">
+            <h2>Categories</h2>
+            <button>Filters</button>
+            <div class="filters">
+                <label for="category">Filter by Category:</label>
+                <select name="category" id="category">
+                    <option value="all">All Categories</option>
+                    <option value="technology">Technology</option>
+                    <option value="home-and-garden">Homen & Garden</option>
+                    <option value="auto-parts">Auto Parts</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="sports">Sports</option>
+                    <option value="books">Books</option>
+                    <option value="men's-wear">Men's Wear</option>
+                    <option value="women's-wear">Women's Wear</option>
+                    <option value="jewerly">Jewerly</option>
+                </select>
+                <br />
+                <label for="price-range">Filter by Price Range:</label>
+                <select name="price-range" id="price-range">
+                    <option value="all">All Prices</option>
+                    <option value="0-50">$0 - $50</option>
+                    <option value="50-100">$50 - $100</option>
+                    <option value="100-200">$100 - $200</option>
+                    <option value="200+">$200+</option>
+                </select>
+                <br />
+                <label for="shop-location">Filter by Shop Loocation:</label>
+                <select name="price-range" id="price-range">
+                    <option value="all">All Locations</option>
+                    <option value="Skopje-one">Skopje 1</option>
+                    <option value="Skopje-two">Skopje 2</option>
+                    <option value="Skopje-three">Skopje 3</option>
+                    <option value="Bitola">Bitola</option>
+                    <option value="Strumica">Strumica</option>
+                    <option value="Ohrid">Ohrid</option>
+                    <option value="Tetovo">Tetovo</option>
+                </select>
+                <br />
+            </div>
+            <div>
+                <button for="occasion-selector">Sort By:</button>
+                <div name="occasion-selector" id="occasion-selector">
+                    <a href="#" value="highest-rating">Highest Rating</a>
+                    <a href="#" value="highest-price">Highest Price</a>
+                    <a href="#" value="lowest-price">Lowest Price</a>
+                </div>
+            </div>
+        </div>
+        <h1>SubCategories: </h1>
+        <div id="subCategories">KKKKKK</div>
+        <h1>Products</h1>
+        <div id="products"></div>
+        <h1>Single Product</h1>
+        <div id="singleProduct"></div>
     </main>
     <footer>
         <div class="footerMain">

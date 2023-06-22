@@ -24,7 +24,8 @@ async function setProducts(div, iterationCount) {
             let a = document.createElement("a")
             a.innerHTML = `${productsFound[j].title}`
             a.setAttribute("href", "javascript:void(0)")
-            a.addEventListener("click", (e) => {
+            a.addEventListener("click", (e) => { // Product clicked 
+                // SHOULD CALL switchMain() when these event listeners are clicked **** IGNORE FOR NOW
                 console.log(productsFound[j].id, e)
             })
             let h4 = document.createElement("h4")

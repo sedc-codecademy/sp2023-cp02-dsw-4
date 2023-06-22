@@ -6,17 +6,7 @@ const searchInput = document.querySelector('.search-bar')
 const suggestionsCard = document.querySelector(".search-suggestions")
 const searchContainer = document.querySelector(".search-bar-container")
 
-// CATEGORIES
-
-const categoriesBtn = document.querySelector(".categoriesButton")
-const categoryDropDown = document.querySelector(".ctDropDown")
-const ctButtonSf = document.querySelector("#ctButtonSf")
-
-let blurTimeout;
-let timeOut;
-let prevLength = 0
-let toggle = true
-
+// Fetches with async await
 async function fetchJSON(url) {
     try {
         const response = await fetch(url);
@@ -31,6 +21,7 @@ async function fetchJSON(url) {
     }
 }
 
+// Removes the parent object and puts all products in one array
 function flattenObjectArrays(object) {
     const newArray = []
     for (let key in object) {
@@ -40,6 +31,32 @@ function flattenObjectArrays(object) {
     }
     return newArray
 }
+
+//////////// ALL JSON FILES FETCH
+
+// const categories = await fetchJSON('./mock/categories.json')
+// const subCategories = await fetchJSON('./mock/subCategories.json')
+// const products = await fetchJSON('./mock/products.json')
+
+/////////// SUB CATEGORIES AND OBJECTS FLATTENED IF NEEDED
+
+// const flattenedSubCategories = flattenObjectArrays(subCategories)
+// const flattenedProducts = flattenObjectArrays(products)
+
+
+function switchMain(mainToTurnOff, mainToTurnOn) {
+    mainToTurnOff.style.display = "none"
+    mainToTurnOn.style.display = "block"
+} ///// SHOULD CALL WHEN TRANSITIONING FROM ONE MAIN TO THE OTHER *** NOT DONE DONT USE
+
+const categoriesBtn = document.querySelector(".categoriesButton")
+const categoryDropDown = document.querySelector(".ctDropDown")
+const ctButtonSf = document.querySelector("#ctButtonSf")
+
+let blurTimeout;
+let timeOut;
+let prevLength = 0
+let toggle = true
 
 function suggestionsAnimate(origin) { // Animating the searchbox
     if (origin === 'blur') {
@@ -104,7 +121,7 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
     ctOn: () => {
         clearTimeout(closeCtTimeout)
         categoryDropDown.style.display = 'flex'
-        
+
         showCtTimeout = setTimeout(() => {
             searchContainer.classList.add('opCt')
             suggestionsCard.classList.add('opCt')

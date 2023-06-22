@@ -67,7 +67,7 @@ async function setSubCatsCtSection(sect) {
 
   catA.innerHTML = `<h3>${cat.title}</h3>`
   catA.setAttribute("href", "javascript:void(0)");
-  catA.addEventListener("click", (e) => {
+  catA.addEventListener("click", (e) => { // Caetgories Event
     console.log(cat.id)
   })
 
@@ -82,7 +82,7 @@ async function setSubCatsCtSection(sect) {
     let a = document.createElement("a")
     a.setAttribute("href", "javascript:void(0)");
     a.innerHTML = `${tempCats[i].title}`
-    a.addEventListener("click", (e) => {
+    a.addEventListener("click", (e) => { // Sub - Caetgories Event
       console.log(tempCats[i].id)
 
     })

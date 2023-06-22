@@ -14,7 +14,4 @@ import "./loginForm/_main.js";
 //// CATEGORIES SECTION
 import "./categoriesSection/_categoriesSection.js";
 //// HOMEPAGE PRODUCTS
-import "./homePageProducts/_homePageProducts.js"
-
-
-
+import "./homePageProducts/_homePageProducts.js";
