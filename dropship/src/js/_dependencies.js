@@ -142,7 +142,7 @@ const productAddedNotif = document.querySelector('.productAddedNotification') //
 
 const notificationArray = [themeDropDown, productAddedNotif]
 
-function tabSelect(element, origin) {
+function tabSelect(element, origin) { // Removing tabbing from notification hidden notification cards
     const children = element.querySelectorAll("*")
     if (origin) {
         element.setAttribute("tabindex", "-1", "autofocus")
@@ -158,7 +158,7 @@ function tabSelect(element, origin) {
     })
 }
 
-function notifcationToggle(currentItem) {
+function notifcationToggle(currentItem) { // Toggling which notification card is currently shown
     for (let i = 0; i < notificationArray.length; i++) {
         if (notificationArray[i] !== currentItem) {
             if (notificationArray[i].classList.contains("alertOn")) {
@@ -171,7 +171,7 @@ function notifcationToggle(currentItem) {
     }
 }
 
-function closeElement(timeouts, time, callbackClose, callbackCloseTwo) {
+function closeElement(timeouts, time, callbackClose, callbackCloseTwo) { // Transition function  for closing element that needs display none
     clearTimeout(timeouts.showLoginTimeout);
     callbackClose()
     timeouts.closeLoginTimeout = setTimeout(() => {
@@ -179,7 +179,7 @@ function closeElement(timeouts, time, callbackClose, callbackCloseTwo) {
     }, time);
 }
 
-function showElement(timeouts, time, callbackOpen, callbackOpenTwo) {
+function showElement(timeouts, time, callbackOpen, callbackOpenTwo) { // Transition function for showing element that is display none
     clearTimeout(timeouts.closeLoginTimeout)
     callbackOpen()
     timeouts.showLoginTimeout = setTimeout(() => {

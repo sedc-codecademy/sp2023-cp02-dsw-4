@@ -1,53 +1,103 @@
-const darkButton = document.querySelector(".darkButton")
-const dbutton = document.querySelector("#dbutton")
+const themeButton = document.querySelector('.themeButton')
+const loginDp = document.querySelector(".loginDropdown")
 
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; ////////////
+const darkbtn = document.querySelector(".darkButton")
+const lightBtn = document.querySelector(".lightButton")
+const systemBtn = document.querySelector(".systemDefault")
+
+const themeButtonsArray = [darkbtn, lightBtn, systemBtn]
+
+function toggleThemeButton(currentButton) {
+    for (let i = 0; i < themeButtonsArray.length; i++) {
+        if (themeButtonsArray[i].classList.contains("selectedThemeMode")) {
+            themeButtonsArray[i].classList.remove("selectedThemeMode")
+        }
+    }
+    currentButton.classList.add('selectedThemeMode')
+}
+
+let currentTheme = ""
 
 themeCheck()
 
 export function themeCheck() {
-    if (localStorage.getItem("dark-mode") === "true") {
-        document.body.classList.add("dark-mode")
-        dbutton.innerHTML = "light_mode"
+    const themeMode = localStorage.getItem("theme-mode")
+    const systemDarkMode =
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+
+    if (themeMode === "system") {
+        toggleThemeButton(systemBtn)
+        if (systemDarkMode) {
+            applyDarkTheme()
+        } else {
+            applyLightTheme()
+        }
+    } else if (themeMode === "dark") {
+        toggleThemeButton(darkbtn)
+        applyDarkTheme()
     } else {
-        document.body.classList.remove("dark-mode")
-        dbutton.innerHTML = "dark_mode"
+        toggleThemeButton(lightBtn)
+        applyLightTheme()
     }
 }
 
 function applyDarkTheme() {
-    document.body.classList.toggle("dark-mode")
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("dark-mode", true)
-        dbutton.innerHTML = "light_mode"
-    } else {
-        localStorage.setItem("dark-mode", false)
-        dbutton.innerHTML = "dark_mode"
-    }
-    darkButton.disabled = false
+    document.body.classList.remove("light-mode")
+    document.body.classList.add("dark-mode")
+    loginDp.classList.add("dark-backdrop")
+    currentTheme = "dark"
 }
 
-darkButton.addEventListener("click", (e) => {
+function applyLightTheme() {
+    document.body.classList.remove("dark-mode")
+    document.body.classList.add("light-mode")
+    loginDp.classList.remove("dark-backdrop")
+    currentTheme = "light"
+}
+
+function applySystemTheme() {
+    const themeMode = localStorage.getItem("theme-mode")
+    const systemDarkMode =
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    if (systemDarkMode) {
+        if (themeMode == "dark") return console.log(themeMode, currentTheme)
+        applyDarkTheme()
+        return
+    } else {
+        if (themeMode == "light") return console.log(themeMode, currentTheme)
+        applyLightTheme()
+        return
+    }
+}
+
+darkbtn.addEventListener("click", (e) => {
     e.preventDefault()
-    darkButton.disabled = true
-    toggleTheme()
+    localStorage.setItem("theme-mode", "dark")
+    toggleThemeButton(darkbtn)
+    applyDarkTheme()
+})
+lightBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.setItem("theme-mode", "light")
+    toggleThemeButton(lightBtn)
+    applyLightTheme()
+})
+systemBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.setItem("theme-mode", "system")
+    toggleThemeButton(systemBtn)
+    applySystemTheme()
 })
 
-function setTheme(theme) {
-    const body = document.querySelector('body');
-    body.classList.toggle('dark-mode', theme === 'dark');
-}
+themeButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    notifcationToggle(themeDropDown)
+    themeDropDown.classList.toggle("alertOn")
+})
 
-function toggleTheme() {
-    const body = document.querySelector('body');
-    const isDarkMode = body.classList.contains('dark-mode');
-    setTheme(isDarkMode ? 'light' : 'dark');
-}
-
-// Detect user's system preference and set the theme accordingly
-setTheme(prefersDarkMode ? 'dark' : 'light');
-
-// Listen for changes in system preference and update the theme
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    setTheme(e.matches ? 'dark' : 'light');
-});
+// Event listener for system theme changes
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (localStorage.getItem("theme-mode") === "system") { // Checks if theme mode is system
+        applySystemTheme() // Aplies system theme if needed
+    }
+})
