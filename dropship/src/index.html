@@ -184,7 +184,17 @@
             <ul class="navigationLists">
                 <li>
                     <a id="loginButton" href="">
-                        <span class="material-symbols-outlined">login</span>
+                        <span class="material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </a>
+                </li>
+                <div class="divider"></div>
+                <li class="homeButton">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
                     </a>
                 </li>
                 <li class="themeButton">
@@ -196,31 +206,29 @@
                 </li>
                 <div class="divider"></div>
                 <li>
-                    <a id="cartButton" href="">
+                    <a id="cartButton">
                         <span class="material-symbols-outlined">shopping_cart</span>
                     </a>
                 </li>
             </ul>
-
             <div class="productAddedNotification">
                 <ul>
                     <li>
                         <h4>Product Title</h4>
                     </li>
-                    <li>Amount: 3</li>
-                    <li>Price: 399$</li>
+                    <li><p>Amount:</p> <span>3</span></li>
+                    <li><p>Price:</p> <span>399$</span></li>
                     <li>
                         <h5>Added to cart</h5>
                     </li>
                     <button class="notifCancel">CANCEL</button>
                 </ul>
             </div>
-
             <div class="themeSelector">
                 <ul>
                     <li class="systemDefault">
                         <a href="">
-                            System Default
+                            <p>System Default</p>
                             <span class="material-symbols-outlined">
                                 brightness_auto
                             </span>
@@ -228,7 +236,7 @@
                     </li>
                     <li class="lightButton">
                         <a href="">
-                            Light Mode
+                            <p>Light Mode</p>
                             <span class="material-symbols-outlined">
                                 light_mode
                             </span>
@@ -236,7 +244,7 @@
                     </li>
                     <li class="darkButton">
                         <a href="">
-                            Dark Mode
+                            <p>Dark Mode</p>
                             <span class="material-symbols-outlined">dark_mode</span>
                         </a>
                     </li>
@@ -326,7 +334,7 @@
         </form>
 
     </header>
-    <main class="homePage">
+    <main class="mainMain homePage currentMain">
         <div id="masterContainer"> <!-- CATEGORIES SECTION -->
             <button id="left-arrow" class="arrow"><span class="material-symbols-outlined">chevron_left</span></button>
             <div id="container">
@@ -363,7 +371,7 @@
             <h1>TOP PRODUCTS!!!</h1>
         </div>
     </main>
-    <main class="cart">
+    <main class="mainMain cart">
         <div class="checkout">
             <section class="checkoutSection checkoutNav">
                 <h2>Checkout</h2>
@@ -769,7 +777,7 @@
             </div>
         </dialog>
     </main>
-    <main>
+    <main class="mainMain productsMain">
         <div class="categories-section">
             <h2>Categories</h2>
             <button>Filters</button>

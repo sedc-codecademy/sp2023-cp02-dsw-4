@@ -11,7 +11,7 @@ const closeLoginBtn = document.querySelector(".closeLoginButton")
 let rgOn = false
 let LDP = false
 
-let timeouts = { closeLoginTimeout: null, showLoginTimeout: null };
+let loginTimeouts = { closeTimeout: null, showTimeout: null };
 
 const loginStates = {
   openTime: 100,
@@ -33,11 +33,11 @@ const loginStates = {
 
 loginBtn.addEventListener("click", (e) => { // Event for login dropdown
   e.preventDefault()
-  showElement(timeouts, loginStates.openTime, loginStates.showLogin, loginStates.enableLogin)
+  showElement(loginTimeouts, loginStates.openTime, loginStates.showLogin, loginStates.enableLogin)
 })
 
 closeLoginBtn.addEventListener('click', (e) => { // Event for closing login button
-  closeElement(timeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
+  closeElement(loginTimeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
 })
 
 cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section
@@ -69,5 +69,5 @@ forgotBtn.addEventListener('click', (e) => { // Event for forgot password sectio
 })
 
 document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') closeElement(timeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
+  if (e.key === 'Escape') closeElement(loginTimeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
 })

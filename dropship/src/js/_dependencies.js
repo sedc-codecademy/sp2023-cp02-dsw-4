@@ -43,12 +43,6 @@ function flattenObjectArrays(object) {
 // const flattenedSubCategories = flattenObjectArrays(subCategories)
 // const flattenedProducts = flattenObjectArrays(products)
 
-
-function switchMain(mainToTurnOff, mainToTurnOn) {
-    mainToTurnOff.style.display = "none"
-    mainToTurnOn.style.display = "block"
-} ///// SHOULD CALL WHEN TRANSITIONING FROM ONE MAIN TO THE OTHER *** NOT DONE DONT USE
-
 const categoriesBtn = document.querySelector(".categoriesButton")
 const categoryDropDown = document.querySelector(".ctDropDown")
 const ctButtonSf = document.querySelector("#ctButtonSf")
@@ -171,21 +165,48 @@ function notifcationToggle(currentItem) { // Toggling which notification card is
     }
 }
 
-function closeElement(timeouts, time, callbackClose, callbackCloseTwo) { // Transition function  for closing element that needs display none
-    clearTimeout(timeouts.showLoginTimeout);
-    callbackClose()
-    timeouts.closeLoginTimeout = setTimeout(() => {
-        callbackCloseTwo()
-    }, time);
-}
-
-function showElement(timeouts, time, callbackOpen, callbackOpenTwo) { // Transition function for showing element that is display none
-    clearTimeout(timeouts.closeLoginTimeout)
-    callbackOpen()
-    timeouts.showLoginTimeout = setTimeout(() => {
-        callbackOpenTwo()
+function closeElement(timeouts, time, callbackClose, callbackCloseTwo, main) { // Transition function  for closing element that needs display none
+    clearTimeout(timeouts.showTimeout)
+    callbackClose(main)
+    timeouts.closeTimeout = setTimeout(() => {
+        callbackCloseTwo(main)
     }, time)
 }
+
+function showElement(timeouts, time, callbackOpen, callbackOpenTwo, main) { // Transition function for showing element that is display none
+    clearTimeout(timeouts.closeTimeout)
+    callbackOpen(main)
+    timeouts.showTimeout = setTimeout(() => {
+        callbackOpenTwo(main)
+    }, time)
+}
+
+//////////// MAIN TOGGLE //////////////////
+
+const allMains = document.querySelectorAll(".mainMain")
+
+function switchMain(mainToTurnOn, display) {
+    for (let i = 0; i < allMains.length; i++) {
+        if (mainToTurnOn !== allMains[i]) {
+            if (allMains[i].classList.contains("currentMain")) {
+                allMains[i].classList.remove("currentMain")
+                allMains[i].style.display = "none"
+            }
+        } else {
+            mainToTurnOn.style.display = display
+            mainToTurnOn.classList.add("currentMain")
+        }
+    }
+}
+
+const homeBtn = document.querySelector(".homeButton")
+
+homeBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    switchMain(document.querySelector('.homePage'), "block") /// turn on home 
+})
+
+////////// END OF MAIN TOGGLE /////////////////
 
 document.body.addEventListener('click', (e) => { // Event listener for turning off categories adn loosing focus on searchInput
     if (!searchForm.contains(e.target)) classSwitcher.ctOff()

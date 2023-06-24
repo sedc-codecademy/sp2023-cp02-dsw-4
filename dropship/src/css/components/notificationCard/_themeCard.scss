@@ -4,7 +4,7 @@
     ul {
         li {
             margin: .2rem;
-            border-radius: 0.5vmax;
+            border-radius: 0.3rem;
             border: .15rem solid var(--paleAccentThree);
             overflow: hidden;
 
@@ -51,7 +51,7 @@
             &.selectedThemeMode {
                 pointer-events: none;
                 background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
-                border-color: var(--priColor);
+                border: none;
 
                 a {
                     color: var(--priColor);

@@ -5,10 +5,12 @@
     max-width: 90vmax;
     margin-inline: auto;
     margin-block: 5vmax;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1vmax;
+    scale: 0;
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
     span {
         transition: all .5s cubic-bezier(.19, 1, .22, 1);

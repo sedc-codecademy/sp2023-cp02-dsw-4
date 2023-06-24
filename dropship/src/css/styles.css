@@ -207,8 +207,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.2rem solid var(--paleAccentThree);
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 3;
@@ -222,10 +221,6 @@ header .headerGradient {
   outline: none;
   text-indent: 1.5rem;
   color: var(--secColor);
-}
-.search-bar-container .search-bar::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
 }
 .search-bar-container .search-bar::selection {
   background: var(--accent);
@@ -305,8 +300,7 @@ header .headerGradient {
   top: 3.3rem;
   width: 40rem;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(3rem);
-          backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
   border-top-left-radius: 1.6rem;
   border-top-right-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
@@ -415,7 +409,6 @@ header .headerGradient {
 }
 .search-suggestions ul a h5,
 .search-suggestions ul a h6 {
-  width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
   overflow: hidden;
@@ -460,8 +453,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.2rem solid var(--paleAccentThree);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   padding: 1rem;
   transform: translateY(100vh);
   transform-origin: 150% 15%;
@@ -479,9 +471,7 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -738,38 +728,41 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(1vmax);
-          backdrop-filter: blur(1vmax);
+  backdrop-filter: blur(1vmax);
   border: 0.2rem solid var(--paleAccent);
-  border-radius: 0.5vmax;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-  border-bottom-right-radius: 1rem;
+  border-radius: 1rem;
   overflow: hidden;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
 }
-nav .divider {
+nav section {
   position: relative;
-  border-radius: 1rem;
-  width: 0.2rem;
-  height: 1.7rem;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  border-top-left-radius: 0.5vmax;
+  border-top-right-radius: 0.5vmax;
 }
 nav .navigationLists {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5vmax;
-  margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
-  transition: all 300ms ease;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 0.5rem;
+  height: 3rem;
+}
+nav .navigationLists .divider {
+  position: relative;
+  border-radius: 1rem;
+  width: 0.2rem;
+  height: 100%;
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
 }
 nav .navigationLists li {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 nav .navigationLists li .material-symbols-outlined {
   font-size: 1.7rem;
@@ -779,8 +772,12 @@ nav .navigationLists li ::before {
   content: "";
   inset: 0;
   position: absolute;
-  filter: blur(2vmax);
+  filter: blur(2rem);
   transition: 300ms all ease;
+}
+nav .navigationLists li a {
+  display: flex;
+  align-items: center;
 }
 nav .navigationLists li a:active span.material-symbols-outlined {
   color: var(--tertAccent);
@@ -806,6 +803,63 @@ nav .navigationLists li:hover ::before {
   background-color: var(--accent);
 }
 
+@media (max-width: 600px) {
+  nav {
+    justify-self: center;
+    margin-inline: auto;
+    right: unset;
+    left: unset;
+    top: unset;
+    bottom: 1vmax;
+  }
+  nav .navigationLists {
+    order: 3;
+    padding-inline: 0.2rem;
+    height: 2rem;
+  }
+  nav .navigationLists .divider {
+    height: 150%;
+  }
+  nav .themeSelector ul {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .themeSelector ul li.lightButton {
+    order: 0;
+  }
+  nav .themeSelector ul li.systemDefault {
+    order: 1;
+  }
+  nav .themeSelector ul li.darkButton {
+    order: 2;
+  }
+  nav .themeSelector ul li a span {
+    margin: 0;
+  }
+  nav .themeSelector ul li a p {
+    display: none;
+  }
+  nav .productAddedNotification ul {
+    padding: 0.2rem 0.1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .productAddedNotification ul :nth-child(4) {
+    display: none;
+  }
+  nav .productAddedNotification ul button {
+    width: 100%;
+    margin-block: 0;
+    border-radius: 0.8rem;
+    padding: 0;
+    order: -1;
+  }
+  nav .productAddedNotification::before,
+  nav .themeSelector::before {
+    bottom: 0;
+  }
+}
 footer {
   position: relative;
   bottom: 0;
@@ -883,9 +937,7 @@ footer .footerMain {
   color: var(--priColor);
   text-indent: 0.5rem;
   margin-top: -1rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .newsletter h1 {
@@ -895,9 +947,7 @@ footer .footerMain {
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: lowercase;
   margin-bottom: 2rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
 }
 .newsletter form {
@@ -952,25 +1002,12 @@ footer .footerMain {
   border-top-left-radius: 1.5rem;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.newsletter input::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
-}
 .newsletter input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
-.newsletter input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .newsletter input:invalid:not(:placeholder-shown) {
   border-color: red;
-}
-.newsletter input:invalid:not(:-moz-placeholder-shown) ~ label {
-  opacity: 1;
-  color: var(--priColor);
-  background: rgb(255, 50, 50);
-  transform: translateY(-105%);
 }
 .newsletter input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -1014,7 +1051,6 @@ footer .footerMain {
 
 @media (max-width: 1440px) {
   .newsletter {
-    width: -moz-min-content;
     width: min-content;
   }
   .newsletter p {
@@ -1056,9 +1092,7 @@ footer .footerMain {
   font-size: 7rem;
   font-family: "Rubik Microbe", cursive;
   color: var(--accent);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -1116,9 +1150,7 @@ footer .footerMain {
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   color: var(--priColor);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .getintouch a {
@@ -1142,7 +1174,6 @@ footer .footerMain {
   position: relative;
   left: 0;
   top: 0;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 3.5rem;
   line-height: 1.2;
@@ -1490,6 +1521,16 @@ main svg {
   min-height: 100%;
   z-index: -10;
 }
+main.mainMain {
+  scale: 0;
+}
+main.productsMain {
+  scale: 1;
+}
+main.currentMain {
+  scale: 1;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
 #masterContainer {
   display: flex;
@@ -1621,8 +1662,7 @@ main svg {
   display: none;
   justify-content: center;
   border: 0.3rem solid var(--paleAccentThree);
-  -webkit-backdrop-filter: blur(5rem);
-          backdrop-filter: blur(5rem);
+  backdrop-filter: blur(5rem);
   border-radius: 1rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 0.5rem;
@@ -1637,8 +1677,7 @@ main svg {
   background: none;
 }
 .loginDropdown::backdrop {
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   background-color: var(--backdropBackground);
 }
 .loginDropdown .closeLoginButton {
@@ -1746,9 +1785,7 @@ main svg {
 }
 .loginDropdown form span {
   font-weight: 650;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 .loginDropdown form a {
@@ -1776,25 +1813,12 @@ main svg {
   width: auto;
   height: auto;
 }
-.loginDropdown input::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
-}
 .loginDropdown input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
-.loginDropdown input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .loginDropdown input:invalid:not(:placeholder-shown) {
   border-color: red;
-}
-.loginDropdown input:invalid:not(:-moz-placeholder-shown) ~ label {
-  opacity: 1;
-  color: var(--priColor);
-  background: rgb(255, 50, 50);
-  transform: translateY(-110%);
 }
 .loginDropdown input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -1893,8 +1917,7 @@ main svg {
   position: relative;
   width: 50%;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1946,8 +1969,7 @@ main svg {
   margin-top: -10rem;
 }
 .loginUi section:nth-child(2) {
-  -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
+  margin-block-start: 1rem;
   gap: 0.5rem;
 }
 .loginUi section:nth-child(2) div {
@@ -1970,8 +1992,7 @@ main svg {
   width: 50%;
   background-color: var(--paleAccentTwo);
   color: var(--priColor);
-  -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
   gap: 2rem;
   transition: 500ms all ease-in-out;
   overflow: hidden;
@@ -2010,9 +2031,7 @@ main svg {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .registerUi .fields .checkBoxes span {
   pointer-events: all !important;
@@ -2026,9 +2045,7 @@ main svg {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   transition: 300ms all ease;
   display: flex;
   justify-content: center;
@@ -2043,6 +2060,8 @@ main svg {
   height: 1rem;
   border: solid var(--priColor);
   border-width: 0 0.2rem 0.2rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   visibility: hidden;
 }
@@ -2075,8 +2094,7 @@ main svg {
   width: 100%;
   background-color: var(--tpPri);
   color: var(--secColor);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
 }
 .regOn .fields {
   display: block;
@@ -2121,8 +2139,7 @@ main svg {
   position: relative;
   width: 0%;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   gap: 1.5rem;
   transition: 500ms all ease-in-out;
@@ -2167,10 +2184,12 @@ main svg {
   max-width: 90vmax;
   margin-inline: auto;
   margin-block: 5vmax;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1vmax;
+  scale: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .cart span {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -2434,9 +2453,6 @@ main svg {
     color: var(--priColor);
     background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
   }
-  .cart .checkout .checkoutSection input:invalid:not(:-moz-placeholder-shown) ~ label {
-    transform: translateY(-82%);
-  }
   .cart .checkout .checkoutSection input:invalid:not(:placeholder-shown) ~ label {
     transform: translateY(-82%);
   }
@@ -2570,23 +2586,11 @@ main svg {
   color: var(--accent);
   border-color: var(--paleAccentTwo);
 }
-.checkout .checkoutSection form input::-moz-selection {
-  background: var(--paleAccentTwo);
-  color: var(--priColor);
-}
 .checkout .checkoutSection form input::selection {
   background: var(--paleAccentTwo);
   color: var(--priColor);
 }
-.checkout .checkoutSection form input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .checkout .checkoutSection form input:invalid:not(:placeholder-shown) {
-  border-color: red;
-}
-.checkout .checkoutSection form input:invalid:not(:-moz-placeholder-shown) ~ label {
-  color: var(--priColor);
-  background-color: red;
   border-color: red;
 }
 .checkout .checkoutSection form input:invalid:not(:placeholder-shown) ~ label {
@@ -2610,7 +2614,6 @@ main svg {
   order: 1;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   border: 0.15rem solid var(--paleAccentThree);
-  width: -moz-fit-content;
   width: fit-content;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -2693,7 +2696,7 @@ main svg {
   position: relative;
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
   border-radius: 0.5rem;
 }
 .products h2.amount {
@@ -2708,7 +2711,7 @@ main svg {
 .products h2.footerProducts {
   background: var(--paleAccentTwo);
   border-radius: 0.3rem;
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--tertAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
   margin-block: 0;
 }
 .products ul {
@@ -2752,7 +2755,6 @@ main svg {
   outline: 0.15rem solid var(--paleAccentThree);
 }
 .products ul li h3 a {
-  width: -moz-fit-content;
   width: fit-content;
   position: relative;
   color: var(--secColor);
@@ -3056,8 +3058,7 @@ main svg {
 }
 .purchaseConfirmation[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.575);
-  -webkit-backdrop-filter: blur(1.5rem);
-          backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(1.5rem);
 }
 
 #products-div-one {
@@ -3134,13 +3135,22 @@ main svg {
 .productAddedNotification,
 .themeSelector {
   position: relative;
-  min-width: 10rem;
-  border-radius: 0.3vmax;
+  min-width: 12rem;
   display: grid;
   font-size: 1.1rem;
   grid-template-rows: 0fr;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  overflow: hidden;
+}
+.productAddedNotification::before,
+.themeSelector::before {
+  content: "";
+  width: 95%;
+  height: 0.15rem;
+  border-radius: 1rem;
+  position: absolute;
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  justify-self: center;
+  visibility: collapse;
 }
 .productAddedNotification ul,
 .themeSelector ul {
@@ -3158,6 +3168,9 @@ main svg {
 .alertOn {
   grid-template-rows: 1fr;
 }
+.alertOn::before {
+  visibility: visible;
+}
 .alertOn ul {
   padding: 0.5rem 0.3rem;
 }
@@ -3168,6 +3181,15 @@ main svg {
 .productAddedNotification ul {
   align-items: center;
   justify-content: center;
+}
+.productAddedNotification ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+}
+.productAddedNotification ul li span {
+  font-weight: 600;
 }
 .productAddedNotification ul button {
   color: var(--priColor);
@@ -3220,7 +3242,7 @@ main svg {
 
 .themeSelector ul li {
   margin: 0.2rem;
-  border-radius: 0.5vmax;
+  border-radius: 0.3rem;
   border: 0.15rem solid var(--paleAccentThree);
   overflow: hidden;
 }
@@ -3259,7 +3281,7 @@ main svg {
 .themeSelector ul li.selectedThemeMode {
   pointer-events: none;
   background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
-  border-color: var(--priColor);
+  border: none;
 }
 .themeSelector ul li.selectedThemeMode a {
   color: var(--priColor);

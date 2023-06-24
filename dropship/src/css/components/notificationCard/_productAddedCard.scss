@@ -7,6 +7,17 @@
         align-items: center;
         justify-content: center;
 
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: .5rem;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
         button {
             color: var(--priColor);
             width: 90%;

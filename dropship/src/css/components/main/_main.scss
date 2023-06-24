@@ -10,4 +10,20 @@ main {
     min-height: 100%;
     z-index: -10;
   }
+
+  &.mainMain{
+    scale: 0;
+  }
+
+  &.productsMain{ // SHOULD REMOVE 
+    scale: 1;
+    // display: none;
+  }
+
+  &.currentMain{
+    scale: 1;
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+  }
 }
+
+

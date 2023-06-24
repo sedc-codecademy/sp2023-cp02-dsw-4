@@ -94,7 +94,7 @@ button {
     flex-grow: $grow;
 }
 
-// The code below removes the "X" on the input field in IE, Firefox, Chrome and Opera
+// The code below removes the "X" on the input field in Chromium based browsers and IE
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 input[type="search"]::-webkit-search-decoration,
