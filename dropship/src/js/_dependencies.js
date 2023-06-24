@@ -135,6 +135,58 @@ const classSwitcher = { // Handling class switches for searchContainer and the s
     }
 }
 
+// Notificaions
+
+const themeDropDown = document.querySelector(".themeSelector") // Theme Selector
+const productAddedNotif = document.querySelector('.productAddedNotification') // Product added notifcation
+
+const notificationArray = [themeDropDown, productAddedNotif]
+
+function tabSelect(element, origin) {
+    const children = element.querySelectorAll("*")
+    if (origin) {
+        element.setAttribute("tabindex", "-1", "autofocus")
+        children.forEach((child) => {
+            child.setAttribute("tabindex", "-1")
+        })
+        return
+    }
+
+    element.removeAttribute("tabindex")
+    children.forEach((child) => {
+        child.removeAttribute("tabindex")
+    })
+}
+
+function notifcationToggle(currentItem) {
+    for (let i = 0; i < notificationArray.length; i++) {
+        if (notificationArray[i] !== currentItem) {
+            if (notificationArray[i].classList.contains("alertOn")) {
+                notificationArray[i].classList.toggle("alertOn")
+                tabSelect(notificationArray[i], true)
+            }
+        } else {
+            tabSelect(notificationArray[i], false)
+        }
+    }
+}
+
+function closeElement(timeouts, time, callbackClose, callbackCloseTwo) {
+    clearTimeout(timeouts.showLoginTimeout);
+    callbackClose()
+    timeouts.closeLoginTimeout = setTimeout(() => {
+        callbackCloseTwo()
+    }, time);
+}
+
+function showElement(timeouts, time, callbackOpen, callbackOpenTwo) {
+    clearTimeout(timeouts.closeLoginTimeout)
+    callbackOpen()
+    timeouts.showLoginTimeout = setTimeout(() => {
+        callbackOpenTwo()
+    }, time)
+}
+
 document.body.addEventListener('click', (e) => { // Event listener for turning off categories adn loosing focus on searchInput
     if (!searchForm.contains(e.target)) classSwitcher.ctOff()
 })

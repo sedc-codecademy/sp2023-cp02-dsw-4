@@ -43,31 +43,6 @@
 }
 
 .cancelFP {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    background-color: transparent;
-    border: none;
-    transition: 350ms all ease-in-out;
-
-    svg {
-        fill: var(--accent);
-        border-radius: 0.5rem;
-        border-top-left-radius: 0.7rem;
-        border-top-right-radius: 0.2rem;
-        border-bottom-left-radius: 0.2rem;
-        border-bottom-right-radius: 0.7rem;
-        padding: 0.1rem;
-        outline: 0.2rem solid var(--accent);
-        width: 2.5rem;
-        height: 2rem;
-    }
-
-    &:hover {
-        svg {
-            fill: var(--priColor);
-            transition: 350ms all ease-in-out;
-            background-color: var(--accent);
-        }
-    }
+    left: 1.5rem;
+    top: 1.5rem;
 }

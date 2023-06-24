@@ -6,48 +6,39 @@ const loginUi = document.querySelector(".loginUi")
 const registerBtn = document.querySelector(".registerButton")
 const forgotBtn = document.querySelector(".forgotPassButton")
 const forgotCancelBtn = document.querySelector(".cancelFP")
+const closeLoginBtn = document.querySelector(".closeLoginButton")
 
 let rgOn = false
 let LDP = false
 
-let showLoginTimeout;
-let closeLoginTimeout;
+let timeouts = { closeLoginTimeout: null, showLoginTimeout: null };
 
-function tabSelect(element) {
-  const children = element.querySelectorAll("*")
-  if (!LDP) {
-    element.setAttribute("tabindex", "-1", "autofocus")
-    children.forEach((child) => {
-      child.setAttribute("tabindex", "-1")
-    })
-    return
+const loginStates = {
+  openTime: 100,
+  closeTime: 500,
+
+  enableLogin: () => {
+    loginDp.showModal()
+  },
+  showLogin: () => {
+    loginDp.style.display = 'flex'
+  },
+  hideLogin: () => {
+    loginDp.close()
+  },
+  disableLogin: () => {
+    loginDp.style.display = 'none';
   }
-
-  element.removeAttribute("tabindex")
-  children.forEach((child) => {
-    child.removeAttribute("tabindex")
-  })
 }
 
 loginBtn.addEventListener("click", (e) => { // Event for login dropdown
   e.preventDefault()
-  showLogin(loginDp)
+  showElement(timeouts, loginStates.openTime, loginStates.showLogin, loginStates.enableLogin)
 })
 
-function closeLogin(element) {
-  clearTimeout(showLoginTimeout)
-  closeLoginTimeout = setTimeout(() => {
-    element.style.display = 'none'
-  }, 500)
-}
-
-function showLogin(element) {
-  clearTimeout(closeLoginTimeout)
-  element.style.display = 'flex'
-  showLoginTimeout = setTimeout(() => {
-    element.showModal()
-  }, 100)
-}
+closeLoginBtn.addEventListener('click', (e) => { // Event for closing login button
+  closeElement(timeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
+})
 
 cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section
   e.preventDefault()
@@ -78,7 +69,7 @@ forgotBtn.addEventListener('click', (e) => { // Event for forgot password sectio
 })
 
 document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') closeLogin(loginDp);
+  if (e.key === 'Escape') closeElement(timeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
 })
 
 

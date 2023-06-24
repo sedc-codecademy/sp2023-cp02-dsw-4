@@ -1,35 +1,103 @@
-const darkButton = document.querySelector(".darkButton")
-const dbutton = document.querySelector("#dbutton")
-
+const themeButton = document.querySelector('.themeButton')
 const loginDp = document.querySelector(".loginDropdown")
+
+const darkbtn = document.querySelector(".darkButton")
+const lightBtn = document.querySelector(".lightButton")
+const systemBtn = document.querySelector(".systemDefault")
+
+const themeButtonsArray = [darkbtn, lightBtn, systemBtn]
+
+function toggleThemeButton(currentButton) {
+    for (let i = 0; i < themeButtonsArray.length; i++) {
+        if (themeButtonsArray[i].classList.contains("selectedThemeMode")) {
+            themeButtonsArray[i].classList.remove("selectedThemeMode")
+        }
+    }
+    currentButton.classList.add('selectedThemeMode')
+}
+
+let currentTheme = ""
 
 themeCheck()
 
 export function themeCheck() {
-    if (localStorage.getItem("dark-mode") === "true") {
-        document.body.classList.add("dark-mode")
-        loginDp.classList.add("dark-backdrop")
-        dbutton.innerHTML = "light_mode"
+    const themeMode = localStorage.getItem("theme-mode")
+    const systemDarkMode =
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+
+    if (themeMode === "system") {
+        toggleThemeButton(systemBtn)
+        if (systemDarkMode) {
+            applyDarkTheme()
+        } else {
+            applyLightTheme()
+        }
+    } else if (themeMode === "dark") {
+        toggleThemeButton(darkbtn)
+        applyDarkTheme()
     } else {
-        loginDp.classList.remove("dark-backdrop")
-        document.body.classList.remove("dark-mode")
-        dbutton.innerHTML = "dark_mode"
+        toggleThemeButton(lightBtn)
+        applyLightTheme()
     }
 }
 
 function applyDarkTheme() {
-    document.body.classList.toggle("dark-mode")
-    loginDp.classList.toggle("dark-backdrop")
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("dark-mode", true)
-        dbutton.innerHTML = "light_mode"
+    document.body.classList.remove("light-mode")
+    document.body.classList.add("dark-mode")
+    loginDp.classList.add("dark-backdrop")
+    currentTheme = "dark"
+}
+
+function applyLightTheme() {
+    document.body.classList.remove("dark-mode")
+    document.body.classList.add("light-mode")
+    loginDp.classList.remove("dark-backdrop")
+    currentTheme = "light"
+}
+
+function applySystemTheme() {
+    const themeMode = localStorage.getItem("theme-mode")
+    const systemDarkMode =
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    if (systemDarkMode) {
+        if (themeMode == "dark") return console.log(themeMode, currentTheme)
+        applyDarkTheme()
+        return
     } else {
-        localStorage.setItem("dark-mode", false)
-        dbutton.innerHTML = "dark_mode"
+        if (themeMode == "light") return console.log(themeMode, currentTheme)
+        applyLightTheme()
+        return
     }
 }
 
-darkButton.addEventListener("click", (e) => {
+darkbtn.addEventListener("click", (e) => {
     e.preventDefault()
+    localStorage.setItem("theme-mode", "dark")
+    toggleThemeButton(darkbtn)
     applyDarkTheme()
+})
+lightBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.setItem("theme-mode", "light")
+    toggleThemeButton(lightBtn)
+    applyLightTheme()
+})
+systemBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.setItem("theme-mode", "system")
+    toggleThemeButton(systemBtn)
+    applySystemTheme()
+})
+
+themeButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    notifcationToggle(themeDropDown)
+    themeDropDown.classList.toggle("alertOn")
+})
+
+// Event listener for system theme changes
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (localStorage.getItem("theme-mode") === "system") { // Checks if theme mode is system
+        applySystemTheme() // Aplies system theme if needed
+    }
 })

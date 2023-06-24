@@ -18,16 +18,24 @@ nav {
     overflow: hidden;
     z-index: 10;
 
+    .divider {
+        position: relative;
+        border-radius: 1rem;
+        width: .2rem;
+        height: 1.7rem;
+        background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+    }
+
     .navigationLists {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 0.5vmax;
         margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
         transition: all 300ms ease;
 
         li {
             position: relative;
-
             .material-symbols-outlined {
                 font-size: 1.7rem;
                 transition: all .8s cubic-bezier(.19, 1, .22, 1);

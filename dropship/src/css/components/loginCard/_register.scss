@@ -15,7 +15,7 @@
         transition: 1000ms transform ease-in-out;
     }
 
-    .registerButton{
+    .registerButton {
         transition: 300ms all ease-in-out;
         transition: 700ms transform ease-in-out;
     }
@@ -25,6 +25,7 @@
         background-color: transparent;
         color: var(--priColor);
         transition: 300ms all ease-in-out;
+
         &:hover {
             transition: 300ms all ease-in-out;
             background-color: var(--priColor);
@@ -49,9 +50,10 @@
             flex-direction: row;
             user-select: none;
 
-            span{
-                pointer-events: all!important;
-                &:hover{
+            span {
+                pointer-events: all !important;
+
+                &:hover {
                     text-decoration: underline;
                 }
             }
@@ -92,7 +94,7 @@
                 }
 
                 &:not(:checked) {
-                    border-color: var(--accent)!important;
+                    border-color: var(--accent) !important;
                 }
 
                 &:hover {
@@ -107,32 +109,14 @@
             }
         }
     }
-    
-    .cancel{
-        position: absolute;
-        display: flex;
-        background-color: transparent;
-        justify-content: center;
-        align-items: center;
+
+    .cancel {
         top: 0.5rem;
         left: 0.5rem;
         visibility: collapse;
         border: none;
         opacity: 0;
-        svg {
-            fill: var(--accent);
-            border-radius: 0.5rem;
-            padding: 0.1rem;
-            outline: 0.2rem solid var(--accent);
-            width: 2.5rem;
-            height: 2rem;
-        }
-        &:hover{
-            svg{
-                fill: var(--priColor);
-                background-color: var(--accent);
-            }
-        }
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
     }
 }
 
@@ -141,29 +125,25 @@
     background-color: var(--tpPri);
     color: var(--secColor);
     backdrop-filter: blur(2rem);
-    // transition: 500ms all ease-in-out;
 
     .fields {
         display: block;
         opacity: 1;
         visibility: visible;
-        // transition: 500ms all ease-in-out;
 
         #agree {
             visibility: visible;
+
             &::after {
-                display: block!important;
-                border-color: var(--priColor)!important;
-            } 
+                display: block !important;
+                border-color: var(--priColor) !important;
+            }
         }
     }
 
-    .cancel{
+    .cancel {
         opacity: 1;
         visibility: visible;
-        &:hover {
-            background-color: transparent;
-        }
     }
 
     button {
@@ -173,9 +153,20 @@
         background-color: var(--priColor);
         color: var(--accent);
 
+        &:focus-visible {
+            background-color: var(--accent);
+            color: var(--priColor);
+        }
+
         &:hover {
             background-color: var(--accent);
             color: var(--priColor);
+
+        }
+
+        &:active {
+            color: var(--accent);
+            background-color: var(--priColor);
         }
     }
 
@@ -183,4 +174,3 @@
         color: var(--accent);
     }
 }
-

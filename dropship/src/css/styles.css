@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 :root {
   --priColor: rgb(243, 243, 243);
   --tpPri: rgba(255, 255, 255, .65);
@@ -137,14 +137,6 @@ header .headerGradient {
 }
 .headerBackgroundImage svg #polgThree {
   fill: var(--tertAccent);
-}
-
-.divider {
-  position: relative;
-  border-left: 0.2rem solid var(--accent);
-  height: 1.8rem;
-  border-radius: 1rem;
-  margin: 0 0.2vrem 0 0.2rem;
 }
 
 .material-symbols-outlined {
@@ -713,61 +705,6 @@ header .headerGradient {
   transform: translateY(0);
 }
 
-.cartNotification {
-  position: relative;
-  min-width: 10rem;
-  border-radius: 0.3vmax;
-  backdrop-filter: blur(2rem);
-  background: linear-gradient(to right, var(--paleAccentTwo), var(--secAccent));
-  color: black;
-  display: grid;
-  font-size: 1.1rem;
-  grid-template-rows: 0fr;
-  transition: 350ms all cubic-bezier(0.42, 0, 0.58, 1);
-  overflow: hidden;
-}
-.cartNotification ul {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.cartNotification ul :first-child {
-  margin-top: 0.2rem;
-}
-.cartNotification .notifCancel {
-  width: 90%;
-  background-color: var(--tpPri);
-  font-size: 1.1rem;
-  font-family: "Share Tech", sans-serif;
-  padding: 0.2vmax;
-  border-radius: 0.3vmax;
-  transition: 300ms all ease;
-  margin-block: 0.5rem;
-  color: var(--secColor);
-  border: 0.15rem solid var(--paleAccent);
-}
-.cartNotification .notifCancel:hover {
-  color: var(--accent);
-  background-color: var(--priColor);
-  transition: 300ms all ease;
-}
-.cartNotification .notifCancel:focus-visible {
-  border-color: var(--accent);
-  background-color: var(--priColor);
-  color: var(--accent);
-}
-.cartNotification .notifCancel:active {
-  border-color: var(--accent);
-  opacity: 0.6;
-}
-
-.alertOn {
-  grid-template-rows: 1fr;
-}
-
 nav {
   position: fixed;
   right: 1.5vmax;
@@ -784,9 +721,17 @@ nav {
   overflow: hidden;
   z-index: 10;
 }
+nav .divider {
+  position: relative;
+  border-radius: 1rem;
+  width: 0.2rem;
+  height: 1.7rem;
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+}
 nav .navigationLists {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 0.5vmax;
   margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
   transition: all 300ms ease;
@@ -1642,6 +1587,82 @@ main svg {
   backdrop-filter: blur(0.5rem);
   background-color: var(--backdropBackground);
 }
+.loginDropdown .closeLoginButton {
+  position: absolute;
+  z-index: 1;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--paleAccentTwo);
+  border-radius: 1rem;
+  border: 0.2rem solid var(--priColor);
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loginDropdown .closeLoginButton svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--priColor);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loginDropdown .closeLoginButton:focus-visible {
+  background-color: var(--priColor);
+  border-color: var(--accent);
+}
+.loginDropdown .closeLoginButton:focus-visible svg {
+  fill: var(--accent);
+}
+.loginDropdown .closeLoginButton:hover {
+  background-color: var(--priColor);
+  border-color: var(--accent);
+}
+.loginDropdown .closeLoginButton:hover svg {
+  fill: var(--accent);
+}
+.loginDropdown .closeLoginButton:active {
+  border-color: var(--paleAccentThree);
+}
+.loginDropdown .closeLoginButton:active svg {
+  fill: var(--paleAccentThree);
+}
+.loginDropdown .cancel, .loginDropdown .cancelFP {
+  position: absolute;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loginDropdown .cancel svg, .loginDropdown .cancelFP svg {
+  fill: var(--accent);
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+  outline: 0.2rem solid var(--accent);
+  width: 2.5rem;
+  height: 2rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loginDropdown .cancel:focus-visible, .loginDropdown .cancelFP:focus-visible {
+  background-color: transparent;
+}
+.loginDropdown .cancel:focus-visible svg, .loginDropdown .cancelFP:focus-visible svg {
+  fill: var(--priColor);
+  outline-color: var(--priColor);
+  background-color: var(--accent);
+}
+.loginDropdown .cancel:hover, .loginDropdown .cancelFP:hover {
+  background-color: transparent;
+}
+.loginDropdown .cancel:hover svg, .loginDropdown .cancelFP:hover svg {
+  fill: var(--priColor);
+  outline-color: var(--priColor);
+  background-color: var(--accent);
+}
+.loginDropdown .cancel:active svg, .loginDropdown .cancelFP:active svg {
+  background-color: var(--secAccent);
+}
 .loginDropdown form {
   display: flex;
   justify-content: center;
@@ -1723,7 +1744,6 @@ main svg {
 }
 .loginDropdown input:focus {
   border: 0.15rem solid var(--accent);
-  transition: 300ms all ease;
 }
 .loginDropdown input:focus ~ label {
   opacity: 1;
@@ -1969,28 +1989,12 @@ main svg {
   background-color: var(--accent);
 }
 .registerUi .cancel {
-  position: absolute;
-  display: flex;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
   top: 0.5rem;
   left: 0.5rem;
   visibility: collapse;
   border: none;
   opacity: 0;
-}
-.registerUi .cancel svg {
-  fill: var(--accent);
-  border-radius: 0.5rem;
-  padding: 0.1rem;
-  outline: 0.2rem solid var(--accent);
-  width: 2.5rem;
-  height: 2rem;
-}
-.registerUi .cancel:hover svg {
-  fill: var(--priColor);
-  background-color: var(--accent);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .regOn {
@@ -2015,9 +2019,6 @@ main svg {
   opacity: 1;
   visibility: visible;
 }
-.regOn .cancel:hover {
-  background-color: transparent;
-}
 .regOn button {
   position: relative;
   margin: 1rem;
@@ -2025,9 +2026,17 @@ main svg {
   background-color: var(--priColor);
   color: var(--accent);
 }
+.regOn button:focus-visible {
+  background-color: var(--accent);
+  color: var(--priColor);
+}
 .regOn button:hover {
   background-color: var(--accent);
   color: var(--priColor);
+}
+.regOn button:active {
+  color: var(--accent);
+  background-color: var(--priColor);
 }
 .regOn span {
   color: var(--accent);
@@ -2073,29 +2082,8 @@ main svg {
 }
 
 .cancelFP {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  background-color: transparent;
-  border: none;
-  transition: 350ms all ease-in-out;
-}
-.cancelFP svg {
-  fill: var(--accent);
-  border-radius: 0.5rem;
-  border-top-left-radius: 0.7rem;
-  border-top-right-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
-  border-bottom-right-radius: 0.7rem;
-  padding: 0.1rem;
-  outline: 0.2rem solid var(--accent);
-  width: 2.5rem;
-  height: 2rem;
-}
-.cancelFP:hover svg {
-  fill: var(--priColor);
-  transition: 350ms all ease-in-out;
-  background-color: var(--accent);
+  left: 1.5rem;
+  top: 1.5rem;
 }
 
 #products-div-one {
@@ -2167,4 +2155,141 @@ main svg {
 }
 #products-div-two div section h4 {
   text-align: center;
+}
+
+.productAddedNotification,
+.themeSelector {
+  position: relative;
+  min-width: 10rem;
+  border-radius: 0.3vmax;
+  display: grid;
+  font-size: 1.1rem;
+  grid-template-rows: 0fr;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+}
+.productAddedNotification ul,
+.themeSelector ul {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.productAddedNotification ul li,
+.themeSelector ul li {
+  opacity: 0;
+}
+
+.alertOn {
+  grid-template-rows: 1fr;
+}
+.alertOn ul {
+  padding: 0.5rem 0.3rem;
+}
+.alertOn ul li {
+  opacity: 1;
+}
+
+.productAddedNotification ul {
+  align-items: center;
+  justify-content: center;
+}
+.productAddedNotification ul button {
+  color: var(--priColor);
+  width: 90%;
+  padding: 0.2rem;
+  margin-block: 0.4rem 0.2rem;
+  position: relative;
+  align-items: center;
+  font-size: large;
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+}
+.productAddedNotification ul button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  z-index: -1;
+}
+.productAddedNotification ul button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.productAddedNotification ul button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.productAddedNotification ul button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.productAddedNotification ul button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
+.productAddedNotification ul button.makePurchase {
+  display: none;
+}
+.productAddedNotification ul button.proceedToCheckout {
+  display: block;
+}
+.productAddedNotification ul button.backToCart {
+  display: none;
+}
+
+.themeSelector ul li {
+  margin: 0.2rem;
+  border-radius: 0.5vmax;
+  border: 0.15rem solid var(--paleAccentThree);
+  overflow: hidden;
+}
+.themeSelector ul li a {
+  color: var(--secColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 0.3rem;
+}
+.themeSelector ul li a span {
+  margin-left: 0.5rem;
+}
+.themeSelector ul li a:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.themeSelector ul li a:hover span {
+  color: var(--accent);
+}
+.themeSelector ul li a:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.themeSelector ul li a:focus-visible span {
+  color: var(--accent);
+}
+.themeSelector ul li a:active {
+  border-color: var(--accent);
+  color: var(--secColor);
+}
+.themeSelector ul li a:active span {
+  color: var(--secColor);
+}
+.themeSelector ul li.selectedThemeMode {
+  pointer-events: none;
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  border-color: var(--priColor);
+}
+.themeSelector ul li.selectedThemeMode a {
+  color: var(--priColor);
+}
+.themeSelector ul li.selectedThemeMode a span {
+  color: var(--priColor);
 }/*# sourceMappingURL=styles.css.map */
