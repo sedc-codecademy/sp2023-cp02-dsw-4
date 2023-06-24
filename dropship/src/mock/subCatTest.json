@@ -1,0 +1,194 @@
+{
+    "technology": [
+        {
+            "id": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+            "title": "Personal Computers",
+            "description": "Get PCs, the latest components, PC accesories and everything else related to PCs.",
+            "products": [
+                "22a11570-fb04-4866-ab39-edf417e7b94b",
+                "1667664e-25f6-48cd-80c8-bec8a480e70a",
+                "e8a1f39a-91cc-4a4a-8370-140f870e3cbc",
+                "5e080519-afc4-4ad6-ad5e-822110c4a019",
+                "67450240-def8-486c-b5cd-87ffe7f5340a",
+                "c201c6f7-699c-4617-be74-a5b5ba9aa997",
+                "d3f02682-d6bf-41ef-9c0a-fe80bf8fbae6",
+                "dda6056e-58bf-404f-81c8-ccd06c9feab4",
+                "b44b054e-d18a-45a4-a315-39b9f2826b9d",
+                "c4a9663a-7687-4b2b-9af5-5dc4014374f3"
+            ],
+            "image": "../imgs/cat/tech/sub/pc.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
+            "title": "Smartphones",
+            "description": "Discover the latest smartphones from top brands like Apple, Samsung, and more.",
+            "products": [
+                "bb555e1d-3d60-444b-9512-eff11675a02b",
+                "05ff3218-30d8-4dec-ba74-9a95abac28c7",
+                "8bac7b4e-710d-48bd-aee5-e99044f7d941",
+                "99ea52a4-85cd-4362-96ca-1bc9402024f1",
+                "660e78fc-9bfb-4f27-a9b1-13b5a0b6559d",
+                "c1cad756-7fab-4a3a-bdd4-ad4b764f8b92",
+                "7ce47165-f9e2-43b6-8743-4b78b4b9607e",
+                "6544897e-f518-40ba-9745-c95ea41912c7",
+                "cfab08a1-6cde-4085-bd69-6113c928f0b0",
+                "e266f2b6-b40e-4ce0-96a0-1c3bb0af485f"
+            ],
+            "image": "../imgs/cat/tech/sub/phone.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
+            "title": "Office Electronics",
+            "description": "Get office electronics like printers, scanners, and projectors to help you run your business.",
+            "products": [
+                "20512450-3338-4601-a74f-0958aa76444e",
+                "44427aa3-5e24-4e0b-b5ea-82c6974846b7",
+                "f622519d-7bd4-4dfe-b316-b75ddf72e1f3",
+                "36391f42-375a-4299-90b1-a5fab3419832",
+                "447469cf-817b-4ec9-98de-736447b58871",
+                "1ff79b4b-369c-4110-a011-bfec6873f9ae",
+                "86a22be7-89c4-463d-a358-1d66a7df90fc",
+                "105f0af0-3fb3-4048-90af-8a6a75f2cfa4",
+                "51d35c88-459a-4e2e-a3e2-3f1c8a28af2f",
+                "ed5caf49-1f53-4915-8ed4-2f655fc02a5b"
+            ],
+            "image": "../imgs/cat/tech/sub/printer.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
+            "title": "Gaming Consoles & Accessories",
+            "description": "Find the latest gaming consoles and accessories from top brands like Playstation, Xbox, and Nintendo.",
+            "products": [
+                "dd307696-c13c-4a62-a640-0bde032fc1a5",
+                "4e841b8b-c743-448d-b5f0-e08440484bfb",
+                "0388d5ab-abaf-4030-b045-1e17eea542aa",
+                "172fd3d9-6370-4403-bd18-f595225b05a0",
+                "904a4375-78ba-41b2-8fc2-15c290e18e22",
+                "e781c6ae-d092-4bb8-be9e-f52849cbe9ab",
+                "6d783733-7f10-49c4-8891-196dda14a1cf",
+                "e545632f-ef94-4d64-8b57-e34434f801cd",
+                "c6cd98ac-aad0-4ad9-b58b-ecda423f2ab7",
+                "8ca31e22-c529-4b38-8b77-523cf3c21999"
+            ],
+            "image": "../imgs/cat/tech/sub/xbox.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "57dcef31-e8c0-429f-8dea-0089afcbf945",
+            "title": "HandHeld entertainment",
+            "description": "Tablets, and other stuff.",
+            "products": [
+                "22454c0c-a011-40dd-9793-25875e893929",
+                "10a2b4ea-8e8e-4930-a074-db3e723ea8f3",
+                "a89dc721-0333-4c49-809c-2c990eab77ca",
+                "efca0d94-c36d-4eec-a9b9-13d31038d67c",
+                "dbb1f3dc-1a95-44ca-b59a-bb09fcab73f3",
+                "658d4fc3-e99c-4918-93ea-7f705524a2dd",
+                "fed8a2b5-05b1-443e-a8c1-f2c9c1d53e38",
+                "a9866ac7-0ada-4e39-8e35-5bbb207e2a05",
+                "016d34f8-67d3-4438-a620-911cf967cca2",
+                "117ce5b1-1a2a-48ba-97d3-767218999882"
+            ],
+            "image": "../imgs/cat/tech/sub/switch.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
+            "title": "Audio & Video Equipment",
+            "description": "Shop for speakers, headphones, TVs, projectors, and other audio & video equipment.",
+            "products": [
+                "d9598be3-d111-43eb-ae63-3366e748fff8",
+                "66a02cf5-8013-4e00-b274-1a31d327860d",
+                "a4c513a5-4f9f-464c-9e9c-7755d68c65e0",
+                "e602d7df-b106-4dbc-aefc-010ba336a91c",
+                "e66ba3a8-7538-4f70-ab85-ab77eea810f1",
+                "75a7fd8e-5267-421f-b064-437b3350a6df",
+                "0f61a0ac-3000-4919-824c-07149ec07ba7",
+                "3963c579-a65b-46f6-b103-904573937530",
+                "568ee766-ee3a-4c5e-baa4-7206d699b1f3",
+                "ac1a7191-8f9c-477c-9454-6a8c1f9add61"
+            ],
+            "image": "../imgs/cat/tech/sub/audiovideo.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "1ba269cb-5d2b-4975-be75-0979930cb10e",
+            "title": "Wearable Technology",
+            "description": "Explore the latest wearable tech devices like smartwatches, fitness trackers, and more.",
+            "products": [
+                "ad66af8f-f72c-41ea-a027-f8e6ae6b9600",
+                "bebb2d60-6361-4589-b95b-7f958fbc82f3",
+                "e66fe696-03bb-4f70-a876-f7996d160509",
+                "b3d04b3d-971f-41ff-8261-98f1b27c3b2c",
+                "eb247a70-c988-4716-8341-514eaa5b4305",
+                "94d794b3-1f00-42f6-b855-6ae3e612f196",
+                "c5211973-9629-428b-b616-fd18dc63cbcb",
+                "13b3e93f-687f-4929-b424-172f0db4c2ea",
+                "8c267ca4-f7e7-48c4-a6e3-4539613587ce",
+                "8a1a92b6-8030-4562-96d6-5fd386a28a8e"
+            ],
+            "image": "../imgs/cat/tech/sub/smartwatch.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "58b31959-1232-453f-b631-6411be333ed3",
+            "title": "Virtual Reality",
+            "description": "Explore virtual reality technology and accessories to enhance your gaming and entertainment experiences.",
+            "products": [
+                "c7f7662b-4abd-4ff1-be2a-5536fb04f46d",
+                "0e9cf578-7644-4708-87c5-548447d2a3b8",
+                "675667ed-b14a-4f70-b681-5ce06039809c",
+                "05a4d4c0-d4c8-47d2-94d7-c9b7a69959c7",
+                "e4fc061a-bb0c-42f4-a2b8-d161a2797b06",
+                "8e4e17c0-a8eb-4535-aa35-ea8e8cc212a7",
+                "1b57015b-6fdf-4f56-b67d-e01ae9269407",
+                "391d2d71-c453-4855-9c7c-9451cd98be70",
+                "111060bd-c2f6-4059-863a-501d6dbeabb5",
+                "86bbe6c3-f4be-465c-9538-8dd620f9f486"
+            ],
+            "image": "../imgs/cat/tech/sub/vr-headset.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "50292d51-a80b-40e0-ab12-47e7557cedb8",
+            "title": "Cameras & Photography",
+            "description": "Shop for cameras, lenses, and other photography equipment for amateurs and professionals.",
+            "products": [
+                "8771f949-32b0-4bf9-b7fa-fd1ebd2c4310",
+                "6fddbad4-c7ad-4e2f-b1cb-3aadf68b5918",
+                "bcd60177-973c-4955-9032-14132c664732",
+                "9af0fe94-de57-46e6-acf6-3b65ed3b0bdf",
+                "2c5b908c-e853-4d18-bd2c-79ae11019e5f",
+                "8af2b8fe-5848-4973-b804-0b0b46f98933",
+                "00627762-dc62-4e7c-8b77-9f2ac687ea0e",
+                "83fc5312-f8ea-445a-b6e6-26463045d54b",
+                "32ac9cf6-67f0-4362-8065-4dc1880a305a",
+                "48db98cf-e7a0-44ee-be5a-d695e3af5a01"
+            ],
+            "image": "../imgs/cat/tech/sub/proffcamera.png",
+            "categoryTitle": "Technology"
+        },
+        {
+            "id": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
+            "title": "Accessories & Parts",
+            "description": "Find accessories and replacement parts for your electronics, including chargers, cables, and batteries.",
+            "products": [
+                "4a6d3028-6263-40a5-b99e-f57e7157c958",
+                "5cde0716-3522-4490-95db-bc00ca571046",
+                "63171163-73e4-4287-bddc-71a48be47c3e",
+                "55610a1a-d658-4be5-9d23-f75b2bb5f9e9",
+                "7323c3ab-ec3d-4701-8c72-fcbde0df44da",
+                "d40c5db7-6ca2-4b11-a523-78735fa6ed48",
+                "fc8c1f7a-ddb8-4fd7-a803-5b8014f2dbee",
+                "49623bf3-fb6c-4f74-a290-932fd7cac8b5",
+                "26814796-f54c-4532-8f00-1cf5e758050b",
+                "47fa5cf3-936c-4184-ba8f-7aeb7a589ce3"
+            ],
+            "image": "../imgs/cat/tech/sub/charger.png",
+            "categoryTitle": "Technology"
+        }
+    ]
+}

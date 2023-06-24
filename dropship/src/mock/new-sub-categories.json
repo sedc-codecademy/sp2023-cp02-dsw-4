@@ -16,7 +16,8 @@
                 "b44b054e-d18a-45a4-a315-39b9f2826b9d",
                 "c4a9663a-7687-4b2b-9af5-5dc4014374f3"
             ],
-            "image": "../imgs/cat/tech/sub/pc.png"
+            "image": "../imgs/cat/tech/sub/pc.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
@@ -34,7 +35,8 @@
                 "cfab08a1-6cde-4085-bd69-6113c928f0b0",
                 "e266f2b6-b40e-4ce0-96a0-1c3bb0af485f"
             ],
-            "image": "../imgs/cat/tech/sub/phone.png"
+            "image": "../imgs/cat/tech/sub/phone.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
@@ -52,7 +54,8 @@
                 "51d35c88-459a-4e2e-a3e2-3f1c8a28af2f",
                 "ed5caf49-1f53-4915-8ed4-2f655fc02a5b"
             ],
-            "image": "../imgs/cat/tech/sub/printer.png"
+            "image": "../imgs/cat/tech/sub/printer.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
@@ -70,7 +73,8 @@
                 "c6cd98ac-aad0-4ad9-b58b-ecda423f2ab7",
                 "8ca31e22-c529-4b38-8b77-523cf3c21999"
             ],
-            "image": "../imgs/cat/tech/sub/xbox.png"
+            "image": "../imgs/cat/tech/sub/xbox.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "57dcef31-e8c0-429f-8dea-0089afcbf945",
@@ -88,7 +92,8 @@
                 "016d34f8-67d3-4438-a620-911cf967cca2",
                 "117ce5b1-1a2a-48ba-97d3-767218999882"
             ],
-            "image": "../imgs/cat/tech/sub/switch.png"
+            "image": "../imgs/cat/tech/sub/switch.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
@@ -106,7 +111,8 @@
                 "568ee766-ee3a-4c5e-baa4-7206d699b1f3",
                 "ac1a7191-8f9c-477c-9454-6a8c1f9add61"
             ],
-            "image": "../imgs/cat/tech/sub/audiovideo.png"
+            "image": "../imgs/cat/tech/sub/audiovideo.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "1ba269cb-5d2b-4975-be75-0979930cb10e",
@@ -124,7 +130,8 @@
                 "8c267ca4-f7e7-48c4-a6e3-4539613587ce",
                 "8a1a92b6-8030-4562-96d6-5fd386a28a8e"
             ],
-            "image": "../imgs/cat/tech/sub/smartwatch.png"
+            "image": "../imgs/cat/tech/sub/smartwatch.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "58b31959-1232-453f-b631-6411be333ed3",
@@ -142,7 +149,8 @@
                 "111060bd-c2f6-4059-863a-501d6dbeabb5",
                 "86bbe6c3-f4be-465c-9538-8dd620f9f486"
             ],
-            "image": "../imgs/cat/tech/sub/vr-headset.png"
+            "image": "../imgs/cat/tech/sub/vr-headset.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "50292d51-a80b-40e0-ab12-47e7557cedb8",
@@ -160,7 +168,8 @@
                 "32ac9cf6-67f0-4362-8065-4dc1880a305a",
                 "48db98cf-e7a0-44ee-be5a-d695e3af5a01"
             ],
-            "image": "../imgs/cat/tech/sub/proffcamera.png"
+            "image": "../imgs/cat/tech/sub/proffcamera.png",
+            "categoryTitle": "Technology"
         },
         {
             "id": "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
@@ -178,7 +187,8 @@
                 "26814796-f54c-4532-8f00-1cf5e758050b",
                 "47fa5cf3-936c-4184-ba8f-7aeb7a589ce3"
             ],
-            "image": "../imgs/cat/tech/sub/charger.png"
+            "image": "../imgs/cat/tech/sub/charger.png",
+            "categoryTitle": "Technology"
         }
     ],
     "jewellery": [
@@ -198,7 +208,8 @@
                 "e143ad70-eded-4ced-9b18-234caef72575",
                 "a8dcfd53-f65f-4aa8-8d8a-d5687ed0b10f"
             ],
-            "image": "../imgs/cat/jewels/sub/necklase.png"
+            "image": "../imgs/cat/jewels/sub/necklase.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "4d183c44-1c80-4b8c-82a8-461bc19b2c1d",
@@ -216,7 +227,8 @@
                 "6d785d30-d4c4-4792-b3bf-bdd99266d6b5",
                 "0000cd1c-a6c5-4bbe-acd2-8409cf03ae2f"
             ],
-            "image": "../imgs/cat/jewels/sub/bracelet.png"
+            "image": "../imgs/cat/jewels/sub/bracelet.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "daf72d18-f4a3-4fb0-9156-2b5ac2ca15ce",
@@ -234,7 +246,8 @@
                 "941a947b-881d-4f86-971d-61ef4af19e85",
                 "4be48640-021f-4f4a-9f8f-a249008bb98a"
             ],
-            "image": "../imgs/cat/jewels/sub/earrings.png"
+            "image": "../imgs/cat/jewels/sub/earrings.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "c2e338cf-2e3b-443c-8a32-e915444b5b86",
@@ -252,7 +265,8 @@
                 "56e78a9d-7eda-43eb-aa02-4217dd32415c",
                 "3fe48ff1-6b93-49ed-b851-8e0209b92d0e"
             ],
-            "image": "../imgs/cat/jewels/sub/ring.png"
+            "image": "../imgs/cat/jewels/sub/ring.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "779092fe-4730-453f-a24a-e9075c4468a1",
@@ -270,7 +284,8 @@
                 "92e0b70a-93ed-40af-9f75-69bd8e66000f",
                 "533adb64-c822-458d-96f6-e815ff38faa7"
             ],
-            "image": "../imgs/cat/jewels/sub/anklet.png"
+            "image": "../imgs/cat/jewels/sub/anklet.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "9a2faf53-f6f6-413e-b4cd-80263acf7461",
@@ -288,7 +303,8 @@
                 "27595970-7e6c-4138-8449-5ecd53591255",
                 "bb5470a6-4b16-402e-a873-ce2740230818"
             ],
-            "image": "../imgs/cat/jewels/sub/brooch.png"
+            "image": "../imgs/cat/jewels/sub/brooch.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "abe4b89f-0672-4cc7-95a5-a1d73e1f3fa3",
@@ -306,7 +322,8 @@
                 "c78709aa-8cf2-4276-8a1a-8e5c7a219147",
                 "8afc8a34-55ba-4458-8811-acdbc22d6f99"
             ],
-            "image": "../imgs/cat/jewels/sub/charm.png"
+            "image": "../imgs/cat/jewels/sub/charm.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "881406f9-f38f-46b9-841a-f7b44f309879",
@@ -324,7 +341,8 @@
                 "aebd9da0-26dd-4f3b-8239-8ffe4a73022d",
                 "f711f181-31ae-4cf9-b7b2-3122ca48203a"
             ],
-            "image": "../imgs/cat/jewels/sub/jewlsets.png"
+            "image": "../imgs/cat/jewels/sub/jewlsets.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
@@ -342,7 +360,8 @@
                 "68d46bd2-56db-434c-b2a3-8fb107378208",
                 "b17d3bd7-dca4-4c6e-bbb1-aa1ba5fef316"
             ],
-            "image": "../imgs/cat/jewels/sub/bodyjewl.png"
+            "image": "../imgs/cat/jewels/sub/bodyjewl.png",
+            "categoryTitle": "Jewellery"
         },
         {
             "id": "f365a269-fd48-4b0e-bc6e-456723b51192",
@@ -360,7 +379,8 @@
                 "416fb907-7e7f-4813-8c40-3699477c0e24",
                 "b6cad357-d567-4fc5-a2a6-71eedf420aa8"
             ],
-            "image": "../imgs/cat/jewels/sub/jewlwatch.png"
+            "image": "../imgs/cat/jewels/sub/jewlwatch.png",
+            "categoryTitle": "Jewellery"
         }
     ],
     "menswear": [
@@ -380,7 +400,8 @@
                 "91088e44-4edf-4fb0-ae16-60e3ab2da122",
                 "31ba1718-aadb-49d2-80c2-6d26155ac5f8"
             ],
-            "image": "../imgs/cat/mWear/sub/stripe-shirt.png"
+            "image": "../imgs/cat/mWear/sub/stripe-shirt.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "c05c19eb-f67b-48f3-b4ca-922326df53ff",
@@ -398,7 +419,8 @@
                 "670f31ec-56f1-4e22-a2fd-b8f1c6ecba3d",
                 "15a81388-95eb-41a2-b0b9-aefa2368b68f"
             ],
-            "image": "../imgs/cat/mWear/sub/mboots.png"
+            "image": "../imgs/cat/mWear/sub/mboots.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "fc160538-ed47-4b02-8ff9-32addec8b3a6",
@@ -416,7 +438,8 @@
                 "f4f17274-93d9-4ea6-b31a-16b9539fa833",
                 "01b35b0e-53d7-4f14-a1b7-a831e431c6e0"
             ],
-            "image": "../imgs/cat/mWear/sub/mpants.png"
+            "image": "../imgs/cat/mWear/sub/mpants.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "e1adeac0-4152-4a32-a789-ca9a2c99921b",
@@ -434,7 +457,8 @@
                 "a58f7a22-565b-4d33-9eb7-1f10d4223d32",
                 "287b4888-dea6-4237-9ffd-83b85c287453"
             ],
-            "image": "../imgs/cat/mWear/sub/cap.png"
+            "image": "../imgs/cat/mWear/sub/cap.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "2ec55d9f-c9dd-49c8-af86-10b7fd4f7dd3",
@@ -452,7 +476,8 @@
                 "f0e50f19-1401-4711-9490-a6357586ba36",
                 "8980f214-45d5-49f3-8272-a03e6eb4da21"
             ],
-            "image": "../imgs/cat/mWear/sub/suit.png"
+            "image": "../imgs/cat/mWear/sub/suit.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "e72f789f-3032-43b1-bb90-1faacbaa6c9c",
@@ -470,7 +495,8 @@
                 "48d81b6e-0d10-401a-9440-f0f148aee499",
                 "be123bf6-7339-405b-b39c-71d4833f8dba"
             ],
-            "image": "../imgs/cat/mWear/sub/mjeans.png"
+            "image": "../imgs/cat/mWear/sub/mjeans.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "24b62ef4-3d30-4f01-b621-1a849edc5f5e",
@@ -488,7 +514,8 @@
                 "9030de6e-2e2b-4d84-83f5-084e1e9d2713",
                 "676fef43-f437-45f6-a96e-5c79f2d4a734"
             ],
-            "image": "../imgs/cat/mWear/sub/sweater.png"
+            "image": "../imgs/cat/mWear/sub/sweater.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "eac02249-e78d-4f89-b949-7b2bacdbfd2a",
@@ -506,7 +533,8 @@
                 "9ae49ef7-599c-4c2b-b523-30010ce4f6b8",
                 "02dfda9f-83bf-49c7-b286-de1a40a21ac7"
             ],
-            "image": "../imgs/cat/mWear/sub/leatherjacket.png"
+            "image": "../imgs/cat/mWear/sub/leatherjacket.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "c886c2eb-fc04-4d2a-8c9e-1cb71bbac941",
@@ -524,7 +552,8 @@
                 "1900d87d-8abf-4607-b041-a829025efb6e",
                 "992cd050-7e67-483c-bf63-970858f67d37"
             ],
-            "image": "../imgs/cat/mWear/sub/dress-shirt.png"
+            "image": "../imgs/cat/mWear/sub/dress-shirt.png",
+            "categoryTitle": "Men's Clothing"
         },
         {
             "id": "af8cd7b9-683a-48d9-8be4-25eb2237ee39",
@@ -542,7 +571,8 @@
                 "267ea20b-c082-4f27-b01a-eb306bd29239",
                 "c19aeee6-f79e-414a-b470-4b160df69d06"
             ],
-            "image": "../imgs/cat/mWear/sub/hoodies.png"
+            "image": "../imgs/cat/mWear/sub/hoodies.png",
+            "categoryTitle": "Men's Clothing"
         }
     ],
     "womenswear": [
@@ -564,7 +594,8 @@
                 "72c9d991-3699-4a48-9d4c-de02864ee1ed",
                 "7c01018a-bcfa-40f6-83da-1f292f1d39af"
             ],
-            "image": "../imgs/cat/fWear/sub/dress.png"
+            "image": "../imgs/cat/fWear/sub/dress.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "2986c60e-1876-4c73-84be-95855807a23e",
@@ -582,7 +613,8 @@
                 "952f79bf-c0cc-44ce-aab2-c635a66e4764",
                 "49412e40-5d36-466c-bcea-533f4b5ef3c2"
             ],
-            "image": "../imgs/cat/fWear/sub/wBoots.png"
+            "image": "../imgs/cat/fWear/sub/wBoots.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "28bbdaaa-7997-4cf5-9336-0da1b3fc8026",
@@ -600,7 +632,8 @@
                 "6a481f74-8240-4890-8291-fe9fea5dbf15",
                 "076f6287-9872-4ff2-bdb4-4c162a3d7b07"
             ],
-            "image": "../imgs/cat/fWear/sub/purse.png"
+            "image": "../imgs/cat/fWear/sub/purse.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "56feed6d-93a3-4ff1-a28b-bba8337a2ade",
@@ -618,7 +651,8 @@
                 "27ca970b-e947-47e7-80f4-267ae9cd8623",
                 "79c70403-4b55-4545-a689-6c01e591d943"
             ],
-            "image": "../imgs/cat/fWear/sub/wJeans.png"
+            "image": "../imgs/cat/fWear/sub/wJeans.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "68fda0af-4632-4bf5-94bc-cb18f8aef5f9",
@@ -636,7 +670,8 @@
                 "61376b5b-325e-48c0-8b47-fcabe7d3298b",
                 "a3786bf6-c263-46f9-8844-6b61bfeea1c3"
             ],
-            "image": "../imgs/cat/fWear/sub/wSweater.png"
+            "image": "../imgs/cat/fWear/sub/wSweater.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "4c9db19d-87b1-4380-846c-62547aeeb2de",
@@ -657,7 +692,8 @@
                 "e3edcf7e-ad0f-47a9-8ceb-9fe5fd31902c",
                 "50cef0c5-d3a0-450a-a390-cc5d5dfdf252"
             ],
-            "image": "../imgs/cat/fWear/sub/wTops.png"
+            "image": "../imgs/cat/fWear/sub/wTops.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "a39cf50b-b311-468e-8e43-eefb0ef53fe2",
@@ -678,7 +714,8 @@
                 "5a01136e-52e7-4195-867a-4a757360517f",
                 "8049a784-3b6e-456c-ad1b-9be1006c4e93"
             ],
-            "image": "../imgs/cat/fWear/sub/skirt.png"
+            "image": "../imgs/cat/fWear/sub/skirt.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "f641cfb0-5506-46ee-bb60-0c8150df3585",
@@ -700,7 +737,8 @@
                 "5f2bdd1c-ea9f-41dd-8666-e0cd54dbd38e",
                 "03baf48a-6f40-4eed-87b4-247e7ad36d73"
             ],
-            "image": "../imgs/cat/fWear/sub/wJacket.png"
+            "image": "../imgs/cat/fWear/sub/wJacket.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "e666d9e6-3f05-410e-b93d-457a71cf0123",
@@ -718,7 +756,8 @@
                 "a11d6df8-afc2-4199-9f21-c920b837439b",
                 "2787fad6-8be9-43eb-94db-d52017d73bc7"
             ],
-            "image": "../imgs/cat/fWear/sub/activewear.png"
+            "image": "../imgs/cat/fWear/sub/activewear.png",
+            "categoryTitle": "Women's Clothing"
         },
         {
             "id": "8f1d8954-e266-49a4-a7a5-2ac1f8620aeb",
@@ -736,7 +775,8 @@
                 "8ec55f91-dd46-40ee-8de8-a977ac00108e",
                 "8e58feec-89e2-4185-a826-2090a2d36910"
             ],
-            "image": "../imgs/cat/fWear/sub/lingerie.png"
+            "image": "../imgs/cat/fWear/sub/lingerie.png",
+            "categoryTitle": "Women's Clothing"
         }
     ],
     "books": [
@@ -756,7 +796,8 @@
                 "e903b7e0-a6c8-4add-9c2e-e14f535c13bc",
                 "3113cb3a-723c-4cf7-b2fb-d44bdb2bcf05"
             ],
-            "image": "../imgs/cat/books/sub/romancebooks.png"
+            "image": "../imgs/cat/books/sub/romancebooks.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "b3d491d1-b11f-4e2c-9ec5-6703dabfd0d4",
@@ -777,7 +818,8 @@
                 "c1702c44-638d-4e84-ab85-4b4b71686c18",
                 "cd6ee7b6-e32c-4c61-9152-8c1e5637fd17"
             ],
-            "image": "../imgs/cat/books/sub/childrensbook.png"
+            "image": "../imgs/cat/books/sub/childrensbook.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "76ff71a3-1034-48a0-beb8-563b69adf1fe",
@@ -795,7 +837,8 @@
                 "c854d94a-a4fc-4929-bdd0-ac8ce7ef383b",
                 "e1473f7d-aa43-4ea4-9ae3-772e4ee1bd4f"
             ],
-            "image": "../imgs/cat/books/sub/sciencefiction.png"
+            "image": "../imgs/cat/books/sub/sciencefiction.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "aae8dd04-d30a-4853-bcee-345e39ab2b66",
@@ -813,7 +856,8 @@
                 "b8e25430-c436-434b-bf64-4ee2d2821852",
                 "ca0be071-a041-49cf-ab5c-90d2b96b1df7"
             ],
-            "image": "../imgs/cat/books/sub/fantasybooks.png"
+            "image": "../imgs/cat/books/sub/fantasybooks.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "bcb5431f-92c8-4eb1-8417-8290c58f7723",
@@ -831,7 +875,8 @@
                 "3437dc27-b779-420e-83b0-0a3f7511eb73",
                 "7b6d2494-282e-4db0-be02-7aca434516f0"
             ],
-            "image": "../imgs/cat/books/sub/cookbooks.png"
+            "image": "../imgs/cat/books/sub/cookbooks.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "616e4f1e-546b-4e7c-bc1b-838d71efaaf4",
@@ -849,7 +894,8 @@
                 "c376329f-994a-41da-a7cb-89f4dd5fcce8",
                 "e55c7e16-aa63-4825-87c9-5ef2dd118b42"
             ],
-            "image": "../imgs/cat/books/sub/biographybook.png"
+            "image": "../imgs/cat/books/sub/biographybook.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "d25127a3-79f8-4b06-b45e-334a7eb373d0",
@@ -867,7 +913,8 @@
                 "8d8fb0c3-55fc-438f-b08d-f8d92f4717c2",
                 "960fdefc-fbac-492a-9b44-9a332b08ecdf"
             ],
-            "image": "../imgs/cat/books/sub/historybooks.png"
+            "image": "../imgs/cat/books/sub/historybooks.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "92053a8b-a0ad-47f5-857c-30d3362781db",
@@ -885,7 +932,8 @@
                 "838c5ac4-eda6-4cff-abf3-3a01a724e0a2",
                 "91772c90-0f49-47c0-9b0d-086892fb9968"
             ],
-            "image": "../imgs/cat/books/sub/travelbook.png"
+            "image": "../imgs/cat/books/sub/travelbook.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "36a86b48-0d4c-423d-bc74-3fc176b3fe4c",
@@ -903,7 +951,8 @@
                 "946626bd-3d7c-46d9-9212-b568a0e76712",
                 "b715857c-bc24-471f-80df-4ba67659c3f2"
             ],
-            "image": "../imgs/cat/books/sub/selfhelpbook.png"
+            "image": "../imgs/cat/books/sub/selfhelpbook.png",
+            "categoryTitle": "Books"
         },
         {
             "id": "2e189116-a7a3-41d0-897e-e68744e8ec82",
@@ -921,7 +970,8 @@
                 "107b834e-5394-44df-a05c-ac3090f917a1",
                 "90bf29cd-01ee-4d6b-93c1-abae9145d78f"
             ],
-            "image": "../imgs/cat/books/sub/visualartbook.png"
+            "image": "../imgs/cat/books/sub/visualartbook.png",
+            "categoryTitle": "Books"
         }
     ],
     "kidsaccessories": [
@@ -941,7 +991,8 @@
                 "ee209ae3-418d-4dc7-801d-e1b8b82c4470",
                 "836066e1-f5c5-49e7-8c8f-d3cd086b1fc2"
             ],
-            "image": "../imgs/cat/kAndA/sub/babycare.png"
+            "image": "../imgs/cat/kAndA/sub/babycare.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "159a8835-fb4a-43a0-8058-f41bcfe26475",
@@ -959,7 +1010,8 @@
                 "1b4979e9-ae1d-4ca0-8fb2-46abfbc8e9d6",
                 "14051454-b34a-4d66-94dc-be9978bf8617"
             ],
-            "image": "../imgs/cat/kAndA/sub/babyfood.png"
+            "image": "../imgs/cat/kAndA/sub/babyfood.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "3bbdaf55-e219-4a12-9ef0-78be6c140274",
@@ -977,7 +1029,8 @@
                 "a0e3118d-4c71-4c5a-987f-67947b7708f3",
                 "eeb7a2f1-807d-4c0f-ab9a-378cb96e255f"
             ],
-            "image": "../imgs/cat/kAndA/sub/kidsclothes.png"
+            "image": "../imgs/cat/kAndA/sub/kidsclothes.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "3892c27d-945a-48d4-8bab-474d091b463a",
@@ -995,7 +1048,8 @@
                 "ac9fd99d-6794-41bb-9271-53d57e42d18b",
                 "a3117b5f-4b7c-488c-be7f-175663f999a9"
             ],
-            "image": "../imgs/cat/kAndA/sub/toysandgames.png"
+            "image": "../imgs/cat/kAndA/sub/toysandgames.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "6b7f3c6e-a35d-4bd9-8ddd-fca926f86e13",
@@ -1013,7 +1067,8 @@
                 "132608cf-6eb0-45b2-ab5e-0b7cf6085f7f",
                 "a524f8ba-aa7c-4a4b-b3aa-a9483bafdf17"
             ],
-            "image": "../imgs/cat/kAndA/sub/doll.png"
+            "image": "../imgs/cat/kAndA/sub/doll.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "679162a2-572c-4ae4-ac3f-704f93806462",
@@ -1031,7 +1086,8 @@
                 "5def5c52-29c0-43c1-a815-337913988280",
                 "249431d9-ac08-4b84-870d-5bd57cc28cff"
             ],
-            "image": "../imgs/cat/kAndA/sub/childcarseat.png"
+            "image": "../imgs/cat/kAndA/sub/childcarseat.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "e6e020ac-bb0b-4300-abf4-1a410b995baa",
@@ -1049,7 +1105,8 @@
                 "9fcd0840-c066-48f0-9145-13f653e10b42",
                 "028d0ac3-43f4-4850-868a-c445463d3510"
             ],
-            "image": "../imgs/cat/kAndA/sub/boyclothes.png"
+            "image": "../imgs/cat/kAndA/sub/boyclothes.png",
+            "categoryTitle": "Kids & Accessories"
         },
         {
             "id": "67695ff6-13cd-4a1e-b857-02553e1d5b00",
@@ -1067,7 +1124,8 @@
                 "37108a49-34d7-4549-86ac-48289966c79a",
                 "5a409b07-8d88-4e25-a4ca-c4db71398282"
             ],
-            "image": "../imgs/cat/kAndA/sub/girlsclothes.png"
+            "image": "../imgs/cat/kAndA/sub/girlsclothes.png",
+            "categoryTitle": "Kids & Accessories"
         }
     ],
     "beauty": [
@@ -1087,7 +1145,8 @@
                 "4f725d48-382f-4913-9d24-04ad7c0e3fda",
                 "9b051acb-783d-4611-9ec0-05a73c597c5d"
             ],
-            "image": "../imgs/cat/beauty/sub/makeup.png"
+            "image": "../imgs/cat/beauty/sub/makeup.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
@@ -1105,7 +1164,8 @@
                 "b6220a60-efd5-4398-85d9-34698f5d906d",
                 "76ac86fc-481d-4ad3-8d6f-040bf1e9503f"
             ],
-            "image": "../imgs/cat/beauty/sub/skincare.png"
+            "image": "../imgs/cat/beauty/sub/skincare.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "f01b6cc6-1917-40ff-9344-184e978a68d8",
@@ -1123,7 +1183,8 @@
                 "00e5c0da-9c66-47a0-9c25-87852b92b37a",
                 "48d4de5e-2eab-49df-8a01-02a48ccfbcc9"
             ],
-            "image": "../imgs/cat/beauty/sub/haircare.png"
+            "image": "../imgs/cat/beauty/sub/haircare.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "8d12a370-ad82-4c33-a99a-006b040abbe2",
@@ -1141,7 +1202,8 @@
                 "8e00770e-c9d8-45fa-95f7-0090320e592c",
                 "2dd05b93-2f7c-4f62-af3c-42926a28f5a2"
             ],
-            "image": "../imgs/cat/beauty/sub/fragrance.png"
+            "image": "../imgs/cat/beauty/sub/fragrance.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "c8e24060-a3cc-4909-a295-a20490698732",
@@ -1159,7 +1221,8 @@
                 "f4ad94c5-388e-44d7-bd83-3921dd26713f",
                 "fbec6d48-fec0-4b8a-b771-1770f7c06f9b"
             ],
-            "image": "../imgs/cat/beauty/sub/bathandbody.png"
+            "image": "../imgs/cat/beauty/sub/bathandbody.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "67447359-bb55-4510-a696-06207f11625b",
@@ -1177,7 +1240,8 @@
                 "da6ca593-047d-46bf-a859-432ae16fa98b",
                 "c4138e2f-2f22-4827-aca7-cbcfe160a29f"
             ],
-            "image": "../imgs/cat/beauty/sub/mensgroom.png"
+            "image": "../imgs/cat/beauty/sub/mensgroom.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "29a045e0-76cd-4fa8-9dd1-12a72fbac60b",
@@ -1195,7 +1259,8 @@
                 "c71d3903-4d42-4e5e-b9bb-8328c4bfbcd5",
                 "cecc5082-6cd5-4024-9525-a010e9717a18"
             ],
-            "image": "../imgs/cat/beauty/sub/beautytools.png"
+            "image": "../imgs/cat/beauty/sub/beautytools.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
@@ -1213,7 +1278,8 @@
                 "1836b7cf-6a9f-40b2-a54e-2d40ee023126",
                 "c2979f33-0c6e-4ab3-923c-bb3423791fdc"
             ],
-            "image": "../imgs/cat/beauty/sub/personalcare.png"
+            "image": "../imgs/cat/beauty/sub/personalcare.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
@@ -1231,7 +1297,8 @@
                 "c698b541-54df-48fa-bd7a-47ca8892709f",
                 "225792cf-3089-4d22-bd5d-15ae384bc6f0"
             ],
-            "image": "../imgs/cat/beauty/sub/suncare.png"
+            "image": "../imgs/cat/beauty/sub/suncare.png",
+            "categoryTitle": "Beauty"
         },
         {
             "id": "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
@@ -1249,7 +1316,8 @@
                 "3a16408a-ffee-4bc8-a910-e45aaf798324",
                 "e2235252-30ad-49ba-82b9-b8e25ad8f244"
             ],
-            "image": "../imgs/cat/beauty/sub/wellness.png"
+            "image": "../imgs/cat/beauty/sub/wellness.png",
+            "categoryTitle": "Beauty"
         }
     ],
     "autoaccessories": [
@@ -1269,7 +1337,8 @@
                 "3a892cb6-a3c0-45cc-b38e-cc827d6ced33",
                 "8a5341d6-ba3f-4090-8b4b-49bd422c53e0"
             ],
-            "image": "../imgs/cat/auto/sub/carcover.png"
+            "image": "../imgs/cat/auto/sub/carcover.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "10884d4e-343f-43f8-9094-2c2e12f072ef",
@@ -1287,7 +1356,8 @@
                 "af224cf1-d6ac-4dc4-82b0-1190cc5d0238",
                 "3e1b097f-4aea-422e-ae4d-e1d66c7804ba"
             ],
-            "image": "../imgs/cat/auto/sub/carmat.png"
+            "image": "../imgs/cat/auto/sub/carmat.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "ba523e6e-32cb-43a5-be44-734bd769aaa2",
@@ -1305,7 +1375,8 @@
                 "0e69adc3-4dff-4988-864e-6876188a4301",
                 "6ffe533c-c2c6-4889-9325-acdfdd0d5e37"
             ],
-            "image": "../imgs/cat/auto/sub/seatcover.png"
+            "image": "../imgs/cat/auto/sub/seatcover.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
@@ -1323,7 +1394,8 @@
                 "7c09df8a-10ae-4dde-9088-af24d8ea26fa",
                 "f8561800-68b8-4c09-8b98-72adca380b90"
             ],
-            "image": "../imgs/cat/auto/sub/carstorage.png"
+            "image": "../imgs/cat/auto/sub/carstorage.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "dcc14cf4-623e-46a5-b993-06722b09a093",
@@ -1341,7 +1413,8 @@
                 "388a1ce8-8fc4-402c-8ddc-031ae3247dee",
                 "53402362-552c-4486-adb7-7779788e77b6"
             ],
-            "image": "../imgs/cat/auto/sub/carphonemount.png"
+            "image": "../imgs/cat/auto/sub/carphonemount.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
@@ -1359,7 +1432,8 @@
                 "0c520f02-89a9-45be-8498-462a95090002",
                 "0aa2a650-cc1a-4a04-8021-ac5d0a88619f"
             ],
-            "image": "../imgs/cat/auto/sub/carcharger.png"
+            "image": "../imgs/cat/auto/sub/carcharger.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
@@ -1377,7 +1451,8 @@
                 "8266ad4c-d6ea-462b-9be9-540b7163f842",
                 "2fada069-31df-4399-b1c3-985c2583de90"
             ],
-            "image": "../imgs/cat/auto/sub/cleaningkit.png"
+            "image": "../imgs/cat/auto/sub/cleaningkit.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "d821754f-9e4d-4758-b162-52f0fee2d7f9",
@@ -1395,7 +1470,8 @@
                 "219875ac-3356-4374-981d-fb929e1ec1c9",
                 "4cf69850-81ae-4925-85aa-74bd08b1da30"
             ],
-            "image": "../imgs/cat/auto/sub/airfreshener.png"
+            "image": "../imgs/cat/auto/sub/airfreshener.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
@@ -1413,7 +1489,8 @@
                 "da1ec4f1-15ee-46de-a755-1620b2c99bc1",
                 "753e75a0-80a7-4771-8822-4200ba9af752"
             ],
-            "image": "../imgs/cat/auto/sub/carlight.png"
+            "image": "../imgs/cat/auto/sub/carlight.png",
+            "categoryTitle": "Automobile Accessories"
         },
         {
             "id": "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
@@ -1431,7 +1508,8 @@
                 "f3030b7a-7be8-4db1-9053-f40255d4459d",
                 "6a845ac0-ad39-4962-be36-38afe0cf28fb"
             ],
-            "image": "../imgs/cat/auto/sub/carspoiler.png"
+            "image": "../imgs/cat/auto/sub/carspoiler.png",
+            "categoryTitle": "Automobile Accessories"
         }
     ],
     "sports": [
@@ -1451,7 +1529,8 @@
                 "f2ca60df-a1ef-45fb-a93b-3f0c81b60177",
                 "62db5a1e-c80f-4b74-9efc-c51cb59bb450"
             ],
-            "image": "../imgs/cat/sports/sub/athleticapparel.png"
+            "image": "../imgs/cat/sports/sub/athleticapparel.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "a201ef9c-3206-4449-8eab-86ed6e2220a9",
@@ -1469,7 +1548,8 @@
                 "92829252-7951-4807-9f6b-b8cf4f78fb1d",
                 "dcae76f9-d7ce-4517-922f-08e28cf98f41"
             ],
-            "image": "../imgs/cat/sports/sub/waterbottle.png"
+            "image": "../imgs/cat/sports/sub/waterbottle.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "2fcef4d6-0f0a-490b-9b12-57ad0eb0bc9a",
@@ -1487,7 +1567,8 @@
                 "5d1d98aa-c985-4632-9e25-74c06ba970a0",
                 "97c4561c-62f3-4add-b43b-b5da34899b98"
             ],
-            "image": "../imgs/cat/sports/sub/gearsport.png"
+            "image": "../imgs/cat/sports/sub/gearsport.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "24ffe98a-3970-4226-9895-bc0267f73cef",
@@ -1505,7 +1586,8 @@
                 "91ba62c2-cb39-4867-b80a-aed51a3a46ef",
                 "e4ed489a-2eee-4bca-b3bb-fe2be6788d78"
             ],
-            "image": "../imgs/cat/sports/sub/campinggear.png"
+            "image": "../imgs/cat/sports/sub/campinggear.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "8cec5cb9-b7ac-480d-9c60-899307478643",
@@ -1523,7 +1605,8 @@
                 "6128cf6f-fc40-4d93-afd2-760e6b3afaa7",
                 "d160dabd-4f4c-4af8-b09b-a00b366e68cb"
             ],
-            "image": "../imgs/cat/sports/sub/fitnessgear.png"
+            "image": "../imgs/cat/sports/sub/fitnessgear.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "7407db30-6510-4b5e-8e1e-0e8e72e78f2f",
@@ -1541,7 +1624,8 @@
                 "4c01a660-c193-4faf-8363-74131d773efc",
                 "6331d8fd-ce6a-47e0-afda-b32397f6e92c"
             ],
-            "image": "../imgs/cat/sports/sub/bicycle.png"
+            "image": "../imgs/cat/sports/sub/bicycle.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "b29fd5c9-ea24-4d83-bf97-fc355f8c672c",
@@ -1559,7 +1643,8 @@
                 "136d8449-f0b3-4483-8ca0-2aa70f911438",
                 "da6373e2-1876-4bfa-ad7f-7886def3fdbb"
             ],
-            "image": "../imgs/cat/sports/sub/scooter.png"
+            "image": "../imgs/cat/sports/sub/scooter.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "d3022cd3-e081-41f5-a7a9-06375898811e",
@@ -1577,7 +1662,8 @@
                 "81c769bd-5139-4503-8da2-dc91fe888c47",
                 "4ad24d88-5101-47d7-be08-45a0505922bd"
             ],
-            "image": "../imgs/cat/sports/sub/watergear.png"
+            "image": "../imgs/cat/sports/sub/watergear.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "413916b7-99d7-4d46-bd9b-86169ca97373",
@@ -1595,7 +1681,8 @@
                 "6b10bcf6-d996-4330-b3a5-35d0ad7b37f2",
                 "0c509088-bd99-472d-a5e1-28e77579b919"
             ],
-            "image": "../imgs/cat/sports/sub/golfgear.png"
+            "image": "../imgs/cat/sports/sub/golfgear.png",
+            "categoryTitle": "Sports"
         },
         {
             "id": "d9c023b9-ead8-4a2c-8acb-68ee100831d3",
@@ -1613,7 +1700,8 @@
                 "d09a48bf-6c51-4b43-a606-28772e33fc5f",
                 "86f0ae70-d10a-460d-9b3b-acfb552ef0e3"
             ],
-            "image": "../imgs/cat/sports/sub/wintergear.png"
+            "image": "../imgs/cat/sports/sub/wintergear.png",
+            "categoryTitle": "Sports"
         }
     ],
     "homeandgarden": [
@@ -1633,7 +1721,8 @@
                 "bdceb30a-69b6-49ad-b86b-2d96e31009f2",
                 "21d32dfa-d3f6-41b4-b1f8-d7f2c51468f2"
             ],
-            "image": "../imgs/cat/hAndG/sub/furniture.png"
+            "image": "../imgs/cat/hAndG/sub/furniture.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "21010f6a-2891-4fc9-969f-4886c993e95c",
@@ -1651,7 +1740,8 @@
                 "9ecb5812-6c3c-41ad-86f9-3fc57bbcd3f5",
                 "e371a1a3-e89e-4a15-a5dc-485dc74c332a"
             ],
-            "image": "../imgs/cat/hAndG/sub/cookware.png"
+            "image": "../imgs/cat/hAndG/sub/cookware.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "86f9eabb-c453-4c95-bef2-e7538df76294",
@@ -1669,7 +1759,8 @@
                 "42407185-4f1b-4fbf-95e9-f5db3fa357f8",
                 "09cdf76b-e848-4294-942e-66555569a5c9"
             ],
-            "image": "../imgs/cat/hAndG/sub/homedecor.png"
+            "image": "../imgs/cat/hAndG/sub/homedecor.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
@@ -1687,7 +1778,8 @@
                 "e0fd8c3d-cabf-4c9b-adec-e74d74f15422",
                 "8293d34e-571c-4209-92e0-305234e98a9a"
             ],
-            "image": "../imgs/cat/hAndG/sub/gardening.png"
+            "image": "../imgs/cat/hAndG/sub/gardening.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
@@ -1705,7 +1797,8 @@
                 "b5b384a3-229b-4c59-b923-680a8decaa29",
                 "3ce23647-ee99-47fd-b1f7-e25070cff382"
             ],
-            "image": "../imgs/cat/hAndG/sub/petsupplies.png"
+            "image": "../imgs/cat/hAndG/sub/petsupplies.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
@@ -1723,7 +1816,8 @@
                 "e8b74a08-d61d-4508-8593-c4bdfd17cbe5",
                 "81b6e45a-0f3c-4125-9926-c4d1c74736dd"
             ],
-            "image": "../imgs/cat/hAndG/sub/homeimprove.png"
+            "image": "../imgs/cat/hAndG/sub/homeimprove.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
@@ -1741,7 +1835,8 @@
                 "d8bc5934-5b0b-4eed-af75-e7f7d508f2ef",
                 "85002a8f-9837-4ed7-9093-d71d1353a9bb"
             ],
-            "image": "../imgs/cat/hAndG/sub/bathessentials.png"
+            "image": "../imgs/cat/hAndG/sub/bathessentials.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "7cf5b026-3725-4149-8602-1a0f65da4bd0",
@@ -1759,7 +1854,8 @@
                 "0c90daa9-52b4-4845-8672-e5167e4c8993",
                 "98e8f599-7856-49e2-9960-79a03646b740"
             ],
-            "image": "../imgs/cat/hAndG/sub/storageorg.png"
+            "image": "../imgs/cat/hAndG/sub/storageorg.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "7d214c1c-09ac-4645-b389-16e146c4e9d2",
@@ -1777,7 +1873,8 @@
                 "9248b5b3-2fe5-449a-bd19-f1cff4db59c6",
                 "6b18ae25-5a06-40f6-b9a3-87530424b6cb"
             ],
-            "image": "../imgs/cat/hAndG/sub/lighting.png"
+            "image": "../imgs/cat/hAndG/sub/lighting.png",
+            "categoryTitle": "Home & Garden"
         },
         {
             "id": "0fc1779f-8256-402b-bfce-aa7938a7dce0",
@@ -1795,7 +1892,8 @@
                 "9f6c7246-ca97-4adc-aae5-ae5d9a12d0f2",
                 "dc4d1fdb-5eee-4bdb-a079-16aebdde6ae2"
             ],
-            "image": "../imgs/cat/hAndG/sub/laundry.png"
+            "image": "../imgs/cat/hAndG/sub/laundry.png",
+            "categoryTitle": "Home & Garden"
         }
     ]
 }

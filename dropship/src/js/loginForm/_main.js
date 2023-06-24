@@ -6,44 +6,41 @@ const loginUi = document.querySelector(".loginUi")
 const registerBtn = document.querySelector(".registerButton")
 const forgotBtn = document.querySelector(".forgotPassButton")
 const forgotCancelBtn = document.querySelector(".cancelFP")
+const closeLoginBtn = document.querySelector(".closeLoginButton")
 
 let rgOn = false
 let LDP = false
 
-function tabSelect(element) {
-  const children = element.querySelectorAll("*")
-  if (!LDP) {
-    element.setAttribute("tabindex", "-1", "autofocus")
-    children.forEach((child) => {
-      child.setAttribute("tabindex", "-1")
-    })
-    return
+let timeouts = { closeLoginTimeout: null, showLoginTimeout: null };
+
+const loginStates = {
+  openTime: 100,
+  closeTime: 500,
+
+  enableLogin: () => {
+    loginDp.showModal()
+  },
+  showLogin: () => {
+    loginDp.style.display = 'flex'
+  },
+  hideLogin: () => {
+    loginDp.close()
+  },
+  disableLogin: () => {
+    loginDp.style.display = 'none';
   }
-
-  element.removeAttribute("tabindex")
-  children.forEach((child) => {
-    child.removeAttribute("tabindex")
-  })
-}
-
-tabSelect(loginDp)
-
-function toggleLDP() {
-  if (LDP) {
-    LDP = false
-    return
-  }
-  LDP = true
 }
 
 loginBtn.addEventListener("click", (e) => { // Event for login dropdown
   e.preventDefault()
-  loginDp.classList.toggle("on")
-  toggleLDP()
-  tabSelect(loginDp)
+  showElement(timeouts, loginStates.openTime, loginStates.showLogin, loginStates.enableLogin)
 })
 
-cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section 
+closeLoginBtn.addEventListener('click', (e) => { // Event for closing login button
+  closeElement(timeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
+})
+
+cancelBtn.addEventListener('click', (e) => { // Evemt for turning off the registration section
   e.preventDefault()
   registerUi.classList.toggle('regOn')
   loginUi.classList.toggle('loginOff')
@@ -71,15 +68,6 @@ forgotBtn.addEventListener('click', (e) => { // Event for forgot password sectio
   loginDp.classList.toggle("forgotPS")
 })
 
-document.body.addEventListener('click', (e) => { // Event listener for turning off login drop down
-  if (e.target === loginBtn || loginBtn.contains(e.target)) return
-  if (!loginDp.contains(e.target)) {
-    loginDp.classList.remove("on")
-    if (!LDP) return
-    tabSelect(loginDp)
-    toggleLDP(LDP)
-  }
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeElement(timeouts, loginStates.closeTime, loginStates.hideLogin, loginStates.disableLogin)
 })
-
-
-

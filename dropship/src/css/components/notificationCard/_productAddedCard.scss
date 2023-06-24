@@ -1,0 +1,67 @@
+@use "../../abstracts";
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+.productAddedNotification {
+    ul {
+        align-items: center;
+        justify-content: center;
+
+        button {
+            color: var(--priColor);
+            width: 90%;
+            padding: .2rem;
+            margin-block: .4rem .2rem;
+            position: relative;
+            align-items: center;
+            font-size: large;
+            font-family: "JetBrains Mono", monospace;
+            touch-action: manipulation;
+            overflow: hidden;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+            border-radius: .5rem;
+            border: .2rem solid var(--paleAccentThree);
+
+            &::before {
+                content: '';
+                inset: -1rem;
+                position: absolute;
+                filter: blur(.5vmax);
+                background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+                z-index: -1;
+            }
+
+            &:focus-visible {
+                background-color: var(--priColor);
+                color: var(--accent);
+            }
+
+            &:hover {
+                background-color: var(--priColor);
+                color: var(--accent);
+            }
+
+            &:focus-visible {
+                background-color: var(--priColor);
+                color: var(--accent);
+            }
+
+            &:active {
+                background-color: var(--paleAccentThree);
+                color: var(--secColor);
+            }
+
+            &.makePurchase {
+                display: none;
+            }
+
+            &.proceedToCheckout {
+                display: block;
+            }
+
+            &.backToCart {
+                display: none;
+            }
+        }
+    }
+}

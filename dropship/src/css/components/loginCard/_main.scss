@@ -2,14 +2,14 @@
 
 .loginDropdown {
     position: fixed;
-    top: -20rem;
+    top: -40rem;
     left: 0;
     right: 0;
     margin-inline: auto;
-    display: flex;
+    display: none;
     justify-content: center;
-    border: 0.3rem solid var(--paleAccent);
-    backdrop-filter: blur(0.5rem);
+    border: 0.3rem solid var(--paleAccentThree);
+    backdrop-filter: blur(5rem);
     border-radius: 1rem;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 0.5rem;
@@ -18,14 +18,114 @@
     width: 50rem;
     height: 40rem;
     overflow: hidden;
-    opacity: 0;
     transition: 400ms all ease-in-out;
-    visibility: collapse;
-    box-shadow: rgba(0, 0, 0, 0.646) 0 0 5rem;
+    color: var(--secColor);
     z-index: 15;
+    background: none;
+
+    &::backdrop {
+        backdrop-filter: blur(0.5rem);
+        background-color: var(--backdropBackground);
+    }
+
+    .closeLoginButton {
+        position: absolute;
+        z-index: 1;
+        top: 1.5rem;
+        right: 1.5rem;
+        background-color: var(--paleAccentTwo);
+        border-radius: 1rem;
+        border: .2rem solid var(--priColor);
+        padding: .2rem;
+
+        display: flex;
+        align-items: center;
+
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--priColor);
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        &:focus-visible {
+            svg {
+                fill: var(--accent);
+            }
+
+            background-color: var(--priColor);
+            border-color: var(--accent);
+        }
+
+        &:hover {
+            svg {
+                fill: var(--accent);
+            }
+
+            background-color: var(--priColor);
+            border-color: var(--accent);
+            ;
+        }
+
+        &:active {
+            border-color: var(--paleAccentThree);
+
+            svg {
+                fill: var(--paleAccentThree);
+            }
+        }
+    }
+
+    .cancel, .cancelFP {
+        position: absolute;
+        display: flex;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        svg {
+            fill: var(--accent);
+            border-radius: 0.5rem;
+            padding: 0.1rem;
+            outline: 0.2rem solid var(--accent);
+            width: 2.5rem;
+            height: 2rem;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        &:focus-visible {
+            svg {
+                fill: var(--priColor);
+                outline-color: var(--priColor);
+                background-color: var(--accent);
+            }
+
+            background-color: transparent;
+        }
+
+        &:hover {
+            svg {
+                fill: var(--priColor);
+                outline-color: var(--priColor);
+                background-color: var(--accent);
+            }
+
+            background-color: transparent;
+
+        }
+
+        &:active {
+            svg {
+                background-color: var(--secAccent);
+            }
+        }
+    }
 
     form {
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,7 +221,6 @@
 
         &:focus {
             border: 0.15rem solid var(--accent);
-            transition: 300ms all ease;
 
             ~ {
                 label {
@@ -166,6 +265,11 @@
         visibility: visible;
         transition: visibility 100ms all ease-in-out;
     }
+}
+
+.loginDropdown[open] {
+    // box-shadow: var(--tpSec) 0.1rem 0.1rem 5rem;
+    top: 5rem;
 }
 
 .on {

@@ -1,4 +1,3 @@
-const alertCard = document.querySelector('.cartNotification')
 const cartButton = document.querySelector('#cartButton')
 
 cartButton.addEventListener('click', (e) => {
@@ -10,5 +9,6 @@ cartButton.addEventListener('click', (e) => {
     //         maxHeight: '0rem',
     //     }, { duration: 400, easing: 'ease-in-out', fill: 'forwards', })
     // }, 4500)
-    alertCard.classList.toggle("alertOn")
+    notifcationToggle(productAddedNotif)
+    productAddedNotif.classList.toggle("alertOn")
 })
