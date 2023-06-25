@@ -3,33 +3,36 @@ const subCategoriesDiv = document.getElementById("subCategories");
 console.log(subCategoriesDiv)
 const productsDiv = document.getElementById("products");
 const singleProductDiv = document.getElementById("singleProduct");
+const highestRatingBtn = document.getElementById("highest-rating");
+const highestPriceBtn = document.getElementById("highest-price");
+const lowestPriceBtn = document.getElementById("lowest-price");
 
-const subCategories_url = "./mock/subCatTest.json"; // SHOULD REMOVE 
-//const subCategories_url = "./mock/new-sub-categories.json";
-const makeCall = (url) => {
-    fetch(url)
-        .then((response) => {
-            // console.log(response);
-            return response.json()
-        })
-        .then((result) => {
-            // console.log(result);
-            const technologiesSubs = result;
-            console.log(technologiesSubs)
+// //const subCategories_url = "./mock/new-sub-categories.json";
+// const makeCall = (url) => {
+//     fetch(url)
+//         .then((response) => {
+//             // console.log(response);
+//             return response.json()
+//         })
+//         .then((result) => {
+//             // console.log(result);
+//             const technologiesSubs = result;
+//             console.log(technologiesSubs)
 
-            const subCategories = flattenObjectArrays(technologiesSubs)
-            console.log(subCategories)
-            printResults(subCategories, subCategoriesDiv);
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-        .finally(() => {
-            console.log("Will be fulfilled no matter if previous queries are fulfilled")
-        })
-} // DONT NEED THIS FUNCTION
+//             const subCategories = flattenObjectArrays(technologiesSubs)
+//             console.log(subCategories)
+//            // printResults(subCategories, subCategoriesDiv);
+//         })
+//         .catch((error) => {
+//             console.log(error)
+//         })
+//         .finally(() => {
+//             console.log("Will be fulfilled no matter if previous queries are fulfilled")
+//         })
+ // DONT NEED THIS FUNCTION
 
-makeCall(subCategories_url);
+//makeCall(subCategories_url);
+let displayedProducts = [];
 
 async function setSubCatsTwoCtTab(ID, element) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
@@ -39,22 +42,22 @@ async function setSubCatsTwoCtTab(ID, element) {
     const flattenedProducts = flattenObjectArrays(products)
 
 
-    let tempProds = []
+    displayedProducts = [];
 
     for (let i = 0; i < flattenedSubCategories.length; i++) {
         if (flattenedSubCategories[i].id === ID) {
             for (let j = 0; j < flattenedProducts.length; j++) {
                 if (flattenedSubCategories[i].products.includes(flattenedProducts[j].id)) {
-                    tempProds.push(flattenedProducts[j])
+                    displayedProducts.push(flattenedProducts[j])
                 }
             }
             break
         }
     }
 
-    printProducts(tempProds, element)
+    printProducts(displayedProducts, element)
 
-    console.log(tempProds)
+    console.log(displayedProducts)
 }
 
 function printProducts(arrayOfProducts, elemetToPrint) {
@@ -70,30 +73,15 @@ function printProducts(arrayOfProducts, elemetToPrint) {
         a.innerHTML += `
             <h3>${product.title}</h3>
             <p>${product.description}</p>
-            <p>${product.subCategoryTitle}</p>`
+            <p>Price: ${product.price}$</p>
+            <p>Rating: ${product.rating.rate}</p>
+            `
 
         elemetToPrint.appendChild(a);
     })
 }
 
 function printProduct(product, element) {
-// SHOULD DO SOMETHING LIKE THIS USING FLATTENED PRODUCTS ARRAY FETCH *** LOOK TO LINE 35 in dependecies File for fetch
-    // for (let i = 0; i < flattenedProducts.length; i++) {
-    //     if(flattenedProducts[i].id === ID) {
-
-    // element.innerHTML = "";
-
-    // let a = document.createElement("a");
-    // a.style.color = 'pink'
-    // a.innerHTML += `
-    //     <h3>${product.title}</h3>
-    //     <p>Price: ${product.price}</p>
-    //     <p>${product.description}</p>
-    //     <p>Rating: ${product.rating.rate}</p>
-    //     <p>In Stock: ${product.stock}</p>
-    //     `
-    // element.appendChild(a)
-    // } 
 
     element.innerHTML = "";
 
@@ -107,15 +95,50 @@ function printProduct(product, element) {
         <p>In Stock: ${product.stock}</p>
         `
     element.appendChild(a);
+
+    //needs to call a function on click for adding a product to a cart and buy now
+    element.innerHTML += `
+          <button value="${product.id}" onclick="addToCart(this, xxx)"> Add To Cart </button>     
+          <button value="${product.id}" onclick="buyNow(this, xxx)"> Buy Now </button> `
+
 }
 
-async function printResults(subCat, element) { //// NEEDS ID PARAM DOESNT NEED SUBCAT PARAM
+
+async function printResults(element, ID) { //// NEEDS ID PARAM DOESNT NEED SUBCAT PARAM
    // SHOULD DO SOMETHING SIMILAR LIKE IN PRINT PRODUCTS USING FLATTENED SUBCATEGORIES FETCH *** LOOK TO LINE 35 in dependecies File for fetch
 
-    element.innerHTML = "";
+   const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
+   const categories = await fetchJSON('./mock/categories.json')
+   const products = await fetchJSON('./mock/products.json')
+   const flattenedProducts = flattenObjectArrays(products)
+   const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
 
-    subCat.forEach((subCategory) => {
-        // if (subCategory.id === ID) { //// WILL ONLY SHOW CHOSEN CATEGORY
+    element.innerHTML = "";
+    let tempCats = [] 
+    displayedProducts = []
+  
+    for (let i = 0; i < categories.length; i++) {
+      if (categories[i].id === ID) {
+        for (let j = 0; j < flattenedSubCategories.length; j++) 
+        {
+          if (categories[i].sub.includes(flattenedSubCategories[j].id)) {
+            tempCats.push(flattenedSubCategories[j])   
+          }
+        }
+        break
+      }
+    }
+
+    for(let i = 0; i < flattenedProducts.length; i++){
+        if(flattenedProducts[i].category.categoryid === ID) {
+            displayedProducts.push(flattenedProducts[i])
+        }
+    }
+
+    printProducts(displayedProducts, productsDiv)
+    
+    tempCats.forEach((subCategory) => {
+        //  if (subCategory.id === ID) { //// WILL ONLY SHOW CHOSEN CATEGORY
         let a = document.createElement("a");
         a.addEventListener("click", () => {
             console.log(subCategory.id)
@@ -129,8 +152,49 @@ async function printResults(subCat, element) { //// NEEDS ID PARAM DOESNT NEED S
 
         element.appendChild(a);
         // } //// END OF IF
+
     })
 }
+
+function sortByLowestPrice(){
+
+    displayedProducts.sort((a, b) => {
+        return a.price - b.price;
+    })
+    
+    printProducts(displayedProducts, productsDiv);    
+}
+
+function sortByHighestPrice(){
+
+    displayedProducts.sort((a, b) => {
+        return b.price - a.price;
+    })
+    
+    printProducts(displayedProducts, productsDiv);    
+}
+
+function sortByHighestRating(){
+    displayedProducts.sort((a, b) => {
+        return b.rating.rate - a.rating.rate;
+    })
+    
+    printProducts(displayedProducts, productsDiv);   
+}
+
+lowestPriceBtn.addEventListener("click", () => {
+    sortByLowestPrice();
+})
+
+highestPriceBtn.addEventListener("click", () => {
+    sortByHighestPrice();
+})
+
+highestRatingBtn.addEventListener("click", () => {
+    sortByHighestRating();
+})
+
+
 
 
 
