@@ -216,8 +216,12 @@
                     <li>
                         <h4>Product Title</h4>
                     </li>
-                    <li><p>Amount:</p> <span>3</span></li>
-                    <li><p>Price:</p> <span>399$</span></li>
+                    <li>
+                        <p>Amount:</p> <span>3</span>
+                    </li>
+                    <li>
+                        <p>Price:</p> <span>399$</span>
+                    </li>
                     <li>
                         <h5>Added to cart</h5>
                     </li>
@@ -779,9 +783,9 @@
     </main>
     <main class="mainMain productsMain">
         <div class="categories-section">
-            <h2>Categories</h2>
-            <button>Filters</button>
-            <div class="filters">
+            <h1 id="selectedCategory">Category: </h1>
+            <button id="filterBtn">Filters</button>
+            <div class="filters" id="filters">
                 <label for="category">Filter by Category:</label>
                 <select name="category" id="category">
                     <option value="all">All Categories</option>
@@ -819,8 +823,8 @@
                 <br />
             </div>
             <div>
-                <button for="occasion-selector">Sort By:</button>
-                <div name="occasion-selector" id="occasion-selector">
+                <button id="sortBtn" for="sortingSection">Sort By:</button>
+                <div name="sortingSection" id="sortingSection">
                     <a href="#" value="highest-rating" id="highest-rating">Highest Rating</a>
                     <a href="#" value="highest-price" id="highest-price">Highest Price</a>
                     <a href="#" value="lowest-price" id="lowest-price">Lowest Price</a>
@@ -828,7 +832,7 @@
             </div>
         </div>
         <h1>SubCategories: </h1>
-        <div id="subCategories">KKKKKK</div>
+        <div id="subCategories"></div>
         <h1>Products</h1>
         <div id="products"></div>
         <h1>Single Product</h1>
