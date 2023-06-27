@@ -5,4 +5,5 @@ cartButton.addEventListener('click', (e) => {
     notifcationToggle(productAddedNotif)
     productAddedNotif.classList.toggle("alertOn")
     switchMain(document.querySelector('.cart'), "flex") /// turn on cart 
+    openCart() // should remove from here and redo switchMain()
 })

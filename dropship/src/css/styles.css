@@ -2325,7 +2325,12 @@ select {
 .finalStage .summary .headerSummary {
   background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
   text-align: center;
-  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.finalStage .summary button {
+  border-radius: 1rem;
+  padding: 1rem;
 }
 .finalStage .summary button.makePurchase {
   display: block;
@@ -2335,6 +2340,9 @@ select {
 }
 .finalStage .summary button.backToCart {
   display: none;
+}
+.finalStage .summary ul {
+  border-radius: 0.5rem;
 }
 .finalStage .summary ul.buyerProtectReview li {
   flex-direction: row;
@@ -2367,28 +2375,27 @@ select {
     border-radius: 0;
   }
   .cart .summary ul.buyerProtectReview {
-    border-top: 0.3rem solid var(--paleAccentThree);
+    border-block: 0.3rem solid var(--paleAccentThree);
   }
   .cart .summary ul.buyerProtectReview li {
     padding-block: 0.5rem;
   }
   .cart .summary button {
+    margin-top: 0.5rem;
+    width: 90%;
+    align-self: center;
     border: 0.2rem solid var(--paleAccentThree);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .cart .summary button:hover, .cart .summary button:focus-visible {
-    border-left: none;
-    border-right: none;
   }
   .cart .products {
     width: 100%;
   }
   .cart .products h2 {
     border-radius: 0;
-    margin-block: 0.4rem;
+    margin-block: 0;
     text-align: center;
+  }
+  .cart .products ul {
+    border: none;
   }
   .cart .products ul li {
     min-height: 6rem;
@@ -2525,7 +2532,7 @@ select {
   position: relative;
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%);
   border-radius: 0.5rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -2737,8 +2744,10 @@ select {
   position: relative;
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
   border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .products h2.amount {
   margin: 0.3vmax 0.5vmax;
@@ -2752,7 +2761,9 @@ select {
 .products h2.footerProducts {
   background: var(--paleAccentTwo);
   border-radius: 0.3rem;
-  background: linear-gradient(45deg, var(--tertAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: linear-gradient(45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
   margin-block: 0;
 }
 .products ul {
@@ -2762,6 +2773,8 @@ select {
   flex-direction: column;
   gap: 0.5rem;
   padding-block: 0.5rem;
+  border-left: 0.15rem solid var(--paleAccentThree);
+  border-right: 0.15rem solid var(--paleAccentThree);
 }
 .products ul li {
   position: relative;
@@ -2862,6 +2875,11 @@ select {
 .products ul li div button:active span {
   color: var(--accent);
 }
+.products ul li div button.disabledAmountBtn {
+  pointer-events: none;
+  background-color: var(--tpPri);
+  color: var(--secColor);
+}
 .products ul li div h4 {
   margin-inline: 0.3vmax;
 }
@@ -2901,7 +2919,7 @@ select {
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
   text-align: end;
-  background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%);
   border-radius: 0.5rem;
 }
 .summary h2 {
@@ -2920,7 +2938,7 @@ select {
 .summary h2.totalAmount {
   border: none;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
 }
 .summary button {
   color: var(--priColor);
@@ -2985,6 +3003,11 @@ select {
 }
 .summary ul li:nth-child(2) {
   border-bottom: 0.3rem solid var(--paleAccentThree);
+}
+.summary ul li:nth-child(3) h4 {
+  position: relative;
+  margin-left: auto;
+  margin-right: 0.5rem;
 }
 .summary ul.buyerProtectReview li {
   flex-direction: column;

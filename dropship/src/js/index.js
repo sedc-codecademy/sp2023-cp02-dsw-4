@@ -14,6 +14,6 @@ import "./loginForm/_main.js";
 //// CATEGORIES SECTION
 import "./categoriesSection/_categoriesSection.js";
 //// CART
-import "./cart/_cart.js";
+import "./cart/_cart-states.js";
 //// HOMEPAGE PRODUCTS
 import "./homePageProducts/_homePageProducts.js";

@@ -155,10 +155,13 @@
         .headerSummary {
             background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
             text-align: center;
-            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
 
         button {
+            border-radius: 1rem;
+            padding: 1rem;
             &.makePurchase {
                 display: block;
             }
@@ -173,6 +176,7 @@
         }
 
         ul {
+            border-radius: .5rem;
             &.buyerProtectReview {
                 li {
                     flex-direction: row;
@@ -215,7 +219,7 @@
                 border-radius: 0;
 
                 &.buyerProtectReview {
-                    border-top: .3rem solid var(--paleAccentThree);
+                    border-block: .3rem solid var(--paleAccentThree);
 
                     li {
                         padding-block: .5rem;
@@ -224,16 +228,16 @@
             }
 
             button {
+                margin-top: .5rem;
+                width: 90%;
+                align-self: center;
                 border: .2rem solid var(--paleAccentThree);
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
 
-                &:hover,
-                &:focus-visible {
-                    border-left: none;
-                    border-right: none;
-                }
+                // &:hover,
+                // &:focus-visible {
+                //     border-left: none;
+                //     border-right: none;
+                // }
             }
         }
 
@@ -242,11 +246,12 @@
 
             h2 {
                 border-radius: 0;
-                margin-block: .4rem;
+                margin-block: 0;
                 text-align: center;
             }
 
             ul {
+                border: none;
                 li {
                     min-height: 6rem;
 
