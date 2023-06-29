@@ -9,7 +9,7 @@ nav {
     user-select: none;
     background-color: var(--tpPri);
     backdrop-filter: blur(1vmax);
-    border: 0.20rem solid var(--paleAccent);
+    border: 0.20rem solid var(--reversePaleAccentTwo);
     border-radius: 1rem;
     overflow: hidden;
     z-index: 10;
@@ -28,15 +28,17 @@ nav {
         justify-content: space-between;
         align-items: center;
         transition: all .5s cubic-bezier(.19, 1, .22, 1);
-        padding: .5rem;
+        padding: .3rem;
         height: 3rem;
 
         .divider {
             position: relative;
             border-radius: 1rem;
             width: .2rem;
-            height: 100%;
-            background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+            margin-inline: .5rem;
+            align-self: center;
+            height: 95%;
+            background: linear-gradient(to bottom, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
         }
 
         li {
@@ -54,12 +56,25 @@ nav {
                 inset: 0;
                 position: absolute;
                 filter: blur(2rem);
-                transition: 300ms all ease;
+                transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                z-index: -1;
             }
 
-            a {
+            button {
                 display: flex;
                 align-items: center;
+                color: var(--secColor);
+                transition: all .8s cubic-bezier(.19, 1, .22, 1);
+
+                p {
+                    margin-inline: .3rem;
+                    font-size: large;
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                }
+
+                span {
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                }
 
                 &:active {
                     span {
@@ -70,36 +85,29 @@ nav {
                 }
 
                 &:focus-visible {
-                    color: var(--accent);
-                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                    color: var(--reverseAccent);
 
-                    .material-symbols-outlined {
-                        color: var(--accent);
+                    .material-symbols-outlined,
+                    p {
+                        color: var(--reverseAccent);
                     }
 
                     ::before {
-                        background-color: var(--accent);
+                        background-color: var(--reverseAccent);
                     }
                 }
             }
 
             &:hover {
-                color: var(--accent);
-                transition: 300ms all ease;
-
-                .material-symbols-outlined {
-                    color: var(--accent);
-                }
-
                 ::before {
-                    background-color: var(--accent);
+                    background-color: var(--reverseAccent);
                 }
             }
         }
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     nav {
         justify-self: center;
         margin-inline: auto;
@@ -110,11 +118,23 @@ nav {
 
         .navigationLists {
             order: 3;
-            padding-inline: .2rem;
             height: 2rem;
 
             .divider {
-                height: 150%;
+                align-self: center;
+                height: 110%;
+                margin: 0;
+
+                &.middleDivider{
+                    display: none;
+                }
+            }
+        }
+
+        button {
+            p {
+                display: none;
+                margin: 0;
             }
         }
 
@@ -123,6 +143,7 @@ nav {
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
+                gap: 5%;
 
                 li {
                     &.lightButton {
@@ -137,7 +158,7 @@ nav {
                         order: 2;
                     }
 
-                    a {
+                    button {
                         span {
                             margin: 0;
                         }
@@ -152,20 +173,31 @@ nav {
 
         .productAddedNotification {
             ul {
-                padding: .2rem .1rem;
                 justify-content: center;
                 align-items: center;
+                padding: 0;
 
-                :nth-child(4){
+                :nth-child(4) {
                     display: none;
                 }
 
                 button {
                     width: 100%;
                     margin-block: 0;
-                    border-radius: .8rem;
+                    border-radius: 0rem;
                     padding: 0;
                     order: -1;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                }
+
+                li {
+                    padding-inline: .5rem;
+
+                    &:nth-child(3) {
+                        margin-bottom: .3rem;
+                    }
                 }
             }
         }

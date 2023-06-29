@@ -15,7 +15,7 @@ header {
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 100%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 150%);
     }
 }
 
@@ -28,7 +28,6 @@ header {
     svg {
         position: absolute;
         fill: transparent;
-        // transform: rotate(180deg);
 
         #a {
             :first-child {
@@ -49,6 +48,7 @@ header {
                 stop-color: var(--additionallAccent)
             }
         }
+
         #c {
             :first-child {
                 stop-color: var(--secAccent)
@@ -84,11 +84,114 @@ header {
 
 .logo {
     position: fixed;
-    font-family: 'Rubik Microbe', cursive;
-    color: var(--tertAccent);
-    font-size: 3vmax;
-    top: 1vmax;
-    left: 1vmax;
-    mix-blend-mode: difference;
-    pointer-events: none;
+    top: .5vmax;
+    left: .5vmax;
+    width: 10rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        &.mobileLogo {
+            display: none;
+            border-radius: 50%;
+            backdrop-filter: blur(1rem);
+
+            #headerLogoGradientMobile{
+                :first-child {
+                    stop-color: var(--logoReverseAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoReverseAccentTwo)
+                }
+            }
+        }
+
+        &.standardLogo {
+            #smallLogoGradient {
+                :first-child {
+                    stop-color: var(--logoAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoAccentTwo)
+                }
+            }
+
+            .bigLogoGradientStandard {
+                :first-child {
+                    stop-color: var(--logoReverseAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoReverseAccentTwo)
+                }
+            }
+        }
+    }
+
+    &.mobileOn {
+        position: fixed;
+        top: .5vmax;
+        left: .5vmax;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            // SHOULD ANIMATE
+            border-radius: 50%;
+
+            &.mobileLogo {
+                display: block;
+
+                #smallLogoGradient {
+                    :first-child {
+                        stop-color: var(--logoAccentOne)
+                    }
+
+                    :nth-child(2) {
+                        stop-color: var(--logoAccentTwo)
+                    }
+                }
+            }
+
+            &.standardLogo {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        // SHOULD ANIMATE
+        position: fixed;
+        top: .5vmax;
+        left: .5vmax;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            &.mobileLogo {
+                display: block;
+            }
+
+            &.standardLogo {
+                display: none;
+            }
+        }
+    }
 }

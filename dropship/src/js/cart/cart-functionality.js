@@ -22,53 +22,53 @@ const summaryList = document.querySelector(".summaryUl")
 ////// Uncoment to clear cart in local storage
 // localStorage.setItem("cart", JSON.stringify([])) 
 
-/////////// Uncomment one of these to add something to local storage, each one overwrites the previous one called
-// localStorage.setItem("cart", JSON.stringify([{
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 15,
-//     "stock": 30,
-//     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
-//     "sale": 13,
-//     "amount": 1,
-//     "totalPrice": 0
-// }, {
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 7,
-//     "stock": 17,
-//     "id": "aefa495c-82dc-4e46e-3a7db-ac4c1525a742",
-//     "sale": 20,
-//     "amount": 7,
-//     "totalPrice": 0
-// }, {
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 8,
-//     "stock": 10,
-//     "id": "aef5a415c-82dc-4e56e-a7db-ac4c1525a742",
-//     "sale": 7,
-//     "amount": 1,
-//     "totalPrice": 0
-// }, {
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 0,
-//     "stock": 40,
-//     "id": "aefa4215c-828dc-4e6e-a7db-ac4c1525a742",
-//     "sale": 2,
-//     "amount": 5,
-//     "totalPrice": 0
-// }, {
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 15,
-//     "stock": 19,
-//     "id": "aefa415c-82dc-4e6e-a7db-ac4c91525a742",
-//     "sale": 9,
-//     "amount": 18,
-//     "totalPrice": 0
-// }]))
+// ///////// Uncomment one of these to add something to local storage, each one overwrites the previous one called
+localStorage.setItem("cart", JSON.stringify([{
+    "title": "Waterproof Car Cover",
+    "price": 89.99,
+    "shipping": 15,
+    "stock": 30,
+    "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
+    "sale": 13,
+    "amount": 1,
+    "totalPrice": 0
+}, {
+    "title": "Waterproof Car Cover",
+    "price": 89.99,
+    "shipping": 7,
+    "stock": 1007,
+    "id": "aefa495c-82dc-4e46e-3a7db-ac4c1525a742",
+    "sale": 20,
+    "amount": 1000,
+    "totalPrice": 0
+}, {
+    "title": "Waterprddddddddddddddddddddddddddddddddddddddddddddddddoof Car Cover",
+    "price": 89.99,
+    "shipping": 8,
+    "stock": 10,
+    "id": "aef5a415c-82dc-4e56e-a7db-ac4c1525a742",
+    "sale": 7,
+    "amount": 1,
+    "totalPrice": 0
+}, {
+    "title": "Waterproof Car Cover",
+    "price": 89.99,
+    "shipping": 0,
+    "stock": 40,
+    "id": "aefa4215c-828dc-4e6e-a7db-ac4c1525a742",
+    "sale": 2,
+    "amount": 5,
+    "totalPrice": 0
+}, {
+    "title": "Waterdddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddd  d ddddddddproof Car Cover",
+    "price": 89.99,
+    "shipping": 15,
+    "stock": 19,
+    "id": "aefa415c-82dc-4e6e-a7db-ac4c91525a742",
+    "sale": 9,
+    "amount": 18,
+    "totalPrice": 0
+}]))
 
 ///////////////////// FREE SHIPPING AND 0 DISCOUNT
 // localStorage.setItem("cart", JSON.stringify([{
@@ -91,32 +91,55 @@ const summaryList = document.querySelector(".summaryUl")
 //     "totalPrice": 0
 // }]))
 
-function openCart() {
-    const cartItems = JSON.parse(localStorage.getItem("cart"))
+const cartButton = document.querySelector('#cartButton')
 
-    if (cartItems.length === 0) {
-        cartContainer.classList.add("cartEmpty")
-        console.log("Cart is empty")
-        return;
-    }
-    console.log(JSON.parse(localStorage.getItem("cart")) || [])
-    fillCart(cartItems, productsList)
-    fillSummary(cartItems, summaryList)
+cartButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    // notifcationToggle(productAddedNotif)
+    // productAddedNotif.classList.toggle("alertOn")
+    if(cartContainer.classList.contains("currentMain")) return
+    switchMain(cartContainer, "flex") /// turn on cart 
+    openCart() // should remove from here and redo switchMain()
+})
+
+function openCart() {
+    emptyCart() // Check if cart is empty
+    fillCart(productsList) // Fill Cart with products
+    fillSummary(summaryList) // Fill Summary with prices
 }
 
-function fillCart(cartItems, ul) {
+function emptyCart() {
+    const cartItems = JSON.parse(localStorage.getItem("cart"))
+    if (cartItems.length === 0) {
+        cartContainer.classList.add("cartEmpty")
+        return
+    }
+
+    if (cartContainer.classList.contains("cartEmpty")) {
+        cartContainer.classList.remove("cartEmpty")
+    }
+}
+
+function fillCart(ul) {
+    const cartItems = JSON.parse(localStorage.getItem("cart") || [])
     ul.innerHTML = ''
     for (let i = 0; i < cartItems.length; i++) {
         const product = cartItems[i]
         calculateTotalPrice(product) // Calculate total price on each product
-
+        updateCart(cartItems)
         // Li
         const li = document.createElement("li")
 
         // Title
         const title = document.createElement("h3")
         title.classList.add("pTitle")
-        title.textContent = product.title
+        const p = document.createElement("p")
+        p.setAttribute("tabindex", 0)
+        p.textContent = product.title
+        title.appendChild(p)
+        
+        // Image
+        title.style.setProperty('--bgimg', `url(${getRandomImgPath(imgPaths)})`)
 
         // Info div
         const infoDiv = document.createElement("div")
@@ -132,10 +155,7 @@ function fillCart(cartItems, ul) {
                 calculateTotalPrice(product)
                 updateCart(cartItems)
                 updateDisplay(li, product, product.id)
-                console.log("I decrease the amount")
-                let temp = JSON.parse(localStorage.getItem("cart"))
-                fillSummary(JSON.parse(localStorage.getItem("cart")), summaryList)
-                console.log(temp.find(e => e.id === product.id))
+                fillSummary(summaryList)
             }
         })
 
@@ -155,10 +175,7 @@ function fillCart(cartItems, ul) {
                 calculateTotalPrice(product)
                 updateCart(cartItems)
                 updateDisplay(li, product, product.id)
-                console.log("I increase the amount")
-                fillSummary(JSON.parse(localStorage.getItem("cart")), summaryList)
-                let temp = JSON.parse(localStorage.getItem("cart"))
-                console.log(temp.find(e => e.id === product.id))
+                fillSummary(summaryList)
             }
         })
 
@@ -177,9 +194,8 @@ function fillCart(cartItems, ul) {
                 cartItems.splice(index, 1)
                 updateCart(cartItems)
                 ul.removeChild(li)
-                fillSummary(JSON.parse(localStorage.getItem("cart")), summaryList)
-                console.log("I remove the element from the cart and local storage")
-                console.log(JSON.parse(localStorage.getItem("cart")) || [])
+                fillSummary(summaryList)
+                emptyCart(cartItems)
             }
         })
 
@@ -206,20 +222,18 @@ function fillCart(cartItems, ul) {
     }
 }
 
-function fillSummary(cartItems, ul) {
+function fillSummary(ul) {
     ul.innerHTML = ''
+    const cartItems = JSON.parse(localStorage.getItem("cart"))
     let pricesArray = calculateSummary(cartItems)
-    console.log(pricesArray)
     for (let i = 0; i < pricesArray.length; i++) {
         if (pricesArray[i] === "0.00") {
-            pricesArray[i] = "0";
+            pricesArray[i] = "0"
         } else if (pricesArray[i].endsWith(".00")) {
-            const currentValue = parseFloat(pricesArray[i]);
-            pricesArray[i] = (currentValue - 0.01).toFixed(2);
+            const currentValue = parseFloat(pricesArray[i])
+            pricesArray[i] = (currentValue - 0.01).toFixed(2)
         }
     }
-
-    console.log(pricesArray)
 
     // Cost 
     const costLi = document.createElement("li")
@@ -283,7 +297,6 @@ function calculateSummary(cartItems) {
         currentDiscount += product.sale
     }
     const discountedPrice = (currentPrice - (currentPrice * (currentDiscount / 100))).toFixed(2)
-    console.log(discountedPrice)
     currentPrice = currentPrice.toFixed(2)
     currentShipping = currentShipping.toFixed(2)
     currentDiscount = currentDiscount.toFixed(2)

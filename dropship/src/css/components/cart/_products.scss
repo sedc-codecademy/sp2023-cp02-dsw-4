@@ -8,6 +8,7 @@
     border-top-right-radius: .3vmax;
     border-bottom-left-radius: .3vmax;
     border-bottom-right-radius: .8vmax;
+    overflow: hidden;
 
     h2 {
         position: relative;
@@ -24,11 +25,12 @@
             padding-inline: .2vmax;
             padding-block: 0;
             text-align: center;
-            outline: .15rem solid var(--paleAccent);
             border-radius: .3rem;
+            background: var(--paleAccent);
+            color: var(--secColor);
         }
 
-        &.footerProducts{
+        &.footerProducts {
             background: var(--paleAccentTwo);
             border-radius: .3rem;
             border-top-left-radius: 0;
@@ -57,13 +59,14 @@
             overflow: hidden;
             border-radius: .5rem;
             min-height: 7rem;
-
             outline: 0.15rem solid var(--paleAccentThree);
 
             .pTitle {
                 display: flex;
                 align-items: center;
                 position: relative;
+                max-width: 65%;
+                --bgimg: url("");
 
                 p {
                     overflow: hidden;
@@ -71,26 +74,14 @@
                     -webkit-line-clamp: 1;
                     line-clamp: 1;
                     -webkit-box-orient: vertical;
-                }
 
-                &::before {
-                    content: '';
-                    display: block;
-                    background-color: var(--tpPri);
-                    min-height: 8rem;
-                    min-width: 8rem;
-                    margin-right: .5rem;
-                    outline: 0.15rem solid var(--paleAccentThree);
-                }
-            }
-
-            h3 {
-                a {
                     width: fit-content;
                     position: relative;
                     color: var(--secColor);
                     font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                     transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+                    cursor: pointer;
 
                     &:hover {
                         color: var(--accent);
@@ -105,6 +96,19 @@
                         text-decoration: underline;
                     }
                 }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    min-height: 8rem;
+                    min-width: 8rem;
+                    margin-right: .5rem;
+                    outline: 0.15rem solid var(--paleAccentThree);
+                    background-image: var(--bgimg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
             }
 
             div {
@@ -118,8 +122,7 @@
                     width: 0.2rem;
                     height: 1.5rem;
                     border: none;
-                    background: linear-gradient(to right, var(--paleAccentThree), var(--paleAccentTwo), var(--paleAccentThree));
-                    background-color: red;
+                    background: linear-gradient(45deg, var(--accent) 30%, var(--secAccent) 70%);
                 }
 
                 button {
@@ -150,9 +153,13 @@
                     }
 
                     &:hover {
+                        span {
+                            color: var(--priColor);
+                        }
+
                         &::before {
                             scale: 1;
-                            opacity: 0.5;
+                            opacity: 1;
                         }
                     }
 
@@ -168,10 +175,12 @@
                         }
                     }
 
-                    &.disabledAmountBtn{
+                    &.disabledAmountBtn {
                         pointer-events: none;
-                        background-color: var(--tpPri);
-                        color: var(--secColor);
+
+                        span {
+                            color: var(--tertColor);
+                        }
                     }
                 }
 
@@ -182,7 +191,6 @@
                 .footerProducts {
                     margin-inline: .8vmax;
                     margin-block: 0;
-                    // outline: none;
                     border-radius: .5rem;
                     padding: .2rem;
                     text-indent: 0;

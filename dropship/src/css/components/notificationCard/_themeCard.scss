@@ -4,42 +4,47 @@
     ul {
         li {
             margin: .2rem;
-            border-radius: 0.3rem;
-            border: .15rem solid var(--paleAccentThree);
+            border-radius: 0.5rem;
+            border: .15rem solid var(--reversePaleAccent);
             overflow: hidden;
 
-            a {
+            button {
                 color: var(--secColor);
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 transition: all .5s cubic-bezier(.19, 1, .22, 1);
                 padding: .3rem;
+                width: 100%;
 
                 span {
                     margin-left: .5rem;
                 }
 
+                p{
+                    font-size: large;
+                }
+
                 &:hover {
                     background-color: var(--priColor);
-                    color: var(--accent);
+                    color: var(--reverseAccent);
 
                     span {
-                        color: var(--accent);
+                        color: var(--reverseAccent);
                     }
                 }
 
                 &:focus-visible {
                     background-color: var(--priColor);
-                    color: var(--accent);
+                    color: var(--reverseAccent);
 
                     span {
-                        color: var(--accent);
+                        color: var(--reverseAccent);
                     }
                 }
 
                 &:active {
-                    border-color: var(--accent);
+                    border-color: var(--reverseAccent);
                     color: var(--secColor);
 
                     span {
@@ -50,17 +55,16 @@
 
             &.selectedThemeMode {
                 pointer-events: none;
-                background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+                background: linear-gradient(45deg, var(--reverseAccent) 0%, var(--reverseSecAccent) 100%);
                 border: none;
 
-                a {
+                button {
                     color: var(--priColor);
 
                     span {
                         color: var(--priColor);
                     }
                 }
-
             }
         }
     }

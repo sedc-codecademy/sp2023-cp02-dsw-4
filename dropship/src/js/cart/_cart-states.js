@@ -35,6 +35,13 @@ function updateCartStage(stageIndex) {
     }
 }
 
+function backToCart() {
+    for (let i = 0; i < cartStages.length; i++) {
+        cartContainer.classList.remove(cartStages[i])
+    }
+    toggleCheckout("checkout")
+}
+
 function toCheckout() {
     updateCartStage(0)
 }
@@ -51,35 +58,27 @@ function toReview() {
 toCheckoutBtn.addEventListener("click", () => toCheckout())
 
 stageOneBtn.addEventListener("click", () => {
-    // checkoutClassSwicther.toChekout()
     toCheckout()
-    console.log("dime")
 })
 
 toPaymentBtn.addEventListener("click", () => {
-    // checkoutClassSwicther.toPayment()
     toPayment()
 })
 
 stageTwoBtn.addEventListener("click", () => {
-    // checkoutClassSwicther.toPayment()
     toPayment()
-    console.log("dime")
 })
 
 toReviewBtn.addEventListener("click", () => {
     toReview()
-    // checkoutClassSwicther.toReview()
 })
 
 stageThreeBtn.addEventListener("click", () => {
     toReview()
-    // checkoutClassSwicther.toReview()
-    console.log("dime")
 })
 
 backToCartBtn.addEventListener("click", () => {
-    checkoutClassSwicther.backToCart()
+    backToCart()
 })
 
 purchaseBtn.addEventListener("click", () => {

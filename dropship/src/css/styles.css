@@ -13,15 +13,23 @@
   --paleAccent: rgba(255, 0, 136, 0.072);
   --paleAccentTwo: rgba(255, 0, 123, 0.67);
   --paleAccentThree: rgba(227, 172, 199, 0.765);
-  --someColor: #ffffff;
+  --someColor: #bc494976;
   --additionallAccent: rgb(0, 255, 119);
+  --reverseAccent: #28b0ff;
+  --reverseSecAccent: #0099ff;
+  --reversePaleAccent: #0099ff5b;
+  --reversePaleAccentTwo: #0099ffb0;
+  --logoAccentOne: rgb(255, 52, 150);
+  --logoAccentTwo: rgb(208, 0, 255);
+  --logoReverseAccentOne: #0091ff;
+  --logoReverseAccentTwo: rgb(29, 184, 231);
 }
 
 .dark-mode {
   --priColor: rgb(0, 0, 0);
   --tpPri: rgba(0, 0, 0, 0.475);
   --tpSec: rgba(255, 255, 255, 0.2);
-  --secColor: rgb(243, 243, 243);
+  --secColor: rgb(255, 255, 255);
   --accent: rgb(59, 255, 157);
   --secAccent: rgba(0, 255, 55);
   --tertAccent: rgb(65, 204, 255);
@@ -33,11 +41,20 @@
   --accent: #00eaff;
   --tertAccent: #e71db1;
   --additionallAccent: rgb(255, 187, 0);
-  --priColor: #000000e3;
-  --paleAccent: #00eaff08;
+  --priColor: rgb(0, 0, 0);
+  --paleAccent: #00eaff13;
   --paleAccentTwo: #00eaffc8;
   --paleAccentThree: #00eaff3f;
-  --backdropBackground: rgba(0, 0, 0, 0.475);
+  --backdropBackground: rgb(1, 21, 50);
+  --reverseAccent: rgb(255, 64, 210);
+  --reverseSecAccent: rgb(208, 0, 255);
+  --reversePaleAccent: rgba(255, 64, 210, 0.395);
+  --reversePaleAccentTwo: rgba(255, 2, 196, 0.661);
+  --logoAccentOne: #00eaff;
+  --logoAccentTwo: #006aff;
+  --logoReverseAccentOne: rgb(255, 52, 150);
+  --logoReverseAccentTwo: rgb(208, 0, 255);
+  background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
 }
 
 dialog::backdrop {
@@ -68,7 +85,6 @@ body {
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-image: radial-gradient(circle, var(--priColor), var(--someColor), var(--priColor) 75%);
 }
 
 img {
@@ -117,7 +133,7 @@ header .headerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 150%);
 }
 
 .headerBackgroundImage {
@@ -169,15 +185,87 @@ header .headerGradient {
 
 .logo {
   position: fixed;
-  font-family: "Rubik Microbe", cursive;
-  color: var(--tertAccent);
-  font-size: 3vmax;
-  top: 1vmax;
-  left: 1vmax;
-  mix-blend-mode: difference;
-  pointer-events: none;
+  top: 0.5vmax;
+  left: 0.5vmax;
+  width: 10rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.logo svg {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.logo svg.mobileLogo {
+  display: none;
+  border-radius: 50%;
+  backdrop-filter: blur(1rem);
+}
+.logo svg.mobileLogo #headerLogoGradientMobile :first-child {
+  stop-color: var(--logoReverseAccentOne);
+}
+.logo svg.mobileLogo #headerLogoGradientMobile :nth-child(2) {
+  stop-color: var(--logoReverseAccentTwo);
+}
+.logo svg.standardLogo #smallLogoGradient :first-child {
+  stop-color: var(--logoAccentOne);
+}
+.logo svg.standardLogo #smallLogoGradient :nth-child(2) {
+  stop-color: var(--logoAccentTwo);
+}
+.logo svg.standardLogo .bigLogoGradientStandard :first-child {
+  stop-color: var(--logoReverseAccentOne);
+}
+.logo svg.standardLogo .bigLogoGradientStandard :nth-child(2) {
+  stop-color: var(--logoReverseAccentTwo);
+}
+.logo.mobileOn {
+  position: fixed;
+  top: 0.5vmax;
+  left: 0.5vmax;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo.mobileOn svg {
+  border-radius: 50%;
+}
+.logo.mobileOn svg.mobileLogo {
+  display: block;
+}
+.logo.mobileOn svg.mobileLogo #smallLogoGradient :first-child {
+  stop-color: var(--logoAccentOne);
+}
+.logo.mobileOn svg.mobileLogo #smallLogoGradient :nth-child(2) {
+  stop-color: var(--logoAccentTwo);
+}
+.logo.mobileOn svg.standardLogo {
+  display: none;
 }
 
+@media (max-width: 1000px) {
+  .logo {
+    position: fixed;
+    top: 0.5vmax;
+    left: 0.5vmax;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo svg.mobileLogo {
+    display: block;
+  }
+  .logo svg.standardLogo {
+    display: none;
+  }
+}
 .search-form {
   position: absolute;
   left: 50%;
@@ -731,7 +819,7 @@ nav {
   user-select: none;
   background-color: var(--tpPri);
   backdrop-filter: blur(1vmax);
-  border: 0.2rem solid var(--paleAccent);
+  border: 0.2rem solid var(--reversePaleAccentTwo);
   border-radius: 1rem;
   overflow: hidden;
   z-index: 10;
@@ -749,15 +837,17 @@ nav .navigationLists {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  padding: 0.5rem;
+  padding: 0.3rem;
   height: 3rem;
 }
 nav .navigationLists .divider {
   position: relative;
   border-radius: 1rem;
   width: 0.2rem;
-  height: 100%;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  margin-inline: 0.5rem;
+  align-self: center;
+  height: 95%;
+  background: linear-gradient(to bottom, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
 }
 nav .navigationLists li {
   position: relative;
@@ -773,37 +863,41 @@ nav .navigationLists li ::before {
   inset: 0;
   position: absolute;
   filter: blur(2rem);
-  transition: 300ms all ease;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
 }
-nav .navigationLists li a {
+nav .navigationLists li button {
   display: flex;
   align-items: center;
-}
-nav .navigationLists li a:active span.material-symbols-outlined {
-  color: var(--tertAccent);
-}
-nav .navigationLists li a:focus-visible {
-  color: var(--accent);
+  color: var(--secColor);
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
-nav .navigationLists li a:focus-visible .material-symbols-outlined {
-  color: var(--accent);
+nav .navigationLists li button p {
+  margin-inline: 0.3rem;
+  font-size: large;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
-nav .navigationLists li a:focus-visible ::before {
-  background-color: var(--accent);
+nav .navigationLists li button span {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
-nav .navigationLists li:hover {
-  color: var(--accent);
-  transition: 300ms all ease;
+nav .navigationLists li button:active span.material-symbols-outlined {
+  color: var(--tertAccent);
 }
-nav .navigationLists li:hover .material-symbols-outlined {
-  color: var(--accent);
+nav .navigationLists li button:focus-visible {
+  color: var(--reverseAccent);
+}
+nav .navigationLists li button:focus-visible .material-symbols-outlined,
+nav .navigationLists li button:focus-visible p {
+  color: var(--reverseAccent);
+}
+nav .navigationLists li button:focus-visible ::before {
+  background-color: var(--reverseAccent);
 }
 nav .navigationLists li:hover ::before {
-  background-color: var(--accent);
+  background-color: var(--reverseAccent);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   nav {
     justify-self: center;
     margin-inline: auto;
@@ -814,16 +908,25 @@ nav .navigationLists li:hover ::before {
   }
   nav .navigationLists {
     order: 3;
-    padding-inline: 0.2rem;
     height: 2rem;
   }
   nav .navigationLists .divider {
-    height: 150%;
+    align-self: center;
+    height: 110%;
+    margin: 0;
+  }
+  nav .navigationLists .divider.middleDivider {
+    display: none;
+  }
+  nav button p {
+    display: none;
+    margin: 0;
   }
   nav .themeSelector ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 5%;
   }
   nav .themeSelector ul li.lightButton {
     order: 0;
@@ -834,16 +937,16 @@ nav .navigationLists li:hover ::before {
   nav .themeSelector ul li.darkButton {
     order: 2;
   }
-  nav .themeSelector ul li a span {
+  nav .themeSelector ul li button span {
     margin: 0;
   }
-  nav .themeSelector ul li a p {
+  nav .themeSelector ul li button p {
     display: none;
   }
   nav .productAddedNotification ul {
-    padding: 0.2rem 0.1rem;
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
   nav .productAddedNotification ul :nth-child(4) {
     display: none;
@@ -851,9 +954,18 @@ nav .navigationLists li:hover ::before {
   nav .productAddedNotification ul button {
     width: 100%;
     margin-block: 0;
-    border-radius: 0.8rem;
+    border-radius: 0rem;
     padding: 0;
     order: -1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  nav .productAddedNotification ul li {
+    padding-inline: 0.5rem;
+  }
+  nav .productAddedNotification ul li:nth-child(3) {
+    margin-bottom: 0.3rem;
   }
   nav .productAddedNotification::before,
   nav .themeSelector::before {
@@ -913,7 +1025,7 @@ footer .footerMain {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 150%);
 }
 
 @media (max-width: 1440px) {
@@ -1120,6 +1232,12 @@ footer .footerMain {
   filter: blur(5rem);
   transform: translateZ(-1.2rem);
 }
+.footerHero .footerLogo svg #linearLogoFooter :first-child {
+  stop-color: var(--logoAccentOne);
+}
+.footerHero .footerLogo svg #linearLogoFooter :nth-child(2) {
+  stop-color: var(--logoAccentTwo);
+}
 
 @media (max-width: 1440px) {
   .footerHero {
@@ -1301,6 +1419,7 @@ footer .footerMain {
 }
 .footFooter .legal a:hover {
   opacity: 0.9;
+  color: var(--priColor);
 }
 .footFooter .legal a:active {
   color: var(--priColor);
@@ -2316,11 +2435,11 @@ select {
   text-align: center;
   background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
 }
+.finalStage .products h2.footerProducts {
+  display: none;
+}
 .finalStage .products ul {
   max-height: 20vmax;
-}
-.finalStage .products .footerProducts {
-  display: none;
 }
 .finalStage .summary .headerSummary {
   background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
@@ -2348,6 +2467,19 @@ select {
   flex-direction: row;
 }
 
+.cartEmpty .emptyCartDiv {
+  display: flex;
+}
+.cartEmpty .products {
+  display: none;
+}
+.cartEmpty .summary {
+  display: none;
+}
+.cartEmpty .checkout {
+  display: none;
+}
+
 @media (max-width: 1640px) {
   .cart .products {
     width: 95%;
@@ -2362,6 +2494,7 @@ select {
 @media (max-width: 1000px) {
   .cart {
     max-width: 100vmax;
+    gap: 0;
   }
   .cart .summary {
     width: 100%;
@@ -2388,11 +2521,16 @@ select {
   }
   .cart .products {
     width: 100%;
+    border-radius: 0;
   }
   .cart .products h2 {
     border-radius: 0;
     margin-block: 0;
     text-align: center;
+  }
+  .cart .products h2.footerProducts {
+    border-radius: 0;
+    display: none;
   }
   .cart .products ul {
     border: none;
@@ -2450,7 +2588,10 @@ select {
     align-items: flex-start;
     border-radius: 0.1rem;
   }
-  .cart .products ul li h3 a {
+  .cart .products ul li h3 {
+    max-width: 100%;
+  }
+  .cart .products ul li h3 p {
     position: relative;
     font-size: 1rem;
     top: -1.5rem;
@@ -2739,6 +2880,7 @@ select {
   border-top-right-radius: 0.3vmax;
   border-bottom-left-radius: 0.3vmax;
   border-bottom-right-radius: 0.8vmax;
+  overflow: hidden;
 }
 .products h2 {
   position: relative;
@@ -2755,8 +2897,9 @@ select {
   padding-inline: 0.2vmax;
   padding-block: 0;
   text-align: center;
-  outline: 0.15rem solid var(--paleAccent);
   border-radius: 0.3rem;
+  background: var(--paleAccent);
+  color: var(--secColor);
 }
 .products h2.footerProducts {
   background: var(--paleAccentTwo);
@@ -2791,6 +2934,8 @@ select {
   display: flex;
   align-items: center;
   position: relative;
+  max-width: 65%;
+  --bgimg: url("");
 }
 .products ul li .pTitle p {
   overflow: hidden;
@@ -2798,32 +2943,34 @@ select {
   -webkit-line-clamp: 1;
   line-clamp: 1;
   -webkit-box-orient: vertical;
-}
-.products ul li .pTitle::before {
-  content: "";
-  display: block;
-  background-color: var(--tpPri);
-  min-height: 8rem;
-  min-width: 8rem;
-  margin-right: 0.5rem;
-  outline: 0.15rem solid var(--paleAccentThree);
-}
-.products ul li h3 a {
   width: fit-content;
   position: relative;
   color: var(--secColor);
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
 }
-.products ul li h3 a:hover {
+.products ul li .pTitle p:hover {
   color: var(--accent);
 }
-.products ul li h3 a:active {
+.products ul li .pTitle p:active {
   scale: 1.05;
 }
-.products ul li h3 a:focus-visible {
+.products ul li .pTitle p:focus-visible {
   color: var(--accent);
   text-decoration: underline;
+}
+.products ul li .pTitle::before {
+  content: "";
+  display: block;
+  min-height: 8rem;
+  min-width: 8rem;
+  margin-right: 0.5rem;
+  outline: 0.15rem solid var(--paleAccentThree);
+  background-image: var(--bgimg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .products ul li div {
   display: flex;
@@ -2836,8 +2983,7 @@ select {
   width: 0.2rem;
   height: 1.5rem;
   border: none;
-  background: linear-gradient(to right, var(--paleAccentThree), var(--paleAccentTwo), var(--paleAccentThree));
-  background-color: red;
+  background: linear-gradient(45deg, var(--accent) 30%, var(--secAccent) 70%);
 }
 .products ul li div button {
   position: relative;
@@ -2862,9 +3008,12 @@ select {
   scale: 1;
   opacity: 1;
 }
+.products ul li div button:hover span {
+  color: var(--priColor);
+}
 .products ul li div button:hover::before {
   scale: 1;
-  opacity: 0.5;
+  opacity: 1;
 }
 .products ul li div button:active {
   scale: 1.1;
@@ -2877,8 +3026,9 @@ select {
 }
 .products ul li div button.disabledAmountBtn {
   pointer-events: none;
-  background-color: var(--tpPri);
-  color: var(--secColor);
+}
+.products ul li div button.disabledAmountBtn span {
+  color: var(--tertColor);
 }
 .products ul li div h4 {
   margin-inline: 0.3vmax;
@@ -3125,6 +3275,61 @@ select {
   backdrop-filter: blur(1.5rem);
 }
 
+.emptyCartDiv {
+  display: none;
+  width: 61%;
+  height: 30vmax;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.emptyCartDiv::before {
+  content: "";
+  inset: 10rem 25rem;
+  position: absolute;
+  display: block;
+  background-color: var(--accent);
+  filter: blur(10rem);
+  opacity: 0.5;
+  z-index: -1;
+}
+.emptyCartDiv span {
+  color: var(--accent);
+  pointer-events: none;
+}
+.emptyCartDiv h2 {
+  opacity: 0.85;
+  font-size: 2.25vw;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-shadow: 0.05rem 0.05rem 0 var(--tpSec);
+}
+.emptyCartDiv p {
+  opacity: 0.85;
+  font-size: 2vw;
+  text-shadow: 0.05rem 0.05rem 0 var(--tpSec);
+}
+.emptyCartDiv .emptyCartLogo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 25rem;
+  z-index: 1;
+}
+.emptyCartDiv .emptyCartLogo svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.emptyCartDiv .emptyCartLogo svg #cartLinear :first-child {
+  stop-color: var(--accent);
+}
+.emptyCartDiv .emptyCartLogo svg #cartLinear :nth-child(2) {
+  stop-color: var(--secAccent);
+}
+
 #products-div-one {
   display: flex;
   justify-content: center;
@@ -3212,7 +3417,7 @@ select {
   height: 0.15rem;
   border-radius: 1rem;
   position: absolute;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  background: linear-gradient(to right, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
   justify-self: center;
   visibility: collapse;
 }
@@ -3250,14 +3455,14 @@ select {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
 }
 .productAddedNotification ul li span {
   font-weight: 600;
 }
 .productAddedNotification ul button {
   color: var(--priColor);
-  width: 90%;
+  width: 95%;
   padding: 0.2rem;
   margin-block: 0.4rem 0.2rem;
   position: relative;
@@ -3268,27 +3473,27 @@ select {
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   border-radius: 0.5rem;
-  border: 0.2rem solid var(--paleAccentThree);
+  border: 0.2rem solid var(--reversePaleAccent);
 }
 .productAddedNotification ul button::before {
   content: "";
   inset: -1rem;
   position: absolute;
   filter: blur(0.5vmax);
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  background: linear-gradient(-45deg, var(--reverseSecAccent) 0%, var(--reverseAccent) 30%, var(--reverseSecAccent) 70%);
   z-index: -1;
 }
 .productAddedNotification ul button:focus-visible {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
 .productAddedNotification ul button:hover {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
 .productAddedNotification ul button:focus-visible {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
 .productAddedNotification ul button:active {
   background-color: var(--paleAccentThree);
@@ -3306,50 +3511,54 @@ select {
 
 .themeSelector ul li {
   margin: 0.2rem;
-  border-radius: 0.3rem;
-  border: 0.15rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--reversePaleAccent);
   overflow: hidden;
 }
-.themeSelector ul li a {
+.themeSelector ul li button {
   color: var(--secColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   padding: 0.3rem;
+  width: 100%;
 }
-.themeSelector ul li a span {
+.themeSelector ul li button span {
   margin-left: 0.5rem;
 }
-.themeSelector ul li a:hover {
+.themeSelector ul li button p {
+  font-size: large;
+}
+.themeSelector ul li button:hover {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:hover span {
-  color: var(--accent);
+.themeSelector ul li button:hover span {
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:focus-visible {
+.themeSelector ul li button:focus-visible {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:focus-visible span {
-  color: var(--accent);
+.themeSelector ul li button:focus-visible span {
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:active {
-  border-color: var(--accent);
+.themeSelector ul li button:active {
+  border-color: var(--reverseAccent);
   color: var(--secColor);
 }
-.themeSelector ul li a:active span {
+.themeSelector ul li button:active span {
   color: var(--secColor);
 }
 .themeSelector ul li.selectedThemeMode {
   pointer-events: none;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  background: linear-gradient(45deg, var(--reverseAccent) 0%, var(--reverseSecAccent) 100%);
   border: none;
 }
-.themeSelector ul li.selectedThemeMode a {
+.themeSelector ul li.selectedThemeMode button {
   color: var(--priColor);
 }
-.themeSelector ul li.selectedThemeMode a span {
+.themeSelector ul li.selectedThemeMode button span {
   color: var(--priColor);
 }/*# sourceMappingURL=styles.css.map */
