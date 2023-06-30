@@ -31,8 +31,9 @@
         display: flex; // SHOULD ANIMATE
     }
 }
+
 // DONE - NEEDS ANIMATING
-.shippingstage { 
+.shippingstage {
     .summary {
         button {
             &.makePurchase {
@@ -57,7 +58,6 @@
         display: flex; // SHOULD ANIMATE
     }
 }
-
 
 // DONE - NEEDS ANIMATING
 .paymentStage {
@@ -111,6 +111,7 @@
             &.paymentAO {
                 display: none; // SHOULD ANIMATE
             }
+
             &.checkoutNav {
                 h2 {
                     text-align: center;
@@ -139,6 +140,10 @@
                 text-align: center;
                 background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
             }
+
+            &.footerProducts {
+                display: none;
+            }
         }
 
 
@@ -146,19 +151,21 @@
             max-height: 20vmax;
         }
 
-        .footerProducts {
-            display: none;
-        }
+        
     }
 
     .summary {
         .headerSummary {
             background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
             text-align: center;
-            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
 
         button {
+            border-radius: 1rem;
+            padding: 1rem;
+
             &.makePurchase {
                 display: block;
             }
@@ -173,12 +180,31 @@
         }
 
         ul {
+            border-radius: .5rem;
+
             &.buyerProtectReview {
                 li {
                     flex-direction: row;
                 }
             }
         }
+    }
+}
+
+.cartEmpty {
+    .emptyCartDiv{
+        display: flex;
+    }
+    .products {
+        display: none;
+    }
+
+    .summary {
+        display: none;
+    }
+
+    .checkout {
+        display: none;
     }
 }
 
@@ -201,6 +227,7 @@
 @media (max-width: 1000px) {
     .cart {
         max-width: 100vmax;
+        gap: 0;
 
         .summary {
             width: 100%;
@@ -208,6 +235,7 @@
 
             .headerSummary {
                 border-radius: 0;
+                
             }
 
             ul {
@@ -215,7 +243,7 @@
                 border-radius: 0;
 
                 &.buyerProtectReview {
-                    border-top: .3rem solid var(--paleAccentThree);
+                    border-block: .3rem solid var(--paleAccentThree);
 
                     li {
                         padding-block: .5rem;
@@ -224,29 +252,30 @@
             }
 
             button {
+                margin-top: .5rem;
+                width: 90%;
+                align-self: center;
                 border: .2rem solid var(--paleAccentThree);
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
-
-                &:hover,
-                &:focus-visible {
-                    border-left: none;
-                    border-right: none;
-                }
             }
         }
 
         .products {
             width: 100%;
+            border-radius: 0;
 
             h2 {
                 border-radius: 0;
-                margin-block: .4rem;
+                margin-block: 0;
                 text-align: center;
+                &.footerProducts {
+                    border-radius: 0;
+                    display: none;
+                }
             }
 
             ul {
+                border: none;
+
                 li {
                     min-height: 6rem;
 
@@ -331,9 +360,10 @@
                     border-radius: 0.1rem;
 
                     h3 {
+                        max-width: 100%;
 
                         // Text Goes up a bit
-                        a {
+                        p {
                             position: relative;
                             font-size: 1rem;
                             top: -1.5rem;

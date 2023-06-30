@@ -15,7 +15,7 @@ header {
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 100%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 150%);
     }
 }
 
@@ -23,52 +23,63 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    z-index: -3;
 
     svg {
         position: absolute;
-        fill: transparent;
-        // transform: rotate(180deg);
+        &.leftBkg {
+            transform: rotateY(-180deg);
+            right: 0;
+            display: none;
+            
+        }
 
-        #a {
+        &.mobileBkg {
+            transform: rotateY(-180deg);
+            right: 0;
+            display: none;
+        }
+
+        #headerBkgLinearLeft {
+            :first-child {
+                stop-color: var(--secAccent)
+            }
+
+            :nth-child(2) {
+                stop-color: var(--paleAccentTwo)
+            }
+
+            :last-child {
+                stop-color: var(--reverseSecAccent)
+            }
+        }
+
+        #headerBkgLinearMobile {
+            :first-child {
+                stop-color: var(--secAccent)
+            }
+
+            :nth-child(2) {
+                stop-color: var(--paleAccentTwo)
+            }
+
+            :last-child {
+                stop-color: var(--reverseAccent)
+            }
+        }
+
+        #headerBkgLinearRight {
             :first-child {
                 stop-color: var(--accent)
             }
 
             :nth-child(2) {
-                stop-color: var(--secAccent)
-            }
-        }
-
-        #b {
-            :first-child {
-                stop-color: var(--tertAccent)
+                stop-color: var(--reverseAccent)
             }
 
-            :nth-child(2) {
-                stop-color: var(--additionallAccent)
+            :last-child {
+                stop-color: var(--reverseAccent)
             }
-        }
-        #c {
-            :first-child {
-                stop-color: var(--secAccent)
-            }
-
-            :nth-child(2) {
-                stop-color: var(--tertAccent)
-            }
-        }
-
-        #polgOne {
-            fill: var(--accent);
-        }
-
-        #polgTwo {
-            fill: var(--secAccent);
-        }
-
-        #polgThree {
-            fill: var(--tertAccent);
         }
     }
 }
@@ -84,11 +95,160 @@ header {
 
 .logo {
     position: fixed;
-    font-family: 'Rubik Microbe', cursive;
-    color: var(--tertAccent);
-    font-size: 3vmax;
-    top: 1vmax;
-    left: 1vmax;
-    mix-blend-mode: difference;
-    pointer-events: none;
+    top: .5vmax;
+    left: .5vmax;
+    width: 10rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        &.mobileLogo {
+            display: none;
+            border-radius: 50%;
+            backdrop-filter: blur(1rem);
+
+            #headerLogoGradientMobile {
+                :first-child {
+                    stop-color: var(--logoReverseAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoReverseAccentTwo)
+                }
+            }
+        }
+
+        &.standardLogo {
+            #smallLogoGradient {
+                :first-child {
+                    stop-color: var(--logoAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoAccentTwo)
+                }
+            }
+
+            .bigLogoGradientStandard {
+                :first-child {
+                    stop-color: var(--logoReverseAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoReverseAccentTwo)
+                }
+            }
+        }
+    }
+
+    &.mobileOn {
+        position: fixed;
+        top: .5vmax;
+        left: .5vmax;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            // SHOULD ANIMATE
+            border-radius: 50%;
+
+            &.mobileLogo {
+                display: block;
+
+                #smallLogoGradient {
+                    :first-child {
+                        stop-color: var(--logoAccentOne)
+                    }
+
+                    :nth-child(2) {
+                        stop-color: var(--logoAccentTwo)
+                    }
+                }
+            }
+
+            &.standardLogo {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 4000px) {
+    .headerBackgroundImage {
+        svg {
+            position: absolute;
+
+            &.leftBkg {
+                display: block;
+            }
+
+            &.rightBkg {
+                display: block;
+            }
+        }
+    }
+
+    .logo {
+        // SHOULD ANIMATE
+        position: fixed;
+        top: .5vmax;
+        left: .5vmax;
+        width: 20rem;
+        height: 11rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .headerBackgroundImage {
+        svg {
+            position: absolute;
+
+            &.leftBkg {
+                display: none;
+            }
+
+            &.rightBkg {
+                display: none;
+            }
+
+            &.mobileBkg {
+                display: block;
+            }
+        }
+    }
+
+    .logo {
+        // SHOULD ANIMATE
+        position: fixed;
+        top: .5vmax;
+        left: .5vmax;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            &.mobileLogo {
+                display: block;
+            }
+
+            &.standardLogo {
+                display: none;
+            }
+        }
+    }
 }

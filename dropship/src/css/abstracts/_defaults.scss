@@ -24,8 +24,9 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 
-    background-image: radial-gradient(circle, var(--priColor), var(--someColor), var(--priColor) 75%);
-
+    // background-image: radial-gradient(circle, var(--priColor), var(--someColor), var(--priColor) 75%);
+    // background: radial-gradient(circle at center, var(--priColor) 0%, var(--backdropBackground) 100%);
+    // background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
     // &::-webkit-scrollbar {
     //     display: none;
     // }

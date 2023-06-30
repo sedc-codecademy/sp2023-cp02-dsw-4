@@ -17,7 +17,7 @@
         height: .15rem;
         border-radius: 1rem;
         position: absolute;
-        background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+        background: linear-gradient(to right, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
         justify-self: center;
         visibility: collapse;
     }

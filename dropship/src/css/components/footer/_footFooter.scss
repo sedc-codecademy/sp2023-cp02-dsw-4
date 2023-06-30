@@ -35,12 +35,12 @@
                     background-color: var(--paleAccentTwo);
                     transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
                     transform: scale(1);
-                    // transform-origin: center;
                 }
             }
 
             &:hover {
                 opacity: 0.9;
+                color: var(--priColor);
             }
 
             &:active {

@@ -29,6 +29,10 @@
         text-indent: 1.5rem;
         color: var(--secColor);
 
+        letter-spacing: .05rem;
+        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        font-weight: 600;
+
         &::selection {
             background: var(--accent);
             color: var(--priColor);

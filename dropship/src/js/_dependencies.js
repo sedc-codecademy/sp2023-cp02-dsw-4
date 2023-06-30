@@ -43,6 +43,112 @@ function flattenObjectArrays(object) {
 // const flattenedSubCategories = flattenObjectArrays(subCategories)
 // const flattenedProducts = flattenObjectArrays(products)
 
+const imgPaths = [
+    '../imgs/cat/tech/sub/pc.png',
+    '../imgs/cat/tech/sub/phone.png',
+    '../imgs/cat/tech/sub/printer.png',
+    '../imgs/cat/tech/sub/xbox.png',
+    '../imgs/cat/tech/sub/switch.png',
+    '../imgs/cat/tech/sub/audiovideo.png',
+    '../imgs/cat/tech/sub/smartwatch.png',
+    '../imgs/cat/tech/sub/vr-headset.png',
+    '../imgs/cat/tech/sub/proffcamera.png',
+    '../imgs/cat/tech/sub/charger.png',
+    '../imgs/cat/jewels/sub/necklase.png',
+    '../imgs/cat/jewels/sub/bracelet.png',
+    '../imgs/cat/jewels/sub/earrings.png',
+    '../imgs/cat/jewels/sub/ring.png',
+    '../imgs/cat/jewels/sub/anklet.png',
+    '../imgs/cat/jewels/sub/brooch.png',
+    '../imgs/cat/jewels/sub/charm.png',
+    '../imgs/cat/jewels/sub/jewlsets.png',
+    '../imgs/cat/jewels/sub/bodyjewl.png',
+    '../imgs/cat/jewels/sub/jewlwatch.png',
+    '../imgs/cat/mWear/sub/stripe-shirt.png',
+    '../imgs/cat/mWear/sub/mboots.png',
+    '../imgs/cat/mWear/sub/mpants.png',
+    '../imgs/cat/mWear/sub/cap.png',
+    '../imgs/cat/mWear/sub/suit.png',
+    '../imgs/cat/mWear/sub/mjeans.png',
+    '../imgs/cat/mWear/sub/sweater.png',
+    '../imgs/cat/mWear/sub/leatherjacket.png',
+    '../imgs/cat/mWear/sub/dress-shirt.png',
+    '../imgs/cat/mWear/sub/hoodies.png',
+    '../imgs/cat/fWear/sub/dress.png',
+    '../imgs/cat/fWear/sub/wBoots.png',
+    '../imgs/cat/fWear/sub/purse.png',
+    '../imgs/cat/fWear/sub/wJeans.png',
+    '../imgs/cat/fWear/sub/wSweater.png',
+    '../imgs/cat/fWear/sub/wTops.png',
+    '../imgs/cat/fWear/sub/skirt.png',
+    '../imgs/cat/fWear/sub/wJacket.png',
+    '../imgs/cat/fWear/sub/activewear.png',
+    '../imgs/cat/fWear/sub/lingerie.png',
+    '../imgs/cat/books/sub/romancebooks.png',
+    '../imgs/cat/books/sub/childrensbook.png',
+    '../imgs/cat/books/sub/sciencefiction.png',
+    '../imgs/cat/books/sub/fantasybooks.png',
+    '../imgs/cat/books/sub/cookbooks.png',
+    '../imgs/cat/books/sub/biographybook.png',
+    '../imgs/cat/books/sub/historybooks.png',
+    '../imgs/cat/books/sub/travelbook.png',
+    '../imgs/cat/books/sub/selfhelpbook.png',
+    '../imgs/cat/books/sub/visualartbook.png',
+    '../imgs/cat/kAndA/sub/babycare.png',
+    '../imgs/cat/kAndA/sub/babyfood.png',
+    '../imgs/cat/kAndA/sub/kidsclothes.png',
+    '../imgs/cat/kAndA/sub/toysandgames.png',
+    '../imgs/cat/kAndA/sub/doll.png',
+    '../imgs/cat/kAndA/sub/childcarseat.png',
+    '../imgs/cat/kAndA/sub/boyclothes.png',
+    '../imgs/cat/kAndA/sub/girlsclothes.png',
+    '../imgs/cat/beauty/sub/makeup.png',
+    '../imgs/cat/beauty/sub/skincare.png',
+    '../imgs/cat/beauty/sub/haircare.png',
+    '../imgs/cat/beauty/sub/fragrance.png',
+    '../imgs/cat/beauty/sub/bathandbody.png',
+    '../imgs/cat/beauty/sub/mensgroom.png',
+    '../imgs/cat/beauty/sub/beautytools.png',
+    '../imgs/cat/beauty/sub/personalcare.png',
+    '../imgs/cat/beauty/sub/suncare.png',
+    '../imgs/cat/beauty/sub/wellness.png',
+    '../imgs/cat/auto/sub/carcover.png',
+    '../imgs/cat/auto/sub/carmat.png',
+    '../imgs/cat/auto/sub/seatcover.png',
+    '../imgs/cat/auto/sub/carstorage.png',
+    '../imgs/cat/auto/sub/carphonemount.png',
+    '../imgs/cat/auto/sub/carcharger.png',
+    '../imgs/cat/auto/sub/cleaningkit.png',
+    '../imgs/cat/auto/sub/airfreshener.png',
+    '../imgs/cat/auto/sub/carlight.png',
+    '../imgs/cat/auto/sub/carspoiler.png',
+    '../imgs/cat/sports/sub/athleticapparel.png',
+    '../imgs/cat/sports/sub/waterbottle.png',
+    '../imgs/cat/sports/sub/gearsport.png',
+    '../imgs/cat/sports/sub/campinggear.png',
+    '../imgs/cat/sports/sub/fitnessgear.png',
+    '../imgs/cat/sports/sub/bicycle.png',
+    '../imgs/cat/sports/sub/scooter.png',
+    '../imgs/cat/sports/sub/watergear.png',
+    '../imgs/cat/sports/sub/golfgear.png',
+    '../imgs/cat/sports/sub/wintergear.png',
+    '../imgs/cat/hAndG/sub/furniture.png',
+    '../imgs/cat/hAndG/sub/cookware.png',
+    '../imgs/cat/hAndG/sub/homedecor.png',
+    '../imgs/cat/hAndG/sub/gardening.png',
+    '../imgs/cat/hAndG/sub/petsupplies.png',
+    '../imgs/cat/hAndG/sub/homeimprove.png',
+    '../imgs/cat/hAndG/sub/bathessentials.png',
+    '../imgs/cat/hAndG/sub/storageorg.png',
+    '../imgs/cat/hAndG/sub/lighting.png',
+    '../imgs/cat/hAndG/sub/laundry.png'
+]
+
+function getRandomImgPath(arr){
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex]
+}
+
 const categoriesBtn = document.querySelector(".categoriesButton")
 const categoryDropDown = document.querySelector(".ctDropDown")
 const ctButtonSf = document.querySelector("#ctButtonSf")
@@ -186,6 +292,13 @@ function showElement(timeouts, time, callbackOpen, callbackOpenTwo, main) { // T
 const allMains = document.querySelectorAll(".mainMain")
 
 function switchMain(mainToTurnOn, display) {
+    if (mainToTurnOn.classList.contains('currentMain')) {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+        return
+    }
     for (let i = 0; i < allMains.length; i++) {
         if (mainToTurnOn !== allMains[i]) {
             if (allMains[i].classList.contains("currentMain")) {
@@ -197,6 +310,10 @@ function switchMain(mainToTurnOn, display) {
             mainToTurnOn.classList.add("currentMain")
         }
     }
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
 }
 
 const homeBtn = document.querySelector(".homeButton")

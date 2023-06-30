@@ -13,15 +13,23 @@
   --paleAccent: rgba(255, 0, 136, 0.072);
   --paleAccentTwo: rgba(255, 0, 123, 0.67);
   --paleAccentThree: rgba(227, 172, 199, 0.765);
-  --someColor: #ffffff;
+  --someColor: #bc494976;
   --additionallAccent: rgb(0, 255, 119);
+  --reverseAccent: #28b0ff;
+  --reverseSecAccent: #0099ff;
+  --reversePaleAccent: #0099ff5b;
+  --reversePaleAccentTwo: #0099ffb0;
+  --logoAccentOne: rgb(255, 52, 150);
+  --logoAccentTwo: rgb(208, 0, 255);
+  --logoReverseAccentOne: #0091ff;
+  --logoReverseAccentTwo: rgb(29, 184, 231);
 }
 
 .dark-mode {
   --priColor: rgb(0, 0, 0);
   --tpPri: rgba(0, 0, 0, 0.475);
   --tpSec: rgba(255, 255, 255, 0.2);
-  --secColor: rgb(243, 243, 243);
+  --secColor: rgb(255, 255, 255);
   --accent: rgb(59, 255, 157);
   --secAccent: rgba(0, 255, 55);
   --tertAccent: rgb(65, 204, 255);
@@ -33,11 +41,20 @@
   --accent: #00eaff;
   --tertAccent: #e71db1;
   --additionallAccent: rgb(255, 187, 0);
-  --priColor: #000000e3;
-  --paleAccent: #00eaff08;
+  --priColor: rgb(0, 0, 0);
+  --paleAccent: #00eaff13;
   --paleAccentTwo: #00eaffc8;
   --paleAccentThree: #00eaff3f;
-  --backdropBackground: rgba(0, 0, 0, 0.475);
+  --backdropBackground: rgb(1, 21, 50);
+  --reverseAccent: rgb(255, 64, 210);
+  --reverseSecAccent: rgb(208, 0, 255);
+  --reversePaleAccent: rgba(255, 64, 210, 0.395);
+  --reversePaleAccentTwo: rgba(255, 2, 196, 0.661);
+  --logoAccentOne: #00eaff;
+  --logoAccentTwo: #006aff;
+  --logoReverseAccentOne: rgb(255, 52, 150);
+  --logoReverseAccentTwo: rgb(208, 0, 255);
+  background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
 }
 
 dialog::backdrop {
@@ -68,7 +85,6 @@ body {
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-image: radial-gradient(circle, var(--priColor), var(--someColor), var(--priColor) 75%);
 }
 
 img {
@@ -117,45 +133,54 @@ header .headerGradient {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 150%);
 }
 
 .headerBackgroundImage {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  z-index: -3;
 }
 .headerBackgroundImage svg {
   position: absolute;
-  fill: transparent;
 }
-.headerBackgroundImage svg #a :first-child {
+.headerBackgroundImage svg.leftBkg {
+  transform: rotateY(-180deg);
+  right: 0;
+  display: none;
+}
+.headerBackgroundImage svg.mobileBkg {
+  transform: rotateY(-180deg);
+  right: 0;
+  display: none;
+}
+.headerBackgroundImage svg #headerBkgLinearLeft :first-child {
+  stop-color: var(--secAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearLeft :nth-child(2) {
+  stop-color: var(--paleAccentTwo);
+}
+.headerBackgroundImage svg #headerBkgLinearLeft :last-child {
+  stop-color: var(--reverseSecAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearMobile :first-child {
+  stop-color: var(--secAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearMobile :nth-child(2) {
+  stop-color: var(--paleAccentTwo);
+}
+.headerBackgroundImage svg #headerBkgLinearMobile :last-child {
+  stop-color: var(--reverseAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearRight :first-child {
   stop-color: var(--accent);
 }
-.headerBackgroundImage svg #a :nth-child(2) {
-  stop-color: var(--secAccent);
+.headerBackgroundImage svg #headerBkgLinearRight :nth-child(2) {
+  stop-color: var(--reverseAccent);
 }
-.headerBackgroundImage svg #b :first-child {
-  stop-color: var(--tertAccent);
-}
-.headerBackgroundImage svg #b :nth-child(2) {
-  stop-color: var(--additionallAccent);
-}
-.headerBackgroundImage svg #c :first-child {
-  stop-color: var(--secAccent);
-}
-.headerBackgroundImage svg #c :nth-child(2) {
-  stop-color: var(--tertAccent);
-}
-.headerBackgroundImage svg #polgOne {
-  fill: var(--accent);
-}
-.headerBackgroundImage svg #polgTwo {
-  fill: var(--secAccent);
-}
-.headerBackgroundImage svg #polgThree {
-  fill: var(--tertAccent);
+.headerBackgroundImage svg #headerBkgLinearRight :last-child {
+  stop-color: var(--reverseAccent);
 }
 
 .material-symbols-outlined {
@@ -169,15 +194,120 @@ header .headerGradient {
 
 .logo {
   position: fixed;
-  font-family: "Rubik Microbe", cursive;
-  color: var(--tertAccent);
-  font-size: 3vmax;
-  top: 1vmax;
-  left: 1vmax;
-  mix-blend-mode: difference;
-  pointer-events: none;
+  top: 0.5vmax;
+  left: 0.5vmax;
+  width: 10rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.logo svg {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.logo svg.mobileLogo {
+  display: none;
+  border-radius: 50%;
+  backdrop-filter: blur(1rem);
+}
+.logo svg.mobileLogo #headerLogoGradientMobile :first-child {
+  stop-color: var(--logoReverseAccentOne);
+}
+.logo svg.mobileLogo #headerLogoGradientMobile :nth-child(2) {
+  stop-color: var(--logoReverseAccentTwo);
+}
+.logo svg.standardLogo #smallLogoGradient :first-child {
+  stop-color: var(--logoAccentOne);
+}
+.logo svg.standardLogo #smallLogoGradient :nth-child(2) {
+  stop-color: var(--logoAccentTwo);
+}
+.logo svg.standardLogo .bigLogoGradientStandard :first-child {
+  stop-color: var(--logoReverseAccentOne);
+}
+.logo svg.standardLogo .bigLogoGradientStandard :nth-child(2) {
+  stop-color: var(--logoReverseAccentTwo);
+}
+.logo.mobileOn {
+  position: fixed;
+  top: 0.5vmax;
+  left: 0.5vmax;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo.mobileOn svg {
+  border-radius: 50%;
+}
+.logo.mobileOn svg.mobileLogo {
+  display: block;
+}
+.logo.mobileOn svg.mobileLogo #smallLogoGradient :first-child {
+  stop-color: var(--logoAccentOne);
+}
+.logo.mobileOn svg.mobileLogo #smallLogoGradient :nth-child(2) {
+  stop-color: var(--logoAccentTwo);
+}
+.logo.mobileOn svg.standardLogo {
+  display: none;
 }
 
+@media screen and (min-width: 4000px) {
+  .headerBackgroundImage svg {
+    position: absolute;
+  }
+  .headerBackgroundImage svg.leftBkg {
+    display: block;
+  }
+  .headerBackgroundImage svg.rightBkg {
+    display: block;
+  }
+  .logo {
+    position: fixed;
+    top: 0.5vmax;
+    left: 0.5vmax;
+    width: 20rem;
+    height: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1000px) {
+  .headerBackgroundImage svg {
+    position: absolute;
+  }
+  .headerBackgroundImage svg.leftBkg {
+    display: none;
+  }
+  .headerBackgroundImage svg.rightBkg {
+    display: none;
+  }
+  .headerBackgroundImage svg.mobileBkg {
+    display: block;
+  }
+  .logo {
+    position: fixed;
+    top: 0.5vmax;
+    left: 0.5vmax;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo svg.mobileLogo {
+    display: block;
+  }
+  .logo svg.standardLogo {
+    display: none;
+  }
+}
 .search-form {
   position: absolute;
   left: 50%;
@@ -207,8 +337,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   border: 0.2rem solid var(--paleAccentThree);
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   transition: 300ms all ease;
   z-index: 3;
@@ -222,10 +351,9 @@ header .headerGradient {
   outline: none;
   text-indent: 1.5rem;
   color: var(--secColor);
-}
-.search-bar-container .search-bar::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
+  letter-spacing: 0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-weight: 600;
 }
 .search-bar-container .search-bar::selection {
   background: var(--accent);
@@ -305,8 +433,7 @@ header .headerGradient {
   top: 3.3rem;
   width: 40rem;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(3rem);
-          backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
   border-top-left-radius: 1.6rem;
   border-top-right-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
@@ -415,7 +542,6 @@ header .headerGradient {
 }
 .search-suggestions ul a h5,
 .search-suggestions ul a h6 {
-  width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
   overflow: hidden;
@@ -460,8 +586,7 @@ header .headerGradient {
   border-bottom-right-radius: 1.7rem;
   background-color: var(--tpPri);
   border: 0.2rem solid var(--paleAccentThree);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   padding: 1rem;
   transform: translateY(100vh);
   transform-origin: 150% 15%;
@@ -479,9 +604,7 @@ header .headerGradient {
   justify-content: center;
   gap: 1rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .ctDropDown .categories-ul li {
   height: 3rem;
@@ -738,13 +861,10 @@ nav {
   position: fixed;
   right: 1.5vmax;
   top: 1vmax;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(1vmax);
-          backdrop-filter: blur(1vmax);
-  border: 0.2rem solid var(--paleAccent);
+  backdrop-filter: blur(1vmax);
+  border: 0.2rem solid var(--reversePaleAccentTwo);
   border-radius: 1rem;
   overflow: hidden;
   z-index: 10;
@@ -762,15 +882,17 @@ nav .navigationLists {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  padding: 0.5rem;
+  padding: 0.3rem;
   height: 3rem;
 }
 nav .navigationLists .divider {
   position: relative;
   border-radius: 1rem;
   width: 0.2rem;
-  height: 100%;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  margin-inline: 0.5rem;
+  align-self: center;
+  height: 95%;
+  background: linear-gradient(to bottom, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
 }
 nav .navigationLists li {
   position: relative;
@@ -786,37 +908,44 @@ nav .navigationLists li ::before {
   inset: 0;
   position: absolute;
   filter: blur(2rem);
-  transition: 300ms all ease;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
 }
-nav .navigationLists li a {
+nav .navigationLists li button {
   display: flex;
   align-items: center;
-}
-nav .navigationLists li a:active span.material-symbols-outlined {
-  color: var(--tertAccent);
-}
-nav .navigationLists li a:focus-visible {
-  color: var(--accent);
+  color: var(--secColor);
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
-nav .navigationLists li a:focus-visible .material-symbols-outlined {
-  color: var(--accent);
+nav .navigationLists li button p {
+  margin-inline: 0.3rem;
+  font-size: large;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  letter-spacing: 0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-weight: 600;
 }
-nav .navigationLists li a:focus-visible ::before {
-  background-color: var(--accent);
+nav .navigationLists li button span {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
-nav .navigationLists li:hover {
-  color: var(--accent);
-  transition: 300ms all ease;
+nav .navigationLists li button:active span.material-symbols-outlined {
+  color: var(--tertAccent);
 }
-nav .navigationLists li:hover .material-symbols-outlined {
-  color: var(--accent);
+nav .navigationLists li button:focus-visible {
+  color: var(--reverseAccent);
+}
+nav .navigationLists li button:focus-visible .material-symbols-outlined,
+nav .navigationLists li button:focus-visible p {
+  color: var(--reverseAccent);
+}
+nav .navigationLists li button:focus-visible ::before {
+  background-color: var(--reverseAccent);
 }
 nav .navigationLists li:hover ::before {
-  background-color: var(--accent);
+  background-color: var(--reverseAccent);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   nav {
     justify-self: center;
     margin-inline: auto;
@@ -827,16 +956,25 @@ nav .navigationLists li:hover ::before {
   }
   nav .navigationLists {
     order: 3;
-    padding-inline: 0.2rem;
     height: 2rem;
   }
   nav .navigationLists .divider {
-    height: 150%;
+    align-self: center;
+    height: 110%;
+    margin: 0;
+  }
+  nav .navigationLists .divider.middleDivider {
+    display: none;
+  }
+  nav button p {
+    display: none;
+    margin: 0;
   }
   nav .themeSelector ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 5%;
   }
   nav .themeSelector ul li.lightButton {
     order: 0;
@@ -847,16 +985,16 @@ nav .navigationLists li:hover ::before {
   nav .themeSelector ul li.darkButton {
     order: 2;
   }
-  nav .themeSelector ul li a span {
+  nav .themeSelector ul li button span {
     margin: 0;
   }
-  nav .themeSelector ul li a p {
+  nav .themeSelector ul li button p {
     display: none;
   }
   nav .productAddedNotification ul {
-    padding: 0.2rem 0.1rem;
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
   nav .productAddedNotification ul :nth-child(4) {
     display: none;
@@ -864,9 +1002,18 @@ nav .navigationLists li:hover ::before {
   nav .productAddedNotification ul button {
     width: 100%;
     margin-block: 0;
-    border-radius: 0.8rem;
+    border-radius: 0rem;
     padding: 0;
     order: -1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  nav .productAddedNotification ul li {
+    padding-inline: 0.5rem;
+  }
+  nav .productAddedNotification ul li:nth-child(3) {
+    margin-bottom: 0.3rem;
   }
   nav .productAddedNotification::before,
   nav .themeSelector::before {
@@ -904,7 +1051,7 @@ footer .footerMain {
   width: 100%;
   top: 0;
   height: 100%;
-  z-index: -9;
+  z-index: -2;
   overflow: hidden;
 }
 .footerBackgroundImage svg {
@@ -912,21 +1059,24 @@ footer .footerMain {
   bottom: 0;
   fill: transparent;
 }
-.footerBackgroundImage svg #polgOne {
-  fill: var(--accent);
+.footerBackgroundImage svg #footerGradient :first-child {
+  stop-color: var(--accent);
 }
-.footerBackgroundImage svg #polgTwo {
-  fill: var(--tertAccent);
+.footerBackgroundImage svg #footerGradient :nth-child(2) {
+  stop-color: var(--secAccent);
 }
-.footerBackgroundImage svg #polgThree {
-  fill: var(--tertAccent);
+.footerBackgroundImage svg #footerGradientTwo :first-child {
+  stop-color: var(--tertAccent);
+}
+.footerBackgroundImage svg #footerGradientTwo :nth-child(2) {
+  stop-color: var(--tertAccent);
 }
 .footerBackgroundImage .footerGradient {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 120%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--priColor)), radial-gradient(circle at right bottom, transparent 50%, rgba(0, 0, 0, 0), var(--priColor) 150%);
 }
 
 @media (max-width: 1440px) {
@@ -950,9 +1100,7 @@ footer .footerMain {
   color: var(--priColor);
   text-indent: 0.5rem;
   margin-top: -1rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .newsletter h1 {
@@ -962,9 +1110,7 @@ footer .footerMain {
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: lowercase;
   margin-bottom: 2rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
 }
 .newsletter form {
@@ -1019,25 +1165,12 @@ footer .footerMain {
   border-top-left-radius: 1.5rem;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.newsletter input::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
-}
 .newsletter input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
-.newsletter input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .newsletter input:invalid:not(:placeholder-shown) {
   border-color: red;
-}
-.newsletter input:invalid:not(:-moz-placeholder-shown) ~ label {
-  opacity: 1;
-  color: var(--priColor);
-  background: rgb(255, 50, 50);
-  transform: translateY(-105%);
 }
 .newsletter input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -1081,7 +1214,6 @@ footer .footerMain {
 
 @media (max-width: 1440px) {
   .newsletter {
-    width: -moz-min-content;
     width: min-content;
   }
   .newsletter p {
@@ -1123,9 +1255,7 @@ footer .footerMain {
   font-size: 7rem;
   font-family: "Rubik Microbe", cursive;
   color: var(--accent);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -1152,6 +1282,12 @@ footer .footerMain {
   background-color: var(--tertColor);
   filter: blur(5rem);
   transform: translateZ(-1.2rem);
+}
+.footerHero .footerLogo svg #linearLogoFooter :first-child {
+  stop-color: var(--logoAccentOne);
+}
+.footerHero .footerLogo svg #linearLogoFooter :nth-child(2) {
+  stop-color: var(--logoAccentTwo);
 }
 
 @media (max-width: 1440px) {
@@ -1183,9 +1319,7 @@ footer .footerMain {
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   color: var(--priColor);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .getintouch a {
@@ -1209,7 +1343,6 @@ footer .footerMain {
   position: relative;
   left: 0;
   top: 0;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 3.5rem;
   line-height: 1.2;
@@ -1337,6 +1470,7 @@ footer .footerMain {
 }
 .footFooter .legal a:hover {
   opacity: 0.9;
+  color: var(--priColor);
 }
 .footFooter .legal a:active {
   color: var(--priColor);
@@ -1576,6 +1710,7 @@ main.currentMain {
   gap: 1rem;
   width: 90vmax;
   margin-inline: auto;
+  display: none;
 }
 #masterContainer button {
   display: flex;
@@ -1610,7 +1745,7 @@ main.currentMain {
   scale: 1.2;
 }
 #masterContainer #container {
-  padding: 1rem 0.5rem;
+  padding: 1rem 2rem;
   border-left: 0.4rem solid var(--accent);
   border-right: 0.4rem solid var(--accent);
   position: relative;
@@ -1622,7 +1757,7 @@ main.currentMain {
 #masterContainer #container section {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
   height: 17rem;
   position: relative;
   min-width: 15rem;
@@ -1649,7 +1784,7 @@ main.currentMain {
   align-self: center;
 }
 #masterContainer #container section a h3 {
-  margin-block: 0.5rem;
+  margin-block: 2rem;
   text-align: center;
 }
 #masterContainer #container section a::after {
@@ -1683,10 +1818,159 @@ main.currentMain {
   transform: scaleX(1);
 }
 #masterContainer #container section img {
-  width: 5.5rem;
-  height: 4.5rem;
+  width: 52rem;
+  height: 42rem;
   position: absolute;
   bottom: 0;
+}
+
+.scrollableCategories {
+  position: relative;
+  height: 13vmax;
+  width: 75%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.scrollableCategories .categoriesScrollUl {
+  position: relative;
+  width: 85%;
+  height: 100%;
+  background-color: var(--paleAccent);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(0.3rem);
+  border: 0.2rem solid var(--paleAccentThree);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi {
+  background-color: var(--paleAccent);
+  overflow: hidden;
+  height: 100%;
+  width: 23%;
+  border-radius: inherit;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 0.25rem solid var(--paleAccentThree);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  --deg: 0deg;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi::before {
+  content: "";
+  inset: -0.25rem;
+  background: linear-gradient(var(--deg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  position: absolute;
+  z-index: -1;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi h3 {
+  margin-top: 1rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--secColor);
+  letter-spacing: 0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi img {
+  height: 60%;
+  width: 60%;
+  bottom: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft {
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  left: -25%;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover {
+  border-color: var(--paleAccentTwo);
+  background-color: var(--tpPri);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover h3 {
+  color: var(--accent);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible {
+  color: var(--accent);
+  border-color: var(--paleAccentTwo);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible h3 {
+  color: var(--accent);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:active {
+  scale: 0.95;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight {
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  right: -25%;
+}
+.scrollableCategories .scrollCatButtons {
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 0.5rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--paleAccentThree);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scrollableCategories .scrollCatButtons#rightScrollButton span {
+  --spanDeg: -145deg;
+}
+.scrollableCategories .scrollCatButtons span {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  --spanDeg: 145deg;
+}
+.scrollableCategories .scrollCatButtons span::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background: linear-gradient(var(--spanDeg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+  z-index: -1;
+}
+.scrollableCategories .scrollCatButtons::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  backdrop-filter: blur(1rem);
+  z-index: -1;
+}
+.scrollableCategories .scrollCatButtons:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.scrollableCategories .scrollCatButtons:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.scrollableCategories .scrollCatButtons:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.scrollableCategories .scrollCatButtons:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
 }
 
 .categories-section {
@@ -1739,8 +2023,7 @@ select {
   display: none;
   justify-content: center;
   border: 0.3rem solid var(--paleAccentThree);
-  -webkit-backdrop-filter: blur(5rem);
-          backdrop-filter: blur(5rem);
+  backdrop-filter: blur(5rem);
   border-radius: 1rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 0.5rem;
@@ -1755,8 +2038,7 @@ select {
   background: none;
 }
 .loginDropdown::backdrop {
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   background-color: var(--backdropBackground);
 }
 .loginDropdown .closeLoginButton {
@@ -1864,9 +2146,7 @@ select {
 }
 .loginDropdown form span {
   font-weight: 650;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 .loginDropdown form a {
@@ -1894,25 +2174,12 @@ select {
   width: auto;
   height: auto;
 }
-.loginDropdown input::-moz-selection {
-  background: var(--accent);
-  color: var(--priColor);
-}
 .loginDropdown input::selection {
   background: var(--accent);
   color: var(--priColor);
 }
-.loginDropdown input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .loginDropdown input:invalid:not(:placeholder-shown) {
   border-color: red;
-}
-.loginDropdown input:invalid:not(:-moz-placeholder-shown) ~ label {
-  opacity: 1;
-  color: var(--priColor);
-  background: rgb(255, 50, 50);
-  transform: translateY(-110%);
 }
 .loginDropdown input:invalid:not(:placeholder-shown) ~ label {
   opacity: 1;
@@ -2011,8 +2278,7 @@ select {
   position: relative;
   width: 50%;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -2064,8 +2330,7 @@ select {
   margin-top: -10rem;
 }
 .loginUi section:nth-child(2) {
-  -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
+  margin-block-start: 1rem;
   gap: 0.5rem;
 }
 .loginUi section:nth-child(2) div {
@@ -2088,8 +2353,7 @@ select {
   width: 50%;
   background-color: var(--paleAccentTwo);
   color: var(--priColor);
-  -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
   gap: 2rem;
   transition: 500ms all ease-in-out;
   overflow: hidden;
@@ -2128,9 +2392,7 @@ select {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .registerUi .fields .checkBoxes span {
   pointer-events: all !important;
@@ -2144,9 +2406,7 @@ select {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   transition: 300ms all ease;
   display: flex;
   justify-content: center;
@@ -2161,6 +2421,8 @@ select {
   height: 1rem;
   border: solid var(--priColor);
   border-width: 0 0.2rem 0.2rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   visibility: hidden;
 }
@@ -2193,8 +2455,7 @@ select {
   width: 100%;
   background-color: var(--tpPri);
   color: var(--secColor);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
 }
 .regOn .fields {
   display: block;
@@ -2239,8 +2500,7 @@ select {
   position: relative;
   width: 0%;
   background-color: var(--tpPri);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
   overflow: hidden;
   gap: 1.5rem;
   transition: 500ms all ease-in-out;
@@ -2376,16 +2636,21 @@ select {
   text-align: center;
   background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
 }
+.finalStage .products h2.footerProducts {
+  display: none;
+}
 .finalStage .products ul {
   max-height: 20vmax;
-}
-.finalStage .products .footerProducts {
-  display: none;
 }
 .finalStage .summary .headerSummary {
   background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
   text-align: center;
-  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.finalStage .summary button {
+  border-radius: 1rem;
+  padding: 1rem;
 }
 .finalStage .summary button.makePurchase {
   display: block;
@@ -2396,8 +2661,24 @@ select {
 .finalStage .summary button.backToCart {
   display: none;
 }
+.finalStage .summary ul {
+  border-radius: 0.5rem;
+}
 .finalStage .summary ul.buyerProtectReview li {
   flex-direction: row;
+}
+
+.cartEmpty .emptyCartDiv {
+  display: flex;
+}
+.cartEmpty .products {
+  display: none;
+}
+.cartEmpty .summary {
+  display: none;
+}
+.cartEmpty .checkout {
+  display: none;
 }
 
 @media (max-width: 1640px) {
@@ -2414,6 +2695,7 @@ select {
 @media (max-width: 1000px) {
   .cart {
     max-width: 100vmax;
+    gap: 0;
   }
   .cart .summary {
     width: 100%;
@@ -2427,28 +2709,32 @@ select {
     border-radius: 0;
   }
   .cart .summary ul.buyerProtectReview {
-    border-top: 0.3rem solid var(--paleAccentThree);
+    border-block: 0.3rem solid var(--paleAccentThree);
   }
   .cart .summary ul.buyerProtectReview li {
     padding-block: 0.5rem;
   }
   .cart .summary button {
+    margin-top: 0.5rem;
+    width: 90%;
+    align-self: center;
     border: 0.2rem solid var(--paleAccentThree);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .cart .summary button:hover, .cart .summary button:focus-visible {
-    border-left: none;
-    border-right: none;
   }
   .cart .products {
     width: 100%;
+    border-radius: 0;
   }
   .cart .products h2 {
     border-radius: 0;
-    margin-block: 0.4rem;
+    margin-block: 0;
     text-align: center;
+  }
+  .cart .products h2.footerProducts {
+    border-radius: 0;
+    display: none;
+  }
+  .cart .products ul {
+    border: none;
   }
   .cart .products ul li {
     min-height: 6rem;
@@ -2503,7 +2789,10 @@ select {
     align-items: flex-start;
     border-radius: 0.1rem;
   }
-  .cart .products ul li h3 a {
+  .cart .products ul li h3 {
+    max-width: 100%;
+  }
+  .cart .products ul li h3 p {
     position: relative;
     font-size: 1rem;
     top: -1.5rem;
@@ -2554,9 +2843,6 @@ select {
     color: var(--priColor);
     background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
   }
-  .cart .checkout .checkoutSection input:invalid:not(:-moz-placeholder-shown) ~ label {
-    transform: translateY(-82%);
-  }
   .cart .checkout .checkoutSection input:invalid:not(:placeholder-shown) ~ label {
     transform: translateY(-82%);
   }
@@ -2588,7 +2874,7 @@ select {
   position: relative;
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%);
   border-radius: 0.5rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -2690,23 +2976,11 @@ select {
   color: var(--accent);
   border-color: var(--paleAccentTwo);
 }
-.checkout .checkoutSection form input::-moz-selection {
-  background: var(--paleAccentTwo);
-  color: var(--priColor);
-}
 .checkout .checkoutSection form input::selection {
   background: var(--paleAccentTwo);
   color: var(--priColor);
 }
-.checkout .checkoutSection form input:invalid:not(:-moz-placeholder-shown) {
-  border-color: red;
-}
 .checkout .checkoutSection form input:invalid:not(:placeholder-shown) {
-  border-color: red;
-}
-.checkout .checkoutSection form input:invalid:not(:-moz-placeholder-shown) ~ label {
-  color: var(--priColor);
-  background-color: red;
   border-color: red;
 }
 .checkout .checkoutSection form input:invalid:not(:placeholder-shown) ~ label {
@@ -2730,7 +3004,6 @@ select {
   order: 1;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   border: 0.15rem solid var(--paleAccentThree);
-  width: -moz-fit-content;
   width: fit-content;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -2808,13 +3081,16 @@ select {
   border-top-right-radius: 0.3vmax;
   border-bottom-left-radius: 0.3vmax;
   border-bottom-right-radius: 0.8vmax;
+  overflow: hidden;
 }
 .products h2 {
   position: relative;
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
   border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .products h2.amount {
   margin: 0.3vmax 0.5vmax;
@@ -2822,13 +3098,16 @@ select {
   padding-inline: 0.2vmax;
   padding-block: 0;
   text-align: center;
-  outline: 0.15rem solid var(--paleAccent);
   border-radius: 0.3rem;
+  background: var(--paleAccent);
+  color: var(--secColor);
 }
 .products h2.footerProducts {
   background: var(--paleAccentTwo);
   border-radius: 0.3rem;
-  background: linear-gradient(45deg, var(--tertAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: linear-gradient(45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
   margin-block: 0;
 }
 .products ul {
@@ -2838,6 +3117,8 @@ select {
   flex-direction: column;
   gap: 0.5rem;
   padding-block: 0.5rem;
+  border-left: 0.15rem solid var(--paleAccentThree);
+  border-right: 0.15rem solid var(--paleAccentThree);
 }
 .products ul li {
   position: relative;
@@ -2854,6 +3135,8 @@ select {
   display: flex;
   align-items: center;
   position: relative;
+  max-width: 65%;
+  --bgimg: url("");
 }
 .products ul li .pTitle p {
   overflow: hidden;
@@ -2861,33 +3144,34 @@ select {
   -webkit-line-clamp: 1;
   line-clamp: 1;
   -webkit-box-orient: vertical;
-}
-.products ul li .pTitle::before {
-  content: "";
-  display: block;
-  background-color: var(--tpPri);
-  min-height: 8rem;
-  min-width: 8rem;
-  margin-right: 0.5rem;
-  outline: 0.15rem solid var(--paleAccentThree);
-}
-.products ul li h3 a {
-  width: -moz-fit-content;
   width: fit-content;
   position: relative;
   color: var(--secColor);
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
 }
-.products ul li h3 a:hover {
+.products ul li .pTitle p:hover {
   color: var(--accent);
 }
-.products ul li h3 a:active {
+.products ul li .pTitle p:active {
   scale: 1.05;
 }
-.products ul li h3 a:focus-visible {
+.products ul li .pTitle p:focus-visible {
   color: var(--accent);
   text-decoration: underline;
+}
+.products ul li .pTitle::before {
+  content: "";
+  display: block;
+  min-height: 8rem;
+  min-width: 8rem;
+  margin-right: 0.5rem;
+  outline: 0.15rem solid var(--paleAccentThree);
+  background-image: var(--bgimg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .products ul li div {
   display: flex;
@@ -2900,8 +3184,7 @@ select {
   width: 0.2rem;
   height: 1.5rem;
   border: none;
-  background: linear-gradient(to right, var(--paleAccentThree), var(--paleAccentTwo), var(--paleAccentThree));
-  background-color: red;
+  background: linear-gradient(45deg, var(--accent) 30%, var(--secAccent) 70%);
 }
 .products ul li div button {
   position: relative;
@@ -2926,9 +3209,12 @@ select {
   scale: 1;
   opacity: 1;
 }
+.products ul li div button:hover span {
+  color: var(--priColor);
+}
 .products ul li div button:hover::before {
   scale: 1;
-  opacity: 0.5;
+  opacity: 1;
 }
 .products ul li div button:active {
   scale: 1.1;
@@ -2938,6 +3224,12 @@ select {
 }
 .products ul li div button:active span {
   color: var(--accent);
+}
+.products ul li div button.disabledAmountBtn {
+  pointer-events: none;
+}
+.products ul li div button.disabledAmountBtn span {
+  color: var(--tertColor);
 }
 .products ul li div h4 {
   margin-inline: 0.3vmax;
@@ -2978,7 +3270,7 @@ select {
   padding: 0.5rem 0.5rem;
   color: var(--priColor);
   text-align: end;
-  background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%);
   border-radius: 0.5rem;
 }
 .summary h2 {
@@ -2997,7 +3289,7 @@ select {
 .summary h2.totalAmount {
   border: none;
   color: var(--priColor);
-  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
 }
 .summary button {
   color: var(--priColor);
@@ -3062,6 +3354,11 @@ select {
 }
 .summary ul li:nth-child(2) {
   border-bottom: 0.3rem solid var(--paleAccentThree);
+}
+.summary ul li:nth-child(3) h4 {
+  position: relative;
+  margin-left: auto;
+  margin-right: 0.5rem;
 }
 .summary ul.buyerProtectReview li {
   flex-direction: column;
@@ -3176,8 +3473,62 @@ select {
 }
 .purchaseConfirmation[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.575);
-  -webkit-backdrop-filter: blur(1.5rem);
-          backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(1.5rem);
+}
+
+.emptyCartDiv {
+  display: none;
+  width: 61%;
+  height: 30vmax;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.emptyCartDiv::before {
+  content: "";
+  inset: 10rem 25rem;
+  position: absolute;
+  display: block;
+  background-color: var(--accent);
+  filter: blur(10rem);
+  opacity: 0.5;
+  z-index: -1;
+}
+.emptyCartDiv span {
+  color: var(--accent);
+  pointer-events: none;
+}
+.emptyCartDiv h2 {
+  opacity: 0.85;
+  font-size: 2.25vw;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-shadow: 0.05rem 0.05rem 0 var(--tpSec);
+}
+.emptyCartDiv p {
+  opacity: 0.85;
+  font-size: 2vw;
+  text-shadow: 0.05rem 0.05rem 0 var(--tpSec);
+}
+.emptyCartDiv .emptyCartLogo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 25rem;
+  z-index: 1;
+}
+.emptyCartDiv .emptyCartLogo svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.emptyCartDiv .emptyCartLogo svg #cartLinear :first-child {
+  stop-color: var(--accent);
+}
+.emptyCartDiv .emptyCartLogo svg #cartLinear :nth-child(2) {
+  stop-color: var(--secAccent);
 }
 
 #products-div-one,
@@ -3318,7 +3669,7 @@ select {
   height: 0.15rem;
   border-radius: 1rem;
   position: absolute;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  background: linear-gradient(to right, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
   justify-self: center;
   visibility: collapse;
 }
@@ -3356,14 +3707,14 @@ select {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
 }
 .productAddedNotification ul li span {
   font-weight: 600;
 }
 .productAddedNotification ul button {
   color: var(--priColor);
-  width: 90%;
+  width: 95%;
   padding: 0.2rem;
   margin-block: 0.4rem 0.2rem;
   position: relative;
@@ -3374,27 +3725,27 @@ select {
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   border-radius: 0.5rem;
-  border: 0.2rem solid var(--paleAccentThree);
+  border: 0.2rem solid var(--reversePaleAccent);
 }
 .productAddedNotification ul button::before {
   content: "";
   inset: -1rem;
   position: absolute;
   filter: blur(0.5vmax);
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  background: linear-gradient(-45deg, var(--reverseSecAccent) 0%, var(--reverseAccent) 30%, var(--reverseSecAccent) 70%);
   z-index: -1;
 }
 .productAddedNotification ul button:focus-visible {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
 .productAddedNotification ul button:hover {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
 .productAddedNotification ul button:focus-visible {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
 .productAddedNotification ul button:active {
   background-color: var(--paleAccentThree);
@@ -3412,50 +3763,54 @@ select {
 
 .themeSelector ul li {
   margin: 0.2rem;
-  border-radius: 0.3rem;
-  border: 0.15rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--reversePaleAccent);
   overflow: hidden;
 }
-.themeSelector ul li a {
+.themeSelector ul li button {
   color: var(--secColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   padding: 0.3rem;
+  width: 100%;
 }
-.themeSelector ul li a span {
+.themeSelector ul li button span {
   margin-left: 0.5rem;
 }
-.themeSelector ul li a:hover {
+.themeSelector ul li button p {
+  font-size: large;
+}
+.themeSelector ul li button:hover {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:hover span {
-  color: var(--accent);
+.themeSelector ul li button:hover span {
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:focus-visible {
+.themeSelector ul li button:focus-visible {
   background-color: var(--priColor);
-  color: var(--accent);
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:focus-visible span {
-  color: var(--accent);
+.themeSelector ul li button:focus-visible span {
+  color: var(--reverseAccent);
 }
-.themeSelector ul li a:active {
-  border-color: var(--accent);
+.themeSelector ul li button:active {
+  border-color: var(--reverseAccent);
   color: var(--secColor);
 }
-.themeSelector ul li a:active span {
+.themeSelector ul li button:active span {
   color: var(--secColor);
 }
 .themeSelector ul li.selectedThemeMode {
   pointer-events: none;
-  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  background: linear-gradient(45deg, var(--reverseAccent) 0%, var(--reverseSecAccent) 100%);
   border: none;
 }
-.themeSelector ul li.selectedThemeMode a {
+.themeSelector ul li.selectedThemeMode button {
   color: var(--priColor);
 }
-.themeSelector ul li.selectedThemeMode a span {
+.themeSelector ul li.selectedThemeMode button span {
   color: var(--priColor);
 }/*# sourceMappingURL=styles.css.map */

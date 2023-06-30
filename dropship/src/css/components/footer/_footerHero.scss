@@ -44,6 +44,18 @@
             filter: blur(5rem);
             transform: translateZ(-1.2rem);
         }
+
+        svg{
+            #linearLogoFooter{
+                :first-child {
+                    stop-color: var(--logoAccentOne)
+                }
+    
+                :nth-child(2) {
+                    stop-color: var(--logoAccentTwo)
+                }
+            }
+        }
     }
 }
 
