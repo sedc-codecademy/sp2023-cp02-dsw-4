@@ -140,38 +140,47 @@ header .headerGradient {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  z-index: -3;
 }
 .headerBackgroundImage svg {
   position: absolute;
-  fill: transparent;
 }
-.headerBackgroundImage svg #a :first-child {
+.headerBackgroundImage svg.leftBkg {
+  transform: rotateY(-180deg);
+  right: 0;
+  display: none;
+}
+.headerBackgroundImage svg.mobileBkg {
+  transform: rotateY(-180deg);
+  right: 0;
+  display: none;
+}
+.headerBackgroundImage svg #headerBkgLinearLeft :first-child {
+  stop-color: var(--secAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearLeft :nth-child(2) {
+  stop-color: var(--paleAccentTwo);
+}
+.headerBackgroundImage svg #headerBkgLinearLeft :last-child {
+  stop-color: var(--reverseSecAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearMobile :first-child {
+  stop-color: var(--secAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearMobile :nth-child(2) {
+  stop-color: var(--paleAccentTwo);
+}
+.headerBackgroundImage svg #headerBkgLinearMobile :last-child {
+  stop-color: var(--reverseAccent);
+}
+.headerBackgroundImage svg #headerBkgLinearRight :first-child {
   stop-color: var(--accent);
 }
-.headerBackgroundImage svg #a :nth-child(2) {
-  stop-color: var(--secAccent);
+.headerBackgroundImage svg #headerBkgLinearRight :nth-child(2) {
+  stop-color: var(--reverseAccent);
 }
-.headerBackgroundImage svg #b :first-child {
-  stop-color: var(--tertAccent);
-}
-.headerBackgroundImage svg #b :nth-child(2) {
-  stop-color: var(--additionallAccent);
-}
-.headerBackgroundImage svg #c :first-child {
-  stop-color: var(--secAccent);
-}
-.headerBackgroundImage svg #c :nth-child(2) {
-  stop-color: var(--tertAccent);
-}
-.headerBackgroundImage svg #polgOne {
-  fill: var(--accent);
-}
-.headerBackgroundImage svg #polgTwo {
-  fill: var(--secAccent);
-}
-.headerBackgroundImage svg #polgThree {
-  fill: var(--tertAccent);
+.headerBackgroundImage svg #headerBkgLinearRight :last-child {
+  stop-color: var(--reverseAccent);
 }
 
 .material-symbols-outlined {
@@ -248,7 +257,40 @@ header .headerGradient {
   display: none;
 }
 
+@media screen and (min-width: 4000px) {
+  .headerBackgroundImage svg {
+    position: absolute;
+  }
+  .headerBackgroundImage svg.leftBkg {
+    display: block;
+  }
+  .headerBackgroundImage svg.rightBkg {
+    display: block;
+  }
+  .logo {
+    position: fixed;
+    top: 0.5vmax;
+    left: 0.5vmax;
+    width: 20rem;
+    height: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media (max-width: 1000px) {
+  .headerBackgroundImage svg {
+    position: absolute;
+  }
+  .headerBackgroundImage svg.leftBkg {
+    display: none;
+  }
+  .headerBackgroundImage svg.rightBkg {
+    display: none;
+  }
+  .headerBackgroundImage svg.mobileBkg {
+    display: block;
+  }
   .logo {
     position: fixed;
     top: 0.5vmax;
@@ -309,6 +351,9 @@ header .headerGradient {
   outline: none;
   text-indent: 1.5rem;
   color: var(--secColor);
+  letter-spacing: 0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-weight: 600;
 }
 .search-bar-container .search-bar::selection {
   background: var(--accent);
@@ -876,6 +921,9 @@ nav .navigationLists li button p {
   margin-inline: 0.3rem;
   font-size: large;
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  letter-spacing: 0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-weight: 600;
 }
 nav .navigationLists li button span {
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1003,7 +1051,7 @@ footer .footerMain {
   width: 100%;
   top: 0;
   height: 100%;
-  z-index: -9;
+  z-index: -2;
   overflow: hidden;
 }
 .footerBackgroundImage svg {
@@ -1011,14 +1059,17 @@ footer .footerMain {
   bottom: 0;
   fill: transparent;
 }
-.footerBackgroundImage svg #polgOne {
-  fill: var(--accent);
+.footerBackgroundImage svg #footerGradient :first-child {
+  stop-color: var(--accent);
 }
-.footerBackgroundImage svg #polgTwo {
-  fill: var(--tertAccent);
+.footerBackgroundImage svg #footerGradient :nth-child(2) {
+  stop-color: var(--secAccent);
 }
-.footerBackgroundImage svg #polgThree {
-  fill: var(--tertAccent);
+.footerBackgroundImage svg #footerGradientTwo :first-child {
+  stop-color: var(--tertAccent);
+}
+.footerBackgroundImage svg #footerGradientTwo :nth-child(2) {
+  stop-color: var(--tertAccent);
 }
 .footerBackgroundImage .footerGradient {
   position: absolute;
@@ -1659,6 +1710,7 @@ main.currentMain {
   gap: 1rem;
   width: 90vmax;
   margin-inline: auto;
+  display: none;
 }
 #masterContainer button {
   display: flex;
@@ -1693,7 +1745,7 @@ main.currentMain {
   scale: 1.2;
 }
 #masterContainer #container {
-  padding: 1rem 0.5rem;
+  padding: 1rem 2rem;
   border-left: 0.4rem solid var(--accent);
   border-right: 0.4rem solid var(--accent);
   position: relative;
@@ -1705,7 +1757,7 @@ main.currentMain {
 #masterContainer #container section {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
   height: 17rem;
   position: relative;
   min-width: 15rem;
@@ -1732,7 +1784,7 @@ main.currentMain {
   align-self: center;
 }
 #masterContainer #container section a h3 {
-  margin-block: 0.5rem;
+  margin-block: 2rem;
   text-align: center;
 }
 #masterContainer #container section a::after {
@@ -1766,10 +1818,159 @@ main.currentMain {
   transform: scaleX(1);
 }
 #masterContainer #container section img {
-  width: 5.5rem;
-  height: 4.5rem;
+  width: 52rem;
+  height: 42rem;
   position: absolute;
   bottom: 0;
+}
+
+.scrollableCategories {
+  position: relative;
+  height: 13vmax;
+  width: 75%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.scrollableCategories .categoriesScrollUl {
+  position: relative;
+  width: 85%;
+  height: 100%;
+  background-color: var(--paleAccent);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(0.3rem);
+  border: 0.2rem solid var(--paleAccentThree);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi {
+  background-color: var(--paleAccent);
+  overflow: hidden;
+  height: 100%;
+  width: 23%;
+  border-radius: inherit;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 0.25rem solid var(--paleAccentThree);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  --deg: 0deg;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi::before {
+  content: "";
+  inset: -0.25rem;
+  background: linear-gradient(var(--deg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  position: absolute;
+  z-index: -1;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi h3 {
+  margin-top: 1rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--secColor);
+  letter-spacing: 0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi img {
+  height: 60%;
+  width: 60%;
+  bottom: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft {
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  left: -25%;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover {
+  border-color: var(--paleAccentTwo);
+  background-color: var(--tpPri);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover h3 {
+  color: var(--accent);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible {
+  color: var(--accent);
+  border-color: var(--paleAccentTwo);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible h3 {
+  color: var(--accent);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:active {
+  scale: 0.95;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight {
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  right: -25%;
+}
+.scrollableCategories .scrollCatButtons {
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 0.5rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--paleAccentThree);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scrollableCategories .scrollCatButtons#rightScrollButton span {
+  --spanDeg: -145deg;
+}
+.scrollableCategories .scrollCatButtons span {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  --spanDeg: 145deg;
+}
+.scrollableCategories .scrollCatButtons span::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background: linear-gradient(var(--spanDeg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+  z-index: -1;
+}
+.scrollableCategories .scrollCatButtons::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  backdrop-filter: blur(1rem);
+  z-index: -1;
+}
+.scrollableCategories .scrollCatButtons:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.scrollableCategories .scrollCatButtons:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.scrollableCategories .scrollCatButtons:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.scrollableCategories .scrollCatButtons:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
 }
 
 .categories-section {

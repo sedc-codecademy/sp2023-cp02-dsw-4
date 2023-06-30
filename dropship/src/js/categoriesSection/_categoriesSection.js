@@ -84,7 +84,7 @@ async function setSubCatsCtSection(sect) {
     let a = document.createElement("a")
     a.setAttribute("href", "javascript:void(0)");
     a.innerHTML = `${tempCats[i].title}`
-    a.addEventListener("click", (e) => { 
+    a.addEventListener("click", (e) => {
       switchMain(document.querySelector('.productsMain'), "block")
       //setSubCatsTwoCtTab(tempCats[i].id, productsDiv)
       // Sub - Caetgories Event
@@ -95,6 +95,140 @@ async function setSubCatsCtSection(sect) {
   }
 }
 
-categoriesSections.forEach((cat) => {
-  setSubCatsCtSection(cat)
-})
+// categoriesSections.forEach((cat) => {
+//   setSubCatsCtSection(cat)
+// })
+
+const categoriesScrollList = document.querySelector('categoriesScrollUl')
+const leftScrollButton = document.querySelector('#leftScrollButton')
+const rightScrollButton = document.querySelector('#rightScrollButton')
+
+async function fillCategoriesScrollList(ul) {
+  const categories = await fetchJSON('./mock/categories.json')
+  for (let i = 0; i < categories.length; i++) {
+    // Create li an all needed elements
+    const li = document.createElement("li")
+    const title = document.createElement("h3")
+
+    // Set category image
+    // title.style.setProperty('--bgimg', `url(${categories[i].image})`)
+    // Set tab index so it's tabbable
+    // Set title text with category name
+    title.textContent = categories[i].title
+
+    const image = document.createElement("img")
+    const imagePath = categories[i].image.slice(1)
+    image.setAttribute("src", imagePath);
+
+
+    // Add click event listener to whole li
+    li.addEventListener("click", () => {
+      switchMain(document.querySelector('.productsMain'), "block")
+      printResults(subCategoriesDiv, categories[i].id)
+      console.log(categories[i].id)
+    })
+
+    
+    // Add classes to the li element
+    li.classList.add("scrollCatLi")
+    if (i < 5) {
+      li.style.setProperty('--deg', `-45deg`)
+      li.classList.add("shownMiddle")
+      li.setAttribute("tabindex", 0)
+    } else if (i >= categories.length - 5) {
+      li.style.setProperty('--deg', `145deg`)
+      li.classList.add("hiddenRight")
+    }
+
+    // Append titile and image to li
+    li.appendChild(title)
+    li.appendChild(image)
+    // Append li to ul
+    ul.appendChild(li)
+  }
+}
+await fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"))
+
+const scrollCatLists = document.querySelectorAll('.scrollCatLi')
+
+function scrollCatList(cat, origin) {
+  switch (true) {
+    case origin === 'left':
+      if (!cat.classList.contains('hiddenLeft') && !cat.classList.contains('hiddenRight') && cat.classList.contains('shownMiddle')) {
+        cat.classList.add('hiddenRight')
+        cat.classList.remove('shownMiddle')
+        cat.setAttribute("tabindex", -1)
+      }
+      if (cat.classList.contains('hiddenLeft')) {
+        cat.classList.remove('hiddenLeft')
+        cat.classList.add('shownMiddle')
+        cat.setAttribute("tabindex", 0)
+      }
+      break
+    case origin === 'right':
+      if (!cat.classList.contains('hiddenRight') && !cat.classList.contains('hiddenLeft') && cat.classList.contains('shownMiddle')) {
+        cat.classList.add('hiddenLeft')
+        cat.classList.remove('shownMiddle')
+        cat.setAttribute("tabindex", -1)
+      }
+
+      if (cat.classList.contains('hiddenRight')) {
+        cat.classList.remove('hiddenRight')
+        cat.classList.add('shownMiddle')
+        cat.setAttribute("tabindex", 0)
+      }
+      break
+    default: break
+  }
+}
+
+// Function to check if any of the elements have the specified class
+function hasClass(elements, className) {
+  return Array.from(elements).some(element => element.classList.contains(className))
+}
+
+// Function to update button states
+function updateButtonStates() {
+  const hasHiddenLeft = hasClass(scrollCatLists, 'hiddenLeft')
+  const hasHiddenRight = hasClass(scrollCatLists, 'hiddenRight')
+
+  leftScrollButton.disabled = !hasHiddenLeft
+  rightScrollButton.disabled = !hasHiddenRight
+}
+
+// Check button states on page load
+updateButtonStates()
+
+// Update button states and execute scroll function
+function handleLeftScrollButtonClick() {
+  updateButtonStates()
+
+  if (leftScrollButton.disabled) {
+    return; // Do nothing if the button is disabled
+  }
+
+  for (let i = 0; i < scrollCatLists.length; i++) {
+    scrollCatList(scrollCatLists[i], 'left')
+  }
+
+  updateButtonStates() // Update button states after scroll function
+}
+
+function handleRightScrollButtonClick() {
+  updateButtonStates()
+
+  if (rightScrollButton.disabled) {
+    return; // Do nothing if the button is disabled
+  }
+
+  for (let i = 0; i < scrollCatLists.length; i++) {
+    scrollCatList(scrollCatLists[i], 'right')
+  }
+
+  updateButtonStates() // Update button states after scroll function
+}
+
+// Add event listeners to the buttons
+leftScrollButton.addEventListener('click', handleLeftScrollButtonClick)
+rightScrollButton.addEventListener('click', handleRightScrollButtonClick)
+
