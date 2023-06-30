@@ -7,6 +7,7 @@ const singleProductDiv = document.getElementById("singleProduct");
 
 const filterBtn = document.getElementById("filterBtn");
 const filters = document.getElementById("filters");
+const priceRange = document.getElementById("price-range");
 filters.style.display = "none"
 
 const sortBtn = document.getElementById("sortBtn");
@@ -17,6 +18,7 @@ const highestPriceBtn = document.getElementById("highest-price");
 const lowestPriceBtn = document.getElementById("lowest-price");
 
 let displayedProducts = [];
+let filteredProducts = [];
 
 async function setSubCatsTwoCtTab(ID, element) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
@@ -141,6 +143,7 @@ async function printResults(element, ID) { //// NEEDS ID PARAM DOESNT NEED SUBCA
     })
 }
 
+// FILTERS
 filterBtn.addEventListener("click", () => {
     if (filters.style.display == "block") {
         filters.style.display = "none"
@@ -149,6 +152,53 @@ filterBtn.addEventListener("click", () => {
     }
 })
 
+priceRange.addEventListener("click", (e) => {
+
+    let chosenOption = e.target.value;
+    console.log(chosenOption);
+
+    if (chosenOption == "0-50") {
+        if (filteredProducts == []) {
+            filteredProducts = displayedProducts.filter((product) => { console.log("Price", product.price); return product.price <= 50 })
+
+
+        } else {
+            filteredProducts = filteredProducts.filter((product) => product.price <= 50)
+        }
+        return filteredProducts
+    } else if (chosenOption == "51-100") {
+        if (filteredProducts == []) {
+            filteredProducts = displayedProducts.filter(product => product.price > 50 && product.price <= 100)
+            console.log(filteredProducts)
+        } else {
+            filteredProducts = filteredProducts.filter(product => product.price > 50 && product.price <= 100)
+        }
+    } else if (chosenOption == "101-200") {
+        if (filteredProducts == []) {
+            filteredProducts = displayedProducts.filter(product => product.price > 100 && product.price <= 200)
+        } else {
+            filteredProducts = filteredProducts.filter(product => product.price > 100 && product.price <= 200)
+        }
+    } else if (chosenOption == "200+") {
+        if (filteredProducts == []) {
+            filteredProducts = displayedProducts.filter(product => product.price > 200)
+        } else {
+            filteredProducts = filteredProducts.filter(product => product.price > 200)
+        }
+    } else {
+        if (filteredProducts == []) {
+            filteredProducts = displayedProducts
+        }
+    }
+
+    printProducts(filteredProducts, productsDiv)
+    console.log("Displayed Products", displayedProducts)
+    console.log("Filtered products", filteredProducts)
+})
+
+
+
+// SORTING
 sortBtn.addEventListener("click", () => {
     if (sortingSection.style.display == "block") {
         sortingSection.style.display = "none"
