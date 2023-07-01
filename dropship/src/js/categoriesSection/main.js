@@ -19,6 +19,8 @@ const lowestPriceBtn = document.getElementById("lowest-price");
 
 let displayedProducts = [];
 let filteredProducts = [];
+let filterByPrice = [];
+
 
 async function setSubCatsTwoCtTab(ID, element) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
@@ -157,36 +159,34 @@ priceRange.addEventListener("click", (e) => {
     let chosenOption = e.target.value;
     console.log(chosenOption);
 
-    if (chosenOption == "0-50") {
-        if (filteredProducts == []) {
-            filteredProducts = displayedProducts.filter((product) => { console.log("Price", product.price); return product.price <= 50 })
-
-
+    if (chosenOption === "0-50") {
+        if (filteredProducts.length === 0) {
+            filteredProducts = displayedProducts.filter(product => product.price <= 50)
         } else {
-            filteredProducts = filteredProducts.filter((product) => product.price <= 50)
+            filteredProducts = filteredProducts.filter(product => product.price <= 50)
         }
-        return filteredProducts
-    } else if (chosenOption == "51-100") {
-        if (filteredProducts == []) {
+        // return filteredProducts
+    } else if (chosenOption === "51-100") {
+        if (filteredProducts.length === 0) {
             filteredProducts = displayedProducts.filter(product => product.price > 50 && product.price <= 100)
-            console.log(filteredProducts)
+
         } else {
             filteredProducts = filteredProducts.filter(product => product.price > 50 && product.price <= 100)
         }
-    } else if (chosenOption == "101-200") {
-        if (filteredProducts == []) {
+    } else if (chosenOption === "101-200") {
+        if (filteredProducts.length === 0) {
             filteredProducts = displayedProducts.filter(product => product.price > 100 && product.price <= 200)
         } else {
             filteredProducts = filteredProducts.filter(product => product.price > 100 && product.price <= 200)
         }
-    } else if (chosenOption == "200+") {
-        if (filteredProducts == []) {
+    } else if (chosenOption === "200+") {
+        if (filteredProducts.length === 0) {
             filteredProducts = displayedProducts.filter(product => product.price > 200)
         } else {
             filteredProducts = filteredProducts.filter(product => product.price > 200)
         }
     } else {
-        if (filteredProducts == []) {
+        if (filteredProducts.length === 0) {
             filteredProducts = displayedProducts
         }
     }
@@ -195,6 +195,19 @@ priceRange.addEventListener("click", (e) => {
     console.log("Displayed Products", displayedProducts)
     console.log("Filtered products", filteredProducts)
 })
+
+var slider = document.getElementById("myRange");
+const prices = displayedProducts.map(o => o.price)
+let maxValue = Math.max(...prices)
+console.log(maxValue);
+slider.setAttribute("max", maxValue.toString())
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}
 
 
 
