@@ -328,3 +328,5 @@ homeBtn.addEventListener("click", (e) => {
 document.body.addEventListener('click', (e) => { // Event listener for turning off categories adn loosing focus on searchInput
     if (!searchForm.contains(e.target)) classSwitcher.ctOff()
 })
+
+    

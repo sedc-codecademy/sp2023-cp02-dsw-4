@@ -1,125 +1,21 @@
-// CATEGORIES SECTION
-
-const container = document.getElementById('container');
-const categoriesSections = container.querySelectorAll('.scrollCat');
-const leftArrow = document.getElementById('left-arrow');
-const rightArrow = document.getElementById('right-arrow');
-
-// leftArrow.addEventListener('click', () => {
-//   container.scrollBy({
-//     left: -2000,
-//     behavior: "smooth"
-//   });
-// });
-
-// rightArrow.addEventListener('click', () => {
-//   container.scrollBy({
-//     left: 2000,
-//     behavior: "smooth"
-//   });
-// });
-
-// Made buttons scroll by half of elements width no matter its size.
-
-leftArrow.addEventListener('click', () => {
-  const container = document.getElementById('container');
-  const scrollDistance = (container.scrollWidth - container.clientWidth) / 2;
-
-  container.scrollBy({
-    left: -scrollDistance,
-    behavior: "smooth"
-  });
-});
-
-rightArrow.addEventListener('click', () => {
-  const container = document.getElementById('container');
-  const scrollDistance = (container.scrollWidth - container.clientWidth) / 2;
-
-  container.scrollBy({
-    left: scrollDistance,
-    behavior: "smooth"
-  });
-});
-
-// Filling the sub Cats functions
-
-async function setSubCatsCtSection(sect) {
-  const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
-  const categories = await fetchJSON('./mock/categories.json')
-  const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
-
-  let tempCats = []
-  let cat
-
-  for (let i = 0; i < categories.length; i++) {
-    if (categories[i].id === sect.id) {
-      for (let j = 0; j < flattenedSubCategories.length; j++) {
-        if (categories[i].sub.includes(flattenedSubCategories[j].id)) {
-          tempCats.push(flattenedSubCategories[j])
-          cat = categories[i]
-        }
-      }
-      break
-    }
-  }
-
-  const catA = document.createElement('a')
-
-  catA.innerHTML = `<h3>${cat.title}</h3>`
-  catA.setAttribute("href", "javascript:void(0)");
-  catA.addEventListener("click", (e) => { // Caetgories Event
-    switchMain(document.querySelector('.productsMain'), "block")
-    printResults(subCategoriesDiv, cat.id);
-    console.log(cat.id)
-  })
-
-  sect.appendChild(catA)
-
-  let image = document.createElement("img")
-  let imagePath = cat.image.slice(1)
-  image.setAttribute("src", imagePath);
-  sect.appendChild(image)
-
-  for (let i = 0; i < 4; i++) {
-    let a = document.createElement("a")
-    a.setAttribute("href", "javascript:void(0)");
-    a.innerHTML = `${tempCats[i].title}`
-    a.addEventListener("click", (e) => {
-      switchMain(document.querySelector('.productsMain'), "block")
-      //setSubCatsTwoCtTab(tempCats[i].id, productsDiv)
-      // Sub - Caetgories Event
-      console.log(tempCats[i].id)
-
-    })
-    sect.appendChild(a)
-  }
-}
-
-// categoriesSections.forEach((cat) => {
-//   setSubCatsCtSection(cat)
-// })
-
 const categoriesScrollList = document.querySelector('categoriesScrollUl')
 const leftScrollButton = document.querySelector('#leftScrollButton')
 const rightScrollButton = document.querySelector('#rightScrollButton')
 
-async function fillCategoriesScrollList(ul) {
-  const categories = await fetchJSON('./mock/categories.json')
+async function fillCategoriesScrollList(ul, url) {
+  const categories = await fetchJSON(url)
   for (let i = 0; i < categories.length; i++) {
     // Create li an all needed elements
     const li = document.createElement("li")
     const title = document.createElement("h3")
 
-    // Set category image
-    // title.style.setProperty('--bgimg', `url(${categories[i].image})`)
-    // Set tab index so it's tabbable
     // Set title text with category name
     title.textContent = categories[i].title
 
+    // Set category image
     const image = document.createElement("img")
     const imagePath = categories[i].image.slice(1)
     image.setAttribute("src", imagePath);
-
 
     // Add click event listener to whole li
     li.addEventListener("click", () => {
@@ -128,14 +24,14 @@ async function fillCategoriesScrollList(ul) {
       console.log(categories[i].id)
     })
 
-    
     // Add classes to the li element
     li.classList.add("scrollCatLi")
     if (i < 5) {
       li.style.setProperty('--deg', `-45deg`)
       li.classList.add("shownMiddle")
+      // Set tab index so it's tabbable
       li.setAttribute("tabindex", 0)
-    } else if (i >= categories.length - 5) {
+    } else {
       li.style.setProperty('--deg', `145deg`)
       li.classList.add("hiddenRight")
     }
@@ -147,38 +43,19 @@ async function fillCategoriesScrollList(ul) {
     ul.appendChild(li)
   }
 }
-await fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"))
+await fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"), './mock/categories.json')
 
 const scrollCatLists = document.querySelectorAll('.scrollCatLi')
 
-function scrollCatList(cat, origin) {
-  switch (true) {
-    case origin === 'left':
-      if (!cat.classList.contains('hiddenLeft') && !cat.classList.contains('hiddenRight') && cat.classList.contains('shownMiddle')) {
-        cat.classList.add('hiddenRight')
-        cat.classList.remove('shownMiddle')
-        cat.setAttribute("tabindex", -1)
-      }
-      if (cat.classList.contains('hiddenLeft')) {
-        cat.classList.remove('hiddenLeft')
-        cat.classList.add('shownMiddle')
-        cat.setAttribute("tabindex", 0)
-      }
-      break
-    case origin === 'right':
-      if (!cat.classList.contains('hiddenRight') && !cat.classList.contains('hiddenLeft') && cat.classList.contains('shownMiddle')) {
-        cat.classList.add('hiddenLeft')
-        cat.classList.remove('shownMiddle')
-        cat.setAttribute("tabindex", -1)
-      }
-
-      if (cat.classList.contains('hiddenRight')) {
-        cat.classList.remove('hiddenRight')
-        cat.classList.add('shownMiddle')
-        cat.setAttribute("tabindex", 0)
-      }
-      break
-    default: break
+let hiddenLeftElements = []
+let hiddenRightElements = []
+let shownMiddleElements = []
+for (let i = 0; i < scrollCatLists.length; i++) {
+  const element = scrollCatLists[i]
+  if (i < 5) {
+    shownMiddleElements.push(element)
+  } else {
+    hiddenRightElements.push(element)
   }
 }
 
@@ -188,47 +65,157 @@ function hasClass(elements, className) {
 }
 
 // Function to update button states
-function updateButtonStates() {
-  const hasHiddenLeft = hasClass(scrollCatLists, 'hiddenLeft')
-  const hasHiddenRight = hasClass(scrollCatLists, 'hiddenRight')
+function updateButtonStates(eleme, leftBtn, rightBtn) {
+  const hasHiddenLeft = hasClass(eleme, 'hiddenLeft')
+  const hasHiddenRight = hasClass(eleme, 'hiddenRight')
+  if (!hasHiddenLeft) {
+    leftBtn.disabled = true
+    leftBtn.classList.add('disabledScrollBtn')
+  } else {
+    leftBtn.disabled = false
+    leftBtn.classList.remove('disabledScrollBtn')
+  }
 
-  leftScrollButton.disabled = !hasHiddenLeft
-  rightScrollButton.disabled = !hasHiddenRight
+  if (!hasHiddenRight) {
+    rightBtn.disabled = true
+    rightBtn.classList.add('disabledScrollBtn')
+  } else {
+    rightBtn.disabled = false
+    rightBtn.classList.remove('disabledScrollBtn')
+  }
 }
 
 // Check button states on page load
-updateButtonStates()
+updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
 
-// Update button states and execute scroll function
 function handleLeftScrollButtonClick() {
-  updateButtonStates()
+  updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
 
   if (leftScrollButton.disabled) {
-    return; // Do nothing if the button is disabled
+    return // Do nothing if the button is disabled
   }
 
-  for (let i = 0; i < scrollCatLists.length; i++) {
-    scrollCatList(scrollCatLists[i], 'left')
-  }
+  [hiddenLeftElements, hiddenRightElements, shownMiddleElements] = getFromLeft(hiddenLeftElements, hiddenRightElements, shownMiddleElements)
+  changeLeft(shownMiddleElements, hiddenRightElements)
 
-  updateButtonStates() // Update button states after scroll function
+  updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
+ // Update button states after scroll function
 }
 
 function handleRightScrollButtonClick() {
-  updateButtonStates()
+  updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
 
   if (rightScrollButton.disabled) {
-    return; // Do nothing if the button is disabled
+    return // Do nothing if the button is disabled
   }
 
-  for (let i = 0; i < scrollCatLists.length; i++) {
-    scrollCatList(scrollCatLists[i], 'right')
-  }
-
-  updateButtonStates() // Update button states after scroll function
+  [hiddenLeftElements, hiddenRightElements, shownMiddleElements] = getFromRight(hiddenLeftElements, hiddenRightElements, shownMiddleElements)
+  changeRight(shownMiddleElements, hiddenLeftElements)
+  updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
+ // Update button states after scroll function
 }
 
 // Add event listeners to the buttons
 leftScrollButton.addEventListener('click', handleLeftScrollButtonClick)
 rightScrollButton.addEventListener('click', handleRightScrollButtonClick)
+
+function getFromRight(leftArray, rightArray, middleArray) {
+  let newLeftArray = [...leftArray];
+  let newMiddleArray = [...middleArray];
+  let newRightArray = [...rightArray];
+
+  if (newRightArray.length === 5) {
+    newLeftArray = [...newLeftArray, ...newMiddleArray];
+    newMiddleArray = newRightArray;
+    newRightArray = [];
+  } else if (newRightArray.length < 5) {
+    const numElementsToMove = Math.min(newRightArray.length, newMiddleArray.length);
+    newLeftArray.push(...newMiddleArray.splice(0, numElementsToMove));
+    newMiddleArray.push(...newRightArray.splice(0, numElementsToMove));
+  } else {
+    newLeftArray.push(...newMiddleArray);
+    newMiddleArray = newRightArray.slice(0, 5);
+    newRightArray = newRightArray.slice(5);
+  }
+  return [newLeftArray, newRightArray, newMiddleArray];
+}
+
+function getFromLeft(leftArray, rightArray, middleArray) {
+  let newLeftArray = [...leftArray];
+  let newMiddleArray = [...middleArray];
+  let newRightArray = [...rightArray];
+
+  if (newLeftArray.length === 5) {
+    newRightArray.unshift(...newMiddleArray);
+    newMiddleArray = newLeftArray;
+    newLeftArray = [];
+  } else if (newLeftArray.length < 5) {
+    const numElementsToMove = Math.min(newLeftArray.length, newMiddleArray.length);
+    newRightArray.unshift(...newMiddleArray.splice(-numElementsToMove));
+    newMiddleArray.unshift(...newLeftArray.splice(-numElementsToMove));
+  } else {
+    newRightArray.unshift(...newMiddleArray);
+    newMiddleArray = newLeftArray.slice(-5);
+    newLeftArray = newLeftArray.slice(0, -5);
+  }
+
+  return [newLeftArray, newRightArray, newMiddleArray];
+}
+
+function changeLeft(middleArray, rightArray) {
+  rightArray.forEach(e => {
+    if (e.classList.contains("shownMiddle")) {
+      e.classList.add('hiddenRight');
+      e.classList.remove('shownMiddle');
+      e.removeAttribute("tabindex");
+    }
+  });
+
+  middleArray.forEach(e => {
+    if (e.classList.contains('hiddenLeft')) {
+      e.classList.remove('hiddenLeft');
+      e.classList.add('shownMiddle', 'slideInLeft');
+      e.setAttribute("tabindex", 0);
+      e.addEventListener('animationend', () => {
+        e.classList.remove('slideInLeft');
+      }, { once: true });
+    } else if (e.classList.contains('hiddenRight')) {
+      e.classList.remove('hiddenRight');
+      e.classList.add('shownMiddle', 'slideInRight');
+      e.setAttribute("tabindex", 0);
+      e.addEventListener('animationend', () => {
+        e.classList.remove('slideInRight');
+      }, { once: true });
+    }
+  });
+}
+
+function changeRight(middleArray, leftArray) {
+  leftArray.forEach(e => {
+    if (e.classList.contains("shownMiddle")) {
+      e.classList.add('hiddenLeft');
+      e.classList.remove('shownMiddle');
+      e.removeAttribute("tabindex");
+    }
+  });
+
+  middleArray.forEach(e => {
+    if (e.classList.contains('hiddenRight')) {
+      e.classList.remove('hiddenRight');
+      e.classList.add('shownMiddle', 'slideInRight');
+      e.setAttribute("tabindex", 0);
+      e.addEventListener('animationend', () => {
+        e.classList.remove('slideInRight');
+      }, { once: true });
+    } else if (e.classList.contains('hiddenLeft')) {
+      e.classList.remove('hiddenLeft');
+      e.classList.add('shownMiddle', 'slideInLeft');
+      e.setAttribute("tabindex", 0);
+      e.addEventListener('animationend', () => {
+        e.classList.remove('slideInLeft');
+      }, { once: true });
+    }
+  });
+}
+
 

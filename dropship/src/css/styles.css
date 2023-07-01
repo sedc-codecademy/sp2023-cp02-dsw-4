@@ -196,8 +196,8 @@ header .headerGradient {
   position: fixed;
   top: 0.5vmax;
   left: 0.5vmax;
-  width: 10rem;
-  height: 6rem;
+  width: 9rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1240,8 +1240,8 @@ footer .footerMain {
   }
 }
 .footerHero {
-  width: 35rem;
-  height: 35rem;
+  width: 30rem;
+  height: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1702,128 +1702,6 @@ main.currentMain {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-#masterContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  gap: 1rem;
-  width: 90vmax;
-  margin-inline: auto;
-  display: none;
-}
-#masterContainer button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-#masterContainer button.arrow {
-  border-radius: 20px 6px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--accent);
-  cursor: pointer;
-}
-#masterContainer button.arrow#left-arrow {
-  left: 400px;
-}
-#masterContainer button.arrow#right-arrow {
-  right: 400px;
-}
-#masterContainer button:focus-visible {
-  background-color: var(--secAccent);
-}
-#masterContainer button:hover {
-  background-color: var(--secAccent);
-}
-#masterContainer button:active {
-  scale: 1.1;
-}
-#masterContainer button:active span {
-  color: var(--tertAccent);
-  scale: 1.2;
-}
-#masterContainer #container {
-  padding: 1rem 2rem;
-  border-left: 0.4rem solid var(--accent);
-  border-right: 0.4rem solid var(--accent);
-  position: relative;
-  display: flex;
-  gap: 0.7rem;
-  width: 80%;
-  overflow-x: hidden;
-}
-#masterContainer #container section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  height: 17rem;
-  position: relative;
-  min-width: 15rem;
-  padding-inline: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  box-sizing: content-box;
-  border: 0.2rem solid var(--paleAccentTwo);
-  border-radius: 0.6rem;
-  align-items: center;
-  background-color: var(--paleAccent);
-}
-#masterContainer #container section a {
-  position: relative;
-  color: var(--secColor);
-  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  align-self: flex-start;
-  font-size: 1rem;
-}
-#masterContainer #container section a:first-child {
-  width: 100%;
-  align-self: center;
-}
-#masterContainer #container section a h3 {
-  margin-block: 2rem;
-  text-align: center;
-}
-#masterContainer #container section a::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  height: 0.125rem;
-  width: 100%;
-  background-color: var(--secColor);
-  opacity: 0.8;
-  z-index: -1;
-  content: "";
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
-}
-#masterContainer #container section a:hover::after {
-  transform: scaleX(1);
-}
-#masterContainer #container section a:active {
-  scale: 1.05;
-}
-#masterContainer #container section a:active::after {
-  background-color: var(--accent);
-}
-#masterContainer #container section a:focus-visible {
-  color: var(--accent);
-}
-#masterContainer #container section a:focus-visible::after {
-  transform: scaleX(1);
-}
-#masterContainer #container section img {
-  width: 52rem;
-  height: 42rem;
-  position: absolute;
-  bottom: 0;
-}
-
 .scrollableCategories {
   position: relative;
   height: 13vmax;
@@ -1842,9 +1720,9 @@ main.currentMain {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 1rem;
+  gap: 0.5vmax;
+  padding: 0.5vmax;
+  border-radius: 1vmax;
   backdrop-filter: blur(0.3rem);
   border: 0.2rem solid var(--paleAccentThree);
 }
@@ -1854,8 +1732,10 @@ main.currentMain {
   height: 100%;
   width: 23%;
   border-radius: inherit;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   border: 0.25rem solid var(--paleAccentThree);
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1880,6 +1760,7 @@ main.currentMain {
   color: var(--secColor);
   letter-spacing: 0.05rem;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-align: center;
 }
 .scrollableCategories .categoriesScrollUl .scrollCatLi img {
   height: 60%;
@@ -1888,14 +1769,21 @@ main.currentMain {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft {
+  animation-name: slideOutLeft;
   position: absolute;
   pointer-events: none;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   left: -25%;
+  scale: 0;
+  height: 80%;
+  opacity: 0.5;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft::before {
+  background: transparent;
 }
 .scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle {
   position: relative;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 1;
 }
 .scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover {
   border-color: var(--paleAccentTwo);
@@ -1915,10 +1803,63 @@ main.currentMain {
   scale: 0.95;
 }
 .scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight {
+  animation-name: slideOutRight;
   position: absolute;
   pointer-events: none;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   right: -25%;
+  scale: 0;
+  height: 80%;
+  opacity: 0.5;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight::before {
+  background: transparent;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.slideInLeft {
+  animation-name: slideInLeft;
+}
+.scrollableCategories .categoriesScrollUl .scrollCatLi.slideInRight {
+  animation-name: slideInRight;
+}
+@keyframes slideInLeft {
+  from {
+    left: -25%;
+    right: auto;
+  }
+  to {
+    left: 0;
+    right: auto;
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    left: 0;
+    right: auto;
+  }
+  to {
+    left: -25%;
+    right: auto;
+  }
+}
+@keyframes slideInRight {
+  from {
+    left: auto;
+    right: -25%;
+  }
+  to {
+    left: auto;
+    right: 0;
+  }
+}
+@keyframes slideOutRight {
+  from {
+    left: auto;
+    right: 0;
+  }
+  to {
+    left: auto;
+    right: -25%;
+  }
 }
 .scrollableCategories .scrollCatButtons {
   position: relative;
@@ -1926,12 +1867,16 @@ main.currentMain {
   touch-action: manipulation;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  border-radius: 0.5rem;
+  border-radius: 0.5vmax;
   border-radius: 50%;
-  border: 0.2rem solid var(--paleAccentThree);
+  border: 0.2vmax solid var(--paleAccentThree);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.scrollableCategories .scrollCatButtons.disabledScrollBtn {
+  pointer-events: none;
+  filter: grayscale(1);
 }
 .scrollableCategories .scrollCatButtons#rightScrollButton span {
   --spanDeg: -145deg;
@@ -1939,8 +1884,11 @@ main.currentMain {
 .scrollableCategories .scrollCatButtons span {
   position: relative;
   overflow: hidden;
-  padding: 1rem;
+  padding: 1vmax;
   --spanDeg: 145deg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .scrollableCategories .scrollCatButtons span::before {
   content: "";
@@ -1973,6 +1921,64 @@ main.currentMain {
   color: var(--secColor);
 }
 
+@media (max-width: 1300px) {
+  .scrollableCategories {
+    width: 80%;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .scrollableCategories .categoriesScrollUl {
+    width: 90%;
+    padding: 0.3vmax;
+    gap: 0.3vmax;
+    border-radius: 0.5vmax;
+    border-width: 0.15vmax;
+  }
+  .scrollableCategories .categoriesScrollUl .scrollCatLi {
+    justify-content: center;
+    border-width: 0.15vmax;
+  }
+  .scrollableCategories .categoriesScrollUl .scrollCatLi h3 {
+    display: none;
+  }
+  .scrollableCategories .categoriesScrollUl .scrollCatLi img {
+    height: 80%;
+    width: 80%;
+    bottom: unset;
+  }
+  .scrollableCategories .scrollCatButtons {
+    max-width: 15vmax;
+    max-height: 15vmax;
+  }
+  .scrollableCategories .scrollCatButtons span {
+    padding: 0.5vmax;
+  }
+}
+@media (max-width: 768px) {
+  .scrollableCategories {
+    width: 90%;
+    height: 15vmax;
+    flex-wrap: wrap;
+  }
+  .scrollableCategories .categoriesScrollUl {
+    order: 0;
+    width: 100%;
+  }
+  .scrollableCategories .categoriesScrollUl .scrollCatLi img {
+    height: 90;
+    width: 90%;
+  }
+  .scrollableCategories .scrollCatButtons {
+    max-width: 5vmax;
+    max-height: 5vmax;
+  }
+  .scrollableCategories .scrollCatButtons#leftScrollButton {
+    order: 1;
+  }
+  .scrollableCategories .scrollCatButtons#rightScrollButton {
+    order: 2;
+  }
+}
 .categories-section {
   border: 1px solid #ccc;
   padding: 20px;
@@ -2012,6 +2018,10 @@ select {
 .category-item a {
   color: #333;
   text-decoration: none;
+}
+
+.productsMain {
+  display: none;
 }
 
 .loginDropdown {
@@ -3538,12 +3548,12 @@ select {
   align-items: center;
   margin-inline: auto;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
   width: 90vmax;
 }
 
 #products-div-one {
-  margin-block: 20rem 10rem;
+  margin-block: 10rem 10rem;
 }
 
 #products-div-two {
@@ -3553,7 +3563,7 @@ select {
 #products-div-one div,
 #products-div-two div {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.9rem;
 }
 
 #products-div-one section,

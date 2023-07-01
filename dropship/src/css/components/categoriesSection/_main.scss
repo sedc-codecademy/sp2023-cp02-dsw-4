@@ -1,151 +1,3 @@
-#masterContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  gap: 1rem;
-  width: 90vmax;
-  margin-inline: auto;
-  display: none;
-
-
-  // BUTTON OD DIM
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .5s cubic-bezier(.19, 1, .22, 1);
-
-    &.arrow {
-      border-radius: 20px 6px;
-      width: 50px;
-      height: 50px;
-      background-color: var(--accent);
-      cursor: pointer;
-
-      &#left-arrow {
-        left: 400px;
-      }
-
-      &#right-arrow {
-        right: 400px;
-      }
-    }
-
-    &:focus-visible {
-      background-color: var(--secAccent);
-    }
-
-    &:hover {
-      background-color: var(--secAccent);
-    }
-
-    &:active {
-      scale: 1.1;
-
-      span {
-        color: var(--tertAccent);
-        scale: 1.2;
-      }
-    }
-  }
-
-  #container {
-    padding: 1rem 02rem;
-    border-left: .4rem solid var(--accent);
-    border-right: .4rem solid var(--accent);
-
-    position: relative;
-    display: flex;
-    gap: .7rem;
-    width: 80%;
-    overflow-x: hidden;
-
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      height: 17rem;
-      position: relative;
-      min-width: 15rem;
-      padding-inline: 1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      box-sizing: content-box;
-      border: .2rem solid var(--paleAccentTwo);
-      border-radius: .6rem;
-      align-items: center;
-      background-color: var(--paleAccent);
-
-      a {
-        position: relative;
-        color: var(--secColor);
-        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-        transition: all .5s cubic-bezier(.19, 1, .22, 1);
-        align-self: flex-start;
-        font-size: 1rem;
-
-        &:first-child {
-          width: 100%;
-          align-self: center;
-        }
-
-        h3 {
-          margin-block: 2rem;
-          text-align: center;
-        }
-
-        &::after {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          display: block;
-          height: .125rem;
-          width: 100%;
-          background-color: var(--secColor);
-          opacity: 0.8;
-          z-index: -1;
-          content: "";
-          transform-origin: left;
-          transform: scaleX(0);
-          transition: transform 1.2s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
-        }
-
-        &:hover {
-          &::after {
-            transform: scaleX(1);
-          }
-        }
-
-        &:active {
-          scale: 1.05;
-
-          &::after {
-            background-color: var(--accent);
-          }
-        }
-
-        &:focus-visible {
-          color: var(--accent);
-
-          &::after {
-            transform: scaleX(1);
-          }
-        }
-      }
-
-      img {
-        width: 52rem;
-        height: 42rem;
-        position: absolute;
-        bottom: 0;
-      }
-    }
-  }
-}
-
-
 .scrollableCategories {
   position: relative;
   height: 13vmax;
@@ -166,10 +18,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: .5vmax;
+    padding: .5vmax;
 
-    border-radius: 1rem;
+    border-radius: 1vmax;
     backdrop-filter: blur(.3rem);
     border: .2rem solid var(--paleAccentThree);
 
@@ -179,8 +31,10 @@
       height: 100%;
       width: 23%;
       border-radius: inherit;
-      transition: all .5s cubic-bezier(.19, 1, .22, 1);
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
       border: .25rem solid var(--paleAccentThree);
+      transition: all .7s cubic-bezier(.19, 1, .22, 1);
 
       display: flex;
       flex-direction: column;
@@ -209,6 +63,7 @@
         color: var(--secColor);
         letter-spacing: .05rem;
         font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        text-align: center;
       }
 
       img {
@@ -219,15 +74,24 @@
       }
 
       &.hiddenLeft {
+        animation-name: slideOutLeft;
         position: absolute;
         pointer-events: none;
-        transition: all .5s cubic-bezier(.19, 1, .22, 1);
         left: -25%;
+        scale: 0;
+        height: 80%;
+        opacity: .5;
+
+        &::before {
+          background: transparent;
+        }
+
+        transition: all .2s cubic-bezier(.19, 1, .22, 1);
       }
 
       &.shownMiddle {
         position: relative;
-        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        opacity: 1;
 
         &:hover {
           border-color: var(--paleAccentTwo);
@@ -253,13 +117,79 @@
       }
 
       &.hiddenRight {
+        animation-name: slideOutRight;
         position: absolute;
         pointer-events: none;
-        transition: all .5s cubic-bezier(.19, 1, .22, 1);
         right: -25%;
+        scale: 0;
+        height: 80%;
+        opacity: .5;
+
+        &::before {
+          background: transparent;
+        }
+
+        transition: all .2s cubic-bezier(.19, 1, .22, 1);
+      }
+
+      &.slideInLeft {
+        animation-name: slideInLeft;
+      }
+
+      &.slideInRight {
+        animation-name: slideInRight;
       }
     }
   }
+
+  @keyframes slideInLeft {
+    from {
+      left: -25%;
+      right: auto;
+    }
+
+    to {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      left: 0;
+      right: auto;
+    }
+
+    to {
+      left: -25%;
+      right: auto;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      left: auto;
+      right: -25%;
+    }
+
+    to {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      left: auto;
+      right: 0;
+    }
+
+    to {
+      left: auto;
+      right: -25%;
+    }
+  }
+
 
   .scrollCatButtons {
     position: relative;
@@ -267,15 +197,20 @@
     touch-action: manipulation;
     overflow: hidden;
     transition: all .5s cubic-bezier(.19, 1, .22, 1);
-    border-radius: .5rem;
+    border-radius: .5vmax;
     border-radius: 50%;
-    border: .2rem solid var(--paleAccentThree);
+    border: .2vmax solid var(--paleAccentThree);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &#rightScrollButton{
-      span{
+    &.disabledScrollBtn {
+      pointer-events: none;
+      filter: grayscale(1);
+    }
+
+    &#rightScrollButton {
+      span {
         --spanDeg: -145deg;
       }
     }
@@ -283,8 +218,12 @@
     span {
       position: relative;
       overflow: hidden;
-      padding: 1rem;
+      padding: 1vmax;
       --spanDeg: 145deg;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &::before {
         content: '';
@@ -321,6 +260,80 @@
     &:active {
       background-color: var(--paleAccentThree);
       color: var(--secColor);
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .scrollableCategories {
+    width: 80%;
+    justify-content: center;
+    gap: .5rem;
+
+    .categoriesScrollUl {
+      width: 90%;
+      padding: .3vmax;
+      gap: .3vmax;
+      border-radius: .5vmax;
+      border-width: .15vmax;
+
+      .scrollCatLi {
+        justify-content: center;
+        border-width: .15vmax;
+
+        h3 {
+          display: none;
+        }
+
+        img {
+          height: 80%;
+          width: 80%;
+          bottom: unset;
+        }
+      }
+    }
+
+    .scrollCatButtons {
+      max-width: 15vmax;
+      max-height: 15vmax;
+
+      span {
+        padding: .5vmax;
+      }
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .scrollableCategories {
+    width: 90%;
+    height: 15vmax;
+
+    flex-wrap: wrap;
+
+    .categoriesScrollUl {
+      order: 0;
+      width: 100%;
+
+      .scrollCatLi {
+        img {
+          height: 90;
+          width: 90%;
+        }
+      }
+    }
+
+    .scrollCatButtons {
+      max-width: 5vmax;
+      max-height: 5vmax;
+
+      &#leftScrollButton {
+        order: 1;
+      }
+
+      &#rightScrollButton {
+        order: 2;
+      }
     }
   }
 }

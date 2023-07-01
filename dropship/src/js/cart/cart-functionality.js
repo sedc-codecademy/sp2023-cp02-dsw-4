@@ -23,52 +23,52 @@ const summaryList = document.querySelector(".summaryUl")
 // localStorage.setItem("cart", JSON.stringify([])) 
 
 // ///////// Uncomment one of these to add something to local storage, each one overwrites the previous one called
-localStorage.setItem("cart", JSON.stringify([{
-    "title": "Waterproof Car Cover",
-    "price": 89.99,
-    "shipping": 15,
-    "stock": 30,
-    "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
-    "sale": 13,
-    "amount": 1,
-    "totalPrice": 0
-}, {
-    "title": "Waterproof Car Cover",
-    "price": 89.99,
-    "shipping": 7,
-    "stock": 1007,
-    "id": "aefa495c-82dc-4e46e-3a7db-ac4c1525a742",
-    "sale": 20,
-    "amount": 1000,
-    "totalPrice": 0
-}, {
-    "title": "Waterprddddddddddddddddddddddddddddddddddddddddddddddddoof Car Cover",
-    "price": 89.99,
-    "shipping": 8,
-    "stock": 10,
-    "id": "aef5a415c-82dc-4e56e-a7db-ac4c1525a742",
-    "sale": 7,
-    "amount": 1,
-    "totalPrice": 0
-}, {
-    "title": "Waterproof Car Cover",
-    "price": 89.99,
-    "shipping": 0,
-    "stock": 40,
-    "id": "aefa4215c-828dc-4e6e-a7db-ac4c1525a742",
-    "sale": 2,
-    "amount": 5,
-    "totalPrice": 0
-}, {
-    "title": "Waterdddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddd  d ddddddddproof Car Cover",
-    "price": 89.99,
-    "shipping": 15,
-    "stock": 19,
-    "id": "aefa415c-82dc-4e6e-a7db-ac4c91525a742",
-    "sale": 9,
-    "amount": 18,
-    "totalPrice": 0
-}]))
+// localStorage.setItem("cart", JSON.stringify([{
+//     "title": "Waterproof Car Cover",
+//     "price": 89.99,
+//     "shipping": 15,
+//     "stock": 30,
+//     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
+//     "sale": 13,
+//     "amount": 1,
+//     "totalPrice": 0
+// }, {
+//     "title": "Waterproof Car Cover",
+//     "price": 89.99,
+//     "shipping": 7,
+//     "stock": 1007,
+//     "id": "aefa495c-82dc-4e46e-3a7db-ac4c1525a742",
+//     "sale": 20,
+//     "amount": 1000,
+//     "totalPrice": 0
+// }, {
+//     "title": "Waterprddddddddddddddddddddddddddddddddddddddddddddddddoof Car Cover",
+//     "price": 89.99,
+//     "shipping": 8,
+//     "stock": 10,
+//     "id": "aef5a415c-82dc-4e56e-a7db-ac4c1525a742",
+//     "sale": 7,
+//     "amount": 1,
+//     "totalPrice": 0
+// }, {
+//     "title": "Waterproof Car Cover",
+//     "price": 89.99,
+//     "shipping": 0,
+//     "stock": 40,
+//     "id": "aefa4215c-828dc-4e6e-a7db-ac4c1525a742",
+//     "sale": 2,
+//     "amount": 5,
+//     "totalPrice": 0
+// }, {
+//     "title": "Waterdddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddd  d ddddddddproof Car Cover",
+//     "price": 89.99,
+//     "shipping": 15,
+//     "stock": 19,
+//     "id": "aefa415c-82dc-4e6e-a7db-ac4c91525a742",
+//     "sale": 9,
+//     "amount": 18,
+//     "totalPrice": 0
+// }]))
 
 ///////////////////// FREE SHIPPING AND 0 DISCOUNT
 // localStorage.setItem("cart", JSON.stringify([{
@@ -97,12 +97,13 @@ cartButton.addEventListener('click', (e) => {
     e.preventDefault()
     // notifcationToggle(productAddedNotif)
     // productAddedNotif.classList.toggle("alertOn")
-    if(cartContainer.classList.contains("currentMain")) return
+    if (cartContainer.classList.contains("currentMain")) return
     switchMain(cartContainer, "flex") /// turn on cart 
     openCart() // should remove from here and redo switchMain()
 })
 
 function openCart() {
+    console.log("dime")
     emptyCart() // Check if cart is empty
     fillCart(productsList) // Fill Cart with products
     fillSummary(summaryList) // Fill Summary with prices
@@ -137,7 +138,7 @@ function fillCart(ul) {
         p.setAttribute("tabindex", 0)
         p.textContent = product.title
         title.appendChild(p)
-        
+
         // Image
         title.style.setProperty('--bgimg', `url(${getRandomImgPath(imgPaths)})`)
 

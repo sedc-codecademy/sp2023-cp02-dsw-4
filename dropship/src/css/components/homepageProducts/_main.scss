@@ -7,12 +7,12 @@
   align-items: center;
   margin-inline: auto;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
   width: 90vmax;
 }
 
 #products-div-one {
-  margin-block: 20rem 10rem;
+  margin-block: 10rem 10rem;
 }
 
 #products-div-two {
@@ -22,7 +22,7 @@
 #products-div-one div,
 #products-div-two div {
   display: flex;
-  gap: 0.5rem;
+  gap: .9rem;
 }
 
 #products-div-one section,

@@ -20,7 +20,7 @@ async function setProducts(div, iterationCount) {
     for (let j = 0; j < iterationCount; j++) {
       let section = document.createElement("section");
       let img = document.createElement("img");
-      img.setAttribute("src", shuffledSubCats[i].image.slice(1));
+      img.setAttribute("src", getRandomImgPath(imgPaths).slice(1));
 
       let a = document.createElement("a");
       a.innerHTML = `${productsFound[j].title}`;
