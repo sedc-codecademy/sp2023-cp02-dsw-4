@@ -11,49 +11,49 @@
 
     p {
         position: relative;
-        left: 3.7rem;
-        top: -3.7rem;
+        left: 3.7vmax;
+        top: -3.7vmax;
         font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         text-transform: uppercase;
         font-weight: 600;
-        font-size: 1.1rem;
-        letter-spacing: .2rem;
+        font-size: 1.1vmax;
+        letter-spacing: .2vmax;
         color: var(--priColor);
         user-select: none;
-        text-shadow: .1rem .1rem 0 var(--secColor);
+        text-shadow: .1vmax .1vmax 0 var(--secColor);
     }
 
     a {
         position: relative;
-        top: -3rem;
-        left: 3rem;
-        font-size: 3.5rem;
+        top: -3vmax;
+        left: 3vmax;
+        font-size: 3.5vmax;
         line-height: 1.2;
         font-weight: 600;
         color: var(--secColor);
-        letter-spacing: -0.2rem;
+        letter-spacing: -0.2vmax;
         font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         text-transform: lowercase;
-        text-shadow: .1rem .1rem 0 var(--tpPri);
+        text-shadow: .1vmax .1vmax 0 var(--tpPri);
         transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
         &.adress {
-            margin-top: 1rem;
+            margin-top: 1vmax;
 
             p {
                 position: relative;
                 left: 0;
                 top: 0;
                 width: fit-content;
-                font-size: 3.5rem;
+                font-size: 3.5vmax;
                 line-height: 1.2;
                 font-weight: 600;
-                letter-spacing: -0.3rem;
+                letter-spacing: -0.3vmax;
                 color: var(--secColor);
-                letter-spacing: -0.2rem;
+                letter-spacing: -0.2vmax;
                 font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                 text-transform: capitalize;
-                text-shadow: .1rem .1rem 0 var(--tpPri);
+                text-shadow: .1vmax .1vmax 0 var(--tpPri);
                 white-space: wrap;
 
                 &::before {
@@ -61,7 +61,7 @@
                     bottom: 0;
                     left: 0;
                     display: block;
-                    height: .125rem;
+                    height: .125vmax;
                     width: 100%;
                     background-color: var(--secColor);
                     opacity: 0.8;
@@ -89,7 +89,7 @@
             bottom: 0;
             left: 0;
             display: block;
-            height: .125rem;
+            height: .125vmax;
             width: 100%;
             background-color: var(--secColor);
             opacity: 0.8;
@@ -130,28 +130,6 @@
             }
             &::after,p::before {
                 transform: scaleX(1);
-            }
-        }
-    }
-}
-
-@media (max-width: 1440px) {
-    .getintouch {
-        p {
-            // left: 5rem;
-            top: -3rem;
-            font-size: 0.9rem;
-        }
-
-        a {
-            // left: 3.5rem;
-            top: -2rem;
-            font-size: 2.5rem;
-
-            &.adress {
-                p {
-                    font-size: 2.3rem;
-                }
             }
         }
     }

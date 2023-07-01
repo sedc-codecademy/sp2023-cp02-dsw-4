@@ -95,8 +95,8 @@ const cartButton = document.querySelector('#cartButton')
 
 cartButton.addEventListener('click', (e) => {
     e.preventDefault()
-    // notifcationToggle(productAddedNotif)
-    // productAddedNotif.classList.toggle("alertOn")
+    notifcationToggle(productAddedNotif)
+    productAddedNotif.classList.toggle("alertOn")
     if (cartContainer.classList.contains("currentMain")) return
     switchMain(cartContainer, "flex") /// turn on cart 
     openCart() // should remove from here and redo switchMain()

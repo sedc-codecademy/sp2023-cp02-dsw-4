@@ -1,6 +1,6 @@
 .footFooter {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 1.5vmax;
     width: 95%;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@
     }
 
     .legal {
-        gap: 1.5rem;
+        gap: 1.5vmax;
 
         a {
             position: relative;
@@ -21,7 +21,7 @@
             font-weight: 600;
             text-transform: uppercase;
             transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
-            font-size: 1.1rem;
+            font-size: 1.1vmax;
             opacity: 0.6;
 
             --origin: center;
@@ -55,12 +55,12 @@
             &::before {
                 content: "";
                 position: absolute;
-                inset: -0.5rem;
+                inset: -0.5vmax;
 
-                border-top-left-radius: .3rem;
-                border-top-right-radius: .3rem;
-                border-bottom-left-radius: .3rem;
-                border-bottom-right-radius: .3rem;
+                border-top-left-radius: .3vmax;
+                border-top-right-radius: .3vmax;
+                border-bottom-left-radius: .3vmax;
+                border-bottom-right-radius: .3vmax;
                 background-color: var(--paleAccentTwo);
 
                 transform: scaleX(var(--scale));
@@ -73,35 +73,35 @@
 
             &:first-child {
                 &::before {
-                    border-top-left-radius: 1.3rem;
-                    border-top-right-radius: .3rem;
-                    border-bottom-left-radius: .3rem;
-                    border-bottom-right-radius: .3rem;
+                    border-top-left-radius: 1.3vmax;
+                    border-top-right-radius: .3vmax;
+                    border-bottom-left-radius: .3vmax;
+                    border-bottom-right-radius: .3vmax;
                 }
             }
 
             &:last-child {
                 &::before {
-                    border-top-left-radius: .3rem;
-                    border-top-right-radius: .3rem;
-                    border-bottom-left-radius: .3rem;
-                    border-bottom-right-radius: 1.3rem;
+                    border-top-left-radius: .3vmax;
+                    border-top-right-radius: .3vmax;
+                    border-bottom-left-radius: .3vmax;
+                    border-bottom-right-radius: 1.3vmax;
                 }
             }
         }
     }
 
     .socials {
-        gap: 0.3rem;
+        gap: 0.3vmax;
 
         legend {
             transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
             text-transform: uppercase;
             color: var(--secColor);
             opacity: 0.6;
-            font-size: 1.1rem;
+            font-size: 1.1vmax;
             font-weight: 600;
-            margin-right: 1rem;
+            margin-right: 1vmax;
 
             &:hover {
                 opacity: 1;
@@ -119,7 +119,7 @@
 
             &::before {
                 content: "";
-                inset: -0.35rem;
+                inset: -0.35vmax;
                 border-radius: 50%;
                 background-color: var(--accent);
                 opacity: 0;
@@ -164,14 +164,14 @@
         }
 
         svg {
-            height: 3rem;
-            width: 3rem;
+            height: 3vmax;
+            width: 3vmax;
             fill: var(--tertColor);
             transition: all .5s cubic-bezier(.0, 0.5, .5, 1);
 
             &#twitter, &#git {
-                height: 2.5rem;
-                width: 2.5rem;
+                height: 2.5vmax;
+                width: 2.5vmax;
             }
         }
     }
@@ -180,20 +180,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: .5rem;
+        gap: .5vmax;
 
         .divider {
-            height: 2rem;
+            height: 2vmax;
         }
 
         a {
             position: relative;
-            height: 1.5rem;
+            height: 1.5vmax;
             color: var(--secColor);
             font-weight: 600;
             text-transform: uppercase;
             transition: 300ms all ease;
-            font-size: 1.1rem;
+            font-size: 1.1vmax;
             opacity: 0.6;
             display: flex;
             justify-content: center;
@@ -204,7 +204,7 @@
                 content: "";
                 position: absolute;
                 width: 0;
-                height: 2rem;
+                height: 2vmax;
                 transition: width .7s cubic-bezier(.20, 0.5, .3, 1), background-color .5s cubic-bezier(.0, 0.5, .5, 1);
                 z-index: -1;
             }
@@ -239,17 +239,17 @@
 
             &.english {
                 &::before {
-                    border-top-left-radius: 1rem;
-                    border-bottom-left-radius: 1rem;
-                    right: -.5rem;
+                    border-top-left-radius: 1vmax;
+                    border-bottom-left-radius: 1vmax;
+                    right: -.5vmax;
                 }
             }
 
             &.macedonian {
                 &::before {
-                    border-top-right-radius: 1rem;
-                    border-bottom-right-radius: 1rem;
-                    left: -.5rem;
+                    border-top-right-radius: 1vmax;
+                    border-bottom-right-radius: 1vmax;
+                    left: -.5vmax;
                 }
 
                 &:hover {
@@ -276,48 +276,3 @@
     }
 }
 
-@media (max-width: 1440px) {
-    .footFooter {
-        bottom: 1rem;
-
-        .legal {
-            gap: 1rem;
-
-            a {
-                font-size: 0.9rem;
-            }
-        }
-
-        .socials {
-            legend {
-                font-size: 0.9rem;
-                margin-right: 0.5rem;
-            }
-
-            svg {
-                height: 2.5rem;
-                width: 2.5rem;
-            }
-
-            a {
-                &::before {
-                    inset: -0.20rem;
-                }
-            }
-        }
-
-        .footerLanguage {
-            .divider {
-                height: 1.5rem;
-            }
-
-            a {
-                font-size: 0.9rem;
-
-                &::before {
-                    height: 1.5rem;
-                }
-            }
-        }
-    }
-}

@@ -15,9 +15,9 @@ footer {
         content: '';
         position: absolute;
         background-color: var(--tertColor);
-        height: 0.1rem;
+        height: 0.1vmax;
         width: 97%;
-        bottom: 6rem;
+        bottom: 5.5vmax;
     }
 
     .footerMain {
@@ -26,7 +26,44 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        gap: 3rem;
+        gap: 3vmax;
+
+        .mobileLogoHidden {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            display: none;
+
+            top: 6vmax;
+            right: 3.5vmax;
+
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                #smallLogoGradient2 {
+                    :first-child {
+                        stop-color: var(--paleAccentTwo)
+                    }
+
+                    :nth-child(2) {
+                        stop-color: var(--accent)
+                    }
+                }
+            }
+        }
+    }
+
+    .dividerFooter {
+        width: 85%;
+        background-color: var(--secColor);
+        height: .1rem;
+        display: none;
     }
 }
 
@@ -44,23 +81,40 @@ footer {
 
         fill: transparent;
 
-        #footerGradient {
+        &.mobileFooterBackground {
+            display: none;
+            transform: rotateX(180deg);
+        }
+
+        &.standardFooterBackground {
+            transform: rotateY(180deg);
+        }
+
+        #footerStandardLinear {
             :first-child {
                 stop-color: var(--accent)
             }
-    
+
             :nth-child(2) {
-                stop-color: var(--secAccent)
+                stop-color: var(--reverseAccent)
+            }
+
+            :last-child {
+                stop-color: var(--reverseAccent)
             }
         }
-    
-        #footerGradientTwo {
+
+        #footerBkgLinearMobile {
             :first-child {
-                stop-color: var(--tertAccent)
+                stop-color: var(--secAccent)
             }
-    
+
             :nth-child(2) {
-                stop-color: var(--tertAccent)
+                stop-color: var(--paleAccentTwo)
+            }
+
+            :last-child {
+                stop-color: var(--reverseAccent)
             }
         }
     }
@@ -74,8 +128,389 @@ footer {
     }
 }
 
-@media (max-width: 1440px) {
-    footer::after {
-        bottom: 4.5rem;
+@media (max-width: 1500px) {
+    footer {
+        &::after {
+            bottom: 4vmax;
+        }
+
+        .footerMain {
+
+            .footerHero {
+                width: 25vmax;
+                height: 25vmax;
+            }
+
+            .newsletter {
+                width: min-content;
+
+                p {
+                    font-size: 0.9rem;
+                }
+
+                h1 {
+                    font-size: 4.5rem;
+                    line-height: 3.5rem;
+                }
+
+                input {
+                    width: 13rem;
+                    height: 2.5rem;
+                    font-size: 0.9rem;
+                }
+
+                label {
+                    font-size: 0.9rem;
+                }
+
+                form {
+                    button {
+                        height: 2.5rem;
+                    }
+                }
+
+                svg {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+            }
+
+            .getintouch {
+                p {
+                    // left: 5vmax;
+                    top: -3vmax;
+                    // font-size: 0.9vmax;
+                }
+
+                a {
+                    // left: 3.5vmax;
+                    top: -2vmax;
+                    // font-size: 2.5vmax;
+
+                    &.adress {
+                        p {
+                            font-size: 2.3vmax;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footFooter {
+            bottom: .5vmax;
+
+            .legal {
+                gap: 1vmax;
+
+                a {
+                    font-size: 0.9vmax;
+                }
+            }
+
+            .socials {
+                legend {
+                    font-size: 0.9vmax;
+                    margin-right: 0.5vmax;
+                }
+
+                svg {
+                    height: 2.5vmax;
+                    width: 2.5vmax;
+                }
+
+                a {
+                    &::before {
+                        inset: -0.20vmax;
+                    }
+                }
+            }
+
+            .footerLanguage {
+                .divider {
+                    height: 1.5vmax;
+                }
+
+                a {
+                    font-size: 0.9vmax;
+
+                    &::before {
+                        height: 1.5vmax;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    footer {
+        .footerMain {
+            gap: 2.5vmax;
+
+            .newsletter {
+                width: min-content;
+
+                p {
+                    font-size: 0.7rem;
+                }
+
+                h1 {
+                    font-size: 4rem;
+                    line-height: 3rem;
+                }
+
+                input {
+                    width: 10rem;
+                    height: 2rem;
+                    font-size: 0.7rem;
+                }
+
+                label {
+                    font-size: 0.7rem;
+                }
+
+                form {
+                    button {
+                        height: 2rem;
+                    }
+                }
+
+                svg {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    footer {
+
+        .footerMain {
+            gap: 2.5vmax;
+
+            .newsletter {
+                width: min-content;
+                align-items: flex-start;
+                gap: .5rem;
+
+                p {
+                    margin: 0;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                    line-height: 1.5rem;
+                    letter-spacing: unset;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    footer {
+        &::after {
+            display: none;
+        }
+
+        .footerBackgroundImage {
+            svg {
+                &.mobileFooterBackground {
+                    display: block;
+                }
+
+                &.standardFooterBackground {
+                    display: none;
+                }
+            }
+        }
+
+
+        flex-direction: column;
+        height: 90vh;
+        background-color: var(--paleAccent);
+        gap: 1rem;
+
+        .dividerFooter {
+            display: block;
+        }
+
+        .footerMain {
+            width: 100%;
+            padding-left: 1.5rem;
+
+            flex-direction: column;
+            gap: .5rem;
+            align-items: flex-start;
+
+            .mobileLogoHidden {
+                display: block;
+            }
+
+            .newsletter {
+                align-items: flex-start;
+                gap: 1rem;
+
+                p {
+                    margin: 0;
+                    text-indent: 0;
+                    color: var(--accent);
+                }
+
+                h1 {
+                    font-size: 2.4rem;
+                    line-height: 1.6rem;
+                    letter-spacing: -.05rem;
+                    margin: 0;
+                }
+
+                input {
+                    width: 9rem;
+                    height: 1.5rem;
+                    font-size: 0.7rem;
+                    margin: 0;
+                    border-width: .1rem;
+                    border-top: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    margin-top: .5rem;
+                    color: var(--secColor);
+                }
+
+                label {
+                    font-size: 0.7rem;
+                    left: 1.5rem;
+                    padding-inline: .2rem;
+                }
+
+                form {
+                    button {
+                        height: 2rem;
+                        width: 2rem;
+                        border-width: .1rem;
+                        border-radius: 50%;
+                        padding: .3rem;
+                        margin-top: .5rem;
+
+                        svg {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+            .getintouch {
+                align-items: flex-start;
+
+                p {
+                    left: unset;
+                    top: unset;
+                    font-size: 1.5vmax;
+                    text-indent: 0;
+                    margin-bottom: .4rem;
+                    color: var(--accent);
+                }
+
+                a {
+                    left: unset;
+                    top: unset;
+                    text-align: justify;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+
+                    &.adress {
+                        gap: 0;
+
+                        p {
+                            text-align: justify;
+                            font-weight: 500;
+                            font-size: 1.2rem;
+                            line-height: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .footerHero {
+                display: none;
+            }
+        }
+
+        .footFooter {
+            height: 35%;
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            gap: 1.5rem;
+            justify-content: space-around;
+            bottom: .5vmax;
+
+            .legal {
+                align-items: center;
+                max-width: 70%;
+                flex-wrap: wrap;
+                order: 2;
+                gap: 2vmax;
+
+                a {
+                    font-size: .7rem;
+                }
+            }
+
+            .socials {
+                order: 1;
+                align-items: center;
+                flex-wrap: wrap;
+
+                legend {
+                    display: none;
+                }
+
+                svg {
+                    height: 4vmax;
+                    width: 4vmax;
+
+                    &#twitter,
+                    &#git {
+                        height: 4vmax;
+                        width: 4vmax;
+                    }
+                }
+
+                a {
+                    &::before {
+                        inset: -0.20vmax;
+                    }
+
+                    svg {
+                        fill: var(--secColor);
+                    }
+                }
+            }
+
+            .footerLanguage {
+                order: 3;
+                align-items: center;
+
+                .divider {
+                    height: 1rem;
+                    width: .15rem;
+                    background-color: var(--accent);
+                    border-radius: .5rem;
+                }
+
+                a {
+                    font-size: 1.5vmax;
+
+                    &::before {
+                        height: 2vmax;
+                    }
+                }
+            }
+        }
     }
 }

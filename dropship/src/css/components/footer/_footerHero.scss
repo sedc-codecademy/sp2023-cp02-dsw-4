@@ -1,19 +1,16 @@
 .footerHero {
-    width: 30rem;
-    height: 30rem;
+    width: 30vmax;
+    height: 30vmax;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .footerLogo {
         position: relative;
-        top: -3rem;
+        top: -3vmax;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 7rem;
-        font-family: 'Rubik Microbe', cursive;
-        color: var(--accent);
         user-select: none;
         width: 90%;
         height: 90%;
@@ -22,27 +19,27 @@
         background-color: var(--tpPri);
         
         transform-style: preserve-3d; // 3D stuff
-        transform: perspective(50rem);
+        transform: perspective(50vmax);
         transform: rotateY(0deg) rotateX(0deg);
 
         &::before {
             content: '';
             position: absolute;
             border-radius: inherit;
-            inset: -.5rem;
+            inset: -.5vmax;
             background-image: linear-gradient(45deg, var(--accent), var(--tertAccent), var(--secAccent));
-            transform: translateZ(-1rem);
-            box-shadow: rgba(0, 0, 0, 0.35) 0 0.5rem 1.5rem;
+            transform: translateZ(-1vmax);
+            box-shadow: rgba(0, 0, 0, 0.35) 0 0.5vmax 1.5vmax;
         }
 
         &::after {
             content: '';
             position: absolute;
             border-radius: inherit;
-            inset: -1rem;
+            inset: -1vmax;
             background-color: var(--tertColor);
-            filter: blur(5rem);
-            transform: translateZ(-1.2rem);
+            filter: blur(5vmax);
+            transform: translateZ(-1.2vmax);
         }
 
         svg{
@@ -55,16 +52,6 @@
                     stop-color: var(--logoAccentTwo)
                 }
             }
-        }
-    }
-}
-
-@media (max-width: 1440px) {
-    .footerHero {
-        width: 20rem;
-        height: 20rem;
-        .footerLogo{
-            font-size: 5rem;
         }
     }
 }

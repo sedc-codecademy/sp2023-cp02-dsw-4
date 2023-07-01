@@ -60,6 +60,7 @@
             border-radius: .5rem;
             min-height: 7rem;
             outline: 0.15rem solid var(--paleAccentThree);
+            backdrop-filter: blur(.3rem);
 
             .pTitle {
                 display: flex;
