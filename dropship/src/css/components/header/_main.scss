@@ -103,6 +103,7 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 3;
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
     svg {
         width: 100%;

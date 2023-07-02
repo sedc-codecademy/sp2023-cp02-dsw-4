@@ -202,6 +202,7 @@ header .headerGradient {
   align-items: center;
   justify-content: center;
   z-index: 3;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .logo svg {
   width: 100%;
@@ -1022,6 +1023,7 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 5vmax;
+  flex-wrap: wrap;
 }
 footer::after {
   content: "";
@@ -1036,8 +1038,8 @@ footer .footerMain {
   height: 75%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 3vmax;
+  justify-content: center;
+  gap: 2vmax;
 }
 footer .footerMain .mobileLogoHidden {
   position: absolute;
@@ -1047,7 +1049,7 @@ footer .footerMain .mobileLogoHidden {
   align-items: center;
   justify-content: center;
   display: none;
-  top: 6vmax;
+  top: 3.5vmax;
   right: 3.5vmax;
 }
 footer .footerMain .mobileLogoHidden svg {
@@ -1117,19 +1119,18 @@ footer .dividerFooter {
   footer::after {
     bottom: 4vmax;
   }
-  footer .footerMain .footerHero {
-    width: 25vmax;
-    height: 25vmax;
-  }
   footer .footerMain .newsletter {
     width: min-content;
   }
   footer .footerMain .newsletter p {
     font-size: 0.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   footer .footerMain .newsletter h1 {
     font-size: 4.5rem;
-    line-height: 3.5rem;
+    line-height: 3.1rem;
+    letter-spacing: -0.1rem;
   }
   footer .footerMain .newsletter input {
     width: 13rem;
@@ -1146,11 +1147,14 @@ footer .dividerFooter {
     width: 1.8rem;
     height: 1.8rem;
   }
+  footer .footerMain .getintouch {
+    margin-right: 0;
+  }
   footer .footerMain .getintouch p {
-    top: -3vmax;
+    top: 0;
   }
   footer .footerMain .getintouch a {
-    top: -2vmax;
+    top: 0;
   }
   footer .footerMain .getintouch a.adress p {
     font-size: 2.3vmax;
@@ -1186,18 +1190,24 @@ footer .dividerFooter {
   }
 }
 @media (max-width: 1100px) {
+  footer {
+    flex-direction: row;
+  }
   footer .footerMain {
     gap: 2.5vmax;
   }
   footer .footerMain .newsletter {
-    width: min-content;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   footer .footerMain .newsletter p {
     font-size: 0.7rem;
+    margin: 0;
   }
   footer .footerMain .newsletter h1 {
-    font-size: 4rem;
-    line-height: 3rem;
+    font-size: 3rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
   }
   footer .footerMain .newsletter input {
     width: 10rem;
@@ -1214,32 +1224,31 @@ footer .dividerFooter {
     width: 1.4rem;
     height: 1.4rem;
   }
-}
-@media (max-width: 1100px) {
-  footer .footerMain {
-    gap: 2.5vmax;
+  footer .footerMain .getintouch {
+    margin-right: 0;
   }
-  footer .footerMain .newsletter {
-    width: min-content;
-    align-items: flex-start;
-    gap: 0.5rem;
+  footer .footerMain .getintouch p {
+    top: 0;
+    font-size: 0.9rem;
   }
-  footer .footerMain .newsletter p {
-    margin: 0;
+  footer .footerMain .getintouch a {
+    top: 0;
+    font-size: 1.8rem;
   }
-  footer .footerMain .newsletter h1 {
-    font-size: 2rem;
-    line-height: 1.5rem;
-    letter-spacing: unset;
-    margin-bottom: 0.5rem;
+  footer .footerMain .getintouch a.adress p {
+    font-size: 2.3vmax;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  footer .footerMain .footerHero {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
   footer {
-    flex-direction: column;
-    height: 90vh;
+    height: unset;
     background-color: var(--paleAccent);
-    gap: 1rem;
+    gap: 3rem;
   }
   footer::after {
     display: none;
@@ -1257,7 +1266,7 @@ footer .dividerFooter {
     width: 100%;
     padding-left: 1.5rem;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 3rem;
     align-items: flex-start;
   }
   footer .footerMain .mobileLogoHidden {
@@ -1268,9 +1277,10 @@ footer .dividerFooter {
     gap: 1rem;
   }
   footer .footerMain .newsletter p {
-    margin: 0;
+    margin-top: 1.5rem;
     text-indent: 0;
     color: var(--accent);
+    text-shadow: 0.05rem 0.05rem 0 var(--secColor);
   }
   footer .footerMain .newsletter h1 {
     font-size: 2.4rem;
@@ -1314,6 +1324,7 @@ footer .dividerFooter {
     left: unset;
     top: unset;
     font-size: 1.5vmax;
+    text-shadow: 0.05rem 0.05rem 0 var(--secColor);
     text-indent: 0;
     margin-bottom: 0.4rem;
     color: var(--accent);
@@ -1342,7 +1353,7 @@ footer .dividerFooter {
     position: relative;
     align-items: center;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
     justify-content: space-around;
     bottom: 0.5vmax;
   }
@@ -1365,12 +1376,12 @@ footer .dividerFooter {
     display: none;
   }
   footer .footFooter .socials svg {
-    height: 4vmax;
-    width: 4vmax;
+    height: 5.5vmax;
+    width: 5.5vmax;
   }
   footer .footFooter .socials svg#twitter, footer .footFooter .socials svg#git {
-    height: 4vmax;
-    width: 4vmax;
+    height: 5.1vmax;
+    width: 5.1vmax;
   }
   footer .footFooter .socials a::before {
     inset: -0.2vmax;
@@ -1381,6 +1392,7 @@ footer .dividerFooter {
   footer .footFooter .footerLanguage {
     order: 3;
     align-items: center;
+    margin-bottom: 1rem;
   }
   footer .footFooter .footerLanguage .divider {
     height: 1rem;
@@ -1400,7 +1412,7 @@ footer .dividerFooter {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  width: 30rem;
+  width: min-content;
 }
 .newsletter p {
   font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -1410,14 +1422,13 @@ footer .dividerFooter {
   letter-spacing: 0.2rem;
   color: var(--priColor);
   text-indent: 0.5rem;
-  margin-top: -1rem;
   user-select: none;
   text-shadow: 0.1rem 0.1rem 0 var(--secColor);
 }
 .newsletter h1 {
   font-size: 6.5rem;
   letter-spacing: -0.3rem;
-  line-height: 5rem;
+  line-height: 4.5rem;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: lowercase;
   margin-bottom: 2rem;
@@ -1455,14 +1466,12 @@ footer .dividerFooter {
 }
 .newsletter form button:hover svg {
   fill: var(--accent);
-  transition: 300ms all ease;
 }
 .newsletter form button:active {
   border-color: var(--priColor);
 }
 .newsletter form button:active svg {
   fill: var(--priColor);
-  transition: 300ms all ease;
 }
 .newsletter input {
   width: 16rem;
@@ -1500,7 +1509,6 @@ footer .dividerFooter {
 }
 .newsletter input:focus {
   border: 0.15rem solid var(--accent);
-  transition: 300ms all ease;
 }
 .newsletter input:focus ~ label {
   opacity: 1;
@@ -1532,7 +1540,7 @@ footer .dividerFooter {
 }
 .footerHero .footerLogo {
   position: relative;
-  top: -3vmax;
+  top: -1vmax;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1576,6 +1584,7 @@ footer .dividerFooter {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-right: -5rem;
 }
 .getintouch span {
   color: var(--accent);
@@ -1583,8 +1592,6 @@ footer .dividerFooter {
 }
 .getintouch p {
   position: relative;
-  left: 3.7vmax;
-  top: -3.7vmax;
   font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: uppercase;
   font-weight: 600;
@@ -1592,12 +1599,11 @@ footer .dividerFooter {
   letter-spacing: 0.2vmax;
   color: var(--priColor);
   user-select: none;
-  text-shadow: 0.1vmax 0.1vmax 0 var(--secColor);
+  text-shadow: 0.1rem 0.1rem 0 var(--secColor);
+  text-indent: 0.5vmax;
 }
 .getintouch a {
   position: relative;
-  top: -3vmax;
-  left: 3vmax;
   font-size: 3.5vmax;
   line-height: 1.2;
   font-weight: 600;
@@ -1605,7 +1611,7 @@ footer .dividerFooter {
   letter-spacing: -0.2vmax;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: lowercase;
-  text-shadow: 0.1vmax 0.1vmax 0 var(--tpPri);
+  text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .getintouch a.adress {
@@ -1624,7 +1630,7 @@ footer .dividerFooter {
   letter-spacing: -0.2vmax;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-transform: capitalize;
-  text-shadow: 0.1vmax 0.1vmax 0 var(--tpPri);
+  text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
   white-space: wrap;
 }
 .getintouch a.adress p::before {
@@ -1687,7 +1693,8 @@ footer .dividerFooter {
 .getintouch a:focus-visible p {
   color: var(--accent);
 }
-.getintouch a:focus-visible::after, .getintouch a:focus-visible p::before {
+.getintouch a:focus-visible::after,
+.getintouch a:focus-visible p::before {
   transform: scaleX(1);
 }
 

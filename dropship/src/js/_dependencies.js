@@ -144,7 +144,7 @@ const imgPaths = [
     '../imgs/cat/hAndG/sub/laundry.png'
 ]
 
-function getRandomImgPath(arr){
+function getRandomImgPath(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex]
 }
@@ -328,5 +328,3 @@ homeBtn.addEventListener("click", (e) => {
 document.body.addEventListener('click', (e) => { // Event listener for turning off categories adn loosing focus on searchInput
     if (!searchForm.contains(e.target)) classSwitcher.ctOff()
 })
-
-    

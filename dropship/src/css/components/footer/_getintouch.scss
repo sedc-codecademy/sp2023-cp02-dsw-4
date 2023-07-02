@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-right: -5rem;
 
     span {
         color: var(--accent);
@@ -11,8 +12,6 @@
 
     p {
         position: relative;
-        left: 3.7vmax;
-        top: -3.7vmax;
         font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         text-transform: uppercase;
         font-weight: 600;
@@ -20,13 +19,12 @@
         letter-spacing: .2vmax;
         color: var(--priColor);
         user-select: none;
-        text-shadow: .1vmax .1vmax 0 var(--secColor);
+        text-shadow: .1rem .1rem 0 var(--secColor);
+        text-indent: .5vmax;
     }
 
     a {
         position: relative;
-        top: -3vmax;
-        left: 3vmax;
         font-size: 3.5vmax;
         line-height: 1.2;
         font-weight: 600;
@@ -34,7 +32,7 @@
         letter-spacing: -0.2vmax;
         font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         text-transform: lowercase;
-        text-shadow: .1vmax .1vmax 0 var(--tpPri);
+        text-shadow: .1rem .1rem 0 var(--tpPri);
         transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
         &.adress {
@@ -53,7 +51,7 @@
                 letter-spacing: -0.2vmax;
                 font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                 text-transform: capitalize;
-                text-shadow: .1vmax .1vmax 0 var(--tpPri);
+                text-shadow: .1rem .1rem 0 var(--tpPri);
                 white-space: wrap;
 
                 &::before {
@@ -110,25 +108,31 @@
             }
         }
 
-        &:active{
+        &:active {
             color: var(--accent);
-            span{
+
+            span {
                 color: var(--secColor);
             }
-            p{
+
+            p {
                 color: var(--accent);
             }
         }
 
         &:focus-visible {
             color: var(--accent);
-            span{
+
+            span {
                 color: var(--secColor);
             }
-            p{
+
+            p {
                 color: var(--accent);
             }
-            &::after,p::before {
+
+            &::after,
+            p::before {
                 transform: scaleX(1);
             }
         }

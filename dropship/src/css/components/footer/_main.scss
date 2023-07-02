@@ -10,6 +10,7 @@ footer {
     justify-content: center;
     align-items: center;
     margin-top: 5vmax;
+    flex-wrap: wrap;
 
     &::after {
         content: '';
@@ -25,8 +26,8 @@ footer {
         height: 75%;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        gap: 3vmax;
+        justify-content: center;
+        gap: 2vmax;
 
         .mobileLogoHidden {
             position: absolute;
@@ -38,7 +39,7 @@ footer {
 
             display: none;
 
-            top: 6vmax;
+            top: 3.5vmax;
             right: 3.5vmax;
 
 
@@ -135,22 +136,19 @@ footer {
         }
 
         .footerMain {
-
-            .footerHero {
-                width: 25vmax;
-                height: 25vmax;
-            }
-
             .newsletter {
                 width: min-content;
 
                 p {
                     font-size: 0.9rem;
+                    margin-top: 1.5rem;
+                    margin-bottom: .5rem;
                 }
 
                 h1 {
                     font-size: 4.5rem;
-                    line-height: 3.5rem;
+                    line-height: 3.1rem;
+                    letter-spacing: -.1rem;
                 }
 
                 input {
@@ -176,16 +174,14 @@ footer {
             }
 
             .getintouch {
+                margin-right: 0;
+
                 p {
-                    // left: 5vmax;
-                    top: -3vmax;
-                    // font-size: 0.9vmax;
+                    top: 0;
                 }
 
                 a {
-                    // left: 3.5vmax;
-                    top: -2vmax;
-                    // font-size: 2.5vmax;
+                    top: 0;
 
                     &.adress {
                         p {
@@ -244,19 +240,24 @@ footer {
 
 @media (max-width: 1100px) {
     footer {
+        flex-direction: row;
+
         .footerMain {
             gap: 2.5vmax;
 
             .newsletter {
-                width: min-content;
+                align-items: flex-start;
+                gap: .5rem;
 
                 p {
                     font-size: 0.7rem;
+                    margin: 0;
                 }
 
                 h1 {
-                    font-size: 4rem;
-                    line-height: 3rem;
+                    font-size: 3rem;
+                    line-height: 2rem;
+                    margin-bottom: 1rem;
                 }
 
                 input {
@@ -280,37 +281,45 @@ footer {
                     height: 1.4rem;
                 }
             }
+
+            .getintouch {
+                margin-right: 0;
+
+                p {
+                    top: 0;
+                    font-size: .9rem;
+                }
+
+                a {
+                    // left: 3.5vmax;
+                    top: 0;
+                    font-size: 1.8rem;
+
+                    &.adress {
+                        p {
+                            font-size: 2.3vmax;
+                        }
+                    }
+                }
+            }
+
+
         }
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 800px) {
+
     footer {
-
         .footerMain {
-            gap: 2.5vmax;
-
-            .newsletter {
-                width: min-content;
-                align-items: flex-start;
-                gap: .5rem;
-
-                p {
-                    margin: 0;
-                }
-
-                h1 {
-                    font-size: 2rem;
-                    line-height: 1.5rem;
-                    letter-spacing: unset;
-                    margin-bottom: .5rem;
-                }
+            .footerHero {
+                display: none;
             }
         }
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     footer {
         &::after {
             display: none;
@@ -328,11 +337,9 @@ footer {
             }
         }
 
-
-        flex-direction: column;
-        height: 90vh;
+        height: unset;
         background-color: var(--paleAccent);
-        gap: 1rem;
+        gap: 3rem;
 
         .dividerFooter {
             display: block;
@@ -343,7 +350,7 @@ footer {
             padding-left: 1.5rem;
 
             flex-direction: column;
-            gap: .5rem;
+            gap: 3rem;
             align-items: flex-start;
 
             .mobileLogoHidden {
@@ -355,9 +362,10 @@ footer {
                 gap: 1rem;
 
                 p {
-                    margin: 0;
+                    margin-top: 1.5rem;
                     text-indent: 0;
                     color: var(--accent);
+                    text-shadow: .05rem .05rem 0 var(--secColor);
                 }
 
                 h1 {
@@ -410,6 +418,7 @@ footer {
                     left: unset;
                     top: unset;
                     font-size: 1.5vmax;
+                    text-shadow: .05rem .05rem 0 var(--secColor);
                     text-indent: 0;
                     margin-bottom: .4rem;
                     color: var(--accent);
@@ -445,7 +454,7 @@ footer {
             position: relative;
             align-items: center;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 3rem;
             justify-content: space-around;
             bottom: .5vmax;
 
@@ -471,13 +480,13 @@ footer {
                 }
 
                 svg {
-                    height: 4vmax;
-                    width: 4vmax;
+                    height: 5.5vmax;
+                    width: 5.5vmax;
 
                     &#twitter,
                     &#git {
-                        height: 4vmax;
-                        width: 4vmax;
+                        height: 5.1vmax;
+                        width: 5.1vmax;
                     }
                 }
 
@@ -495,6 +504,7 @@ footer {
             .footerLanguage {
                 order: 3;
                 align-items: center;
+                margin-bottom: 1rem;
 
                 .divider {
                     height: 1rem;
