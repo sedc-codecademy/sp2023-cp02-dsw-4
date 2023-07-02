@@ -123,9 +123,10 @@ input[type=search]::-webkit-search-results-decoration {
 
 header {
   height: 25vmax;
+  width: 100%;
   position: relative;
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 header .headerGradient {
@@ -310,11 +311,9 @@ header .headerGradient {
   }
 }
 .search-form {
-  position: absolute;
-  left: 50%;
   top: 13rem;
-  height: 0 !important;
-  transform: translateX(-50%);
+  height: 3rem;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,39 +321,37 @@ header .headerGradient {
 }
 
 .search-bar-container {
-  position: absolute;
-  top: 0;
-  height: 3rem;
-  width: 35rem;
   display: flex;
-  flex-direction: row;
-  place-items: center;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border-top-left-radius: 1.7rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 2rem;
   border-top-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
-  border-bottom-right-radius: 1.7rem;
+  border-bottom-right-radius: 2rem;
   border: 0.2rem solid var(--paleAccentThree);
   background-color: var(--tpPri);
   backdrop-filter: blur(2rem);
   overflow: hidden;
-  transition: 300ms all ease;
-  z-index: 3;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .search-bar-container .search-bar {
-  font-size: 1.4rem;
-  width: 100%;
-  height: 100%;
   background: transparent;
   border: none;
   outline: none;
-  text-indent: 1.5rem;
   color: var(--secColor);
+  font-size: 1.4rem;
+  text-indent: 1.2rem;
   letter-spacing: 0.05rem;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-weight: 600;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .search-bar-container .search-bar::selection {
   background: var(--accent);
@@ -363,52 +360,61 @@ header .headerGradient {
 .search-bar-container button {
   position: relative;
   height: 100%;
-}
-.search-bar-container button ::before {
-  content: "";
-  inset: 0;
-  position: absolute;
-  filter: blur(1.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.search-bar-container button:active span.material-symbols-outlined {
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  color: var(--tertAccent);
-}
-.search-bar-container button:focus-visible {
-  color: var(--accent);
-  transition: 300ms all ease;
-}
-.search-bar-container button:focus-visible .material-symbols-outlined {
-  color: var(--accent);
-}
-.search-bar-container button:focus-visible ::before {
-  background-color: var(--accent);
-}
-.search-bar-container button.clearButton, .search-bar-container button#searchButton {
+.search-bar-container button.searchButtons {
   margin-left: 0.3rem;
   display: none;
 }
 .search-bar-container button.categoriesButton {
-  position: relative;
-  margin-right: 0.6rem;
+  margin-right: 0.65rem;
+}
+.search-bar-container button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.search-bar-container button::before {
+  content: "";
+  inset: 0;
+  display: block;
+  position: absolute;
+  filter: blur(1.5rem);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+.search-bar-container button:focus-visible {
+  color: var(--accent);
+}
+.search-bar-container button:focus-visible .material-symbols-outlined {
+  color: var(--accent);
+}
+.search-bar-container button:focus-visible::before {
+  background-color: var(--accent);
 }
 .search-bar-container button:hover {
   color: var(--accent);
-  transition: 300ms all ease;
 }
 .search-bar-container button:hover .material-symbols-outlined {
   color: var(--accent);
 }
-.search-bar-container button:hover ::before {
+.search-bar-container button:hover::before {
   background-color: var(--accent);
+}
+.search-bar-container button:active span.material-symbols-outlined {
+  color: var(--reverseAccent);
 }
 .search-bar-container .divider {
   position: relative;
-  border-left: 0.2rem solid var(--accent);
-  height: 70%;
-  border-radius: 1rem;
-  margin: 0 0.3rem 0 0.3rem;
+  height: 75%;
+  width: 0.25rem;
+  border-radius: 1.5rem;
+  margin-inline: 0.5rem;
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--secAccent) 50%, var(--secAccent) 100%);
 }
 
 .visible {
@@ -417,21 +423,17 @@ header .headerGradient {
 
 .active {
   border: 0.2rem solid var(--paleAccentTwo);
-  transition: 300ms all ease;
 }
 
 .opCt {
-  top: -2.8rem;
   border-top-left-radius: 1rem !important;
   border-top-right-radius: 1rem !important;
   border-bottom-left-radius: 0.3rem !important;
   border-bottom-right-radius: 0.3rem !important;
-  transition: all 300ms ease-in-out;
 }
 
 .search-suggestions {
   position: absolute;
-  top: 3.3rem;
   width: 40rem;
   background-color: var(--tpPri);
   backdrop-filter: blur(3rem);
@@ -444,6 +446,7 @@ header .headerGradient {
   transition: 400ms all ease;
   overflow: hidden;
   z-index: 3;
+  transform: translateY(3.2rem);
 }
 .search-suggestions::before {
   content: "";
@@ -571,15 +574,9 @@ header .headerGradient {
   border-color: var(--paleAccentTwo);
 }
 
-.opCtS2g {
-  top: 0.4rem;
-}
-
 .ctDropDown {
   position: absolute;
   display: none;
-  width: 85rem;
-  height: 42rem;
   justify-content: space-between;
   border-top-left-radius: 1.7rem;
   border-top-right-radius: 0.3rem;
@@ -855,7 +852,7 @@ header .headerGradient {
 }
 
 .ctDropDownOn {
-  transform: translateY(0);
+  transform: translateY(2.8rem);
 }
 
 nav {
@@ -1983,7 +1980,6 @@ main.currentMain {
   content: "";
   inset: -0.25rem;
   background: linear-gradient(var(--deg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   position: absolute;
   z-index: -1;
 }
@@ -2102,7 +2098,6 @@ main.currentMain {
   touch-action: manipulation;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  border-radius: 0.5vmax;
   border-radius: 50%;
   border: 0.2vmax solid var(--paleAccentThree);
   display: flex;
@@ -2119,32 +2114,25 @@ main.currentMain {
 .scrollableCategories .scrollCatButtons span {
   position: relative;
   overflow: hidden;
-  padding: 1vmax;
+  padding: 0.7vmax;
   --spanDeg: 145deg;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  color: var(--priColor);
+  font-size: 2rem;
 }
 .scrollableCategories .scrollCatButtons span::before {
   content: "";
-  inset: 0;
+  inset: -0.2rem;
   position: absolute;
-  background: linear-gradient(var(--spanDeg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+  background: linear-gradient(var(--spanDeg), var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
   z-index: -1;
-}
-.scrollableCategories .scrollCatButtons::before {
-  content: "";
-  inset: 0;
-  position: absolute;
-  backdrop-filter: blur(1rem);
-  z-index: -1;
-}
-.scrollableCategories .scrollCatButtons:focus-visible {
-  background-color: var(--priColor);
-  color: var(--accent);
 }
 .scrollableCategories .scrollCatButtons:hover {
   background-color: var(--priColor);
+}
+.scrollableCategories .scrollCatButtons:hover span {
   color: var(--accent);
 }
 .scrollableCategories .scrollCatButtons:focus-visible {
@@ -2192,7 +2180,7 @@ main.currentMain {
 @media (max-width: 768px) {
   .scrollableCategories {
     width: 90%;
-    height: 15vmax;
+    height: 10vmax;
     flex-wrap: wrap;
   }
   .scrollableCategories .categoriesScrollUl {

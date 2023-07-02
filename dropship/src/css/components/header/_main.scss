@@ -3,12 +3,11 @@
 
 header {
     height: 25vmax;
+    width: 100%;
     position: relative;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-
-    // display: none;
 
     .headerGradient {
         position: absolute;
@@ -27,11 +26,12 @@ header {
 
     svg {
         position: absolute;
+
         &.leftBkg {
             transform: rotateY(-180deg);
             right: 0;
             display: none;
-            
+
         }
 
         &.mobileBkg {
@@ -251,5 +251,11 @@ header {
                 display: none;
             }
         }
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        // height: unset;
     }
 }
