@@ -187,7 +187,7 @@ slider.oninput = function () {
     }
 }
 
-size.addEventListener("click", (e) => {
+size.addEventListener("change", (e) => {
 
     let chosenOption = e.target.value;
     if (chosenOption !== "all") {
@@ -202,20 +202,46 @@ size.addEventListener("click", (e) => {
 applyFiltersBtn.addEventListener("click", () => {
     console.log("Price", filterHelper.price)
     console.log("Size", filterHelper.size)
-    if (filterHelper.price !== null && filterHelper.size !== null) {
-        for (product of displayedProducts) {
-            for (let i = 0; i < product.variants.size; i++) {
-                if (product.variants.size[i].option === filterHelper.size) {
-                    filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price && product.variants.size[i].option === filterHelper.size)
+    filteredProducts = displayedProducts
+    // if (filterHelper.price !== null && filterHelper.size !== null) {
+    //     for (product of displayedProducts) {
+    //         for (let i = 0; i < product.variants.size; i++) {
+    //             if (product.variants.size[i].option === filterHelper.size) {
+    //                 filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price && product.variants.size[i].option === filterHelper.size)
+    //             }
+    //             return
+    //         }
+
+    //     }
+
+    //     //filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price).filter(product => product.variants.size.includes(filterHelper.size))
+    //     //filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price && product.variants.size.includes(filterHelper.size))
+
+    // }
+
+    if (filterHelper.price !== null) {
+
+
+        filteredProducts = displayedProducts.filter(product => product.price <= filterHelper.price)
+
+
+    }
+
+    if (filterHelper.size !== null) {
+
+        for (let j = 0; j < filteredProducts.length; j++) {
+
+            for (let i = 0; i < filteredProducts[j].variants.size.length; i++) {
+
+                if (filteredProducts[j].variants.size[i].option !== filterHelper.size) {
+                    console.log(filteredProducts[j])
+                    filteredProducts.splice(j, 1)
+                    //filteredProducts = displayedProducts.filter(product => product.id === displayedProducts[j].id)
+
                 }
-                return
+                //filteredProducts = displayedProducts.filter(product => product.variants.size.option === filterHelper.size)
             }
-
         }
-
-        //filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price).filter(product => product.variants.size.includes(filterHelper.size))
-        //filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price && product.variants.size.includes(filterHelper.size))
-
     }
     printProducts(filteredProducts, productsDiv)
     console.log(filteredProducts)
