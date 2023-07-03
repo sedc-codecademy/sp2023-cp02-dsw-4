@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 
 header {
-    height: 25vmax;
     width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
     .headerGradient {
         position: absolute;
@@ -16,12 +17,20 @@ header {
         height: 100%;
         background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)), radial-gradient(circle at right bottom, transparent 70%, rgba(0, 0, 0, 0), var(--tpPri) 150%);
     }
+
+    &.smallHeader {
+        .search-form {
+            margin-block: 1.1vmax 0;
+            width: 35%;
+        }
+    }
 }
 
 .headerBackgroundImage {
     position: absolute;
     width: 100%;
-    height: 100%;
+    top: 0;
+    min-height: 25vmax;
     z-index: -3;
 
     svg {
@@ -212,6 +221,20 @@ header {
     }
 }
 
+@media (max-width: 1500px) {
+    header {
+        .search-form {
+            width: 50%;
+        }
+
+        &.smallHeader {
+            .search-form {
+                margin-top: 10%;
+            }
+        }
+    }
+}
+
 @media (max-width: 1000px) {
     .headerBackgroundImage {
         svg {
@@ -256,6 +279,46 @@ header {
 
 @media (max-width: 1000px) {
     header {
-        // height: unset;
+        .search-form {
+            margin-block: 25% 20%;
+            width: 90%;
+
+            .search-suggestions {
+                ul {
+                    li {
+                        div {
+                            &:first-child{
+                                p{
+                                    max-width: 65%;
+                                }
+                            }
+                            &:last-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.smallHeader {
+            .search-form {
+                width: 85%;
+                margin-block: 20% 0%;
+                height: 2.5rem;
+
+                .search-bar-container {
+                    border-radius: 1rem;
+                }
+
+                .search-suggestions {
+                    transform: translateY(2.8rem);
+                }
+            }
+
+            .ctDropDownOn {
+                transform: translateY(2.35rem)
+            }
+        }
     }
 }

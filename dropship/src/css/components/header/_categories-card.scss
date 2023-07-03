@@ -44,7 +44,7 @@
             border: 0.15rem solid var(--paleAccent);
             --opacity: 1;
             font-weight: 550;
-            transition: all 300ms ease;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
             &::before {
                 content: "";
@@ -57,7 +57,7 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 margin-right: 0.3rem;
-                transition: all 300ms ease;
+                transition: all .5s cubic-bezier(.19, 1, .22, 1);
                 position: relative;
                 left: -0.2rem;
                 border: 0.2rem solid var(--paleAccent);
@@ -66,14 +66,23 @@
             &:hover {
                 color: var(--accent);
                 cursor: pointer;
-                transition: all 300ms ease;
+            }
+
+            &:focus-visible {
+                color: var(--accent);
+                cursor: pointer;
+                border-color: var(--paleAccentTwo);
+
+                &::before {
+                    border-color: var(--paleAccentTwo);
+                }
             }
         }
 
         &::after {
             content: '';
             position: absolute;
-            background-color: var(--paleAccentThree);
+            background: linear-gradient(45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
             border-top-left-radius: .5rem;
             border-bottom-right-radius: .5rem;
             width: 0.4rem;
@@ -138,8 +147,8 @@
             }
         }
 
-        #autoaccessories{
-            &::before{
+        #autoaccessories {
+            &::before {
                 background-color: #d39ef6af;
                 background-image: url(../imgs/cat/auto/autoacc.png);
                 background-size: 4.5rem;
@@ -147,8 +156,8 @@
             }
         }
 
-        #sports{
-            &::before{
+        #sports {
+            &::before {
                 background-color: #60fff7;
                 background-image: url(../imgs/cat/sports/sports.png);
                 background-size: 4rem;
@@ -156,8 +165,8 @@
             }
         }
 
-        #homeandgarden{
-            &::before{
+        #homeandgarden {
+            &::before {
                 background-color: #ffd260;
                 background-image: url(../imgs/cat/hAndG/homegarden.png);
                 background-size: 5.5rem;
@@ -171,9 +180,12 @@
         font-weight: 600;
         background-color: var(--paleAccent);
         border-color: var(--paleAccentTwo) !important;
+
         &::before {
             border: 0.2rem solid var(--paleAccentTwo) !important;
         }
+
+        pointer-events: none;
     }
 
     .sub-categories-ul {
@@ -198,7 +210,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
             margin: .5rem 0 .5rem 0rem;
-            transition: 500ms all ease;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+            cursor: pointer;
 
             section {
                 margin-right: 1rem;
@@ -238,15 +252,21 @@
             }
 
             &:hover {
-                cursor: pointer;
                 background-color: transparent;
                 border-color: var(--paleAccentTwo);
 
                 h3 {
                     color: var(--accent);
                 }
+            }
 
-                transition: 400ms all ease-in-out;
+            &:focus-visible {
+                background-color: transparent;
+                border-color: var(--paleAccentTwo);
+
+                h3 {
+                    color: var(--accent);
+                }
             }
         }
 
@@ -299,7 +319,10 @@
         align-items: center;
         gap: 1rem;
 
+        --bgImg: url("");
+
         li {
+            position: relative;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -310,27 +333,76 @@
             border-top-right-radius: 1rem;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 2rem;
-            background-image: url(../imgs/cat/sub/4090.jpg);
-            background-position: bottom;
+            background-image: var(--bgImg);
+            background-position: center;
             background-repeat: no-repeat;
-            background-color: var(--paleAccentTwo);
-            color: black;
+            border: .2rem solid var(--paleAccent);
+
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+            overflow: hidden;
+
+            padding: 1.5rem 1rem;
+            cursor: pointer;
+
+            &::before{
+                content: '';
+                inset: -1rem;
+                background-color: var(--tpPri);
+                filter: blur(.8rem);
+                position: absolute;
+                z-index: 0;
+                transition: all .5s cubic-bezier(.19, 1, .22, 1);
+                // opacity: 0;
+            }
+
+            h3,
+            p {
+                border: .2rem solid var(--paleAccentThree);
+                padding: .5rem;
+                background: linear-gradient(to bottom, var(--tpPri),rgba(0,0,0,0),);
+                backdrop-filter: blur(.3rem);
+                border-radius: 1rem;
+                text-align: center;
+                pointer-events: none;
+                user-select: none;
+                transition: all .5s cubic-bezier(.19, 1, .22, 1);
+                z-index: 3;
+            }
 
             p {
-                max-width: 70%;
+                font-size: 1.2rem;
                 font-weight: 550;
             }
 
-            h1 {
-                margin-top: 1rem;
-                max-width: 70%;
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border-color: var(--paleAccentTwo);
+
+                h3, p {
+                    color: var(--accent);
+                    border-color: var(--accent);
+                }
+            }
+
+            &:focus-visible {
+                background-color: transparent;
+                border-color: var(--paleAccentTwo);
+
+                h3, p {
+                    color: var(--accent);
+                    border-color: var(--accent);
+                }
             }
         }
 
         &::after {
             content: '';
             position: absolute;
-            background-color: var(--paleAccentThree);
+            background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
             border-top-right-radius: .5rem;
             border-bottom-left-radius: .5rem;
             width: 0.4rem;
@@ -340,6 +412,6 @@
     }
 }
 
-.ctDropDownOn{
+.ctDropDownOn {
     transform: translateY(2.8rem);
 }

@@ -2,7 +2,7 @@ const categoriesScrollList = document.querySelector('categoriesScrollUl')
 const leftScrollButton = document.querySelector('#leftScrollButton')
 const rightScrollButton = document.querySelector('#rightScrollButton')
 
-async function fillCategoriesScrollList(ul, url) {
+async function fillCategoriesScrollList(ul, url, callback) {
   const categories = await fetchJSON(url)
   for (let i = 0; i < categories.length; i++) {
     // Create li an all needed elements
@@ -19,8 +19,7 @@ async function fillCategoriesScrollList(ul, url) {
 
     // Add click event listener to whole li
     li.addEventListener("click", () => {
-      switchMain(document.querySelector('.productsMain'), "block")
-      printResults(subCategoriesDiv, categories[i].id)
+      callback(categories[i])
       console.log(categories[i].id)
     })
 
@@ -43,7 +42,13 @@ async function fillCategoriesScrollList(ul, url) {
     ul.appendChild(li)
   }
 }
-await fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"), './mock/categories.json')
+
+function callBackHomePage(e) {
+  switchMain(document.querySelector('.productsMain'), "block")
+  printResults(subCategoriesDiv, e.id)
+}
+
+await fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"), './mock/categories.json', callBackHomePage)
 
 const scrollCatLists = document.querySelectorAll('.scrollCatLi')
 
@@ -99,7 +104,7 @@ function handleLeftScrollButtonClick() {
   changeLeft(shownMiddleElements, hiddenRightElements)
 
   updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
- // Update button states after scroll function
+  // Update button states after scroll function
 }
 
 function handleRightScrollButtonClick() {
@@ -112,7 +117,7 @@ function handleRightScrollButtonClick() {
   [hiddenLeftElements, hiddenRightElements, shownMiddleElements] = getFromRight(hiddenLeftElements, hiddenRightElements, shownMiddleElements)
   changeRight(shownMiddleElements, hiddenLeftElements)
   updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
- // Update button states after scroll function
+  // Update button states after scroll function
 }
 
 // Add event listeners to the buttons

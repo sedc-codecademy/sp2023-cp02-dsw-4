@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 90vmax;
+  flex-wrap: wrap;
 }
 
 #products-div-one {
@@ -22,6 +23,7 @@
 #products-div-one div,
 #products-div-two div {
   display: flex;
+  flex-wrap: wrap;
   gap: .9rem;
 }
 

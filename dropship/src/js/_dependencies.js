@@ -1,6 +1,6 @@
 // Search box related properties
 const searchForm = document.querySelector('.search-form')
-const clearBtn = document.querySelector('.clearButton')
+const clearBtn = document.querySelector('#clearButton')
 const idSearchBtn = document.querySelector('#searchButton')
 const searchInput = document.querySelector('.search-bar')
 const suggestionsCard = document.querySelector(".search-suggestions")
@@ -293,11 +293,18 @@ const allMains = document.querySelectorAll(".mainMain")
 
 function switchMain(mainToTurnOn, display) {
     if (mainToTurnOn.classList.contains('currentMain')) {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }, 100)
         return
+    }
+    if (mainToTurnOn === document.querySelector('.homePage')) {
+        document.querySelector('header').classList.remove('smallHeader')
+    } else if (!document.querySelector('header').classList.contains('smallHeader')) {
+        document.querySelector('header').classList.add('smallHeader')
     }
     for (let i = 0; i < allMains.length; i++) {
         if (mainToTurnOn !== allMains[i]) {
@@ -310,10 +317,12 @@ function switchMain(mainToTurnOn, display) {
             mainToTurnOn.classList.add("currentMain")
         }
     }
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }, 100)
 }
 
 const homeBtn = document.querySelector(".homeButton")

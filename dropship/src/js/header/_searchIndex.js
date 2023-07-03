@@ -58,24 +58,23 @@ function suggestions(arr) {  // Filling suggestions function
     suggestionsUl.innerHTML = ''
 
     for (let i = 0; i < arr.length; i++) {
-        let a = document.createElement("a");
-        a.setAttribute("href", "javascript:void(0)");
+        let li = document.createElement("li")
+        li.setAttribute("tabindex", 0)
         if (i < 6) {
-            a.innerHTML = `<p>${arr[i].item.title}</p><h5>${arr[i].item.categoryTitle}</h5><div class="divider"></div><h6>${arr[i].item.subCategoryTitle}</h6>`;
-            suggestionsUl.appendChild(a);
-            a.addEventListener("click", () => {
-                console.log(`Result ${arr[i].item.title} has been clicked`);
-            });
-            suggestionsAnimate('increase');
+            li.innerHTML = `<div> <img src="${getRandomImgPath(imgPaths).slice(1)}"></img><p>${arr[i].item.title}</p></div>  <div><h6>${arr[i].item.subCategoryTitle}</h6><div class="divider"></div><h5>${arr[i].item.categoryTitle}</h5></div>`
+            suggestionsUl.appendChild(li)
+            li.addEventListener("click", () => {
+                console.log(`Result ${arr[i].item.title} has been clicked`)
+            })
+            suggestionsAnimate('increase')
         } else {
-            a.classList.add("viewAll");
-            a.innerHTML = `View all`;
-            suggestionsUl.appendChild(a);
-            a.addEventListener("click", () => {
-                console.log("View all has been clicked");
-            });
-            break;
+            li.classList.add("viewAll")
+            li.innerHTML = `View all`
+            suggestionsUl.appendChild(li)
+            li.addEventListener("click", () => {
+                console.log("View all has been clicked")
+            })
+            break
         }
     }
-    
 }

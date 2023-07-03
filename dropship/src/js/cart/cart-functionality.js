@@ -95,15 +95,14 @@ const cartButton = document.querySelector('#cartButton')
 
 cartButton.addEventListener('click', (e) => {
     e.preventDefault()
-    notifcationToggle(productAddedNotif)
-    productAddedNotif.classList.toggle("alertOn")
+    // notifcationToggle(productAddedNotif)
+    // productAddedNotif.classList.toggle("alertOn")
     if (cartContainer.classList.contains("currentMain")) return
     switchMain(cartContainer, "flex") /// turn on cart 
     openCart() // should remove from here and redo switchMain()
 })
 
 function openCart() {
-    console.log("dime")
     emptyCart() // Check if cart is empty
     fillCart(productsList) // Fill Cart with products
     fillSummary(summaryList) // Fill Summary with prices

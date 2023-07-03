@@ -2,6 +2,7 @@ const technology = document.querySelector("#technology")
 const ctLiDt = document.querySelectorAll(".ctLiDt")
 const subCategoryList = document.querySelector('.sub-categories-ul')
 const subCategoryItems = subCategoryList.querySelectorAll('li')
+const relevantProducts = document.querySelector('.relevant-products')
 
 categoryDropDown.addEventListener('click', () => {
     if (!searchContainer.classList.contains('active')) return
@@ -27,20 +28,39 @@ ctLiDt.forEach((e) => {
         e.style.cursor = "default"
         e.style.setProperty("--opacity", 1)
     })
-
-    e.addEventListener("mouseover", () => {
-        if (e.classList.contains("activeCat")) {
-            e.style.cursor = "default"
-            return
-        }
-        e.style.setProperty("--opacity", 0.8)
-    })
-
-    e.addEventListener("mouseout", () => {
-        e.style.cursor = "pointer"
-        e.style.setProperty("--opacity", 1)
-    })
 })
+
+
+function shuffleTwo(array) {
+    let tempArray = array;
+    for (let i = tempArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return tempArray;
+}
+
+
+async function fillRelevant(ul) {
+    const products = await fetchJSON('./mock/products.json')
+    const flattenedProducts = flattenObjectArrays(products)
+
+    let tempArray = shuffleTwo(flattenedProducts)
+
+    for (let i = 0; i < 2; i++) {
+        const li = document.createElement("li")
+        li.style.setProperty('--bgImg', `url(${getRandomImgPath(imgPaths)})`)
+        // const title = document.createElement("h3")
+        // title.innerHTML = 'Sale of the day'
+        const par = document.createElement("p")
+        par.innerHTML = tempArray[i].title
+        // li.appendChild(title)
+        li.appendChild(par)
+        ul.appendChild(li)
+    }
+}
+
+await fillRelevant(relevantProducts)
 
 async function setSubCats(currentCat) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')

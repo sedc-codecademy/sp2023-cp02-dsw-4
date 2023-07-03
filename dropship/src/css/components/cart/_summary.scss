@@ -116,14 +116,15 @@
     ul {
         border: .15rem solid var(--paleAccentThree);
         border-radius: .5rem;
+        overflow: hidden;
 
         li {
-            padding: .5vmax;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: .5rem;
             backdrop-filter: blur(.3rem);
+            background-color: var(--tpPri);
 
             &:first-child {
                 border-bottom: .1rem solid var(--paleAccentThree);

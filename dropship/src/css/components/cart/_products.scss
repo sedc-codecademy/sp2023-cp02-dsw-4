@@ -49,6 +49,7 @@
         padding-block: .5rem;
         border-left: 0.15rem solid var(--paleAccentThree);
         border-right: 0.15rem solid var(--paleAccentThree);
+        backdrop-filter: blur(.3rem);
 
         li {
             position: relative;
@@ -60,7 +61,7 @@
             border-radius: .5rem;
             min-height: 7rem;
             outline: 0.15rem solid var(--paleAccentThree);
-            backdrop-filter: blur(.3rem);
+            background-color: var(--tpPri);
 
             .pTitle {
                 display: flex;

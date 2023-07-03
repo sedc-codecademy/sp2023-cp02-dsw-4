@@ -329,12 +329,6 @@
 }
 
 @media (max-width: 600px) {
-
-    // header{
-    //     margin: 5vmax;
-    //     height: 10vmax;
-    // } // Should do in header media instead
-
     .cart {
         // Widens cart to take up "whole screen"
         max-width: 100vmax;
@@ -350,7 +344,6 @@
             }
 
             ul {
-                min-height: 50vh;
                 padding-top: .1rem;
 
                 li {
