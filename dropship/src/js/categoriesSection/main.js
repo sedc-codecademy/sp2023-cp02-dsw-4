@@ -260,7 +260,7 @@ rightScrollSubButton.addEventListener('click', handleRightScrollToButtonClick)
 let filterHelper = {
     price: null,
     size: null,
-    origin: null
+    region: null
 }
 
 console.log(filterHelper)
@@ -282,6 +282,7 @@ var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 let size = document.getElementById("size")
 let applyFiltersBtn = document.getElementById("applyFilters")
+let origin = document.getElementById("region")
 console.log(displayedProducts)
 
 
@@ -306,9 +307,21 @@ size.addEventListener("change", (e) => {
     console.log(filterHelper.size);
 })
 
+origin.addEventListener("change", (e) => {
+    let chosenOption = e.target.value;
+    if (chosenOption !== "all") {
+        filterHelper.region = chosenOption;
+    } else {
+        filterHelper.region = null
+    }
+    console.log(chosenOption);
+    console.log(filterHelper.region);
+})
+
 applyFiltersBtn.addEventListener("click", () => {
     console.log("Price", filterHelper.price)
     console.log("Size", filterHelper.size)
+    console.log("Region", filterHelper.region)
     filteredProducts = displayedProducts
     // if (filterHelper.price !== null && filterHelper.size !== null) {
     //     for (product of displayedProducts) {
@@ -346,9 +359,12 @@ applyFiltersBtn.addEventListener("click", () => {
         })
         filteredProducts = productsWithSelectedSize
     }
-    if (filteredProducts == displayedProducts) return console.log(' no need to filter')
+
+    if(filterHelper.region !== null) {
+        filteredProducts = filteredProducts.filter(product => product.shipping.region === filterHelper.region)
+    }
     printProducts(filteredProducts, productsDiv)
-    // console.log(filteredProducts)
+    console.log(filteredProducts)
 })
 
 // priceRange.addEventListener("click", (e) => {
@@ -405,28 +421,56 @@ sortBtn.addEventListener("click", () => {
 
 function sortByLowestPrice() {
 
-    displayedProducts.sort((a, b) => {
-        return a.price - b.price;
-    })
+    let lowestPriceSort = [];
+    if(filteredProducts.length  != 0) {
+        filteredProducts.sort((a, b) => {
+            return a.price - b.price;
+        })
+        lowestPriceSort = filteredProducts;
+    } else {
+        displayedProducts.sort((a, b) => {
+            return  a.price - b.price;
+        })
+        lowestPriceSort = displayedProducts;
+    }
 
-    printProducts(displayedProducts, productsDiv);
+    printProducts(lowestPriceSort, productsDiv);
 }
 
 function sortByHighestPrice() { // Should check fitlered first
 
-    displayedProducts.sort((a, b) => {
-        return b.price - a.price;
-    })
+    let highestPriceSort = [];
+    if(filteredProducts.length  != 0) {
+        filteredProducts.sort((a, b) => {
+            return b.price - a.price;
+        })
+        highestPriceSort = filteredProducts;
+    } else {
+        displayedProducts.sort((a, b) => {
+            return  b.price - a.price;
+        })
+        highestPriceSort = displayedProducts;
+    }
 
-    printProducts(displayedProducts, productsDiv);
+    printProducts(highestPriceSort, productsDiv);
 }
 
 function sortByHighestRating() {
-    displayedProducts.sort((a, b) => {
-        return b.rating.rate - a.rating.rate;
-    })
 
-    printProducts(displayedProducts, productsDiv);
+    let highestRatingSort = [];
+    if(filteredProducts.length  != 0) {
+        filteredProducts.sort((a, b) => {
+            return b.rating.rate - a.rating.rate;
+        })
+        highestRatingSort = filteredProducts;
+    } else {
+        displayedProducts.sort((a, b) => {
+            return  b.rating.rate - a.rating.rate;
+        })
+        highestRatingSort = displayedProducts;
+    }
+
+    printProducts(highestRatingSort, productsDiv);
 }
 
 lowestPriceBtn.addEventListener("click", () => {
