@@ -11,7 +11,7 @@ import "./categoriesTab/_filters.js";
 //// LOGIN
 import "./loginForm/_main.js";
 //// CATEGORIES SECTION
-import "./categoriesSection/_categoriesSection.js";
+// import "./categoriesSection/_categoriesSection.js";
 //// CART
 import "./cart/_cart-states.js";
 //// HOMEPAGE PRODUCTS

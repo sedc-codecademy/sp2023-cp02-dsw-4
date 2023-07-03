@@ -1,4 +1,5 @@
-.scrollableCategories {
+.scrollableCategories,
+.scrollableSubCats {
   position: relative;
   height: 13vmax;
   width: 75%;
@@ -8,7 +9,8 @@
   align-items: center;
   justify-content: space-around;
 
-  .categoriesScrollUl {
+  .categoriesScrollUl,
+  .subCatsScrollUL {
     position: relative;
     width: 85%;
     height: 100%;
@@ -25,7 +27,7 @@
     backdrop-filter: blur(.3rem);
     border: .2rem solid var(--paleAccentThree);
 
-    .scrollCatLi {
+    .scrollCatLi,.scrollCatLiTwo {
       background-color: var(--paleAccent);
       overflow: hidden;
       height: 100%;
@@ -253,7 +255,9 @@
 }
 
 @media (max-width: 1300px) {
-  .scrollableCategories {
+
+  .scrollableCategories,
+  .scrollableSubCats {
     width: 80%;
     justify-content: center;
     gap: .5rem;
@@ -293,7 +297,9 @@
 }
 
 @media(max-width:768px) {
-  .scrollableCategories {
+
+  .scrollableCategories,
+  .scrollableSubCats {
     width: 90%;
     height: 10vmax;
 

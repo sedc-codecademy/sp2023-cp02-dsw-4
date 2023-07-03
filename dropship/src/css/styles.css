@@ -2024,7 +2024,8 @@ main.currentMain {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.scrollableCategories {
+.scrollableCategories,
+.scrollableSubCats {
   position: relative;
   height: 13vmax;
   width: 75%;
@@ -2033,7 +2034,10 @@ main.currentMain {
   align-items: center;
   justify-content: space-around;
 }
-.scrollableCategories .categoriesScrollUl {
+.scrollableCategories .categoriesScrollUl,
+.scrollableCategories .subCatsScrollUL,
+.scrollableSubCats .categoriesScrollUl,
+.scrollableSubCats .subCatsScrollUL {
   position: relative;
   width: 85%;
   height: 100%;
@@ -2048,7 +2052,13 @@ main.currentMain {
   backdrop-filter: blur(0.3rem);
   border: 0.2rem solid var(--paleAccentThree);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi {
+.scrollableCategories .categoriesScrollUl .scrollCatLi, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo,
+.scrollableCategories .subCatsScrollUL .scrollCatLi,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo {
   background-color: var(--paleAccent);
   overflow: hidden;
   height: 100%;
@@ -2066,14 +2076,26 @@ main.currentMain {
   cursor: pointer;
   --deg: 0deg;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi::before {
+.scrollableCategories .categoriesScrollUl .scrollCatLi::before, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo::before,
+.scrollableCategories .subCatsScrollUL .scrollCatLi::before,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo::before,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi::before,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo::before,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi::before,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo::before {
   content: "";
   inset: -0.25rem;
   background: linear-gradient(var(--deg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
   position: absolute;
   z-index: -1;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi h3 {
+.scrollableCategories .categoriesScrollUl .scrollCatLi h3, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo h3,
+.scrollableCategories .subCatsScrollUL .scrollCatLi h3,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo h3,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi h3,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo h3,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi h3,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo h3 {
   margin-top: 1rem;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   line-height: 1.2;
@@ -2083,13 +2105,25 @@ main.currentMain {
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-align: center;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi img {
+.scrollableCategories .categoriesScrollUl .scrollCatLi img, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo img,
+.scrollableCategories .subCatsScrollUL .scrollCatLi img,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo img,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi img,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo img,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi img,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo img {
   height: 60%;
   width: 60%;
   bottom: 0;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.hiddenLeft,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.hiddenLeft,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.hiddenLeft,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.hiddenLeft,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.hiddenLeft,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.hiddenLeft,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.hiddenLeft {
   animation-name: slideOutLeft;
   position: absolute;
   pointer-events: none;
@@ -2099,31 +2133,79 @@ main.currentMain {
   opacity: 0.5;
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft::before {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenLeft::before, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.hiddenLeft::before,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.hiddenLeft::before,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.hiddenLeft::before,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.hiddenLeft::before,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.hiddenLeft::before,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.hiddenLeft::before,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.hiddenLeft::before {
   background: transparent;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.shownMiddle,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.shownMiddle,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.shownMiddle,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.shownMiddle,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.shownMiddle,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.shownMiddle,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.shownMiddle {
   position: relative;
   opacity: 1;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.shownMiddle:hover,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.shownMiddle:hover,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.shownMiddle:hover,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.shownMiddle:hover,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.shownMiddle:hover,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.shownMiddle:hover,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.shownMiddle:hover {
   border-color: var(--paleAccentTwo);
   background-color: var(--tpPri);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover h3 {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:hover h3, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.shownMiddle:hover h3,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.shownMiddle:hover h3,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.shownMiddle:hover h3,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.shownMiddle:hover h3,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.shownMiddle:hover h3,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.shownMiddle:hover h3,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.shownMiddle:hover h3 {
   color: var(--accent);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.shownMiddle:focus-visible,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.shownMiddle:focus-visible,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.shownMiddle:focus-visible,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.shownMiddle:focus-visible,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.shownMiddle:focus-visible,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.shownMiddle:focus-visible {
   color: var(--accent);
   border-color: var(--paleAccentTwo);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible h3 {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible h3, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.shownMiddle:focus-visible h3,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.shownMiddle:focus-visible h3,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.shownMiddle:focus-visible h3,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.shownMiddle:focus-visible h3,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.shownMiddle:focus-visible h3,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.shownMiddle:focus-visible h3,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.shownMiddle:focus-visible h3 {
   color: var(--accent);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:active {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.shownMiddle:active, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.shownMiddle:active,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.shownMiddle:active,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.shownMiddle:active,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.shownMiddle:active,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.shownMiddle:active,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.shownMiddle:active,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.shownMiddle:active {
   scale: 0.95;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.hiddenRight,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.hiddenRight,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.hiddenRight,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.hiddenRight,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.hiddenRight,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.hiddenRight,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.hiddenRight {
   animation-name: slideOutRight;
   position: absolute;
   pointer-events: none;
@@ -2133,13 +2215,31 @@ main.currentMain {
   opacity: 0.5;
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight::before {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.hiddenRight::before, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.hiddenRight::before,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.hiddenRight::before,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.hiddenRight::before,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.hiddenRight::before,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.hiddenRight::before,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.hiddenRight::before,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.hiddenRight::before {
   background: transparent;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.slideInLeft {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.slideInLeft, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.slideInLeft,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.slideInLeft,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.slideInLeft,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.slideInLeft,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.slideInLeft,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.slideInLeft,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.slideInLeft {
   animation-name: slideInLeft;
 }
-.scrollableCategories .categoriesScrollUl .scrollCatLi.slideInRight {
+.scrollableCategories .categoriesScrollUl .scrollCatLi.slideInRight, .scrollableCategories .categoriesScrollUl .scrollCatLiTwo.slideInRight,
+.scrollableCategories .subCatsScrollUL .scrollCatLi.slideInRight,
+.scrollableCategories .subCatsScrollUL .scrollCatLiTwo.slideInRight,
+.scrollableSubCats .categoriesScrollUl .scrollCatLi.slideInRight,
+.scrollableSubCats .categoriesScrollUl .scrollCatLiTwo.slideInRight,
+.scrollableSubCats .subCatsScrollUL .scrollCatLi.slideInRight,
+.scrollableSubCats .subCatsScrollUL .scrollCatLiTwo.slideInRight {
   animation-name: slideInRight;
 }
 @keyframes slideInLeft {
@@ -2182,7 +2282,8 @@ main.currentMain {
     right: -25%;
   }
 }
-.scrollableCategories .scrollCatButtons {
+.scrollableCategories .scrollCatButtons,
+.scrollableSubCats .scrollCatButtons {
   position: relative;
   text-align: center;
   touch-action: manipulation;
@@ -2194,14 +2295,17 @@ main.currentMain {
   align-items: center;
   justify-content: center;
 }
-.scrollableCategories .scrollCatButtons.disabledScrollBtn {
+.scrollableCategories .scrollCatButtons.disabledScrollBtn,
+.scrollableSubCats .scrollCatButtons.disabledScrollBtn {
   pointer-events: none;
   filter: grayscale(1);
 }
-.scrollableCategories .scrollCatButtons#rightScrollButton span {
+.scrollableCategories .scrollCatButtons#rightScrollButton span,
+.scrollableSubCats .scrollCatButtons#rightScrollButton span {
   --spanDeg: -145deg;
 }
-.scrollableCategories .scrollCatButtons span {
+.scrollableCategories .scrollCatButtons span,
+.scrollableSubCats .scrollCatButtons span {
   position: relative;
   overflow: hidden;
   padding: 0.7vmax;
@@ -2212,83 +2316,101 @@ main.currentMain {
   color: var(--priColor);
   font-size: 2rem;
 }
-.scrollableCategories .scrollCatButtons span::before {
+.scrollableCategories .scrollCatButtons span::before,
+.scrollableSubCats .scrollCatButtons span::before {
   content: "";
   inset: -0.2rem;
   position: absolute;
   background: linear-gradient(var(--spanDeg), var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
   z-index: -1;
 }
-.scrollableCategories .scrollCatButtons:hover {
+.scrollableCategories .scrollCatButtons:hover,
+.scrollableSubCats .scrollCatButtons:hover {
   background-color: var(--priColor);
 }
-.scrollableCategories .scrollCatButtons:hover span {
+.scrollableCategories .scrollCatButtons:hover span,
+.scrollableSubCats .scrollCatButtons:hover span {
   color: var(--accent);
 }
-.scrollableCategories .scrollCatButtons:focus-visible {
+.scrollableCategories .scrollCatButtons:focus-visible,
+.scrollableSubCats .scrollCatButtons:focus-visible {
   background-color: var(--priColor);
   color: var(--accent);
 }
-.scrollableCategories .scrollCatButtons:active {
+.scrollableCategories .scrollCatButtons:active,
+.scrollableSubCats .scrollCatButtons:active {
   background-color: var(--paleAccentThree);
   color: var(--secColor);
 }
 
 @media (max-width: 1300px) {
-  .scrollableCategories {
+  .scrollableCategories,
+  .scrollableSubCats {
     width: 80%;
     justify-content: center;
     gap: 0.5rem;
   }
-  .scrollableCategories .categoriesScrollUl {
+  .scrollableCategories .categoriesScrollUl,
+  .scrollableSubCats .categoriesScrollUl {
     width: 90%;
     padding: 0.3vmax;
     gap: 0.3vmax;
     border-radius: 0.5vmax;
     border-width: 0.15vmax;
   }
-  .scrollableCategories .categoriesScrollUl .scrollCatLi {
+  .scrollableCategories .categoriesScrollUl .scrollCatLi,
+  .scrollableSubCats .categoriesScrollUl .scrollCatLi {
     justify-content: center;
     border-width: 0.15vmax;
   }
-  .scrollableCategories .categoriesScrollUl .scrollCatLi h3 {
+  .scrollableCategories .categoriesScrollUl .scrollCatLi h3,
+  .scrollableSubCats .categoriesScrollUl .scrollCatLi h3 {
     display: none;
   }
-  .scrollableCategories .categoriesScrollUl .scrollCatLi img {
+  .scrollableCategories .categoriesScrollUl .scrollCatLi img,
+  .scrollableSubCats .categoriesScrollUl .scrollCatLi img {
     height: 80%;
     width: 80%;
     bottom: unset;
   }
-  .scrollableCategories .scrollCatButtons {
+  .scrollableCategories .scrollCatButtons,
+  .scrollableSubCats .scrollCatButtons {
     max-width: 15vmax;
     max-height: 15vmax;
   }
-  .scrollableCategories .scrollCatButtons span {
+  .scrollableCategories .scrollCatButtons span,
+  .scrollableSubCats .scrollCatButtons span {
     padding: 0.5vmax;
   }
 }
 @media (max-width: 768px) {
-  .scrollableCategories {
+  .scrollableCategories,
+  .scrollableSubCats {
     width: 90%;
     height: 10vmax;
     flex-wrap: wrap;
   }
-  .scrollableCategories .categoriesScrollUl {
+  .scrollableCategories .categoriesScrollUl,
+  .scrollableSubCats .categoriesScrollUl {
     order: 0;
     width: 100%;
   }
-  .scrollableCategories .categoriesScrollUl .scrollCatLi img {
+  .scrollableCategories .categoriesScrollUl .scrollCatLi img,
+  .scrollableSubCats .categoriesScrollUl .scrollCatLi img {
     height: 90;
     width: 90%;
   }
-  .scrollableCategories .scrollCatButtons {
+  .scrollableCategories .scrollCatButtons,
+  .scrollableSubCats .scrollCatButtons {
     max-width: 5vmax;
     max-height: 5vmax;
   }
-  .scrollableCategories .scrollCatButtons#leftScrollButton {
+  .scrollableCategories .scrollCatButtons#leftScrollButton,
+  .scrollableSubCats .scrollCatButtons#leftScrollButton {
     order: 1;
   }
-  .scrollableCategories .scrollCatButtons#rightScrollButton {
+  .scrollableCategories .scrollCatButtons#rightScrollButton,
+  .scrollableSubCats .scrollCatButtons#rightScrollButton {
     order: 2;
   }
 }
@@ -2335,6 +2457,16 @@ select {
 
 .productsMain {
   display: none;
+}
+
+#products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  gap: 1.5rem;
+  width: 90vmax;
+  flex-wrap: wrap;
 }
 
 .loginDropdown {
@@ -3878,14 +4010,16 @@ select {
 }
 
 #products-div-one div,
-#products-div-two div {
+#products-div-two div,
+#products div {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
 }
 
 #products-div-one section,
-#products-div-two section {
+#products-div-two section,
+#products section {
   text-align: center;
   width: 25vh;
   height: auto;
@@ -3903,7 +4037,8 @@ select {
 }
 
 #products-div-one section h2.discount-percentage,
-#products-div-two section h2.discount-percentage {
+#products-div-two section h2.discount-percentage,
+#products section h2.discount-percentage {
   position: absolute;
   top: -0.5rem;
   left: -0.5rem;
@@ -3914,13 +4049,15 @@ select {
 }
 
 #products-div-one img,
-#products-div-two img {
+#products-div-two img,
+#products img {
   height: 10rem;
   width: 10rem;
 }
 
 #products-div-one a,
-#products-div-two a {
+#products-div-two a,
+#products a {
   font-weight: 500;
   color: var(--secColor);
   overflow: hidden;
@@ -3929,12 +4066,14 @@ select {
 }
 
 #products-div-one a:hover,
-#products-div-two a:hover {
+#products-div-two a:hover,
+#products a:hover {
   color: var(--secColor);
 }
 
 #products-div-one h4,
-#products-div-two h4 {
+#products-div-two h4,
+#products h4 {
   text-align: center;
   color: var(--accent);
   margin-top: 10px;
@@ -3950,7 +4089,8 @@ select {
 }
 
 #products-div-one section:hover,
-#products-div-two section:hover {
+#products-div-two section:hover,
+#products section:hover {
   transform: translateY(-5px);
   transition: 0.3s;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

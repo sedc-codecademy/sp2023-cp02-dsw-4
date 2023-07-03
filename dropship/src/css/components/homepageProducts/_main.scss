@@ -21,14 +21,16 @@
 }
 
 #products-div-one div,
-#products-div-two div {
+#products-div-two div,
+#products div {
   display: flex;
   flex-wrap: wrap;
   gap: .9rem;
 }
 
 #products-div-one section,
-#products-div-two section {
+#products-div-two section,
+#products section {
   text-align: center;
   width: 25vh;
   height: auto;
@@ -46,7 +48,8 @@
 }
 
 #products-div-one section h2.discount-percentage,
-#products-div-two section h2.discount-percentage {
+#products-div-two section h2.discount-percentage,
+#products section h2.discount-percentage {
   position: absolute;
   top: -0.5rem;
   left: -0.5rem;
@@ -58,13 +61,15 @@
 }
 
 #products-div-one img,
-#products-div-two img {
+#products-div-two img,
+#products img {
   height: 10rem;
   width: 10rem;
 }
 
 #products-div-one a,
-#products-div-two a {
+#products-div-two a,
+#products a {
   font-weight: 500;
   color: var(--secColor);
   overflow: hidden;
@@ -73,12 +78,14 @@
 }
 
 #products-div-one a:hover,
-#products-div-two a:hover {
+#products-div-two a:hover,
+#products a:hover {
   color: var(--secColor);
 }
 
 #products-div-one h4,
-#products-div-two h4 {
+#products-div-two h4,
+#products h4 {
   text-align: center;
   color: var(--accent);
   margin-top: 10px;
@@ -94,7 +101,8 @@
 }
 
 #products-div-one section:hover,
-#products-div-two section:hover {
+#products-div-two section:hover,
+#products section:hover {
   transform: translateY(-5px);
   transition: 0.3s;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -120,9 +128,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0);
   }

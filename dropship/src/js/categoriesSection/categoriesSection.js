@@ -1,9 +1,8 @@
-const categoriesScrollList = document.querySelector('categoriesScrollUl')
 const leftScrollButton = document.querySelector('#leftScrollButton')
 const rightScrollButton = document.querySelector('#rightScrollButton')
 
-async function fillCategoriesScrollList(ul, url, callback) {
-  const categories = await fetchJSON(url)
+async function fillCategoriesScrollList(ul, array, callback, className) {
+  const categories = array
   for (let i = 0; i < categories.length; i++) {
     // Create li an all needed elements
     const li = document.createElement("li")
@@ -24,7 +23,7 @@ async function fillCategoriesScrollList(ul, url, callback) {
     })
 
     // Add classes to the li element
-    li.classList.add("scrollCatLi")
+    li.classList.add(className)
     if (i < 5) {
       li.style.setProperty('--deg', `-45deg`)
       li.classList.add("shownMiddle")
@@ -48,21 +47,29 @@ function callBackHomePage(e) {
   printResults(subCategoriesDiv, e.id)
 }
 
-await fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"), './mock/categories.json', callBackHomePage)
+async function autoFunc(){
+  const tempArray = await fetchJSON('./mock/categories.json')
+  fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"), tempArray, callBackHomePage, 'scrollCatLi')
 
-const scrollCatLists = document.querySelectorAll('.scrollCatLi')
+  scrollCatLists = document.querySelectorAll('.scrollCatLi')
+  for (let i = 0; i < scrollCatLists.length; i++) {
+    const element = scrollCatLists[i]
+    if (i < 5) {
+      shownMiddleElements.push(element)
+    } else {
+      hiddenRightElements.push(element)
+    }
+  }
+  updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
+}
+
+let scrollCatLists = []
 
 let hiddenLeftElements = []
 let hiddenRightElements = []
 let shownMiddleElements = []
-for (let i = 0; i < scrollCatLists.length; i++) {
-  const element = scrollCatLists[i]
-  if (i < 5) {
-    shownMiddleElements.push(element)
-  } else {
-    hiddenRightElements.push(element)
-  }
-}
+
+autoFunc()
 
 // Function to check if any of the elements have the specified class
 function hasClass(elements, className) {
@@ -72,8 +79,10 @@ function hasClass(elements, className) {
 // Function to update button states
 function updateButtonStates(eleme, leftBtn, rightBtn) {
   const hasHiddenLeft = hasClass(eleme, 'hiddenLeft')
+  console.log(hasHiddenLeft)
   const hasHiddenRight = hasClass(eleme, 'hiddenRight')
   if (!hasHiddenLeft) {
+    console.log("dime")
     leftBtn.disabled = true
     leftBtn.classList.add('disabledScrollBtn')
   } else {
@@ -91,7 +100,7 @@ function updateButtonStates(eleme, leftBtn, rightBtn) {
 }
 
 // Check button states on page load
-updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
+// updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)
 
 function handleLeftScrollButtonClick() {
   updateButtonStates(scrollCatLists, leftScrollButton, rightScrollButton)

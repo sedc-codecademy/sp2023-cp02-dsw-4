@@ -44,3 +44,13 @@ select {
 .productsMain{
   display: none;
 }
+
+#products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  gap: 1.5rem;
+  width: 90vmax;
+  flex-wrap: wrap;
+}

@@ -17,12 +17,13 @@ const highestRatingBtn = document.getElementById("highest-rating");
 const highestPriceBtn = document.getElementById("highest-price");
 const lowestPriceBtn = document.getElementById("lowest-price");
 
+// Left and Right buttons
+const leftScrollSubButton = document.querySelector('#leftSubScrollButton')
+const rightScrollSubButton = document.querySelector('#rightSubScrollButton')
+
 let displayedProducts = [];
 let filteredProducts = [];
 let filterByPrice = [];
-
-
-
 
 async function setSubCatsTwoCtTab(ID, element) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
@@ -53,21 +54,59 @@ async function setSubCatsTwoCtTab(ID, element) {
 function printProducts(arrayOfProducts, elemetToPrint) {
     elemetToPrint.innerHTML = "";
     arrayOfProducts.forEach(product => {
-        let a = document.createElement("a");
-        a.style.color = 'green'
-        a.addEventListener("click", () => {
+        // let a = document.createElement("a");
+        // a.style.color = 'green'
+        // a.addEventListener("click", () => {
+        //     console.log(product.id)
+        //     printProduct(product, singleProductDiv)
+        // })
+
+        // a.innerHTML += `
+        //     <h3>${product.title}</h3>
+        //     <p>${product.description}</p>
+        //     <p>Price: ${product.price}$</p>
+        //     <p>Rating: ${product.rating.rate}</p>
+        //     `
+
+        let section = document.createElement("section")
+        let img = document.createElement("img")
+        img.setAttribute("src", getRandomImgPath(imgPaths).slice(1))
+
+        let a = document.createElement("a")
+        a.innerHTML = `${product.title}`
+        a.setAttribute("href", "javascript:void(0)")
+        a.addEventListener("click", (e) => {
+            // Product clicked
             console.log(product.id)
             printProduct(product, singleProductDiv)
         })
 
-        a.innerHTML += `
-            <h3>${product.title}</h3>
-            <p>${product.description}</p>
-            <p>Price: ${product.price}$</p>
-            <p>Rating: ${product.rating.rate}</p>
-            `
+        let h4 = document.createElement("h4")
+        let h4discount = document.createElement("h4")
 
-        elemetToPrint.appendChild(a);
+        if (product.sale) {
+            // If the product has a sale, calculate the discounted price and display the discount percentage
+            let discountPercentage = product.sale
+            let discountedPrice = (
+                product.price -
+                product.price * (discountPercentage / 100)
+            ).toFixed(2)
+            let originalPrice = product.price
+
+            h4discount.innerHTML = `$${originalPrice}`
+            h4.innerHTML = `$${discountedPrice}`
+            h4discount.classList.add("discount-price")
+        } else {
+            // If the product does not have a sale, display the original price without any discount information
+            h4.innerHTML = `$${product.price}`
+        }
+
+        section.appendChild(img)
+        section.appendChild(a)
+        section.appendChild(h4discount)
+        section.appendChild(h4)
+
+        elemetToPrint.appendChild(section)
     })
 }
 
@@ -128,24 +167,93 @@ async function printResults(element, ID) { //// NEEDS ID PARAM DOESNT NEED SUBCA
 
     printProducts(displayedProducts, productsDiv)
 
-    tempCats.forEach((subCategory) => {
-        //  if (subCategory.id === ID) { //// WILL ONLY SHOW CHOSEN CATEGORY
-        let a = document.createElement("a");
-        a.addEventListener("click", () => {
-            console.log(subCategory.id)
-            setSubCatsTwoCtTab(subCategory.id, productsDiv)
-        })
+    // tempCats.forEach((subCategory) => {
+    //     //  if (subCategory.id === ID) { //// WILL ONLY SHOW CHOSEN CATEGORY
+    //     let a = document.createElement("a");
+    //     a.addEventListener("click", () => {
+    //         console.log(subCategory.id)
+    //         setSubCatsTwoCtTab(subCategory.id, productsDiv)
+    //     })
 
-        a.innerHTML += `
-            <h3>${subCategory.title}</h3>
-            <p>${subCategory.description}</p>
-            <p>${subCategory.categoryTitle}</p>`
+    //     a.innerHTML += `
+    //         <h3>${subCategory.title}</h3>
+    //         <p>${subCategory.description}</p>
+    //         <p>${subCategory.categoryTitle}</p>`
 
-        element.appendChild(a);
-        // } //// END OF IF
+    //     element.appendChild(a);
+    //     // } //// END OF IF
 
-    })
+    // })
+
+
+    // Resets the arrays and html each time we choose a new category
+    document.querySelector(".subCatsScrollUL").innerHTML = ''
+    scrollSubCatsLists = []
+    hiddenLeftSubCats = []
+    hiddenRightSubCats = []
+    shownMiddleSubCats = []
+
+    // Calls fill Categories to create the li's for each sub category and also sets an event listener using the callback
+    fillCategoriesScrollList(document.querySelector(".subCatsScrollUL"), tempCats, callBackCategories, 'scrollCatLiTwo')
+
+    scrollSubCatsLists = document.querySelectorAll('.scrollCatLiTwo')
+    setButtonsOnStart()
 }
+
+// Callback for subcategories clicked
+function callBackCategories(e) {
+    setSubCatsTwoCtTab(e.id, productsDiv)
+}
+// Makes arrays at start for further use
+let scrollSubCatsLists = []
+let hiddenLeftSubCats = []
+let hiddenRightSubCats = []
+let shownMiddleSubCats = []
+
+function setButtonsOnStart() {
+    for (let i = 0; i < scrollSubCatsLists.length; i++) {
+        const element = scrollSubCatsLists[i]
+        if (i < 5) {
+            shownMiddleSubCats.push(element)
+        } else {
+            hiddenRightSubCats.push(element)
+        }
+    }
+
+    updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
+}
+
+
+function handleLeftScrollToButtonClick() {
+    updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
+
+    if (leftScrollSubButton.disabled) {
+        return // Do nothing if the button is disabled
+    }
+
+    [hiddenLeftSubCats, hiddenRightSubCats, shownMiddleSubCats] = getFromLeft(hiddenLeftSubCats, hiddenRightSubCats, shownMiddleSubCats)
+    changeLeft(shownMiddleSubCats, hiddenRightSubCats)
+
+    updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
+    // Update button states after scroll function
+}
+
+function handleRightScrollToButtonClick() {
+    updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
+
+    if (rightScrollSubButton.disabled) {
+        return // Do nothing if the button is disabled
+    }
+
+    [hiddenLeftSubCats, hiddenRightSubCats, shownMiddleSubCats] = getFromRight(hiddenLeftSubCats, hiddenRightSubCats, shownMiddleSubCats)
+    changeRight(shownMiddleSubCats, hiddenLeftSubCats)
+    updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
+    // Update button states after scroll function
+}
+
+// Add event listeners to the buttons
+leftScrollSubButton.addEventListener('click', handleLeftScrollToButtonClick)
+rightScrollSubButton.addEventListener('click', handleRightScrollToButtonClick)
 
 // FILTERS
 
@@ -188,7 +296,6 @@ slider.oninput = function () {
 }
 
 size.addEventListener("change", (e) => {
-
     let chosenOption = e.target.value;
     if (chosenOption !== "all") {
         filterHelper.size = chosenOption;
@@ -220,31 +327,28 @@ applyFiltersBtn.addEventListener("click", () => {
     // }
 
     if (filterHelper.price !== null) {
-
-
-        filteredProducts = displayedProducts.filter(product => product.price <= filterHelper.price)
-
-
+        filteredProducts = filteredProducts.filter(product => product.price <= filterHelper.price)
     }
 
-    // if (filterHelper.size !== null) {
+    if (filterHelper.size !== null) {
+        let productsWithSelectedSize = [];
 
-    //     for (let j = 0; j < filteredProducts.length; j++) {
+        filteredProducts.forEach((product) => {
+            if (product.variants && product.variants.size && product.variants.size.length > 0) {
+                let hasSelectedSize = product.variants.size.some((size) => {
+                    return size.option === filterHelper.size
+                })
 
-    //         for (let i = 0; i < filteredProducts[j].variants.size.length; i++) {
-
-    //             if (filteredProducts[j].variants.size[i].option !== filterHelper.size) {
-    //                 console.log(filteredProducts[j])
-    //                 filteredProducts.splice(j, 1)
-    //                 //filteredProducts = displayedProducts.filter(product => product.id === displayedProducts[j].id)
-
-    //             }
-    //             //filteredProducts = displayedProducts.filter(product => product.variants.size.option === filterHelper.size)
-    //         }
-    //     }
-    // }
+                if (hasSelectedSize) {
+                    productsWithSelectedSize.push(product)
+                }
+            }
+        })
+        filteredProducts = productsWithSelectedSize
+    }
+    if (filteredProducts == displayedProducts) return console.log(' no need to filter')
     printProducts(filteredProducts, productsDiv)
-    console.log(filteredProducts)
+    // console.log(filteredProducts)
 })
 
 // priceRange.addEventListener("click", (e) => {
@@ -290,9 +394,6 @@ applyFiltersBtn.addEventListener("click", () => {
 // })
 
 
-
-
-
 // SORTING
 sortBtn.addEventListener("click", () => {
     if (sortingSection.style.display == "block") {
@@ -311,7 +412,7 @@ function sortByLowestPrice() {
     printProducts(displayedProducts, productsDiv);
 }
 
-function sortByHighestPrice() {
+function sortByHighestPrice() { // Should check fitlered first
 
     displayedProducts.sort((a, b) => {
         return b.price - a.price;
@@ -339,9 +440,3 @@ highestPriceBtn.addEventListener("click", () => {
 highestRatingBtn.addEventListener("click", () => {
     sortByHighestRating();
 })
-
-
-
-
-
-
