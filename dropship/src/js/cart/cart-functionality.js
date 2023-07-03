@@ -136,6 +136,14 @@ function fillCart(ul) {
         const p = document.createElement("p")
         p.setAttribute("tabindex", 0)
         p.textContent = product.title
+        p.addEventListener("click", (e) => {
+            console.log(product.id)
+        })
+        p.addEventListener("keydown", (e) => {
+            if (e.key === 'Enter') {
+                console.log(product.id)
+            }
+        })
         title.appendChild(p)
 
         // Image

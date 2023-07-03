@@ -35,9 +35,17 @@ export function themeCheck() {
     } else if (themeMode === "dark") {
         toggleThemeButton(darkbtn)
         applyDarkTheme()
-    } else {
+    } else if(themeMode === "light"){
         toggleThemeButton(lightBtn)
         applyLightTheme()
+    } else{
+        toggleThemeButton(systemBtn)
+        localStorage.setItem("theme-mode", "system")
+        if (systemDarkMode) {
+            applyDarkTheme()
+        } else {
+            applyLightTheme()
+        }
     }
 }
 
