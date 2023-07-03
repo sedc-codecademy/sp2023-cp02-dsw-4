@@ -778,9 +778,14 @@
     </main>
     <main class="mainMain productsMain">
         <div class="categories-section">
-            <h2>Categories</h2>
-            <button>Filters</button>
-            <div class="filters">
+            <h1 id="selectedCategory">Category: </h1>
+            <button id="filterBtn">Filters</button>
+            <!-- New -->
+            <div class="filters" id="filters">
+                <div class="slidecontainer">
+                    <input type="range" min="1" class="slider" id="myRange">
+                    <div>Price: <span id="demo"></span></div>
+                </div>
                 <label for="category">Filter by Category:</label>
                 <select name="category" id="category">
                     <option value="all">All Categories</option>
@@ -795,13 +800,13 @@
                     <option value="jewerly">Jewerly</option>
                 </select>
                 <br />
-                <label for="price-range">Filter by Price Range:</label>
-                <select name="price-range" id="price-range">
-                    <option value="all">All Prices</option>
-                    <option value="0-50">$0 - $50</option>
-                    <option value="50-100">$50 - $100</option>
-                    <option value="100-200">$100 - $200</option>
-                    <option value="200+">$200+</option>
+                <!-- New -->
+                <label for="size">Size:</label>
+                <select name="size" id="size">
+                    <option value="all">All Sizes</option>
+                    <option value="Small">S</option>
+                    <option value="Medium">M</option>
+                    <option value="Large">L</option>
                 </select>
                 <br />
                 <label for="shop-location">Filter by Shop Loocation:</label>
@@ -816,10 +821,11 @@
                     <option value="Tetovo">Tetovo</option>
                 </select>
                 <br />
+                <button id="applyFilters">Apply Filters</button>
             </div>
             <div>
-                <button for="occasion-selector">Sort By:</button>
-                <div name="occasion-selector" id="occasion-selector">
+                <button id="sortBtn" for="sortingSection">Sort By:</button>
+                <div name="sortingSection" id="sortingSection">
                     <a href="#" value="highest-rating" id="highest-rating">Highest Rating</a>
                     <a href="#" value="highest-price" id="highest-price">Highest Price</a>
                     <a href="#" value="lowest-price" id="lowest-price">Lowest Price</a>
@@ -827,7 +833,7 @@
             </div>
         </div>
         <h1>SubCategories: </h1>
-        <div id="subCategories">KKKKKK</div>
+        <div id="subCategories"></div>
         <h1>Products</h1>
         <div id="products"></div>
         <h1>Single Product</h1>
