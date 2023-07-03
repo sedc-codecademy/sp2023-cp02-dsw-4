@@ -7,7 +7,7 @@ const singleProductDiv = document.getElementById("singleProduct");
 
 const filterBtn = document.getElementById("filterBtn");
 const filters = document.getElementById("filters");
-const priceRange = document.getElementById("price-range");
+
 filters.style.display = "none"
 
 const sortBtn = document.getElementById("sortBtn");
@@ -20,6 +20,8 @@ const lowestPriceBtn = document.getElementById("lowest-price");
 let displayedProducts = [];
 let filteredProducts = [];
 let filterByPrice = [];
+
+
 
 
 async function setSubCatsTwoCtTab(ID, element) {
@@ -146,68 +148,122 @@ async function printResults(element, ID) { //// NEEDS ID PARAM DOESNT NEED SUBCA
 }
 
 // FILTERS
+
+let filterHelper = {
+    price: null,
+    size: null,
+    origin: null
+}
+
+console.log(filterHelper)
+
 filterBtn.addEventListener("click", () => {
     if (filters.style.display == "block") {
         filters.style.display = "none"
     } else {
         filters.style.display = "block"
     }
-})
-
-priceRange.addEventListener("click", (e) => {
-
-    let chosenOption = e.target.value;
-    console.log(chosenOption);
-
-    if (chosenOption === "0-50") {
-        if (filteredProducts.length === 0) {
-            filteredProducts = displayedProducts.filter(product => product.price <= 50)
-        } else {
-            filteredProducts = filteredProducts.filter(product => product.price <= 50)
-        }
-        // return filteredProducts
-    } else if (chosenOption === "51-100") {
-        if (filteredProducts.length === 0) {
-            filteredProducts = displayedProducts.filter(product => product.price > 50 && product.price <= 100)
-
-        } else {
-            filteredProducts = filteredProducts.filter(product => product.price > 50 && product.price <= 100)
-        }
-    } else if (chosenOption === "101-200") {
-        if (filteredProducts.length === 0) {
-            filteredProducts = displayedProducts.filter(product => product.price > 100 && product.price <= 200)
-        } else {
-            filteredProducts = filteredProducts.filter(product => product.price > 100 && product.price <= 200)
-        }
-    } else if (chosenOption === "200+") {
-        if (filteredProducts.length === 0) {
-            filteredProducts = displayedProducts.filter(product => product.price > 200)
-        } else {
-            filteredProducts = filteredProducts.filter(product => product.price > 200)
-        }
-    } else {
-        if (filteredProducts.length === 0) {
-            filteredProducts = displayedProducts
-        }
-    }
-
-    printProducts(filteredProducts, productsDiv)
-    console.log("Displayed Products", displayedProducts)
-    console.log("Filtered products", filteredProducts)
+    const prices = displayedProducts.map(o => o.price)
+    console.log(prices)
+    let maxValue = Math.max(...prices)
+    console.log(maxValue);
+    slider.setAttribute("max", maxValue.toString())
 })
 
 var slider = document.getElementById("myRange");
-const prices = displayedProducts.map(o => o.price)
-let maxValue = Math.max(...prices)
-console.log(maxValue);
-slider.setAttribute("max", maxValue.toString())
 var output = document.getElementById("demo");
+let size = document.getElementById("size")
+let applyFiltersBtn = document.getElementById("applyFilters")
+console.log(displayedProducts)
+
+
 output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
     output.innerHTML = this.value;
+    if (this.value > 1) {
+        filterHelper.price = this.value;
+    }
 }
+
+size.addEventListener("click", (e) => {
+
+    let chosenOption = e.target.value;
+    if (chosenOption !== "all") {
+        filterHelper.size = chosenOption;
+    } else {
+        filterHelper.size = null
+    }
+    console.log(chosenOption);
+    console.log(filterHelper.size);
+})
+
+applyFiltersBtn.addEventListener("click", () => {
+    console.log("Price", filterHelper.price)
+    console.log("Size", filterHelper.size)
+    if (filterHelper.price !== null && filterHelper.size !== null) {
+        for (product of displayedProducts) {
+            for (let i = 0; i < product.variants.size; i++) {
+                if (product.variants.size[i].option === filterHelper.size) {
+                    filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price && product.variants.size[i].option === filterHelper.size)
+                }
+                return
+            }
+
+        }
+
+        //filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price).filter(product => product.variants.size.includes(filterHelper.size))
+        //filteredProducts = displayedProducts.filter(product => product.price < filterHelper.price && product.variants.size.includes(filterHelper.size))
+
+    }
+    printProducts(filteredProducts, productsDiv)
+    console.log(filteredProducts)
+})
+
+// priceRange.addEventListener("click", (e) => {
+
+//     let chosenOption = e.target.value;
+//     console.log(chosenOption);
+
+//     if (chosenOption === "0-50") {
+//         if (filteredProducts.length === 0) {
+//             filteredProducts = displayedProducts.filter(product => product.price <= 50)
+//         } else {
+//             filteredProducts = filteredProducts.filter(product => product.price <= 50)
+//         }
+//         // return filteredProducts
+//     } else if (chosenOption === "51-100") {
+//         if (filteredProducts.length === 0) {
+//             filteredProducts = displayedProducts.filter(product => product.price > 50 && product.price <= 100)
+
+//         } else {
+//             filteredProducts = filteredProducts.filter(product => product.price > 50 && product.price <= 100)
+//         }
+//     } else if (chosenOption === "101-200") {
+//         if (filteredProducts.length === 0) {
+//             filteredProducts = displayedProducts.filter(product => product.price > 100 && product.price <= 200)
+//         } else {
+//             filteredProducts = filteredProducts.filter(product => product.price > 100 && product.price <= 200)
+//         }
+//     } else if (chosenOption === "200+") {
+//         if (filteredProducts.length === 0) {
+//             filteredProducts = displayedProducts.filter(product => product.price > 200)
+//         } else {
+//             filteredProducts = filteredProducts.filter(product => product.price > 200)
+//         }
+//     } else {
+//         if (filteredProducts.length === 0) {
+//             filteredProducts = displayedProducts
+//         }
+//     }
+
+//     printProducts(filteredProducts, productsDiv)
+//     console.log("Displayed Products", displayedProducts)
+//     console.log("Filtered products", filteredProducts)
+// })
+
+
 
 
 
