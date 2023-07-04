@@ -1,7 +1,6 @@
 console.log("Test test")
 const selectedCategory = document.getElementById("selectedCategory")
 const subCategoriesDiv = document.getElementById("subCategories");
-console.log(subCategoriesDiv)
 const productsDiv = document.getElementById("products");
 const singleProductDiv = document.getElementById("singleProduct");
 
@@ -27,7 +26,7 @@ let filterByPrice = [];
 
 async function setSubCatsTwoCtTab(ID, element) {
     const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
-    const products = await fetchJSON('./mock/new-products.json')
+    const products = await fetchJSON('./mock/products.json') // SHOULD USE PRODUCTS JSON
 
     const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
     const flattenedProducts = flattenObjectArrays(products)
@@ -35,10 +34,10 @@ async function setSubCatsTwoCtTab(ID, element) {
 
     displayedProducts = [];
 
-    for (let i = 0; i < flattenedSubCategories.length; i++) {
+    for (let i = 0; i < flattenedSubCategories.length; i++) { // SHOULD CHANGE LOGIC A BIT WHEN USING PRODUCTS JSON
         if (flattenedSubCategories[i].id === ID) {
             for (let j = 0; j < flattenedProducts.length; j++) {
-                if (flattenedSubCategories[i].products.includes(flattenedProducts[j].id)) {
+                if (flattenedSubCategories[i].id === flattenedProducts[j].category.subcategoryid) {
                     displayedProducts.push(flattenedProducts[j])
                 }
             }
@@ -47,68 +46,164 @@ async function setSubCatsTwoCtTab(ID, element) {
     }
 
     printProducts(displayedProducts, element)
-
-    console.log(displayedProducts)
 }
 
 function printProducts(arrayOfProducts, elemetToPrint) {
     elemetToPrint.innerHTML = "";
-    arrayOfProducts.forEach(product => {
-        // let a = document.createElement("a");
-        // a.style.color = 'green'
-        // a.addEventListener("click", () => {
-        //     console.log(product.id)
-        //     printProduct(product, singleProductDiv)
-        // })
+    // arrayOfProducts.forEach(product => {
+    //     // let a = document.createElement("a");
+    //     // a.style.color = 'green'
+    //     // a.addEventListener("click", () => {
+    //     //     console.log(product.id)
+    //     //     printProduct(product, singleProductDiv)
+    //     // })
 
-        // a.innerHTML += `
-        //     <h3>${product.title}</h3>
-        //     <p>${product.description}</p>
-        //     <p>Price: ${product.price}$</p>
-        //     <p>Rating: ${product.rating.rate}</p>
-        //     `
+    //     // a.innerHTML += `
+    //     //     <h3>${product.title}</h3>
+    //     //     <p>${product.description}</p>
+    //     //     <p>Price: ${product.price}$</p>
+    //     //     <p>Rating: ${product.rating.rate}</p>
+    //     //     `
 
-        let section = document.createElement("section")
-        let img = document.createElement("img")
-        img.setAttribute("src", getRandomImgPath(imgPaths).slice(1))
+    //     let section = document.createElement("section")
+    //     let img = document.createElement("img")
+    //     img.setAttribute("src", getRandomImgPath(imgPaths).slice(1))
 
-        let a = document.createElement("a")
-        a.innerHTML = `${product.title}`
-        a.setAttribute("href", "javascript:void(0)")
-        a.addEventListener("click", (e) => {
+    //     let a = document.createElement("a")
+    //     a.innerHTML = `${product.title}`
+    //     a.setAttribute("href", "javascript:void(0)")
+    //     a.addEventListener("click", (e) => {
+    //         // Product clicked
+    //         console.log(product.id)
+    //         printProduct(product, singleProductDiv)
+    //     })
+
+    //     let h4 = document.createElement("h4")
+    //     let h4discount = document.createElement("h4")
+
+    //     if (product.sale) {
+    //         // If the product has a sale, calculate the discounted price and display the discount percentage
+    //         let discountPercentage = product.sale
+    //         let discountedPrice = (
+    //             product.price -
+    //             product.price * (discountPercentage / 100)
+    //         ).toFixed(2)
+    //         let originalPrice = product.price
+
+    //         h4discount.innerHTML = `$${originalPrice}`
+    //         h4.innerHTML = `$${discountedPrice}`
+    //         h4discount.classList.add("discount-price")
+    //     } else {
+    //         // If the product does not have a sale, display the original price without any discount information
+    //         h4.innerHTML = `$${product.price}`
+    //     }
+
+    //     section.appendChild(img)
+    //     section.appendChild(a)
+    //     section.appendChild(h4discount)
+    //     section.appendChild(h4)
+
+    //     elemetToPrint.appendChild(section)
+    // })
+    setProductsTwo(elemetToPrint, arrayOfProducts.length, false, true, arrayOfProducts)
+}
+
+async function setProductsTwo(div, iterationCount, discount, shouldDiscount, array) {
+    const subCategoriesArray = await fetchJSON("./mock/new-sub-categories.json")
+    let flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
+    let prodcuts
+    let flattenedProducts
+    let shuffledProducts
+
+    if (!array) {
+        prodcuts = await fetchJSON("./mock/products.json")
+        flattenedProducts = flattenObjectArrays(prodcuts)
+        shuffledProducts = shuffle(flattenedProducts)
+    } else {
+        shuffledProducts = array
+    }
+
+    let tempProds = []
+
+    let ul = document.createElement("ul")
+    if (discount) {
+        for (let j = 0; j < shuffledProducts.length && tempProds.length < iterationCount; j++) {
+            if (shuffledProducts[j].sale) {
+                tempProds.push(shuffledProducts[j])
+            }
+        }
+    } else {
+        if (array) {
+            tempProds = array
+        } else {
+            tempProds = shuffledProducts.slice(0, iterationCount)
+        }
+    }
+
+    for (let i = 0; i < tempProds.length; i++) {
+        const element = tempProds[i]
+        let li = document.createElement("li")
+        li.setAttribute("tabindex", 0)
+        li.addEventListener("click", (e) => {
             // Product clicked
-            console.log(product.id)
-            printProduct(product, singleProductDiv)
+            // SHOULD CALL switchMain() when these event listeners are clicked *** IGNORE FOR NOW
+            console.log(element.id)
+            printProduct(element, singleProductDiv)
+        })
+        li.addEventListener("keydown", (e) => {
+            // SHOULD CALL switchMain() when these event listeners are clicked *** IGNORE FOR NOW
+            if (e.key === 'Enter') {
+                console.log(element.id)
+                printProduct(element, singleProductDiv)
+            }
         })
 
-        let h4 = document.createElement("h4")
-        let h4discount = document.createElement("h4")
-
-        if (product.sale) {
-            // If the product has a sale, calculate the discounted price and display the discount percentage
-            let discountPercentage = product.sale
-            let discountedPrice = (
-                product.price -
-                product.price * (discountPercentage / 100)
-            ).toFixed(2)
-            let originalPrice = product.price
-
-            h4discount.innerHTML = `$${originalPrice}`
-            h4.innerHTML = `$${discountedPrice}`
-            h4discount.classList.add("discount-price")
-        } else {
-            // If the product does not have a sale, display the original price without any discount information
-            h4.innerHTML = `$${product.price}`
+        let img = document.createElement("img")
+        for (let i = 0; i < flattenedSubCategories.length; i++) {
+            if (flattenedSubCategories[i].id === element.category.subcategoryid) {
+                img.setAttribute("src", flattenedSubCategories[i].image.slice(1))
+                li.appendChild(img) // Append Image when its found
+            }
         }
 
-        section.appendChild(img)
-        section.appendChild(a)
-        section.appendChild(h4discount)
-        section.appendChild(h4)
+        let title = document.createElement("p")
+        title.innerHTML = `${element.title}`
+        li.appendChild(title) // Append Title
 
-        elemetToPrint.appendChild(section)
-    })
+        let h4 = document.createElement("h4")
+
+        if (shouldDiscount) { // Should product have discount shown
+            let h4discount = document.createElement("h4")
+            let h2percentage = document.createElement("h2")
+            if (element.sale) { // If the product has a discount, calculate the discounted price and display the discount percentage
+                let discountPercentage = element.sale
+                let discountedPrice = (element.price - element.price * (discountPercentage / 100)).toFixed(2)
+                let originalPrice = element.price
+                h2percentage.innerHTML = `${discountPercentage}% Off`
+                h4discount.innerHTML = `$${originalPrice}`
+                h4.innerHTML = `$${discountedPrice}`
+                h4discount.classList.add("discount-price")
+                h2percentage.classList.add("discount-percentage")
+            } else { // If the product does not have a discount, display the original price without any discount information
+                h4.innerHTML = `$${element.price}`
+            }
+
+            createStars(li, element.id)
+            fillStars(element.rating.rate, li, element.id)
+
+            li.appendChild(h2percentage)
+            li.appendChild(h4discount)
+            li.appendChild(h4)
+        } else { // If product should not have a discount, display the original price without any discount information
+            h4.innerHTML = `$${element.price}`
+            li.appendChild(h4)
+        }
+
+        ul.appendChild(li) // Append Li at end
+    }
+    div.appendChild(ul)
 }
+
 
 function printProduct(product, element) {
 
@@ -131,7 +226,6 @@ function printProduct(product, element) {
           <button value="${product.id}" onclick="buyNow(this, xxx)"> Buy Now </button> `
 
 }
-
 
 async function printResults(element, ID) { //// NEEDS ID PARAM DOESNT NEED SUBCAT PARAM
     // SHOULD DO SOMETHING SIMILAR LIKE IN PRINT PRODUCTS USING FLATTENED SUBCATEGORIES FETCH *** LOOK TO LINE 35 in dependecies File for fetch
@@ -222,7 +316,6 @@ function setButtonsOnStart() {
 
     updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
 }
-
 
 function handleLeftScrollToButtonClick() {
     updateButtonStates(scrollSubCatsLists, leftScrollSubButton, rightScrollSubButton)
@@ -360,7 +453,8 @@ applyFiltersBtn.addEventListener("click", () => {
         filteredProducts = productsWithSelectedSize
     }
 
-    if(filterHelper.region !== null) {
+    if (filterHelper.region !== null) {
+        console.log(filteredProducts)
         filteredProducts = filteredProducts.filter(product => product.shipping.region === filterHelper.region)
     }
     printProducts(filteredProducts, productsDiv)
@@ -422,14 +516,14 @@ sortBtn.addEventListener("click", () => {
 function sortByLowestPrice() {
 
     let lowestPriceSort = [];
-    if(filteredProducts.length  != 0) {
+    if (filteredProducts.length != 0) {
         filteredProducts.sort((a, b) => {
             return a.price - b.price;
         })
         lowestPriceSort = filteredProducts;
     } else {
         displayedProducts.sort((a, b) => {
-            return  a.price - b.price;
+            return a.price - b.price;
         })
         lowestPriceSort = displayedProducts;
     }
@@ -440,14 +534,14 @@ function sortByLowestPrice() {
 function sortByHighestPrice() { // Should check fitlered first
 
     let highestPriceSort = [];
-    if(filteredProducts.length  != 0) {
+    if (filteredProducts.length != 0) {
         filteredProducts.sort((a, b) => {
             return b.price - a.price;
         })
         highestPriceSort = filteredProducts;
     } else {
         displayedProducts.sort((a, b) => {
-            return  b.price - a.price;
+            return b.price - a.price;
         })
         highestPriceSort = displayedProducts;
     }
@@ -458,14 +552,14 @@ function sortByHighestPrice() { // Should check fitlered first
 function sortByHighestRating() {
 
     let highestRatingSort = [];
-    if(filteredProducts.length  != 0) {
+    if (filteredProducts.length != 0) {
         filteredProducts.sort((a, b) => {
             return b.rating.rate - a.rating.rate;
         })
         highestRatingSort = filteredProducts;
     } else {
         displayedProducts.sort((a, b) => {
-            return  b.rating.rate - a.rating.rate;
+            return b.rating.rate - a.rating.rate;
         })
         highestRatingSort = displayedProducts;
     }

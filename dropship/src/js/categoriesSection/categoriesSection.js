@@ -79,10 +79,8 @@ function hasClass(elements, className) {
 // Function to update button states
 function updateButtonStates(eleme, leftBtn, rightBtn) {
   const hasHiddenLeft = hasClass(eleme, 'hiddenLeft')
-  console.log(hasHiddenLeft)
   const hasHiddenRight = hasClass(eleme, 'hiddenRight')
   if (!hasHiddenLeft) {
-    console.log("dime")
     leftBtn.disabled = true
     leftBtn.classList.add('disabledScrollBtn')
   } else {
@@ -134,102 +132,102 @@ leftScrollButton.addEventListener('click', handleLeftScrollButtonClick)
 rightScrollButton.addEventListener('click', handleRightScrollButtonClick)
 
 function getFromRight(leftArray, rightArray, middleArray) {
-  let newLeftArray = [...leftArray];
-  let newMiddleArray = [...middleArray];
-  let newRightArray = [...rightArray];
+  let newLeftArray = [...leftArray]
+  let newMiddleArray = [...middleArray]
+  let newRightArray = [...rightArray]
 
   if (newRightArray.length === 5) {
-    newLeftArray = [...newLeftArray, ...newMiddleArray];
-    newMiddleArray = newRightArray;
-    newRightArray = [];
+    newLeftArray = [...newLeftArray, ...newMiddleArray]
+    newMiddleArray = newRightArray
+    newRightArray = []
   } else if (newRightArray.length < 5) {
-    const numElementsToMove = Math.min(newRightArray.length, newMiddleArray.length);
-    newLeftArray.push(...newMiddleArray.splice(0, numElementsToMove));
-    newMiddleArray.push(...newRightArray.splice(0, numElementsToMove));
+    const numElementsToMove = Math.min(newRightArray.length, newMiddleArray.length)
+    newLeftArray.push(...newMiddleArray.splice(0, numElementsToMove))
+    newMiddleArray.push(...newRightArray.splice(0, numElementsToMove))
   } else {
-    newLeftArray.push(...newMiddleArray);
-    newMiddleArray = newRightArray.slice(0, 5);
-    newRightArray = newRightArray.slice(5);
+    newLeftArray.push(...newMiddleArray)
+    newMiddleArray = newRightArray.slice(0, 5)
+    newRightArray = newRightArray.slice(5)
   }
-  return [newLeftArray, newRightArray, newMiddleArray];
+  return [newLeftArray, newRightArray, newMiddleArray]
 }
 
 function getFromLeft(leftArray, rightArray, middleArray) {
-  let newLeftArray = [...leftArray];
-  let newMiddleArray = [...middleArray];
-  let newRightArray = [...rightArray];
+  let newLeftArray = [...leftArray]
+  let newMiddleArray = [...middleArray]
+  let newRightArray = [...rightArray]
 
   if (newLeftArray.length === 5) {
-    newRightArray.unshift(...newMiddleArray);
-    newMiddleArray = newLeftArray;
-    newLeftArray = [];
+    newRightArray.unshift(...newMiddleArray)
+    newMiddleArray = newLeftArray
+    newLeftArray = []
   } else if (newLeftArray.length < 5) {
-    const numElementsToMove = Math.min(newLeftArray.length, newMiddleArray.length);
-    newRightArray.unshift(...newMiddleArray.splice(-numElementsToMove));
-    newMiddleArray.unshift(...newLeftArray.splice(-numElementsToMove));
+    const numElementsToMove = Math.min(newLeftArray.length, newMiddleArray.length)
+    newRightArray.unshift(...newMiddleArray.splice(-numElementsToMove))
+    newMiddleArray.unshift(...newLeftArray.splice(-numElementsToMove))
   } else {
-    newRightArray.unshift(...newMiddleArray);
-    newMiddleArray = newLeftArray.slice(-5);
-    newLeftArray = newLeftArray.slice(0, -5);
+    newRightArray.unshift(...newMiddleArray)
+    newMiddleArray = newLeftArray.slice(-5)
+    newLeftArray = newLeftArray.slice(0, -5)
   }
 
-  return [newLeftArray, newRightArray, newMiddleArray];
+  return [newLeftArray, newRightArray, newMiddleArray]
 }
 
 function changeLeft(middleArray, rightArray) {
   rightArray.forEach(e => {
     if (e.classList.contains("shownMiddle")) {
-      e.classList.add('hiddenRight');
-      e.classList.remove('shownMiddle');
-      e.removeAttribute("tabindex");
+      e.classList.add('hiddenRight')
+      e.classList.remove('shownMiddle')
+      e.removeAttribute("tabindex")
     }
-  });
+  })
 
   middleArray.forEach(e => {
     if (e.classList.contains('hiddenLeft')) {
-      e.classList.remove('hiddenLeft');
-      e.classList.add('shownMiddle', 'slideInLeft');
-      e.setAttribute("tabindex", 0);
+      e.classList.remove('hiddenLeft')
+      e.classList.add('shownMiddle', 'slideInLeft')
+      e.setAttribute("tabindex", 0)
       e.addEventListener('animationend', () => {
-        e.classList.remove('slideInLeft');
-      }, { once: true });
+        e.classList.remove('slideInLeft')
+      }, { once: true })
     } else if (e.classList.contains('hiddenRight')) {
-      e.classList.remove('hiddenRight');
-      e.classList.add('shownMiddle', 'slideInRight');
-      e.setAttribute("tabindex", 0);
+      e.classList.remove('hiddenRight')
+      e.classList.add('shownMiddle', 'slideInRight')
+      e.setAttribute("tabindex", 0)
       e.addEventListener('animationend', () => {
-        e.classList.remove('slideInRight');
-      }, { once: true });
+        e.classList.remove('slideInRight')
+      }, { once: true })
     }
-  });
+  })
 }
 
 function changeRight(middleArray, leftArray) {
   leftArray.forEach(e => {
     if (e.classList.contains("shownMiddle")) {
-      e.classList.add('hiddenLeft');
-      e.classList.remove('shownMiddle');
-      e.removeAttribute("tabindex");
+      e.classList.add('hiddenLeft')
+      e.classList.remove('shownMiddle')
+      e.removeAttribute("tabindex")
     }
-  });
+  })
 
   middleArray.forEach(e => {
     if (e.classList.contains('hiddenRight')) {
-      e.classList.remove('hiddenRight');
-      e.classList.add('shownMiddle', 'slideInRight');
-      e.setAttribute("tabindex", 0);
+      e.classList.remove('hiddenRight')
+      e.classList.add('shownMiddle', 'slideInRight')
+      e.setAttribute("tabindex", 0)
       e.addEventListener('animationend', () => {
-        e.classList.remove('slideInRight');
-      }, { once: true });
+        e.classList.remove('slideInRight')
+      }, { once: true })
     } else if (e.classList.contains('hiddenLeft')) {
-      e.classList.remove('hiddenLeft');
-      e.classList.add('shownMiddle', 'slideInLeft');
-      e.setAttribute("tabindex", 0);
+      e.classList.remove('hiddenLeft')
+      e.classList.add('shownMiddle', 'slideInLeft')
+      e.setAttribute("tabindex", 0)
       e.addEventListener('animationend', () => {
-        e.classList.remove('slideInLeft');
-      }, { once: true });
+        e.classList.remove('slideInLeft')
+      }, { once: true })
     }
-  });
+  })
 }
 
 

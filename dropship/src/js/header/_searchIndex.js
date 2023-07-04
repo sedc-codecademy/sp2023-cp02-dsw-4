@@ -31,7 +31,10 @@ idSearchBtn.addEventListener('click', () => { // Event listener for clicking the
 }) // TODO
 
 searchInput.addEventListener('keyup', (e) => { // Event listener for handling key press events in search input
-    console.log(e) // TODO ENTER key
+    if (e.key === 'Enter') { // NEED TO DO SEARCH FUNCTION IN /CATEGORIE-SECTION/MAIN.JS
+        console.log("enetr Has been pressed should search items")
+        return
+    }
     if (searchInput.value === '') {
         classSwitcher.keyUPblur()
         return
@@ -61,10 +64,15 @@ function suggestions(arr) {  // Filling suggestions function
         let li = document.createElement("li")
         li.setAttribute("tabindex", 0)
         if (i < 6) {
-            li.innerHTML = `<div> <img src="${getRandomImgPath(imgPaths).slice(1)}"></img><p>${arr[i].item.title}</p></div>  <div><h6>${arr[i].item.subCategoryTitle}</h6><div class="divider"></div><h5>${arr[i].item.categoryTitle}</h5></div>`
+            li.innerHTML = `<div> <img src=""></img><p>${arr[i].item.title}</p></div>  <div><h6>${arr[i].item.subCategoryTitle}</h6><div class="divider"></div><h5>${arr[i].item.categoryTitle}</h5></div>`
             suggestionsUl.appendChild(li)
             li.addEventListener("click", () => {
                 console.log(`Result ${arr[i].item.title} has been clicked`)
+            })
+            li.addEventListener("keydown", (e) => {
+                if (e.key === 'Enter') {
+                    console.log(`Result ${arr[i].item.title} has been clicked`)
+                }
             })
             suggestionsAnimate('increase')
         } else {
@@ -73,6 +81,11 @@ function suggestions(arr) {  // Filling suggestions function
             suggestionsUl.appendChild(li)
             li.addEventListener("click", () => {
                 console.log("View all has been clicked")
+            })
+            li.addEventListener("keydown", (e) => {
+                if (e.key === 'Enter') {
+                    console.log("View all has been clicked")
+                }
             })
             break
         }

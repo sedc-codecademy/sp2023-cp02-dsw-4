@@ -19,6 +19,7 @@ categoriesBtn.addEventListener("click", (e) => {
 })
 
 ctLiDt.forEach((e) => {
+    e.setAttribute("tabindex", 0)
     e.addEventListener("click", () => {
         if (e.classList.contains("activeCat")) return
         setSubCats(e)
@@ -27,6 +28,17 @@ ctLiDt.forEach((e) => {
         e.classList.add("activeCat")
         e.style.cursor = "default"
         e.style.setProperty("--opacity", 1)
+    })
+    e.addEventListener("keydown", () => {
+        if (e.key === 'Enter') {
+            if (e.classList.contains("activeCat")) return
+            setSubCats(e)
+            const activeElement = document.querySelector(".activeCat")
+            activeElement.classList.remove("activeCat")
+            e.classList.add("activeCat")
+            e.style.cursor = "default"
+            e.style.setProperty("--opacity", 1)
+        }
     })
 })
 
@@ -44,17 +56,25 @@ function shuffleTwo(array) {
 async function fillRelevant(ul) {
     const products = await fetchJSON('./mock/products.json')
     const flattenedProducts = flattenObjectArrays(products)
+    const subCategoriesArray = await fetchJSON('./mock/new-sub-categories.json')
+    const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
 
     let tempArray = shuffleTwo(flattenedProducts)
 
     for (let i = 0; i < 2; i++) {
         const li = document.createElement("li")
-        li.style.setProperty('--bgImg', `url(${getRandomImgPath(imgPaths)})`)
-        // const title = document.createElement("h3")
-        // title.innerHTML = 'Sale of the day'
+        for (let j = 0; j < flattenedSubCategories.length; j++) {
+            const element = flattenedSubCategories[j];
+            if (element.id === tempArray[i].category.subcategoryid) {
+                li.style.setProperty('--bgImg', `url(${element.image})`)
+            }
+        }
+
+        const title = document.createElement("h3")
+        title.innerHTML = `ONLY $${tempArray[i].price}`
         const par = document.createElement("p")
         par.innerHTML = tempArray[i].title
-        // li.appendChild(title)
+        li.appendChild(title)
         li.appendChild(par)
         ul.appendChild(li)
     }
@@ -91,6 +111,14 @@ async function setSubCats(currentCat) {
         subCategoryItems[i].querySelector('h3').innerHTML = randomCat.title;
         subCategoryItems[i].querySelector('p').innerHTML = randomCat.description;
         subCategoryItems[i].style.setProperty('--bgimg', `url(${randomCat.image})`);
+        subCategoryItems[i].addEventListener("click", () => {
+            console.log(randomCat.id)
+        })
+        subCategoryItems[i].addEventListener("keydown", () => {
+            if (e.key === 'Enter') {
+                console.log(randomCat.id)
+            }
+        })
 
         // Remove the chosen element from randomCats to avoid repetition
         randomCats.splice(randomIndex, 1);

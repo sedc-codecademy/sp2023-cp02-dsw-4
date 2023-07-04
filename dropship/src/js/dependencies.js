@@ -6,18 +6,29 @@ const searchInput = document.querySelector('.search-bar')
 const suggestionsCard = document.querySelector(".search-suggestions")
 const searchContainer = document.querySelector(".search-bar-container")
 
+//////////// ALL JSON FILES FETCH
+
+// const categories = await fetchJSON('./mock/categories.json')
+// const subCategories = await fetchJSON('./mock/subCategories.json')
+// const products = await fetchJSON('./mock/products.json')
+
+/////////// SUB CATEGORIES AND OBJECTS FLATTENED IF NEEDED
+
+// const flattenedSubCategories = flattenObjectArrays(subCategories)
+// const flattenedProducts = flattenObjectArrays(products)
+
 // Fetches with async await
 async function fetchJSON(url) {
     try {
-        const response = await fetch(url);
+        const response = await fetch(url)
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`HTTP error! Status: ${response.status}`)
         }
-        const data = await response.json();
-        return data;
+        const data = await response.json()
+        return data
     } catch (error) {
-        console.error('Error fetching JSON:', error);
-        throw error;
+        console.error('Error fetching JSON:', error)
+        throw error
     }
 }
 
@@ -32,17 +43,7 @@ function flattenObjectArrays(object) {
     return newArray
 }
 
-//////////// ALL JSON FILES FETCH
-
-// const categories = await fetchJSON('./mock/categories.json')
-// const subCategories = await fetchJSON('./mock/subCategories.json')
-// const products = await fetchJSON('./mock/products.json')
-
-/////////// SUB CATEGORIES AND OBJECTS FLATTENED IF NEEDED
-
-// const flattenedSubCategories = flattenObjectArrays(subCategories)
-// const flattenedProducts = flattenObjectArrays(products)
-
+// Paths if need a random image
 const imgPaths = [
     '../imgs/cat/tech/sub/pc.png',
     '../imgs/cat/tech/sub/phone.png',
@@ -144,9 +145,18 @@ const imgPaths = [
     '../imgs/cat/hAndG/sub/laundry.png'
 ]
 
-function getRandomImgPath(arr) {
+function getRandomElement(arr) { // Get random element from array
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex]
+}
+
+function shuffle(array) { // Shuffle Array function
+    let tempArray = array;
+    for (let i = tempArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return tempArray;
 }
 
 const categoriesBtn = document.querySelector(".categoriesButton")
@@ -291,7 +301,7 @@ function showElement(timeouts, time, callbackOpen, callbackOpenTwo, main) { // T
 
 const allMains = document.querySelectorAll(".mainMain")
 
-function switchMain(mainToTurnOn, display) {
+function switchMain(mainToTurnOn, display) { // Function fro changing "page"
     if (mainToTurnOn.classList.contains('currentMain')) {
         setTimeout(() => {
             window.scrollTo({
@@ -327,13 +337,13 @@ function switchMain(mainToTurnOn, display) {
 
 const homeBtn = document.querySelector(".homeButton")
 
-homeBtn.addEventListener("click", (e) => {
+homeBtn.addEventListener("click", (e) => { // Home button event listenr
     e.preventDefault()
     switchMain(document.querySelector('.homePage'), "block") /// turn on home 
 })
 
 ////////// END OF MAIN TOGGLE /////////////////
 
-document.body.addEventListener('click', (e) => { // Event listener for turning off categories adn loosing focus on searchInput
+document.body.addEventListener('click', (e) => { // Event listener for turning off categories and loosing focus on searchInput
     if (!searchForm.contains(e.target)) classSwitcher.ctOff()
 })

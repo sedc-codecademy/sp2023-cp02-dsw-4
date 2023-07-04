@@ -79,7 +79,13 @@ const summaryList = document.querySelector(".summaryUl")
 //     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
 //     "sale": 0,
 //     "amount": 2,
-//     "totalPrice": 0
+//     "totalPrice": 0,
+//     "category": {
+//         "categoryid": "jewellery",
+//         "categorytitle": "Jewellery",
+//         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
+//         "subcategorytitle": "Body Jewelry"
+//     },
 // }, {
 //     "title": "Waterproof Car Cover",
 //     "price": 75.99,
@@ -88,7 +94,43 @@ const summaryList = document.querySelector(".summaryUl")
 //     "id": "aefa495c-82dc-4e46e-3a7db-ac4c1525a742",
 //     "sale": 0,
 //     "amount": 2,
-//     "totalPrice": 0
+//     "totalPrice": 0,
+//     "category": {
+//         "categoryid": "jewellery",
+//         "categorytitle": "Jewellery",
+//         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
+//         "subcategorytitle": "Body Jewelry"
+//     }
+// }, {
+//     "title": "Waterproof Car Cover",
+//     "price": 89.99,
+//     "shipping": 0,
+//     "stock": 13,
+//     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
+//     "sale": 4,
+//     "amount": 2,
+//     "totalPrice": 0,
+//     "category": {
+//         "categoryid": "jewellery",
+//         "categorytitle": "Jewellery",
+//         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
+//         "subcategorytitle": "Body Jewelry"
+//     },
+// }, {
+//     "title": "Waterproof Car Cover",
+//     "price": 89.99,
+//     "shipping": 0,
+//     "stock": 13,
+//     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
+//     "sale": 3,
+//     "amount": 2,
+//     "totalPrice": 0,
+//     "category": {
+//         "categoryid": "jewellery",
+//         "categorytitle": "Jewellery",
+//         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
+//         "subcategorytitle": "Body Jewelry"
+//     },
 // }]))
 
 const cartButton = document.querySelector('#cartButton')
@@ -120,8 +162,12 @@ function emptyCart() {
     }
 }
 
-function fillCart(ul) {
+async function fillCart(ul) {
     const cartItems = JSON.parse(localStorage.getItem("cart") || [])
+
+    const subCategoriesArray = await fetchJSON('./mock/sub-categories.json')
+    const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
+
     ul.innerHTML = ''
     for (let i = 0; i < cartItems.length; i++) {
         const product = cartItems[i]
@@ -147,7 +193,12 @@ function fillCart(ul) {
         title.appendChild(p)
 
         // Image
-        title.style.setProperty('--bgimg', `url(${getRandomImgPath(imgPaths)})`)
+
+        for (let j = 0; j < flattenedSubCategories.length; j++) {
+            if (flattenedSubCategories[j].id === cartItems[i].category.subcategoryid) {
+                title.style.setProperty('--bgimg', `url(${flattenedSubCategories[j].image})`)
+            }
+        }
 
         // Info div
         const infoDiv = document.createElement("div")
@@ -300,7 +351,7 @@ function calculateSummary(cartItems) {
 
     for (let i = 0; i < cartItems.length; i++) {
         const product = cartItems[i]
-        currentPrice += product.totalPrice
+        currentPrice += product.price * product.amount
         currentShipping += product.shipping
         currentDiscount += product.sale
     }
@@ -353,83 +404,5 @@ function updateCart(cartItems) {
     localStorage.setItem("cart", JSON.stringify(cartItems)) // Updates local storage cart // TODO Should update db cart if use has acc
 }
 
-const listProducts = document.querySelector(".list-pr");
-const listProductsTwo = document.querySelector(".list-pr-two");
-
-async function setProducts(div, iterationCount) {
-    const subCategoriesArray = await fetchJSON("./mock/new-sub-categories.json");
-    const prodcuts = await fetchJSON("./mock/products.json");
-    const flattenedSubCategories = flattenObjectArrays(subCategoriesArray);
-    const flattenedProducts = flattenObjectArrays(prodcuts);
-    console.log(prodcuts);
-    let shuffledSubCats = shuffle(flattenedSubCategories);
-    let shuffledProducts = shuffle(flattenedProducts);
-
-    for (let i = 0; i < 2; i++) {
-        let productsFound = shuffledProducts.filter((e) =>
-            shuffledSubCats[i].products.includes(e.id)
-        );
-        let childDiv = document.createElement("div");
-
-        // // //
-        for (let j = 0; j < iterationCount; j++) {
-            let section = document.createElement("section");
-            let img = document.createElement("img");
-            img.setAttribute("src", getRandomImgPath(imgPaths).slice(1));
-
-            let a = document.createElement("a");
-            a.innerHTML = `${productsFound[j].title}`;
-            a.setAttribute("href", "javascript:void(0)");
-            a.addEventListener("click", (e) => {
-                // Product clicked
-                // SHOULD CALL switchMain() when these event listeners are clicked **** IGNORE FOR NOW
-                console.log(productsFound[j].id, e);
-            });
-
-            let h4 = document.createElement("h4");
-            let h4discount = document.createElement("h4");
-            let h3percentage = document.createElement("h2");
-
-            if (productsFound[j].sale) {
-                // If the product has a sale, calculate the discounted price and display the discount percentage
-                let discountPercentage = productsFound[j].sale;
-                let discountedPrice = (
-                    productsFound[j].price -
-                    productsFound[j].price * (discountPercentage / 100)
-                ).toFixed(2);
-                let originalPrice = productsFound[j].price;
-
-                h3percentage.innerHTML = `${discountPercentage}% Off`;
-                h4discount.innerHTML = `$${originalPrice}`;
-                h4.innerHTML = `$${discountedPrice}`;
-                h4discount.classList.add("discount-price");
-                h3percentage.classList.add("discount-percentage");
-            } else {
-                // If the product does not have a sale, display the original price without any discount information
-                h4.innerHTML = `$${productsFound[j].price}`;
-            }
-
-            section.appendChild(img);
-            section.appendChild(a);
-            section.appendChild(h3percentage);
-            section.appendChild(h4discount);
-            section.appendChild(h4);
-            childDiv.appendChild(section);
-        }
-
-        div.appendChild(childDiv);
-    }
-}
-
-function shuffle(array) {
-    let tempArray = array;
-    for (let i = tempArray.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return tempArray;
-}
-
-setProducts(listProducts, 5);
-setProducts(listProductsTwo, 5);
-
+setProducts(document.querySelector(".list-pr"), 10, false, true, false)
+setProducts(document.querySelector(".list-pr-two"), 10, false, true, false)

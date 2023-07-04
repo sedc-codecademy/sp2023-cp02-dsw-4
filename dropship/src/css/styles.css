@@ -876,6 +876,7 @@ header.smallHeader .search-form {
   border-bottom-right-radius: 2rem;
   background-image: var(--bgImg);
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   border: 0.2rem solid var(--paleAccent);
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -883,22 +884,13 @@ header.smallHeader .search-form {
   padding: 1.5rem 1rem;
   cursor: pointer;
 }
-.ctDropDown .relevant-products li::before {
-  content: "";
-  inset: -1rem;
-  background-color: var(--tpPri);
-  filter: blur(0.8rem);
-  position: absolute;
-  z-index: 0;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
 .ctDropDown .relevant-products li h3,
 .ctDropDown .relevant-products li p {
   border: 0.2rem solid var(--paleAccentThree);
-  padding: 0.5rem;
-  background: linear-gradient(to bottom, var(--tpPri), rgba(0, 0, 0, 0));
+  padding: 0.3rem;
+  background-color: var(--priColor);
   backdrop-filter: blur(0.3rem);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   text-align: center;
   pointer-events: none;
   user-select: none;
@@ -2004,15 +1996,6 @@ footer .dividerFooter {
   color: var(--secColor);
 }
 
-main svg {
-  fill: transparent;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  min-height: 100%;
-  z-index: -10;
-}
 main.mainMain {
   scale: 0;
 }
@@ -2294,11 +2277,16 @@ main.currentMain {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.42);
 }
 .scrollableCategories .scrollCatButtons.disabledScrollBtn,
 .scrollableSubCats .scrollCatButtons.disabledScrollBtn {
   pointer-events: none;
   filter: grayscale(1);
+}
+.scrollableCategories .scrollCatButtons.disabledScrollBtn span,
+.scrollableSubCats .scrollCatButtons.disabledScrollBtn span {
+  color: var(--priColor);
 }
 .scrollableCategories .scrollCatButtons#rightScrollButton span,
 .scrollableSubCats .scrollCatButtons#rightScrollButton span {
@@ -2313,7 +2301,6 @@ main.currentMain {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--priColor);
   font-size: 2rem;
 }
 .scrollableCategories .scrollCatButtons span::before,
@@ -2321,7 +2308,8 @@ main.currentMain {
   content: "";
   inset: -0.2rem;
   position: absolute;
-  background: linear-gradient(var(--spanDeg), var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
+  background: linear-gradient(var(--spanDeg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+  backdrop-filter: blur(0.2rem);
   z-index: -1;
 }
 .scrollableCategories .scrollCatButtons:hover,
@@ -2347,6 +2335,7 @@ main.currentMain {
   .scrollableCategories,
   .scrollableSubCats {
     width: 80%;
+    height: 12rem;
     justify-content: center;
     gap: 0.5rem;
   }
@@ -2355,8 +2344,6 @@ main.currentMain {
     width: 90%;
     padding: 0.3vmax;
     gap: 0.3vmax;
-    border-radius: 0.5vmax;
-    border-width: 0.15vmax;
   }
   .scrollableCategories .categoriesScrollUl .scrollCatLi,
   .scrollableSubCats .categoriesScrollUl .scrollCatLi {
@@ -2365,13 +2352,7 @@ main.currentMain {
   }
   .scrollableCategories .categoriesScrollUl .scrollCatLi h3,
   .scrollableSubCats .categoriesScrollUl .scrollCatLi h3 {
-    display: none;
-  }
-  .scrollableCategories .categoriesScrollUl .scrollCatLi img,
-  .scrollableSubCats .categoriesScrollUl .scrollCatLi img {
-    height: 80%;
-    width: 80%;
-    bottom: unset;
+    font-size: 1.1em;
   }
   .scrollableCategories .scrollCatButtons,
   .scrollableSubCats .scrollCatButtons {
@@ -2383,11 +2364,18 @@ main.currentMain {
     padding: 0.5vmax;
   }
 }
+@media (max-width: 1300px) {
+  .scrollableCategories,
+  .scrollableSubCats {
+    width: 80%;
+    height: 9rem;
+  }
+}
 @media (max-width: 768px) {
   .scrollableCategories,
   .scrollableSubCats {
-    width: 90%;
-    height: 10vmax;
+    width: 95%;
+    height: 6rem;
     flex-wrap: wrap;
   }
   .scrollableCategories .categoriesScrollUl,
@@ -2397,8 +2385,12 @@ main.currentMain {
   }
   .scrollableCategories .categoriesScrollUl .scrollCatLi img,
   .scrollableSubCats .categoriesScrollUl .scrollCatLi img {
-    height: 90;
-    width: 90%;
+    height: 95;
+    width: 95%;
+  }
+  .scrollableCategories .categoriesScrollUl .scrollCatLi h3,
+  .scrollableSubCats .categoriesScrollUl .scrollCatLi h3 {
+    display: none;
   }
   .scrollableCategories .scrollCatButtons,
   .scrollableSubCats .scrollCatButtons {
@@ -3085,6 +3077,9 @@ select {
 .finalStage .summary {
   width: 71%;
 }
+.finalStage .products {
+  border-radius: 0;
+}
 .finalStage .products h2:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -3323,6 +3318,7 @@ select {
 .checkout .checkoutSection {
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(0.5rem);
 }
 .checkout .checkoutSection.checkoutNav h2 {
   position: relative;
@@ -3344,6 +3340,7 @@ select {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  backdrop-filter: blur(0.5rem);
 }
 .checkout .checkoutSection.checkoutNav div .divider {
   width: 100%;
@@ -3942,10 +3939,11 @@ select {
   justify-content: center;
   align-items: center;
   position: relative;
+  gap: 0.5rem;
 }
 .emptyCartDiv::before {
   content: "";
-  inset: 10rem 25rem;
+  inset: 10vmax 25vmax;
   position: absolute;
   display: block;
   background-color: var(--accent);
@@ -3959,22 +3957,41 @@ select {
 }
 .emptyCartDiv h2 {
   opacity: 0.85;
-  font-size: 2.25vw;
+  font-size: 2.25vmax;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-shadow: 0.05rem 0.05rem 0 var(--tpSec);
+  background-color: var(--tpPri);
+  backdrop-filter: blur(1rem);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+  width: 100%;
+  text-align: center;
 }
 .emptyCartDiv p {
   opacity: 0.85;
-  font-size: 2vw;
+  font-size: 2vmax;
   text-shadow: 0.05rem 0.05rem 0 var(--tpSec);
+  background-color: var(--tpPri);
+  backdrop-filter: blur(1rem);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+  width: 100%;
+  text-align: center;
 }
 .emptyCartDiv .emptyCartLogo {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25rem;
+  background-color: var(--tpPri);
+  backdrop-filter: blur(1rem);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
   height: 25rem;
+  width: 100%;
   z-index: 1;
 }
 .emptyCartDiv .emptyCartLogo svg {
@@ -3989,127 +4006,160 @@ select {
   stop-color: var(--secAccent);
 }
 
-#products-div-one,
-#products-div-two {
+@media (max-width: 1008px) {
+  .cart .emptyCartDiv {
+    width: 85%;
+  }
+}
+.productDivs {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-inline: auto;
   flex-direction: column;
-  gap: 1.5rem;
-  width: 90vmax;
+  width: 80%;
   flex-wrap: wrap;
 }
-
-#products-div-one {
-  margin-block: 10rem 10rem;
+.productDivs#products-div-one {
+  margin-top: 10%;
 }
-
-#products-div-two {
-  margin-bottom: 10rem;
+.productDivs#products-div-two {
+  margin-top: 5%;
 }
-
-#products-div-one div,
-#products-div-two div,
-#products div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
+.productDivs#products ul li {
+  backdrop-filter: blur(1rem);
 }
-
-#products-div-one section,
-#products-div-two section,
-#products section {
-  text-align: center;
-  width: 25vh;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border: 0.2rem solid var(--paleAccentTwo);
-  border-radius: 0.6rem;
-  background-color: var(--paleAccent);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-  position: relative;
-}
-
-#products-div-one section h2.discount-percentage,
-#products-div-two section h2.discount-percentage,
-#products section h2.discount-percentage {
-  position: absolute;
-  top: -0.5rem;
-  left: -0.5rem;
-  transform: rotate(-15deg);
-  background-color: var(--paleAccentTwo);
-  border-radius: 4px;
-  padding: 2px;
-}
-
-#products-div-one img,
-#products-div-two img,
-#products img {
-  height: 10rem;
-  width: 10rem;
-}
-
-#products-div-one a,
-#products-div-two a,
-#products a {
-  font-weight: 500;
-  color: var(--secColor);
-  overflow: hidden;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-#products-div-one a:hover,
-#products-div-two a:hover,
-#products a:hover {
-  color: var(--secColor);
-}
-
-#products-div-one h4,
-#products-div-two h4,
-#products h4 {
-  text-align: center;
-  color: var(--accent);
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 1.5rem;
-}
-
-#products-div-one .discount-price,
-#products-div-two .discount-price {
-  font-size: 0.9rem;
-  text-decoration: line-through;
-  color: var(--tpSec);
-}
-
-#products-div-one section:hover,
-#products-div-two section:hover,
-#products section:hover {
-  transform: translateY(-5px);
-  transition: 0.3s;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color: var(--priColor);
-}
-
-#products-div-two h1 {
-  padding-bottom: 5%;
-}
-
-#products-div-one h1 {
-  padding-bottom: 5%;
-}
-
-.moving-arrow {
+.productDivs .moving-arrow {
   display: inline-block;
   animation: moveUpDown 1s infinite;
 }
-
+.productDivs h1 {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(0.5rem);
+  background-color: var(--secColor);
+  border: 0.25rem solid var(--paleAccent);
+  border-radius: 0.7rem;
+  background: linear-gradient(65deg, var(--paleAccentThree) 0%, var(--paleAccent) 30%, var(--paleAccentThree) 70%);
+  padding: 0.5rem;
+  margin-bottom: 5%;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.productDivs h1::before {
+  content: "";
+  position: absolute;
+  display: block;
+  inset: 0rem;
+  border-radius: 0.5rem;
+  background: var(--priColor);
+  opacity: 70%;
+  z-index: -5;
+  backdrop-filter: blur(0.5rem);
+}
+.productDivs h1 span {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0.1rem 0.1rem 0 var(--paleAccentThree);
+  font-size: 2.7rem;
+  color: var(--accent);
+}
+.productDivs h1 span:first-child {
+  margin-right: 0.5rem;
+}
+.productDivs h1 span:last-child {
+  margin-left: 0.5rem;
+}
+.productDivs h1 p {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.18rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-shadow: 0.1rem 0.1rem 0 var(--paleAccentThree);
+}
+.productDivs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 0.8rem;
+}
+.productDivs ul li {
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  width: 15rem;
+  height: 20rem;
+  color: var(--secColor);
+  background-color: var(--paleAccent);
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+.productDivs ul li img {
+  height: 10rem;
+  width: 10rem;
+}
+.productDivs ul li h4 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 1.7rem;
+  width: 100%;
+  text-shadow: 0.08rem 0.07rem 0 var(--reversePaleAccent);
+}
+.productDivs ul li p {
+  width: 100%;
+}
+.productDivs ul li .starDiv {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+}
+.productDivs ul li .starDiv svg {
+  position: relative;
+  z-index: 3;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: orange;
+}
+.productDivs ul li .discount-percentage {
+  position: absolute;
+  top: -0.7rem;
+  left: -0.7rem;
+  transform: rotate(-15deg);
+  background-color: var(--reverseAccent);
+  backdrop-filter: blur(1rem);
+  padding: 0.2rem;
+  color: var(--priColor);
+  border-radius: 4px;
+  text-shadow: none;
+  opacity: 0.9;
+}
+.productDivs ul li .discount-price {
+  font-size: 1rem;
+  text-decoration: line-through;
+  filter: grayscale(95%);
+  text-shadow: none;
+}
+.productDivs ul li:hover {
+  color: var(--secColor);
+  transform: translateY(-5px);
+  transition: 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--tpPri);
+}
 @keyframes moveUpDown {
   0% {
     transform: translateY(0);
@@ -4119,6 +4169,51 @@ select {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .productDivs {
+    width: 100%;
+  }
+  .productDivs h1 {
+    margin-inline: 1.5rem;
+    margin-block: 2rem 3rem;
+  }
+  .productDivs h1 p {
+    font-size: 1.5rem;
+    letter-spacing: -0.1rem;
+  }
+  .productDivs h1 span {
+    font-size: 1.5rem;
+  }
+  .productDivs ul {
+    padding-inline: 1rem;
+    gap: 1rem 0.5rem;
+  }
+  .productDivs#products-div-two {
+    margin-top: 0;
+  }
+  .productDivs#products-div-two h1 {
+    margin-block: 3rem;
+  }
+}
+@media (max-width: 735px) {
+  .productDivs {
+    width: 100%;
+  }
+  .productDivs h1 {
+    margin-block: 2.5rem;
+  }
+  .productDivs ul {
+    padding-inline: 0.3rem;
+    gap: 1.5rem 0.3rem;
+  }
+  .productDivs ul li {
+    width: 11rem;
+  }
+  .productDivs#products-div-two h1 {
+    margin-block: 3rem;
   }
 }
 .productAddedNotification,

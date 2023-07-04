@@ -335,6 +335,7 @@
             border-bottom-right-radius: 2rem;
             background-image: var(--bgImg);
             background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
             border: .2rem solid var(--paleAccent);
 
@@ -344,24 +345,24 @@
             padding: 1.5rem 1rem;
             cursor: pointer;
 
-            &::before{
-                content: '';
-                inset: -1rem;
-                background-color: var(--tpPri);
-                filter: blur(.8rem);
-                position: absolute;
-                z-index: 0;
-                transition: all .5s cubic-bezier(.19, 1, .22, 1);
-                // opacity: 0;
-            }
+            // &::before{
+            //     content: '';
+            //     inset: -1rem;
+            //     background-color: var(--tpPri);
+            //     filter: blur(.8rem);
+            //     position: absolute;
+            //     z-index: 0;
+            //     transition: all .5s cubic-bezier(.19, 1, .22, 1);
+            //     // opacity: 0;
+            // }
 
             h3,
             p {
                 border: .2rem solid var(--paleAccentThree);
-                padding: .5rem;
-                background: linear-gradient(to bottom, var(--tpPri),rgba(0,0,0,0),);
+                padding: .3rem;
+                background-color: var(--priColor);
                 backdrop-filter: blur(.3rem);
-                border-radius: 1rem;
+                border-radius: .5rem;
                 text-align: center;
                 pointer-events: none;
                 user-select: none;

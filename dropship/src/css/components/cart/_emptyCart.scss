@@ -6,10 +6,11 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  gap: .5rem;
 
   &::before {
     content: '';
-    inset: 10rem 25rem;
+    inset: 10vmax 25vmax;
     position: absolute;
     display: block;
     background-color: var(--accent);
@@ -25,15 +26,31 @@
 
   h2 {
     opacity: 0.85;
-    font-size: 2.25vw;
+    font-size: 2.25vmax;
     font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     text-shadow: .05rem .05rem 0 var(--tpSec);
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1rem);
+    padding: .5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--paleAccentThree);
+
+    width: 100%;
+    text-align: center;
   }
 
   p {
     opacity: 0.85;
-    font-size: 2vw;
+    font-size: 2vmax;
     text-shadow: .05rem .05rem 0 var(--tpSec);
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1rem);
+    padding: .5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--paleAccentThree);
+
+    width: 100%;
+    text-align: center;
   }
 
   .emptyCartLogo {
@@ -41,8 +58,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25rem;
+
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1rem);
+    padding: .5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--paleAccentThree);
+
     height: 25rem;
+    width: 100%;
+
     z-index: 1;
 
     svg {
@@ -59,6 +84,14 @@
           stop-color: var(--secAccent)
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1008px) {
+  .cart{
+    .emptyCartDiv{
+      width: 85%;
     }
   }
 }

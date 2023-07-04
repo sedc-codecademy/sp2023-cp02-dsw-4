@@ -15,4 +15,4 @@ import "./loginForm/_main.js";
 //// CART
 import "./cart/_cart-states.js";
 //// HOMEPAGE PRODUCTS
-import "./homePageProducts/_homePageProducts.js";
+// import "./homePageProducts/_homePageProducts.js";
