@@ -101,36 +101,6 @@ const summaryList = document.querySelector(".summaryUl")
 //         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
 //         "subcategorytitle": "Body Jewelry"
 //     }
-// }, {
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 0,
-//     "stock": 13,
-//     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
-//     "sale": 4,
-//     "amount": 2,
-//     "totalPrice": 0,
-//     "category": {
-//         "categoryid": "jewellery",
-//         "categorytitle": "Jewellery",
-//         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
-//         "subcategorytitle": "Body Jewelry"
-//     },
-// }, {
-//     "title": "Waterproof Car Cover",
-//     "price": 89.99,
-//     "shipping": 0,
-//     "stock": 13,
-//     "id": "aefa415c-832dc-4e6e-a7db-ac4c15125a742",
-//     "sale": 3,
-//     "amount": 2,
-//     "totalPrice": 0,
-//     "category": {
-//         "categoryid": "jewellery",
-//         "categorytitle": "Jewellery",
-//         "subcategoryid": "bc5e1387-12a2-47d2-9a2e-ed34fb75545a",
-//         "subcategorytitle": "Body Jewelry"
-//     },
 // }]))
 
 const cartButton = document.querySelector('#cartButton')
@@ -360,12 +330,15 @@ function calculateSummary(cartItems) {
     currentShipping = currentShipping.toFixed(2)
     currentDiscount = currentDiscount.toFixed(2)
     currentTotal = (parseFloat(discountedPrice) + parseFloat(currentShipping)).toFixed(2)
+    if (currentTotal < 0) {
+        currentTotal = Math.abs(currentTotal).toString()
+    }
     return [currentTotal, currentPrice, currentShipping, currentDiscount, discountedPrice]
 }
 
 function calculateTotalPrice(product) {
-    const discountedPrice = product.price - (product.price * product.sale / 100)
-    product.totalPrice = (product.amount * discountedPrice)
+    // const discountedPrice = product.price - (product.price * product.sale / 100)
+    product.totalPrice = (product.price * product.amount)
 }
 
 function updateDisplay(li, product, productId) {
@@ -403,6 +376,3 @@ function updateDisplay(li, product, productId) {
 function updateCart(cartItems) {
     localStorage.setItem("cart", JSON.stringify(cartItems)) // Updates local storage cart // TODO Should update db cart if use has acc
 }
-
-setProducts(document.querySelector(".list-pr"), 10, false, true, false)
-setProducts(document.querySelector(".list-pr-two"), 10, false, true, false)

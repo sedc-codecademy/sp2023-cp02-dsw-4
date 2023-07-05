@@ -99,3 +99,6 @@ async function setProducts(div, iterationCount, discount, shouldDiscount, array)
 
 setProducts(document.querySelector("#products-div-one"), 10, true, true, false)
 setProducts(document.querySelector("#products-div-two"), 15, false, true, false)
+
+setProducts(document.querySelector(".list-pr"), 10, false, true, false)
+setProducts(document.querySelector(".list-pr-two"), 10, false, true, false)

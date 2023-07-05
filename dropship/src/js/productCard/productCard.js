@@ -50,7 +50,7 @@ async function fillProduct(container, product) {
     closeButton.addEventListener('click', (e) => { // Event for closing product button
         closeElement(productTimeouts, productStates.closeTime, productStates.hideProduct, productStates.disableProduct)
     })
-    
+
 
     const imageContainer = document.createElement('div')
     imageContainer.classList.add('imageContainer')
@@ -127,8 +127,21 @@ async function fillProduct(container, product) {
     const buyNowButton = document.createElement('button')
     buyNowButton.innerHTML = `buy now`
     buyNowButton.addEventListener("click", () => {
-        console.log(product)
-        // SHOULD TAKE YOU TO CART AND ADD THE ITEM TO LOCAL STORAGE
+        if(isInCart(product.id)) return alert("Product already added to cart")
+        addToCart(product, 3)
+        closeElement(productTimeouts, productStates.closeTime, productStates.hideProduct, productStates.disableProduct)
+        if (document.querySelector(".cart").classList.contains("currentMain")) {
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }, 100)
+            openCart()
+            return
+        }
+        switchMain(document.querySelector(".cart"), "flex") /// turn on cart 
+        openCart() // should remove from here and redo switchMain()
     })
 
     liSeven.appendChild(buyNowButton)
@@ -138,7 +151,11 @@ async function fillProduct(container, product) {
 
     addToCartButton.addEventListener("click", () => {
         // SHOULD ADD ITEM TO CART LOCAL STORAGE
-        console.log(product)
+        if(isInCart(product.id)) return alert("Product already added to cart")
+        addToCart(product, 3)
+        if (document.querySelector(".cart").classList.contains("currentMain")) {
+            openCart()
+        }
     })
 
     liSeven.appendChild(addToCartButton)
@@ -167,4 +184,37 @@ async function fillProduct(container, product) {
 </div>`
     ul.appendChild(details)
     container.appendChild(ul)
+}
+
+function getRandomNumber() {
+    var randomNum = Math.floor(Math.random() * 21)
+    var formattedNum = parseFloat(randomNum + ".99")
+    return formattedNum
+}
+
+function isInCart(ID) {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == ID) {
+            return true
+        }
+    }
+    return false
+}
+
+function addToCart(product, amount) {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    let tempProduct = {
+        "title": product.title,
+        "price": product.price,
+        "shipping": getRandomNumber(),
+        "stock": product.stock,
+        "id": product.id,
+        "sale": product.sale,
+        "amount": amount || 1,
+        "category": product.category,
+        "totalPrice": 0
+    }
+    cart.push(tempProduct)
+    localStorage.setItem("cart", JSON.stringify(cart))
 }

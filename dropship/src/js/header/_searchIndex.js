@@ -7,7 +7,21 @@ const options = { // Options for fuse.js, searcing based on the value for "title
     keys: ['title']
 }
 
-const productsArray = await fetchJSON('./mock/new-products.json')
+const subCategoriesArray2 = await fetchJSON("./mock/new-sub-categories.json")
+let flattenedSubCategorie2s = flattenObjectArrays(subCategoriesArray2)
+
+function getImage(subId) {
+    let path = ''
+    for (let i = 0; i < flattenedSubCategorie2s.length; i++) {
+        if (flattenedSubCategorie2s[i].id === subId) {
+            path = flattenedSubCategorie2s[i].image.slice(1)
+        }
+    }
+    console.log(path)
+    return path
+}
+
+const productsArray = await fetchJSON('./mock/products.json')
 
 const flattenedProducts = flattenObjectArrays(productsArray)
 
@@ -64,7 +78,8 @@ function suggestions(arr) {  // Filling suggestions function
         let li = document.createElement("li")
         li.setAttribute("tabindex", 0)
         if (i < 6) {
-            li.innerHTML = `<div> <img src=""></img><p>${arr[i].item.title}</p></div>  <div><h6>${arr[i].item.subCategoryTitle}</h6><div class="divider"></div><h5>${arr[i].item.categoryTitle}</h5></div>`
+            console.log(arr[i].item)
+            li.innerHTML = `<div> <img src="${getImage(arr[i].item.category.subcategoryid)}"></img><p>${arr[i].item.title}</p></div>  <div><h6>${arr[i].item.category.subcategorytitle}</h6><div class="divider"></div><h5>${arr[i].item.category.categorytitle}</h5></div>`
             suggestionsUl.appendChild(li)
             li.addEventListener("click", () => {
                 console.log(`Result ${arr[i].item.title} has been clicked`)

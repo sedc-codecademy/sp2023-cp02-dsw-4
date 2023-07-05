@@ -57,31 +57,38 @@ function toReview() {
 
 toCheckoutBtn.addEventListener("click", () => toCheckout())
 
-stageOneBtn.addEventListener("click", () => {
+stageOneBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     toCheckout()
 })
 
-toPaymentBtn.addEventListener("click", () => {
+toPaymentBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     toPayment()
 })
 
-stageTwoBtn.addEventListener("click", () => {
+stageTwoBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     toPayment()
 })
 
-toReviewBtn.addEventListener("click", () => {
+toReviewBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     toReview()
 })
 
-stageThreeBtn.addEventListener("click", () => {
+stageThreeBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     toReview()
 })
 
-backToCartBtn.addEventListener("click", () => {
+backToCartBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     backToCart()
 })
 
-purchaseBtn.addEventListener("click", () => {
+purchaseBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     confirmationBox.showModal()
 })
 

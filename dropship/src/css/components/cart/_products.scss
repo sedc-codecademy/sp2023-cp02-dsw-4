@@ -141,8 +141,7 @@
                         background: linear-gradient(45deg, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
                         opacity: 0;
                         position: absolute;
-                        transition: scale .8s cubic-bezier(.19, 1, .22, 1), opacity .3s linear, background-color .5s cubic-bezier(.0, 0.5, .5, 1);
-                        transform-origin: center;
+                        transition: all .5s cubic-bezier(.19, 1, .22, 1);
                         scale: 0;
                         z-index: -1;
                     }
@@ -155,9 +154,6 @@
                     }
 
                     &:hover {
-                        span {
-                            color: var(--priColor);
-                        }
 
                         &::before {
                             scale: 1;
@@ -166,10 +162,10 @@
                     }
 
                     &:active {
-                        scale: 1.1;
 
                         &::before {
-                            background-color: transparent;
+                            scale: 1;
+                            opacity: 0;
                         }
 
                         span {
