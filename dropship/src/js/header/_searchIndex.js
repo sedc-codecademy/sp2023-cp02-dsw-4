@@ -83,10 +83,14 @@ function suggestions(arr) {  // Filling suggestions function
             suggestionsUl.appendChild(li)
             li.addEventListener("click", () => {
                 console.log(`Result ${arr[i].item.title} has been clicked`)
+                showElement(productTimeouts, productStates.openTime, productStates.showProduct, productStates.enableProduct)
+                fillProduct(currentProdCard, arr[i].item)
             })
             li.addEventListener("keydown", (e) => {
                 if (e.key === 'Enter') {
                     console.log(`Result ${arr[i].item.title} has been clicked`)
+                    showElement(productTimeouts, productStates.openTime, productStates.showProduct, productStates.enableProduct)
+                    fillProduct(currentProdCard, arr[i].item)
                 }
             })
             suggestionsAnimate('increase')

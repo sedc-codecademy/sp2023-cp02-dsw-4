@@ -4442,7 +4442,6 @@ select {
 .currentProductCard::backdrop {
   backdrop-filter: blur(1rem);
   background-color: var(--backdropBackground);
-  display: none !important;
 }
 .currentProductCard ul {
   display: flex;

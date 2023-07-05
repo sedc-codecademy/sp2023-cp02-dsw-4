@@ -26,10 +26,6 @@ const productStates = {
     }
 }
 
-// closeProductBtn.addEventListener('click', (e) => { // Event for closing product button
-//     closeElement(productTimeouts, productStates.closeTime, productStates.hideProduct, productStates.disableProduct)
-// })
-
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeElement(productTimeouts, productStates.closeTime, productStates.hideProduct, productStates.disableProduct)
 })
@@ -193,7 +189,7 @@ function getRandomNumber() {
 }
 
 function isInCart(ID) {
-    let cart = JSON.parse(localStorage.getItem("cart"))
+    let cart = JSON.parse(localStorage.getItem("cart") || '[]')
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].id == ID) {
             return true
@@ -203,7 +199,7 @@ function isInCart(ID) {
 }
 
 function addToCart(product, amount) {
-    let cart = JSON.parse(localStorage.getItem("cart"))
+    let cart = JSON.parse(localStorage.getItem("cart") || '[]')
     let tempProduct = {
         "title": product.title,
         "price": product.price,
