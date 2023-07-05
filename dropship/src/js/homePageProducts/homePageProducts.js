@@ -39,11 +39,15 @@ async function setProducts(div, iterationCount, discount, shouldDiscount, array)
       // SHOULD CALL switchMain() when these event listeners are clicked *** IGNORE FOR NOW
       console.log(element.id, e)
       console.log(element.rating.rate)
+      showElement(productTimeouts, productStates.openTime, productStates.showProduct, productStates.enableProduct)
+      fillProduct(currentProdCard, element)
     })
     li.addEventListener("keydown", (e) => {
       // SHOULD CALL switchMain() when these event listeners are clicked *** IGNORE FOR NOW
       if (e.key === 'Enter') {
         console.log(element.id, e)
+        showElement(productTimeouts, productStates.openTime, productStates.showProduct, productStates.enableProduct)
+      fillProduct(currentProdCard, element)
       }
     })
 

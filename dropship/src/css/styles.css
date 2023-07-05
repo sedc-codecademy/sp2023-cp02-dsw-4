@@ -2685,13 +2685,6 @@ select {
   top: 5rem;
 }
 
-.on {
-  opacity: 1;
-  top: 5rem;
-  visibility: visible;
-  transition: visibility 100ms all ease-in-out;
-}
-
 @media (max-width: 1440px) {
   .loginDropdown {
     width: 45rem;
@@ -4121,6 +4114,7 @@ select {
   width: 100%;
 }
 .productDivs ul li .starDiv {
+  pointer-events: none;
   display: flex;
   width: 100%;
   align-items: center;
@@ -4376,4 +4370,251 @@ select {
 }
 .themeSelector ul li.selectedThemeMode button span {
   color: var(--priColor);
+}
+
+.currentProductCard {
+  margin: auto;
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  backdrop-filter: blur(5rem);
+  background-color: var(--tpPri);
+  border: 0.15rem solid var(--paleAccentThree);
+  border-radius: 1rem;
+  box-shadow: 0 0.15rem 1rem rgba(0, 0, 0, 0.42);
+  transition: 400ms all ease-in-out;
+  transform: translateY(-100vh);
+  z-index: 15;
+}
+.currentProductCard .closeProductButton {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 0;
+  background-color: var(--paleAccentTwo);
+  border-left: 0.2rem solid var(--priColor);
+  border-bottom: 0.2rem solid var(--priColor);
+  border-bottom-left-radius: 0.5rem;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.currentProductCard .closeProductButton svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--priColor);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.currentProductCard .closeProductButton:focus-visible {
+  background-color: var(--priColor);
+  border-color: var(--paleAccentThree);
+}
+.currentProductCard .closeProductButton:focus-visible svg {
+  fill: var(--accent);
+}
+.currentProductCard .closeProductButton:hover {
+  background-color: var(--priColor);
+  border-color: var(--paleAccentThree);
+}
+.currentProductCard .closeProductButton:hover svg {
+  fill: var(--accent);
+}
+.currentProductCard .closeProductButton:active svg {
+  fill: var(--paleAccentThree);
+}
+.currentProductCard .imageContainer {
+  backdrop-filter: blur(0.3rem);
+  background-color: var(--tpPri);
+  border: 0.15rem solid var(--paleAccentThree);
+  border-radius: inherit;
+  max-width: 600px;
+  max-height: 600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.currentProductCard .imageContainer img {
+  max-width: 600px;
+  max-height: 600px;
+  padding: 0.5rem;
+}
+.currentProductCard::backdrop {
+  backdrop-filter: blur(1rem);
+  background-color: var(--backdropBackground);
+  display: none !important;
+}
+.currentProductCard ul {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  color: var(--secColor);
+}
+.currentProductCard ul details {
+  border: 0.15rem solid var(--paleAccentThree);
+  background-color: var(--tpPri);
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+}
+.currentProductCard ul details summary {
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin: 0;
+}
+.currentProductCard ul details[open] summary {
+  border-bottom: 0.15rem solid var(--paleAccentThree);
+}
+.currentProductCard ul details div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.15rem solid var(--paleAccentThree);
+  padding: 0.3rem;
+}
+.currentProductCard ul details div:last-child {
+  border-bottom: none;
+}
+.currentProductCard ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.5rem;
+  backdrop-filter: blur(0.3rem);
+  background-color: var(--tpPri);
+  border: 0.15rem solid var(--paleAccentThree);
+  border-top: none;
+}
+.currentProductCard ul li.starsProductContainer {
+  pointer-events: none;
+}
+.currentProductCard ul li.starsProductContainer .starDiv {
+  display: flex;
+  align-items: center;
+}
+.currentProductCard ul li.starsProductContainer .starDiv svg {
+  position: relative;
+  z-index: 3;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: orange;
+}
+.currentProductCard ul li.singleProductTitle {
+  border-top: 0.15rem solid var(--paleAccentThree);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 1rem;
+}
+.currentProductCard ul li.singleProductTitle p {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+}
+.currentProductCard ul li.totalProductAmount {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.currentProductCard ul li.totalProductAmount p {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.currentProductCard ul li.totalProductAmount h2 {
+  font-size: 1.9rem;
+}
+.currentProductCard ul li.buyerProcContainer {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  border: 0.15rem solid var(--paleAccentThree);
+  border-radius: 1rem;
+  margin-block: 0.5rem;
+  padding-bottom: 1rem;
+  background: linear-gradient(45deg, var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+}
+.currentProductCard ul li.buyerProcContainer a {
+  color: var(--accent);
+}
+.currentProductCard ul li.buyerProcContainer h4 {
+  display: flex;
+  align-items: center;
+}
+.currentProductCard ul li.buyerProcContainer h4.buyerproc span {
+  pointer-events: none;
+  color: var(--accent);
+  margin-left: -0.2rem;
+}
+.currentProductCard ul li.productButtonsContainer {
+  background: none;
+  padding: 0;
+  border: none;
+  gap: 0.2rem;
+  height: 3.5rem;
+}
+.currentProductCard ul li.productButtonsContainer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--priColor);
+  height: inherit;
+  position: relative;
+  align-items: center;
+  font-size: large;
+  font-family: "JetBrains Mono", monospace;
+  touch-action: manipulation;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--paleAccentThree);
+}
+.currentProductCard ul li.productButtonsContainer button:first-child {
+  width: 100%;
+}
+.currentProductCard ul li.productButtonsContainer button:last-child {
+  width: 30%;
+}
+.currentProductCard ul li.productButtonsContainer button:last-child span {
+  color: var(--priColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.currentProductCard ul li.productButtonsContainer button:last-child::before {
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
+}
+.currentProductCard ul li.productButtonsContainer button::before {
+  content: "";
+  inset: -1rem;
+  position: absolute;
+  filter: blur(0.5vmax);
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+  z-index: -1;
+}
+.currentProductCard ul li.productButtonsContainer button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.currentProductCard ul li.productButtonsContainer button:focus-visible span {
+  color: var(--accent);
+}
+.currentProductCard ul li.productButtonsContainer button:hover {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.currentProductCard ul li.productButtonsContainer button:hover span {
+  color: var(--accent);
+}
+.currentProductCard ul li.productButtonsContainer button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
+.currentProductCard ul li.productButtonsContainer button:active span {
+  color: var(--secColor);
+}
+
+.currentProductCard[open] {
+  transform: translateY(0);
 }/*# sourceMappingURL=styles.css.map */

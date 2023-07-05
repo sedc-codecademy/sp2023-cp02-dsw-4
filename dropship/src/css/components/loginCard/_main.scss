@@ -272,13 +272,6 @@
     top: 5rem;
 }
 
-.on {
-    opacity: 1;
-    top: 5rem;
-    visibility: visible;
-    transition: visibility 100ms all ease-in-out;
-}
-
 @media (max-width: 1440px) {
     .loginDropdown {
         width: 45rem;
