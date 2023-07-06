@@ -47,7 +47,6 @@ async function fillProduct(container, product) {
         closeElement(productTimeouts, productStates.closeTime, productStates.hideProduct, productStates.disableProduct)
     })
 
-
     const imageContainer = document.createElement('div')
     imageContainer.classList.add('imageContainer')
     const img = document.createElement('img')
@@ -99,11 +98,25 @@ async function fillProduct(container, product) {
 
     ul.appendChild(liFour)
 
+    const liFourTwo = document.createElement('li')
+    liFourTwo.classList.add("productDiscount")
+    liFourTwo.id = `productDiscount-${product.id}`
+    if (product.sale) {
+        liFourTwo.innerHTML = `<p>Discount</p>
+        <h3></h3>`
+        ul.appendChild(liFourTwo)
+    } 
+
     const liFive = document.createElement('li')
     liFive.classList.add("totalProductAmount")
     liFive.id = `totalCost-${product.id}`
-    liFive.innerHTML = `<p>Total</p> <div><h4>-${product.sale}%</h4><h2>${(product.price - product.price * (product.sale / 100).toFixed(2)).toFixed(2)}</h2></div>
-    `
+    if (product.sale) {
+        liFive.innerHTML = `<p>Total</p> <h2>${(product.price - product.price * (product.sale / 100).toFixed(2)).toFixed(2)}</h2>
+        `
+    } else{
+        liFive.innerHTML = `<p>Total</p> <div><h2>${(product.price).toFixed(2)}</h2></div>
+        `
+    }
 
     ul.appendChild(liFive)
 
@@ -273,6 +286,7 @@ function updateDisplayTwo(product, li, amountNumber) {
 
     document.querySelector(`#baseCost-${product.id}`).querySelector("h3").textContent = `$${(product.price * amountNumber.textContent).toFixed(2)}`
     document.querySelector(`#totalCost-${product.id}`).querySelector("h2").textContent = `$${((product.price - product.price * (product.sale / 100) + Number(li.querySelector('h3').textContent.slice(1))) * amountNumber.textContent).toFixed(2)}`
+    document.querySelector(`#productDiscount-${product.id}`).querySelector("h3").textContent = `-$${(((product.price * product.sale) / 100) * amountNumber.textContent).toFixed(2)}`
 }
 
 function isInCart(ID) {

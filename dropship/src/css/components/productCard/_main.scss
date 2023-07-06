@@ -187,12 +187,6 @@
           font-weight: 600;
         }
 
-        div {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
         h2 {
           font-size: 1.9rem;
         }
@@ -242,8 +236,8 @@
           background-color: var(--paleAccentThree);
           border: .2rem solid var(--paleAccentThree);
           border-radius: .5rem;
-          // width: 2rem;
-          padding: .3rem;
+          width: 2rem;
+          padding-block: .05rem;
           text-align: center;
         }
 

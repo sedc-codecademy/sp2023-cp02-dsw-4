@@ -5,7 +5,7 @@
         li {
             margin: .2rem;
             border-radius: 0.5rem;
-            border: .15rem solid var(--reversePaleAccent);
+            border: .15rem solid var(--paleAccentThree);
             overflow: hidden;
 
             button {
@@ -27,24 +27,24 @@
 
                 &:hover {
                     background-color: var(--priColor);
-                    color: var(--reverseAccent);
+                    color: var(--accent);
 
                     span {
-                        color: var(--reverseAccent);
+                        color: var(--accent);
                     }
                 }
 
                 &:focus-visible {
                     background-color: var(--priColor);
-                    color: var(--reverseAccent);
+                    color: var(--accent);
 
                     span {
-                        color: var(--reverseAccent);
+                        color: var(--accent);
                     }
                 }
 
                 &:active {
-                    border-color: var(--reverseAccent);
+                    border-color: var(--accent);
                     color: var(--secColor);
 
                     span {
@@ -55,7 +55,7 @@
 
             &.selectedThemeMode {
                 pointer-events: none;
-                background: linear-gradient(45deg, var(--reverseAccent) 0%, var(--reverseSecAccent) 100%);
+                background: linear-gradient(45deg, var(--accent) 0%, var(--reverseSecAccent) 100%);
                 border: none;
 
                 button {

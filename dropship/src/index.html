@@ -24,6 +24,7 @@
 
 <body>
     <header>
+        <div class="scrollDiv"></div>
         <div class="headerBackgroundImage">
             <svg class="leftBkg" width="2196" height="986" viewBox="0 0 2196 986">
                 <linearGradient id="headerBkgLinearLeft" x1="0" x2="1" y1="0" y2="0">
@@ -919,33 +920,29 @@
         </div>
     </main>
     <main class="mainMain productsMain">
+        <h1 id="selectedCategory"></h1>
         <div class="categoriesPageContainer">
-            <h1 id="selectedCategory">Category: </h1>
-            <div class="filtersAndCategories">
-                <button id="filterBtn">Filters</button>
-                <div class="scrollableSubCats">
-                    <button class="scrollCatButtons" id="leftSubScrollButton">
-                        <span class="material-symbols-outlined">chevron_left</span>
-                    </button>
-                    <div class="subCatsScrollUL"></div>
-                    <button class="scrollCatButtons" id="rightSubScrollButton">
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </button>
-                </div>
-                <button id="sortBtn" for="sortingSection">Sort By:</button>
+            <div class="scrollableSubCats">
+                <button class="scrollCatButtons" id="leftSubScrollButton">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <div class="subCatsScrollUL"></div>
+                <button class="scrollCatButtons" id="rightSubScrollButton">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
             </div>
-            <div id="subCategories"></div>
-            <div class="divider"></div>
+            <div class="buttonsContainer">
+                <button id="filterBtn">Filters</button>
+                <div class="divider"></div>
+                <button id="sortBtn" for="sortingSection">Sort</button>
+            </div>
             <div class="mainContentContainer">
-                
-                    <div class="filters" id="filters">
-                    
-                        <div class="slidecontainer">
-                            <input type="range" min="1" class="slider" id="myRange">
-                            <div>Price: <span id="demo"></span></div>
-                        </div>
-                        <br />
-                        <!-- New -->
+                <div class="filters" id="filters">
+                    <div class="slidecontainer">
+                        <div>Price: <span id="demo"></span></div>
+                        <input type="range" min="1" class="slider" id="myRange">
+                    </div>
+                    <div class="selectDiv">
                         <label for="size">Size:</label>
                         <select name="size" id="size">
                             <option value="all">All Sizes</option>
@@ -953,7 +950,9 @@
                             <option value="Medium">M</option>
                             <option value="Large">L</option>
                         </select>
-                        <br />
+                    </div>
+
+                    <div class="selectDiv">
                         <label for="region">Region:</label>
                         <select name="region" id="region">
                             <option value="all">All Regions</option>
@@ -964,16 +963,19 @@
                             <option value="Africa">Africa</option>
                             <option value="Oceania">Oceania</option>
                         </select>
-                        <br />
-                        <button id="applyFilters">Apply Filters</button>
                     </div>
-              
-                
+                    <div class="buttonDiv">
+                        <button id="applyFilters">Apply</button>
+                        <div class="divider"></div>
+                        <button id="resetFilters">Reset</button>
+                    </div>
+                </div>
+
                 <div class="productDivs" id="products"></div>
-                <div name="sortingSection" id="sortingSection">
-                    <a href="#" value="highest-rating" id="highest-rating">Highest Rating</a>
-                    <a href="#" value="highest-price" id="highest-price">Highest Price</a>
-                    <a href="#" value="lowest-price" id="lowest-price">Lowest Price</a>
+                <div class="sortingDiv" id="sortingSection">
+                    <a href="#" value="highest-rating" class="sortOption" id="highest-rating">Highest Rating</a>
+                    <a href="#" value="highest-price" class="sortOption" id="highest-price">Highest Price</a>
+                    <a href="#" value="lowest-price" class="sortOption" id="lowest-price">Lowest Price</a>
                 </div>
             </div>
         </div>

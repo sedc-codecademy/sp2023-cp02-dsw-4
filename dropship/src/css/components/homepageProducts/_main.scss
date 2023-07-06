@@ -182,12 +182,10 @@
         transform: rotate(-15deg);
 
         background-color: var(--reverseAccent);
-        // border: 0.2rem solid var(--paleAccentThree);
         backdrop-filter: blur(1rem);
         padding: .2rem;
         color: var(--priColor);
         border-radius: 4px;
-        // padding: 2px;
         text-shadow: none;
         opacity: .9;
       }
@@ -205,6 +203,19 @@
         transition: 0.3s;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         background-color: var(--tpPri);
+      }
+
+      &:focus-visible {
+        color: var(--secColor);
+        transform: translateY(-5px);
+        transition: 0.3s;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: var(--tpPri);
+      }
+
+      &:active {
+        background-color: var(--paleAccentThree);
+        color: var(--secColor);
       }
     }
   }

@@ -1,4 +1,3 @@
-console.log("Test test")
 const selectedCategory = document.getElementById("selectedCategory")
 const subCategoriesDiv = document.getElementById("subCategories");
 const productsDiv = document.getElementById("products");
@@ -7,14 +6,13 @@ const singleProductDiv = document.getElementById("singleProduct");
 const filterBtn = document.getElementById("filterBtn");
 const filters = document.getElementById("filters");
 
-filters.style.display = "none"
-
 const sortBtn = document.getElementById("sortBtn");
 const sortingSection = document.getElementById("sortingSection")
-sortingSection.style.display = "none"
 const highestRatingBtn = document.getElementById("highest-rating");
 const highestPriceBtn = document.getElementById("highest-price");
 const lowestPriceBtn = document.getElementById("lowest-price");
+
+const sortOptions = document.querySelectorAll(".sortOption")
 
 // Left and Right buttons
 const leftScrollSubButton = document.querySelector('#leftSubScrollButton')
@@ -50,61 +48,6 @@ async function setSubCatsTwoCtTab(ID, element) {
 
 function printProducts(arrayOfProducts, elemetToPrint) {
     elemetToPrint.innerHTML = "";
-    // arrayOfProducts.forEach(product => {
-    //     // let a = document.createElement("a");
-    //     // a.style.color = 'green'
-    //     // a.addEventListener("click", () => {
-    //     //     console.log(product.id)
-    //     //     printProduct(product, singleProductDiv)
-    //     // })
-
-    //     // a.innerHTML += `
-    //     //     <h3>${product.title}</h3>
-    //     //     <p>${product.description}</p>
-    //     //     <p>Price: ${product.price}$</p>
-    //     //     <p>Rating: ${product.rating.rate}</p>
-    //     //     `
-
-    //     let section = document.createElement("section")
-    //     let img = document.createElement("img")
-    //     img.setAttribute("src", getRandomImgPath(imgPaths).slice(1))
-
-    //     let a = document.createElement("a")
-    //     a.innerHTML = `${product.title}`
-    //     a.setAttribute("href", "javascript:void(0)")
-    //     a.addEventListener("click", (e) => {
-    //         // Product clicked
-    //         console.log(product.id)
-    //         printProduct(product, singleProductDiv)
-    //     })
-
-    //     let h4 = document.createElement("h4")
-    //     let h4discount = document.createElement("h4")
-
-    //     if (product.sale) {
-    //         // If the product has a sale, calculate the discounted price and display the discount percentage
-    //         let discountPercentage = product.sale
-    //         let discountedPrice = (
-    //             product.price -
-    //             product.price * (discountPercentage / 100)
-    //         ).toFixed(2)
-    //         let originalPrice = product.price
-
-    //         h4discount.innerHTML = `$${originalPrice}`
-    //         h4.innerHTML = `$${discountedPrice}`
-    //         h4discount.classList.add("discount-price")
-    //     } else {
-    //         // If the product does not have a sale, display the original price without any discount information
-    //         h4.innerHTML = `$${product.price}`
-    //     }
-
-    //     section.appendChild(img)
-    //     section.appendChild(a)
-    //     section.appendChild(h4discount)
-    //     section.appendChild(h4)
-
-    //     elemetToPrint.appendChild(section)
-    // })
     setProductsTwo(elemetToPrint, arrayOfProducts.length, false, true, arrayOfProducts)
 }
 
@@ -240,14 +183,14 @@ async function printResults(element, ID) { //// NEEDS ID PARAM DOESNT NEED SUBCA
     const flattenedProducts = flattenObjectArrays(products)
     const flattenedSubCategories = flattenObjectArrays(subCategoriesArray)
 
-    element.innerHTML = "";
+    // element.innerHTML = "";
     selectedCategory.innerHTML = "";
     let tempCats = []
     displayedProducts = []
 
     for (let i = 0; i < categories.length; i++) {
         if (categories[i].id === ID) {
-            selectedCategory.innerHTML = `Category: ${categories[i].title}`
+            selectedCategory.innerHTML = `${categories[i].title}`
             for (let j = 0; j < flattenedSubCategories.length; j++) {
                 if (categories[i].sub.includes(flattenedSubCategories[j].id)) {
                     tempCats.push(flattenedSubCategories[j])
@@ -360,18 +303,14 @@ let filterHelper = {
     region: null
 }
 
-console.log(filterHelper)
-
 filterBtn.addEventListener("click", () => {
-    if (filters.style.display == "block") {
+    if (filters.style.display == "flex") {
         filters.style.display = "none"
     } else {
-        filters.style.display = "block"
+        filters.style.display = "flex"
     }
     const prices = displayedProducts.map(o => o.price)
-    console.log(prices)
     let maxValue = Math.max(...prices)
-    console.log(maxValue);
     slider.setAttribute("max", maxValue.toString())
 })
 
@@ -380,7 +319,6 @@ var output = document.getElementById("demo");
 let size = document.getElementById("size")
 let applyFiltersBtn = document.getElementById("applyFilters")
 let origin = document.getElementById("region")
-console.log(displayedProducts)
 
 
 output.innerHTML = slider.value; // Display the default slider value
@@ -510,10 +448,10 @@ applyFiltersBtn.addEventListener("click", () => {
 
 // SORTING
 sortBtn.addEventListener("click", () => {
-    if (sortingSection.style.display == "block") {
+    if (sortingSection.style.display == "flex") {
         sortingSection.style.display = "none"
     } else {
-        sortingSection.style.display = "block"
+        sortingSection.style.display = "flex"
     }
 })
 
@@ -534,6 +472,8 @@ function sortByLowestPrice() {
 
     printProducts(lowestPriceSort, productsDiv);
 }
+
+
 
 function sortByHighestPrice() { // Should check fitlered first
 
@@ -571,17 +511,28 @@ function sortByHighestRating() {
     printProducts(highestRatingSort, productsDiv);
 }
 
+function changeSortState(sort){
+    for (let i = 0; i < sortOptions.length; i++) {
+        if (sort !== sortOptions[i]) {
+            if (sortOptions[i].classList.contains("currentOption")) {
+                sortOptions[i].classList.remove("currentOption")
+            }
+        } else {
+            sort.classList.add("currentOption")
+        }
+    }
+}
+
 lowestPriceBtn.addEventListener("click", () => {
-    sortByLowestPrice();
+    sortByLowestPrice();changeSortState(lowestPriceBtn)
 })
 
 highestPriceBtn.addEventListener("click", () => {
     sortByHighestPrice();
+    changeSortState(highestPriceBtn)
 })
 
 highestRatingBtn.addEventListener("click", () => {
     sortByHighestRating();
+    changeSortState(highestRatingBtn)
 })
-
-switchMain(document.querySelector('.productsMain'), "block")
-printResults(subCategoriesDiv, "technology")

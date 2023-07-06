@@ -14,7 +14,7 @@
   --paleAccentTwo: rgba(255, 0, 123, 0.67);
   --paleAccentThree: rgba(227, 172, 199, 0.765);
   --someColor: #bc494976;
-  --additionallAccent: rgb(0, 255, 119);
+  --additionallAccent: rgb(243, 243, 243);
   --reverseAccent: #28b0ff;
   --reverseSecAccent: #0099ff;
   --reversePaleAccent: #0099ff5b;
@@ -40,7 +40,7 @@
   --secAccent: #0099ff;
   --accent: #00eaff;
   --tertAccent: #e71db1;
-  --additionallAccent: rgb(255, 187, 0);
+  --additionallAccent: rgba(0, 0, 0, 0.475);
   --priColor: rgb(0, 0, 0);
   --paleAccent: #00eaff13;
   --paleAccentTwo: #00eaffc8;
@@ -129,6 +129,18 @@ header {
   align-items: center;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+header .scrollDiv {
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(1.5rem);
+  height: 0;
+  width: 100%;
+  z-index: -155;
+  border-bottom: 0.2rem solid var(--paleAccentThree);
+  opacity: 0;
+  transition: all 300ms ease-out;
+  transition: background 400ms ease-in-out;
+}
 header .headerGradient {
   position: absolute;
   top: 0;
@@ -139,6 +151,43 @@ header .headerGradient {
 header.smallHeader .search-form {
   margin-block: 1.1vmax 0;
   width: 35%;
+}
+header.scrollHeader .scrollDiv {
+  z-index: 3;
+  opacity: 1;
+  height: 4.5rem;
+  background-color: var(--additionallAccent);
+}
+header.scrollHeader .logo {
+  top: -0.2vmax;
+  left: -0.9vmax;
+}
+header.scrollHeader .logo svg.standardLogo {
+  width: 6rem;
+  height: 5rem;
+  fill: var(--accent);
+}
+header.scrollHeader nav {
+  top: 0.7rem;
+  border: none;
+  background: none;
+  overflow: unset;
+  backdrop-filter: none;
+}
+header.scrollHeader nav .themeSelector {
+  top: 0.6rem;
+  backdrop-filter: blur(1rem);
+  background-color: var(--tpPri);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+header.scrollHeader nav .themeSelector.alertOn {
+  border: 0.2rem solid var(--paleAccentThree);
+  border-top: none;
+}
+header.scrollHeader nav .navigationLists li ::before {
+  inset: 0.3rem;
+  filter: blur(1.5rem);
 }
 
 .headerBackgroundImage {
@@ -208,12 +257,13 @@ header.smallHeader .search-form {
   align-items: center;
   justify-content: center;
   z-index: 3;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 300ms ease-in-out;
 }
 .logo svg {
   width: 100%;
   height: 100%;
   z-index: 1;
+  transition: all 300ms ease-in-out;
 }
 .logo svg.mobileLogo {
   display: none;
@@ -290,7 +340,7 @@ header.smallHeader .search-form {
     width: 50%;
   }
   header.smallHeader .search-form {
-    margin-top: 10%;
+    margin-top: 8%;
   }
 }
 @media (max-width: 1000px) {
@@ -324,6 +374,19 @@ header.smallHeader .search-form {
   }
 }
 @media (max-width: 1000px) {
+  header.scrollHeader .scrollDiv {
+    height: 3.7rem;
+  }
+  header.scrollHeader .logo {
+    top: 0.5rem;
+    left: 0.4rem;
+  }
+  header.scrollHeader nav {
+    top: 0.7rem;
+  }
+  header.scrollHeader nav .themeSelector {
+    top: 0.8rem;
+  }
   header .search-form {
     margin-block: 25% 20%;
     width: 90%;
@@ -336,7 +399,43 @@ header.smallHeader .search-form {
   }
   header.smallHeader .search-form {
     width: 85%;
-    margin-block: 20% 0%;
+    margin-block: 10% 0%;
+    height: 2.5rem;
+  }
+  header.smallHeader .search-form .search-bar-container {
+    border-radius: 1rem;
+  }
+  header.smallHeader .search-form .search-suggestions {
+    transform: translateY(2.8rem);
+  }
+  header.smallHeader .ctDropDownOn {
+    transform: translateY(2.35rem);
+  }
+}
+@media (max-width: 768px) {
+  header.scrollHeader .scrollDiv {
+    height: 3.5rem;
+  }
+  header.scrollHeader .logo {
+    top: 0.4rem;
+    left: 0.3rem;
+  }
+  header.scrollHeader .logo svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  header.scrollHeader nav {
+    top: 0.65rem;
+  }
+  header.scrollHeader nav .themeSelector {
+    top: 0.65rem;
+  }
+  header .search-form {
+    margin-block: 25% 20%;
+  }
+  header.smallHeader .search-form {
+    width: 85%;
+    margin-block: 15% 5%;
     height: 2.5rem;
   }
   header.smallHeader .search-form .search-bar-container {
@@ -942,12 +1041,13 @@ nav {
   user-select: none;
   background-color: var(--tpPri);
   backdrop-filter: blur(1vmax);
-  border: 0.2rem solid var(--reversePaleAccentTwo);
+  border: 0.2rem solid var(--paleAccentThree);
   border-radius: 1rem;
   overflow: hidden;
   z-index: 10;
   display: flex;
   flex-direction: column;
+  transition: all 300ms ease;
 }
 nav section {
   position: relative;
@@ -970,7 +1070,7 @@ nav .navigationLists .divider {
   margin-inline: 0.5rem;
   align-self: center;
   height: 95%;
-  background: linear-gradient(to bottom, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
+  background: linear-gradient(to bottom, var(--secAccent) 0%, var(--accent) 50%, var(--secAccent) 100%);
 }
 nav .navigationLists li {
   position: relative;
@@ -980,14 +1080,6 @@ nav .navigationLists li {
 nav .navigationLists li .material-symbols-outlined {
   font-size: 1.7rem;
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-}
-nav .navigationLists li ::before {
-  content: "";
-  inset: 0;
-  position: absolute;
-  filter: blur(2rem);
-  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: -1;
 }
 nav .navigationLists li button {
   display: flex;
@@ -1010,17 +1102,23 @@ nav .navigationLists li button:active span.material-symbols-outlined {
   color: var(--tertAccent);
 }
 nav .navigationLists li button:focus-visible {
-  color: var(--reverseAccent);
+  color: var(--accent);
 }
 nav .navigationLists li button:focus-visible .material-symbols-outlined,
 nav .navigationLists li button:focus-visible p {
-  color: var(--reverseAccent);
+  color: var(--accent);
 }
 nav .navigationLists li button:focus-visible ::before {
-  background-color: var(--reverseAccent);
+  background-color: var(--accent);
+}
+nav .navigationLists li:hover button {
+  color: var(--accent);
+}
+nav .navigationLists li:hover span {
+  color: var(--accent);
 }
 nav .navigationLists li:hover ::before {
-  background-color: var(--reverseAccent);
+  background-color: var(--accent);
 }
 
 @media (max-width: 1000px) {
@@ -2000,7 +2098,7 @@ main.mainMain {
   scale: 0;
 }
 main.productsMain {
-  scale: 1;
+  scale: 0;
 }
 main.currentMain {
   scale: 1;
@@ -2406,65 +2504,20 @@ main.currentMain {
     order: 2;
   }
 }
-.categories-section {
-  border: 1px solid #ccc;
-  padding: 20px;
-}
-
-.filters {
-  margin-bottom: 20px;
-}
-
-label {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-right: 10px;
-}
-
-.category-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.category-item {
-  display: inline-block;
-  margin-right: 10px;
-  background-color: #f7f7f7;
-  padding: 10px;
-  border-radius: 3px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.category-item a {
-  color: #333;
-  text-decoration: none;
-}
-
 .productsMain {
   display: none;
-}
-
-.categoriesPageContainer {
-  width: 85%;
-  margin-inline: auto;
   margin-top: 3%;
+  margin-bottom: 5%;
 }
-.categoriesPageContainer #selectedCategory {
+.productsMain #selectedCategory {
   position: relative;
   text-align: center;
   margin-inline: auto;
   margin-bottom: 0.5%;
   padding: 0.7rem;
+  width: 85%;
   border: 0.25rem solid var(--paleAccentThree);
   backdrop-filter: blur(0.5rem);
-  overflow: hidden;
   border-top-left-radius: 2rem;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -2472,85 +2525,91 @@ select {
   letter-spacing: -0.05rem;
   font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
+  background: var(--tpPri);
 }
-.categoriesPageContainer #selectedCategory::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--priColor);
-  opacity: 70%;
-  z-index: -5;
-}
-.categoriesPageContainer .filtersAndCategories {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.productsMain .categoriesPageContainer {
+  width: 85%;
   margin-inline: auto;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  padding: 1rem;
   border: 0.25rem solid var(--paleAccentThree);
   border-radius: 1rem;
   backdrop-filter: blur(0.5rem);
-  overflow: hidden;
-  border-bottom: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-top: 2rem;
+  background: var(--tpPri);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.categoriesPageContainer .filtersAndCategories::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--priColor);
-  opacity: 70%;
-  z-index: -5;
+.productsMain .categoriesPageContainer .buttonsContainer {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
 }
-.categoriesPageContainer .scrollableSubCats {
-  height: 12vmax;
-  width: 80%;
+.productsMain .categoriesPageContainer .buttonsContainer .divider {
+  width: 100%;
+  height: 0.2rem;
+  background-color: red;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+}
+.productsMain .categoriesPageContainer .buttonsContainer button {
+  background: var(--paleAccent);
+  border-radius: 0.7rem;
+  border: 0.25rem solid var(--paleAccentThree);
+  font-size: 1.1rem;
+  color: var(--secColor);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 2.7rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.productsMain .categoriesPageContainer .buttonsContainer button:hover {
+  background-color: var(--priColor);
+}
+.productsMain .categoriesPageContainer .buttonsContainer button:hover span {
+  color: var(--accent);
+}
+.productsMain .categoriesPageContainer .buttonsContainer button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.productsMain .categoriesPageContainer .buttonsContainer button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
+.productsMain .categoriesPageContainer .scrollableSubCats {
   border-radius: 1rem;
-  backdrop-filter: blur(0.3rem);
   margin-inline: 0;
   padding: 0.5rem;
+  width: 90%;
 }
-.categoriesPageContainer .scrollableSubCats .subCatsScrollUL {
+.productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL {
   border-top: 0;
   border-bottom: 0;
   border: 0;
   backdrop-filter: none;
+  width: 80%;
 }
-.categoriesPageContainer .scrollableSubCats .subCatsScrollUL .scrollCatLiTwo::before {
+.productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL .scrollCatLiTwo::before {
   background: var(--paleAccent);
 }
-.categoriesPageContainer .scrollableSubCats .scrollCatButtons {
+.productsMain .categoriesPageContainer .scrollableSubCats .scrollCatButtons {
   box-shadow: none;
 }
-.categoriesPageContainer .scrollableSubCats .scrollCatButtons span::before {
+.productsMain .categoriesPageContainer .scrollableSubCats .scrollCatButtons span::before {
   background: none;
 }
-.categoriesPageContainer .mainContentContainer {
+.productsMain .categoriesPageContainer .mainContentContainer {
   display: flex;
-  padding: 1.5rem;
-  padding-top: 4rem;
-  border: 0.25rem solid var(--paleAccentThree);
-  border-radius: 1rem;
-  backdrop-filter: blur(0.5rem);
-  overflow: hidden;
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-top: 3%;
 }
-.categoriesPageContainer .mainContentContainer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--priColor);
-  opacity: 70%;
-  z-index: -5;
-}
-.categoriesPageContainer #products {
+.productsMain .categoriesPageContainer .mainContentContainer #products {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2559,11 +2618,244 @@ select {
   width: 100%;
   flex-wrap: wrap;
 }
-.categoriesPageContainer #products ul li {
+.productsMain .categoriesPageContainer .mainContentContainer #products ul li {
   width: 20rem;
   height: 25rem;
 }
+.productsMain .categoriesPageContainer .mainContentContainer .filters {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-right: 2%;
+  height: fit-content;
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .slidecontainer {
+  width: 100%;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .slidecontainer input[type=range] {
+  width: 100%;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .selectDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .selectDiv .categories-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .selectDiv label {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .selectDiv select {
+  padding: 5px;
+  border: 0.1rem solid var(--tpSec);
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button {
+  background: var(--paleAccent);
+  border-radius: 0.7rem;
+  border: 0.2rem solid var(--paleAccentThree);
+  font-size: 1.1rem;
+  color: var(--secColor);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 2.3rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:hover {
+  background-color: var(--priColor);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:hover span {
+  color: var(--accent);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:focus-visible {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:active {
+  background-color: var(--paleAccentThree);
+  color: var(--accent);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv {
+  display: none;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: -0.5rem;
+  min-width: max-content;
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.4rem;
+  height: fit-content;
+  overflow: hidden;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv a {
+  padding: 0.5rem;
+  color: var(--secColor);
+  font-size: 1.1rem;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv a.currentOption {
+  background-color: var(--paleAccentThree);
+  pointer-events: none;
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv a:nth-child(2) {
+  border-bottom: 0.1rem solid var(--paleAccentThree);
+  border-top: 0.1rem solid var(--paleAccentThree);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv a:hover {
+  background-color: var(--paleAccentThree);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv a:focus-visible {
+  background-color: var(--paleAccentThree);
+  color: var(--accent);
+}
+.productsMain .categoriesPageContainer .mainContentContainer .sortingDiv a:active {
+  background-color: var(--priColor);
+  color: var(--accent);
+}
 
+@media (max-width: 1500px) {
+  .productsMain .categoriesPageContainer .scrollableSubCats .scrollCatLiTwo h3 {
+    font-size: small;
+  }
+}
+@media (max-width: 1000px) {
+  .productsMain #selectedCategory {
+    width: 100%;
+    padding-block: 0.2rem 0.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 0;
+    font-size: x-large;
+  }
+  .productsMain .categoriesPageContainer {
+    padding-top: 0.5rem;
+    width: 100%;
+    background: none;
+    border: none;
+  }
+  .productsMain .categoriesPageContainer .buttonsContainer {
+    margin-block: 2rem 0.5rem;
+  }
+  .productsMain .categoriesPageContainer .buttonsContainer button {
+    border-width: 0.15rem;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer {
+    display: flex;
+    margin-top: 3%;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer #products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    gap: 1.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer #products ul li {
+    width: 20rem;
+    height: 25rem;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters {
+    position: absolute;
+    backdrop-filter: blur(1rem);
+    margin: 0;
+    margin-top: -1rem;
+    padding: 0.5rem;
+    border: 0.15rem solid var(--paleAccentThree);
+    border-radius: 0.5rem;
+    z-index: 3;
+    gap: 0.5rem;
+    width: min-content;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .selectDiv {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv {
+    gap: 0;
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button {
+    border-radius: 0.5rem;
+    border: 0.15rem solid var(--paleAccentThree);
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:hover {
+    background-color: var(--priColor);
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:hover span {
+    color: var(--accent);
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:focus-visible {
+    background-color: var(--priColor);
+    color: var(--accent);
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .filters .buttonDiv button:active {
+    background-color: var(--paleAccentThree);
+    color: var(--secColor);
+  }
+  .productsMain .categoriesPageContainer .mainContentContainer .sortingDiv {
+    position: absolute;
+    margin: 0;
+    margin-top: -1rem;
+    backdrop-filter: blur(1rem);
+    width: min-content;
+    right: 2rem;
+    z-index: 3;
+  }
+  .productsMain .categoriesPageContainer .scrollableSubCats {
+    width: 100%;
+    margin-block: 1rem;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL {
+    padding: 0;
+    background: none;
+    order: 2;
+    width: 100%;
+    height: 90%;
+  }
+  .productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL .scrollCatLiTwo {
+    border-width: 0.1rem;
+    justify-content: center;
+  }
+  .productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL .scrollCatLiTwo h3 {
+    display: none;
+    position: absolute;
+    font-size: medium;
+  }
+  .productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL .scrollCatLiTwo img {
+    width: 75%;
+    height: 75%;
+  }
+}
+@media (max-width: 620px) {
+  .productsMain .categoriesPageContainer .buttonsContainer {
+    margin-block: 1.5rem 1rem;
+  }
+  .productsMain .categoriesPageContainer .scrollableSubCats .subCatsScrollUL {
+    height: 70%;
+  }
+}
 .loginDropdown {
   position: fixed;
   top: -40rem;
@@ -4256,6 +4548,17 @@ select {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   background-color: var(--tpPri);
 }
+.productDivs ul li:focus-visible {
+  color: var(--secColor);
+  transform: translateY(-5px);
+  transition: 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--tpPri);
+}
+.productDivs ul li:active {
+  background-color: var(--paleAccentThree);
+  color: var(--secColor);
+}
 @keyframes moveUpDown {
   0% {
     transform: translateY(0);
@@ -4328,7 +4631,7 @@ select {
   height: 0.15rem;
   border-radius: 1rem;
   position: absolute;
-  background: linear-gradient(to right, var(--reverseSecAccent) 0%, var(--reverseAccent) 50%, var(--reverseSecAccent) 100%);
+  background: linear-gradient(to right, var(--secAccent) 0%, var(--accent) 50%, var(--secAccent) 100%);
   justify-self: center;
   visibility: collapse;
 }
@@ -4423,7 +4726,7 @@ select {
 .themeSelector ul li {
   margin: 0.2rem;
   border-radius: 0.5rem;
-  border: 0.15rem solid var(--reversePaleAccent);
+  border: 0.15rem solid var(--paleAccentThree);
   overflow: hidden;
 }
 .themeSelector ul li button {
@@ -4443,20 +4746,20 @@ select {
 }
 .themeSelector ul li button:hover {
   background-color: var(--priColor);
-  color: var(--reverseAccent);
+  color: var(--accent);
 }
 .themeSelector ul li button:hover span {
-  color: var(--reverseAccent);
+  color: var(--accent);
 }
 .themeSelector ul li button:focus-visible {
   background-color: var(--priColor);
-  color: var(--reverseAccent);
+  color: var(--accent);
 }
 .themeSelector ul li button:focus-visible span {
-  color: var(--reverseAccent);
+  color: var(--accent);
 }
 .themeSelector ul li button:active {
-  border-color: var(--reverseAccent);
+  border-color: var(--accent);
   color: var(--secColor);
 }
 .themeSelector ul li button:active span {
@@ -4464,7 +4767,7 @@ select {
 }
 .themeSelector ul li.selectedThemeMode {
   pointer-events: none;
-  background: linear-gradient(45deg, var(--reverseAccent) 0%, var(--reverseSecAccent) 100%);
+  background: linear-gradient(45deg, var(--accent) 0%, var(--reverseSecAccent) 100%);
   border: none;
 }
 .themeSelector ul li.selectedThemeMode button {
@@ -4620,11 +4923,6 @@ select {
   font-size: 1.3rem;
   font-weight: 600;
 }
-.currentProductCard ul li.totalProductAmount div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 .currentProductCard ul li.totalProductAmount h2 {
   font-size: 1.9rem;
 }
@@ -4663,7 +4961,8 @@ select {
   background-color: var(--paleAccentThree);
   border: 0.2rem solid var(--paleAccentThree);
   border-radius: 0.5rem;
-  padding: 0.3rem;
+  width: 2rem;
+  padding-block: 0.05rem;
   text-align: center;
 }
 .currentProductCard ul li.productButtonsContainer button {

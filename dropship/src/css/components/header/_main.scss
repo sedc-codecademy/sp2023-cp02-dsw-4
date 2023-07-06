@@ -10,6 +10,19 @@ header {
 
     transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
+    .scrollDiv {
+        position: fixed;
+        top: 0;
+        backdrop-filter: blur(1.5rem);
+        height: 0;
+        width: 100%;
+        z-index: -155;
+        border-bottom: .2rem solid var(--paleAccentThree);
+        opacity: 0;
+        transition: all 300ms ease-out;
+        transition: background 400ms ease-in-out;
+    }
+
     .headerGradient {
         position: absolute;
         top: 0;
@@ -22,6 +35,58 @@ header {
         .search-form {
             margin-block: 1.1vmax 0;
             width: 35%;
+        }
+    }
+
+    &.scrollHeader {
+        .scrollDiv {
+            z-index: 3;
+            opacity: 1;
+            height: 4.5rem;
+            background-color: var(--additionallAccent);
+        }
+
+        .logo {
+            top: -.2vmax;
+            left: -.9vmax;
+
+            svg {
+                &.standardLogo {
+                    width: 6rem;
+                    height: 5rem;
+                    fill: var(--accent);
+                }
+            }
+        }
+
+        nav {
+            top: .7rem;
+            border: none;
+            background: none;
+            overflow: unset;
+            backdrop-filter: none;
+
+            .themeSelector {
+                top: .6rem;
+                backdrop-filter: blur(1rem);
+                background-color: var(--tpPri);
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+
+                &.alertOn {
+                    border: .2rem solid var(--paleAccentThree);
+                    border-top: none;
+                }
+            }
+
+            .navigationLists {
+                li {
+                    ::before {
+                        inset: .3rem;
+                        filter: blur(1.5rem);
+                    }
+                }
+            }
         }
     }
 }
@@ -112,12 +177,13 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 3;
-    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+    transition: all 300ms ease-in-out;
 
     svg {
         width: 100%;
         height: 100%;
         z-index: 1;
+        transition: all 300ms ease-in-out;
 
         &.mobileLogo {
             display: none;
@@ -229,7 +295,7 @@ header {
 
         &.smallHeader {
             .search-form {
-                margin-top: 10%;
+                margin-top: 8%;
             }
         }
     }
@@ -279,6 +345,25 @@ header {
 
 @media (max-width: 1000px) {
     header {
+        &.scrollHeader {
+            .scrollDiv {
+                height: 3.7rem;
+            }
+
+            .logo {
+                top: .5rem;
+                left: .4rem;
+            }
+
+            nav {
+                top: .7rem;
+
+                .themeSelector {
+                    top: .8rem;
+                }
+            }
+        }
+
         .search-form {
             margin-block: 25% 20%;
             width: 90%;
@@ -287,11 +372,12 @@ header {
                 ul {
                     li {
                         div {
-                            &:first-child{
-                                p{
+                            &:first-child {
+                                p {
                                     max-width: 65%;
                                 }
                             }
+
                             &:last-child {
                                 display: none;
                             }
@@ -304,7 +390,59 @@ header {
         &.smallHeader {
             .search-form {
                 width: 85%;
-                margin-block: 20% 0%;
+                margin-block: 10% 0%;
+                height: 2.5rem;
+
+                .search-bar-container {
+                    border-radius: 1rem;
+                }
+
+                .search-suggestions {
+                    transform: translateY(2.8rem);
+                }
+            }
+
+            .ctDropDownOn {
+                transform: translateY(2.35rem)
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        &.scrollHeader {
+            .scrollDiv {
+                height: 3.5rem;
+            }
+
+            .logo {
+                top: .4rem;
+                left: .3rem;
+
+                svg {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+            }
+
+            nav {
+                top: .65rem;
+
+                .themeSelector {
+                    top: .65rem;
+                }
+            }
+        }
+
+        .search-form {
+            margin-block: 25% 20%;
+        }
+
+        &.smallHeader {
+            .search-form {
+                width: 85%;
+                margin-block: 15% 5%;
                 height: 2.5rem;
 
                 .search-bar-container {
