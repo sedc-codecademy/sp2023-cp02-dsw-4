@@ -47,7 +47,7 @@ function callBackHomePage(e) {
   printResults(subCategoriesDiv, e.id)
 }
 
-async function autoFunc(){
+async function autoFunc() {
   const tempArray = await fetchJSON('./mock/categories.json')
   fillCategoriesScrollList(document.querySelector(".categoriesScrollUl"), tempArray, callBackHomePage, 'scrollCatLi')
 

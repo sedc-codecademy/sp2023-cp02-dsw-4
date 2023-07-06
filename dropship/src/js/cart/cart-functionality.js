@@ -154,6 +154,8 @@ async function fillCart(ul) {
         p.textContent = product.title
         p.addEventListener("click", (e) => {
             console.log(product.id)
+            showElement(productTimeouts, productStates.openTime, productStates.showProduct, productStates.enableProduct)
+      fillProduct(currentProdCard, product) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         })
         p.addEventListener("keydown", (e) => {
             if (e.key === 'Enter') {

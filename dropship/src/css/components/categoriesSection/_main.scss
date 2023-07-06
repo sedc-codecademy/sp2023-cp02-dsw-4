@@ -203,13 +203,13 @@
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 .15rem .6rem rgba(0, 0, 0, 0.42);
+    box-shadow: 0 .15rem .6rem rgba(0, 0, 0, 0.268);
 
     &.disabledScrollBtn {
       pointer-events: none;
       filter: grayscale(1);
       span{
-        color: var(--priColor);
+        color: rgb(171, 171, 171);
       }
     }
 

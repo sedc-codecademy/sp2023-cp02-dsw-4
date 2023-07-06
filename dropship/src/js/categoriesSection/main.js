@@ -582,3 +582,6 @@ highestPriceBtn.addEventListener("click", () => {
 highestRatingBtn.addEventListener("click", () => {
     sortByHighestRating();
 })
+
+switchMain(document.querySelector('.productsMain'), "block")
+printResults(subCategoriesDiv, "technology")

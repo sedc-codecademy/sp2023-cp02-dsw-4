@@ -18,7 +18,7 @@
     <script src="js/categoriesSection/categoriesSection.js" defer></script>
     <script src="js/homePageProducts/homePageProducts.js" defer></script>
     <script src="js/categoriesSection/main.js" defer></script>
-    
+
     <script type="module" src="js/index.js" defer></script>
 </head>
 
@@ -581,7 +581,7 @@
                             d="M12 2L15.09 8.34L22 9.27L17 14.24L18.18 21L12 17.77L5.82 21L7 14.24L2 9.27L8.91 8.34L12 2Z">
                         </path>
                     </svg></div>
-                    <button>Write Review</button>
+                <button>Write Review</button>
             </li>
             <li class="baseProductCost">
                 <p>Cost</p>
@@ -919,51 +919,57 @@
         </div>
     </main>
     <main class="mainMain productsMain">
-        <h1 id="selectedCategory">Category: </h1>
-        <div class="scrollableSubCats">
-            <button class="scrollCatButtons" id="leftSubScrollButton">
-                <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <div class="subCatsScrollUL"></div>
-            <button class="scrollCatButtons" id="rightSubScrollButton">
-                <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-        </div>
-
-
-        <div class="categories-section">
-            <button id="filterBtn">Filters</button>
-            <!-- New -->
-            <div class="filters" id="filters">
-                <div class="slidecontainer">
-                    <input type="range" min="1" class="slider" id="myRange">
-                    <div>Price: <span id="demo"></span></div>
+        <div class="categoriesPageContainer">
+            <h1 id="selectedCategory">Category: </h1>
+            <div class="filtersAndCategories">
+                <button id="filterBtn">Filters</button>
+                <div class="scrollableSubCats">
+                    <button class="scrollCatButtons" id="leftSubScrollButton">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <div class="subCatsScrollUL"></div>
+                    <button class="scrollCatButtons" id="rightSubScrollButton">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
                 </div>
-                <br />
-                <!-- New -->
-                <label for="size">Size:</label>
-                <select name="size" id="size">
-                    <option value="all">All Sizes</option>
-                    <option value="Small">S</option>
-                    <option value="Medium">M</option>
-                    <option value="Large">L</option>
-                </select>
-                <br />
-                <label for="region">Region:</label>
-                <select name="region" id="region">
-                    <option value="all">All Regions</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="North-America">North America</option>
-                    <option value="South-America">South America</option>
-                    <option value="Africa">Africa</option>
-                    <option value="Oceania">Oceania</option>
-                </select>
-                <br />
-                <button id="applyFilters">Apply Filters</button>
-            </div>
-            <div>
                 <button id="sortBtn" for="sortingSection">Sort By:</button>
+            </div>
+            <div id="subCategories"></div>
+            <div class="divider"></div>
+            <div class="mainContentContainer">
+                
+                    <div class="filters" id="filters">
+                    
+                        <div class="slidecontainer">
+                            <input type="range" min="1" class="slider" id="myRange">
+                            <div>Price: <span id="demo"></span></div>
+                        </div>
+                        <br />
+                        <!-- New -->
+                        <label for="size">Size:</label>
+                        <select name="size" id="size">
+                            <option value="all">All Sizes</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                        <br />
+                        <label for="region">Region:</label>
+                        <select name="region" id="region">
+                            <option value="all">All Regions</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="North-America">North America</option>
+                            <option value="South-America">South America</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                        <br />
+                        <button id="applyFilters">Apply Filters</button>
+                    </div>
+              
+                
+                <div class="productDivs" id="products"></div>
                 <div name="sortingSection" id="sortingSection">
                     <a href="#" value="highest-rating" id="highest-rating">Highest Rating</a>
                     <a href="#" value="highest-price" id="highest-price">Highest Price</a>
@@ -971,9 +977,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="subCategories"></div>
-        <div class="productDivs" id="products"></div>
     </main>
     <footer>
         <div class="footerMain">

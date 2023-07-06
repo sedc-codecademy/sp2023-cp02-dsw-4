@@ -1,5 +1,3 @@
-@use '../../abstracts';
-
 .categories-section {
   border: 1px solid #ccc;
   padding: 20px;
@@ -41,16 +39,151 @@ select {
   text-decoration: none;
 }
 
-.productsMain{
+.productsMain {
   display: none;
 }
 
-#products{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.categoriesPageContainer {
+  width: 85%;
   margin-inline: auto;
-  gap: 1.5rem;
-  width: 90vmax;
-  flex-wrap: wrap;
+  margin-top: 3%;
+
+  #selectedCategory {
+    position: relative;
+    text-align: center;
+    margin-inline: auto;
+    margin-bottom: .5%;
+    padding: .7rem;
+
+    border: 0.25rem solid var(--paleAccentThree);
+    backdrop-filter: blur(0.5rem);
+    overflow: hidden;
+
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 2rem;
+
+    letter-spacing: -0.05rem;
+    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+    text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: var(--priColor);
+      opacity: 70%;
+      z-index: -5;
+    }
+  }
+
+  .filtersAndCategories {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-inline: auto;
+    // margin-bottom: .5%;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 1rem;
+
+    border: 0.25rem solid var(--paleAccentThree);
+    border-radius: 1rem;
+    backdrop-filter: blur(0.5rem);
+    overflow: hidden;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: var(--priColor);
+      opacity: 70%;
+      z-index: -5;
+    }
+  }
+
+  .scrollableSubCats {
+    height: 12vmax;
+    width: 80%;
+    border-radius: 1rem;
+    backdrop-filter: blur(.3rem);
+    margin-inline: 0;
+    padding: .5rem;
+
+    .subCatsScrollUL {
+      border-top: 0;
+      border-bottom: 0;
+      border: 0;
+      backdrop-filter: none;
+
+      .scrollCatLiTwo {
+        &::before {
+          background: var(--paleAccent);
+        }
+      }
+    }
+
+    .scrollCatButtons {
+      box-shadow: none;
+
+      span {
+        &::before {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .mainContentContainer {
+    display: flex;
+    // margin-top: 3%;
+    
+    padding: 1.5rem;
+    padding-top: 4rem;
+
+    border: 0.25rem solid var(--paleAccentThree);
+    border-radius: 1rem;
+    backdrop-filter: blur(0.5rem);
+    overflow: hidden;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: var(--priColor);
+      opacity: 70%;
+      z-index: -5;
+    }
+  }
+
+  #products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    gap: 1.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+
+    ul {
+      li {
+        width: 20rem;
+        height: 25rem;
+      }
+    }
+  }
 }

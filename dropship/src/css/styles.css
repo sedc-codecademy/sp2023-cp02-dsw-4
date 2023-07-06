@@ -2277,7 +2277,7 @@ main.currentMain {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.42);
+  box-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.268);
 }
 .scrollableCategories .scrollCatButtons.disabledScrollBtn,
 .scrollableSubCats .scrollCatButtons.disabledScrollBtn {
@@ -2286,7 +2286,7 @@ main.currentMain {
 }
 .scrollableCategories .scrollCatButtons.disabledScrollBtn span,
 .scrollableSubCats .scrollCatButtons.disabledScrollBtn span {
-  color: var(--priColor);
+  color: rgb(171, 171, 171);
 }
 .scrollableCategories .scrollCatButtons#rightScrollButton span,
 .scrollableSubCats .scrollCatButtons#rightScrollButton span {
@@ -2451,14 +2451,117 @@ select {
   display: none;
 }
 
-#products {
+.categoriesPageContainer {
+  width: 85%;
+  margin-inline: auto;
+  margin-top: 3%;
+}
+.categoriesPageContainer #selectedCategory {
+  position: relative;
+  text-align: center;
+  margin-inline: auto;
+  margin-bottom: 0.5%;
+  padding: 0.7rem;
+  border: 0.25rem solid var(--paleAccentThree);
+  backdrop-filter: blur(0.5rem);
+  overflow: hidden;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 2rem;
+  letter-spacing: -0.05rem;
+  font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-shadow: 0.1rem 0.1rem 0 var(--tpPri);
+}
+.categoriesPageContainer #selectedCategory::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--priColor);
+  opacity: 70%;
+  z-index: -5;
+}
+.categoriesPageContainer .filtersAndCategories {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-inline: auto;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 1rem;
+  border: 0.25rem solid var(--paleAccentThree);
+  border-radius: 1rem;
+  backdrop-filter: blur(0.5rem);
+  overflow: hidden;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-top: 2rem;
+}
+.categoriesPageContainer .filtersAndCategories::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--priColor);
+  opacity: 70%;
+  z-index: -5;
+}
+.categoriesPageContainer .scrollableSubCats {
+  height: 12vmax;
+  width: 80%;
+  border-radius: 1rem;
+  backdrop-filter: blur(0.3rem);
+  margin-inline: 0;
+  padding: 0.5rem;
+}
+.categoriesPageContainer .scrollableSubCats .subCatsScrollUL {
+  border-top: 0;
+  border-bottom: 0;
+  border: 0;
+  backdrop-filter: none;
+}
+.categoriesPageContainer .scrollableSubCats .subCatsScrollUL .scrollCatLiTwo::before {
+  background: var(--paleAccent);
+}
+.categoriesPageContainer .scrollableSubCats .scrollCatButtons {
+  box-shadow: none;
+}
+.categoriesPageContainer .scrollableSubCats .scrollCatButtons span::before {
+  background: none;
+}
+.categoriesPageContainer .mainContentContainer {
+  display: flex;
+  padding: 1.5rem;
+  padding-top: 4rem;
+  border: 0.25rem solid var(--paleAccentThree);
+  border-radius: 1rem;
+  backdrop-filter: blur(0.5rem);
+  overflow: hidden;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.categoriesPageContainer .mainContentContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--priColor);
+  opacity: 70%;
+  z-index: -5;
+}
+.categoriesPageContainer #products {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-inline: auto;
   gap: 1.5rem;
-  width: 90vmax;
+  width: 100%;
   flex-wrap: wrap;
+}
+.categoriesPageContainer #products ul li {
+  width: 20rem;
+  height: 25rem;
 }
 
 .loginDropdown {
@@ -4441,7 +4544,6 @@ select {
 }
 .currentProductCard::backdrop {
   backdrop-filter: blur(1rem);
-  background-color: var(--backdropBackground);
 }
 .currentProductCard ul {
   display: flex;
@@ -4486,6 +4588,7 @@ select {
 }
 .currentProductCard ul li.starsProductContainer {
   pointer-events: none;
+  justify-content: center;
 }
 .currentProductCard ul li.starsProductContainer .starDiv {
   display: flex;
@@ -4494,8 +4597,8 @@ select {
 .currentProductCard ul li.starsProductContainer .starDiv svg {
   position: relative;
   z-index: 3;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2rem;
+  height: 2rem;
   color: orange;
 }
 .currentProductCard ul li.singleProductTitle {
@@ -4516,6 +4619,11 @@ select {
 .currentProductCard ul li.totalProductAmount p {
   font-size: 1.3rem;
   font-weight: 600;
+}
+.currentProductCard ul li.totalProductAmount div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .currentProductCard ul li.totalProductAmount h2 {
   font-size: 1.9rem;
@@ -4543,11 +4651,20 @@ select {
   margin-left: -0.2rem;
 }
 .currentProductCard ul li.productButtonsContainer {
+  justify-content: center;
   background: none;
   padding: 0;
   border: none;
   gap: 0.2rem;
   height: 3.5rem;
+}
+.currentProductCard ul li.productButtonsContainer .amountProduct {
+  pointer-events: none;
+  background-color: var(--paleAccentThree);
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  text-align: center;
 }
 .currentProductCard ul li.productButtonsContainer button {
   display: flex;
@@ -4566,20 +4683,34 @@ select {
   border-radius: 0.5rem;
   border: 0.2rem solid var(--paleAccentThree);
 }
-.currentProductCard ul li.productButtonsContainer button:first-child {
-  width: 100%;
+.currentProductCard ul li.productButtonsContainer button.buyNowButton {
+  width: 65%;
 }
-.currentProductCard ul li.productButtonsContainer button:last-child {
-  width: 30%;
+.currentProductCard ul li.productButtonsContainer button.amountProductBtn {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
 }
-.currentProductCard ul li.productButtonsContainer button:last-child span {
+.currentProductCard ul li.productButtonsContainer button.addToCartButton {
+  width: 10%;
+}
+.currentProductCard ul li.productButtonsContainer button.addToCartButton span {
   color: var(--priColor);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.currentProductCard ul li.productButtonsContainer button:last-child::before {
+.currentProductCard ul li.productButtonsContainer button.addToCartButton::before {
   background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
+}
+.currentProductCard ul li.productButtonsContainer button.disabledAmountProductBtn {
+  pointer-events: none;
+}
+.currentProductCard ul li.productButtonsContainer button.disabledAmountProductBtn span {
+  color: var(--tertColor);
+}
+.currentProductCard ul li.productButtonsContainer button.disabledAmountProductBtn::before {
+  background: var(--tertColor);
 }
 .currentProductCard ul li.productButtonsContainer button::before {
   content: "";

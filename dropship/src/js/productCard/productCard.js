@@ -81,6 +81,7 @@ async function fillProduct(container, product) {
 
     const liThree = document.createElement('li')
     liThree.classList.add('baseProductCost')
+    liThree.id = `baseCost-${product.id}`
     liThree.innerHTML = `<p>Cost</p>
     <h3>${product.price}</h3>`
 
@@ -93,15 +94,16 @@ async function fillProduct(container, product) {
         <h3>${product.shipping.price}</h3>`
     } else {
         liFour.innerHTML = `<p>Shipping</p>
-        <h3>FREE</h3>`
+        <h3>$${getRandomNumber()}</h3>`
     }
 
     ul.appendChild(liFour)
 
     const liFive = document.createElement('li')
     liFive.classList.add("totalProductAmount")
-    liFive.innerHTML = `<p>Total</p>
-    <h2>${(product.price - product.price * (product.sale / 100).toFixed(2)).toFixed(2)}</h2>`
+    liFive.id = `totalCost-${product.id}`
+    liFive.innerHTML = `<p>Total</p> <div><h4>-${product.sale}%</h4><h2>${(product.price - product.price * (product.sale / 100).toFixed(2)).toFixed(2)}</h2></div>
+    `
 
     ul.appendChild(liFive)
 
@@ -120,11 +122,44 @@ async function fillProduct(container, product) {
     const liSeven = document.createElement('li')
     liSeven.classList.add("productButtonsContainer")
 
+    ///////////
+
+    // Amount Number
+    const amountNumber = document.createElement("h2")
+    amountNumber.classList.add("amountProduct")
+    amountNumber.id = `amountNumber-${product.id}`
+    amountNumber.textContent = `${product.amount || "1"}`
+
+    // Minus Button
+    const minusButton = document.createElement("button")
+    minusButton.innerHTML = `<span class="material-symbols-outlined">arrow_downward</span>`
+    minusButton.classList.add("amountProductBtn")
+    minusButton.id = `minusProductBtn-${product.id}`
+    minusButton.addEventListener("click", () => {
+        decreaseAmount(amountNumber, product, liFour)
+    })
+
+    // Plus Button
+    const plusButton = document.createElement("button")
+    plusButton.innerHTML = `<span class="material-symbols-outlined">arrow_upward</span>`
+    plusButton.classList.add("amountProductBtn")
+    plusButton.id = `plusProductBtn-${product.id}`
+    plusButton.addEventListener("click", () => {
+        increaseAmount(amountNumber, product, liFour, plusButton)
+    })
+
+    liSeven.appendChild(minusButton)
+    liSeven.appendChild(amountNumber)
+    liSeven.appendChild(plusButton)
+
+    //////////
+
     const buyNowButton = document.createElement('button')
     buyNowButton.innerHTML = `buy now`
+    buyNowButton.classList.add("buyNowButton")
     buyNowButton.addEventListener("click", () => {
-        if(isInCart(product.id)) return alert("Product already added to cart")
-        addToCart(product, 3)
+        if (isInCart(product.id)) return alert("Product already added to cart")
+        addToCart(product, amountNumber.textContent, liFour)
         closeElement(productTimeouts, productStates.closeTime, productStates.hideProduct, productStates.disableProduct)
         if (document.querySelector(".cart").classList.contains("currentMain")) {
             setTimeout(() => {
@@ -144,11 +179,11 @@ async function fillProduct(container, product) {
 
     const addToCartButton = document.createElement('button')
     addToCartButton.innerHTML = `<span class="material-symbols-outlined"> add_shopping_cart </span>`
-
+    addToCartButton.classList.add("addToCartButton")
     addToCartButton.addEventListener("click", () => {
         // SHOULD ADD ITEM TO CART LOCAL STORAGE
-        if(isInCart(product.id)) return alert("Product already added to cart")
-        addToCart(product, 3)
+        if (isInCart(product.id)) return alert("Product already added to cart")
+        addToCart(product, amountNumber.textContent, liFour)
         if (document.querySelector(".cart").classList.contains("currentMain")) {
             openCart()
         }
@@ -178,14 +213,66 @@ async function fillProduct(container, product) {
     <h4>Subregion: </h4>
     <p>${product.shipping.subregion}</p>
 </div>`
+
+
     ul.appendChild(details)
     container.appendChild(ul)
+    updateDisplayTwo(product, liFour, amountNumber)
 }
 
 function getRandomNumber() {
-    var randomNum = Math.floor(Math.random() * 21)
-    var formattedNum = parseFloat(randomNum + ".99")
-    return formattedNum
+    return Math.floor(Math.random() * 21).toFixed(2)
+}
+
+function increaseAmount(amounth2, product, li) {
+    tempAmount = amounth2.textContent
+
+    if (tempAmount < product.stock) {
+        tempAmount++
+        amounth2.textContent = tempAmount
+        updateDisplayTwo(product, li, amounth2)
+    }
+}
+
+function decreaseAmount(amounth2, product, li) {
+    tempAmount = amounth2.textContent
+    if (tempAmount > 1) {
+        tempAmount--
+        amounth2.textContent = tempAmount
+        updateDisplayTwo(product, li, amounth2)
+    }
+}
+
+function updateDisplayTwo(product, li, amountNumber) {
+    const plusBtnTemp = document.querySelector(`#plusProductBtn-${product.id}`)
+    const minusBtnTemp = document.querySelector(`#minusProductBtn-${product.id}`)
+
+    if (amountNumber.textContent >= product.stock) {
+        plusBtnTemp.classList.add("disabledAmountProductBtn")
+        plusBtnTemp.disabled = true
+        minusBtnTemp.classList.remove("disabledAmountProductBtn")
+    } else {
+        plusBtnTemp.classList.remove("disabledAmountProductBtn")
+        plusBtnTemp.disabled = false
+    }
+
+    if (amountNumber.textContent <= 1) {
+        plusBtnTemp.classList.remove("disabledAmountProductBtn")
+        minusBtnTemp.disabled = true
+        minusBtnTemp.classList.add("disabledAmountProductBtn")
+    } else {
+        minusBtnTemp.disabled = false
+        minusBtnTemp.classList.remove("disabledAmountProductBtn")
+    }
+    if (product.stock === 1) {
+        plusBtnTemp.classList.add("disabledAmountProductBtn")
+        plusBtnTemp.disabled = true
+        minusBtnTemp.classList.add("disabledAmountProductBtn")
+        minusBtnTemp.disabled = true
+    }
+
+    document.querySelector(`#baseCost-${product.id}`).querySelector("h3").textContent = `$${(product.price * amountNumber.textContent).toFixed(2)}`
+    document.querySelector(`#totalCost-${product.id}`).querySelector("h2").textContent = `$${((product.price - product.price * (product.sale / 100) + Number(li.querySelector('h3').textContent.slice(1))) * amountNumber.textContent).toFixed(2)}`
 }
 
 function isInCart(ID) {
@@ -198,17 +285,18 @@ function isInCart(ID) {
     return false
 }
 
-function addToCart(product, amount) {
+function addToCart(product, amount, li) {
     let cart = JSON.parse(localStorage.getItem("cart") || '[]')
     let tempProduct = {
         "title": product.title,
         "price": product.price,
-        "shipping": getRandomNumber(),
+        "shipping": Number(li.querySelector('h3').textContent.slice(1)),
         "stock": product.stock,
         "id": product.id,
         "sale": product.sale,
-        "amount": amount || 1,
+        "amount": Number(amount) || 1,
         "category": product.category,
+        "rating": product.rating,
         "totalPrice": 0
     }
     cart.push(tempProduct)

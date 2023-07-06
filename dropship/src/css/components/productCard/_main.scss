@@ -93,7 +93,7 @@
 
   &::backdrop {
     backdrop-filter: blur(1rem);
-    background-color: var(--backdropBackground);
+    // background-color: var(--backdropBackground);
   }
 
   ul {
@@ -150,6 +150,7 @@
 
       &.starsProductContainer {
         pointer-events: none;
+        justify-content: center;
         .starDiv {
           display: flex;
           align-items: center;
@@ -157,8 +158,8 @@
           svg {
             position: relative;
             z-index: 3;
-            width: 1.8rem;
-            height: 1.8rem;
+            width: 2rem;
+            height: 2rem;
             color: orange;
           }
         }
@@ -186,6 +187,12 @@
           font-weight: 600;
         }
 
+        div {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
         h2 {
           font-size: 1.9rem;
         }
@@ -202,7 +209,7 @@
 
         background: linear-gradient(45deg, var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
 
-        a{
+        a {
           color: var(--accent);
         }
 
@@ -221,6 +228,7 @@
       }
 
       &.productButtonsContainer {
+        justify-content: center;
         background: none;
         padding: 0;
         border: none;
@@ -228,6 +236,16 @@
         gap: .2rem;
 
         height: 3.5rem;
+
+        .amountProduct {
+          pointer-events: none;
+          background-color: var(--paleAccentThree);
+          border: .2rem solid var(--paleAccentThree);
+          border-radius: .5rem;
+          // width: 2rem;
+          padding: .3rem;
+          text-align: center;
+        }
 
         button {
           display: flex;
@@ -248,12 +266,18 @@
           border-radius: .5rem;
           border: .2rem solid var(--paleAccentThree);
 
-          &:first-child {
-            width: 100%;
+          &.buyNowButton {
+            width: 65%;
           }
 
-          &:last-child {
-            width: 30%;
+          &.amountProductBtn {
+            border-radius: 50%;
+            height: 2.5rem;
+            width: 2.5rem;
+          }
+
+          &.addToCartButton {
+            width: 10%;
 
             span {
               color: var(--priColor);
@@ -266,6 +290,18 @@
               background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
             }
           }
+
+          &.disabledAmountProductBtn {
+            pointer-events: none;
+
+            span {
+                color: var(--tertColor);
+            }
+
+            &::before {
+              background: var(--tertColor);
+            }
+        }
 
           &::before {
             content: '';
