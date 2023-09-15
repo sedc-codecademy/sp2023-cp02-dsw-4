@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+html {
+    font-size: clamp(0.8125rem, 0.6696rem + 0.2857vw, 1.5625rem);
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--priColor);
+    color: var(--secColor);
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+button {
+    background: none;
+    border: none;
+    color: var(--secColor);
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=text]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
