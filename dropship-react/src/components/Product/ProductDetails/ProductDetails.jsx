@@ -1,4 +1,5 @@
 import React from "react";
+import "./_main.scss";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -34,45 +35,48 @@ function ProductDetails() {
   };
 
   return (
-    <>
-      <div>
-        <div>
-          <h2>Title:{product.title}</h2>
-          <p>Rating:{product.rating.rate}</p>
-          <p>Price:{product.price.toFixed(2)}$</p>
-
-          <p>Shipping:{product.shippingPrice}$</p>
-          <div>
-            <p>{product.sale ? `Discount-${discount.toFixed(2)}$` : ""}</p>
+    <div className="product-page">
+      <div className="product-details">
+        <div className="product-info">
+          <div className="product-left">
+            <img
+              src="https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg"
+              alt=""
+              width={300}
+            />
           </div>
-          <p>
-            Total:
-            {totalPrice}
-          </p>
+          <div className="product-right">
+            <h2 className="product-title">Product Details</h2>
+            <h3 className="product-subtitle">{product.title}</h3>
+            <p className="product-rating">Rating: {product.rating.rate}</p>
+            <p className="product-price">${product.price.toFixed(2)}</p>
+            <p className="product-shipping">
+              Shipping: ${product.shippingPrice}
+            </p>
+            {product.sale && (
+              <p className="product-discount">
+                Discount: ${discount.toFixed(2)}
+              </p>
+            )}
+            <p className="product-total">Total: ${totalPrice}</p>
+            <div className="product-buttons">
+              <button onClick={() => increment(productId)}>↑</button>
+              <p className="product-count">{count}</p>
+              <button onClick={decrement}>↓</button>
+              <button className="buy-button">BUY NOW</button>
+            </div>
+          </div>
         </div>
-        <button
-          onClick={() => dispatch(increment(productId))}
-          style={styleForButtons}
-        >
-          ↑
-        </button>
-        <p>{count}</p>
-        <button onClick={() => dispatch(decrement())} style={styleForButtons}>
-          ↓
-        </button>
-        <button style={styleForButtons}>BUY NOW</button>
-        <dir>
-          <div>
-            <h2>Shipping Details</h2>
-            <p>Weight: {product.shipping.weight}</p>
-            <p>Dimensions: {product.shipping.dimensions}</p>
-            <p>Restrictions: {product.shipping.restrictions}</p>
-            <p>Region: {product.shipping.region}</p>
-            <p>Subregion: {product.shipping.subregion}</p>
-          </div>
-        </dir>
+        <div className="shipping-details">
+          <h2>Shipping Details</h2>
+          <p>Weight: {product.shipping.weight}</p>
+          <p>Dimensions: {product.shipping.dimensions}</p>
+          <p>Restrictions: {product.shipping.restrictions}</p>
+          <p>Region: {product.shipping.region}</p>
+          <p>Subregion: {product.shipping.subregion}</p>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
