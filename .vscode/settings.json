@@ -5,5 +5,8 @@
         "live-preview-extension": true
     },
     "console-ninja.output.showLogsFromLogPointsOnly": true,
-    "console-ninja.output.showLogsOnlyFromOpenedFiles": true
+    "console-ninja.output.showLogsOnlyFromOpenedFiles": true,
+    "cSpell.words": [
+        "Selers"
+    ]
 }
