@@ -1,104 +1,153 @@
 ///////////  PRODUCT DETAILS  /////////////
+/* PRODUCT PAGE */
 .product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* PRODUCT DETAILS */
+.product-details {
+  display: flex;
+  background-color: var(--tpPri3);
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.product-image {
+  flex-grow: 1;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
 }
 
-.product-details {
-  max-width: 600px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  background-color: var(--paleAccent);
-  border: 0.2rem solid var(--paleAccentThree);
+.product-image img {
+  max-width: 100%;
+  max-height: 31.25rem;
+  object-fit: contain;
 }
 
 .product-info {
+  flex: 2;
+  padding: 2rem;
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.product-left img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.product-right {
-  flex: 1;
-  margin-left: 20px;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .product-title {
+  font-size: 28px;
   color: var(--logoAccentOne);
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.product-subtitle {
-  color: var(--logoAccentOne);
-  font-size: 20px;
   margin-bottom: 10px;
 }
 
-.product-rating,
-.product-price,
+.product-rating {
+  font-size: 18px;
+  color: #666;
+}
+
+.product-price {
+  font-size: 24px;
+  color: var(--logoAccentOne);
+}
+
 .product-shipping,
 .product-discount,
 .product-total {
-  margin: 5px 0;
+  font-size: 18px;
+  color: #333;
 }
 
-.product-buttons button {
+.product-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.count button {
+  text-align: center;
+  padding: 0.5rem;
   background-color: var(--paleAccentThree);
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  margin: 0 10px 0 0;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 18px;
 }
 
-.product-buttons button:last-child {
-  margin-right: 0;
-}
-
-.product-buttons button:hover {
-  background-color: var(--paleAccentTwo);
+.product-count {
+  margin: 0;
+  font-size: 24px;
 }
 
 .buy-button {
-  background-color: var(--logoReverseAccentOne);
+  background-color: var(--logoAccentOne);
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Adjusted padding for better sizing */
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 16px; /* Adjusted font size for better sizing */
 }
-
 .buy-button:hover {
-  background-color: var(--logoReverseAccentTwo);
+  background-color: var(--paleAccentThree);
 }
 
-.shipping-details h2 {
-  color: var(--logoReverseAccentOne);
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+.quantity-btn {
+  height: 25px !important;
+  width: 25px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
 }
+
+/* SUGGESTED FOR YOU */
+.suggested-for-you {
+  margin-top: 2rem;
+  font-size: 24px;
+  color: var(--logoAccentOne);
+}
+
+/* BESTSELLERS DIV */
+.bestsellers-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
 :root {
-  --priColor: rgb(243, 243, 243);
-  --tpPri: rgba(255, 255, 255, 0.65);
-  --tpSec: rgba(0, 0, 0, 0.65);
+  --priColor: rgb(255, 255, 255);
+  --tpPri: rgb(250, 250, 250);
+  --tpPri3: rgb(245, 245, 245);
+  --tpPri2: rgba(235, 235, 235);
+
   --secColor: rgba(0, 0, 0, 0.822);
+  --tpSec: hsl(0, 0%, 30%);
+  --tpSec2: hsl(0, 0%, 37%);
+
   --secAccent: rgb(208, 0, 255);
+  --paleSecAccent: rgba(208, 0, 255, 0.646);
   --accent: rgb(255, 52, 150);
   --tertAccent: rgb(227, 255, 69);
   --tertColor: rgba(128, 128, 128, 0.598);
@@ -121,9 +170,14 @@
 
 .dark-mode {
   --priColor: rgb(0, 0, 0);
-  --tpPri: rgba(0, 0, 0, 0.475);
-  --tpSec: rgba(255, 255, 255, 0.2);
+  --tpPri: rgba(20, 20, 20);
+  --tpPri2: rgba(35, 35, 35);
+  --tpPri3: rgba(70, 70, 70);
+
   --secColor: rgb(255, 255, 255);
+  --tpSec: hsl(0, 0%, 92%);
+  --tpSec2: hsl(0, 0%, 73%);
+
   --accent: rgb(59, 255, 157);
   --secAccent: rgba(0, 255, 55);
   --tertAccent: rgb(65, 204, 255);
@@ -133,6 +187,7 @@
 
   --someColor: #2b0075;
   --secAccent: #0099ff;
+  --paleSecAccent: #0099ffc8;
   --accent: #00eaff;
   --tertAccent: #e71db1;
   --additionallAccent: rgba(0, 0, 0, 0.475);

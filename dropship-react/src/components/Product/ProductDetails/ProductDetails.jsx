@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./_main.scss";
 import { useParams } from "react-router";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import {
-  selectProducts,
-  countSelector,
-} from "../../../store/selectors/productSelector";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts } from "../../../store/selectors/productSelector";
 import { decrement, increment } from "../../../store/slices/productsSlice";
+import ProductCard from "../ProductCard/ProductCard";
+
+const getRandomProducts = (products, count) => {
+  const copiedProducts = [...products];
+  const shuffled = copiedProducts.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
+
 function ProductDetails() {
-  const dispatch = useDispatch();
   const { productId } = useParams();
   const products = useSelector(selectProducts);
-  const count = useSelector(countSelector);
+
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  const [quantity, setQuantity] = useState(0);
 
   const product = products.find((p) => p.id === productId);
 
@@ -27,54 +33,57 @@ function ProductDetails() {
       : product.price + product.shippingPrice
   ).toFixed(2);
 
-  const styleForButtons = {
-    padding: "10px",
-    border: "2px solid black",
-    backgroundColor: "lightgreen",
-    margin: "10px",
-  };
+  useEffect(() => {
+    const randomProducts = getRandomProducts(products, 5);
+    setRandomProducts(randomProducts);
+  }, []);
 
   return (
     <div className="product-page">
       <div className="product-details">
+        <div className="product-image">
+          <img
+            src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
+            alt="Product Image"
+          />
+        </div>
         <div className="product-info">
-          <div className="product-left">
-            <img
-              src="https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg"
-              alt=""
-              width={300}
-            />
-          </div>
-          <div className="product-right">
-            <h2 className="product-title">Product Details</h2>
-            <h3 className="product-subtitle">{product.title}</h3>
-            <p className="product-rating">Rating: {product.rating.rate}</p>
-            <p className="product-price">${product.price.toFixed(2)}</p>
-            <p className="product-shipping">
-              Shipping: ${product.shippingPrice}
-            </p>
-            {product.sale && (
-              <p className="product-discount">
-                Discount: ${discount.toFixed(2)}
-              </p>
-            )}
-            <p className="product-total">Total: ${totalPrice}</p>
-            <div className="product-buttons">
-              <button onClick={() => increment(productId)}>↑</button>
-              <p className="product-count">{count}</p>
-              <button onClick={decrement}>↓</button>
-              <button className="buy-button">BUY NOW</button>
+          <h2 className="product-title">{product.title}</h2>
+          <p className="product-rating">Rating: {product.rating.rate}</p>
+          <p className="product-price">${product.price.toFixed(2)}</p>
+          <p className="product-shipping">Shipping: ${product.shippingPrice}</p>
+          {product.sale && (
+            <p className="product-discount">Discount: ${discount.toFixed(2)}</p>
+          )}
+          <p className="product-total">Total: ${totalPrice}</p>
+          <div className="product-buttons">
+            <div className="count">
+              <button
+                className="quantity-btn"
+                onClick={() => setQuantity((prev) => Math.max(0, prev + 1))}
+              >
+                +
+              </button>
+              <p className="product-count">{quantity}</p>
+              <button
+                className="quantity-btn"
+                onClick={() => setQuantity((prev) => Math.max(0, prev - 1))}
+              >
+                -
+              </button>
             </div>
+            <button className="buy-button">Buy Now</button>
+            <button className="buy-button">Add To Cart</button>
           </div>
         </div>
-        <div className="shipping-details">
-          <h2>Shipping Details</h2>
-          <p>Weight: {product.shipping.weight}</p>
-          <p>Dimensions: {product.shipping.dimensions}</p>
-          <p>Restrictions: {product.shipping.restrictions}</p>
-          <p>Region: {product.shipping.region}</p>
-          <p>Subregion: {product.shipping.subregion}</p>
-        </div>
+      </div>
+      <div className="suggested-for-you">
+        <h1>Suggested for you</h1>
+      </div>
+      <div className="bestsellers-div">
+        {randomProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
     </div>
   );
