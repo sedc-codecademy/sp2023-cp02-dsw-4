@@ -77,8 +77,10 @@ function ProductDetails() {
           </div>
         </div>
       </div>
+      <div className="suggested-for-you">
+        <h1>Customer Reviews</h1>
+      </div>
       <div className="reviews">
-        <h2>Customer Reviews</h2>
         <div className="review">
           <div className="review-header">
             <img
