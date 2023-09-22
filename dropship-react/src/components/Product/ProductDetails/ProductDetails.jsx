@@ -77,6 +77,43 @@ function ProductDetails() {
           </div>
         </div>
       </div>
+      <div className="reviews">
+        <h2>Customer Reviews</h2>
+        <div className="review">
+          <div className="review-header">
+            <img
+              src="https://via.placeholder.com/50"
+              alt="Reviewer Avatar"
+              className="review-avatar"
+            />
+            <div className="review-author-info">
+              <p className="review-author">John Doe</p>
+              <p className="review-date">September 15, 2023</p>
+            </div>
+          </div>
+          <p className="review-text">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+            ullamcorper odio a lorem tempor, vel fermentum ante pulvinar."
+          </p>
+        </div>
+        <div className="review">
+          <div className="review-header">
+            <img
+              src="https://via.placeholder.com/50"
+              alt="Reviewer Avatar"
+              className="review-avatar"
+            />
+            <div className="review-author-info">
+              <p className="review-author">Jane Smith</p>
+              <p className="review-date">September 10, 2023</p>
+            </div>
+          </div>
+          <p className="review-text">
+            "Sed at tristique nisi, eu varius tortor. Duis vestibulum, nisl vel
+            vehicula facilisis, risus felis tristique turpis."
+          </p>
+        </div>
+      </div>
       <div className="suggested-for-you">
         <h1>Suggested for you</h1>
       </div>
