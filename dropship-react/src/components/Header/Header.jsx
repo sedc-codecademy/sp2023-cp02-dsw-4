@@ -19,7 +19,7 @@ export default function Header() {
         }
     }
     return (
-        <header className='smallHeader'>
+        <header >
             <Link
                 className="logo"
                 to="/"
