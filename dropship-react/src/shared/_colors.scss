@@ -1,18 +1,18 @@
 :root {
-    --priColor: rgb(255, 255, 255);
+    --priColor: rgb(233, 233, 233);
     --tpPri: rgb(250, 250, 250);
-    --tpPri3: rgb(245, 245, 245); // pozadina
-    --tpPri2: rgba(235, 235, 235); // pozadina
+    --tpPri2: rgba(235, 235, 235);
+    --tpPri3: rgb(245, 245, 245);
 
     --secColor: rgba(0, 0, 0, 0.822);
-    --tpSec: hsl(0, 0%, 30%); // font
-    --tpSec2: hsl(0, 0%, 37%); // font
-
+    --tpSec: hsl(0, 0%, 30%);
+    --tpSec2: hsl(0, 0%, 37%);
 
     --secAccent: rgb(208, 0, 255);
     --paleSecAccent: rgba(208, 0, 255, 0.646);
+    --paleSecAccent: rgba(208, 0, 255, 0.646);
     --accent: rgb(255, 52, 150); // hover text
-    --tertAccent: rgb(227, 255, 69);
+    --tertAccent: rgb(255, 166, 0);
     --tertColor: rgba(128, 128, 128, 0.598);
     --paleAccent: rgba(255, 0, 136, 0.072); // hover on a btn
     --paleAccentTwo: rgba(255, 0, 123, 0.67);
@@ -29,15 +29,21 @@
     --logoAccentTwo: rgb(208, 0, 255);
     --logoReverseAccentOne: #0091ff;
     --logoReverseAccentTwo: rgb(29, 184, 231);
+
+    --shadowColor: rgba(0, 0, 0, 0.2);
+    --shadowColorTwo: rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode {
     --priColor: rgb(0, 0, 0);
-    --tpPri: rgba(20, 20, 20);
-    --tpPri2: rgba(35, 35, 35);
-    --tpPri3: rgba(70, 70, 70);
+    --tpPri: rgba(20, 20, 20, 0.877);
+    --tpPri2: rgb(35, 35, 35);
+    --tpPri3: rgb(45, 45, 45);
 
     --secColor: rgb(255, 255, 255);
+    --tpSec: hsl(0, 0%, 92%);
+    --tpSec2: hsl(0, 0%, 73%);
+
     --tpSec: hsl(0, 0%, 92%);
     --tpSec2: hsl(0, 0%, 73%);
 
@@ -50,6 +56,7 @@
 
     --someColor: #2b0075;
     --secAccent: #0099ff;
+    --paleSecAccent: #0099ffc8;
     --paleSecAccent: #0099ffc8;
     --accent: #00eaff;
     --tertAccent: #e71db1;
@@ -66,10 +73,12 @@
     --reversePaleAccent: rgba(255, 64, 210, 0.395);
     --reversePaleAccentTwo: rgba(255, 2, 196, 0.661);
 
+
     --logoAccentOne: #00eaff;
     --logoAccentTwo: #006aff;
     --logoReverseAccentOne: rgb(255, 52, 150);
     --logoReverseAccentTwo: rgb(208, 0, 255);
+
 
     background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
 }
