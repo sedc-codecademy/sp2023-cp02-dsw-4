@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from "react"
+import { useSelector, useDispatch } from "react-redux"
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Layout from './Layout'
@@ -8,18 +9,80 @@ import CategoriesList from './components/Categories/CategoriesList/CategoriesLis
 import CategoriesDetails from './components/Categories/CategoriesDetails/CategoriesDetails'
 import User from './components/User/User'
 import Cart from './components/Cart/Cart'
+import './styles.scss'
 
 import NotFound from './components/NotFound/NotFound'
+import AccountDropDown from './components/AccountDropDown/AccountDropDown'
+
+import { applyDarkTheme, applyLightTheme, applySystemTheme } from "./shared/themeFunctions"
+import { setIsMobile } from "./store/slices/mobileSlice"
+import { setIsSettingsOn } from "./store/slices/navSettingsSlice"
 
 function App() {
+  const dispatch = useDispatch()
+  const showAccDropDown = false
+
+  const themeMode = useSelector((state) => state.theme.themeMode)
+  const isMobile = useSelector((state) => state.mobile.isMobile)
+  const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
+  const [mediaQueryList, setMediaQueryList] = useState(window.matchMedia("(prefers-color-scheme: dark)"))
+
+  useEffect(() => {
+    dispatch(setIsMobile(window.innerWidth <= 800))
+  }, [dispatch])
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      dispatch(setIsMobile(window.innerWidth <= 800))
+      if(window.innerWidth <= 800 && !isMobile){
+        closeSettings()
+      } else if(window.innerWidth >= 800 && isMobile){
+        closeSettings()
+      }
+    }
+
+    const closeSettings = () => {
+      if (isSettingsOn) dispatch(setIsSettingsOn(false))
+    }
+
+    window.addEventListener('resize', updateIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', updateIsMobile);
+    }
+  }, [dispatch, isMobile, isSettingsOn])
+
+  useEffect(() => {
+    if (themeMode === "system") {
+      applySystemTheme(themeMode)
+    } else if (themeMode === "dark") {
+      applyDarkTheme()
+    } else if (themeMode === "light") {
+      applyLightTheme()
+    }
+  }, [themeMode, mediaQueryList])
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
+      if (themeMode === "system") {
+        setMediaQueryList(window.matchMedia("(prefers-color-scheme: dark)"))
+      }
+    })
+
   return (
     <>
       <BrowserRouter>
+        {showAccDropDown && <AccountDropDown />}
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/categories" element={<CategoriesList />} />
             <Route path="/categories/:id" element={<CategoriesDetails />} />
+            {/* <Route path="/search" element={<CategoriesList />} /> */}
+            <Route path="/search/:id" element={<CategoriesList />} />
+            {/* <Route path="/product" element={<CategoriesDetails />} /> */}
+            <Route path="/product/:id" element={<CategoriesDetails />} />
             <Route path="/user" element={<User />} />
             <Route path="/cart" element={<Cart />} />
 

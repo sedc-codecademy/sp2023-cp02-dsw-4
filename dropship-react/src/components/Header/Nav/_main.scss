@@ -1,0 +1,595 @@
+///////////  NAV  ///////////// 
+
+header {
+    .mainNav {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+
+        &.normalNav {
+            right: 1rem;
+            top: 1rem;
+            align-items: flex-end;
+            gap: 1rem;
+
+            ul {
+                display: flex;
+
+                &.navigationLinks {
+                    align-items: center;
+                    gap: 1rem;
+                    background-color: var(--tpPri3);
+                    padding: .5rem;
+                    border-radius: .7rem;
+                    backdrop-filter: blur(.5rem);
+                    box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
+
+                    width: fit-content;
+
+                    &.loggedIn {
+                        border-top-left-radius: 3rem;
+                        border-bottom-left-radius: 3rem;
+                    }
+
+                    li:not(.divider) {
+
+                        a,
+                        button:not(.logInIcon) {
+                            position: relative;
+                            border-radius: .5rem;
+                            color: var(--secColor);
+
+                            padding: .6rem .8rem;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: .5rem;
+
+                            transition: .3s ease background-color, color .3s ease;
+
+                            background-color: var(--tpPri2);
+                            outline: .15rem solid rgba(0, 0, 0, 0);
+                            user-select: none;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
+                                border-radius: .5rem;
+                                z-index: 0;
+                                transition: opacity .3s ease;
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                                z-index: 1;
+                            }
+
+                            svg {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                z-index: 1;
+                            }
+
+                            &:focus-visible {
+                                outline-color: var(--reverseSecAccent);
+                            }
+
+                            &:hover {
+                                color: var(--accent);
+                                background-color: var(--paleAccent);
+                            }
+
+                            &:active {
+                                background-color: var(--tpPri3);
+                            }
+
+                            &.active {
+                                color: var(--priColor);
+                                pointer-events: none;
+
+                                &::after {
+                                    opacity: 1;
+
+                                }
+                            }
+                        }
+
+                        a {
+                            padding: .4rem .5rem;
+                        }
+
+                        .logInIcon {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            border-radius: 50%;
+
+                            transition: background-color .3s ease;
+
+                            img {
+                                height: 2.5rem;
+                                width: 2.5rem;
+                                outline: .15rem solid var(--priColor);
+                                border-radius: 50%;
+                                padding: .05rem;
+                                position: relative;
+                                transition: background-color .3s ease, outline .3s ease;
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                inset: -.25rem;
+                                border-radius: 50%;
+                                background: linear-gradient(to bottom, var(--paleSecAccent), var(--paleAccentTwo));
+                                transition: opacity .3s ease;
+                            }
+
+                            &:focus-visible {
+                                outline: none;
+                                background-color: var(--priColor);
+
+                                &::before {
+                                    opacity: 0;
+                                }
+
+                                img {
+                                    background-color: var(--priColor);
+                                    outline-color: var(--reverseSecAccent);
+                                }
+                            }
+
+                            &:hover {
+                                background-color: var(--priColor);
+
+                                &::before {
+                                    opacity: 0;
+                                }
+
+                                img {
+                                    background-color: var(--priColor);
+                                    outline-color: var(--accent);
+                                }
+                            }
+
+                            &:active {
+                                img {
+                                    background-color: var(--accent);
+                                    opacity: .7;
+                                }
+                            }
+
+                            &.active {
+                                pointer-events: all;
+
+                                img {
+                                    background-color: var(--priColor);
+                                }
+                            }
+                        }
+                    }
+
+                    .divider {
+                        background: radial-gradient(var(--accent), var(--secAccent));
+                        padding: 1.1rem .1rem;
+                        border-radius: .3rem;
+                    }
+                }
+            }
+        }
+
+        &.mobileNav {
+            bottom: 0;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column-reverse;
+            z-index: 999;
+
+            ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                background-color: var(--tpPri3);
+                padding: .5rem;
+
+                z-index: 10;
+
+                li {
+
+                    a,
+                    button {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: var(--tpSec);
+                        border-radius: .5rem;
+
+                        svg {
+                            height: 2.5rem;
+                            width: 2.5rem;
+                        }
+
+                        &.active:not(.logInIcon) {
+                            color: var(--accent);
+                            pointer-events: none;
+
+                            &::after {
+                                opacity: 1;
+
+                            }
+                        }
+                    }
+
+                    .logInIcon {
+                        img {
+                            height: 3rem;
+                            width: 3rem;
+                            outline: .15rem solid var(--priColor);
+                            border-radius: 50%;
+                            padding: .05rem;
+                            position: relative;
+                            transition: background-color .3s ease, opacity .3s ease;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            inset: -.25rem;
+                            border-radius: 50%;
+                            background: linear-gradient(to bottom, var(--paleSecAccent), var(--paleAccentTwo));
+                            transition: opacity .3s ease;
+                        }
+
+                        &.active {
+                            img {
+                                background-color: var(--priColor);
+                            }
+                        }
+                    }
+
+                    .logInButton {
+                        svg {
+                            height: 3.5rem;
+                            width: 3.5rem;
+                        }
+                    }
+
+                    .mobileLogo {
+                        svg {
+                            height: 3rem;
+                            width: 3rem;
+
+                            background-color: var(--tpSec);
+                            border-radius: 50%;
+                            outline: .2rem solid var(--tpSec2);
+
+                            #headerLogoMobile {
+
+                                :first-child {
+                                    stop-color: var(--priColor)
+                                }
+
+                                :nth-child(2) {
+                                    stop-color: var(--priColor)
+                                }
+                            }
+                        }
+
+                        &.active {
+                            svg {
+                                background-color: var(--tpPri2);
+                                border-radius: 50%;
+                                outline: .2rem solid var(--tpPri2);
+
+                                #headerLogoMobile {
+
+                                    :first-child {
+                                        stop-color: var(--logoAccentOne)
+                                    }
+
+                                    :nth-child(2) {
+                                        stop-color: var(--logoAccentTwo)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .settingsContainer {
+            display: flex;
+            flex-direction: column;
+
+            &.normalSettings {
+                gap: 1rem;
+
+                .themeSettings,
+                .accountSettings {
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding: .5rem;
+                    border-radius: .8rem;
+
+                    background-color: var(--tpPri3);
+                    box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
+
+                    transform: translateX(130%);
+                    transition: transform .4s;
+
+                    li:not(.divider) {
+
+                        &:first-child {
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+
+                            border-radius: .5rem;
+                            padding-inline: .3rem;
+                        }
+
+                        button,
+                        a {
+                            position: relative;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            border-radius: .5rem;
+                            padding: .5rem .7rem;
+
+                            gap: 2.5rem;
+
+                            background-color: var(--tpPri2);
+
+                            transition: .3s ease background-color, color .3s ease;
+                            outline: .2rem solid rgba(0, 0, 0, 0);
+
+                            width: 100%;
+                            font-size: 1rem;
+                            overflow: hidden;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
+                                border-radius: .5rem;
+                                z-index: 0;
+                                transition: opacity .3s ease;
+                            }
+
+                            P {
+                                color: var(--tpSec);
+                                transition: .3s ease background-color, color .3s ease;
+                            }
+
+                            svg {
+                                width: 2.2rem;
+                                height: 2.2rem;
+                                color: var(--tpSec);
+                                transition: .3s ease background-color, color .3s ease;
+                                transform: rotateY(180deg);
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
+                                border-radius: .7rem;
+                                transition: opacity .3s ease;
+                            }
+
+                            &:focus-visible {
+                                outline-color: var(--reverseSecAccent);
+                            }
+
+                            &:hover {
+                                background-color: var(--paleAccent);
+
+                                p,
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
+
+                            &:active {
+                                background-color: var(--tpPri3);
+                            }
+
+                            &.active {
+
+                                pointer-events: none;
+
+                                p,
+                                svg {
+                                    color: var(--priColor);
+                                    z-index: 1;
+                                }
+
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    .divider {
+                        background: radial-gradient(var(--accent), var(--secAccent));
+                        padding: .1rem;
+                        margin-inline: .3rem;
+                        border-radius: .3rem;
+                        opacity: .7;
+                    }
+                }
+
+                .themeSettings {
+                    transition-delay: .1s;
+                }
+            }
+
+            &.mobileSettings {
+                z-index: 9;
+
+                .themeSettings,
+                .accountSettings {
+                    width: 100%;
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding-bottom: 1rem;
+                    padding-inline: 1rem;
+
+                    background-color: var(--tpPri2);
+
+                    transform: translateY(130vh);
+                    transition: transform .3s ease;
+
+                    li:not(.divider) {
+                        width: 100%;
+
+                        &:first-child {
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+
+                            border-radius: .5rem;
+                            padding-inline: .3rem;
+                            margin-bottom: .5rem;
+                        }
+
+                        button,
+                        a {
+                            position: relative;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            border-radius: .5rem;
+                            padding: .5rem .7rem;
+
+                            gap: .5rem;
+                            width: 100%;
+
+                            background-color: var(--tpPri3);
+
+                            transition: .3s ease background-color, color .3s ease;
+                            outline: .2rem solid rgba(0, 0, 0, 0);
+
+                            font-size: 1rem;
+                            overflow: hidden;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
+                                border-radius: .5rem;
+                                z-index: 0;
+                                transition: opacity .3s ease;
+                            }
+
+                            P {
+                                color: var(--tpSec);
+                                transition: .3s ease background-color, color .3s ease;
+                            }
+
+                            svg {
+                                width: 2.2rem;
+                                height: 2.2rem;
+                                color: var(--tpSec);
+                                transition: .3s ease background-color, color .3s ease;
+                                transform: rotateY(180deg);
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
+                                border-radius: .7rem;
+                                transition: opacity .3s ease;
+                            }
+
+                            &:active {
+                                background-color: var(--tpPri2);
+
+                                p,
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
+
+                            &.active {
+
+                                pointer-events: none;
+
+                                p,
+                                svg {
+                                    color: var(--priColor);
+                                    z-index: 1;
+                                }
+
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .accountSettings {
+                    transition-delay: .2s;
+                    box-shadow: var(--paleAccentTwo) 0 -.5rem 1rem, var(--paleAccentTwo) 0 -1rem 2rem, var(--paleAccentThree) 0 -1.5rem .5rem;
+                }
+            }
+        }
+
+        .settingsContainer-enter-active,
+        .settingsContainer-exiting {
+
+            &.mobileSettings {
+
+                .themeSettings,
+                .accountSettings {
+                    transform: translateY(130vh);
+                }
+            }
+
+            &.normalSettings {
+
+                .themeSettings,
+                .accountSettings {
+                    transform: translateX(130%);
+                }
+            }
+        }
+
+        .settingsContainer-enter-done {
+
+            &.mobileSettings,
+            &.normalSettings {
+
+                .themeSettings,
+                .accountSettings {
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+}
