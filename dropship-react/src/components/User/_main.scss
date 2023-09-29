@@ -1,1 +1,165 @@
-///////////  USER  ///////////// 
+.user-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-inline: auto;
+    border: 2px solid var(--accent);
+    // border-radius: 15px;
+    border-radius: 1.1rem;
+    width: 60%;
+    background-color: var(--tpPri3);
+    color: var(--tpSec2);
+
+    .color-heading {
+        color: var(--accent);
+        font-size: 2rem;
+    }
+
+    .color-title {
+        color: var(--accent);
+    }
+
+    .user-parent-info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 5rem;
+        width: 100%;
+
+        img {
+            flex-grow: .27;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            background-color: var(--additionallAccent);
+        }
+
+        .user-info {
+            border: 1px solid var(--accent);
+            border-radius: 1.1rem;
+            padding: 15px;
+            background-color: white;
+        }
+
+        h1,
+        h3,
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    .order-parent {
+        display: flex;
+        flex-direction: column;
+        // border: 2px blue solid;
+        border-radius: 1.1rem;
+        background-color: rgb(253, 223, 223);
+        width: 90%;
+        justify-content: center;
+        padding: 1.5rem;
+        gap: 1rem;
+        margin-block: 1rem;
+
+        .order-li {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--priColor);
+            border-radius: .5rem;
+            gap: .5rem;
+            padding: .3rem .5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+            .order-header {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem
+                }
+
+                .view-cart-link {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: var(--accent);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                }
+                
+                
+                .view-cart-link:hover {
+                    background-color: #f0f0f0;
+                    color: pink;
+                }
+            }
+
+            .additional-order-info {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .order-ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                }
+            }
+        }
+    }
+
+    .rating-parent {
+        display: flex;
+        flex-direction: column;
+        // border: 2px blue solid;
+        background-color: rgb(253, 223, 223);
+        border-radius: 1.1rem;
+        width: 90%;
+        justify-content: center;
+        padding: 1.5rem;
+        gap: 1rem;
+
+        .rating-li {
+            display: flex;
+            flex-direction: column;
+            // border: 1px blue solid;
+            background-color: var(--priColor);
+            border-radius: .5rem;
+            gap: .5rem;
+            padding: .3rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+            .rating-header {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                .rating-expand-btn {
+                    margin-left: auto;
+                }
+            }
+
+            .additional-rating-info {
+                display: flex;
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+// .order-expand-btn {
+//     transition: transform 0.3s ease-in-out;
+// }
+
+// .order-expand-btn.expanded {
+//     transform: rotate(180deg);
+// }
