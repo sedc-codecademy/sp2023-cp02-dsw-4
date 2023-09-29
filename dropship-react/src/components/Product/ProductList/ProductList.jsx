@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
+import DiscountedProducts from "../DiscountedProducts/DiscountedProducts";
+import BestSelers from "../BestSelers/BestSelers";
 function ProductList() {
-    return (
-        <div>ProductList</div>
-    )
+  return (
+    <>
+      <DiscountedProducts></DiscountedProducts>
+      <BestSelers></BestSelers>
+    </>
+  );
 }
 
-export default ProductList
+export default ProductList;

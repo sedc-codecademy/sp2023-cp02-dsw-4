@@ -1,1 +1,292 @@
-///////////  PRODUCT DETAILS  ///////////// 
+///////////  PRODUCT DETAILS  /////////////
+
+/* PRODUCT PAGE */
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* PRODUCT DETAILS */
+.product-details {
+  display: flex;
+  background-color: var(--tpPri3);
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.product-image {
+  flex-grow: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 31.25rem;
+  object-fit: contain;
+}
+
+.product-info {
+  flex: 2;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.product-title {
+  font-size: 28px;
+  color: var(--logoAccentOne);
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  font-size: 18px;
+  color: #666;
+}
+
+.product-price {
+  font-size: 24px;
+  color: var(--logoAccentOne);
+}
+
+.product-shipping,
+.product-discount,
+.product-total {
+  font-size: 18px;
+  color: #333;
+}
+
+.product-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.count button {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--paleAccentThree);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.product-count {
+  margin: 0;
+  font-size: 24px;
+}
+
+.buy-button {
+  background-color: var(--logoAccentOne);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+.buy-button:hover {
+  background-color: var(--paleAccentThree);
+}
+
+.quantity-btn {
+  height: 25px !important;
+  width: 25px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+}
+
+/* SUGGESTED FOR YOU */
+.suggested-for-you {
+  margin-top: 2rem;
+  font-size: 24px;
+  color: var(--logoAccentOne);
+}
+
+/* BESTSELLERS DIV */
+.bestsellers-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.reviews {
+  background-color: var(--tpPri3);
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 17px 16px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.reviews h2 {
+  font-size: 28px;
+  color: var(--logoAccentOne);
+  margin-bottom: 20px;
+}
+
+.review {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: 0.3s;
+}
+
+.review .review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.review-author-info {
+  flex-grow: 1;
+}
+
+.review-author {
+  font-size: 18px;
+  color: var(--logoAccentOne);
+  margin: 0;
+}
+
+.review-date {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.review-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.review:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.review:hover .review-text {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.review-avatar:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+:root {
+  --priColor: rgb(255, 255, 255);
+  --tpPri: rgb(250, 250, 250);
+  --tpPri3: rgb(245, 245, 245);
+  --tpPri2: rgba(235, 235, 235);
+
+  --secColor: rgba(0, 0, 0, 0.822);
+  --tpSec: hsl(0, 0%, 30%);
+  --tpSec2: hsl(0, 0%, 37%);
+
+  --secAccent: rgb(208, 0, 255);
+  --paleSecAccent: rgba(208, 0, 255, 0.646);
+  --accent: rgb(255, 52, 150);
+  --tertAccent: rgb(227, 255, 69);
+  --tertColor: rgba(128, 128, 128, 0.598);
+  --paleAccent: rgba(255, 0, 136, 0.072);
+  --paleAccentTwo: rgba(255, 0, 123, 0.67);
+  --paleAccentThree: rgba(227, 172, 199, 0.765);
+  --someColor: #bc494976;
+  --additionallAccent: rgb(243, 243, 243);
+
+  --reverseAccent: #28b0ff;
+  --reverseSecAccent: #0099ff;
+  --reversePaleAccent: #0099ff5b;
+  --reversePaleAccentTwo: #0099ffb0;
+
+  --logoAccentOne: rgb(255, 52, 150);
+  --logoAccentTwo: rgb(208, 0, 255);
+  --logoReverseAccentOne: #0091ff;
+  --logoReverseAccentTwo: rgb(29, 184, 231);
+}
+
+.dark-mode {
+  --priColor: rgb(0, 0, 0);
+  --tpPri: rgba(20, 20, 20);
+  --tpPri2: rgba(35, 35, 35);
+  --tpPri3: rgba(70, 70, 70);
+
+  --secColor: rgb(255, 255, 255);
+  --tpSec: hsl(0, 0%, 92%);
+  --tpSec2: hsl(0, 0%, 73%);
+
+  --accent: rgb(59, 255, 157);
+  --secAccent: rgba(0, 255, 55);
+  --tertAccent: rgb(65, 204, 255);
+  --paleAccent: rgba(0, 255, 128, 0.06);
+  --paleAccentTwo: rgba(0, 255, 128, 0.703);
+  --paleAccentThree: rgba(0, 255, 128, 0.248);
+
+  --someColor: #2b0075;
+  --secAccent: #0099ff;
+  --paleSecAccent: #0099ffc8;
+  --accent: #00eaff;
+  --tertAccent: #e71db1;
+  --additionallAccent: rgba(0, 0, 0, 0.475);
+  --priColor: rgb(0, 0, 0);
+
+  --paleAccent: #00eaff13;
+  --paleAccentTwo: #00eaffc8;
+  --paleAccentThree: #00eaff3f;
+  --backdropBackground: rgb(1, 21, 50);
+
+  --reverseAccent: rgb(255, 64, 210);
+  --reverseSecAccent: rgb(208, 0, 255);
+  --reversePaleAccent: rgba(255, 64, 210, 0.395);
+  --reversePaleAccentTwo: rgba(255, 2, 196, 0.661);
+
+  --logoAccentOne: #00eaff;
+  --logoAccentTwo: #006aff;
+  --logoReverseAccentOne: rgb(255, 52, 150);
+  --logoReverseAccentTwo: rgb(208, 0, 255);
+
+  background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+}
