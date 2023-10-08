@@ -19,7 +19,7 @@ export default function Header() {
         }
     }
     return (
-        <header >
+        <header>
             <Link
                 className="logo"
                 to="/"

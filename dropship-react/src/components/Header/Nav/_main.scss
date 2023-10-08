@@ -190,14 +190,15 @@ header {
             display: flex;
             flex-direction: column-reverse;
             z-index: 999;
+            
 
             ul {
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-
+                border-top: .15rem solid var(--tertColor);
                 background-color: var(--tpPri3);
-                padding: .5rem;
+                padding: .7rem;
 
                 z-index: 10;
 
@@ -230,8 +231,8 @@ header {
 
                     .logInIcon {
                         img {
-                            height: 3rem;
-                            width: 3rem;
+                            height: 2.5rem;
+                            width: 2.5rem;
                             outline: .15rem solid var(--priColor);
                             border-radius: 50%;
                             padding: .05rem;
@@ -257,15 +258,15 @@ header {
 
                     .logInButton {
                         svg {
-                            height: 3.5rem;
-                            width: 3.5rem;
+                            height: 2.5rem;
+                            width: 2.5rem;
                         }
                     }
 
                     .mobileLogo {
                         svg {
-                            height: 3rem;
-                            width: 3rem;
+                            height: 2.5rem;
+                            width: 2.5rem;
 
                             background-color: var(--tpSec);
                             border-radius: 50%;

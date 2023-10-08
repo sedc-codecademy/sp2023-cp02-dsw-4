@@ -1,42 +1,41 @@
-import React, { useEffect, useState } from "react";
-import "./_main.scss";
-import { useParams } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
-import { selectProducts } from "../../../store/selectors/productSelector";
-import { decrement, increment } from "../../../store/slices/productsSlice";
-import ProductCard from "../ProductCard/ProductCard";
+import React, { useEffect, useState } from "react"
+import "./_main.scss"
+import { useParams } from "react-router"
+import { useSelector } from "react-redux"
+import { selectProducts } from "../../../store/selectors/productSelector"
+import ProductCard from "../ProductCard/ProductCard"
 
 const getRandomProducts = (products, count) => {
-  const copiedProducts = [...products];
-  const shuffled = copiedProducts.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-};
+  const copiedProducts = [...products]
+  const shuffled = copiedProducts.sort(() => 0.5 - Math.random())
+  return shuffled.slice(0, count)
+}
 
 function ProductDetails() {
-  const { productId } = useParams();
-  const products = useSelector(selectProducts);
+  const { productId } = useParams()
+  const products = useSelector(selectProducts)
 
-  const [randomProducts, setRandomProducts] = useState([]);
+  const [randomProducts, setRandomProducts] = useState([])
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(0)
 
-  const product = products.find((p) => p.id === productId);
+  const product = products.find((p) => p.id === productId)
 
   const discountedPrice = product.sale
     ? (product.price - product.price * (product.sale / 100)).toFixed(2)
-    : null;
-  const discount = product.price - discountedPrice;
+    : null
+  const discount = product.price - discountedPrice
 
   const totalPrice = (
     product.sale
       ? product.price + product.shippingPrice - discount
       : product.price + product.shippingPrice
-  ).toFixed(2);
+  ).toFixed(2)
 
   useEffect(() => {
-    const randomProducts = getRandomProducts(products, 5);
-    setRandomProducts(randomProducts);
-  }, []);
+    const randomProducts = getRandomProducts(products, 5)
+    setRandomProducts(randomProducts)
+  }, [products])
 
   return (
     <div className="product-page">
@@ -44,7 +43,7 @@ function ProductDetails() {
         <div className="product-image">
           <img
             src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
-            alt="Product Image"
+            alt="product"
           />
         </div>
         <div className="product-info">
@@ -125,7 +124,7 @@ function ProductDetails() {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default ProductDetails;
+export default ProductDetails
