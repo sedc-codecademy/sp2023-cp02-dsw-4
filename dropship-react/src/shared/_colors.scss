@@ -9,27 +9,28 @@
     --tpSec: hsl(0, 0%, 30%);
     --tpSec2: hsl(0, 0%, 37%);
 
-    --secAccent: rgb(208, 0, 255);
-    --paleSecAccent: rgba(208, 0, 255, 0.646);
-    --paleSecAccent: rgba(208, 0, 255, 0.646);
-    --accent: rgb(255, 52, 150); // hover text
+    --accent: rgb(255, 52, 86); // hover text
+    --secAccent: rgb(255, 115, 0);
+    --paleSecAccent: rgba(255, 115, 0, 0.646);
     --tertAccent: rgb(255, 166, 0);
     --tertColor: rgba(128, 128, 128, 0.598);
-    --paleAccent: rgba(255, 0, 136, 0.072); // hover on a btn
-    --paleAccentTwo: rgba(255, 0, 123, 0.67);
-    --paleAccentThree: rgba(227, 172, 199, 0.765);
-    --someColor: #bc494976;
-    --additionallAccent: rgb(243, 243, 243);
+    --tertColor2: rgb(207, 207, 207);
+    --paleAccent: rgba(255, 52, 86, 0.199); // hover on a btn
+    --paleAccentTwo: rgba(255, 52, 86, 0.67);
+    --paleAccentThree: rgba(255, 52, 86, 0.521);
+    --someColor: #ffccbf;
+    
+    --additionallAccent: rgb(0, 132, 255);
 
-    --reverseAccent: #28b0ff;
-    --reverseSecAccent: #0099ff;
-    --reversePaleAccent: #0099ff5b;
-    --reversePaleAccentTwo: #0099ffb0;
+    --reverseSecAccent: rgb(0, 185, 83);
+    --reverseAccent: rgb(0, 255, 170);
+    --reversePaleAccent: rgba(0, 255, 170, 0.072);
+    --reversePaleAccentTwo: rgba(0, 255, 170, 0.67);
 
-    --logoAccentOne: rgb(255, 52, 150);
-    --logoAccentTwo: rgb(208, 0, 255);
-    --logoReverseAccentOne: #0091ff;
-    --logoReverseAccentTwo: rgb(29, 184, 231);
+    --logoAccentOne: rgb(255, 52, 86);
+    --logoAccentTwo: rgb(255, 123, 0);
+    --logoReverseAccentOne: rgb(0, 185, 83);
+    --logoReverseAccentTwo: rgb(0, 255, 170);
 
     --shadowColor: rgba(0, 0, 0, 0.2);
     --shadowColorTwo: rgba(0, 0, 0, 0.5);
@@ -37,7 +38,7 @@
 
 .dark-mode {
     --priColor: rgb(0, 0, 0);
-    --tpPri: rgba(20, 20, 20, 0.877);
+    --tpPri: rgba(20, 20, 20);
     --tpPri2: rgb(35, 35, 35);
     --tpPri3: rgb(45, 45, 45);
     --tpPri4: rgb(40, 40, 40);
@@ -49,38 +50,28 @@
     --tpSec: hsl(0, 0%, 92%);
     --tpSec2: hsl(0, 0%, 73%);
 
-    --accent: rgb(59, 255, 157);
-    --secAccent: rgba(0, 255, 55);
-    --tertAccent: rgb(65, 204, 255);
-    --paleAccent: rgba(0, 255, 128, 0.060);
-    --paleAccentTwo: rgba(0, 255, 128, 0.703);
-    --paleAccentThree: rgba(0, 255, 128, 0.248);
+    --tertColor2: rgb(83, 83, 83);
 
-    --someColor: #2b0075;
-    --secAccent: #0099ff;
-    --paleSecAccent: #0099ffc8;
-    --paleSecAccent: #0099ffc8;
-    --accent: #00eaff;
-    --tertAccent: #e71db1;
-    --additionallAccent: rgba(0, 0, 0, 0.475);
-    --priColor: rgb(0, 0, 0);
+    --accent: rgb(0, 255, 170);
+    --secAccent: rgb(0, 185, 83);
+    --tertAccent: rgb(109, 255, 65);
 
-    --paleAccent: #00eaff13;
-    --paleAccentTwo: #00eaffc8;
-    --paleAccentThree: #00eaff3f;
+    --someColor: rgb(0, 141, 94);
+    --paleSecAccent: rgba(0, 185, 83, 0.801);
+    --paleAccent: rgba(0, 255, 170, 0.092);
+    --paleAccentTwo: rgba(0, 255, 170, 0.67);
+    --paleAccentThree: rgba(0, 255, 170, 0.507);
     --backdropBackground: rgb(1, 21, 50);
 
-    --reverseAccent: rgb(255, 64, 210);
-    --reverseSecAccent: rgb(208, 0, 255);
-    --reversePaleAccent: rgba(255, 64, 210, 0.395);
-    --reversePaleAccentTwo: rgba(255, 2, 196, 0.661);
+    --reverseAccent: rgb(255, 52, 86); 
+    --reverseSecAccent: rgb(255, 115, 0);
+    --reversePaleAccent: rgba(255, 52, 86, 0.072); 
+    --reversePaleAccentTwo: rgba(255, 52, 86, 0.67);
 
+    --logoAccentOne: rgb(0, 185, 83);
+    --logoAccentTwo: rgb(0, 255, 170);
+    --logoReverseAccentOne: rgb(255, 52, 86);
+    --logoReverseAccentTwo: rgb(255, 123, 0);
 
-    --logoAccentOne: #00eaff;
-    --logoAccentTwo: #006aff;
-    --logoReverseAccentOne: rgb(255, 52, 150);
-    --logoReverseAccentTwo: rgb(208, 0, 255);
-
-
-    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+    background: radial-gradient(circle at center, var(--priColor) 0%, var(--tpPri3) 100%);
 }

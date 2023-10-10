@@ -14,7 +14,7 @@ header {
         position: absolute;
         top: 0;
         height: 100%;
-        z-index:-10;
+        z-index: -10;
 
         &.leftBkg {
             transform: rotateY(-180deg);
@@ -85,6 +85,7 @@ header {
         left: 1rem;
         display: flex;
         align-items: center;
+        border-radius: 50%;
 
         svg {
             width: 3.2rem;
@@ -110,15 +111,19 @@ header {
 
     &.smallHeader {
         height: fit-content;
-        padding: 1rem;
+        padding-block: 3rem;
+        margin-bottom: 2rem;
         gap: .7rem;
+        overflow: hidden;
+        background: radial-gradient(circle at left, var(--paleAccentTwo) 0%, var(--someColor) 50%, var(--paleAccentTwo) 100%);
+        // background-color: var(--someColor);
 
-        .headerBackground{
-            height: fit-content;
+        .headerBackground {
+            display: none;
         }
 
         .logo {
-            position: relative;
+            position: static;
             top: unset;
             left: unset;
             order: 0;
@@ -128,12 +133,17 @@ header {
             padding: .5rem;
             border-radius: 1rem;
             backdrop-filter: blur(.5rem);
-            box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
+            // box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
+            box-shadow: none;
 
             svg {
                 height: 2.5rem;
                 width: 2.5rem;
                 box-shadow: none;
+            }
+
+            &:hover {
+                border-radius: 50%;
             }
         }
 
@@ -141,6 +151,10 @@ header {
             position: relative;
             top: unset;
             order: 1;
+
+            .search-bar-container {
+                box-shadow: none;
+            }
         }
 
         .mainNav {
@@ -154,6 +168,8 @@ header {
                     flex-direction: row-reverse;
 
                     &.navigationLinks {
+                        box-shadow: none;
+
                         &.loggedIn {
                             border-top-left-radius: 1.2rem;
                             border-bottom-left-radius: 1.2rem;
@@ -163,7 +179,7 @@ header {
                     }
                 }
 
-                .settingsContainer{
+                .settingsContainer {
                     position: absolute;
                     right: 1rem;
                 }
@@ -189,13 +205,15 @@ header {
 
 @media (max-width: 1000px) {
     header {
-        &.smallHeader{
+        &.smallHeader {
             padding: 0;
             gap: 0;
-            .logo{
+
+            .logo {
                 margin: 0;
             }
         }
+
         .headerBackground {
             &.leftBkg {
                 display: none;
@@ -215,7 +233,7 @@ header {
 @media (max-width: 800px) {
     header {
         align-items: flex-start;
-        
+
 
         .headerBackground {
             &.leftBkg {

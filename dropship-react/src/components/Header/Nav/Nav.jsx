@@ -200,8 +200,8 @@ export default function Nav() {
                                 {!isMobile && <li className="divider"></li>}
                                 <li>
                                     <NavLink
-                                        to="/user/settings"
-                                        disabled={activeLink === "/user/settings"}
+                                        to="/settings"
+                                        disabled={activeLink === "/settings"}
                                         onClick={closeSettings}
                                     >
                                         <svg viewBox="0 0 32 32">

@@ -18,7 +18,7 @@ const productsData = [
       count: 8,
     },
     id: "1c529959-3e4b-43e5-ba47-bbea884cbffd",
-    sale: 1,
+    sale: 0,
     shippingPrice: 10,
     shipping: {
       weight: "13 kg",
@@ -237,7 +237,7 @@ const productsData = [
     },
   },
   {
-    title: "Sheepskin Seat Covers",
+    title: "Sheepskin Seaffffffffffffft Covdawdawdawdadaers dawdawdada",
     price: 159.99,
     description:
       "These sheepskin seat covers provide a cozy and comfortable driving experience, while also adding a touch of luxury to your car's interior.",

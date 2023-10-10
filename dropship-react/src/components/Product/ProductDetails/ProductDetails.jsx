@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import "./_main.scss"
-import { useParams } from "react-router"
+import { useParams, Navigate } from 'react-router-dom'
 import { useSelector } from "react-redux"
 import { selectProducts } from "../../../store/selectors/productSelector"
 import ProductCard from "../ProductCard/ProductCard"
+import Stars from '../../Stars/Stars'
 
 const getRandomProducts = (products, count) => {
   const copiedProducts = [...products]
@@ -16,14 +17,22 @@ function ProductDetails() {
   const products = useSelector(selectProducts)
 
   const [randomProducts, setRandomProducts] = useState([])
-
   const [quantity, setQuantity] = useState(0)
+
+  useEffect(() => {
+    const randomProducts = getRandomProducts(products, 5)
+    setRandomProducts(randomProducts)
+  }, [products])
 
   const product = products.find((p) => p.id === productId)
 
+  if (!product) {
+    return <Navigate to="/not-found" />
+  }
+
   const discountedPrice = product.sale
     ? (product.price - product.price * (product.sale / 100)).toFixed(2)
-    : null
+    : null;
   const discount = product.price - discountedPrice
 
   const totalPrice = (
@@ -32,10 +41,6 @@ function ProductDetails() {
       : product.price + product.shippingPrice
   ).toFixed(2)
 
-  useEffect(() => {
-    const randomProducts = getRandomProducts(products, 5)
-    setRandomProducts(randomProducts)
-  }, [products])
 
   return (
     <div className="product-page">
@@ -48,7 +53,7 @@ function ProductDetails() {
         </div>
         <div className="product-info">
           <h2 className="product-title">{product.title}</h2>
-          <p className="product-rating">Rating: {product.rating.rate}</p>
+          <Stars initialRating={product.rating.rate} id={productId}></Stars>
           <p className="product-price">${product.price.toFixed(2)}</p>
           <p className="product-shipping">Shipping: ${product.shippingPrice}</p>
           {product.sale && (
