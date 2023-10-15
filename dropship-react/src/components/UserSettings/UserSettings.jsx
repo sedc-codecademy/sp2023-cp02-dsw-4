@@ -51,17 +51,22 @@ function UserSettings() {
 
   return (
     <main className="user-settings-main">
-      <div className="user-parent-settings">
-        <ProfilePicture />
+      <ProfilePicture />
 
+      <section className="info-section">
         <UserInfoForm handleUserInputChange={handleUserInputChange} />
 
-        <PasswordInfoForm
-          handlePasswordInputChange={handlePasswordInputChange}
-        />
+        <div className="user-settings-div">
+          <AddressInfoForm
+            handleAddressInputChange={handleAddressInputChange}
+          />
+          <PasswordInfoForm
+            handlePasswordInputChange={handlePasswordInputChange}
+          />
+        </div>
+      </section>
 
-        <AddressInfoForm handleAddressInputChange={handleAddressInputChange} />
-
+      <section className="card-section">
         {user.cards.length ? (
           <>
             {user.cards.map((card) => (
@@ -75,8 +80,7 @@ function UserSettings() {
         ) : (
           <div>The user has not provided a card.</div>
         )}
-        {/* <CardInfoForm handleCardInputChange={handleCardInputChange} /> */}
-      </div>
+      </section>
     </main>
   );
 }
