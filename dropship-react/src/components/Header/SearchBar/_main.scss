@@ -2,19 +2,24 @@ header {
     .search-form {
         position: sticky;
         top: 1rem;
-        width: 33%;
-        z-index: 7;
+        width: 100%;
+        z-index: 15;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .search-bar-container {
+            max-width: 33%;
             display: flex;
             align-items: center;
             justify-content: center;
-            align-self: center;
+            margin-inline: auto;
 
             position: relative;
             width: 100%;
             border-radius: 1rem;
-            padding: .1rem;
+            padding: .2rem;
 
             border: 0.20rem solid var(--tpPri3);
             background-color: var(--tpPri3);
@@ -31,7 +36,7 @@ header {
                     font-weight: 600;
 
                     width: 100%;
-                    padding: .5rem 2rem;
+                    padding: .4rem 2rem;
                     border-radius: .8rem;
                     background-color: var(--tpPri2);
                     border: .2rem solid rgba(0, 0, 0, 0);
@@ -45,8 +50,6 @@ header {
 
                     &:focus-visible {
                         border-color: var(--paleAccentThree);
-                        // color: var(--accent);
-                        // background-color: var(--paleAccent);
                     }
                 }
             }
@@ -64,7 +67,6 @@ header {
                 &.searchButtons {
                     margin-left: .3rem;
                     background-color: var(--tpPri2);
-                    backdrop-filter: blur(2rem);
                     padding: .5rem;
 
                     svg {
@@ -106,6 +108,80 @@ header {
             }
         }
 
+        .frequent-searches {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-inline: auto;
+            margin-top: 1rem;
+            gap: 1rem;
+            background-color: var(--tpPri2);
+            padding: .7rem;
+            border-radius: .7rem;
+            box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
+            width: max-content;
+
+            h3 {
+                color: var(--tpSec2);
+                order: 0;
+                width: max-content;
+                font-size: 1.2rem;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                height: 1.5rem;
+                width: .2rem;
+                order: 1;
+            }
+
+            ul {
+                flex-grow: 1;
+                display: flex;
+                // justify-content: space-around;
+                gap: .5rem;
+                order: 2;
+                // width: max-content;
+
+                li {
+                    flex-grow: 1;
+                    display: flex;
+
+                    a {
+                        text-transform: capitalize;
+                        text-align: center;
+                        padding: .4rem;
+                        border: .15rem solid var(--tpPri3);
+                        border-radius: .5rem;
+                        width: max-content;
+                        flex-grow: 1;
+                        color: var(--secColor);
+                        transition: border-color .3s ease, color .3s ease, background-color .3s ease;
+
+                        &:focus-visible {
+                            background-color: var(--paleAccent);
+                            color: var(--accent);
+                            border-color: var(--accent);
+                        }
+
+                        &:hover {
+                            background-color: var(--paleAccent);
+                            color: var(--accent);
+                            border-color: var(--paleAccent);
+                        }
+
+                        &:active {
+                            background-color: var(--tpPri2);
+                            color: var(--accent);
+                            border-color: var(--paleAccent);
+                        }
+                    }
+                }
+            }
+        }
+
         .suggestions {
             position: absolute;
             display: grid;
@@ -113,13 +189,17 @@ header {
             grid-template-rows: 0fr;
             opacity: 0;
             transition: grid-template-rows 1s cubic-bezier(.19, 1, .22, 1), opacity .35s;
-            width: 100%;
+            width: fit-content;
             margin-top: 1rem;
+            top: 100%;
 
             border-radius: 1rem;
             box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
             padding: .5rem;
             background-color: var(--tpPri3);
+            margin-inline: auto;  
+            max-width: 33%;
+            z-index: 15;
 
             .suggestions-items {
                 overflow: hidden;
@@ -138,6 +218,7 @@ header {
                         width: 100%;
                         border-radius: 1rem;
                         padding: .5rem;
+                        gap: 5rem;
 
                         background-color: var(--tpPri2);
                         transition: all .5s cubic-bezier(.19, 1, .22, 1);
@@ -329,7 +410,9 @@ header {
 @media (max-width: 1440px) {
     header {
         .search-form {
-            width: 40%;
+            .search-bar-container{
+                max-width: 53%;
+            }
         }
     }
 }
@@ -337,7 +420,6 @@ header {
 @media (max-width: 1000px) {
     header {
         .search-form {
-            width: unset;
             margin: .5rem;
 
             .search-bar-container {
@@ -377,12 +459,28 @@ header {
         .search-form {
             width: 100%;
 
+            .frequent-searches {
+                display: none;
+            }
+
             .search-bar-container {
+                border-radius: 1.5rem;
+
+                form {
+                    .search-bar {
+                        border-radius: 1rem;
+                    }
+                }
+
                 .divider {
                     display: none;
                 }
 
-                button {
+                button { 
+                    &.searchButtons{
+                        border-radius: 1rem;
+                    }
+                    
                     &.categoriesButton {
                         display: none;
                     }
@@ -390,7 +488,7 @@ header {
             }
 
             .suggestions {
-                border-radius: .5rem;
+                border-radius: 1.5rem;
                 padding: .3rem;
                 margin-top: .5rem;
 

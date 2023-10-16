@@ -1,10 +1,14 @@
 import React, { useRef } from "react"
 import { NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
+
 import { toggleDropDown } from "../../../store/slices/acDropDownSlice"
+import { toggleCatDropDown } from "../../../store/slices/catDropDownSlice"
 
 import { setThemeMode } from "../../../store/slices/themeSlice"
 import { setIsSettingsOn } from "../../../store/slices/navSettingsSlice"
+
+import { CatDPMobile, SubCatDP, ViewAllSub, catArray, subCatArray } from "../CatDropDown/CatDP"
 
 import { CSSTransition } from "react-transition-group"
 
@@ -16,8 +20,10 @@ export default function Nav() {
     const themeMode = useSelector((state) => state.theme.themeMode)
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
+    const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
 
     const csstransitionRef = useRef()
+    const mobilecatref = useRef()
 
     const onLoginBtnClick = () => {
         dispatch(toggleDropDown())
@@ -45,6 +51,10 @@ export default function Nav() {
 
     const handleSystemClick = () => {
         dispatch(setThemeMode("system"))
+    }
+
+    const handleCategoriesClick = () => {
+        dispatch(toggleCatDropDown())
     }
 
     return (
@@ -110,7 +120,7 @@ export default function Nav() {
                                 className={`logInIcon ${isSettingsOn ? "active" : ""}`}
                                 onClick={onAccountIconClick}
                             >
-                                <img src="imgs/user.png" alt="user" />
+                                <img src="/imgs/user.png" alt="user" />
                             </button>
                         ) : (
                             <button
@@ -133,13 +143,24 @@ export default function Nav() {
                         )}
                     </li>
                     {isMobile && <li>
-                        <button className="categoriesButton" onClick={closeSettings}>
+                        <button className="categoriesButton" onClick={handleCategoriesClick}>
                             <svg viewBox="0 0 32 32">
                                 <path
                                     fill="currentColor"
                                     d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
                                 />
                             </svg>
+                        </button>
+                    </li>}
+                    {!isMobile && <li>
+                        <button>
+                            {/* <svg viewBox="0 0 32 32">
+                                <path
+                                    fill="currentColor"
+                                    d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
+                                />
+                            </svg> */}
+                            <p>Ship To</p>
                         </button>
                     </li>}
                     <li>
@@ -160,10 +181,42 @@ export default function Nav() {
                     </li>
                 </ul>
 
+                <CSSTransition
+                    in={showCatDropDown && isMobile}
+                    timeout={200}
+                    classNames="categories-dp-mobile"
+                    unmountOnExit
+                    nodeRef={mobilecatref}
+                >
+                    <div className="categories-dp-mobile" ref={mobilecatref}>
+                        <div className="categories-header">
+                            <h2>Categories</h2>
+                            <button onClick={handleCategoriesClick}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M17.414 16L26 7.414L24.586 6L16 14.586L7.414 6L6 7.414L14.586 16L6 24.586L7.414 26L16 17.414L24.586 26L26 24.586L17.414 16z" /></svg>
+                            </button>
+                        </div>
+                        <div className="divider"></div>
+                        <ul className="catsList">
+                            {catArray.map((e) => (
+                                <CatDPMobile key={e.id} category={e} />
+                            ))}
+                        </ul>
+                        <div className="divider"></div>
+                        <div className="subCatsList">
+                            <ul>
+                                {subCatArray.slice(0, 5).map((e) => (
+                                    <SubCatDP key={e.id} subCategory={e} />
+                                ))}
+                            </ul>
+                            <ViewAllSub category="should contain path to category page"></ViewAllSub>
+                        </div>
+                    </div>
+                </CSSTransition>
+
                 {isLoggedIn && (
                     <CSSTransition
                         in={isSettingsOn}
-                        timeout={250}
+                        timeout={300}
                         classNames="settingsContainer"
                         unmountOnExit
                         nodeRef={csstransitionRef}

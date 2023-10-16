@@ -1,19 +1,23 @@
 :root {
     --priColor: rgb(233, 233, 233);
-    --tpPri: rgb(250, 250, 250);
+    --tpPri: #fff;
     --tpPri2: rgba(235, 235, 235);
     --tpPri3: rgb(245, 245, 245);
     --tpPri4: rgb(230, 230, 230);
 
+    --ddbkg: rgba(0, 0, 0, 0.3);
+
     --secColor: rgba(0, 0, 0, 0.822);
     --tpSec: hsl(0, 0%, 30%);
-    --tpSec2: hsl(0, 0%, 37%);
-
+    --tpSec2: hsl(0, 0%, 45%);
+    --tpSec3: hsl(0, 0%, 63%);
+    
     --accent: rgb(255, 52, 86); // hover text
+    --darkAccent: rgb(158, 0, 26);
     --secAccent: rgb(255, 115, 0);
     --paleSecAccent: rgba(255, 115, 0, 0.646);
     --tertAccent: rgb(255, 166, 0);
-    --tertColor: rgba(128, 128, 128, 0.598);
+    --tertColor: rgb(187, 187, 187);
     --tertColor2: rgb(207, 207, 207);
     --paleAccent: rgba(255, 52, 86, 0.199); // hover on a btn
     --paleAccentTwo: rgba(255, 52, 86, 0.67);
@@ -43,16 +47,20 @@
     --tpPri3: rgb(45, 45, 45);
     --tpPri4: rgb(40, 40, 40);
 
+    --ddbkg: rgba(0, 0, 0, 0.103);
+
     --secColor: rgb(255, 255, 255);
     --tpSec: hsl(0, 0%, 92%);
     --tpSec2: hsl(0, 0%, 73%);
 
     --tpSec: hsl(0, 0%, 92%);
     --tpSec2: hsl(0, 0%, 73%);
+    --tpSec3: hsl(0, 0%, 47%);
 
     --tertColor2: rgb(83, 83, 83);
 
     --accent: rgb(0, 255, 170);
+    --darkAccent: rgb(0, 124, 83);
     --secAccent: rgb(0, 185, 83);
     --tertAccent: rgb(109, 255, 65);
 

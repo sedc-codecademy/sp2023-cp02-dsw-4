@@ -1,1 +1,57 @@
 ///////////  CAEGORIES DETAILS  ///////////// 
+
+.categoriesDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    margin-inline: auto;
+    padding: 1rem;
+    gap: 1rem;
+
+    .filtersButton{
+        position: fixed;
+        bottom: 5rem;
+        right: 1rem;
+        color: var(--priColor);
+        background-color: var(--accent);
+        border: .2rem solid var(--paleAccentTwo);
+
+        transition: .3s background-color,.3s color;
+
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .8rem;
+        border-radius: 2rem;
+        
+        svg{
+            height: 1.75rem;
+        }
+
+        &:active{
+            background-color: var(--tpPri);
+            color: var(--accent);
+        }
+    }
+}
+
+@media (max-width: 1800px) {
+    .categoriesDetails {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 1500px) {
+    .categoriesDetails {
+        max-width: unset;
+    }
+}
+
+@media (max-width: 800px) {
+    .categoriesDetails {
+        max-width: unset;
+        margin: 0;
+    }
+}

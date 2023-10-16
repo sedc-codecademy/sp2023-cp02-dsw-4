@@ -19,7 +19,7 @@ const catArray = [
             "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
             "50292d51-a80b-40e0-ab12-47e7557cedb8",
         ],
-        image: "/imgs/cat/tech/technology2.jpg",
+        image: "/imgs/cat/tech/technology.jpg",
     },
     {
         id: "menswear",
@@ -49,7 +49,7 @@ const catArray = [
     },
     {
         id: "autoaccessories",
-        title: "Automobile Accessories",
+        title: "Auto Accessories",
         description: "seat covers, floor mats, car audio systems, etc.",
         sub: [
             "ba523e6e-32cb-43a5-be44-734bd769aaa2",
