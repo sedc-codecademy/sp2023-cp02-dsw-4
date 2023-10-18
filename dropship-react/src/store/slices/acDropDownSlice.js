@@ -3,17 +3,17 @@ import { createSlice } from "@reduxjs/toolkit"
 const acDropDownSlice = createSlice({
     name: "acDropDown",
     initialState: {
-        showDropDown: false,
+        showAccDropDown: false,
     },
     reducers: {
-        toggleDropDown(state) {
-            state.showDropDown = !state.showDropDown
+        setShowAccDropDown(state, action) {
+            state.showAccDropDown = action.payload
         },
     },
 })
 
 
 
-export const { toggleDropDown } = acDropDownSlice.actions
+export const { setShowAccDropDown } = acDropDownSlice.actions
 
 export default acDropDownSlice.reducer

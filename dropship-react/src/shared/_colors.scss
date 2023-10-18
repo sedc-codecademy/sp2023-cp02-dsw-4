@@ -12,14 +12,14 @@
     --tpSec2: hsl(0, 0%, 45%);
     --tpSec3: hsl(0, 0%, 63%);
     
-    --accent: rgb(255, 52, 86); // hover text
+    --accent: rgb(255, 52, 86);
     --darkAccent: rgb(158, 0, 26);
     --secAccent: rgb(255, 115, 0);
     --paleSecAccent: rgba(255, 115, 0, 0.646);
     --tertAccent: rgb(255, 166, 0);
     --tertColor: rgb(187, 187, 187);
     --tertColor2: rgb(207, 207, 207);
-    --paleAccent: rgba(255, 52, 86, 0.199); // hover on a btn
+    --paleAccent: rgba(255, 52, 86, 0.199);
     --paleAccentTwo: rgba(255, 52, 86, 0.67);
     --paleAccentThree: rgba(255, 52, 86, 0.521);
     --someColor: #ffccbf;
@@ -82,4 +82,8 @@
     --logoReverseAccentTwo: rgb(255, 123, 0);
 
     background: radial-gradient(circle at center, var(--priColor) 0%, var(--tpPri3) 100%);
+}
+
+dialog::backdrop {
+    --backdropBackground: rgba(92, 92, 92, 0.291);
 }

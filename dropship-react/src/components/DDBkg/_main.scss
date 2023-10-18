@@ -1,6 +1,6 @@
 ///////////  Drop Down Background  ///////////// 
 
-.background-div{
+.background-div {
     top: 0;
     left: 0;
     height: 100vh;
@@ -10,28 +10,47 @@
 }
 
 .background-div-enter {
-    background-color: rgba(0,0,0,0);
-    backdrop-filter: blur(0);
+    background-color: rgba(0, 0, 0, 0);
+
+    @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(0);
+    }
 }
 
 .background-div-enter-active {
     background-color: var(--ddbkg);
-    backdrop-filter: blur(.1rem);
-    transition: backdrop-filter 150ms, background-color 150ms;
+
+    @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(.1rem);
+    }
+
+    transition: backdrop-filter 150ms,
+    background-color 150ms;
 }
 
 .background-div-enter-done {
     background-color: var(--ddbkg);
-    backdrop-filter: blur(.1rem);
+
+    @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(.1rem);
+    }
 }
 
 .background-div-exit {
     background-color: var(--ddbkg);
-    backdrop-filter: blur(.1rem);
+
+    @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(.1rem);
+    }
 }
 
 .background-div-exit-active {
-    background-color: rgba(0,0,0,0);
-    backdrop-filter: blur(0);
-    transition: backdrop-filter 150ms, background-color 150ms;
+    background-color: rgba(0, 0, 0, 0);
+
+    @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(0);
+    }
+
+    transition: backdrop-filter 150ms,
+    background-color 150ms;
 }

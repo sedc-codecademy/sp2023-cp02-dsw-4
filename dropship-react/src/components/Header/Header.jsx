@@ -6,6 +6,7 @@ import Nav from "./Nav/Nav"
 import SearchBar from "./SearchBar/SearchBar"
 
 import { setIsSettingsOn } from "../../store/slices/navSettingsSlice"
+import AccountDropDown from "../AccountDropDown/AccountDropDown"
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -86,126 +87,29 @@ export default function Header() {
             </Link>
             <Nav></Nav>
             <SearchBar></SearchBar>
-            {/* {isSmallHeader && (
-                <svg className="headerBackground" viewBox="0 0 1440 560">
-                    <g mask='url("#SvgjsMask1010")'>
+
+            {isSmallHeader && (
+                <svg
+                    className="headerBackground"
+                    viewBox="0 0 1440 900"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g mask="url(#mask0_214_2)">
                         <path
-                            d="M0 0L607.63 0L0 530.9z"
-                            filter="url(#SvgjsFilter1011)"
-                            fill="url(#primaryGradient)"
-                        ></path>
+                            d="M-40.8584 530.77C121.91 551.853 313.207 740.031 434.29 672.324C555.715 604.426 419.7 408.076 419.853 273.147C419.957 180.946 460.886 99.722 435.043 5.19926C408.015 -93.6541 353.264 -190.849 270.213 -274.16C182.648 -361.998 72.9904 -431.23 -46.6411 -477.984C-176.718 -528.82 -324.992 -586.432 -440.603 -551.956C-555.46 -517.704 -557.426 -383.252 -629.397 -304.2C-702.808 -223.566 -871.743 -196.513 -866.96 -83.6517C-862.159 29.6506 -680.148 107.802 -607.333 216.426C-532.007 328.795 -564.488 488.188 -435.737 559.633C-307.217 630.951 -181.337 512.573 -40.8584 530.77Z"
+                            fill="var(--accent)"
+                            opacity={.75}
+
+                        />
                         <path
-                            d="M0 560L607.63 560L0 29.100000000000023z"
-                            filter="url(#SvgjsFilter1011)"
-                            fill="url(#secondaryGradient)"
-                        ></path>
-                        <path
-                            d="M1440 560L832.37 560L1440 29.100000000000023z"
-                            filter="url(#SvgjsFilter1011)"
-                            fill="url(#primaryGradient)"
-                        ></path>
-                        <path
-                            d="M1440 0L832.37 0L1440 530.9z"
-                            filter="url(#SvgjsFilter1011)"
-                            fill="url(#secondaryGradient)"
-                        ></path>
+                            d="M1572.89 896.562C1469.37 888.37 1362.06 895.448 1270.76 857.325C1173.61 816.762 1086.53 755.079 1052.29 679.19C1018.72 604.807 1044.69 524.143 1089.43 455.475C1128.75 395.116 1216.61 364.513 1285.98 320.505C1350.85 279.35 1397.9 219.12 1483.7 205.351C1570.15 191.477 1655.2 231.224 1742.92 247.177C1845.81 265.889 1967.18 253.371 2043.77 307.207C2121.57 361.899 2126.85 447.809 2136.57 523.882C2146.26 599.737 2144.24 676.652 2099.58 744.009C2053.77 813.108 1982.82 877 1883.35 905.81C1787.16 933.673 1678.3 904.906 1572.89 896.562Z"
+                            fill="var(--secAccent)"
+                            opacity={.7}
+                        />
                     </g>
-                    <defs>
-                        <mask id="SvgjsMask1010">
-                            <rect width="1440" height="560" fill="#ffffff"></rect>
-                        </mask>
-                        <filter height="130%" id="SvgjsFilter1011">
-                            <feGaussianBlur
-                                in="SourceAlpha"
-                                stdDeviation="5"
-                                result="TopLeftG"
-                            ></feGaussianBlur>
-                            <feOffset
-                                dx="-5"
-                                dy="-5"
-                                in="TopLeftG"
-                                result="TopLeftO"
-                            ></feOffset>
-                            <feComponentTransfer in="TopLeftO" result="TopLeftC">
-                                <feFuncA type="linear" slope="0.7"></feFuncA>
-                            </feComponentTransfer>
-                            <feGaussianBlur
-                                in="SourceAlpha"
-                                stdDeviation="5"
-                                result="TopRightG"
-                            ></feGaussianBlur>
-                            <feOffset
-                                dx="5"
-                                dy="-5"
-                                in="TopRightG"
-                                result="TopRightO"
-                            ></feOffset>
-                            <feComponentTransfer in="TopRightO" result="TopRightC">
-                                <feFuncA type="linear" slope="0.7"></feFuncA>
-                            </feComponentTransfer>
-                            <feGaussianBlur
-                                in="SourceAlpha"
-                                stdDeviation="5"
-                                result="BottomLeftG"
-                            ></feGaussianBlur>
-                            <feOffset
-                                dx="-5"
-                                dy="5"
-                                in="BottomLeftG"
-                                result="BottomLeftO"
-                            ></feOffset>
-                            <feComponentTransfer in="BottomLeftO" result="BottomLeftC">
-                                <feFuncA type="linear" slope="0.7"></feFuncA>
-                            </feComponentTransfer>
-                            <feGaussianBlur
-                                in="SourceAlpha"
-                                stdDeviation="5"
-                                result="BottomRightG"
-                            ></feGaussianBlur>
-                            <feOffset
-                                dx="5"
-                                dy="5"
-                                in="BottomRightG"
-                                result="BottomRightO"
-                            ></feOffset>
-                            <feComponentTransfer in="BottomRightO" result="BottomRightC">
-                                <feFuncA type="linear" slope="0.7"></feFuncA>
-                            </feComponentTransfer>
-                            <feMerge>
-                                <feMergeNode in="TopLeftC"></feMergeNode>
-                                <feMergeNode in="TopRightC"></feMergeNode>
-                                <feMergeNode in="BottomLeftC"></feMergeNode>
-                                <feMergeNode in="BottomRightC"></feMergeNode>
-                                <feMergeNode in="SourceGraphic"></feMergeNode>
-                            </feMerge>
-                        </filter>
-
-                        <linearGradient
-                            x1="0%"
-                            y1="50%"
-                            x2="100%"
-                            y2="50%"
-                            gradientUnits="userSpaceOnUse"
-                            id="primaryGradient"
-                        >
-                            <stop stopColor="var(--accent)" offset="0"></stop>
-                            <stop stopColor="var(--darkAccent)" offset="1"></stop>
-                        </linearGradient>
-
-                        <linearGradient
-                            x1="50%"
-                            y1="50%"
-                            x2="50%"
-                            y2="50%"
-                            gradientUnits="userSpaceOnUse"
-                            id="secondaryGradient"
-                        >
-                            <stop stopColor="var(--darkAccent)" offset="0"></stop>
-                            <stop stopColor="var(--reverseSecAccent)" offset="1"></stop>
-                        </linearGradient>
-                    </defs>
                 </svg>
-            )} */}
+            )}
         </header>
     )
 }

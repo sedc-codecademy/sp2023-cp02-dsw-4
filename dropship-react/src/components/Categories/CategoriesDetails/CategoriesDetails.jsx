@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { DetailsNav, DetailsFilters, DetailsAllProducts } from '../../UsefullComponents/Usefull'
 
-
 import { useSelector, useDispatch } from "react-redux"
 import { setMobileFiltersOn } from '../../../store/slices/filters/filtersSlice'
-
 
 function CategoriesDetails() {
     const dispatch = useDispatch()

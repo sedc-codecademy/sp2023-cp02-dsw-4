@@ -8,6 +8,7 @@ import { CSSTransition } from "react-transition-group"
 
 import { CatDP, SubCatDP, ViewAllSub, catArray, subCatArray } from "../CatDropDown/CatDP"
 import { toggleCatDropDown } from "../../../store/slices/catDropDownSlice"
+import { NavLink } from "react-router-dom"
 
 const someArray = [
     {
@@ -15,63 +16,63 @@ const someArray = [
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "1231fse23",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "123ity123",
         title: "Firstdadwadwadwadwadwad Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "1230ba2eb123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12312bwda3",
         title: "First Titlte",
         category: "Sportffs",
         subcategory: "Outdotivity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12312h9i3",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12AWRJ3123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "123sdti,123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12a2habr3123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
 ]
 
@@ -118,6 +119,7 @@ function SearchBar() {
                 <form action="">
                     <input
                         className="search-bar"
+                        name="search-bar"
                         type="search"
                         placeholder="Search for products"
                         onChange={testFunc}
@@ -156,6 +158,24 @@ function SearchBar() {
                         />
                     </svg>
                 </button>
+            </div>
+
+            <div className="frequent-searches">
+                <h3>Frequent Searches</h3>
+                <ul>
+                    <li>
+                        <NavLink>iphone</NavLink>
+                    </li>
+                    <li>
+                        <NavLink>supreme</NavLink>
+                    </li>
+                    <li>
+                        <NavLink>samsung</NavLink>
+                    </li>
+                    <li>
+                        <NavLink>basketball</NavLink>
+                    </li>
+                </ul>
             </div>
 
             <CSSTransition

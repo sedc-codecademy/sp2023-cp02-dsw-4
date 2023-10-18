@@ -58,7 +58,11 @@ footer {
                     transition: transform 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-radius 1s, backdrop-filter 1.5s, opacity 1.5s ease;
                     transform: translateX(calc(var(--origin-x) - 50%)) translateY(calc(var(--origin-y) - 50%)) skew(var(--skew));
                     border-radius: var(--radius);
-                    backdrop-filter: hue-rotate(var(--hue)) saturate(2);
+
+                    @supports (backdrop-filter: hue-rotate() saturate(0)) {
+                        backdrop-filter: hue-rotate(var(--hue)) saturate(2);
+                    }
+
                     opacity: var(--opacity);
                 }
 
@@ -144,36 +148,38 @@ footer {
                                 }
                             }
 
-                            &:focus-visible {
-                                svg {
-                                    fill: var(--accent);
-                                    outline: .2rem solid var(--accent);
-                                    border-radius: .5rem;
-                                    transform: scale(0.8);
-                                }
-                            }
-
-                            &:hover {
-                                svg {
-                                    .hoverPath {
-                                        opacity: 1;
-                                        scale: 1;
-                                        transform: scale(1);
-                                    }
-
-                                    .mainPath {
-                                        opacity: 0;
-                                        transform: scale(0);
+                            @media (min-width: 600px) {
+                                &:focus-visible {
+                                    svg {
+                                        fill: var(--accent);
+                                        outline: .2rem solid var(--accent);
+                                        border-radius: .5rem;
+                                        transform: scale(0.8);
                                     }
                                 }
-                            }
 
-                            &:active {
-                                border-color: var(--priColor);
+                                &:hover {
+                                    svg {
+                                        .hoverPath {
+                                            opacity: 1;
+                                            scale: 1;
+                                            transform: scale(1);
+                                        }
 
-                                svg {
-                                    fill: var(--priColor);
-                                    transform: scale(0.8);
+                                        .mainPath {
+                                            opacity: 0;
+                                            transform: scale(0);
+                                        }
+                                    }
+                                }
+
+                                &:active {
+                                    border-color: var(--priColor);
+
+                                    svg {
+                                        fill: var(--priColor);
+                                        transform: scale(0.8);
+                                    }
                                 }
                             }
                         }
@@ -197,7 +203,6 @@ footer {
 
                 .footerCardTitle {
                     position: relative;
-                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                     text-transform: uppercase;
                     font-weight: 600;
                     font-size: 1.1rem;
@@ -243,7 +248,15 @@ footer {
                     align-items: center;
                     justify-content: center;
                     gap: .2rem;
-                    height: fit-content;
+
+                    @supports (height: fit-content) {
+                        height: fit-content;
+                    }
+
+                    @supports not (height: fit-content) {
+                        height: auto;
+                    }
+
                     margin-top: 1.5rem;
 
                     div {
@@ -330,32 +343,39 @@ footer {
                         border-bottom-right-radius: 1rem;
                         border-bottom: .15rem solid var(--tpSec2);
                         border-right: .15rem solid var(--tpSec2);
-                        transition: all .5s cubic-bezier(.19, 1, .22, 1);
 
                         svg {
                             width: 2.5rem;
                             height: 2.5rem;
                             fill: var(--secColor);
-                            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
                         }
 
-                        &:focus-visible {
-                            background-color: var(--paleAccentTwo);
-                        }
-
-                        &:hover {
-                            border-color: var(--accent);
-
+                        @media (min-width: 600px) {
                             svg {
-                                fill: var(--accent);
+                                transition: all .5s cubic-bezier(.19, 1, .22, 1);
                             }
-                        }
 
-                        &:active {
-                            border-color: var(--priColor);
+                            transition: border-color .5s cubic-bezier(.19, 1, .22, 1);
 
-                            svg {
-                                fill: var(--priColor);
+                            &:focus-visible {
+                                background-color: var(--paleAccentTwo);
+                            }
+
+                            &:hover {
+                                border-color: var(--accent);
+
+                                svg {
+                                    fill: var(--accent);
+                                }
+                            }
+
+                            &:active {
+                                border-color: var(--priColor);
+
+                                svg {
+                                    fill: var(--priColor);
+                                }
                             }
                         }
                     }
@@ -415,32 +435,34 @@ footer {
                                 align-items: flex-start;
                             }
 
-                            &:focus-visible {
-                                span {
-                                    color: var(--secColor);
+                            @media (min-width: 600px) {
+                                &:focus-visible {
+                                    span {
+                                        color: var(--secColor);
+                                    }
+
+                                    p {
+                                        color: var(--accent);
+                                    }
                                 }
 
-                                p {
-                                    color: var(--accent);
-                                }
-                            }
-
-                            &:hover {
-                                background-color: var(--tpPri2);
-
-                                svg {
+                                &:hover {
                                     background-color: var(--tpPri2);
-                                    color: var(--accent);
-                                }
-                            }
 
-                            &:active {
-                                span {
-                                    color: var(--secColor);
+                                    svg {
+                                        background-color: var(--tpPri2);
+                                        color: var(--accent);
+                                    }
                                 }
 
-                                p {
-                                    color: var(--accent);
+                                &:active {
+                                    span {
+                                        color: var(--secColor);
+                                    }
+
+                                    p {
+                                        color: var(--accent);
+                                    }
                                 }
                             }
                         }
@@ -491,20 +513,23 @@ footer {
                     gap: 1rem;
 
                     a {
-                        transition: color .7s cubic-bezier(.19, 1, .22, 1);
                         font-size: 1.15rem;
                         color: var(--tpSec2);
 
-                        &:focus-visible {
-                            color: var(--accent);
-                        }
+                        @media (min-width: 600px) {
+                            transition: color .7s cubic-bezier(.19, 1, .22, 1);
 
-                        &:hover {
-                            color: var(--secColor);
-                        }
+                            &:focus-visible {
+                                color: var(--accent);
+                            }
 
-                        &:active {
-                            color: var(--accent);
+                            &:hover {
+                                color: var(--secColor);
+                            }
+
+                            &:active {
+                                color: var(--accent);
+                            }
                         }
                     }
                 }
@@ -539,19 +564,22 @@ footer {
                     text-transform: uppercase;
                     font-size: 1.1rem;
                     font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-                    transition: background-color .7s cubic-bezier(.19, 1, .22, 1), color .7s cubic-bezier(.19, 1, .22, 1);
 
-                    &:focus-visible {
-                        color: var(--accent);
-                    }
+                    @media (min-width: 600px) {
+                        transition: background-color .7s cubic-bezier(.19, 1, .22, 1), color .7s cubic-bezier(.19, 1, .22, 1);
 
-                    &:hover {
-                        background-color: var(--tpPri);
-                    }
+                        &:focus-visible {
+                            color: var(--accent);
+                        }
 
-                    &:active {
-                        color: var(--accent);
-                        background-color: var(--tpPri3);
+                        &:hover {
+                            background-color: var(--tpPri);
+                        }
+
+                        &:active {
+                            color: var(--accent);
+                            background-color: var(--tpPri3);
+                        }
                     }
                 }
             }
@@ -564,6 +592,7 @@ footer {
         .footerBody {
             align-items: unset;
             padding: 2rem 1rem;
+
             .footerLogo {
                 width: unset;
                 flex-direction: row;
@@ -592,6 +621,7 @@ footer {
             justify-content: center;
             align-items: center;
             padding: 2rem 1rem;
+
             &::before {
                 width: 90%;
             }

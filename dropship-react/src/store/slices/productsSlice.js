@@ -3903,7 +3903,7 @@ const productsData = [
             "subcategorytitle": "Cameras & Photography"
         },
         "manufacturer": "Xiaomi",
-        "colors": ["red", "green"],
+        "colors": ["red", "green", "cyan", "silver", "turquoise "],
         "stock": 12,
         "rating": {
             "rate": 4.7,

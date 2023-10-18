@@ -535,7 +535,7 @@ export const DetailsAllProducts = () => {
           {!isMobile && (
             <div className="pagination top">
               <button onClick={prevPage} disabled={currentPage === 1}>
-                <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
+                <svg viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z" /></svg>
               </button>
               <div>
                 {currentPage > 2 && (
@@ -590,7 +590,7 @@ export const DetailsAllProducts = () => {
 
       <div className="pagination bottom">
         <button onClick={prevPage} disabled={currentPage === 1}>
-          <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
+          <svg viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z" /></svg>
         </button>
         <div>
           {currentPage > 2 && (

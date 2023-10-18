@@ -84,12 +84,6 @@ main {
                 align-items: center;
                 border-radius: .2rem;
 
-                &:first-child {
-                    svg {
-                        rotate: 180deg;
-                    }
-                }
-
                 svg {
                     height: 1.3rem;
                     width: 1.3rem;
@@ -139,7 +133,15 @@ main {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            height: fit-content;
+
+            @supports (height: fit-content) {
+                height: fit-content;
+            }
+
+            @supports not (height: fit-content) {
+                height: auto;
+            }
+
             padding-block: 1.5rem;
 
             h2:first-child {
@@ -284,9 +286,9 @@ main {
                             height: 100%;
                             background: none;
                             pointer-events: none;
-                            appearance: none;
                             -webkit-appearance: none;
                             -moz-appearance: none;
+                            appearance: none;
                             z-index: 5;
                             cursor: pointer;
                         }
@@ -298,6 +300,7 @@ main {
                             background-color: var(--accent);
                             pointer-events: auto;
                             -webkit-appearance: none;
+                            appearance: none;
                             box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
                         }
 
@@ -309,6 +312,7 @@ main {
                             background-color: var(--accent);
                             pointer-events: auto;
                             -moz-appearance: none;
+                            appearance: none;
                             box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
                         }
                     }
@@ -1265,11 +1269,13 @@ main {
                         display: flex;
                         padding-block: .5rem;
                         gap: .5rem;
-
                         overflow: auto;
-                        scrollbar-width: none;
 
-                        ::-webkit-scrollbar {
+                        @supports (scrollbar-width: none) {
+                            scrollbar-width: none;
+                        }
+
+                        &::-webkit-scrollbar {
                             display: none;
                         }
 
@@ -1339,9 +1345,12 @@ main {
                         gap: .5rem;
 
                         overflow: auto;
-                        scrollbar-width: none;
 
-                        ::-webkit-scrollbar {
+                        @supports (scrollbar-width: none) {
+                            scrollbar-width: none;
+                        }
+
+                        &::-webkit-scrollbar {
                             display: none;
                         }
 
@@ -1573,7 +1582,14 @@ main {
                     align-items: center;
                     gap: 1rem;
                     padding: 1rem;
-                    backdrop-filter: blur(1.5rem);
+
+                    @supports (backdrop-filter: blur()) {
+                        backdrop-filter: blur(1.5rem)
+                    }
+
+                    @supports not (backdrop-filter: blur()) {
+                        background-color: var(--tpPri3);
+                    }
 
                     button {
                         padding: .7rem;

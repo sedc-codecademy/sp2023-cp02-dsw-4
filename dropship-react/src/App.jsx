@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import "./styles.scss" // Import Master css file
 
-import Home from "./components/Home/Home";
-import ProductDetails from "./components/Product/ProductDetails/ProductDetails";
-import CategoriesList from "./components/Categories/CategoriesList/CategoriesList";
-import CategoriesDetails from "./components/Categories/CategoriesDetails/CategoriesDetails";
-import User from "./components/User/User";
-import Cart from "./components/Cart/Cart";
-import "./styles.scss"; import './styles.scss'
-import './styles.scss'
+import Home from "./components/Home/Home"
+import ProductDetails from "./components/Product/ProductDetails/ProductDetails"
+import CategoriesList from "./components/Categories/CategoriesList/CategoriesList"
+import CategoriesDetails from "./components/Categories/CategoriesDetails/CategoriesDetails"
+import User from "./components/User/User"
+import Cart from "./components/Cart/Cart"
 
-import NotFound from "./components/NotFound/NotFound"; import UserSettings from './components/UserSettings/UserSettings'
+import NotFound from "./components/NotFound/NotFound"
+import UserSettings from './components/UserSettings/UserSettings'
 import AccountDropDown from './components/AccountDropDown/AccountDropDown'
 
 import { applyDarkTheme, applyLightTheme, applySystemTheme } from "./shared/themeFunctions"
@@ -22,13 +22,12 @@ import { setIsSettingsOn } from "./store/slices/navSettingsSlice"
 import { setIsDDOn, setIsScrollOn } from "./store/slices/ddBkgSlice"
 import { setMobileFiltersOn } from './store/slices/filters/filtersSlice'
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import DDBkgf from "./components/DDBkg/DDBkgf";
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
+import DDBkgf from "./components/DDBkg/DDBkgf" // Background for popups
 
 function App() {
   const dispatch = useDispatch()
-  const showAccDropDown = false
 
   const themeMode = useSelector((state) => state.theme.themeMode)
   const isMobile = useSelector((state) => state.mobile.isMobile)
@@ -37,6 +36,7 @@ function App() {
   const isDDOn = useSelector((state) => state.ddBkg.isDDOn)
   const allowScroll = useSelector((state) => state.ddBkg.isScrollOn)
   const mobileFiltersOn = useSelector((state) => state.filters.mobileFiltersOn)
+  const showAccDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
   const [mediaQueryList, setMediaQueryList] = useState(window.matchMedia("(prefers-color-scheme: dark)"))
 
   useEffect(() => {
@@ -44,28 +44,31 @@ function App() {
       if (isSettingsOn || showCatDropDown) {
         dispatch(setIsDDOn(true))
         dispatch(setIsScrollOn(true))
-      } else if(mobileFiltersOn){
+      } else if (mobileFiltersOn) {
         dispatch(setIsScrollOn(true))
       }
       else {
         dispatch(setIsDDOn(false))
         dispatch(setIsScrollOn(false))
       }
+    } else if (!isMobile && showAccDropDown) {
+      dispatch(setIsScrollOn(true))
+    } else if (!isMobile && !showAccDropDown) {
+      dispatch(setIsScrollOn(false))
     }
-  }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn])
+  }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn, showAccDropDown]) // Drop Downs and Pop-Ups checker UseEffect
 
   useEffect(() => {
-      if (allowScroll) {
-        applyNoScroll()
-        console.log("dime")
-      } else{
-        applyScroll()
-      }
-  }, [allowScroll])
+    if (allowScroll) {
+      applyNoScroll()
+    } else {
+      applyScroll()
+    }
+  }, [allowScroll]) // Body Scroll setter UseEffect
 
   useEffect(() => {
     dispatch(setIsMobile(window.innerWidth <= 800))
-  }, [dispatch])
+  }, [dispatch]) // Mobile Width setter UseEffect
 
   useEffect(() => {
     const updateIsMobile = () => {
@@ -84,12 +87,12 @@ function App() {
       if (mobileFiltersOn) dispatch(setMobileFiltersOn(false))
     }
 
-    window.addEventListener('resize', updateIsMobile);
+    window.addEventListener('resize', updateIsMobile)
 
     return () => {
-      window.removeEventListener('resize', updateIsMobile);
+      window.removeEventListener('resize', updateIsMobile)
     }
-  }, [dispatch, isMobile, isSettingsOn, isDDOn, allowScroll])
+  }, [dispatch, isMobile, isSettingsOn, isDDOn, allowScroll, mobileFiltersOn]) // Mobile Width checker UseEffect
 
   useEffect(() => {
     if (themeMode === "system") {
@@ -99,7 +102,7 @@ function App() {
     } else if (themeMode === "light") {
       applyLightTheme()
     }
-  }, [themeMode, mediaQueryList])
+  }, [themeMode, mediaQueryList]) // Theme checker UseEffect
 
   window
     .matchMedia("(prefers-color-scheme: dark)")
@@ -112,7 +115,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {showAccDropDown && <AccountDropDown />}
+        <AccountDropDown />
         <Header></Header>
         <DDBkgf></DDBkgf>
         <Routes>

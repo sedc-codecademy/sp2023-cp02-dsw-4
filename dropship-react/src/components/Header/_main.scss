@@ -1,6 +1,7 @@
 ///////////  HEADER  /////////////
 
 header {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,11 +13,7 @@ header {
 
     .headerBackground {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
+        width: 100%;
         z-index: -10;
     }
 
@@ -50,11 +47,17 @@ header {
 
     &.smallHeader {
         position: relative;
-        height: unset;
-        height: fit-content;
         padding-block: 2rem;
         margin-bottom: 2rem;
         gap: .7rem;
+
+        @supports (height: fit-content){
+            height: fit-content;
+        }
+        
+        @supports not (height: fit-content){
+            height: auto;
+        }
 
         background: radial-gradient(circle at left, var(--paleAccentTwo) 0%, var(--someColor) 50%, var(--paleAccentTwo) 100%);
 
@@ -93,6 +96,7 @@ header {
 
             .suggestions{
                 max-width: max-content;
+                width: max-content;
             }
 
             .frequent-searches {

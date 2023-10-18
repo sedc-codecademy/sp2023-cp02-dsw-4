@@ -22,7 +22,6 @@ header {
                     background-color: var(--tpPri3);
                     padding: .5rem;
                     border-radius: .7rem;
-                    backdrop-filter: blur(.5rem);
                     box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
 
                     width: fit-content;
@@ -447,7 +446,14 @@ header {
             .catsList {
                 display: flex;
                 flex-wrap: wrap;
-                height: fit-content;
+
+                @supports (height: fit-content){
+                    height: fit-content;
+                }
+                
+                @supports not (height: fit-content){
+                    height: auto;
+                }
 
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);

@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 
-import { toggleDropDown } from "../../../store/slices/acDropDownSlice"
+import { setShowAccDropDown } from "../../../store/slices/acDropDownSlice"
 import { toggleCatDropDown } from "../../../store/slices/catDropDownSlice"
 
 import { setThemeMode } from "../../../store/slices/themeSlice"
@@ -14,9 +14,9 @@ import { CSSTransition } from "react-transition-group"
 
 export default function Nav() {
     const dispatch = useDispatch()
-    let isLoggedIn = true
+    let isLoggedIn = false
 
-    const showDropDown = useSelector((state) => state.acDropDown.showDropDown)
+    const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const themeMode = useSelector((state) => state.theme.themeMode)
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
@@ -24,9 +24,10 @@ export default function Nav() {
 
     const csstransitionRef = useRef()
     const mobilecatref = useRef()
+    const activeLink = window.location.pathname
 
     const onLoginBtnClick = () => {
-        dispatch(toggleDropDown())
+        dispatch(setShowAccDropDown(true))
     }
 
     const closeSettings = () => {
@@ -38,8 +39,6 @@ export default function Nav() {
     const onAccountIconClick = () => {
         dispatch(setIsSettingsOn(!isSettingsOn))
     }
-
-    const activeLink = window.location.pathname
 
     const handleDarkClick = () => {
         dispatch(setThemeMode("dark"))

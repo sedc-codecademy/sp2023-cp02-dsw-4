@@ -24,7 +24,7 @@ header {
             display: flex;
             flex-direction: column;
             gap: .5rem;
-            background-color: var(--tpPri);
+            background-color: var(--tpPri4);
             border-radius: .5rem;
             padding: .5rem;
 
@@ -34,40 +34,25 @@ header {
                 width: max-content;
                 gap: .7rem;
 
-                // display: grid;
-                // grid-template-columns: repeat(2, 1fr);
-                // grid-column-gap: 10px;
-                // grid-row-gap: 10px;
-
                 li {
-                    // width: 45%;
-
                     flex-grow: 1;
-                    // width: fit-content;
 
-                    // flex: 1 45%;
                     a {
                         display: flex;
-                        // width: max-content;
                         gap: .5rem;
-                        background-color: var(--tpPri2);
+                        background-color: var(--tpPri);
                         width: 100%;
                         border-radius: .7rem;
                         border: .2rem solid var(--tpPri4);
 
                         img {
-                            // width: 4rem;
                             height: 5rem;
-                            // width: 20%;
-                            // width: 5rem;
-                            // padding: .3rem;
-                            // border: .2rem solid var(--tertColor2);
-                            // flex-grow: 1;
                             border-radius: .5rem;
                             background-color: var(--tpPri4);
                         }
 
                         div {
+                            padding-top: .3rem;
                             width: 100%;
 
                             p,
@@ -88,7 +73,6 @@ header {
                                 -webkit-box-orient: vertical;
                                 color: var(--tpSec);
                             }
-
                         }
 
                         transition: border-color .16s,
@@ -100,7 +84,6 @@ header {
                         }
 
                         &:hover {
-                            background-color: var(--tpPri3);
                             border-color: var(--tpPri);
 
                             div {
@@ -124,8 +107,8 @@ header {
 
             .viewAllSubCats {
                 color: var(--secColor);
-                background-color: var(--tpPri2);
-                border: .15rem solid var(--tpPri2);
+                background-color: var(--tpPri);
+                border: .15rem solid var(--tpPri);
                 text-align: center;
                 padding: .3rem;
                 border-radius: .5rem;
@@ -139,10 +122,11 @@ header {
                 &:hover {
                     color: var(--accent);
                     background-color: var(--paleAccent);
+                    border-color: var(--paleAccent);
                 }
 
                 &:active {
-                    border-color: var(--tpPri);
+                    border-color: var(--tpPri4);
                 }
             }
         }
@@ -151,7 +135,14 @@ header {
             display: flex;
             flex-direction: column;
             gap: .7rem;
-            height: fit-content;
+
+            @supports (height: fit-content) {
+                height: fit-content;
+            }
+
+            @supports not (height: fit-content) {
+                height: auto;
+            }
 
             li {
                 flex-grow: 1;
@@ -211,7 +202,7 @@ header {
                     }
 
                     &:hover {
-                        &::after{
+                        &::after {
                             background-color: var(--tpPri3);
                         }
 
@@ -237,23 +228,39 @@ header {
 
     .categories-dp-enter {
         opacity: 0;
-        scale: .5;
+
+        @supports (scale: .5) {
+            scale: .5;
+        }
     }
 
     .categories-dp-enter-active {
         opacity: 1;
-        scale: 1;
-        transition: opacity 200ms, scale 200ms;
+
+        @supports (scale: 1) {
+            scale: 1;
+        }
+
+        transition: opacity 200ms,
+        scale 200ms;
     }
 
     .categories-dp-exit {
         opacity: 1;
-        scale: 1;
+
+        @supports (scale: 1) {
+            scale: 1;
+        }
     }
 
     .categories-dp-exit-active {
         opacity: 0;
-        scale: .5;
-        transition: opacity 200ms, scale 200ms;
+
+        @supports (scale: .5) {
+            scale: .5;
+        }
+
+        transition: opacity 200ms,
+        scale 200ms;
     }
 }

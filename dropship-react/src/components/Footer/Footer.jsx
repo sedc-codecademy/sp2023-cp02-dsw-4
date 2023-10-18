@@ -395,6 +395,7 @@ function Footer() {
                             <div>
                                 <input
                                     className="footerEmail"
+                                    id="footerEmail"
                                     type="email"
                                     required
                                     placeholder=""
