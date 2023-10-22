@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react'
 import { NavLink } from "react-router-dom"
 import Stars from '../../Stars/Stars'
+import ImageLoader from '../../ImageLoader/ImageLoader'
 
 function TempProductCard(props) {
-    const [imageLoaded, setImageLoaded] = useState(true)
-
-    const handleImageError = () => {
-        setImageLoaded(false)
-    }
     return (
         <li>
             <NavLink>
-                {imageLoaded ? (
-                    <img
-                        src="/imgs/404/product404.jgp"
-                        onError={handleImageError}
-                        alt="Product"
-                    />
-                ) : (
-                    <img src="/imgs/404/product404.png" alt="Product 404" />
-                )}
+                <ImageLoader
+                    url={props.product.image || ''}    
+                    alt={props.product.title}
+                    backupUrl="/imgs/404/product404.png"
+                    backupAlt="Product Image 404"
+                ></ImageLoader>
                 <div className='infoDiv'>
                     <p className='title'>{props.product.title}</p>
                     <div className='ratingDiv'>

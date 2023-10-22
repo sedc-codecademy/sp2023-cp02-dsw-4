@@ -7,14 +7,16 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 2%;
     border-radius: .7rem;
     border: none;
     background-color: var(--tpPri2);
     padding: .7rem;
+    gap: 1rem;
     z-index: 55;
     color: var(--secColor);
-    gap: 1rem;
+    min-width: 40rem;
+    min-height: 36rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
 
     .closeLoginButton {
@@ -43,7 +45,7 @@
         @media (min-width: 600px) {
             &:hover {
                 svg {
-                    color: black;
+                    color: var(--tpPri);
                 }
 
                 background-color: rgba(0, 0, 0, 0);
@@ -70,58 +72,65 @@
     .cancel,
     .cancelFP {
         position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--tpPri2);
+        padding: .3rem;
+        border-bottom-right-radius: .7rem;
+        border-right: .2rem solid var(--tpPri2);
+        border-bottom: .2rem solid var(--tpPri2);
+
         display: flex;
-        background-color: transparent;
-        justify-content: center;
         align-items: center;
-        border: none;
-        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        transition: background-color .3s;
 
         svg {
-            fill: var(--accent);
-            border-radius: 0.5rem;
-            padding: 0.1rem;
-            outline: 0.2rem solid var(--accent);
-            width: 2.5rem;
-            height: 2rem;
-            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+            color: var(--tpSec2);
+            width: 1.7rem;
+            height: 1.7rem;
+            transition: color .3s;
+        }
+
+        @media (min-width: 600px) {
+            &:hover {
+                svg {
+                    color: var(--tpPri);
+                }
+
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            &:active {
+                background-color: var(--tpPri2);
+
+                svg {
+                    color: var(--secColor);
+                }
+            }
         }
 
         &:focus-visible {
             svg {
-                fill: var(--priColor);
-                outline-color: var(--priColor);
-                background-color: var(--accent);
+                color: #fff;
             }
 
-            background-color: transparent;
+            background-color: var(--priColor);
         }
 
-        &:hover {
-            svg {
-                fill: var(--priColor);
-                outline-color: var(--priColor);
-                background-color: var(--accent);
-            }
 
-            background-color: transparent;
-
-        }
-
-        &:active {
-            svg {
-                background-color: var(--secAccent);
-            }
-        }
     }
 
     form {
+        position: relative;
         display: flex;
         align-items: center;
         flex-direction: column;
         padding: 3rem;
         width: 50%;
         gap: 2.5rem;
+        overflow: hidden;
 
         h1 {
             font-size: 3rem;
@@ -158,12 +167,15 @@
                     a {
                         svg {
                             height: 2.3rem;
-                            opacity: .8;
-                            filter: grayscale(1);
-                            transition: filter .5s, opacity .5s;
                         }
 
                         @media (min-width: 600px) {
+                            svg {
+                                opacity: .8;
+                                filter: grayscale(1);
+                                transition: filter .5s, opacity .5s;
+                            }
+
                             &:focus-visible {
                                 outline: .1rem solid var(--accent);
 
@@ -182,6 +194,11 @@
                         }
                     }
                 }
+            }
+
+            .buttonsDiv {
+                display: flex;
+                gap: 1rem;
             }
 
             .forgotPassButton {
@@ -229,7 +246,8 @@
                 }
             }
 
-            .signInButton {
+            .signInButton,
+            .signUpButton {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -266,30 +284,30 @@
         &.registerUi {
             position: relative;
             text-align: center;
-
             z-index: 0;
-            width: 50%;
 
-            &::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                border-radius: .5rem;
-                background-image: linear-gradient(125deg,
-                        hsl(350deg 100% 60%) 13%,
-                        hsl(7deg 100% 62%) 43%,
-                        hsl(22deg 95% 56%) 49%,
-                        hsl(36deg 100% 47%) 50%,
-                        hsl(45deg 100% 43%) 50%,
-                        hsl(56deg 100% 39%) 50%,
-                        hsl(72deg 64% 49%) 50%,
-                        hsl(94deg 69% 60%) 51%,
-                        hsl(129deg 82% 68%) 57%,
-                        hsl(160deg 100% 50%) 87%);
-                z-index: -1;
+            @media (min-width: 800px) {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: .5rem;
+                    background-image: linear-gradient(125deg,
+                            hsl(350deg 100% 60%) 13%,
+                            hsla(7, 100%, 62%, 0.624) 43%,
+                            hsla(22, 95%, 56%, 0.566) 49%,
+                            hsl(36deg 100% 47%) 50%,
+                            hsl(45deg 100% 43%) 50%,
+                            hsl(56deg 100% 39%) 50%,
+                            hsl(72deg 64% 49%) 50%,
+                            hsl(94deg 69% 60%) 51%,
+                            hsla(129, 82%, 68%, 0.936) 57%,
+                            hsla(160, 100%, 50%, 0.592) 87%);
+                    z-index: -1;
+                }
+
+                overflow: hidden;
             }
-
-            overflow: hidden;
 
             h1 {
                 color: var(--tpPri);
@@ -314,6 +332,20 @@
                 letter-spacing: .1rem;
                 color: #fff;
                 text-shadow: .05rem .05rem 0 black;
+
+                animation: fadeIn 1s;
+
+                &.eula {
+                    a {
+                        color: var(--secColor);
+                        pointer-events: all;
+                        text-shadow: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
 
             .registerButton {
@@ -350,12 +382,51 @@
             }
         }
 
+        &.forgotPass {
+            background-color: var(--tpPri);
+
+            .sendCodeButton {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                font-weight: 600;
+                border-radius: .5rem;
+                letter-spacing: .1rem;
+                padding: .7rem;
+                background-color: var(--tpPri4);
+                border: 0.2rem solid var(--tpPri4);
+
+                @media(min-width: 600px) {
+                    transition: border-color .3s, background-color .3s, color .3s;
+
+                    &:focus-visible {
+                        border-color: var(--accent);
+                        color: var(--accent);
+                        background-color: var(--tpPri);
+                    }
+
+                    &:hover {
+                        color: var(--tpPri);
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+
+                    &:active {
+                        border-color: var(--tpPri);
+                    }
+                }
+            }
+        }
+
         .fields {
             gap: 1.3rem;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+
+            animation: fadeIn 1s;
 
             div {
                 display: flex;
@@ -377,7 +448,7 @@
                     height: 100%;
 
                     &::selection {
-                        background: var(--accent);
+                        background: var(--paleAccentTwo);
                         color: var(--priColor);
                     }
 
@@ -395,26 +466,26 @@
                     }
 
                     &:valid {
-                        border-color: var(--secAccent);
+                        border-color: var(--paleAccentTwo);
 
                         ~ {
                             label {
                                 opacity: 1;
                                 color: var(--priColor);
-                                background: var(--secAccent);
+                                background: var(--paleAccentTwo);
                                 transform: translateY(-105%);
                             }
                         }
                     }
 
                     &:focus {
-                        border-color: var(--secAccent);
+                        border-color: var(--paleAccentTwo);
 
                         ~ {
                             label {
                                 opacity: 1;
                                 color: var(--priColor);
-                                background: var(--secAccent);
+                                background: var(--paleAccentTwo);
                                 transform: translateY(-105%);
                             }
                         }
@@ -422,6 +493,7 @@
                 }
 
                 label {
+                    color: var(--secColor);
                     position: absolute;
                     pointer-events: none;
                     border-radius: .2rem;
@@ -431,21 +503,111 @@
                 }
             }
         }
+
+        &.current {
+            width: 100%;
+        }
+    }
+
+    &.mobileLoginDP {
+        width: 100vw;
+        width: 100svw;
+        height: 100vh;
+        height: 100svh;
+        flex-direction: column;
+        margin: 0;
+        border-radius: 0;
+        min-width: unset;
+        min-height: unset;
+        max-width: unset;
+        max-height: unset;
+        box-shadow: none;
+
+        .closeLoginButton {
+            top: .7rem;
+            right: .7rem;
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        form {
+            width: unset;
+            height: max-content;
+            flex-grow: 1;
+            padding: 0;
+            padding-top: 3rem;
+            background-color: var(--tpPri);
+
+            &.registerUi {
+                background-color: var(--tpPri);
+
+                h1 {
+                    text-shadow: none;
+                    color: var(--secColor);
+
+                    span {
+                        text-shadow: none;
+                        color: var(--secColor);
+                    }
+                }
+
+                p {
+                    &.eula {
+                        color: var(--secColor);
+                        font-weight: 500;
+                        letter-spacing: unset;
+                        text-shadow: none;
+                        margin-top: 2rem;
+
+                        a {
+                            color: var(--accent);
+                        }
+                    }
+                }
+
+                .registerButton {
+                    font-size: 1.1rem;
+                    letter-spacing: .1rem;
+                    padding: .8rem;
+                    background-color: var(--tpPri2);
+                    color: var(--tpSec);
+                    border: 0.15rem solid var(--tpPri2);
+                }
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .cancel,
+            .cancelFP {
+                position: relative;
+                background: none;
+                border: none;
+
+                svg {
+                    color: var(--tpSec2);
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    transition: color .3s;
+                }
+            }
+        }
     }
 }
 
-.loginDropdown-mobile-enter {
-    opacity: 0;
-    transform: translateY(130vh);
-    opacity: 0;
-    transform: translateY(-130vh);
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
 
-    &::backdrop {
-        background-color: rgba(0, 0, 0, 0);
-        backdrop-filter: blur(0rem);
+    100% {
+        opacity: 1;
     }
 }
-
 
 .loginDropdown-enter {
     opacity: 0;
@@ -453,7 +615,9 @@
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0);
-        backdrop-filter: blur(0rem);
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(0rem);
+        }
     }
 }
 
@@ -464,18 +628,26 @@
 
     &::backdrop {
         background-color: var(--backdropBackground);
-        backdrop-filter: blur(.2rem);
-        transition: backdrop-filter 350ms, background-color 350ms;
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(.2rem);
+        }
+
+        transition: backdrop-filter 350ms,
+        background-color 350ms;
     }
 }
 
-.loginDropdown-enter-done{
+.loginDropdown-enter-done {
     opacity: 1;
     transform: translateY(0);
 
     &::backdrop {
         background-color: var(--backdropBackground);
-        backdrop-filter: blur(.2rem);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(.2rem);
+        }
     }
 }
 
@@ -485,7 +657,10 @@
 
     &::backdrop {
         background-color: var(--backdropBackground);
-        backdrop-filter: blur(.2rem);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(.2rem);
+        }
     }
 }
 
@@ -496,7 +671,12 @@
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0);
-        backdrop-filter: blur(.2rem);
-        transition: backdrop-filter 350ms, background-color 350ms;
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(0rem);
+        }
+
+        transition: backdrop-filter 350ms,
+        background-color 350ms;
     }
 }

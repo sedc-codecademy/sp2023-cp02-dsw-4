@@ -1,0 +1,111 @@
+///////////  CART  ///////////// 
+
+ul {
+    .review {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--tpPri3);
+        padding: .5rem;
+        border-radius: .7rem;
+        gap: .5rem;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0.1rem 0.3rem 0, rgba(0, 0, 0, 0.06) 0 0.1rem 0.2rem 0;
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background-color: var(--tpPri);
+            padding: .5rem;
+            border-radius: .5rem;
+
+            .review-avatar {
+                height: 3.5rem;
+                border-radius: 50%;
+                padding: .2rem;
+                background-color: var(--tpPri3);
+            }
+
+            .review-author-info {
+                display: flex;
+                flex-direction: column;
+
+                .review-author {
+                    font-size: 1.3rem;
+                }
+
+                .review-date{
+                    color: var(--tpSec2);
+                }
+            }
+
+            .verified {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                gap: .25rem;
+
+                svg {
+                    color: var(--accent);
+                    height: 1.5rem;
+                }
+
+                span {
+                    font-size: 1.1rem;
+                    color: var(--tpSec);
+                }
+            }
+        }
+
+        .review-body {
+            display: flex;
+            flex-direction: column;
+            padding: .5rem;
+            gap: .5rem;
+            // background-color: var(--tpPri2);
+
+            h3 {
+                font-size: 1.2rem;
+                font-weight: 500;
+                .starsDiv {
+                    svg {
+                        height: 1.3rem;
+                        width: 1.3rem;
+                    }
+                }
+            }
+
+            .review-text {
+                color: var(--tpSec);
+            }
+        }
+
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            
+            padding: .5rem;
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+                li {
+                    text-transform: capitalize;
+
+                    svg {
+                        height: 1.5rem;
+
+                        &.good{
+                            color: rgb(0, 165, 0);
+                        }
+                        &.bad{
+                            color: red;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,23 +1,51 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { CSSTransition } from "react-transition-group"
-import { setShowAccDropDown } from "../../store/slices/acDropDownSlice"
+import { setShowAccDropDown } from "../../store/slices/dropdowns/acDropDownSlice"
+import { NavLink } from "react-router-dom"
 
 function AccountDropDown() {
     const dispatch = useDispatch()
     const csstransitionRef = useRef()
     const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
+    const isMobile = useSelector((state) => state.mobile.isMobile)
 
-    const [currentMode, setCurrentMode] = useState("login")
+    const [currentMode, setCurrentMode] = useState(`${isMobile ? "default" : 'logIn'}`)
 
     useEffect(() => {
         if (showDropDown) {
             csstransitionRef.current.showModal()
         }
-    })
+        if (currentMode === 'logIn' && !isMobile) {
+            setCurrentMode("default")
+        } else if (currentMode === 'default' && isMobile) {
+            setCurrentMode("logIn")
+        }
+    }, [showDropDown,isMobile, currentMode])
 
     const handleCloseLogin = () => {
         dispatch(setShowAccDropDown(false))
+    }
+
+    const handleForgotPassword = () => {
+        setCurrentMode("forgotPass")
+    }
+
+    const handleSignUp = (e) => {
+        if (currentMode === "default") {
+            e.preventDefault()
+        }
+        setCurrentMode("createAccount")
+    }
+
+    const handleCancel = (e) => {
+        e.preventDefault()
+
+        if (isMobile) {
+            setCurrentMode("logIn")
+        } else {
+            setCurrentMode("default")
+        }
     }
 
     return (
@@ -28,8 +56,8 @@ function AccountDropDown() {
             unmountOnExit
             nodeRef={csstransitionRef}
         >
-            <dialog class="loginDropdown" ref={csstransitionRef}>
-                <button class="closeLoginButton" onClick={handleCloseLogin}>
+            <dialog className={`loginDropdown ${isMobile && "mobileLoginDP"}`} ref={csstransitionRef}>
+                <button className="closeLoginButton" onClick={handleCloseLogin}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -42,16 +70,16 @@ function AccountDropDown() {
                         />
                     </svg>
                 </button>
-
-                <form class="loginUi">
+                {(currentMode === "default" || currentMode === "logIn") && <form className="loginUi">
                     <h1>
                         Sign <span>In</span>
                     </h1>
 
-                    <div class="loginIcons">
+                    <div className="loginIcons">
                         <p>Or sign up with</p>
                         <div>
-                            <a>
+                            <a href="www.google.com" target="_blank"
+                                rel="noreferrer noopener">
                                 <svg viewBox="0 0 256 256">
                                     <path
                                         fill="#1877F2"
@@ -63,7 +91,8 @@ function AccountDropDown() {
                                     />
                                 </svg>
                             </a>
-                            <a>
+                            <a href="www.google.com" target="_blank"
+                                rel="noreferrer noopener">
                                 <svg viewBox="0 0 128 128">
                                     <path
                                         fill="#fff"
@@ -87,7 +116,8 @@ function AccountDropDown() {
                                     />
                                 </svg>
                             </a>
-                            <a>
+                            <a href="www.google.com" target="_blank"
+                                rel="noreferrer noopener">
                                 <svg viewBox="0 0 256 256">
                                     <g fill="none">
                                         <rect width="256" height="256" fill="#0A66C2" rx="60" />
@@ -101,154 +131,143 @@ function AccountDropDown() {
                         </div>
                     </div>
 
-                    <div class="fields">
-                        <div class="uname">
+                    <div className="fields">
+                        <div className="uname">
                             <input
-                                class="uname"
+                                className="uname"
                                 type="text"
-                                maxlength="22"
-                                minlength="4"
+                                maxLength="22"
+                                minLength="4"
                                 required
                                 placeholder=""
                             ></input>
-                            <label for="uname">Enter username</label>
+                            <label htmlFor="uname">Enter username</label>
                         </div>
 
-                        <div class="pass">
+                        <div className="pass">
                             <input
-                                class="password"
+                                className="password"
                                 type="password"
-                                maxlength="16"
-                                minlength="8"
+                                maxLength="16"
+                                minLength="8"
                                 required
                                 placeholder=""
                             ></input>
-                            <label for="password">Enter password</label>
+                            <label htmlFor="password">Enter password</label>
                         </div>
                     </div>
-                    <button class="forgotPassButton" target="_blank">
-                        Forgot Password
+
+                    <button className="forgotPassButton" onClick={handleForgotPassword}>Forgot Password</button>
+
+                    {isMobile ? <div className="buttonsDiv">
+                        <button className="signInButton">Sign in</button>
+                        <button className="signUpButton" onClick={handleSignUp}>Sign up</button>
+                    </div> : <button className="signInButton">Sign in</button>}
+
+                </form>}
+                {currentMode === "forgotPass" && <form className={`forgotPass ${currentMode === 'forgotPass' && "current"}`}>
+                    <button className="cancelFP" onClick={handleCancel}>
+                        <svg viewBox="0 0 48 48" fill="currentColor">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M8.532,18.531l8.955-8.999c-0.244-0.736-0.798-1.348-1.54-1.653c-1.01-0.418-2.177-0.185-2.95,0.591L1.047,20.479
+    c-1.396,1.402-1.396,3.67,0,5.073l11.949,12.01c0.771,0.775,1.941,1.01,2.951,0.592c0.742-0.307,1.295-0.918,1.54-1.652l-8.956-9
+    C6.07,25.027,6.071,21.003,8.532,18.531z"
+                                    />
+                                    <path
+                                        d="M45.973,31.64c-1.396-5.957-5.771-14.256-18.906-16.01v-5.252c0-1.095-0.664-2.082-1.676-2.5
+    c-0.334-0.138-0.686-0.205-1.033-0.205c-0.705,0-1.398,0.276-1.917,0.796L10.49,20.479c-1.396,1.402-1.396,3.669-0.001,5.073
+    l11.95,12.009c0.517,0.521,1.212,0.797,1.92,0.797c0.347,0,0.697-0.066,1.031-0.205c1.012-0.418,1.676-1.404,1.676-2.5V30.57
+    c4.494,0.004,10.963,0.596,15.564,3.463c0.361,0.225,0.77,0.336,1.176,0.336c0.457,0,0.91-0.139,1.297-0.416
+    C45.836,33.429,46.18,32.515,45.973,31.64z"
+                                    />
+                                </g>
+                            </g>
+                        </svg>
                     </button>
-                    <button className="signInButton">Sign in</button>
-                </form>
-
-                {currentMode === "createAccount" && (
-                    <form class="forgotPass">
-                        <button class="cancelFP">
-                            <svg viewBox="0 0 48 48">
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M8.532,18.531l8.955-8.999c-0.244-0.736-0.798-1.348-1.54-1.653c-1.01-0.418-2.177-0.185-2.95,0.591L1.047,20.479
-			c-1.396,1.402-1.396,3.67,0,5.073l11.949,12.01c0.771,0.775,1.941,1.01,2.951,0.592c0.742-0.307,1.295-0.918,1.54-1.652l-8.956-9
-			C6.07,25.027,6.071,21.003,8.532,18.531z"
-                                        />
-                                        <path
-                                            d="M45.973,31.64c-1.396-5.957-5.771-14.256-18.906-16.01v-5.252c0-1.095-0.664-2.082-1.676-2.5
-			c-0.334-0.138-0.686-0.205-1.033-0.205c-0.705,0-1.398,0.276-1.917,0.796L10.49,20.479c-1.396,1.402-1.396,3.669-0.001,5.073
-			l11.95,12.009c0.517,0.521,1.212,0.797,1.92,0.797c0.347,0,0.697-0.066,1.031-0.205c1.012-0.418,1.676-1.404,1.676-2.5V30.57
-			c4.494,0.004,10.963,0.596,15.564,3.463c0.361,0.225,0.77,0.336,1.176,0.336c0.457,0,0.91-0.139,1.297-0.416
-			C45.836,33.429,46.18,32.515,45.973,31.64z"
-                                        />
-                                    </g>
-                                </g>
-                            </svg>
-                        </button>
-                        <h1>
-                            Forgot <span>Password</span>{" "}
-                        </h1>
-                        <p>
-                            Enter recovery <span>email</span>
-                        </p>
-                        <section class="fields">
-                            <div class="email">
-                                <input
-                                    class="email"
-                                    type="email"
-                                    required
-                                    placeholder="&nbsp"
-                                ></input>
-                                <label for="email">Enter email</label>
-                            </div>
-                            <button>Send Code</button>
-                        </section>
-                    </form>
-                )}
-
-                <form class="registerUi">
-                    {currentMode === "createAccount" && (
-                        <button class="cancel">
-                            <svg viewBox="0 0 48 48">
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M8.532,18.531l8.955-8.999c-0.244-0.736-0.798-1.348-1.54-1.653c-1.01-0.418-2.177-0.185-2.95,0.591L1.047,20.479
-			c-1.396,1.402-1.396,3.67,0,5.073l11.949,12.01c0.771,0.775,1.941,1.01,2.951,0.592c0.742-0.307,1.295-0.918,1.54-1.652l-8.956-9
-			C6.07,25.027,6.071,21.003,8.532,18.531z"
-                                        />
-                                        <path
-                                            d="M45.973,31.64c-1.396-5.957-5.771-14.256-18.906-16.01v-5.252c0-1.095-0.664-2.082-1.676-2.5
-			c-0.334-0.138-0.686-0.205-1.033-0.205c-0.705,0-1.398,0.276-1.917,0.796L10.49,20.479c-1.396,1.402-1.396,3.669-0.001,5.073
-			l11.95,12.009c0.517,0.521,1.212,0.797,1.92,0.797c0.347,0,0.697-0.066,1.031-0.205c1.012-0.418,1.676-1.404,1.676-2.5V30.57
-			c4.494,0.004,10.963,0.596,15.564,3.463c0.361,0.225,0.77,0.336,1.176,0.336c0.457,0,0.91-0.139,1.297-0.416
-			C45.836,33.429,46.18,32.515,45.973,31.64z"
-                                        />
-                                    </g>
-                                </g>
-                            </svg>
-                        </button>
-                    )}
                     <h1>
-                        Create <span>account</span>
+                        Forgot <span>Password</span>{" "}
                     </h1>
                     <p>
-                        Don't have an account?
-                        Create one now, and unlock themes!
+                        Enter recovery <span>email</span>
                     </p>
-                    {currentMode === "createAccount" && (
-                        <div class="fields">
-                            <div class="uname">
-                                <input
-                                    class="uname"
-                                    type="text"
-                                    maxlength="22"
-                                    minlength="4"
-                                    required
-                                    placeholder=""
-                                ></input>
-                                <label for="uname">Enter username</label>
-                            </div>
-                            <div class="email">
-                                <input
-                                    class="email"
-                                    type="email"
-                                    required
-                                    placeholder=""
-                                ></input>
-                                <label for="email">Enter email</label>
-                            </div>
-                            <div class="pass">
-                                <input
-                                    class="password"
-                                    type="password"
-                                    maxlength="16"
-                                    minlength="8"
-                                    required
-                                    placeholder=""
-                                ></input>
-                                <label for="password">Enter password</label>
-                            </div>
-                            <div class="checkBoxes">
-                                <input type="checkbox" name="" id="agree" required></input>
-                                <p for="agree" id="agreelbl">
-                                    I accept the <span>Terms of Use</span> &{" "}
-                                    <span>Privacy Policy</span>.
-                                </p>
-                            </div>
+                    <div className="fields">
+                        <div className="email">
+                            <input
+                                className="email"
+                                type="email"
+                                required
+                                placeholder=""
+                            ></input>
+                            <label htmlFor="email">Enter email</label>
                         </div>
+                    </div>
+                    <button className="sendCodeButton">Send Code</button>
+                </form>}
+                {(currentMode === "default" || currentMode === "createAccount") && <form className={`registerUi ${currentMode === 'createAccount' && "current"}`}>
+                    {currentMode === "createAccount" && (
+                        <button className="cancel" onClick={handleCancel}>
+                            <svg viewBox="0 0 48 48" fill="currentColor">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M8.532,18.531l8.955-8.999c-0.244-0.736-0.798-1.348-1.54-1.653c-1.01-0.418-2.177-0.185-2.95,0.591L1.047,20.479
+    c-1.396,1.402-1.396,3.67,0,5.073l11.949,12.01c0.771,0.775,1.941,1.01,2.951,0.592c0.742-0.307,1.295-0.918,1.54-1.652l-8.956-9
+    C6.07,25.027,6.071,21.003,8.532,18.531z"
+                                        />
+                                        <path
+                                            d="M45.973,31.64c-1.396-5.957-5.771-14.256-18.906-16.01v-5.252c0-1.095-0.664-2.082-1.676-2.5
+    c-0.334-0.138-0.686-0.205-1.033-0.205c-0.705,0-1.398,0.276-1.917,0.796L10.49,20.479c-1.396,1.402-1.396,3.669-0.001,5.073
+    l11.95,12.009c0.517,0.521,1.212,0.797,1.92,0.797c0.347,0,0.697-0.066,1.031-0.205c1.012-0.418,1.676-1.404,1.676-2.5V30.57
+    c4.494,0.004,10.963,0.596,15.564,3.463c0.361,0.225,0.77,0.336,1.176,0.336c0.457,0,0.91-0.139,1.297-0.416
+    C45.836,33.429,46.18,32.515,45.973,31.64z"
+                                        />
+                                    </g>
+                                </g>
+                            </svg>
+                        </button>
                     )}
-                    <button class="registerButton">Sign Up</button>
-                </form>
+                    <h1>Create <span>account</span></h1>
+
+                    {!(currentMode === "createAccount") && <p>Don't have an account? Create one now, and unlock themes!</p>}
+                    {currentMode === "createAccount" && (<div className="fields">
+                        <div className="uname">
+                            <input
+                                className="uname"
+                                type="text"
+                                maxLength="22"
+                                minLength="4"
+                                required
+                                placeholder=""
+                            ></input>
+                            <label htmlFor="uname">Enter username</label>
+                        </div>
+                        <div className="email">
+                            <input
+                                className="email"
+                                type="email"
+                                required
+                                placeholder=""
+                            ></input>
+                            <label htmlFor="email">Enter email</label>
+                        </div>
+                        <div className="pass">
+                            <input
+                                className="password"
+                                type="password"
+                                maxLength="16"
+                                minLength="8"
+                                required
+                                placeholder=""
+                            ></input>
+                            <label htmlFor="password">Enter password</label>
+                        </div>
+                        <p className="eula">By signing up you accept our <NavLink>Terms of Use </NavLink> &<NavLink> Privacy Policy</NavLink>.</p>
+                    </div>
+                    )}
+                    <button className="registerButton" onClick={handleSignUp}>Sign Up</button>
+                </form>}
             </dialog>
         </CSSTransition>
     )

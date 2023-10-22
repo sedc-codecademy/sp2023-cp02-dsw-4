@@ -2,25 +2,37 @@ import React, { useRef } from "react"
 import { NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 
-import { setShowAccDropDown } from "../../../store/slices/acDropDownSlice"
-import { toggleCatDropDown } from "../../../store/slices/catDropDownSlice"
+import { setShowAccDropDown } from "../../../store/slices/dropdowns/acDropDownSlice"
+import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice"
 
-import { setThemeMode } from "../../../store/slices/themeSlice"
-import { setIsSettingsOn } from "../../../store/slices/navSettingsSlice"
+import { setThemeMode } from "../../../store/slices/theme/themeSlice"
+import { setIsSettingsOn } from "../../../store/slices/nav/navSettingsSlice"
+import { setShowShipping } from "../../../store/slices/shipping/shippingSlice"
+import { setShouldFocus } from "../../../store/slices/search/search"
 
-import { CatDPMobile, SubCatDP, ViewAllSub, catArray, subCatArray } from "../CatDropDown/CatDP"
+import {
+    CatDPMobile,
+    SubCatDP,
+    ViewAllSub,
+    catArray,
+    subCatArray,
+} from "../CatDropDown/CatDP"
+import { LocationPicker, MiniLocationPicker } from "../LocationPicker/LocationPicker"
 
 import { CSSTransition } from "react-transition-group"
 
 export default function Nav() {
     const dispatch = useDispatch()
-    let isLoggedIn = false
+    let isLoggedIn = true
 
     const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const themeMode = useSelector((state) => state.theme.themeMode)
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
-    const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
+    const showCatDropDown = useSelector(
+        (state) => state.catDropDown.showDropDown
+    )
+    const showShipping = useSelector((state) => state.shipping.showShipping)
 
     const csstransitionRef = useRef()
     const mobilecatref = useRef()
@@ -37,6 +49,7 @@ export default function Nav() {
     }
 
     const onAccountIconClick = () => {
+        if (showShipping) dispatch(setShowShipping(!showShipping))
         dispatch(setIsSettingsOn(!isSettingsOn))
     }
 
@@ -56,10 +69,27 @@ export default function Nav() {
         dispatch(toggleCatDropDown())
     }
 
+    const handleShipToClick = () => {
+        if (isSettingsOn) dispatch(setIsSettingsOn(false))
+        dispatch(setShowShipping(!showShipping))
+    }
+
+    const handleLogOutClick = () => {
+        console.log('ive been clicked')
+    }
+
+    const searchButtonClick = () => {
+        dispatch(setShouldFocus(true))
+    }
+
     return (
         <>
             <nav className={`mainNav ${isMobile ? "mobileNav" : "normalNav"}`}>
-                <ul className={isLoggedIn ? "navigationLinks loggedIn" : "navigationLinks"}>
+                <ul
+                    className={
+                        isLoggedIn ? "navigationLinks loggedIn" : "navigationLinks"
+                    }
+                >
                     {isMobile && (
                         <li>
                             <NavLink
@@ -100,9 +130,8 @@ export default function Nav() {
                     {isMobile && (
                         <li>
                             <button
-                                className="searchButtons"
-                                id="searchButton"
-                                onClick={closeSettings}
+                               
+                                onClick={searchButtonClick}
                             >
                                 <svg viewBox="0 0 32 32">
                                     <path
@@ -141,27 +170,29 @@ export default function Nav() {
                             </button>
                         )}
                     </li>
-                    {isMobile && <li>
-                        <button className="categoriesButton" onClick={handleCategoriesClick}>
-                            <svg viewBox="0 0 32 32">
-                                <path
-                                    fill="currentColor"
-                                    d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
-                                />
-                            </svg>
-                        </button>
-                    </li>}
-                    {!isMobile && <li>
-                        <button>
-                            {/* <svg viewBox="0 0 32 32">
-                                <path
-                                    fill="currentColor"
-                                    d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
-                                />
-                            </svg> */}
-                            <p>Ship To</p>
-                        </button>
-                    </li>}
+                    {isMobile && (
+                        <li>
+                            <button
+                                className="categoriesButton"
+                                onClick={handleCategoriesClick}
+                            >
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
+                                    />
+                                </svg>
+                            </button>
+                        </li>
+                    )}
+                    {!isMobile && (
+                        <li className="shippingLi">
+                            <button onClick={handleShipToClick}>
+                                <p>Ship To</p>
+                            </button>
+                            <LocationPicker></LocationPicker>
+                        </li>
+                    )}
                     <li>
                         <NavLink
                             to="/cart"
@@ -191,7 +222,17 @@ export default function Nav() {
                         <div className="categories-header">
                             <h2>Categories</h2>
                             <button onClick={handleCategoriesClick}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M17.414 16L26 7.414L24.586 6L16 14.586L7.414 6L6 7.414L14.586 16L6 24.586L7.414 26L16 17.414L24.586 26L26 24.586L17.414 16z" /></svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M17.414 16L26 7.414L24.586 6L16 14.586L7.414 6L6 7.414L14.586 16L6 24.586L7.414 26L16 17.414L24.586 26L26 24.586L17.414 16z"
+                                    />
+                                </svg>
                             </button>
                         </div>
                         <div className="divider"></div>
@@ -221,12 +262,28 @@ export default function Nav() {
                         nodeRef={csstransitionRef}
                     >
                         <div
-                            className={`settingsContainer ${isMobile ? "mobileSettings" : "normalSettings"}`}
+                            className={`settingsContainer ${isMobile ? "mobileSettings" : "normalSettings"
+                                }`}
                             ref={csstransitionRef}
                         >
                             <ul className="accountSettings">
                                 <li>
-                                    <h3>Account</h3>
+                                    <h3>
+                                        Account
+                                        <button onClick={handleLogOutClick}>
+                                            <span>Logout</span>
+                                            <svg viewBox="0 0 32 32">
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M6 30h12a2.002 2.002 0 0 0 2-2v-3h-2v3H6V4h12v3h2V4a2.002 2.002 0 0 0-2-2H6a2.002 2.002 0 0 0-2 2v24a2.002 2.002 0 0 0 2 2Z"
+                                                />
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M20.586 20.586L24.172 17H10v-2h14.172l-3.586-3.586L22 10l6 6l-6 6l-1.414-1.414z"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </h3>
                                 </li>
                                 <li>
                                     <NavLink
@@ -266,6 +323,10 @@ export default function Nav() {
                                     </NavLink>
                                 </li>
                             </ul>
+                            {isMobile && <div className="shippingDiv">
+                                <h3>Shipping</h3>
+                                <MiniLocationPicker></MiniLocationPicker>
+                            </div>}
                             <ul className="themeSettings">
                                 <li>
                                     <h3>Theme</h3>

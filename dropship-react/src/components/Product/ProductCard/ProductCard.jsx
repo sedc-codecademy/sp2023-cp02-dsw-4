@@ -1,38 +1,38 @@
-import "./_main.scss";
 import React from "react";
-import { useNavigate } from "react-router";
-function ProductCard(props) {
-  const navigate = useNavigate();
-  const { product } = props;
-  const discount = product.sale
-    ? (product.price - product.price * (product.sale / 100)).toFixed(2)
-    : null;
+import { NavLink } from "react-router-dom"
+import Stars from '../../Stars/Stars'
+import ImageLoader from '../../ImageLoader/ImageLoader'
 
-  const handleClick = () => {
-    navigate("/productDetails/" + product.id);
-  };
+export default function ProductCard(props) {
+  const { product } = props
+  
   return (
-    <>
-      <div
-        className={`card ${product.sale ? "sale" : ""}`}
-        onClick={handleClick}
-      >
-        <img
-          src="https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg"
-          alt=""
-          width={200}
-        />
-        {product.sale && (
-          <div className="sale-badge">
-            <p className="sale-percentage">{`${product.sale}% Off`}</p>
+    <li className="product-card">
+      <NavLink to={`/productDetails/${product.id}`}>
+        <ImageLoader
+          url={props.product.image || ''}
+          alt={props.product.title}
+          backupUrl="/imgs/404/product404.png"
+          backupAlt="Product Image 404"
+        ></ImageLoader>
+        <div className='infoDiv'>
+          <p className='title'>{props.product.title}</p>
+          <div className='ratingDiv'>
+            <Stars initialRating={props.product.rating.rate} id={props.product.id}></Stars>
+            <p>({props.product.rating.count})</p>
           </div>
-        )}
-        <h3>{product.title}</h3>
-        <h4 className="original-price">{product.price}</h4>
-        {product.sale && <h3 className="discounted-price">{discount}</h3>}
-      </div>
-    </>
-  );
+          <div className='priceDiv'>
+            {props.product.sale || props.product.sale === 1 ? (
+              <>
+                <p>{props.product.price}</p>
+                <h4>
+                  {(props.product.price - (props.product.price * (props.product.sale / 100)).toFixed(2)).toFixed(2)}
+                </h4>
+              </>) : (<h4>{props.product.price}</h4>)}
+          </div>
+        </div>
+      </NavLink>
+    </li>
+  )
 }
 
-export default ProductCard;

@@ -9,8 +9,10 @@ header {
         align-items: center;
         justify-content: center;
 
+        --maxWidth: 40rem;
+
         .search-bar-container {
-            max-width: 33%;
+            max-width: var(--maxWidth);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -430,15 +432,15 @@ header {
     }
 }
 
-@media (max-width: 1440px) {
-    header {
-        .search-form {
-            .search-bar-container {
-                max-width: 53%;
-            }
-        }
-    }
-}
+// @media (max-width: 1440px) {
+//     header {
+//         .search-form {
+//             .search-bar-container {
+//                 // max-width: 53%;
+//             }
+//         }
+//     }
+// }
 
 @media (max-width: 1000px) {
     header {
@@ -487,11 +489,11 @@ header {
             }
 
             .search-bar-container {
-                border-radius: 1.5rem;
+                border-radius: 1rem;
 
                 form {
                     .search-bar {
-                        border-radius: 1rem;
+                        border-radius: .7rem;
                     }
                 }
 
