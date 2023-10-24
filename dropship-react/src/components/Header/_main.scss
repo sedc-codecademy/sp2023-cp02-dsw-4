@@ -1,0 +1,203 @@
+///////////  HEADER  /////////////
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    $firstValue: 70svh;
+    $secondValue: 15rem;
+
+    height: max($firstValue, $secondValue);
+
+    .headerBackground {
+        position: absolute;
+        width: 100%;
+        z-index: -10;
+    }
+
+    .logo {
+        position: fixed;
+        transition: all 300ms ease-in-out;
+        z-index: 11;
+        top: 1rem;
+        left: .7rem;
+        display: flex;
+        align-items: center;
+
+        svg {
+            height: 3.5rem;
+            padding-inline: .3rem;
+            background-color: var(--tpPri3);
+            border-radius: 2rem;
+            box-shadow: rgba(0, 0, 0, 0.24) 0 .2rem .5rem;
+
+            #headerLogoGradient {
+                :first-child {
+                    stop-color: var(--logoAccentOne)
+                }
+
+                :nth-child(2) {
+                    stop-color: var(--logoAccentTwo)
+                }
+            }
+        }
+    }
+
+    &.smallHeader {
+        position: relative;
+        padding-block: 2rem;
+        margin-bottom: 2rem;
+        gap: .7rem;
+
+        @supports (height: fit-content){
+            height: fit-content;
+        }
+        
+        @supports not (height: fit-content){
+            height: auto;
+        }
+
+        background: radial-gradient(circle at left, var(--paleAccentTwo) 0%, var(--someColor) 50%, var(--paleAccentTwo) 100%);
+
+        .logo {
+            position: static;
+            top: unset;
+            left: unset;
+            order: 0;
+            min-width: 10%;
+            height: max-content;
+
+            svg {
+                border-radius: 1rem;
+                border-top-left-radius: 2rem;
+                border-bottom-left-radius: 2rem;
+                height: 3.5rem;
+                flex-grow: 1;
+                box-shadow: none;
+
+                path:not(:nth-child(11)) {
+                    fill: var(--tpSec2);
+                }
+            }
+        }
+
+        .search-form {
+            position: relative;
+            top: unset;
+            width: fit-content;
+            order: 1;
+
+            .search-bar-container {
+                box-shadow: none;
+                max-width: max-content;
+            }
+
+            .suggestions{
+                max-width: max-content;
+                width: max-content;
+            }
+
+            .frequent-searches {
+                display: none;
+            }
+        }
+
+        .mainNav {
+            &.normalNav {
+                position: static;
+                top: unset;
+                right: unset;
+                order: 3;
+
+                ul {
+                    flex-direction: row-reverse;
+
+                    &.navigationLinks {
+                        box-shadow: none;
+
+                        &.loggedIn {
+                            border-top-left-radius: 1.2rem;
+                            border-bottom-left-radius: 1.2rem;
+                            border-top-right-radius: 3rem;
+                            border-bottom-right-radius: 3rem;
+                        }
+                    }
+                }
+
+                .settingsContainer {
+                    position: absolute;
+                    right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 4000px) {
+    header {
+        .headerBackground {
+
+            &.leftBkg {
+                display: block;
+            }
+
+            &.rightBkg {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        &.smallHeader {
+            padding: 0;
+            gap: 0;
+
+            .logo {
+                margin: 0;
+            }
+        }
+
+        .headerBackground {
+            &.leftBkg {
+                display: none;
+            }
+
+            &.rightBkg {
+                display: none;
+            }
+
+            &.mobileBkg {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        align-items: flex-start;
+
+
+        .headerBackground {
+            &.leftBkg {
+                display: none;
+            }
+
+            &.rightBkg {
+                display: none;
+            }
+
+            &.mobileBkg {
+                display: block;
+            }
+        }
+
+        .logo {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+:root {
+    --priColor: rgb(233, 233, 233);
+    --tpPri: #fff;
+    --tpPri2: rgba(235, 235, 235);
+    --tpPri3: rgb(245, 245, 245);
+    --tpPri4: rgb(230, 230, 230);
+
+    --ddbkg: rgba(0, 0, 0, 0.3);
+
+    --secColor: rgba(0, 0, 0, 0.822);
+    --tpSec: hsl(0, 0%, 30%);
+    --tpSec2: hsl(0, 0%, 45%);
+    --tpSec3: hsl(0, 0%, 63%);
+    
+    --accent: rgb(255, 52, 86);
+    --darkAccent: rgb(158, 0, 26);
+    --secAccent: rgb(255, 115, 0);
+    --paleSecAccent: rgba(255, 115, 0, 0.646);
+    --tertAccent: rgb(255, 166, 0);
+    --tertColor: rgb(187, 187, 187);
+    --tertColor2: rgb(207, 207, 207);
+    --paleAccent: rgba(255, 52, 86, 0.199);
+    --paleAccentTwo: rgba(255, 52, 86, 0.67);
+    --paleAccentThree: rgba(255, 52, 86, 0.521);
+    --someColor: #ffccbf;
+    
+    --additionallAccent: rgb(0, 132, 255);
+
+    --reverseSecAccent: rgb(0, 185, 83);
+    --reverseAccent: rgb(0, 255, 170);
+    --reversePaleAccent: rgba(0, 255, 170, 0.072);
+    --reversePaleAccentTwo: rgba(0, 255, 170, 0.67);
+
+    --logoAccentOne: rgb(255, 52, 86);
+    --logoAccentTwo: rgb(255, 123, 0);
+    --logoReverseAccentOne: rgb(0, 185, 83);
+    --logoReverseAccentTwo: rgb(0, 255, 170);
+
+    --shadowColor: rgba(0, 0, 0, 0.2);
+    --shadowColorTwo: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode {
+    --priColor: rgb(0, 0, 0);
+    --tpPri: rgba(20, 20, 20);
+    --tpPri2: rgb(35, 35, 35);
+    --tpPri3: rgb(45, 45, 45);
+    --tpPri4: rgb(40, 40, 40);
+
+    --ddbkg: rgba(0, 0, 0, 0.103);
+
+    --secColor: rgb(255, 255, 255);
+    --tpSec: hsl(0, 0%, 92%);
+    --tpSec2: hsl(0, 0%, 73%);
+
+    --tpSec: hsl(0, 0%, 92%);
+    --tpSec2: hsl(0, 0%, 73%);
+    --tpSec3: hsl(0, 0%, 47%);
+
+    --tertColor2: rgb(83, 83, 83);
+
+    --accent: rgb(0, 255, 170);
+    --darkAccent: rgb(0, 124, 83);
+    --secAccent: rgb(0, 185, 83);
+    --tertAccent: rgb(109, 255, 65);
+
+    --someColor: rgb(0, 141, 94);
+    --paleSecAccent: rgba(0, 185, 83, 0.801);
+    --paleAccent: rgba(0, 255, 170, 0.092);
+    --paleAccentTwo: rgba(0, 255, 170, 0.67);
+    --paleAccentThree: rgba(0, 255, 170, 0.507);
+    --backdropBackground: rgb(1, 21, 50);
+
+    --reverseAccent: rgb(255, 52, 86); 
+    --reverseSecAccent: rgb(255, 115, 0);
+    --reversePaleAccent: rgba(255, 52, 86, 0.072); 
+    --reversePaleAccentTwo: rgba(255, 52, 86, 0.67);
+
+    --logoAccentOne: rgb(0, 185, 83);
+    --logoAccentTwo: rgb(0, 255, 170);
+    --logoReverseAccentOne: rgb(255, 52, 86);
+    --logoReverseAccentTwo: rgb(255, 123, 0);
+
+    background: radial-gradient(circle at center, var(--priColor) 0%, var(--tpPri3) 100%);
+}
+
+dialog::backdrop {
+    --backdropBackground: rgba(92, 92, 92, 0.291);
+}

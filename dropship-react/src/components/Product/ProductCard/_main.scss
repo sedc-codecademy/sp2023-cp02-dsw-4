@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  color: var(--secColor);
+  background-color: var(--paleAccent);
+  border: 0.2rem solid var(--paleAccentThree);
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sale-badge {
+  background-color: var(--accent);
+  color: var(--tpPri);
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-12%, 6%) rotate(-20deg);
+  transform-origin: top left;
+  padding: 8px;
+}
+
+.sale-percentage {
+  font-size: 1.5rem;
+}
+
+.sale {
+  border: 2px solid var(--accent);
+}
+
+.sale h3 {
+  color: var(--accent);
+  font-weight: normal;
+}
+
+.original-price {
+  text-decoration: line-through;
+  font-size: 18px;
+  color: #777;
+}
+
+.discounted-price {
+  background-color: var(--tpPri);
+  border-radius: 14px;
+  font-size: 24px;
+  color: var(--accent);
+}
