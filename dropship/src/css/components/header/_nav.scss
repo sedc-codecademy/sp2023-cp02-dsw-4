@@ -1,0 +1,204 @@
+@use '../../abstracts' as *;
+
+// NAVIGATION BAR
+
+nav {
+    position: fixed;
+    right: 1.5vmax;
+    top: 1vmax;
+    user-select: none;
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1vmax);
+    border: 0.20rem solid var(--paleAccentThree);
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    transition: all 300ms ease;
+
+    section {
+        position: relative;
+        border-top-left-radius: .5vmax;
+        border-top-right-radius: .5vmax;
+    }
+
+    .navigationLists {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        padding: .3rem;
+        height: 3rem;
+
+        .divider {
+            position: relative;
+            border-radius: 1rem;
+            width: .2rem;
+            margin-inline: .5rem;
+            align-self: center;
+            height: 95%;
+            background: linear-gradient(to bottom, var(--secAccent) 0%, var(--accent) 50%, var(--secAccent) 100%);
+        }
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .material-symbols-outlined {
+                font-size: 1.7rem;
+                transition: all .8s cubic-bezier(.19, 1, .22, 1);
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                color: var(--secColor);
+                transition: all .8s cubic-bezier(.19, 1, .22, 1);
+
+                p {
+                    margin-inline: .3rem;
+                    font-size: large;
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                    letter-spacing: .05rem;
+                    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    font-weight: 600;
+                }
+
+                span {
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                }
+
+                &:active {
+                    span {
+                        &.material-symbols-outlined {
+                            color: var(--tertAccent);
+                        }
+                    }
+                }
+
+                &:focus-visible {
+                    color: var(--accent);
+
+                    .material-symbols-outlined,
+                    p {
+                        color: var(--accent);
+                    }
+
+                    ::before {
+                        background-color: var(--accent);
+                    }
+                }
+            }
+
+            &:hover {
+                button{
+                    color: var(--accent);
+                }
+                span{
+                    color: var(--accent);
+                }
+                ::before {
+                    background-color: var(--accent);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    nav {
+        justify-self: center;
+        margin-inline: auto;
+        right: unset;
+        left: unset;
+        top: 1vmax;
+
+        .navigationLists {
+            height: 2rem;
+
+            .divider {
+                align-self: center;
+                height: 110%;
+                margin: 0;
+
+                &.middleDivider {
+                    display: none;
+                }
+            }
+        }
+
+        button {
+            p {
+                display: none;
+                margin: 0;
+            }
+        }
+
+        .themeSelector {
+            ul {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 5%;
+
+                li {
+                    &.lightButton {
+                        order: 0;
+                    }
+
+                    &.systemDefault {
+                        order: 1;
+                    }
+
+                    &.darkButton {
+                        order: 2;
+                    }
+
+                    button {
+                        span {
+                            margin: 0;
+                        }
+
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .productAddedNotification {
+            ul {
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+
+                :nth-child(4) {
+                    display: none;
+                }
+
+                button {
+                    width: 100%;
+                    margin-block: 0;
+                    border-radius: 0rem;
+                    padding: 0;
+                    border-bottom: none;
+                    border-left: none;
+                    border-right: none;
+                    margin-top: .3rem;
+                }
+
+                li {
+                    padding-inline: .5rem;
+
+                    &:nth-child(1) {
+                        margin-top: .3rem;
+                    }
+                }
+            }
+        }
+    }
+}

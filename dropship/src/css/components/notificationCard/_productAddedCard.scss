@@ -1,0 +1,77 @@
+@use "../../abstracts";
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+.productAddedNotification {
+    ul {
+        align-items: center;
+        justify-content: center;
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 1rem;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
+        button {
+            color: var(--priColor);
+            width: 95%;
+            padding: .2rem;
+            margin-block: .4rem .2rem;
+            position: relative;
+            align-items: center;
+            font-size: large;
+            font-family: "JetBrains Mono", monospace;
+            touch-action: manipulation;
+            overflow: hidden;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+            border-radius: .5rem;
+            border: .2rem solid var(--reversePaleAccent);
+
+            &::before {
+                content: '';
+                inset: -1rem;
+                position: absolute;
+                filter: blur(.5vmax);
+                background: linear-gradient(-45deg, var(--reverseSecAccent) 0%, var(--reverseAccent) 30%, var(--reverseSecAccent) 70%);
+                z-index: -1;
+            }
+
+            &:focus-visible {
+                background-color: var(--priColor);
+                color: var(--reverseAccent);
+            }
+
+            &:hover {
+                background-color: var(--priColor);
+                color: var(--reverseAccent);
+            }
+
+            &:focus-visible {
+                background-color: var(--priColor);
+                color: var(--reverseAccent);
+            }
+
+            &:active {
+                background-color: var(--paleAccentThree);
+                color: var(--secColor);
+            }
+
+            &.makePurchase {
+                display: none;
+            }
+
+            &.proceedToCheckout {
+                display: block;
+            }
+
+            &.backToCart {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,344 @@
+.scrollableCategories,
+.scrollableSubCats {
+  position: relative;
+  height: 13vmax;
+  width: 75%;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .categoriesScrollUl,
+  .subCatsScrollUL {
+    position: relative;
+    width: 85%;
+    height: 100%;
+    background-color: var(--paleAccent);
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5vmax;
+    padding: .5vmax;
+
+    border-radius: 1vmax;
+    backdrop-filter: blur(.3rem);
+    border: .2rem solid var(--paleAccentThree);
+
+    .scrollCatLi,.scrollCatLiTwo {
+      background-color: var(--paleAccent);
+      overflow: hidden;
+      height: 100%;
+      width: 23%;
+      border-radius: inherit;
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      border: .25rem solid var(--paleAccentThree);
+      transition: all .7s cubic-bezier(.19, 1, .22, 1);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      cursor: pointer;
+
+      --deg: 0deg;
+
+      &::before {
+        content: "";
+        inset: -0.25rem;
+        background: linear-gradient(var(--deg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+        position: absolute;
+        z-index: -1;
+      }
+
+      h3 {
+        margin-top: 1rem;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        line-height: 1.2;
+        font-weight: 600;
+        color: var(--secColor);
+        letter-spacing: .05rem;
+        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        text-align: center;
+      }
+
+      img {
+        height: 60%;
+        width: 60%;
+        bottom: 0;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+      }
+
+      &.hiddenLeft {
+        animation-name: slideOutLeft;
+        position: absolute;
+        pointer-events: none;
+        left: -25%;
+        scale: 0;
+        height: 80%;
+        opacity: .5;
+
+        &::before {
+          background: transparent;
+        }
+
+        transition: all .2s cubic-bezier(.19, 1, .22, 1);
+      }
+
+      &.shownMiddle {
+        position: relative;
+        opacity: 1;
+
+        &:hover {
+          border-color: var(--paleAccentTwo);
+          background-color: var(--tpPri);
+
+          h3 {
+            color: var(--accent);
+          }
+        }
+
+        &:focus-visible {
+          color: var(--accent);
+          border-color: var(--paleAccentTwo);
+
+          h3 {
+            color: var(--accent);
+          }
+        }
+
+        &:active {
+          scale: .95;
+        }
+      }
+
+      &.hiddenRight {
+        animation-name: slideOutRight;
+        position: absolute;
+        pointer-events: none;
+        right: -25%;
+        scale: 0;
+        height: 80%;
+        opacity: .5;
+
+        &::before {
+          background: transparent;
+        }
+
+        transition: all .2s cubic-bezier(.19, 1, .22, 1);
+      }
+
+      &.slideInLeft {
+        animation-name: slideInLeft;
+      }
+
+      &.slideInRight {
+        animation-name: slideInRight;
+      }
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      left: -25%;
+      right: auto;
+    }
+
+    to {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      left: 0;
+      right: auto;
+    }
+
+    to {
+      left: -25%;
+      right: auto;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      left: auto;
+      right: -25%;
+    }
+
+    to {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      left: auto;
+      right: 0;
+    }
+
+    to {
+      left: auto;
+      right: -25%;
+    }
+  }
+
+  .scrollCatButtons {
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    overflow: hidden;
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+    border-radius: 50%;
+    border: .2vmax solid var(--paleAccentThree);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 .15rem .6rem rgba(0, 0, 0, 0.268);
+
+    &.disabledScrollBtn {
+      pointer-events: none;
+      filter: grayscale(1);
+      span{
+        color: rgb(171, 171, 171);
+      }
+    }
+
+    &#rightScrollButton {
+      span {
+        --spanDeg: -145deg;
+      }
+    }
+
+    span {
+      position: relative;
+      overflow: hidden;
+      padding: .7vmax;
+      --spanDeg: 145deg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+
+      &::before {
+        content: '';
+        inset: -.2rem;
+        position: absolute;
+        background: linear-gradient(var(--spanDeg), var(--paleAccentThree) 30%, var(--paleAccent) 70%, var(--paleAccentThree) 0%);
+        backdrop-filter: blur(.2rem);
+        z-index: -1;
+      }
+    }
+
+    &:hover {
+      background-color: var(--priColor);
+
+      span {
+        color: var(--accent);
+      }
+    }
+
+    &:focus-visible {
+      background-color: var(--priColor);
+      color: var(--accent);
+    }
+
+    &:active {
+      background-color: var(--paleAccentThree);
+      color: var(--secColor);
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .scrollableCategories,
+  .scrollableSubCats {
+    width: 80%;
+    height: 12rem;
+    justify-content: center;
+    gap: .5rem;
+
+    .categoriesScrollUl {
+      width: 90%;
+      padding: .3vmax;
+      gap: .3vmax;
+
+      .scrollCatLi {
+        justify-content: center;
+        border-width: .15vmax;
+
+        h3 {
+          font-size: 1.1em;
+        }
+      }
+    }
+
+    .scrollCatButtons {
+      max-width: 15vmax;
+      max-height: 15vmax;
+
+      span {
+        padding: .5vmax;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .scrollableCategories,
+  .scrollableSubCats {
+    width: 80%;
+    height: 9rem;
+  }
+}
+
+@media(max-width:768px) {
+
+  .scrollableCategories,
+  .scrollableSubCats {
+    width: 95%;
+    height: 6rem;
+
+    flex-wrap: wrap;
+
+    .categoriesScrollUl {
+      order: 0;
+      width: 100%;
+
+      .scrollCatLi {
+        img {
+          height: 95;
+          width: 95%;
+        }
+
+        h3 {
+          display: none;
+        }
+      }
+    }
+
+    .scrollCatButtons {
+      max-width: 5vmax;
+      max-height: 5vmax;
+
+      &#leftScrollButton {
+        order: 1;
+      }
+
+      &#rightScrollButton {
+        order: 2;
+      }
+    }
+  }
+}

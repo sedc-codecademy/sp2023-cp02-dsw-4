@@ -1,0 +1,176 @@
+@use '../../abstracts' as *;
+
+.registerUi {
+    width: 50%;
+    background-color: var(--paleAccentTwo);
+    color: var(--priColor);
+    backdrop-filter: blur(0);
+    gap: 2rem;
+    transition: 500ms all ease-in-out;
+    overflow: hidden;
+
+    * {
+        transform: translateX(0rem);
+        transition: 300ms all ease-in-out;
+        transition: 1000ms transform ease-in-out;
+    }
+
+    .registerButton {
+        transition: 300ms all ease-in-out;
+        transition: 700ms transform ease-in-out;
+    }
+
+    button {
+        border: 0.15rem solid var(--priColor);
+        background-color: transparent;
+        color: var(--priColor);
+        transition: 300ms all ease-in-out;
+
+        &:hover {
+            transition: 300ms all ease-in-out;
+            background-color: var(--priColor);
+            color: var(--accent);
+        }
+    }
+
+    span {
+        color: var(--priColor);
+    }
+
+    .fields {
+        display: none;
+        opacity: 0;
+        visibility: collapse;
+
+        .checkBoxes {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            user-select: none;
+
+            span {
+                pointer-events: all !important;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            #agree {
+                position: relative;
+                margin-top: 0.7rem;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 1rem;
+                appearance: none;
+                transition: 300ms all ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::after {
+                    content: "";
+                    position: relative;
+                    display: none;
+                    top: -0.1rem;
+                    width: 0.5rem;
+                    height: 1rem;
+                    border: solid var(--priColor);
+                    border-width: 0 0.2rem 0.2rem 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    visibility: hidden;
+                }
+
+                &:checked {
+                    &::after {
+                        visibility: visible;
+                    }
+
+                    opacity: 1 !important;
+                }
+
+                &:not(:checked) {
+                    border-color: var(--accent) !important;
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                    transition: 300ms all ease;
+                }
+
+                &:checked {
+                    background-color: var(--accent);
+                }
+
+            }
+        }
+    }
+
+    .cancel {
+        top: 0.5rem;
+        left: 0.5rem;
+        visibility: collapse;
+        border: none;
+        opacity: 0;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+    }
+}
+
+.regOn {
+    width: 100%;
+    background-color: var(--tpPri);
+    color: var(--secColor);
+    backdrop-filter: blur(2rem);
+
+    .fields {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+
+        #agree {
+            visibility: visible;
+
+            &::after {
+                display: block !important;
+                border-color: var(--priColor) !important;
+            }
+        }
+    }
+
+    .cancel {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    button {
+        position: relative;
+        margin: 1rem;
+        border: 0.15rem solid var(--accent);
+        background-color: var(--priColor);
+        color: var(--accent);
+
+        &:focus-visible {
+            background-color: var(--accent);
+            color: var(--priColor);
+        }
+
+        &:hover {
+            background-color: var(--accent);
+            color: var(--priColor);
+
+        }
+
+        &:active {
+            color: var(--accent);
+            background-color: var(--priColor);
+        }
+    }
+
+    span {
+        color: var(--accent);
+    }
+}

@@ -1,0 +1,97 @@
+.emptyCartDiv {
+  display: none;
+  width: 61%;
+  height: 30vmax;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: .5rem;
+
+  &::before {
+    content: '';
+    inset: 10vmax 25vmax;
+    position: absolute;
+    display: block;
+    background-color: var(--accent);
+    filter: blur(10rem);
+    opacity: .5;
+    z-index: -1;
+  }
+
+  span {
+    color: var(--accent);
+    pointer-events: none;
+  }
+
+  h2 {
+    opacity: 0.85;
+    font-size: 2.25vmax;
+    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    text-shadow: .05rem .05rem 0 var(--tpSec);
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1rem);
+    padding: .5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--paleAccentThree);
+
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    opacity: 0.85;
+    font-size: 2vmax;
+    text-shadow: .05rem .05rem 0 var(--tpSec);
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1rem);
+    padding: .5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--paleAccentThree);
+
+    width: 100%;
+    text-align: center;
+  }
+
+  .emptyCartLogo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--tpPri);
+    backdrop-filter: blur(1rem);
+    padding: .5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--paleAccentThree);
+
+    height: 25rem;
+    width: 100%;
+
+    z-index: 1;
+
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      #cartLinear {
+        :first-child {
+          stop-color: var(--accent)
+        }
+
+        :nth-child(2) {
+          stop-color: var(--secAccent)
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1008px) {
+  .cart{
+    .emptyCartDiv{
+      width: 85%;
+    }
+  }
+}

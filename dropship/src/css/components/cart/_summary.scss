@@ -1,0 +1,172 @@
+@use "../../abstracts";
+
+.summary {
+    position: relative;
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    a {
+        color: var(--paleAccentTwo);
+
+        &:hover {
+            text-decoration: underline;
+            color: var(--accent);
+        }
+
+        &:focus-visible {
+            background-color: var(--priColor);
+            color: var(--accent);
+            text-decoration: underline;
+            outline: .2rem solid var(--accent);
+            border-radius: .5rem;
+        }
+
+        &:active {
+            color: var(--secColor);
+        }
+    }
+
+    .headerSummary {
+        padding: .5rem .5rem;
+        color: var(--priColor);
+        text-align: end;
+        background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--paleAccent) 0%, var(--accent) 30%);
+        border-radius: .5rem;
+    }
+
+    h2 {
+        position: relative;
+        border-radius: .5rem;
+        padding: .3rem;
+
+        &.amount {
+            text-indent: 0;
+            padding-inline: .3vmax;
+            padding-block: 0;
+            border-radius: .5rem;
+            border: .2rem solid var(--paleAccentThree);
+            background: var(--paleAccent);
+        }
+
+        &.totalAmount {
+            border: none;
+            color: var(--priColor);
+            background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%);
+        }
+    }
+
+    button {
+        color: var(--priColor);
+        width: 100%;
+        padding: .8rem .5rem;
+        position: relative;
+        align-items: center;
+        font-size: large;
+        font-family: "JetBrains Mono", monospace;
+        touch-action: manipulation;
+        overflow: hidden;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        border-radius: .5rem;
+        border: .2rem solid var(--paleAccentThree);
+
+        &::before {
+            content: '';
+            inset: -1rem;
+            position: absolute;
+            filter: blur(.5vmax);
+            background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+            z-index: -1;
+        }
+
+        &:focus-visible {
+            background-color: var(--priColor);
+            color: var(--accent);
+        }
+
+        &:hover {
+            background-color: var(--priColor);
+            color: var(--accent);
+        }
+
+        &:focus-visible {
+            background-color: var(--priColor);
+            color: var(--accent);
+        }
+
+        &:active {
+            background-color: var(--paleAccentThree);
+            color: var(--secColor);
+        }
+
+        &.makePurchase {
+            display: none;
+        }
+
+        &.proceedToCheckout {
+            display: block;
+        }
+
+        &.backToCart {
+            display: none;
+        }
+    }
+
+    ul {
+        border: .15rem solid var(--paleAccentThree);
+        border-radius: .5rem;
+        overflow: hidden;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .5rem;
+            backdrop-filter: blur(.3rem);
+            background-color: var(--tpPri);
+
+            &:first-child {
+                border-bottom: .1rem solid var(--paleAccentThree);
+            }
+
+            &:nth-child(2) {
+                border-bottom: .3rem solid var(--paleAccentThree);
+            }
+            &:nth-child(3) {
+                h4{
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: .5rem;
+                }
+            }
+        }
+
+        &.buyerProtectReview {
+            li {
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                border: none;
+                padding-block: .5vmax;
+
+                h4 {
+                    display: flex;
+                    align-items: center;
+
+                    &.buyerproc {
+                        span {
+                            pointer-events: none;
+                            color: var(--accent);
+                            margin-left: -.2rem;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    border-bottom: .1rem solid var(--paleAccentThree);
+                }
+            }
+        }
+    }
+}

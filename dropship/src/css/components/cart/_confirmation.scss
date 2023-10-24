@@ -1,0 +1,113 @@
+@use "../../abstracts";
+
+.purchaseConfirmation {
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-top: 10%;
+    padding: 1.5rem;
+    border: .2rem solid var(--paleAccentTwo);
+    gap: 1.5rem;
+    border-radius: .5rem;
+    background-color: var(--tpPri);
+    overflow: hidden;
+    color: var(--secColor);
+
+    h1 {
+        text-align: center;
+        z-index: 1;
+    }
+
+    a {
+        color: var(--paleAccentTwo);
+
+        &:hover {
+            text-decoration: underline;
+            color: var(--accent);
+        }
+
+        &:focus-visible {
+            background-color: var(--priColor);
+            color: var(--accent);
+            text-decoration: underline;
+            outline: .2rem solid var(--accent);
+            border-radius: .5rem;
+        }
+
+        &:active {
+            color: var(--secColor);
+        }
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        z-index: 1;
+
+        .total {
+            padding: .5rem;
+        }
+
+        .price {
+            padding: .4rem;
+            border-radius: .5rem;
+            color: var(--priColor);
+            background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 70%, var(--accent) 30%, var(--paleAccent));
+        }
+    }
+
+    button {
+        position: relative;
+        padding: .5rem;
+        border-radius: .5rem;
+        align-items: center;
+        font-size: large;
+        color: var(--priColor);
+        border: .2rem solid var(--paleAccentThree);
+        font-family: "JetBrains Mono", monospace;
+        touch-action: manipulation;
+        overflow: hidden;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        &::before {
+            content: '';
+            inset: -1rem;
+            position: absolute;
+            filter: blur(.5vmax);
+            background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+            z-index: -1;
+        }
+
+        &:hover {
+            background-color: var(--priColor);
+            color: var(--accent);
+        }
+
+        &:focus-visible {
+            background-color: var(--priColor);
+            color: var(--accent);
+        }
+
+        &:active {
+            border-color: var(--accent);
+            color: var(--secColor);
+        }
+
+        &:first-child {
+            &::before {
+                background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+            }
+        }
+    }
+}
+
+.purchaseConfirmation[open] {
+    display: flex;
+    top: 5rem;
+    &::backdrop{
+        background-color: rgba(0, 0, 0, 0.575);
+        backdrop-filter: blur(1.5rem);
+    }
+}

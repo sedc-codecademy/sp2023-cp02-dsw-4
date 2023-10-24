@@ -1,0 +1,468 @@
+@use "../../abstracts";
+
+.cart {
+    position: relative;
+    max-width: 90vmax;
+    margin-inline: auto;
+    margin-block: 5vmax;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1vmax;
+    scale: 0;
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+    span {
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+    }
+}
+
+.currentStage {
+    pointer-events: none;
+    background: linear-gradient(-45deg, var(--secAccent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+
+    span {
+        color: var(--priColor);
+    }
+}
+
+.checkoutOn {
+    .checkout {
+        display: flex; // SHOULD ANIMATE
+    }
+}
+
+// DONE - NEEDS ANIMATING
+.shippingstage {
+    .summary {
+        button {
+            &.makePurchase {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.proceedToCheckout {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.backToCart {
+                display: block; // SHOULD ANIMATE
+            }
+        }
+    }
+
+    .products {
+        display: none; // SHOULD ANIMATE
+    }
+
+    .checkout {
+        display: flex; // SHOULD ANIMATE
+    }
+}
+
+// DONE - NEEDS ANIMATING
+.paymentStage {
+    .summary {
+        button {
+            &.makePurchase {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.proceedToCheckout {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.backToCart {
+                display: block; // SHOULD ANIMATE
+            }
+        }
+    }
+
+    .products {
+        display: none; // SHOULD ANIMATE
+    }
+
+    .checkout {
+        .checkoutSection {
+            &.shippingAO {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.paymentAO {
+                display: flex; // SHOULD ANIMATE
+            }
+        }
+    }
+}
+
+// DONE - NEEDS ANIMATING
+.finalStage {
+    max-width: 100vmax;
+    gap: 0;
+
+    .checkout {
+        width: 71%;
+        gap: 0;
+
+        .checkoutSection {
+            &.shippingAO {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.paymentAO {
+                display: none; // SHOULD ANIMATE
+            }
+
+            &.checkoutNav {
+                h2 {
+                    text-align: center;
+                    background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+                }
+
+                div {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .products,
+    .summary {
+        width: 71%;
+    }
+
+    .products {
+        border-radius: 0;
+        h2 {
+            &:first-child {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                text-align: center;
+                background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+            }
+
+            &.footerProducts {
+                display: none;
+            }
+        }
+
+
+        ul {
+            max-height: 20vmax;
+        }
+
+        
+    }
+
+    .summary {
+        .headerSummary {
+            background: linear-gradient(-45deg, var(--accent) 0%, var(--accent) 30%, var(--paleAccentTwo) 50%, var(--secAccent) 70%);
+            text-align: center;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        button {
+            border-radius: 1rem;
+            padding: 1rem;
+
+            &.makePurchase {
+                display: block;
+            }
+
+            &.proceedToCheckout {
+                display: none;
+            }
+
+            &.backToCart {
+                display: none;
+            }
+        }
+
+        ul {
+            border-radius: .5rem;
+
+            &.buyerProtectReview {
+                li {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+.cartEmpty {
+    .emptyCartDiv{
+        display: flex;
+    }
+    .products {
+        display: none;
+    }
+
+    .summary {
+        display: none;
+    }
+
+    .checkout {
+        display: none;
+    }
+}
+
+@media (max-width: 1640px) {
+    .cart {
+        .products {
+            width: 95%;
+        }
+
+        .summary {
+            width: 95%;
+        }
+
+        .checkout {
+            width: 95%;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .cart {
+        max-width: 100vmax;
+        gap: 0;
+
+        .summary {
+            width: 100%;
+            gap: 0;
+
+            .headerSummary {
+                border-radius: 0;
+                
+            }
+
+            ul {
+                border: none;
+                border-radius: 0;
+
+                &.buyerProtectReview {
+                    border-block: .3rem solid var(--paleAccentThree);
+
+                    li {
+                        padding-block: .5rem;
+                    }
+                }
+            }
+
+            button {
+                margin-top: .5rem;
+                width: 90%;
+                align-self: center;
+                border: .2rem solid var(--paleAccentThree);
+            }
+        }
+
+        .products {
+            width: 100%;
+            border-radius: 0;
+
+            h2 {
+                border-radius: 0;
+                margin-block: 0;
+                text-align: center;
+                &.footerProducts {
+                    border-radius: 0;
+                    display: none;
+                }
+            }
+
+            ul {
+                border: none;
+
+                li {
+                    min-height: 6rem;
+
+                    .pTitle {
+
+                        // Makes photo smaller
+                        &::before {
+                            min-width: 6rem;
+                            min-height: 6rem;
+                        }
+                    }
+
+                    div {
+                        gap: .45rem;
+                        margin-right: .5vmax;
+
+                        .divider {
+                            margin-inline: 0rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkout {
+            width: 100%;
+
+            .checkoutSection {
+                &.checkoutNav {
+                    h2 {
+                        border-radius: 0;
+                        text-align: center;
+                        background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+                    }
+
+                    div {
+                        border: none;
+                        border-radius: 0;
+                    }
+                }
+
+                &.shippingAO,
+                &.paymentAO {
+                    border-left: none;
+                    border-right: none;
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .cart {
+        // Widens cart to take up "whole screen"
+        max-width: 100vmax;
+
+        .products {
+            // Products section media
+            width: 100%;
+
+            h2 {
+                border-radius: 0;
+                margin-block: .4rem;
+                text-align: center;
+            }
+
+            ul {
+                padding-top: .1rem;
+
+                li {
+                    // Changes direction to column and aligns items at the start - left
+                    flex-direction: column;
+                    align-items: flex-start;
+                    border-radius: 0.1rem;
+
+                    h3 {
+                        max-width: 100%;
+
+                        // Text Goes up a bit
+                        p {
+                            position: relative;
+                            font-size: 1rem;
+                            top: -1.5rem;
+                        }
+                    }
+
+                    div {
+                        // Places itself at the bottom right
+                        position: absolute;
+                        align-self: flex-end;
+                        margin-right: 1vmax;
+                        bottom: .5rem;
+                        gap: 0.5rem;
+
+                        h2 {
+                            font-size: 1.2rem;
+                        }
+
+                        button {
+                            &::before {
+                                inset: -0.15rem;
+                            }
+                        }
+
+                        .divider {
+                            position: relative;
+                            top: -0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkout {
+            .checkoutSection {
+
+                &.checkoutNav {
+                    div {
+                        button {
+                            width: unset;
+                        }
+                    }
+                }
+
+                form {
+                    gap: 1.5rem;
+                }
+
+                section {
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    div {
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                    }
+                }
+
+                .address,
+                .cardNum {
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                input {
+                    width: 100%;
+
+                    &:focus-visible {
+                        ~label {
+                            transform: translateY(-82%);
+                            color: var(--priColor);
+                            background: linear-gradient(45deg, var(--accent) 0%, var(--accent) 30%, var(--secAccent) 50%, var(--accent) 70%);
+                        }
+                    }
+
+                    &:invalid:not(:placeholder-shown) {
+                        ~ {
+                            label {
+                                transform: translateY(-82%);
+                            }
+                        }
+                    }
+
+                    &:valid {
+                        ~ {
+                            label {
+                                transform: translateY(-82%);
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    color: var(--tertColor);
+                    border-radius: 1rem;
+                    border: 0.15rem transparent;
+                }
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

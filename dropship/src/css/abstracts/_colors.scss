@@ -1,0 +1,69 @@
+:root {
+    --priColor: rgb(243, 243, 243);
+    --tpPri: rgba(255, 255, 255, .65);
+    --tpSec: rgba(0, 0, 0, 0.650);
+    --secColor: rgba(0, 0, 0, 0.822);
+    --secAccent: rgb(208, 0, 255);
+    --accent: rgb(255, 52, 150);
+    --tertAccent: rgb(227, 255, 69);
+    --tertColor: rgba(128, 128, 128, 0.598);
+    --paleAccent: rgba(255, 0, 136, 0.072);
+    --paleAccentTwo: rgba(255, 0, 123, 0.67);
+    --paleAccentThree: rgba(227, 172, 199, 0.765);
+    --someColor: #bc494976;
+    --additionallAccent: rgb(243, 243, 243);
+
+    --reverseAccent: #28b0ff;
+    --reverseSecAccent: #0099ff;
+    --reversePaleAccent: #0099ff5b;
+    --reversePaleAccentTwo: #0099ffb0;
+
+    --logoAccentOne: rgb(255, 52, 150);
+    --logoAccentTwo: rgb(208, 0, 255);
+    --logoReverseAccentOne: #0091ff;
+    --logoReverseAccentTwo: rgb(29, 184, 231);
+}
+
+.dark-mode {
+    --priColor: rgb(0, 0, 0);
+    --tpPri: rgba(0, 0, 0, 0.475);
+    --tpSec: rgba(255, 255, 255, 0.2);
+    --secColor: rgb(255, 255, 255);
+    --accent: rgb(59, 255, 157);
+    --secAccent: rgba(0, 255, 55);
+    --tertAccent: rgb(65, 204, 255);
+    --paleAccent: rgba(0, 255, 128, 0.060);
+    --paleAccentTwo: rgba(0, 255, 128, 0.703);
+    --paleAccentThree: rgba(0, 255, 128, 0.248);
+
+    --someColor: #2b0075;
+    --secAccent: #0099ff;
+    --accent: #00eaff;
+    --tertAccent: #e71db1;
+    --additionallAccent: rgba(0, 0, 0, 0.475);
+    --priColor: rgb(0, 0, 0);
+
+    --paleAccent: #00eaff13;
+    --paleAccentTwo: #00eaffc8;
+    --paleAccentThree: #00eaff3f;
+    --backdropBackground: rgb(1, 21, 50);
+
+    --reverseAccent: rgb(255, 64, 210);
+    --reverseSecAccent: rgb(208, 0, 255);
+    --reversePaleAccent: rgba(255, 64, 210, 0.395);
+    --reversePaleAccentTwo: rgba(255, 2, 196, 0.661);
+    
+    --logoAccentOne: #00eaff;
+    --logoAccentTwo: #006aff;
+    --logoReverseAccentOne: rgb(255, 52, 150);
+    --logoReverseAccentTwo: rgb(208, 0, 255);
+    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+}
+
+dialog::backdrop {
+    --backdropBackground: rgba(255, 255, 255, 0.291);
+}
+
+.dark-backdrop::backdrop {
+    --backdropBackground: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,168 @@
+@use '../../abstracts' as *;
+
+// SEARCH SUGGESTIONS
+
+.search-suggestions {
+    position: absolute;
+    // top: 3.3rem;
+    width: 100%;
+    background-color: var(--tpPri);
+    backdrop-filter: blur(3rem);
+    border-top-left-radius: 1.6rem;
+    border-top-right-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+    border-bottom-right-radius: 1.7rem;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+    overflow: hidden;
+    z-index: 3;
+
+    transform: translateY(3.2rem);
+
+    &::before {
+        content: '';
+        position: absolute;
+        border: 0.2rem solid var(--paleAccentTwo);
+        border-radius: inherit;
+        inset: 0;
+    }
+
+    ul {
+        overflow: hidden;
+
+        li {
+            height: 5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: .2rem solid var(--paleAccent);
+            transition: all .8s cubic-bezier(.19, 1, .22, 1);
+            color: var(--secColor);
+            padding-inline: 1rem;
+
+            cursor: pointer;
+
+            div {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: .2rem;
+                    border-bottom-left-radius: .2rem;
+                    border-bottom-right-radius: 1rem;
+                    margin-right: .8rem;
+                    transition: all 300ms ease;
+                    position: relative;
+                    background-color: var(--paleAccent);
+                    border: .2rem solid var(--paleAccent);
+                }
+
+                p {
+                    max-width: 70%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                }
+
+                h5,
+                h6 {
+                    width: fit-content;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    transition: all .8s cubic-bezier(.19, 1, .22, 1);
+                }
+            }
+
+            &:focus-visible {
+                color: var(--accent);
+                background-color: var(--paleAccent);
+
+                div {
+                    .divider {
+                        border-color: var(--accent);
+                    }
+
+                    img {
+                        border-color: var(--paleAccentTwo);
+                    }
+                }
+            }
+
+            &:nth-child(6) {
+                border: none;
+            }
+
+            &:first-child {
+                height: 6rem;
+                font-size: 1.2rem;
+
+                div {
+                    img {
+                        width: 4.5rem;
+                        height: 4.5rem;
+                        margin-top: .2rem;
+                    }
+                }
+            }
+
+            &.viewAll {
+                &::before {
+                    display: none;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background-color: var(--paleAccentThree);
+                    top: 0;
+                    width: 100%;
+                    height: .2rem;
+                    z-index: -1;
+                }
+
+                height: 3.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .divider {
+                height: 1.8rem;
+                background-color: var(--paleAccentThree);
+                width: .2rem;
+                margin-inline: .3rem;
+                transition: all .8s cubic-bezier(.19, 1, .22, 1);
+            }
+
+            &:hover {
+                color: var(--accent);
+                background-color: var(--paleAccent);
+
+                div {
+                    img {
+                        border-color: var(--paleAccentTwo);
+                    }
+
+                    .divider {
+                        background-color: var(--accent);
+                    }
+                }
+            }
+
+            &:active {
+                outline: .2rem solid var(--accent);
+                opacity: .6;
+            }
+        }
+    }
+}
+
+// SUGGESTIONS STATES

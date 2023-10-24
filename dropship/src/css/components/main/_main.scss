@@ -1,0 +1,19 @@
+@use "../../abstracts";
+
+main {
+
+  &.mainMain{
+    scale: 0;
+  }
+
+  &.productsMain{ // SHOULD REMOVE 
+    scale: 0;
+  }
+
+  &.currentMain{
+    scale: 1;
+    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+  }
+}
+
+

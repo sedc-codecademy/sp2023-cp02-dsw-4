@@ -1,0 +1,310 @@
+@use "../../abstracts";
+
+.loginDropdown {
+    position: fixed;
+    top: -40rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    display: none;
+    justify-content: center;
+    border: 0.3rem solid var(--paleAccentThree);
+    backdrop-filter: blur(5rem);
+    border-radius: 1rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 1.5rem;
+    width: 50rem;
+    height: 40rem;
+    overflow: hidden;
+    transition: 400ms all ease-in-out;
+    color: var(--secColor);
+    z-index: 15;
+    background: none;
+
+    &::backdrop {
+        backdrop-filter: blur(0.5rem);
+        background-color: var(--backdropBackground);
+    }
+
+    .closeLoginButton {
+        position: absolute;
+        z-index: 1;
+        top: 1.5rem;
+        right: 1.5rem;
+        background-color: var(--paleAccentTwo);
+        border-radius: 1rem;
+        border: .2rem solid var(--priColor);
+        padding: .2rem;
+
+        display: flex;
+        align-items: center;
+
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--priColor);
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        &:focus-visible {
+            svg {
+                fill: var(--accent);
+            }
+
+            background-color: var(--priColor);
+            border-color: var(--accent);
+        }
+
+        &:hover {
+            svg {
+                fill: var(--accent);
+            }
+
+            background-color: var(--priColor);
+            border-color: var(--accent);
+            ;
+        }
+
+        &:active {
+            border-color: var(--paleAccentThree);
+
+            svg {
+                fill: var(--paleAccentThree);
+            }
+        }
+    }
+
+    .cancel, .cancelFP {
+        position: absolute;
+        display: flex;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        transition: all .5s cubic-bezier(.19, 1, .22, 1);
+
+        svg {
+            fill: var(--accent);
+            border-radius: 0.5rem;
+            padding: 0.1rem;
+            outline: 0.2rem solid var(--accent);
+            width: 2.5rem;
+            height: 2rem;
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        &:focus-visible {
+            svg {
+                fill: var(--priColor);
+                outline-color: var(--priColor);
+                background-color: var(--accent);
+            }
+
+            background-color: transparent;
+        }
+
+        &:hover {
+            svg {
+                fill: var(--priColor);
+                outline-color: var(--priColor);
+                background-color: var(--accent);
+            }
+
+            background-color: transparent;
+
+        }
+
+        &:active {
+            svg {
+                background-color: var(--secAccent);
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        div {
+            gap: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.45rem;
+            border-radius: 2rem;
+            border-top-left-radius: 0.8rem;
+            border-top-right-radius: 0.2rem;
+            border-bottom-left-radius: 0.2rem;
+            border-bottom-right-radius: 0.8rem;
+            transition: 300ms all ease;
+        }
+
+        span {
+            font-weight: 650;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        a {
+            color: var(--secColor);
+        }
+    }
+
+    input {
+        text-indent: 1rem;
+        width: 14rem;
+        height: 3rem;
+        font-size: 1.1rem;
+        text-indent: 0.5rem;
+        background-color: var(--tpPri);
+        color: var(--secColor);
+        border: 0.15rem solid var(--paleAccentThree);
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 1.2rem;
+        outline: none;
+        margin: 0.5rem;
+        transition: 300ms all ease;
+
+        &#agree {
+            background: none;
+            width: auto;
+            height: auto;
+        }
+
+        &::selection {
+            background: var(--accent);
+            color: var(--priColor);
+        }
+
+        &:invalid:not(:placeholder-shown) {
+            border-color: red;
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: rgb(255, 50, 50);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+
+        &:valid {
+            border-color: var(--accent);
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: var(--accent);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+
+        &:focus {
+            border: 0.15rem solid var(--accent);
+
+            ~ {
+                label {
+                    opacity: 1;
+                    color: var(--priColor);
+                    background: var(--accent);
+                    transform: translateY(-110%);
+                }
+            }
+        }
+    }
+
+    label {
+        position: absolute;
+        pointer-events: none;
+        border-radius: 1rem;
+        padding-inline: 0.5rem;
+        transition: 300ms all ease;
+        opacity: 0.6;
+    }
+
+    svg {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: var(--secColor);
+        transition: 300ms all ease;
+
+        &:hover {
+            fill: var(--accent);
+            transition: 300ms all ease;
+        }
+
+        &#google {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    .loginInput {
+        transform: translateY(-3rem) !important;
+        position: absolute;
+        visibility: visible;
+        transition: visibility 100ms all ease-in-out;
+    }
+}
+
+.loginDropdown[open] {
+    // box-shadow: var(--tpSec) 0.1rem 0.1rem 5rem;
+    top: 5rem;
+}
+
+@media (max-width: 1440px) {
+    .loginDropdown {
+        width: 45rem;
+        height: 35rem;
+        top: 2rem;
+    }
+}
+
+.forgotPS {
+    .loginUi {
+        width: 0%;
+    }
+
+    .registerUi {
+        width: 0;
+
+        * {
+            transform: translateX(-13rem) !important;
+            transition: 250ms transform ease-in-out;
+        }
+
+        .registerButton {
+            transform: translateX(-13rem) !important;
+            transition: 250ms transform ease-in-out;
+        }
+    }
+
+    .forgotPass {
+        width: 100%;
+
+        *:not(label) {
+            transform: translateY(0);
+            transition: 550ms transform ease-in-out;
+        }
+    }
+}
