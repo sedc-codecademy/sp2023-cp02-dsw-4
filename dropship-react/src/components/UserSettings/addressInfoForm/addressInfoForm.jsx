@@ -11,13 +11,19 @@ function AddressInfoForm({ handleAddressInputChange }) {
   };
 
   return (
-    <div className="user-settings-address">
-      <span onClick={handleExpandAddress}>EDIT</span>
+    <div className="user-settings-address container-div">
+      <h2>
+        Residence
+        <span className="clickable-span" onClick={handleExpandAddress}>
+          EDIT
+        </span>
+      </h2>
       <div className="user-address">
         <p>Address: {user.address}</p>
         <label></label>
         {isExpandedAddress && (
           <input
+            className="user-input"
             type="text"
             id="address"
             name="address"
@@ -33,6 +39,7 @@ function AddressInfoForm({ handleAddressInputChange }) {
         <label></label>
         {isExpandedAddress && (
           <input
+            className="user-input"
             type="text"
             id="postalCode"
             name="postalCode"
@@ -48,6 +55,7 @@ function AddressInfoForm({ handleAddressInputChange }) {
         <label></label>
         {isExpandedAddress && (
           <input
+            className="user-input"
             type="text"
             id="city"
             name="city"
@@ -58,7 +66,7 @@ function AddressInfoForm({ handleAddressInputChange }) {
         )}
       </div>
 
-      <button>Submit</button>
+      <button className="submit-button">SUBMIT</button>
     </div>
   );
 }

@@ -6,11 +6,11 @@ import {
   updateCardInfo,
 } from "../../store/slices/userSettings/userSettingsSlices";
 
-import ProfilePicture from "./profilePicture/profilePicture";
-import UserInfoForm from "./userInfoForm/userInfoForm";
-import PasswordInfoForm from "./passwordInfoForm/passwordInfoForm";
-import AddressInfoForm from "./addressInfoForm/addressInfoForm";
-import CardInfoForm from "./cardInfoForm/cardInfoForm";
+import ProfilePicture from "./profilePicture/ProfilePicture";
+import UserInfoForm from "./userInfoForm/UserInfoForm";
+import PasswordInfoForm from "./passwordInfoForm/PasswordInfoForm";
+import AddressInfoForm from "./addressInfoForm/AddressInfoForm";
+import CardInfoForm from "./cardInfoForm/CardInfoForm";
 
 function UserSettings() {
   const user = useSelector((state) => state.user.user);
@@ -51,17 +51,22 @@ function UserSettings() {
 
   return (
     <main className="user-settings-main">
-      <div className="user-parent-settings">
-        <ProfilePicture />
+      <ProfilePicture />
 
+      <section className="info-section">
         <UserInfoForm handleUserInputChange={handleUserInputChange} />
 
-        <PasswordInfoForm
-          handlePasswordInputChange={handlePasswordInputChange}
-        />
+        <div className="user-settings-div">
+          <AddressInfoForm
+            handleAddressInputChange={handleAddressInputChange}
+          />
+          <PasswordInfoForm
+            handlePasswordInputChange={handlePasswordInputChange}
+          />
+        </div>
+      </section>
 
-        <AddressInfoForm handleAddressInputChange={handleAddressInputChange} />
-
+      <section className="card-section">
         {user.cards.length ? (
           <>
             {user.cards.map((card) => (
@@ -75,8 +80,7 @@ function UserSettings() {
         ) : (
           <div>The user has not provided a card.</div>
         )}
-        {/* <CardInfoForm handleCardInputChange={handleCardInputChange} /> */}
-      </div>
+      </section>
     </main>
   );
 }

@@ -10,6 +10,9 @@ import CategoriesList from "./components/Categories/CategoriesList/CategoriesLis
 import CategoriesDetails from "./components/Categories/CategoriesDetails/CategoriesDetails";
 import User from "./components/User/User";
 import Cart from "./components/Cart/Cart";
+import Privacy from "./components/Rights/Privacy";
+import Disclaimer from "./components/Rights/Disclaimer";
+import Location from "./components/Rights/Location";
 import "./styles.scss";import './styles.scss'
 import './styles.scss'
 
@@ -92,6 +95,9 @@ function App() {
             <Route path="/user" element={<User />} />
             <Route path="/user/settings" element={<UserSettings />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/location" element={<Location />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
