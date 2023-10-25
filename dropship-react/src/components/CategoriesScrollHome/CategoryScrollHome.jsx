@@ -132,7 +132,7 @@ function CategoryScrollHome() {
                 setScrollPosition(maxScroll);
             }
         }
-    }, [catArray, scrollPosition, maxScroll, productCardWidth, isMobile
+    }, [scrollPosition, maxScroll, productCardWidth, isMobile
     ])
 
     const handleScrollLeft = () => {

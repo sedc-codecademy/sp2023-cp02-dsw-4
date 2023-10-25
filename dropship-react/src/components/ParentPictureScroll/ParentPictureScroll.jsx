@@ -50,7 +50,7 @@ function ParentPictureScroll() {
       
       <img
         src={images[currentIndex]}
-        alt={`Image ${currentIndex + 1}`} // samo teks dava ne moze slika
+        alt={` ${currentIndex + 1}`} // samo teks dava ne moze slika
         className="carousel-image"
       />
       
