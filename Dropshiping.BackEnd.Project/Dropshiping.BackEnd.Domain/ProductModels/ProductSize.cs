@@ -10,7 +10,7 @@
         public virtual Size Size { get; set; }
         public string SizeId { get; set; }  
 
-        public virtual ICollection<Orderitem> Orderitems { get; set; } //Dodadena von crtez za konekcija .HasMany
+        public virtual ICollection<OrderItem> OrderItems { get; set; } //Dodadena von crtez za konekcija .HasMany
 
     }
 }

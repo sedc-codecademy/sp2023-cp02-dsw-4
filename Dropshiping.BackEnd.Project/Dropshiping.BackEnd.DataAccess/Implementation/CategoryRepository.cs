@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : IRepository<Category>
     {
         private DropshipingDbContext _dbContext;
         public CategoryRepository(DropshipingDbContext dbContext)
@@ -27,26 +27,26 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
             }
             return category;
         }
-        public Category GetByIdNest(string id)
-        {
-            //var category = _dbContext.Categories
-            //    .Include(c => c.Subcategories)
-            //    .ThenInclude(s => s.Products)
-            //    .ThenInclude(p => new { p.Region, p.ProductSizes, p.Raitings })
-            //    .FirstOrDefault(c => c.Id == id);
+        //public Category GetByIdNest(string id)
+        //{
+        //    //var category = _dbContext.Categories
+        //    //    .Include(c => c.Subcategories)
+        //    //    .ThenInclude(s => s.Products)
+        //    //    .ThenInclude(p => new { p.Region, p.ProductSizes, p.Raitings })
+        //    //    .FirstOrDefault(c => c.Id == id);
 
-            var category = _dbContext.Categories.
-                Include(x => x.Subcategories).ThenInclude(x => x.Products).ThenInclude(x => x.Region)
-                .Include(x => x.Subcategories).ThenInclude(x => x.Products).ThenInclude(x => x.ProductSizes)
-                .Include(x => x.Subcategories).ThenInclude(x => x.Products).ThenInclude(x => x.Raitings)
-                .FirstOrDefault(c => c.Id == id);
+        //    var category = _dbContext.Categories.
+        //        Include(x => x.Subcategories).ThenInclude(x => x.Products).ThenInclude(x => x.Region)
+        //        .Include(x => x.Subcategories).ThenInclude(x => x.Products).ThenInclude(x => x.ProductSizes)
+        //        .Include(x => x.Subcategories).ThenInclude(x => x.Products).ThenInclude(x => x.Raitings)
+        //        .FirstOrDefault(c => c.Id == id);
 
-            if (category == null)
-            {
-                throw new KeyNotFoundException($"Category with id {id} does not exist");
-            }
-            return category;
-        }
+        //    if (category == null)
+        //    {
+        //        throw new KeyNotFoundException($"Category with id {id} does not exist");
+        //    }
+        //    return category;
+        //}
 
         public void Add(Category entity)
         {

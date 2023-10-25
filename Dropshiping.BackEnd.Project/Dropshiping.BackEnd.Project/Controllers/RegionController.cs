@@ -10,8 +10,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
     [ApiController]
     public class RegionController : ControllerBase
     {
-        private IRegionService _regionService;
-        public RegionController(IRegionService regionService)
+        private IManufacturerService _regionService;
+        public RegionController(IManufacturerService regionService)
         {
             _regionService = regionService;
         }

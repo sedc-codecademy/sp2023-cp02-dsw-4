@@ -9,8 +9,8 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
 {
     public class UserService : IUserService
     {
-        private IRepository<User> _userRepository;
-        public UserService(IRepository<User> userRepository)
+        private IUserRepository<User> _userRepository;
+        public UserService(IUserRepository<User> userRepository)
         {
             _userRepository = userRepository;
         }
@@ -72,7 +72,7 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
         }
 
         // Login User
-        public string LoginUser(LoginUsedDto loginUserDto)
+        public string LoginUser(LoginUserDto loginUserDto)
         {
             //Validation
             if (string.IsNullOrEmpty(loginUserDto.Username) || string.IsNullOrEmpty(loginUserDto.Password))

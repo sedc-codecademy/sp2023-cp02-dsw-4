@@ -16,7 +16,7 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
                 Description = product.Description,
                 Discount = product.Discount,
                 SubcategoryId = product.SubcategoryId,
-                RegoinId = product.RegoinId,
+                ManufacturerId = product.ManufacturerId,
             };
         }
     }

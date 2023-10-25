@@ -8,6 +8,6 @@
         public string Password { get; set; } // hash
         public string ConfirmationPassword {  get; set; }
         public string Email { get; set; }
-        public int Age { get; set; }
+      
     }
 }

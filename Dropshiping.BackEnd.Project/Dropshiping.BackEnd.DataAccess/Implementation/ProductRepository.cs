@@ -13,7 +13,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public List<Product> GetAll()
         {
-            return _dbContext.Products.ToList();
+            return _dbContext.Products.ToList(); 
         }
 
         public Product GetById(string id)

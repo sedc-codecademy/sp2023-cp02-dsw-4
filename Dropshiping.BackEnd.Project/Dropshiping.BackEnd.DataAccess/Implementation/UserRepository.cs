@@ -3,7 +3,7 @@ using Dropshiping.BackEnd.Domain.UserModels;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUserRepository
     {
         private DropshipingDbContext _dbContext;
         public UserRepository(DropshipingDbContext dbContext)
@@ -45,6 +45,16 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
             _dbContext.Users.Remove(user);
             _dbContext.SaveChanges();
+        }
+
+        public User LoginUser(string username, string hashedPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            throw new NotImplementedException();
         }
     }
 }

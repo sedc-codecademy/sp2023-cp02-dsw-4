@@ -36,7 +36,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
         // Login with existing User
         
         [HttpPost("Login")]
-        public IActionResult Login([FromBody]LoginUsedDto loginUsedDto)
+        public IActionResult Login([FromBody]LoginUserDto loginUsedDto)
         {
             try
             {

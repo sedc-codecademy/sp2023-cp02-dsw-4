@@ -13,7 +13,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
     [DbContext(typeof(DropshipingDbContext))]
     partial class DropshipingDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder) 
         {
 #pragma warning disable 612, 618
             modelBuilder

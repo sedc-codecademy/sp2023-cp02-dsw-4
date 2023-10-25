@@ -9,6 +9,6 @@ namespace Dropshiping.BackEnd.Dtos.ProductDtos
         public string Description { get; set; }
         public decimal Discount { get; set; } 
         public string SubcategoryId { get; set; }
-        public string RegoinId { get; set; }
+       
     }
 }

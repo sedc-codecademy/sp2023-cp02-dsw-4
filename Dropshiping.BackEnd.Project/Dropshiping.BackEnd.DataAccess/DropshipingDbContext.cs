@@ -12,23 +12,46 @@ namespace Dropshiping.BackEnd.DataAccess
         }
 
         // Tables
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Subcategory> Subcategories { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Region> Regions { get; set; }
+        public DbSet<Subcategory> Subcategories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
         public DbSet<Size> Sizes { get; set; }
+        public DbSet<Color> Colors { get; set; }
         public DbSet<ProductSize> ProductSizes { get; set; }
-        public DbSet<Orderitem> Orderitems { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
         public DbSet<UserOrder> UserOrders { get; set; }
-        public DbSet<Raiting> Raitings { get; set; }
-        
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Card> Cards { get; set; }
+
 
         // OnModel
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Category
+            modelBuilder.Entity<Category>()
+                .Property(x => x.Name)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Category>()
+                .Property(x => x.Image)
+                .IsRequired();
+
+            // Subcategory
+            modelBuilder.Entity<Subcategory>()
+                .Property(x => x.Name)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Subcategory>()
+                .Property(x => x.Image)
+                .IsRequired();
 
             // Product
             modelBuilder.Entity<Product>()
@@ -38,6 +61,7 @@ namespace Dropshiping.BackEnd.DataAccess
 
             modelBuilder.Entity<Product>()
                 .Property(x => x.Price)
+                .HasColumnType("decimal(18,4)")
                 .IsRequired();
 
             modelBuilder.Entity<Product>()
@@ -45,43 +69,35 @@ namespace Dropshiping.BackEnd.DataAccess
                 .HasMaxLength(250);
 
             modelBuilder.Entity<Product>()
-                .Property(x => x.Price)
-                .HasColumnType("decimal(18,4)");
-
-            modelBuilder.Entity<Order>()
-                .Property(x => x.TotalPrice)
-                .HasColumnType("decimal(18,4)");
-
-            modelBuilder.Entity<Product>()
                 .Property(x => x.Discount)
                 .HasColumnType("decimal(18,4)");
 
-            modelBuilder.Entity<Region>()
-                .Property(x => x.Shipping)
-                .HasColumnType("decimal(18,4)");
+            modelBuilder.Entity<Product>()
+                .Property(x => x.Image)
+                .IsRequired();
 
-            // Subcategory
-            modelBuilder.Entity<Subcategory>()
+            // Size
+            modelBuilder.Entity<Size>()
                 .Property(x => x.Name)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<Subcategory>()
-                .Property(x => x.Description)
-                .HasMaxLength(250)
+            // ProductSize
+            modelBuilder.Entity<ProductSize>()
+                .Property(x => x.Stock)
                 .IsRequired();
 
-            // Category
-            modelBuilder.Entity<Category>()
-                .Property (x => x.Name)
-                .HasMaxLength(50)
+            // OrderItem
+
+            modelBuilder.Entity<OrderItem>()
+                .Property(x => x.Quantity)
                 .IsRequired();
 
-            modelBuilder.Entity<Category>()
-                .Property(x => x.Description)
-                .HasMaxLength(250)
-                .IsRequired();
-
+            //Order
+            modelBuilder.Entity<Order>()
+                .Property(x => x.Price)
+                .HasColumnType("decimal(18,4)");
+            
             // User
             modelBuilder.Entity<User>()
                 .Property(x => x.FirstName)
@@ -105,7 +121,8 @@ namespace Dropshiping.BackEnd.DataAccess
 
             modelBuilder.Entity<User>()
                 .Property(x => x.Email)
-                .HasMaxLength(50);
+                .HasMaxLength(50)
+                .IsRequired();
 
             // Configure relations ........
 
@@ -121,12 +138,7 @@ namespace Dropshiping.BackEnd.DataAccess
                 .WithOne(p => p.Subcategory)
                 .HasForeignKey(p => p.SubcategoryId);
 
-            // For Produc/User business wise
-
-            modelBuilder.Entity<Region>()
-                .HasMany(p => p.Products)
-                .WithOne(r => r.Region)
-                .HasForeignKey(p => p.RegoinId);
+            // For Product/User business wise
 
             modelBuilder.Entity<Product>()
                 .HasMany(ps => ps.ProductSizes)
@@ -138,19 +150,19 @@ namespace Dropshiping.BackEnd.DataAccess
                 .WithMany(s => s.ProductSizes)
                 .HasForeignKey(ps => ps.SizeId);
 
-            modelBuilder.Entity<Orderitem>()
+            modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.ProductSize)
-                .WithMany(ps => ps.Orderitems)
+                .WithMany(ps => ps.OrderItems)
                 .HasForeignKey(oi => oi.ProductSizeId);
 
             modelBuilder.Entity<Order>()
-                .HasMany(oi => oi.Orderitems)
+                .HasMany(oi => oi.OrderItems)
                 .WithOne(o => o.Order)
                 .HasForeignKey(oi => oi.OrderId);
 
             modelBuilder.Entity<UserOrder>()
                 .HasOne(uo => uo.Order)
-                .WithMany(o => o.Userorders)
+                .WithMany(o => o.UserOrders)
                 .HasForeignKey(uo => uo.OrderId);
 
             modelBuilder.Entity<User>()
@@ -159,7 +171,7 @@ namespace Dropshiping.BackEnd.DataAccess
                 .HasForeignKey(uo => uo.UserId);
 
             modelBuilder.Entity<User>()
-                .HasMany(u => u.Raitings)
+                .HasMany(u => u.Ratings)
                 .WithOne(ra => ra.User)
                 .HasForeignKey(ra => ra.UserId);
 

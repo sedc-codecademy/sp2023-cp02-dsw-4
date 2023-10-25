@@ -11,7 +11,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
             _dbContext = dbContext;
         }
         public List<Subcategory> GetAll()
-        {
+        { 
             return _dbContext.Subcategories.ToList();
         }
 
