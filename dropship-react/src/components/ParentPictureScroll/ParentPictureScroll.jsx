@@ -6,17 +6,13 @@ const images = [
   "/imgs/catScrollPictures/parent1.jpg.jpg",
   "/imgs/catScrollPictures/parent2.jpg.jpg",
   "/imgs/catScrollPictures/parent3.jpg",
-  "/imgs/catScrollPictures/parent1.jpg.jpg",
-  "/imgs/catScrollPictures/parent2.jpg.jpg",
-  "/imgs/catScrollPictures/parent3.jpg",
-  "/imgs/catScrollPictures/parent1.jpg.jpg",
-  "/imgs/catScrollPictures/parent2.jpg.jpg",
-  "/imgs/catScrollPictures/parent3.jpg",
+  "/imgs/catScrollPictures/parent_4.jpg",
+  
 ];
 
 function ParentPictureScroll() {
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(3);
 
   useEffect(() => {
     const timer = setTimeout(autoRotateImages, 4000);
