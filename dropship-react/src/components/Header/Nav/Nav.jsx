@@ -130,7 +130,6 @@ export default function Nav() {
                     {isMobile && (
                         <li>
                             <button
-                               
                                 onClick={searchButtonClick}
                             >
                                 <svg viewBox="0 0 32 32">

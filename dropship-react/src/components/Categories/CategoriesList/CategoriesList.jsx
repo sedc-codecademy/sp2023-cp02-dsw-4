@@ -20,7 +20,7 @@ const catArray = [
             "5e080519-afc4-4ad6-ad5e-822110c4a019",
             "67450240-def8-486c-b5cd-87ffe7f5340a"
         ],
-        "image": "../imgs/cat/tech/sub/pc.png",
+        "image": "../imgs/cat/tech/sub/pc.jpg",
         "categoryid": "technology",
         "categorytitle": "Technology"
     },
@@ -35,7 +35,7 @@ const catArray = [
             "99ea52a4-85cd-4362-96ca-1bc9402024f1",
             "660e78fc-9bfb-4f27-a9b1-13b5a0b6559d"
         ],
-        "image": "../imgs/cat/tech/sub/phone.png",
+        "image": "../imgs/cat/tech/sub/phone.jpg",
         "categoryid": "technology",
         "categorytitle": "Technology"
     },
@@ -50,7 +50,7 @@ const catArray = [
             "36391f42-375a-4299-90b1-a5fab3419832",
             "447469cf-817b-4ec9-98de-736447b58871"
         ],
-        "image": "../imgs/cat/tech/sub/printer.png",
+        "image": "../imgs/cat/tech/sub/printer.jpg",
         "categoryid": "technology",
         "categorytitle": "Technology"
     },
@@ -65,7 +65,7 @@ const catArray = [
             "e602d7df-b106-4dbc-aefc-010ba336a91c",
             "e66ba3a8-7538-4f70-ab85-ab77eea810f1"
         ],
-        "image": "../imgs/cat/tech/sub/audiovideo.png",
+        "image": "../imgs/cat/tech/sub/audiovideo.jpg",
         "categoryid": "technology",
         "categorytitle": "Technology"
     },
@@ -80,7 +80,7 @@ const catArray = [
             "9af0fe94-de57-46e6-acf6-3b65ed3b0bdf",
             "2c5b908c-e853-4d18-bd2c-79ae11019e5f"
         ],
-        "image": "../imgs/cat/tech/sub/proffcamera.png",
+        "image": "../imgs/cat/tech/sub/proffcamera.jpg",
         "categoryid": "technology",
         "categorytitle": "Technology"
     },
@@ -95,7 +95,7 @@ const catArray = [
             "8bc28fcd-7893-4bc4-9ceb-40bd2c9d799b",
             "42c3721e-0ec9-43b3-b59f-ad2332a4acab"
         ],
-        "image": "../imgs/cat/mWear/sub/stripe-shirt.png",
+        "image": "../imgs/cat/mWear/sub/stripe-shirt.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -110,7 +110,7 @@ const catArray = [
             "0b122172-2929-4101-bb61-c8ac2b091ca8",
             "23207d4e-2653-4cee-a62c-34e72111b89e"
         ],
-        "image": "../imgs/cat/mWear/sub/mboots.png",
+        "image": "../imgs/cat/mWear/sub/mboots.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -125,7 +125,7 @@ const catArray = [
             "2160f50a-14e4-45ec-8b40-de083f1a2347",
             "aa64f4ca-cd7e-4c12-92b8-8a552fc55c57"
         ],
-        "image": "../imgs/cat/mWear/sub/mpants.png",
+        "image": "../imgs/cat/mWear/sub/mpants.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -140,7 +140,7 @@ const catArray = [
             "843f43bf-c70d-46e5-b183-38d7480b406d",
             "b0799fd1-8774-46a7-9136-b6880e57b2e6"
         ],
-        "image": "../imgs/cat/mWear/sub/cap.png",
+        "image": "../imgs/cat/mWear/sub/cap.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -155,7 +155,7 @@ const catArray = [
             "5a358579-957d-4dae-9dfd-8f3cc9ee9be9",
             "3f4db19e-9dbb-4a3e-9232-4a878318e173"
         ],
-        "image": "../imgs/cat/mWear/sub/suit.png",
+        "image": "../imgs/cat/mWear/sub/suit.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -171,7 +171,7 @@ const catArray = [
             "9afce601-6a30-4102-b90f-0c16de437ed4",
             "bcec558e-8908-42d5-95e2-ac27b3733def"
         ],
-        "image": "../imgs/cat/fWear/sub/dress.png",
+        "image": "../imgs/cat/fWear/sub/dress.jpg",
         "categoryid": "womenswear",
         "categorytitle": "Women's Clothing"
     },

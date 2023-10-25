@@ -6,8 +6,18 @@
 
     a {
         margin-top: 10%;
+
+        @supports (height: fit-content) {
+            height: fit-content;
+        }
+
+        @supports not (height: fit-content) {
+            height: auto;
+        }
+
         h1 {
             font-size: 4rem;
+            font-size: clamp(3rem, 2rem + 2.6667vw, 7rem);
             letter-spacing: -0.3rem;
             line-height: 2.8rem;
             text-transform: lowercase;
@@ -22,19 +32,48 @@
             font-size: 1.1rem;
             letter-spacing: 0.2rem;
             color: var(--tpSec);
-            width: max-content;
             margin-top: .7rem;
+            font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
         }
     }
 
     svg {
-        // height: 35rem;
         height: 100%;
     }
 }
 
 @media (max-width: 800px) {
     .notFound {
-        max-width: unset;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: unset;
+        width: 100%;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1rem;
+
+            h1,
+            p {
+                text-align: center;
+                width: unset;
+            }
+        }
+
+        svg {
+            // height: 30%;
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .notFound {
+        svg {
+            // height: 30%;
+            width: 100%;
+        }
     }
 }

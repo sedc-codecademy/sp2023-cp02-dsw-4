@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useParams, Navigate, NavLink } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 
 import { useSelector } from "react-redux"
 import { selectProducts } from "../../../store/selectors/productSelector"
