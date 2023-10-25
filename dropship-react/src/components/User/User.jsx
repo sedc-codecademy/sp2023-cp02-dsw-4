@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import UserOrders from "./userOrders/userOrders";
-import UserRatings from "./userRatings/userRatings";
+import UserOrders from "./userOrders/UserOrders"
+import UserRatings from "./userRatings/UserRatings";
 
 function User() {
   const user = useSelector((state) => state.user.user);

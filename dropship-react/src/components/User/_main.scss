@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 1.5rem;
     margin-inline: auto;
-    border: 2px solid var(--accent);
-    // border-radius: 15px;
+    border: .2rem solid var(--accent);
     border-radius: 1.1rem;
     width: 60%;
     background-color: var(--tpPri3);
@@ -18,6 +17,7 @@
     }
 
     .color-title {
+        font-size: 1.35rem;
         color: var(--accent);
     }
 
@@ -45,13 +45,13 @@
         h3,
         p {
             margin: 5px 0;
+            font-family: Roboto
         }
     }
 
     .order-parent {
         display: flex;
         flex-direction: column;
-        // border: 2px blue solid;
         border-radius: 1.1rem;
         background-color: rgb(253, 223, 223);
         width: 90%;
@@ -71,13 +71,55 @@
 
             .order-header {
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
                 gap: 1rem;
+
+                h2 {
+                    font-size: 1.25rem;
+                }
+
+                h3 {
+                    font-size: 1.15rem;
+                    font-weight: 500;
+
+                    span {
+                        font-weight: 600;
+                    }
+                }
+
+                h2, h3 {
+                    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                }
+
+                p {
+                    font-size: 1.25rem;
+                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                }
 
                 div {
                     display: flex;
                     align-items: center;
-                    gap: .5rem
+                    gap: .5rem;
+
+                    .order-expand-btn {
+                        display: flex;
+                        align-items: center;
+                        border: .15rem solid var(--secColor);
+                        border-radius: 50%;
+
+                        svg {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            transition: transform 0.3s ease-in-out;
+                        }
+                    }
+                    
+                    .order-expand-btn.expanded {
+                        svg {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
 
                 .view-cart-link {
@@ -90,8 +132,8 @@
                     font-weight: bold;
                     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
                 }
-                
-                
+
+
                 .view-cart-link:hover {
                     background-color: #f0f0f0;
                     color: pink;
@@ -101,6 +143,10 @@
             .additional-order-info {
                 display: flex;
                 gap: 1rem;
+
+                p {
+                    font-size: 1.25rem;
+                }
             }
 
             .order-ul {
@@ -112,6 +158,19 @@
                     display: flex;
                     align-items: center;
                     gap: .5rem;
+
+                    // order sliki
+                    img {
+                        height: 4.5rem;
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        padding: .15rem;
+                        background-color: rgb(240, 240, 240);
+                    }
+
+                    p {
+                        font-size: 1.15rem;
+                    }
                 }
             }
         }
@@ -120,7 +179,6 @@
     .rating-parent {
         display: flex;
         flex-direction: column;
-        // border: 2px blue solid;
         background-color: rgb(253, 223, 223);
         border-radius: 1.1rem;
         width: 90%;
@@ -131,35 +189,71 @@
         .rating-li {
             display: flex;
             flex-direction: column;
-            // border: 1px blue solid;
             background-color: var(--priColor);
             border-radius: .5rem;
             gap: .5rem;
             padding: .3rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 .18rem .38rem rgba(0, 0, 0, 0.4);
 
             .rating-header {
                 display: flex;
                 gap: 1rem;
                 align-items: center;
+                background-color: var(--tpPri3);
+
+                // rating sliki
+                img {
+                    height: 4.5rem;
+                    border: .1rem solid black;
+                    padding: .15rem;
+                    border-radius: 50%;
+                    background-color: rgb(240, 240, 240);
+                }
 
                 .rating-expand-btn {
+                    display: flex;
+                    align-items: center;
                     margin-left: auto;
+                    border: .15rem solid var(--secColor);
+                    border-radius: 50%;
+
+                    svg {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        transition: transform 0.3s ease-in-out;
+                    }
+                }
+                
+                .rating-expand-btn.expanded {
+                    svg {
+                        transform: rotate(180deg);
+                    }
                 }
             }
 
             .additional-rating-info {
                 display: flex;
-                gap: 1rem;
+                flex-direction: column;
+                text-indent: 1rem;
+                gap: .5rem;
+
+                a {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1.35rem;
+                }
             }
         }
     }
 }
 
-// .order-expand-btn {
-//     transition: transform 0.3s ease-in-out;
-// }
+.green-status {
+    color: green;
+}
 
-// .order-expand-btn.expanded {
-//     transform: rotate(180deg);
-// }
+.red-status {
+    color: red;
+}

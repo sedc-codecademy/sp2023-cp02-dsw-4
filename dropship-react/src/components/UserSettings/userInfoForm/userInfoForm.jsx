@@ -12,14 +12,19 @@ function UserInfoForm({ handleUserInputChange }) {
   };
 
   return (
-    <div className="user-settings-info">
-      <h2>User Info</h2>
-      <span onClick={handleExpandUser}>EDIT</span>
+    <div className="user-settings-info container-div">
+      <h2>
+        User Info
+        <span className="clickable-span" onClick={handleExpandUser}>
+          EDIT
+        </span>
+      </h2>
       <div className="user-firstname">
         <h1>Firstname: {user.firstName}</h1>
         <label></label>
         {isExpandedUser && (
           <input
+            className="user-input"
             type="text"
             id="firstName"
             name="firstName"
@@ -36,6 +41,7 @@ function UserInfoForm({ handleUserInputChange }) {
         <label></label>
         {isExpandedUser && (
           <input
+            className="user-input"
             type="text"
             id="lastName"
             name="lastName"
@@ -51,6 +57,7 @@ function UserInfoForm({ handleUserInputChange }) {
         <label></label>
         {isExpandedUser && (
           <input
+            className="user-input"
             type="email"
             id="email"
             name="email"
@@ -66,6 +73,7 @@ function UserInfoForm({ handleUserInputChange }) {
         <label></label>
         {isExpandedUser && (
           <input
+            className="user-input"
             type="text"
             id="phoneNumber"
             name="phoneNumber"
@@ -76,7 +84,7 @@ function UserInfoForm({ handleUserInputChange }) {
         )}
       </div>
 
-      <button>Submit</button>
+      <button className="submit-button">SUBMIT</button>
     </div>
   );
 }

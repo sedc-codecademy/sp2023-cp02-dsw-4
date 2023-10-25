@@ -10,13 +10,19 @@ function PasswordInfoForm({ handlePasswordInputChange }) {
   };
 
   return (
-    <div className="user-settings-password">
-      <h2>Password</h2>
-      <span onClick={handleExpandPassword}>EDIT</span>
+    <div className="user-settings-password container-div">
+      <h2>
+        Password
+        <span className="clickable-span" onClick={handleExpandPassword}>
+          EDIT
+        </span>
+      </h2>
+
       <div className="user-password">
         <label></label>
         {isExpandedPassword && (
           <input
+            className="user-input"
             type="password"
             id="password"
             name="password"
@@ -27,7 +33,7 @@ function PasswordInfoForm({ handlePasswordInputChange }) {
         )}
       </div>
 
-      <button>Submit</button>
+      <button className="submit-button">SUBMIT</button>
     </div>
   );
 }

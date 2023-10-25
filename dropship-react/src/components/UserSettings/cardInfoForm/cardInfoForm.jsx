@@ -11,14 +11,19 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
   };
 
   return (
-    <div className="user-settings-card">
-      <h2>Card</h2>
-      <span onClick={handleExpandCard}>EDIT</span>
+    <div className="user-settings-card container-div">
+      <h2>
+        Card
+        <span className="clickable-span" onClick={handleExpandCard}>
+          EDIT
+        </span>
+      </h2>
       <div className="card-number">
         <p>Card Number: {cardObject.cardNumber}</p>
         <label></label>
         {isExpandedCard && (
           <input
+            className="user-input"
             type="text"
             id="cardNumber"
             name="cardNumber"
@@ -34,6 +39,7 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
         <label></label>
         {isExpandedCard && (
           <input
+            className="user-input"
             type="text"
             id="cardHolder"
             name="cardHolder"
@@ -49,6 +55,7 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
         <label></label>
         {isExpandedCard && (
           <input
+            className="user-input"
             type="text"
             id="expirationDate"
             name="expirationDate"
@@ -64,6 +71,7 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
         <label></label>
         {isExpandedCard && (
           <input
+            className="user-input"
             type="text"
             id="securityCode"
             name="securityCode"
@@ -79,6 +87,7 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
         <label></label>
         {isExpandedCard && (
           <input
+            className="user-input"
             type="text"
             id="cardType"
             name="cardType"
@@ -94,6 +103,7 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
         <label></label>
         {isExpandedCard && (
           <input
+            className="user-input"
             type="text"
             id="cardStatus"
             name="cardStatus"
@@ -104,7 +114,7 @@ function CardInfoForm({ cardObject, handleCardInputChange }) {
         )}
       </div>
 
-      <button>Submit</button>
+      <button className="submit-button">SUBMIT</button>
     </div>
   );
 }
