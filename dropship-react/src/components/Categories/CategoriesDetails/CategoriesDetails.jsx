@@ -16,10 +16,10 @@ function CategoriesDetails() {
 
     return (
         <main className="categoriesDetails">
-            <DetailsNav e={{
-                categoriesid: "12331",
-                subcategoryid: ""
-            }}></DetailsNav>
+            <DetailsNav
+                categoryid={"Testingid"}
+                categorytitle={"Testing Title"}
+            ></DetailsNav>
 
             <div className='detailsListBody'>
                 {(!isMobile || (isMobile && mobileFiltersOn)) && <DetailsFilters></DetailsFilters>}

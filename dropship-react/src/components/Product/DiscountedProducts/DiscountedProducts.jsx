@@ -25,9 +25,11 @@ function DiscountedProducts() {
         </h2>
       </div>
       <div className="discounted-div">
-        {randomDiscountedProducts.map((product) => (
+        <ul>
+        {randomDiscountedProducts.slice(0, 6).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
+        </ul>
       </div>
     </>
   )

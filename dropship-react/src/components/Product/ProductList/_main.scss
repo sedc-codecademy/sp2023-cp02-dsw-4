@@ -1,1 +1,47 @@
 ///////////  PRODUCT LIST  ///////////// 
+
+.discounted-div,
+.bestsellers-div {
+    margin: 0.5rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        max-width: 65rem;
+    }
+}
+
+.discounted-text,
+.bestsellers-text {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media(max-width:800px) {
+
+    .discounted-div,
+    .bestsellers-div {
+        ul {
+            max-width: 100%;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media(max-width:450px) {
+
+    .discounted-div,
+    .bestsellers-div {
+        ul {
+            grid-template-columns: 1fr;
+        }
+    }
+}

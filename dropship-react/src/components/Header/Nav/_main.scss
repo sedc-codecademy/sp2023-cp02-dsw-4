@@ -33,67 +33,69 @@ header {
 
                     li:not(.divider) {
                         flex-grow: 1;
+                        position: relative;
 
                         a,
                         button:not(.logInIcon) {
-                            position: relative;
-                            border-radius: .5rem;
-                            color: var(--secColor);
-
-                            padding: .6rem .8rem;
-
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: .5rem;
-                            transition: .3s ease background-color, color .3s ease;
-
-                            background-color: var(--tpPri2);
-                            outline: .15rem solid rgba(0, 0, 0, 0);
-                            user-select: none;
-
-                            &::after {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
-                                opacity: 0;
+                            &:not(.shippingButtons) {
+                                position: relative;
                                 border-radius: .5rem;
-                                z-index: 0;
-                                transition: opacity .3s ease;
-                            }
+                                color: var(--secColor);
 
-                            p {
-                                font-size: 1.2rem;
-                                z-index: 1;
-                            }
+                                padding: .6rem .8rem;
 
-                            svg {
-                                width: 1.5rem;
-                                height: 1.5rem;
-                                z-index: 1;
-                            }
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: .5rem;
+                                transition: .3s ease background-color, color .3s ease;
 
-                            &:focus-visible {
-                                outline-color: var(--reverseSecAccent);
-                            }
-
-                            &:hover {
-                                color: var(--accent);
-                                background-color: var(--paleAccent);
-                            }
-
-                            &:active {
-                                background-color: var(--tpPri3);
-                            }
-
-                            &.active {
-                                color: var(--priColor);
-                                pointer-events: none;
+                                background-color: var(--tpPri2);
+                                outline: .15rem solid rgba(0, 0, 0, 0);
+                                user-select: none;
 
                                 &::after {
-                                    opacity: 1;
+                                    content: '';
+                                    position: absolute;
+                                    inset: 0;
+                                    background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                    opacity: 0;
+                                    border-radius: .5rem;
+                                    z-index: 0;
+                                    transition: opacity .3s ease;
+                                }
 
+                                p {
+                                    font-size: 1.2rem;
+                                    z-index: 1;
+                                }
+
+                                svg {
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                    z-index: 1;
+                                }
+
+                                &:focus-visible {
+                                    outline-color: var(--reverseSecAccent);
+                                }
+
+                                &:hover {
+                                    color: var(--accent);
+                                    background-color: var(--paleAccent);
+                                }
+
+                                &:active {
+                                    background-color: var(--tpPri3);
+                                }
+
+                                &.active {
+                                    color: var(--priColor);
+                                    pointer-events: none;
+
+                                    &::after {
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
@@ -195,7 +197,7 @@ header {
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                border-top: .15rem solid var(--tertColor);
+                border-top: .15rem solid var(--tertColor2);
                 background-color: var(--tpPri3);
                 padding: .7rem;
 
@@ -447,11 +449,11 @@ header {
                 display: flex;
                 flex-wrap: wrap;
 
-                @supports (height: fit-content){
+                @supports (height: fit-content) {
                     height: fit-content;
                 }
-                
-                @supports not (height: fit-content){
+
+                @supports not (height: fit-content) {
                     height: auto;
                 }
 
@@ -549,97 +551,131 @@ header {
                         &:first-child {
                             h3 {
                                 font-size: 1.1rem;
+                                display: flex;
+                                justify-content: space-between;
+
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: .3rem;
+
+                                    span {
+                                        font-size: .9rem;
+                                    }
+
+                                    svg {
+                                        height: 1.3rem;
+                                        width: 1.3rem;
+                                    }
+
+                                    transition: color .3s;
+
+                                    &:focus-visible {
+                                        outline-color: var(--reverseSecAccent);
+                                    }
+
+                                    &:hover {
+                                        color: var(--accent);
+                                    }
+
+                                    &:active {
+                                        color: var(--tpSec2);
+                                    }
+                                }
                             }
 
                             border-radius: .5rem;
                             padding-inline: .3rem;
                         }
 
-                        button,
-                        a {
-                            position: relative;
-                            display: flex;
-                            flex-direction: row-reverse;
-                            align-items: center;
-                            justify-content: space-between;
+                        &:not(:first-child) {
 
-                            border-radius: .5rem;
-                            padding: .5rem .7rem;
+                            button,
+                            a {
+                                position: relative;
+                                display: flex;
+                                flex-direction: row-reverse;
+                                align-items: center;
+                                justify-content: space-between;
 
-                            gap: 2.5rem;
-
-                            background-color: var(--tpPri2);
-
-                            transition: .3s ease background-color, color .3s ease;
-                            outline: .2rem solid rgba(0, 0, 0, 0);
-
-                            width: 100%;
-                            font-size: 1rem;
-                            overflow: hidden;
-
-                            &::after {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
-                                opacity: 0;
                                 border-radius: .5rem;
-                                z-index: 0;
-                                transition: opacity .3s ease;
-                            }
+                                padding: .5rem .7rem;
 
-                            P {
-                                color: var(--tpSec);
+                                gap: 2.5rem;
+
+                                background-color: var(--tpPri2);
+
                                 transition: .3s ease background-color, color .3s ease;
-                            }
+                                outline: .2rem solid rgba(0, 0, 0, 0);
 
-                            svg {
-                                width: 2.2rem;
-                                height: 2.2rem;
-                                color: var(--tpSec);
-                                transition: .3s ease background-color, color .3s ease;
-                                transform: rotateY(180deg);
-                            }
-
-                            &::before {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
-                                opacity: 0;
-                                border-radius: .7rem;
-                                transition: opacity .3s ease;
-                            }
-
-                            &:focus-visible {
-                                outline-color: var(--reverseSecAccent);
-                            }
-
-                            &:hover {
-                                background-color: var(--paleAccent);
-
-                                p,
-                                svg {
-                                    color: var(--accent);
-                                }
-                            }
-
-                            &:active {
-                                background-color: var(--tpPri3);
-                            }
-
-                            &.active {
-
-                                pointer-events: none;
-
-                                p,
-                                svg {
-                                    color: var(--priColor);
-                                    z-index: 1;
-                                }
+                                width: 100%;
+                                font-size: 1rem;
+                                overflow: hidden;
 
                                 &::after {
-                                    opacity: 1;
+                                    content: '';
+                                    position: absolute;
+                                    inset: 0;
+                                    background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                    opacity: 0;
+                                    border-radius: .5rem;
+                                    z-index: 0;
+                                    transition: opacity .3s ease;
+                                }
+
+                                P {
+                                    color: var(--tpSec);
+                                    transition: .3s ease background-color, color .3s ease;
+                                }
+
+                                svg {
+                                    width: 2.2rem;
+                                    height: 2.2rem;
+                                    color: var(--tpSec);
+                                    transition: .3s ease background-color, color .3s ease;
+                                    transform: rotateY(180deg);
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    inset: 0;
+                                    background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                    opacity: 0;
+                                    border-radius: .7rem;
+                                    transition: opacity .3s ease;
+                                }
+
+                                &:focus-visible {
+                                    outline-color: var(--reverseSecAccent);
+                                }
+
+                                &:hover {
+                                    background-color: var(--paleAccent);
+
+                                    p,
+                                    svg {
+                                        color: var(--accent);
+                                    }
+                                }
+
+                                &:active {
+                                    background-color: var(--tpPri3);
+                                }
+
+                                &.active {
+
+                                    pointer-events: none;
+
+                                    p,
+                                    svg {
+                                        color: var(--priColor);
+                                        z-index: 1;
+                                    }
+
+                                    &::after {
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
@@ -673,6 +709,37 @@ header {
                         &:first-child {
                             h3 {
                                 font-size: 1.1rem;
+                                display: flex;
+                                justify-content: space-between;
+
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: .3rem;
+
+                                    span {
+                                        font-size: .9rem;
+                                    }
+
+                                    svg {
+                                        height: 1.3rem;
+                                        width: 1.3rem;
+                                    }
+
+                                    transition: color .3s;
+
+                                    &:focus-visible {
+                                        outline-color: var(--reverseSecAccent);
+                                    }
+
+                                    &:hover {
+                                        color: var(--accent);
+                                    }
+
+                                    &:active {
+                                        color: var(--tpSec2);
+                                    }
+                                }
                             }
 
                             border-radius: .5rem;
@@ -680,87 +747,98 @@ header {
                             margin-bottom: .5rem;
                         }
 
-                        button,
-                        a {
-                            position: relative;
-                            display: flex;
-                            flex-direction: row-reverse;
-                            align-items: center;
-                            justify-content: space-between;
+                        &:not(:first-child) {
 
-                            border-radius: .5rem;
-                            padding: .5rem .7rem;
+                            button,
+                            a {
+                                position: relative;
+                                display: flex;
+                                flex-direction: row-reverse;
+                                align-items: center;
+                                justify-content: space-between;
 
-                            gap: .5rem;
-                            width: 100%;
-
-                            background-color: var(--tpPri3);
-
-                            transition: .3s ease background-color, color .3s ease;
-                            outline: .2rem solid rgba(0, 0, 0, 0);
-
-                            font-size: 1rem;
-                            overflow: hidden;
-
-                            &::after {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
-                                opacity: 0;
                                 border-radius: .5rem;
-                                z-index: 0;
-                                transition: opacity .3s ease;
-                            }
+                                padding: .5rem .7rem;
 
-                            P {
-                                color: var(--tpSec);
+                                gap: .5rem;
+                                width: 100%;
+
+                                background-color: var(--tpPri3);
+
                                 transition: .3s ease background-color, color .3s ease;
-                            }
+                                outline: .2rem solid rgba(0, 0, 0, 0);
 
-                            svg {
-                                width: 2.2rem;
-                                height: 2.2rem;
-                                color: var(--tpSec);
-                                transition: .3s ease background-color, color .3s ease;
-                                transform: rotateY(180deg);
-                            }
-
-                            &::before {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
-                                opacity: 0;
-                                border-radius: .7rem;
-                                transition: opacity .3s ease;
-                            }
-
-                            &:active {
-                                background-color: var(--tpPri2);
-
-                                p,
-                                svg {
-                                    color: var(--accent);
-                                }
-                            }
-
-                            &.active {
-
-                                pointer-events: none;
-
-                                p,
-                                svg {
-                                    color: var(--priColor);
-                                    z-index: 1;
-                                }
+                                font-size: 1rem;
+                                overflow: hidden;
 
                                 &::after {
-                                    opacity: 1;
+                                    content: '';
+                                    position: absolute;
+                                    inset: 0;
+                                    background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                    opacity: 0;
+                                    border-radius: .5rem;
+                                    z-index: 0;
+                                    transition: opacity .3s ease;
+                                }
+
+                                P {
+                                    color: var(--tpSec);
+                                    transition: .3s ease background-color, color .3s ease;
+                                }
+
+                                svg {
+                                    width: 2.2rem;
+                                    height: 2.2rem;
+                                    color: var(--tpSec);
+                                    transition: .3s ease background-color, color .3s ease;
+                                    transform: rotateY(180deg);
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    inset: 0;
+                                    background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                    opacity: 0;
+                                    border-radius: .7rem;
+                                    transition: opacity .3s ease;
+                                }
+
+                                &:active {
+                                    background-color: var(--tpPri2);
+
+                                    p,
+                                    svg {
+                                        color: var(--accent);
+                                    }
+                                }
+
+                                &.active {
+
+                                    pointer-events: none;
+
+                                    p,
+                                    svg {
+                                        color: var(--priColor);
+                                        z-index: 1;
+                                    }
+
+                                    &::after {
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
                     }
+                }
+
+                .themeSettings {
+                    z-index: 5;
+                }
+
+                .accountSettings {
+                    z-index: 3;
                 }
             }
         }
@@ -770,7 +848,8 @@ header {
             &.mobileSettings {
 
                 .themeSettings,
-                .accountSettings {
+                .accountSettings,
+                .shippingDiv {
                     transform: translateY(130vh);
                 }
             }
@@ -788,13 +867,18 @@ header {
             &.mobileSettings {
 
                 .themeSettings,
-                .accountSettings {
+                .accountSettings,
+                .shippingDiv {
                     transform: translate(0);
                     transition: transform .3s ease;
                 }
 
-                .accountSettings {
+                .shippingDiv {
                     transition-delay: .15s;
+                }
+
+                .accountSettings {
+                    transition-delay: .30s;
                 }
             }
 
@@ -819,7 +903,8 @@ header {
             &.normalSettings {
 
                 .themeSettings,
-                .accountSettings {
+                .accountSettings,
+                .shippingDiv {
                     transform: translate(0);
                 }
             }
@@ -829,7 +914,8 @@ header {
             &.mobileSettings {
 
                 .themeSettings,
-                .accountSettings {
+                .accountSettings,
+                .shippingDiv {
                     transform: translateY(130vh);
                     transition: transform .3s ease;
                 }
@@ -838,9 +924,15 @@ header {
                     transition-delay: 0;
                 }
 
-                .themeSettings {
+                .shippingDiv {
                     transition-delay: .15s;
                 }
+
+                .themeSettings {
+                    transition-delay: .30s;
+                }
+
+                
             }
 
             &.normalSettings {

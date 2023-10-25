@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 const navSettingsSlice = createSlice({
     name: "navSettings",
     initialState: {
-        isSettingsOn: false
+        isSettingsOn: false,
     },
     reducers: {
         setIsSettingsOn(state, action) {

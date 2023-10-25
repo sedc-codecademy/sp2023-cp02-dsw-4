@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useSelector } from "react-redux"
 
-import TempProductCard from "../../Categories/CategoriesList/TempProductCard"
+import ProductCard from '../ProductCard/ProductCard'
 
 export default function ProductList({ products, origin }) {
     const isMobile = useSelector((state) => state.mobile.isMobile)
@@ -2558,7 +2558,7 @@ export default function ProductList({ products, origin }) {
                 </button>}
                 <ul className="product-list" ref={ulRef}>
                     {products.map((product) => (
-                        <TempProductCard key={product.id} product={product} />
+                        <ProductCard key={product.id} product={product} />
                     ))}
                 </ul>
                 {!isMobile && <button className="scrollright" onClick={handleScrollRight}>

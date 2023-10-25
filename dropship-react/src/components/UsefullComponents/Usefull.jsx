@@ -3,19 +3,18 @@ import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { selectProducts } from "../../store/selectors/productSelector"
 import { setMobileFiltersOn } from '../../store/slices/filters/filtersSlice'
-import TempProductCard from '../Categories/CategoriesList/TempProductCard'
+import ProductCard from '../Product/ProductCard/ProductCard'
 
 export function DetailsNav(props) {
   return (
     <div className='categoriesHeader'>
       <NavLink to={"/"}>Home</NavLink>
       <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
-      <NavLink to={`/category/${props.e.categoryid}`}>Technology</NavLink>
-      {props.e.subcategoryid && (
+      <NavLink to={`/category/${props.categoryid}`}>{props.categorytitle}</NavLink>
+      {props.subcategoryid && (
         <>
           <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
-          <NavLink to={`/subcategory/${props.e.categoryid}`}>Smartphones</NavLink>
-          <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
+          <NavLink to={`/subcategory/${props.subcategoryid}`}>{props.subcategorytitle}</NavLink>
         </>
       )}
     </div>
@@ -577,14 +576,14 @@ export const DetailsAllProducts = () => {
         <h3>Most Popular Smartphones</h3>
         <ul>
           {currentProducts.slice(0, 4).map((product) => (
-            <TempProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))}
         </ul>
       </div>
 
       <ul className="allProducts">
         {currentProducts.map((product) => (
-          <TempProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </ul>
 
@@ -627,3 +626,22 @@ export const DetailsAllProducts = () => {
     </div>
   )
 }
+
+export function formatDate(inputDate) {
+  if (!inputDate) {
+      const currentDate = new Date()
+      return `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}`
+  }
+  const date = new Date(inputDate)
+  const day = date.getDate()
+  const month = date.getMonth() + 1 // Months are 0-indexed, so add 1
+  const year = date.getFullYear()
+
+  // Pad single digits with leading zero
+  const formattedDay = String(day).padStart(2, '0')
+  const formattedMonth = String(month).padStart(2, '0')
+
+  return `${formattedDay}/${formattedMonth}/${year}`
+}
+
+

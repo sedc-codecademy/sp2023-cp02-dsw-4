@@ -5,8 +5,7 @@ import { Link, useLocation } from "react-router-dom"
 import Nav from "./Nav/Nav"
 import SearchBar from "./SearchBar/SearchBar"
 
-import { setIsSettingsOn } from "../../store/slices/navSettingsSlice"
-import AccountDropDown from "../AccountDropDown/AccountDropDown"
+import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -22,6 +21,7 @@ export default function Header() {
             dispatch(setIsSettingsOn(false))
         }
     }
+    
     return (
         <header className={!isSmallHeader ? "smallHeader" : ""}>
             <Link className="logo" to="/" onClick={closeSettings}>

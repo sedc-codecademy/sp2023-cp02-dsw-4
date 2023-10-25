@@ -5,13 +5,33 @@ main {
         display: flex;
         align-self: flex-start;
         align-items: center;
+        gap: .5rem;
 
         a {
-            color: var(--tpSec);
+            color: var(--tpSec2);
+            height: 1.5rem;
+
+            @media (min-width: 600px) {
+                transition: color .2s,
+                    background-color .2s;
+
+                &:focus-visible {
+                    color: var(--secAccent);
+                    outline: .2rem solid var(--accent);
+                }
+
+                &:hover {
+                    color: var(--accent);
+                }
+
+                &:active {
+                    color: var(--tpSec);
+                }
+            }
         }
 
         svg {
-            height: 1.5rem;
+            height: 1rem;
             color: var(--tpSec2);
         }
     }
@@ -935,32 +955,26 @@ main {
                     gap: 1rem;
                     flex-wrap: wrap;
 
-                    li {
+                    .product-card {
                         flex-grow: 1;
                         width: 33%;
 
                         a {
-                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                            justify-content: flex-start;
                             background-color: var(--tpPri3);
                             padding: .5rem;
                             gap: .5rem;
-                            border-radius: .3rem;
-                            height: 100%;
 
                             img {
-                                border-radius: .3rem;
-                                background-color: var(--tpPri2);
                                 height: 8rem;
-
+                                width: unset;
                             }
 
                             .infoDiv {
-                                display: flex;
-                                flex-direction: column;
                                 gap: .3rem;
-                                color: var(--secColor);
                                 padding: .3rem;
-                                width: 100%;
 
                                 .title {
                                     max-width: 25ch;
@@ -973,12 +987,10 @@ main {
                                 }
 
                                 div {
-                                    display: flex;
-                                    width: 100%;
+                                    align-items: flex-start;
 
                                     &.priceDiv {
                                         gap: .3rem;
-                                        // align-items: center;
                                         flex-direction: column;
 
                                         p {
@@ -995,68 +1007,14 @@ main {
                                     }
 
                                     &.ratingDiv {
-                                        width: max-content;
-                                        align-items: center;
                                         gap: .3rem;
 
-                                        p {
-                                            transition: color .6s cubic-bezier(.19, 1, .22, 1);
-                                        }
-
                                         .starsDiv {
-                                            display: flex;
-                                            color: var(--secAccent);
-
                                             svg {
                                                 height: 1.4rem;
                                                 width: 1.4rem;
                                             }
                                         }
-                                    }
-                                }
-                            }
-
-                            @media (min-width: 600px) {
-                                transition: scale .6s cubic-bezier(.19, 1, .22, 1);
-
-                                img {
-                                    transition: scale .6s cubic-bezier(.19, 1, .22, 1);
-                                }
-
-                                &:focus-visible {
-                                    outline: .3rem solid var(--secColor);
-                                    scale: 1.05;
-
-                                    .infoDiv {
-                                        p {
-                                            color: var(--accent);
-                                        }
-                                    }
-                                }
-
-                                &:hover {
-                                    .infoDiv {
-                                        p {
-                                            color: var(--accent);
-                                        }
-                                    }
-
-                                    img {
-                                        scale: .95;
-                                    }
-                                }
-
-                                &:active {
-                                    scale: .9;
-
-                                    .infoDiv {
-                                        h4 {
-                                            color: var(--accent);
-                                        }
-                                    }
-
-                                    img {
-                                        scale: 1;
                                     }
                                 }
                             }

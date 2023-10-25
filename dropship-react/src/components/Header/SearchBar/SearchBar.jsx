@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import SearchItem from "./SearchItem"
@@ -7,7 +7,9 @@ import ViewAll from "./ViewAll"
 import { CSSTransition } from "react-transition-group"
 
 import { CatDP, SubCatDP, ViewAllSub, catArray, subCatArray } from "../CatDropDown/CatDP"
-import { toggleCatDropDown } from "../../../store/slices/catDropDownSlice"
+import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice"
+import { setShouldFocus } from '../../../store/slices/search/search'
+
 import { NavLink } from "react-router-dom"
 
 const someArray = [
@@ -82,13 +84,20 @@ function SearchBar() {
     const [showSearchSuggestions, setShowSearchSuggestions] = useState(false)
 
     const dispatch = useDispatch()
-
     const csstransitionRef = useRef()
-
     const catref = useRef()
+    const searchref = useRef()
 
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
+    const shouldFocus = useSelector((state) => state.search.shouldFocus)
+
+    useEffect(() => {
+        if (shouldFocus && searchref.current) {
+            searchref.current.focus()
+            dispatch(setShouldFocus(false))
+        }
+    }, [shouldFocus, dispatch])
 
     const testFunc = () => {
         console.log(someArray.length)
@@ -123,6 +132,7 @@ function SearchBar() {
                         type="search"
                         placeholder="Search for products"
                         onChange={testFunc}
+                        ref={searchref}
                     ></input>
                 </form>
                 <button

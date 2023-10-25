@@ -21,15 +21,17 @@ function BestSelers() {
     <>
       <div className="bestsellers-container">
         <h2 className="bestsellers-text upDown">
-          <span className="arrow-left ">&#8630</span>Best Sellers
-          <span className="arrow-right ">&#8631</span>
+          <span className="arrow-left ">&#8630;</span>Best Sellers
+          <span className="arrow-right ">&#8631;</span>
         </h2>
       </div>
 
       <div className="bestsellers-div">
-        {randomProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        <ul>
+          {randomProducts.slice(0,6).map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </ul>
       </div>
     </>
   )

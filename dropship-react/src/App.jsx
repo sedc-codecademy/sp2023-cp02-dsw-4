@@ -17,14 +17,15 @@ import AccountDropDown from './components/AccountDropDown/AccountDropDown'
 
 import { applyDarkTheme, applyLightTheme, applySystemTheme } from "./shared/themeFunctions"
 import { applyNoScroll, applyScroll } from './shared/scrollFunctions'
-import { setIsMobile } from "./store/slices/mobileSlice"
-import { setIsSettingsOn } from "./store/slices/navSettingsSlice"
-import { setIsDDOn, setIsScrollOn } from "./store/slices/ddBkgSlice"
+import { setIsMobile } from "./store/slices/mobile/mobileSlice"
+import { setIsSettingsOn } from "./store/slices/nav/navSettingsSlice"
+import { setIsDDOn, setIsScrollOn } from "./store/slices/dropdowns/ddBkgSlice"
 import { setMobileFiltersOn } from './store/slices/filters/filtersSlice'
 
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import DDBkgf from "./components/DDBkg/DDBkgf" // Background for popups
+import ScrollToTop from "./shared/scrollToTop"
 
 function App() {
   const dispatch = useDispatch()
@@ -44,7 +45,7 @@ function App() {
       if (isSettingsOn || showCatDropDown) {
         dispatch(setIsDDOn(true))
         dispatch(setIsScrollOn(true))
-      } else if (mobileFiltersOn) {
+      } else if (mobileFiltersOn || showAccDropDown) {
         dispatch(setIsScrollOn(true))
       }
       else {
@@ -115,6 +116,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <AccountDropDown />
         <Header></Header>
         <DDBkgf></DDBkgf>
@@ -131,7 +133,7 @@ function App() {
           <Route path="/settings" element={<UserSettings />} />
           <Route path="/cart" element={<Cart />} />
 
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound link={"/"} title={"oh no... disaster!!!"} message={"stop trying to break our website, please ;)"}/>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

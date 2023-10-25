@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom"
 function SmallCategory(props) {
     return (
         <li>
-            <NavLink>
-            <img src={props.category.image} alt="category" />
+            <NavLink to={`/subcategories/${props.subcategory.id}`}>
+            <img src={props.subcategory.image} alt="category" />
             <div>
-                <h4>{props.category.title}</h4>
-                <p>({props.category.sub.length} Products)</p>
+                <h4>{props.subcategory.title}</h4>
+                <p>({props.subcategory.products.length} Products)</p>
             </div>
             </NavLink>
         </li>

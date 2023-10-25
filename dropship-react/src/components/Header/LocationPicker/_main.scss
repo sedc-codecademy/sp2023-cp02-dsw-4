@@ -1,0 +1,175 @@
+///////////  LOCATION PICKER  ///////////// 
+
+header {
+    .mainNav {
+        .shippingContainer {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: grid;
+
+            .shippingUl {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--tpPri3);
+                padding-top: .5rem;
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+                overflow: hidden;
+
+                li {
+                    display: flex;
+
+                    &:not(:last-child) {
+                        border-bottom: .1rem solid var(--tertColor2);
+                    }
+
+                    button {
+                        flex-grow: 1;
+                        background-color: var(--tpPri3);
+                        padding: .5rem;
+                        text-transform: capitalize;
+                        text-align: left;
+                        font-size: 1rem;
+                        outline: .1rem solid rgba(0, 0, 0, 0);
+                        transition: background-color .3s, outline-color .5s;
+
+                        &:focus-visible {
+                            outline-color: var(--accent);
+                            background-color: var(--accent);
+                            color: #fff;
+                        }
+
+                        &:hover {
+                            background-color: var(--tpPri4);
+                        }
+
+                        &:active {
+                            background-color: var(--tpPri);
+                        }
+
+                        &:disabled {
+                            pointer-events: none;
+                            color: var(--accent);
+                            outline-color: var(--accent);
+                        }
+                    }
+                }
+            }
+        }
+
+        .settingsContainer {
+
+            .shippingDiv {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: .5rem;
+                padding-block: 1rem;
+                padding-inline: 1rem;
+                border-top: 0.15rem solid var(--tertColor2);
+                background-color: var(--tpPri2);
+                z-index: 4;
+
+                h3 {
+                    font-size: 1.1rem;
+                }
+
+                .shippingUl {
+                    display: flex;
+                    overflow-x: auto;
+                    gap: .5rem;
+
+                    @supports (scrollbar-width: none) {
+                        scrollbar-width: none;
+                    }
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    li:not(.divider) {
+                        width: 100%;
+
+                        button {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+                            border-radius: .5rem;
+                            padding: .5rem .7rem;
+
+                            background-color: var(--tpPri3);
+
+                            transition: .3s background-color, color .3s;
+
+                            font-size: 1rem;
+                            overflow: hidden;
+
+                            span {
+                                color: var(--tpSec);
+                                text-transform: capitalize;
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
+                                transition: opacity .3s ease;
+                            }
+
+                            &:active {
+                                background-color: var(--tpPri2);
+
+                                p,
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
+
+                            &:disabled {
+                                pointer-events: none;
+
+                                span {
+                                    color: var(--priColor);
+                                    z-index: 1;
+                                }
+
+
+                                &::before {
+                                    opacity: 1;
+                                    z-index: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .shippingContainer-enter {
+            grid-template-rows: 0fr;
+            opacity: .5;
+        }
+
+        .shippingContainer-enter-active {
+            opacity: 1;
+            grid-template-rows: 1fr;
+            transition: opacity 200ms, grid-template-rows 200ms;
+        }
+
+        .shippingContainer-enter-done,
+        .shippingContainer-exit {
+            opacity: 1;
+            grid-template-rows: 1fr;
+        }
+
+        .shippingContainer-exit-active {
+            grid-template-rows: 0fr;
+            opacity: .5;
+            transition: opacity 200ms, grid-template-rows 200ms;
+        }
+    }
+}
