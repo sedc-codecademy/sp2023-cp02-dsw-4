@@ -6,11 +6,11 @@ import {
   updateCardInfo,
 } from "../../store/slices/userSettings/userSettingsSlices";
 
-import ProfilePicture from "./profilePicture/profilePicture";
-import UserInfoForm from "./userInfoForm/userInfoForm";
-import PasswordInfoForm from "./passwordInfoForm/passwordInfoForm";
-import AddressInfoForm from "./addressInfoForm/addressInfoForm";
-import CardInfoForm from "./cardInfoForm/cardInfoForm";
+import ProfilePicture from "./profilePicture/ProfilePicture";
+import UserInfoForm from "./userInfoForm/UserInfoForm";
+import PasswordInfoForm from "./passwordInfoForm/PasswordInfoForm";
+import AddressInfoForm from "./addressInfoForm/AddressInfoForm";
+import CardInfoForm from "./cardInfoForm/CardInfoForm";
 
 function UserSettings() {
   const user = useSelector((state) => state.user.user);

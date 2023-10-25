@@ -1,0 +1,263 @@
+.body-rights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 2rem; 
+    --maxWidth: 800px; 
+
+    .page-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    
+        .rights-header {
+            padding-top: 11.25rem;
+            padding-bottom: 2rem;
+            text-align: center;
+
+            h2 {
+                font-size: 2.8rem;
+                font-family: 'Fugaz One', sans-serif;
+                // font-family: 'Antique-Olive';
+            }
+    
+            .title {
+                text-align: center;
+                font-size: 8.5rem;
+                letter-spacing: -.2rem;
+                line-height: 9rem;
+            }
+    
+            span:first-child {
+                margin-left: -8rem;
+            }
+    
+            span:nth-child(2) {
+                margin-left: 6.5rem;
+                display: block;
+            }
+        }
+    
+        .first-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            .disclaimer {
+                font-size: 4rem;
+                font-family: 'Fugaz One', sans-serif;
+            }
+
+            .link-style {
+                color: green;
+            }
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+    
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+    
+        .information-header {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 2.5rem;
+            letter-spacing: -.2rem;
+            line-height: 1.2;
+            text-align: left;
+            margin-left: calc(50% - 24.8rem);
+        }
+
+        .second-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h2 {
+                text-align: left;
+            }
+            
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .third-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h2 {
+                text-align: left;
+            }
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .fourth-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+            
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+
+            ul {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+                
+                li {
+                    list-style-type: disc;
+                    margin-left: calc(50% - 23.5rem);
+                }
+            }
+        }
+
+        .fifth-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h2 {
+                text-align: left;
+            }
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .sixth-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .seventh-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .eighth-paragraph {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+            max-width: var(--maxWidth);
+            text-align: center;
+            margin: 0 auto;
+
+            h3 {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            p {
+                text-align: left;
+                line-height: 1.625;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
