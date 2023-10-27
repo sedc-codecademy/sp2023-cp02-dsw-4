@@ -10,6 +10,8 @@
         padding: 1rem;
         margin-inline: auto;
         width: fit-content;
+        flex-wrap: wrap;
+        justify-content: center;
 
         .cart-items {
             display: flex;
@@ -29,6 +31,7 @@
                     border-radius: .5rem;
                     background-color: var(--tpPri3);
                     background-color: var(--tpPri3);
+                    box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
 
                     img {
                         height: 10rem;
@@ -66,10 +69,6 @@
                                 gap: .5rem;
 
                                 li {
-                                    // padding: .5rem;
-                                    // background-color: var(--tpPri2);
-                                    // border-radius: .3rem;
-
                                     &:first-child {
                                         gap: .5rem;
 
@@ -221,9 +220,11 @@
                         }
 
                         .itemInfo {
+                            ul {}
+
                             .title {
                                 width: unset;
-                                max-width: 20ch;
+                                max-width: 30ch;
                             }
                         }
 
@@ -254,6 +255,7 @@
                 background-color: var(--tpPri3);
                 padding: .5rem;
                 border-radius: .5rem;
+                box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
 
                 li {
                     background-color: var(--tpPri);
@@ -309,6 +311,11 @@
 
             .title {
                 margin-bottom: .5rem;
+            }
+
+            .pricesUl,
+            .infoUl {
+                box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
             }
 
             .pricesUl {
@@ -425,6 +432,65 @@
 
             .mastertitle {
                 margin-bottom: .5rem;
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: .3rem;
+                    padding: .3rem;
+                    background-color: var(--tpPri3);
+                    border-radius: .5rem;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+
+                    span {
+                        font-size: .9rem;
+                    }
+
+                    svg {
+                        height: 1.1rem;
+                        width: 1.1rem;
+                    }
+
+                    &:focus-visible {
+                        color: var(--accent);
+                        outline: .2rem solid var(--accent);
+                    }
+
+                    @media (min-width: 600px) {
+                        transition: .2s color, background-color .3s;
+
+                        h3 {
+                            svg {
+                                transition: .2s color;
+                            }
+                        }
+
+                        &:hover {
+                            color: var(--accent);
+                            background-color: var(--tpPri);
+
+                            h3 {
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
+                        }
+
+                        &:active {
+                            color: var(--tpSec2);
+                            background-color: var(--tpPri2);
+
+                            h3 {
+                                svg {
+                                    color: var(--tpSec2);
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             .collection,
@@ -435,6 +501,7 @@
                 padding: .5rem;
                 padding-top: 0;
                 border-radius: .5rem;
+                box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
 
                 button {
                     &.titleButton {
@@ -537,6 +604,7 @@
                     border-radius: .3rem;
 
                     h4 {
+                        position: relative;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -561,6 +629,7 @@
                         gap: .5rem;
                         display: flex;
                         align-items: center;
+                        position: relative;
 
                         &.streetAddress {
                             width: 100%;
@@ -654,10 +723,94 @@
 
             .payment {
                 form {
-                    .paymethod{
+
+                    h4 {
+                        .autoCards {
+                            position: absolute;
+                            top: 90%;
+                            right: 0;
+                            gap: .3rem;
+                            display: flex;
+                            flex-direction: column;
+                            padding: .5rem;
+
+                            background-color: var(--tpPri2);
+                            box-shadow: rgba(0, 0, 0, 0.1) 0 .15rem .2rem 0, rgba(0, 0, 0, 0.06) 0 .15rem .2rem 0;
+
+                            z-index: 3;
+
+                            li {
+                                width: 100%;
+
+                                button {
+                                    width: 100%;
+                                    display: flex;
+                                    gap: 1rem;
+                                    padding: .5rem;
+
+                                    svg {
+                                        margin-left: auto;
+
+                                        :last-child {
+                                            opacity: 0;
+                                        }
+                                    }
+
+                                    &:focus-visible {
+                                        color: var(--accent);
+                                        outline: .2rem solid var(--accent);
+                                    }
+
+                                    @media (min-width: 600px) {
+                                        transition: .2s color;
+
+                                        h3 {
+                                            svg {
+                                                transition: .2s color;
+                                            }
+                                        }
+
+                                        &:hover {
+                                            color: var(--accent);
+
+                                            h3 {
+                                                svg {
+                                                    color: var(--accent);
+                                                }
+                                            }
+                                        }
+
+                                        &:active {
+                                            color: var(--tpSec2);
+
+                                            h3 {
+                                                svg {
+                                                    color: var(--tpSec2);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:disabled {
+                                        pointer-events: none;
+                                        color: var(--accent);
+
+                                        svg {
+                                            :last-child {
+                                                opacity: 1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .paymethod {
                         display: flex;
                         gap: .5rem;
-                        button{
+
+                        button {
                             flex-grow: 1;
                             background-color: var(--tpPri2);
                             font-size: 1rem;
@@ -665,7 +818,7 @@
                             width: 50%;
                             border-radius: .3rem;
 
-                            
+
                             &:focus-visible {
                                 color: var(--accent);
                                 outline: .2rem solid var(--accent);
@@ -690,6 +843,7 @@
                             }
                         }
                     }
+
                     .inputContainer {
                         position: relative;
                         display: flex;
@@ -700,9 +854,7 @@
                         #ccicon {
                             position: absolute;
                             height: 2rem;
-                            width: 3rem;
                             right: .3rem;
-                            background-color: red;
                         }
 
                         input {
@@ -859,50 +1011,44 @@
                         }
                     }
 
-                    .paymentMethod {
+                    .saveCardButton {
                         display: flex;
-                        justify-content: space-between;
+                        align-items: center;
+                        gap: .5rem;
+                        color: var(--tpSec);
+                        padding: .1rem;
                         padding-block: .5rem;
-                        padding-inline: .5rem;
-                        border-block: .1rem solid var(--tertColor2);
+                        width: fit-content;
 
-                        button {
-                            display: flex;
-                            align-items: center;
-                            gap: .5rem;
-                            color: var(--tpSec);
-                            padding: .1rem;
+                        p {
+                            font-size: 1.1rem;
+                        }
 
-                            p {
-                                font-size: 1.1rem;
-                            }
+                        svg {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
 
-                            svg {
-                                height: 1.5rem;
-                                width: 1.5rem;
-                            }
+                        &:focus-visible {
+                            color: var(--accent);
+                            outline: .2rem solid var(--accent);
+                        }
 
-                            &:focus-visible {
+                        @media (min-width: 600px) {
+                            transition: .2s color;
+
+                            &:hover {
                                 color: var(--accent);
-                                outline: .2rem solid var(--accent);
                             }
 
-                            @media (min-width: 600px) {
-                                transition: .2s color;
-
-                                &:hover {
-                                    color: var(--accent);
-                                }
-
-                                &:active {
-                                    color: var(--tpSec2);
-                                }
+                            &:active {
+                                color: var(--tpSec2);
                             }
+                        }
 
-                            &:disabled {
-                                pointer-events: none;
-                                color: var(--tpSec3);
-                            }
+                        &:disabled {
+                            pointer-events: none;
+                            color: var(--tpSec3);
                         }
                     }
                 }

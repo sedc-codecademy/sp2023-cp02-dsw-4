@@ -19,7 +19,29 @@ const getRandomProducts = (products, count) => {
 }
 
 const reviews = [
+  {
+    author: "DIme dimeski",
+    date: Date(),
+    title: "Great Product",
+    rate: 4.6,
+    body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
+    id: '12h4iu12h4h7124h9',
+    good: ['good screen', 'good battery', 'price'],
+    bad: ['bad screen', 'bad battery', 'price']
+  },
+  {
+    author: "Dimeski Dime",
+    date: Date(),
+    title: "Bad Product",
+    rate: 2.6,
+    body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
+    id: '12h4iu12h4h7124hjh9',
+    good: [],
+    bad: ['bad screen', 'bad battery', 'price']
+  }
 ]
+
+// const reviews = []
 
 function ProductDetails() {
   const { productId } = useParams()

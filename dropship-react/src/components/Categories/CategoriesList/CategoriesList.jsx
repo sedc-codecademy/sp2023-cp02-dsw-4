@@ -179,7 +179,7 @@ const catArray = [
 
 function CategoriesList() {
     const bigCategoriesArray = catArray.slice(0, 3)
-    const smallCategoriesArray = catArray.slice(0)
+    const smallCategoriesArray = catArray.slice(3)
     const products = useSelector(selectProducts)
 
     return (

@@ -31,9 +31,11 @@ ul {
 
                 .review-author {
                     font-size: 1.3rem;
+                    font-weight: 600;
+                    text-transform: capitalize;
                 }
 
-                .review-date{
+                .review-date {
                     color: var(--tpSec2);
                 }
             }
@@ -61,11 +63,11 @@ ul {
             flex-direction: column;
             padding: .5rem;
             gap: .5rem;
-            // background-color: var(--tpPri2);
 
             h3 {
                 font-size: 1.2rem;
                 font-weight: 500;
+
                 .starsDiv {
                     svg {
                         height: 1.3rem;
@@ -82,8 +84,7 @@ ul {
         .key-points {
             display: flex;
             flex-direction: column;
-            
-            padding: .5rem;
+            padding: .7rem;
 
             ul {
                 display: flex;
@@ -96,10 +97,11 @@ ul {
                     svg {
                         height: 1.5rem;
 
-                        &.good{
+                        &.good {
                             color: rgb(0, 165, 0);
                         }
-                        &.bad{
+
+                        &.bad {
                             color: red;
                         }
                     }

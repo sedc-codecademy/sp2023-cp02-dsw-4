@@ -11,6 +11,7 @@ import ddBkgReducer from "./slices/dropdowns/ddBkgSlice"
 import filtersReducer from "./slices/filters/filtersSlice"
 import shippingReducer from "./slices/shipping/shippingSlice"
 import searchReducer from "./slices/search/search"
+import cardReducer from "./slices/cardSlice/cardSlice"
 
 const store = configureStore({
   reducer: {
@@ -22,6 +23,7 @@ const store = configureStore({
     catDropDown: catDropDownReducer,
     shipping: shippingReducer,
     search: searchReducer,
+    card: cardReducer,
     ddBkg: ddBkgReducer,
     theme: themeReducer,
     filters: filtersReducer,

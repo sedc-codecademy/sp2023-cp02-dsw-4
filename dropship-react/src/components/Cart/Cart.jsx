@@ -3,22 +3,106 @@ import ImageLoader from "../ImageLoader/ImageLoader"
 import { NavLink } from "react-router-dom"
 import ProductCard from "../Product/ProductCard/ProductCard"
 
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { selectProducts } from "../../store/selectors/productSelector"
+import { setCardFormValue, setCardFormNumber, setCardType, setCardDate, flipCard } from "../../store/slices/cardSlice/cardSlice"
+import Card from "./Card/Card"
+import { CardSvg } from "./Card/CardSvgs"
 
 function Cart() {
     const [cartState, setCartState] = useState("payment")
+    const [showCards, setShowCards] = useState(false)
+
+    const cardType = useSelector((state) => state.card.cardType)
+    const cardObject = useSelector((state) => state.card.cardObject)
+    const cardPatterns = useSelector((state) => state.card.cardPatterns)
+    const cardFlipped = useSelector((state) => state.card.flipped)
+    const dispatch = useDispatch()
+
+    function formatNumberWithSpaces(input) {
+        const value = input.replace(/\D/g, '')
+        const formattedValue = value.replace(/(.{4})/g, '$1 ')
+        return formattedValue.trim()
+    }
+
+    function formatAsMMYY(date) {
+        const value = date.replace(/\D/g, '')
+
+        const matches = value.match(/^(\d{1,2})(\d{0,2})$/)
+
+        if (!matches) {
+            return value.slice(0, -1)
+        }
+
+        let [_fullMatch, month, year] = matches
+
+        if (year) {
+            if (value.length === 3) {
+                if (year !== '2') {
+                    return value.slice(0, -1)
+                }
+            } else if (value.length === 4) {
+                const secondYearDigit = parseInt(year[1], 10);
+                if (secondYearDigit < 4 || secondYearDigit > 9) {
+                    return month + (year ? '/' + year : '').slice(0, -1)
+                }
+            }
+        }
+
+        if (month && value.length >= 2) {
+            month = parseInt(month, 10)
+            if (month < 1 || month > 12) {
+                return value.slice(0, -1)
+            }
+            month = month.toString().padStart(2, '0')
+        }
+
+        return month + (year ? '/' + year : '')
+    }
 
     const handleCollectionClick = () => {
-        setCartState('collection')
+        setCartState("collection")
     }
 
     const handlePaymentClick = () => {
-        setCartState('payment')
+        setCartState("payment")
     }
 
     const handleBackClick = () => {
-        setCartState('default')
+        setCartState("default")
+    }
+
+    const handleCardAutofill = (e) => {
+        e.preventDefault()
+        setShowCards(!showCards)
+    }
+
+    const handleCardInputChange = (e) => {
+        const { name, value } = e.target
+        dispatch(setCardFormValue({ name, value }))
+    }
+
+    const handleCardNumberChange = (e) => {
+        const { value } = e.target
+        const number = value.replace(/\D/g, '');
+
+        const matchedPattern = cardPatterns.find((pattern) => number.match(pattern.regex) !== null)
+
+        dispatch(setCardType(matchedPattern))
+        dispatch(setCardFormNumber(value))
+    }
+
+    const handleDateChange = (e) => {
+        dispatch(setCardDate(formatAsMMYY(e.target.value)))
+    }
+
+    const handleFocus = (e) => {
+        const { name } = e.target
+        if (name === 'cvc') {
+            dispatch(flipCard(true))
+        } else {
+            if (cardFlipped) dispatch(flipCard(false))
+        }
     }
 
     const products = useSelector(selectProducts)
@@ -27,7 +111,22 @@ function Cart() {
             <div className="cart">
                 {cartState !== "default" && (
                     <div className="checkout">
-                        <h2 className="mastertitle">Checkout</h2>
+                        <h2 className="mastertitle">
+                            <span>Checkout</span>
+                            <button onClick={handleBackClick}>
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        fill="currentColor"
+                                        d="m16 8l1.43 1.393L11.85 15H24v2H11.85l5.58 5.573L16 24l-8-8l8-8z"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="M16 30a14 14 0 1 1 14-14a14.016 14.016 0 0 1-14 14Zm0-26a12 12 0 1 0 12 12A12.014 12.014 0 0 0 16 4Z"
+                                    />
+                                </svg>
+                                <span>Back to Cart</span>
+                            </button>
+                        </h2>
                         <div className="collection">
                             <button className="titleButton" onClick={handleCollectionClick}>
                                 <h3>
@@ -42,7 +141,7 @@ function Cart() {
                                     </span>
                                     <svg viewBox="0 0 32 32">
                                         <path
-                                            fill="#888888"
+                                            fill="currentColor"
                                             d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z"
                                         />
                                     </svg>
@@ -56,7 +155,7 @@ function Cart() {
                                             <span>Autofill</span>
                                             <svg viewBox="0 0 24 24">
                                                 <path
-                                                    fill="#888888"
+                                                    fill="currentColor"
                                                     d="m20 7l.94-2.06L23 4l-2.06-.94L20 1l-.94 2.06L17 4l2.06.94zm-2.29 2.12l-2.83-2.83c-.2-.19-.45-.29-.71-.29c-.26 0-.51.1-.71.29L2.29 17.46a.996.996 0 0 0 0 1.41l2.83 2.83c.2.2.45.3.71.3s.51-.1.71-.29l11.17-11.17c.39-.39.39-1.03 0-1.42zm-3.54-.7l1.41 1.41L14.41 11L13 9.59l1.17-1.17zM5.83 19.59l-1.41-1.41L11.59 11L13 12.41l-7.17 7.18z"
                                                 />
                                             </svg>
@@ -116,7 +215,7 @@ function Cart() {
                                             <span>Autofill</span>
                                             <svg viewBox="0 0 24 24">
                                                 <path
-                                                    fill="#888888"
+                                                    fill="currentColor"
                                                     d="m20 7l.94-2.06L23 4l-2.06-.94L20 1l-.94 2.06L17 4l2.06.94zm-2.29 2.12l-2.83-2.83c-.2-.19-.45-.29-.71-.29c-.26 0-.51.1-.71.29L2.29 17.46a.996.996 0 0 0 0 1.41l2.83 2.83c.2.2.45.3.71.3s.51-.1.71-.29l11.17-11.17c.39-.39.39-1.03 0-1.42zm-3.54-.7l1.41 1.41L14.41 11L13 9.59l1.17-1.17zM5.83 19.59l-1.41-1.41L11.59 11L13 12.41l-7.17 7.18z"
                                                 />
                                             </svg>
@@ -159,7 +258,9 @@ function Cart() {
                                             <label htmlhtmlFor="postal">Postal Code</label>
                                         </div>
                                     </div>
-                                    <button className="nextButton" onClick={handlePaymentClick}>Next</button>
+                                    <button className="nextButton" onClick={handlePaymentClick}>
+                                        Next
+                                    </button>
                                 </form>
                             )}
                         </div>
@@ -167,12 +268,17 @@ function Cart() {
                             <button className="titleButton" onClick={handlePaymentClick}>
                                 <h3>
                                     <span>
-                                        <svg viewBox="0 0 256 256"><path fill="currentColor" d="M224 48H32a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h192a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16Zm0 16v24H32V64Zm0 128H32v-88h192v88Zm-16-24a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Zm-64 0a8 8 0 0 1-8 8h-16a8 8 0 0 1 0-16h16a8 8 0 0 1 8 8Z" /></svg>
+                                        <svg viewBox="0 0 256 256">
+                                            <path
+                                                fill="currentColor"
+                                                d="M224 48H32a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h192a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16Zm0 16v24H32V64Zm0 128H32v-88h192v88Zm-16-24a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Zm-64 0a8 8 0 0 1-8 8h-16a8 8 0 0 1 0-16h16a8 8 0 0 1 8 8Z"
+                                            />
+                                        </svg>
                                         <span>Payment Info</span>
                                     </span>
                                     <svg viewBox="0 0 32 32">
                                         <path
-                                            fill="#888888"
+                                            fill="currentColor"
                                             d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z"
                                         />
                                     </svg>
@@ -187,71 +293,111 @@ function Cart() {
                                     </div>
                                     <h4>
                                         Card Info
-                                        <button className="titleButton">
+                                        <button onClick={handleCardAutofill}>
                                             <span>Autofill</span>
                                             <svg viewBox="0 0 24 24">
                                                 <path
-                                                    fill="#888888"
+                                                    fill="currentColor"
                                                     d="m20 7l.94-2.06L23 4l-2.06-.94L20 1l-.94 2.06L17 4l2.06.94zm-2.29 2.12l-2.83-2.83c-.2-.19-.45-.29-.71-.29c-.26 0-.51.1-.71.29L2.29 17.46a.996.996 0 0 0 0 1.41l2.83 2.83c.2.2.45.3.71.3s.51-.1.71-.29l11.17-11.17c.39-.39.39-1.03 0-1.42zm-3.54-.7l1.41 1.41L14.41 11L13 9.59l1.17-1.17zM5.83 19.59l-1.41-1.41L11.59 11L13 12.41l-7.17 7.18z"
                                                 />
                                             </svg>
                                         </button>
+                                        {showCards &&
+                                            <ul className="autoCards">
+                                                <li>
+                                                    <button>
+                                                        <p>John Doe</p>
+                                                        <p>06/35</p>
+                                                        <p>3056 930902 5904</p>
+                                                        <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z" /><path fill="currentColor" d="M16 10a6 6 0 1 0 6 6a6 6 0 0 0-6-6Z" /></svg>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button disabled>
+                                                        <p>Doe John</p>
+                                                        <p>06/29</p>
+                                                        <p>6759 6498 2643 8453</p>
+                                                        <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z" /><path fill="currentColor" d="M16 10a6 6 0 1 0 6 6a6 6 0 0 0-6-6Z" /></svg>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        }
                                     </h4>
+                                    <div className="cardContainer">
+                                        <Card></Card>
+                                    </div>
                                     <div className="inputContainer">
                                         <input
-                                            id="name"
+                                            name="holder"
                                             maxLength="20"
                                             type="text"
                                             required
                                             placeholder=""
+                                            onFocus={e => handleFocus(e)}
+                                            onChange={(e) => handleCardInputChange(e)}
                                         ></input>
-                                        <label htmlFor="name">Card Holder</label>
+                                        <label htmlFor="holder">Card Holder</label>
                                     </div>
                                     <div className="inputContainer">
                                         <input
-                                            id="cardnumber"
+                                            name="number"
                                             type="text"
-                                            pattern="[0-9]*"
-                                            inputMode="numeric"
+                                            pattern="[0-9 ]*"
+                                            inputMode="decimal"
+                                            maxLength={19}
                                             required
                                             placeholder=""
+                                            onFocus={e => handleFocus(e)}
+                                            value={formatNumberWithSpaces(cardObject.number)}
+                                            onChange={(e) => handleCardNumberChange(e)}
                                         ></input>
-                                        {/* <svg
-                                            id="ccicon"
-                                            className="ccicon"
-                                            viewBox="0 0 750 471"
-                                        ></svg> */}
-                                        <label htmlFor="cardnumber">Card Number</label>
+                                        <CardSvg small={true} cardType={cardType}></CardSvg>
+                                        <label htmlFor="number">Card Number</label>
                                     </div>
                                     <div className="lastInputContainer">
                                         <div>
                                             <input
-                                                id="expirationdate"
+                                                name="date"
                                                 type="text"
-                                                pattern="[0-9]*"
+                                                pattern="[0-9/]*"
                                                 inputMode="numeric"
                                                 required
                                                 placeholder=""
+                                                onFocus={e => handleFocus(e)}
+                                                value={formatAsMMYY(cardObject.date)}
+                                                maxLength={5}
+                                                onChange={(e) => handleDateChange(e)}
                                             ></input>
-                                            <label htmlFor="expirationdate">Expiration (mm/yy)</label>
+                                            <label htmlFor="date">Expiration (mm/yy)</label>
                                         </div>
                                         <div>
                                             <input
-                                                id="securitycode"
+                                                name="cvc"
                                                 type="text"
                                                 pattern="[0-9]*"
                                                 inputMode="numeric"
+                                                maxLength={4}
                                                 required
                                                 placeholder=""
+                                                onFocus={e => handleFocus(e)}
+                                                onChange={(e) => handleCardInputChange(e)}
                                             ></input>
-                                            <label htmlFor="securitycode">Security Code</label>
+                                            <label htmlFor="cvc">Security Code</label>
                                         </div>
                                     </div>
-                                    <div className="paymentMethod">
-                                        <button className="saveCardButton">
-                                            <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm-2 19.59l-5-5L10.59 15L14 18.41L21.41 11l1.596 1.586Z" /><path fill="none" d="m14 21.591l-5-5L10.591 15L14 18.409L21.41 11l1.595 1.585L14 21.591z" /></svg>
-                                            <p>Save Card</p></button>
-                                    </div>
+                                    <button className="saveCardButton">
+                                        <svg viewBox="0 0 32 32">
+                                            <path
+                                                fill="currentColor"
+                                                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm-2 19.59l-5-5L10.59 15L14 18.41L21.41 11l1.596 1.586Z"
+                                            />
+                                            <path
+                                                fill="none"
+                                                d="m14 21.591l-5-5L10.591 15L14 18.409L21.41 11l1.595 1.585L14 21.591z"
+                                            />
+                                        </svg>
+                                        <p>Save Card</p>
+                                    </button>
                                     <button className="nextButton">Confirm Purchase</button>
                                 </form>
                             )}
@@ -277,20 +423,16 @@ function Cart() {
                                         <p>75.99$</p>
                                         <h3>35.99$</h3>
                                     </li>
-                                    {cartState === "default" && (
-                                        <>
-                                            <li>
-                                                <svg viewBox="0 0 32 32">
-                                                    <circle cx="16" cy="16" r="14" fill={"red"} />
-                                                </svg>
-                                                <p>{"red"}</p>
-                                            </li>
-                                            <li>
-                                                <span>Size:</span>
-                                                <p>{"large"}</p>
-                                            </li>
-                                        </>
-                                    )}
+                                    <li>
+                                        <svg viewBox="0 0 32 32">
+                                            <circle cx="16" cy="16" r="14" fill={"red"} />
+                                        </svg>
+                                        <p>{"red"}</p>
+                                    </li>
+                                    <li>
+                                        <span>Size:</span>
+                                        <p>{"large"}</p>
+                                    </li>
                                 </ul>
                                 <ul>
                                     <li>
@@ -451,12 +593,13 @@ function Cart() {
                                 </p>
                             </li>
                             <li>
-                                <button>Checkout</button>
+                                <button onClick={handleCollectionClick}>Checkout</button>
                             </li>
                         </ul>
                     </div>
                 )}
             </div>
+
             <div className="block-header">
                 <div>
                     <h1>Related products</h1>
