@@ -50,7 +50,6 @@
                         flex-grow: 1;
 
                         .title {
-                            width: max-content;
                             max-width: 45ch;
                             text-overflow: ellipsis;
                             overflow: hidden;
@@ -524,6 +523,10 @@
                                 height: 1.5rem;
                                 width: 1.5rem;
                             }
+
+                            .arrow {
+                                transition: .3s transform;
+                            }
                         }
 
                         &:focus-visible {
@@ -563,6 +566,17 @@
 
                         &:disabled {
                             pointer-events: none;
+                            color: var(--accent);
+
+                            h3 {
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
+
+                            .arrow {
+                                transform: rotate(180deg);
+                            }
                         }
                     }
 
@@ -733,8 +747,10 @@
                             display: flex;
                             flex-direction: column;
                             padding: .5rem;
+                            border-radius: .3rem;
 
-                            background-color: var(--tpPri2);
+                            background-color: var(--tpPri);
+                            outline: .2rem solid var(--tertColor2);
                             box-shadow: rgba(0, 0, 0, 0.1) 0 .15rem .2rem 0, rgba(0, 0, 0, 0.06) 0 .15rem .2rem 0;
 
                             z-index: 3;
@@ -747,6 +763,8 @@
                                     display: flex;
                                     gap: 1rem;
                                     padding: .5rem;
+                                    border-radius: .3rem;
+                                    z-index: 30;
 
                                     svg {
                                         margin-left: auto;
@@ -762,7 +780,7 @@
                                     }
 
                                     @media (min-width: 600px) {
-                                        transition: .2s color;
+                                        transition: .2s color, .2s background-color;
 
                                         h3 {
                                             svg {
@@ -771,13 +789,7 @@
                                         }
 
                                         &:hover {
-                                            color: var(--accent);
-
-                                            h3 {
-                                                svg {
-                                                    color: var(--accent);
-                                                }
-                                            }
+                                            background-color: var(--tpPri2);
                                         }
 
                                         &:active {
@@ -793,7 +805,7 @@
 
                                     &:disabled {
                                         pointer-events: none;
-                                        color: var(--accent);
+                                        background-color: var(--tpPri2);
 
                                         svg {
                                             :last-child {
@@ -1131,9 +1143,9 @@
 
             h1 {
                 color: var(--tpSec);
-                font-size: 3rem;
+                font-size: clamp(2rem, 1.5rem + 1.3333vw, 4rem);
                 letter-spacing: -0.2rem;
-                line-height: 2.8rem;
+                line-height: clamp(2rem, 1.75rem + 0.6667vw, 3rem);
             }
         }
     }
@@ -1141,8 +1153,214 @@
     .related-products {
         margin-inline: auto;
         margin-top: 2rem;
+        padding-inline: 1rem;
         display: flex;
         gap: 1rem;
         max-width: var(--maxWidth);
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cartMain {
+        --maxWidth: 100%;
+
+        .block-header {
+            margin-top: 3rem;
+
+            div {
+                padding: 1rem;
+
+                button,
+                a {
+                    svg {
+                        height: 1.3rem;
+                        width: 1.3rem;
+                    }
+
+                    p {
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+
+        .related-products {
+            @media (max-width: 600px) {
+                @supports (scrollbar-width: none) {
+                    scrollbar-width: none;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .cartMain {
+        .cart {
+            width: 100%;
+
+            .cart-items {
+                width: 100%;
+                order: 0;
+
+                .itemUl {
+                    .itemLi {
+                        .itemInfo {
+                            .title {
+                                max-width: unset;
+                                overflow: visible;
+                                overflow: unset;
+                                white-space: unset;
+                            }
+
+                            ul {
+                                flex-wrap: wrap;
+
+                                li {
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                &:nth-child(3) {
+                                    gap: .7rem;
+
+                                    li {
+                                        p {
+                                            display: none;
+                                        }
+
+                                        .totalPrice {
+                                            span {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.concise {
+
+                            img {
+                                height: 9rem;
+                            }
+
+                            .itemInfo {
+                                .title {
+                                    width: unset;
+                                    max-width: unset;
+                                }
+                            }
+
+                            ul {
+                                &:nth-child(3) {
+                                    li {
+                                        p {
+                                            display: flex;
+                                        }
+
+                                        .totalPrice {
+                                            span {
+                                                display: inline-block;
+                                            }
+                                        }
+
+                                        &:last-child {
+                                            margin-left: unset;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .summary {
+                width: 100%;
+                order: 1;
+            }
+
+            .checkout {
+                width: 100%;
+                order: 2;
+
+                .collection,
+                .payment {
+                    button {
+                        padding-inline: .5rem;
+
+                        &.titleButton {
+                            h3 {
+                                font-size: 1.1rem;
+                                letter-spacing: .1rem;
+                                gap: .3rem;
+
+                                svg {
+                                    height: 1.3rem;
+                                    width: 1.3rem;
+                                }
+                            }
+                        }
+                    }
+
+                    form {
+                        padding: .5rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        background-color: var(--tpPri);
+                        border-radius: .3rem;
+
+                        .inputContainer {
+                            gap: 1rem;
+                            flex-wrap: wrap;
+
+                            div {
+                                flex-grow: 1;
+
+                                input {
+                                    flex-grow: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .payment {
+                    form {
+                        h4 {
+                            .autoCards {
+                                li {
+                                    button {
+                                        gap: .5rem;
+                                        padding: .3rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .lastInputContainer {
+                            gap: 1rem;
+                            width: 100%;
+                            flex-wrap: wrap;
+
+                            div {
+                                flex-grow: 1;
+
+                                input {
+                                    flex-grow: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

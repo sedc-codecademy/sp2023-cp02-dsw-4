@@ -174,3 +174,10 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .cardContainer {
+        max-width: 30rem;
+        margin-inline: auto;
+    }
+}

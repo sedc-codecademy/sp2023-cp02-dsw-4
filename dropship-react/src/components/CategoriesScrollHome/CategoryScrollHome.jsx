@@ -89,7 +89,7 @@ const catArray = [
             "8bc28fcd-7893-4bc4-9ceb-40bd2c9d799b",
             "42c3721e-0ec9-43b3-b59f-ad2332a4acab"
         ],
-        "image": "../imgs/cat/mWear/sub/stripe-shirt.jpg",
+        "image": "../imgs/cat/mWear/sub/shirt.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -104,7 +104,7 @@ const catArray = [
             "0b122172-2929-4101-bb61-c8ac2b091ca8",
             "23207d4e-2653-4cee-a62c-34e72111b89e"
         ],
-        "image": "../imgs/cat/mWear/sub/mboots.jpg",
+        "image": "../imgs/cat/mWear/sub/foot.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },
@@ -119,7 +119,7 @@ const catArray = [
             "2160f50a-14e4-45ec-8b40-de083f1a2347",
             "aa64f4ca-cd7e-4c12-92b8-8a552fc55c57"
         ],
-        "image": "../imgs/cat/mWear/sub/mpants.jpg",
+        "image": "../imgs/cat/mWear/sub/pants.jpg",
         "categoryid": "menswear",
         "categorytitle": "Men's Clothing"
     },

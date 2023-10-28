@@ -5,7 +5,7 @@
     padding: 0.5px; //IVAN CHANGE
     border-radius: .5rem;
     overflow: hidden;
-    background-color: var(--secAccent);
+    background-color: var(--tpPri2);
     max-width: 75%;
     margin-top: 60px;   //IVAN CHANGE ***
 
@@ -20,7 +20,6 @@
             top: 0;
             bottom: 0;
             margin-block: auto;
-            right: -3rem;
             border-radius: 50%;
             filter: blur(1rem);
             width: 6.5rem;
@@ -29,13 +28,14 @@
         }
 
         &::before {
-            left: -3rem;
-            background: linear-gradient(to right, var(--secAccent), var(--secAccent), var(--paleSecAccent));
+            left: -4rem;
+            background: linear-gradient(to right,  var(--paleAccentTwo), var(--paleAccentThree));
         }
 
         &::after {
-            background: linear-gradient(to left, var(--secAccent), var(--secAccent), var(--paleSecAccent));
+            background: linear-gradient(to left,  var(--paleAccentTwo), var(--paleAccentThree));
             opacity: 1;
+            right: -4rem;
         }
 
         .scrollLeft,
@@ -54,6 +54,10 @@
             z-index: 11;
             box-shadow: var(--shadowColor) 0.12rem 0.2rem 0.5rem 0.1rem, var(--shadowColorTwo) 0 0.5rem 0.5rem -0.7rem;
             transition: opacity .6s;
+
+            svg{
+                height: 2rem;
+            }
         }
 
         .scrollLeft {

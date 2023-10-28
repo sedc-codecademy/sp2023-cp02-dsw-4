@@ -66,14 +66,15 @@ header {
             top: unset;
             left: unset;
             order: 0;
-            min-width: 10%;
+            // min-width: 10%;
+            
             height: max-content;
 
             svg {
                 border-radius: 1rem;
                 border-top-left-radius: 2rem;
                 border-bottom-left-radius: 2rem;
-                height: 3.5rem;
+                height: 3.65rem;
                 flex-grow: 1;
                 box-shadow: none;
 

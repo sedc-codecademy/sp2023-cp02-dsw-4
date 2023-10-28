@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { cloneElement, useState } from "react"
 import ImageLoader from "../ImageLoader/ImageLoader"
 import { NavLink } from "react-router-dom"
 import ProductCard from "../Product/ProductCard/ProductCard"
@@ -128,7 +128,7 @@ function Cart() {
                             </button>
                         </h2>
                         <div className="collection">
-                            <button className="titleButton" onClick={handleCollectionClick}>
+                            <button className="titleButton" onClick={handleCollectionClick} disabled={cartState === "collection"}>
                                 <h3>
                                     <span>
                                         <svg viewBox="0 0 32 32">
@@ -139,7 +139,7 @@ function Cart() {
                                         </svg>
                                         <span>Collection & Address</span>
                                     </span>
-                                    <svg viewBox="0 0 32 32">
+                                    <svg className="arrow" viewBox="0 0 32 32">
                                         <path
                                             fill="currentColor"
                                             d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z"
@@ -171,7 +171,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="fname">First Name</label>
+                                            <label htmlFor="fname">First Name</label>
                                         </div>
                                         <div className="lname">
                                             <input
@@ -182,7 +182,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="lname">Last Name</label>
+                                            <label htmlFor="lname">Last Name</label>
                                         </div>
                                     </div>
                                     <div className="inputContainer ePhone">
@@ -195,7 +195,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="email">Email</label>
+                                            <label htmlFor="email">Email</label>
                                         </div>
                                         <div className="lname">
                                             <input
@@ -206,7 +206,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="phone">Phone Number</label>
+                                            <label htmlFor="phone">Phone Number</label>
                                         </div>
                                     </div>
                                     <h4>
@@ -231,7 +231,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="street">Street Address</label>
+                                            <label htmlFor="street">Street Address</label>
                                         </div>
                                     </div>
                                     <div className="inputContainer cityAddress">
@@ -244,7 +244,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="city">City</label>
+                                            <label htmlFor="city">City</label>
                                         </div>
                                         <div className="pCode">
                                             <input
@@ -255,7 +255,7 @@ function Cart() {
                                                 required
                                                 placeholder=""
                                             ></input>
-                                            <label htmlhtmlFor="postal">Postal Code</label>
+                                            <label htmlFor="postal">Postal Code</label>
                                         </div>
                                     </div>
                                     <button className="nextButton" onClick={handlePaymentClick}>
