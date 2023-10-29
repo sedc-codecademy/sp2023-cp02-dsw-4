@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./_main.scss";
 import { useParams } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectProducts } from "../../../store/selectors/productSelector";
-import { decrement, increment } from "../../../store/slices/productsSlice";
+// import { decrement, increment } from "../../../store/slices/productsSlice";
 import ProductCard from "../ProductCard/ProductCard";
 
 const getRandomProducts = (products, count) => {
@@ -36,7 +36,7 @@ function ProductDetails() {
   useEffect(() => {
     const randomProducts = getRandomProducts(products, 5);
     setRandomProducts(randomProducts);
-  }, []);
+  }, [products]);
 
   return (
     <div className="product-page">
@@ -44,7 +44,7 @@ function ProductDetails() {
         <div className="product-image">
           <img
             src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
-            alt="Product Image"
+            alt=""
           />
         </div>
         <div className="product-info">

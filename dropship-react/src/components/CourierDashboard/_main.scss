@@ -1,0 +1,81 @@
+.productSwipe{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 79%;
+  margin: 100px auto;
+  margin-bottom: 0px;
+  
+}
+/* _main.scss */
+
+
+.order {
+  display: flex;
+  margin: 20px auto;
+  background-color: #ffffff; /* Background color for the order section */
+  border: 1px solid #ddd; /* Optional border */
+  border-radius: 5px;
+  margin-bottom: 200px;
+  height: 500px;
+  width: 1200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional box shadow */
+}
+
+.firstDiv {
+  flex: 1;
+  padding: 20px;
+}
+
+.order_info {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin: 20px;
+  height: 270px;
+  width: 230px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+
+.secondDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.map {
+  width: 100%; /* Adjust the map width as needed */
+  height: 300px; /* Set your preferred map height */
+  background-color: #f0f0f0; /* Background color for the map section */
+  border: 1px solid #ddd; /* Optional border */
+  border-radius: 5px;
+}
+
+.addressInfo {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  height: 100px;
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightblue;
+}
