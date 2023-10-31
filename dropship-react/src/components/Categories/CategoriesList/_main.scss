@@ -343,12 +343,6 @@
     .categoriesListMain {
         max-width: 90%;
 
-        .popularProducts {
-            #visual {
-                height: 100%;
-            }
-        }
-
         .smallCategoriesList {
             ul {
                 li {
@@ -492,112 +486,6 @@
                                 }
                             }
 
-                            img {
-                                scale: 1;
-                            }
-                        }
-
-                        &:active {
-                            scale: 1;
-                        }
-                    }
-                }
-            }
-        }
-
-        .popularProducts {
-            flex-direction: column;
-            gap: .5rem;
-            border-radius: .7rem;
-            margin: 0;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            #visual {
-                height: 100%;
-            }
-
-            .introDiv {
-                width: max-content;
-                display: flex;
-                flex-direction: column;
-                margin: 1rem;
-                gap: .5rem;
-
-                .popularSvg {
-                    display: none;
-                }
-
-                h1 {
-                    font-size: 2.5rem;
-                    width: fit-content;
-                    gap: .5rem;
-                }
-
-                p {
-                    font-size: 1rem;
-                }
-            }
-
-            ul {
-                display: flex;
-                overflow-x: scroll;
-                width: 100%;
-                gap: .5rem;
-                margin: .5rem;
-                padding: 1rem;
-                border-radius: .5rem;
-
-                li {
-                    a {
-                        padding: .5rem;
-                        gap: .5rem;
-                        border-radius: .5rem;
-                        transition: none;
-
-                        img {
-                            border-radius: .5rem;
-                            height: 15rem;
-                            transition: none;
-                        }
-
-                        .infoDiv {
-                            gap: .5rem;
-
-                            .title {
-                                max-width: 20ch;
-                                transition: none;
-                            }
-
-                            div {
-
-                                &.priceDiv {
-                                    gap: .5rem;
-
-                                    h4 {
-                                        font-size: 1.3rem;
-                                        transition: none;
-                                    }
-                                }
-
-                                &.ratingDiv {
-                                    gap: .3rem;
-
-                                    p {
-                                        transition: none;
-                                    }
-
-                                    .starsDiv {
-                                        svg {
-                                            height: 1.9rem;
-                                            width: 1.9rem;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        &:hover {
                             img {
                                 scale: 1;
                             }

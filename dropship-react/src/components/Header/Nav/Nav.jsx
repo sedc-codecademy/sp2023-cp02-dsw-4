@@ -255,7 +255,7 @@ export default function Nav() {
                 {isLoggedIn && (
                     <CSSTransition
                         in={isSettingsOn}
-                        timeout={300}
+                        timeout={500}
                         classNames="settingsContainer"
                         unmountOnExit
                         nodeRef={csstransitionRef}

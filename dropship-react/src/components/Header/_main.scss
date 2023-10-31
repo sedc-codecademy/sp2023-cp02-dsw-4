@@ -6,10 +6,7 @@ header {
     justify-content: center;
     align-items: center;
 
-    $firstValue: 37svh;
-    $secondValue: 15rem;
-
-    height: max($firstValue, $secondValue);
+    height: clamp(15rem, 5.2941rem + 25.8824vw, 70rem);
 
     .headerBackground {
         position: absolute;
@@ -51,11 +48,11 @@ header {
         margin-bottom: 2rem;
         gap: .7rem;
 
-        @supports (height: fit-content){
+        @supports (height: fit-content) {
             height: fit-content;
         }
-        
-        @supports not (height: fit-content){
+
+        @supports not (height: fit-content) {
             height: auto;
         }
 
@@ -67,7 +64,7 @@ header {
             left: unset;
             order: 0;
             // min-width: 10%;
-            
+
             height: max-content;
 
             svg {
@@ -90,12 +87,16 @@ header {
             width: fit-content;
             order: 1;
 
+            .frequent-searches {
+                display: none;
+            }
+
             .search-bar-container {
                 box-shadow: none;
                 max-width: max-content;
             }
 
-            .suggestions{
+            .suggestions {
                 max-width: max-content;
                 width: max-content;
             }
@@ -163,39 +164,16 @@ header {
         }
 
         .headerBackground {
-            &.leftBkg {
-                display: none;
-            }
-
-            &.rightBkg {
-                display: none;
-            }
-
-            &.mobileBkg {
-                display: block;
-            }
+            width: 100%;
         }
     }
 }
 
 @media (max-width: 800px) {
     header {
+        padding-inline: 1rem;
         align-items: flex-start;
-
-
-        .headerBackground {
-            &.leftBkg {
-                display: none;
-            }
-
-            &.rightBkg {
-                display: none;
-            }
-
-            &.mobileBkg {
-                display: block;
-            }
-        }
+        height: fit-content;
 
         .logo {
             display: none;

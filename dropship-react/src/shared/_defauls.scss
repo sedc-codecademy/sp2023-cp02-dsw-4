@@ -58,6 +58,28 @@ body {
         min-height: 100vh;
         min-height: 100svh;
     }
+
+    .scrollableProductsList {
+        &.discountedProducts {
+            background-image: url("../components/Product/ScrollableProductsList/discount.svg");
+        }
+    
+        &.popularProducts {
+            background-image: url("../components/Product/ScrollableProductsList/popular.svg");
+        }
+    }
+
+    &.dark-mode {
+        .scrollableProductsList {
+            &.discountedProducts {
+                background-image: url("../components/Product/ScrollableProductsList/discount-dark.svg");
+            }
+        
+            &.popularProducts {
+                background-image: url("../components/Product/ScrollableProductsList/popular-dark.svg");
+            }
+        }
+    }
 }
 
 @media (min-width:3000px) {
@@ -67,9 +89,10 @@ body {
 
         #root {
             header {
-                .headerBackground{
+                .headerBackground {
                     top: 0;
                 }
+
                 .logo {
                     position: absolute;
                 }

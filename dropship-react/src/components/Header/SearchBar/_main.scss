@@ -432,20 +432,10 @@ header {
     }
 }
 
-// @media (max-width: 1440px) {
-//     header {
-//         .search-form {
-//             .search-bar-container {
-//                 // max-width: 53%;
-//             }
-//         }
-//     }
-// }
-
 @media (max-width: 1000px) {
     header {
         .search-form {
-            margin: .5rem;
+            margin: 1rem;
 
             .search-bar-container {
                 border-radius: .5rem;
@@ -485,7 +475,13 @@ header {
             width: 100%;
 
             .frequent-searches {
-                display: none;
+                max-width: 100%;
+                overflow-x: auto;
+
+                h3,
+                &::after {
+                    display: none;
+                }
             }
 
             .search-bar-container {

@@ -12,15 +12,15 @@
     --tpSec2: hsl(0, 0%, 45%);
     --tpSec3: hsl(0, 0%, 63%);
     
-    --accent: rgb(255, 52, 86);
-    --darkAccent: rgb(158, 0, 26);
-    --secAccent: rgb(255, 115, 0);
+    --accent: #ff3456;
+    --darkAccent: #9e001a;
+    --secAccent: #ff7300;
     --paleSecAccent: rgba(255, 115, 0, 0.646);
-    --tertAccent: rgb(255, 166, 0);
+    --tertAccent: #ffa600;
     --tertColor: rgb(187, 187, 187);
     --tertColor2: rgb(207, 207, 207);
-    --paleAccent: rgba(255, 52, 86, 0.199);
-    --paleAccentTwo: rgba(255, 52, 86, 0.67);
+    --paleAccent: #ff345633;
+    --paleAccentTwo: #ff3456ab;
     --paleAccentThree: rgba(255, 52, 86, 0.521);
     --someColor: #ffccbf;
     
@@ -42,7 +42,7 @@
 
 .dark-mode {
     --priColor: rgb(0, 0, 0);
-    --tpPri: rgba(20, 20, 20);
+    --tpPri: #141414;
     --tpPri2: rgb(35, 35, 35);
     --tpPri3: rgb(45, 45, 45);
     --tpPri4: rgb(40, 40, 40);
@@ -59,15 +59,15 @@
 
     --tertColor2: rgb(83, 83, 83);
 
-    --accent: rgb(0, 255, 170);
-    --darkAccent: rgb(0, 124, 83);
-    --secAccent: rgb(0, 185, 83);
-    --tertAccent: rgb(109, 255, 65);
+    --accent: #00ffaa;
+    --darkAccent: #007c53;
+    --secAccent: #00b953;
+    --tertAccent: #6dff41;
 
     --someColor: rgb(0, 141, 94);
     --paleSecAccent: rgba(0, 185, 83, 0.801);
     --paleAccent: rgba(0, 255, 170, 0.092);
-    --paleAccentTwo: rgba(0, 255, 170, 0.67);
+    --paleAccentTwo: #00ffaaab;
     --paleAccentThree: rgba(0, 255, 170, 0.507);
     --backdropBackground: rgb(1, 21, 50);
 

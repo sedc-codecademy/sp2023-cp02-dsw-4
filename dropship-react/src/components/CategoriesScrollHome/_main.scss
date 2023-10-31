@@ -2,12 +2,9 @@
 .catDiv {
     position: relative;
     display: flex;
-    padding: 0.5px; //IVAN CHANGE
     border-radius: .5rem;
     overflow: hidden;
     background-color: var(--tpPri2);
-    max-width: 75%;
-    margin-top: 60px;   //IVAN CHANGE ***
 
     @media (min-width: 800px) {
 
@@ -15,7 +12,6 @@
         &::after {
             content: '';
             position: absolute;
-            pointer-events: none;
             height: 130%;
             top: 0;
             bottom: 0;
@@ -29,11 +25,11 @@
 
         &::before {
             left: -4rem;
-            background: linear-gradient(to right,  var(--paleAccentTwo), var(--paleAccentThree));
+            background: linear-gradient(to right, var(--tpPri), var(--tpPri));
         }
 
         &::after {
-            background: linear-gradient(to left,  var(--paleAccentTwo), var(--paleAccentThree));
+            background: linear-gradient(to left, var(--tpPri), var(--tpPri));
             opacity: 1;
             right: -4rem;
         }
@@ -53,9 +49,32 @@
             padding: .3rem;
             z-index: 11;
             box-shadow: var(--shadowColor) 0.12rem 0.2rem 0.5rem 0.1rem, var(--shadowColorTwo) 0 0.5rem 0.5rem -0.7rem;
-            transition: opacity .6s;
+            transition: opacity .6s, color .3s, background-color .3s;
 
-            svg{
+            &:focus-visible {
+                opacity: 1;
+                color: var(--secAccent);
+
+                svg {
+                    outline: .15rem solid #fff;
+                }
+            }
+
+            &:hover {
+                color: var(--accent);
+                background-color: var(--tpPri);
+            }
+
+            &:active {
+                color: var(--secColor);
+                background-color: var(--tpPri3);
+            }
+
+            &:disabled {
+                pointer-events: none;
+            }
+
+            svg {
                 height: 2rem;
             }
         }
@@ -72,6 +91,7 @@
 
             &::before {
                 opacity: 0;
+                pointer-events: none;
             }
 
             .scrollLeft {
@@ -83,6 +103,7 @@
 
             &::after {
                 opacity: 0;
+                pointer-events: none;
             }
 
             .scrollright {
@@ -224,9 +245,73 @@
     }
 }
 
+@media (max-width: 800px) {
+    .catDiv {
+        ul {
+            overflow: auto;
+            gap: .5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
 
-.catDivWrapper{
+            li {
+                flex-grow: 1;
 
-    display: flex;
-    justify-content: center;
+                a {
+                    padding: .5rem;
+                    border-radius: .5rem;
+                    gap: .5rem;
+                    height: 100%;
+                    transition: none;
+                    width: max-content;
+                    div {
+                        gap: 0;
+                        padding: .1rem;
+                        width: 100%;
+                        width: max-content;
+                        h4 {
+                            font-size: .8rem;
+                            font-weight: 500;
+                            width: max-content;
+
+                            &::after {
+                                display: none;
+                            }
+
+                        }
+
+                        p {
+                            font-size: .7rem;
+                            font-weight: 400;
+                        }
+                    }
+
+                    img {
+                        border-radius: .5rem;
+                        height: unset;
+                        width: 100%;
+                        transition: none;
+                        height: 9rem;
+                    }
+
+                    &:hover {
+                        div {
+                            h4 {
+                                &::after {
+                                    transform: none;
+                                }
+                            }
+                        }
+
+                        img {
+                            scale: 1;
+                        }
+                    }
+
+                    &:active {
+                        scale: 1;
+                    }
+                }
+            }
+        }
+    }
 }

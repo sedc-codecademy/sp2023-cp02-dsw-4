@@ -7,16 +7,22 @@
     gap: 1rem;
     border-radius: .5rem;
     overflow: hidden;
-    margin-top: 1rem;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
 
+    &.discountedProducts {
+        flex-direction: row-reverse;
+    }
 
     #visual {
         position: absolute;
         z-index: -2;
-        top: 0;
         opacity: .75;
     }
 
@@ -24,12 +30,10 @@
         width: max-content;
         display: flex;
         flex-direction: column;
-        margin: 1rem;
-        gap: 1rem;
+        gap: .5rem;
 
         .popularSvg {
             border-radius: .5rem;
-            height: 100%;
         }
 
         h1 {
@@ -60,10 +64,10 @@
     .ulDiv {
         position: relative;
         display: flex;
-        padding: 1rem;
+        padding: .7rem;
         border-radius: .5rem;
         overflow: hidden;
-        background-color: var(--secAccent);
+        background-color: var(--tpPri2);
 
         @media (min-width: 800px) {
 
@@ -80,17 +84,17 @@
                 border-radius: 50%;
                 filter: blur(1rem);
                 width: 6.5rem;
-                z-index: 49;
+                z-index: 14;
                 transition: opacity .6s;
             }
 
             &::before {
                 left: -3rem;
-                background: linear-gradient(to right, var(--secAccent), var(--secAccent), var(--paleSecAccent));
+                background: linear-gradient(to right, var(--tpPri), var(--tpPri), var(--tpPri2));
             }
 
             &::after {
-                background: linear-gradient(to left, var(--secAccent), var(--secAccent), var(--paleSecAccent));
+                background: linear-gradient(to left, var(--tpPri), var(--tpPri), var(--tpPri2));
                 opacity: 1;
             }
 
@@ -102,20 +106,46 @@
                 margin-block: auto;
                 background-color: var(--priColor);
                 color: var(--tpSec2);
-                @supports (height: fit-content){
+
+                @supports (height: fit-content) {
                     height: fit-content;
                 }
-                
-                @supports not (height: fit-content){
+
+                @supports not (height: fit-content) {
                     height: auto;
                 }
+
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 padding: .3rem;
-                z-index: 50;
-                box-shadow: var(--shadowColor) 0.12rem 0.2rem 0.5rem 0.1rem, var(--shadowColorTwo) 0 0.5rem 0.5rem -0.7rem;
+                z-index: 15;
+                box-shadow: var(--shadowColor) 0.12rem 0.2rem 0.5rem 0.1rem,
+                var(--shadowColorTwo) 0 0.5rem 0.5rem -0.7rem;
                 transition: opacity .6s;
+
+                &:focus-visible {
+                    opacity: 1;
+                    color: var(--secAccent);
+
+                    svg {
+                        outline: .15rem solid #fff;
+                    }
+                }
+
+                &:hover {
+                    color: var(--accent);
+                    background-color: var(--tpPri);
+                }
+
+                &:active {
+                    color: var(--secColor);
+                    background-color: var(--tpPri3);
+                }
+
+                &:disabled {
+                    pointer-events: none;
+                }
             }
 
             .scrollLeft {
@@ -130,6 +160,7 @@
 
                 &::before {
                     opacity: 0;
+                    // pointer-events: none;
                 }
 
                 .scrollLeft {
@@ -141,6 +172,7 @@
 
                 &::after {
                     opacity: 0;
+                    // pointer-events: none;
                 }
 
                 .scrollright {
@@ -166,8 +198,6 @@
 
             .product-card {
                 a {
-                    
-
                     img {
                         width: unset;
                         height: clamp(10rem, 4.5455rem + 10.9091vw, 25rem);
@@ -178,35 +208,27 @@
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width:850px) {
     .scrollableProductsList {
-        #visual {
-            height: 100%;
-        }
-    }
-}
-
-@media (max-width:800px) {
-    .scrollableProductsList {
-        flex-direction: column;
-        gap: .5rem;
+        gap: .7rem;
         border-radius: .7rem;
-        margin: 0;
         justify-content: flex-start;
         align-items: flex-start;
 
-        #visual {
-            height: 100%;
+
+        &.discountedProducts,
+        &.popularProducts {
+            flex-direction: column;
         }
 
         .introDiv {
-            width: max-content;
+            width: unset;
             display: flex;
             flex-direction: column;
-            margin: 1rem;
-            gap: .5rem;
+            gap: .3rem;
 
-            .popularSvg {
+            .popularSvg,
+            .discountSvg {
                 display: none;
             }
 
@@ -222,16 +244,15 @@
         }
 
         .ulDiv {
-            width: 100%;
-            margin: .5rem;
             border-radius: .5rem;
             padding: .1rem;
+            width: 100%;
 
-            & ul {
+            ul {
                 padding: .3rem;
                 gap: .5rem;
 
-                li {
+                .product-card { 
                     a {
                         padding: .5rem;
                         gap: .5rem;

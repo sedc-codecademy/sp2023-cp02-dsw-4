@@ -191,6 +191,10 @@ header {
             display: flex;
             flex-direction: column-reverse;
 
+            .navigationLinks {
+                z-index: 6;
+            }
+
             .navigationLinks,
             .accountSettings,
             .themeSettings {
@@ -200,8 +204,6 @@ header {
                 border-top: .15rem solid var(--tertColor2);
                 background-color: var(--tpPri3);
                 padding: .7rem;
-
-                z-index: 3;
 
                 li {
 
@@ -837,6 +839,10 @@ header {
                     z-index: 5;
                 }
 
+                .shippingDiv {
+                    z-index: 4;
+                }
+
                 .accountSettings {
                     z-index: 3;
                 }
@@ -870,15 +876,15 @@ header {
                 .accountSettings,
                 .shippingDiv {
                     transform: translate(0);
-                    transition: transform .3s ease;
+                    transition: transform .5s;
                 }
 
                 .shippingDiv {
-                    transition-delay: .15s;
+                    transition-delay: .10s;
                 }
 
                 .accountSettings {
-                    transition-delay: .30s;
+                    transition-delay: .15s;
                 }
             }
 
@@ -917,7 +923,7 @@ header {
                 .accountSettings,
                 .shippingDiv {
                     transform: translateY(130vh);
-                    transition: transform .3s ease;
+                    transition: transform .5s;
                 }
 
                 .accountSettings {
@@ -925,14 +931,14 @@ header {
                 }
 
                 .shippingDiv {
-                    transition-delay: .15s;
+                    transition-delay: .10s;
                 }
 
                 .themeSettings {
-                    transition-delay: .30s;
+                    transition-delay: .15s;
                 }
 
-                
+
             }
 
             &.normalSettings {

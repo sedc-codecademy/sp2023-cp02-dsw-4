@@ -1,4 +1,4 @@
-import React, { cloneElement, useState } from "react"
+import React, { useState } from "react"
 import ImageLoader from "../ImageLoader/ImageLoader"
 import { NavLink } from "react-router-dom"
 import ProductCard from "../Product/ProductCard/ProductCard"
@@ -33,8 +33,9 @@ function Cart() {
         if (!matches) {
             return value.slice(0, -1)
         }
-
-        let [_fullMatch, month, year] = matches
+        
+        // eslint-disable-next-line
+        let [_, month, year] = matches
 
         if (year) {
             if (value.length === 3) {

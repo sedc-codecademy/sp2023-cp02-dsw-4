@@ -132,7 +132,7 @@ function ProductDetails() {
                   </ul>
                 </div>}
 
-                <div className="sizes">
+                {/* <div className="sizes">
                   <h3>Sizes</h3>
                   <ul>
                     <li>
@@ -151,7 +151,7 @@ function ProductDetails() {
                       </button>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
               <div className="paymentDiv">
                 <div className="count">

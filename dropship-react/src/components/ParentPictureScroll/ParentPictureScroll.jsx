@@ -1,71 +1,66 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
-import { leftArrow, rightArrow } from "./arrows";
+import { leftArrow, rightArrow } from "./arrows"
 
 const images = [
-  "/imgs/catScrollPictures/parent1.jpg.jpg",
-  "/imgs/catScrollPictures/parent2.jpg.jpg",
-  "/imgs/catScrollPictures/parent3.jpg",
-  "/imgs/catScrollPictures/parent_4.jpg",
-  
-];
+  { url: "/imgs/catScrollPictures/parent1.jpg.jpg", alt: "Car One" },
+  { url: "/imgs/catScrollPictures/parent2.jpg.jpg", alt: "Car Two" },
+  { url: "/imgs/catScrollPictures/parent3.jpg", alt: "Car Three" },
+  { url: "/imgs/catScrollPictures/parent_4.jpg", alt: "Car Four" },
+]
 
-function ParentPictureScroll() {
-
-  const [currentIndex, setCurrentIndex] = useState(3);
+function ImageSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    const timer = setTimeout(autoRotateImages, 4000);
+    const timer = setTimeout(autoRotateImages, 3500)
 
     return () => {
-      clearTimeout(timer); 
-    };
-  }, [currentIndex]); 
+      clearTimeout(timer)
+    }
+  }, [currentIndex])
 
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  function nextImage() {
+    setCurrentIndex((index) => {
+      if (index === images.length - 1) return 0
+      return index + 1
+    })
+  }
 
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  function prevImage() {
+    setCurrentIndex((index) => {
+      if (index === 0) return images.length - 1
+      return index - 1
+    })
+  }
+
   const autoRotateImages = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+    )
+  }
 
   return (
     <div className="carousel-container">
-      <button onClick={prevImage} className="carousel-button">{leftArrow}</button>
-      
-      
-      <img
-        src={images[currentIndex]}
-        alt={` ${currentIndex + 1}`} // samo teks dava ne moze slika
-        className="carousel-image"
-      />
-      
-
-      <button onClick={nextImage} className="carousel-button" id="rigtArrow">{rightArrow} </button>
-
-      <div className="dot-container">
-      <ol className="dots">
-          {images.map((_image, index) => (
-            <li
-              key={index}
-              className={`${index === currentIndex && 'active'}`}
-              onClick={() => setCurrentIndex(index)}
-            ></li>
-          ))}
-        </ol>
+      <div className="imageContainer">
+        {images.map(({ url, alt }) => (
+          <img key={url} src={url} alt={alt} style={{ '--translateVar': `${-100 * currentIndex}%` }} />
+        ))}
+      </div>
+      <button className="carousel-button left" onClick={prevImage}>{leftArrow}</button>
+      <button className="carousel-button right" onClick={nextImage}>{rightArrow}</button>
+      <div className="dots-container">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className="dots"
+            disabled={index === currentIndex}
+            onClick={() => setCurrentIndex(index)}
+          ></button>
+        ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default ParentPictureScroll;
+export default ImageSlider
