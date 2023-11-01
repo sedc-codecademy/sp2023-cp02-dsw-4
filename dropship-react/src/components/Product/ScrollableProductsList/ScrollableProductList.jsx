@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { useSelector } from "react-redux"
 
 import ProductCard from '../ProductCard/ProductCard'
-import { DiscountSvg, PopularBackgroundSvg, PopularSvg, DiscountBackgorundSvg } from "./svgs"
+import { DiscountSvg, PopularSvg } from "./svgs"
 
 export default function ProductList({ products, origin }) {
     const isMobile = useSelector((state) => state.mobile.isMobile)

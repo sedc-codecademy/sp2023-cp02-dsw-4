@@ -16,7 +16,7 @@ function NewArrivals() {
                 clearTimeout(timer)
             }
         }
-    }, [currentIndex])
+    }, [currentIndex, isMobile])
 
     function nextImage() {
         setCurrentIndex((index) => {
