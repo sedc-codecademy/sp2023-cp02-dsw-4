@@ -10,7 +10,7 @@ import Card from "./Card/Card"
 import { CardSvg } from "./Card/CardSvgs"
 
 function Cart() {
-    const [cartState, setCartState] = useState("payment")
+    const [cartState, setCartState] = useState("default")
     const [showCards, setShowCards] = useState(false)
 
     const cardType = useSelector((state) => state.card.cardType)

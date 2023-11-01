@@ -7,7 +7,7 @@
   background-color: var(--tpPri3);
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0.1rem 0.3rem 0,
-  rgba(0, 0, 0, 0.06) 0 0.1rem 0.2rem 0;
+    rgba(0, 0, 0, 0.06) 0 0.1rem 0.2rem 0;
 
   .imageContainer {
     width: 100%;
@@ -23,7 +23,7 @@
       display: block;
       flex-shrink: 0;
       flex-grow: 0;
-      transition: translate .8s ease-in-out;
+      transition: translate .5s ease-in-out;
 
       --translateVar: 0%;
       translate: var(--translateVar);
@@ -43,6 +43,14 @@
     .carousel-button,
     .dots-container {
       opacity: 1;
+
+      .dots{
+        transform: translateY(0);
+      }
+
+      &.left, &.right {
+        transform: translateX(0);
+      }
     }
   }
 
@@ -51,24 +59,42 @@
     top: 0;
     bottom: 0;
     margin-block: auto;
-    color: #fff;
-    cursor: pointer;
-    padding: 1.5rem;
-    z-index: 5;
     opacity: 0;
-    transition: opacity 400ms, color .3s;
+
+    background-color: var(--priColor);
+    color: var(--tpSec2);
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    z-index: 15;
+    box-shadow: var(--shadowColor) 0.12rem 0.2rem 0.5rem 0.1rem,
+      var(--shadowColorTwo) 0 0.5rem 0.5rem -0.7rem;
+    transition: opacity .6s, background-color .3s, color .3s, transform .3s;
+
+    @supports (height: fit-content) {
+      height: fit-content;
+    }
+
+    @supports not (height: fit-content) {
+      height: auto;
+    }
 
     &.left {
-      left: 0;
+      left: 1.7rem;
+      transform: translateX(-200%);
     }
 
     &.right {
-      right: 0;
+      right: 1.7rem;
+
+      transform: translateX(200%);
     }
 
     svg {
-      height: 2.5rem;
-      width: 2.5rem;
+      height: 2.3rem;
+      width: 2.3rem;
     }
 
     &:focus-visible {
@@ -76,16 +102,22 @@
       color: var(--secAccent);
 
       svg {
-        outline: .15rem solid #fff;
+        outline: .15rem solid var(--accent);
       }
     }
 
     &:hover {
-      color: #ffffffb7;
+      color: var(--accent);
+      background-color: var(--tpPri);
     }
 
     &:active {
-      color: var(--secAccent);
+      color: var(--secColor);
+      background-color: var(--tpPri3);
+    }
+
+    &:disabled {
+      pointer-events: none;
     }
   }
 
@@ -99,15 +131,17 @@
     display: flex;
     gap: .5rem;
     opacity: 0;
-    transition: opacity 400ms;
+    transition: opacity 800ms;
 
     .dots {
       border: .15rem solid transparent;
       background-color: var(--tpPri);
       cursor: pointer;
       opacity: 0.8;
-      transition: transform .3s, background-color .3s;
+      transition: transform .3s, background-color .3s, border-color .3s;
       border-radius: .3rem;
+
+      transform: translateY(400%);
 
       &::before {
         content: '';
@@ -123,6 +157,7 @@
       &:disabled {
         border-color: var(--tpPri);
         background-color: var(--secAccent);
+        transition-delay: .2s;
       }
     }
   }

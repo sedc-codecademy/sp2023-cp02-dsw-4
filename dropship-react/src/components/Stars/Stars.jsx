@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-function Stars({ initialRating, id }) {
+function Stars({ initialRating, id, shouldHover }) {
     const rating = initialRating || 0
     const [hoverState, setHoverState] = useState(Array(5).fill(false))
 
@@ -24,6 +24,7 @@ function Stars({ initialRating, id }) {
                 isHovered={hoverState[starIndex - 1]}
                 handleMouseOver={() => handleMouseOver(starIndex - 1)}
                 handleMouseOut={handleMouseOut}
+                shouldHover={shouldHover}
             />
         )
     })
@@ -35,13 +36,13 @@ function Stars({ initialRating, id }) {
     )
 }
 
-function Star({ percentage, gradientId, isHovered, handleMouseOver, handleMouseOut }) {
+function Star({ shouldHover, percentage, gradientId, isHovered, handleMouseOver, handleMouseOut }) {
     const starRef = useRef(null)
 
     useEffect(() => {
-        const star = starRef.current
-        const gradient = star.querySelector('linearGradient')
-        gradient.children[0].setAttribute('offset', `${percentage}%`)
+            const star = starRef.current
+            const gradient = star.querySelector('linearGradient')
+            gradient.children[0].setAttribute('offset', `${percentage}%`)
     }, [percentage])
 
     return (
@@ -49,9 +50,9 @@ function Star({ percentage, gradientId, isHovered, handleMouseOver, handleMouseO
             viewBox="0 0 24 24"
             fill={`url(#${gradientId})`}
             ref={starRef}
-            className={isHovered ? 'hover' : ''}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
+            className={shouldHover ? (isHovered ? 'hover' : '') : 'unHover'}
+            onMouseOver={shouldHover ? handleMouseOver : undefined}
+            onMouseOut={shouldHover ? handleMouseOut : undefined}
         >
             <path
                 d="M12 2L15.09 8.34L22 9.27L17 14.24L18.18 21L12 17.77L5.82 21L7 14.24L2 9.27L8.91 8.34L12 2Z"

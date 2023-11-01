@@ -87,7 +87,6 @@ export default function Header() {
             </Link>
             <Nav></Nav>
             <SearchBar></SearchBar>
-
             {isSmallHeader && (
                 <svg
                     className="headerBackground"

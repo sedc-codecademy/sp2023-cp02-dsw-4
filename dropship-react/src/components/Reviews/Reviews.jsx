@@ -33,7 +33,7 @@ function Reviews(props) {
             <div className="review-body">
                 <h3>
                     <span>{props.review.title}</span>
-                    <Stars initialRating={props.review.rate} id={props.review.id}></Stars>
+                    <Stars initialRating={props.review.rate} id={props.review.id} shouldHover={false}></Stars>
                 </h3>
                 <p className="review-text">{props.review.body}</p>
             </div>

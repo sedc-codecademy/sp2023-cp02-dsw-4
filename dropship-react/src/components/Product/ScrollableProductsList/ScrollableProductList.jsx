@@ -51,7 +51,6 @@ export default function ProductList({ products, origin }) {
             {origin === 'popular' ?
                 (
                     <>
-                        <PopularBackgroundSvg></PopularBackgroundSvg>
                         <div className="introDiv">
                             <h1>Popular Products</h1>
                             <p>Pick from the most popular products available</p>
@@ -64,7 +63,6 @@ export default function ProductList({ products, origin }) {
                 :
                 (
                     <>
-                        <DiscountBackgorundSvg></DiscountBackgorundSvg>
                         <div className="introDiv">
                             <h1>Products on Sale</h1>
                             <p>Grab them while they're still on sale!</p>

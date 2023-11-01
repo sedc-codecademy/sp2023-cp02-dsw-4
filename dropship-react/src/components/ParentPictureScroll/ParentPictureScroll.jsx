@@ -13,7 +13,7 @@ function ImageSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    const timer = setTimeout(autoRotateImages, 3500)
+    const timer = setTimeout(autoRotateImages, 5500)
 
     return () => {
       clearTimeout(timer)

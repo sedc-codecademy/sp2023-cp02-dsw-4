@@ -61,22 +61,30 @@ body {
 
     .scrollableProductsList {
         &.discountedProducts {
-            background-image: url("../components/Product/ScrollableProductsList/discount.svg");
+            background-image: url("../components/Product/ScrollableProductsList/discount-min.png");
         }
     
         &.popularProducts {
-            background-image: url("../components/Product/ScrollableProductsList/popular.svg");
+            background-image: url("../components/Product/ScrollableProductsList/popular-min.png");
         }
     }
 
+    .newArrivals{
+        background-image: url("../components/Product/NewArrivals/sun-background-min.svg");
+    }
+
     &.dark-mode {
+        .newArrivals{
+            background-image: url("../components/Product/NewArrivals/sun-background-dark-min.svg");
+        }
+    
         .scrollableProductsList {
             &.discountedProducts {
-                background-image: url("../components/Product/ScrollableProductsList/discount-dark.svg");
+                background-image: url("../components/Product/ScrollableProductsList/discount-dark-min.png");
             }
         
             &.popularProducts {
-                background-image: url("../components/Product/ScrollableProductsList/popular-dark.svg");
+                background-image: url("../components/Product/ScrollableProductsList/popular-dark-min.png");
             }
         }
     }

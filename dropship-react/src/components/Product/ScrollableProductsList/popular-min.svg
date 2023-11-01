@@ -1,0 +1,32 @@
+<svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+    <g stroke-linejoin="bevel">
+        <path d="m389 183 30-59L280 0z" fill="#ff3456" stroke="#ff3456" />
+        <path d="M419 124 403 0H280z" fill="#ff7300" stroke="#ff7300" />
+        <path d="M280 0 166 203l223-20z" fill="#ffa600" stroke="#ffa600" />
+        <path d="M280 0H134l32 203z" fill="#ff7300" stroke="#ff7300" />
+        <path d="m166 203 34 126 189-146z" fill="#ff3456" stroke="#ff3456" />
+        <path d="M419 124 562 0H403zM652 213 562 0 419 124z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="m200 329 162 52 27-198z" fill="#ff7300" stroke="#ff7300" />
+        <path d="m389 183 190 109-160-168z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="M134 0 0 187l166 16z" fill="#ffa600" stroke="#ffa600" />
+        <path d="M166 203 77 373l123-44z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="m362 381 217-89-190-109z" fill="#ff7300" stroke="#ff7300" />
+        <path d="M134 0H0v187z" fill="#ff3456" stroke="#ff3456" />
+        <path d="m200 329 88 121 74-69z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="m362 381 107 69 110-158z" fill="#ffa600" stroke="#ffa600" />
+        <path d="M209 450h79l-88-121z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="m0 187 77 186 89-170zM579 292l73-79-233-89z" fill="#ffa600" stroke="#ffa600" />
+        <path d="m77 373 132 77-9-121zM288 450h181l-107-69zM579 292l165-43-92-36z" fill="#ff7300" stroke="#ff7300" />
+        <path d="M0 187v207l77-21z" fill="#ff3456" stroke="#ff3456" />
+        <path d="M77 373 0 450h209z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="m671 450 73-201-165 43zM652 213 833 0H562z" fill="#ffa600" stroke="#ffa600" />
+        <path d="M0 394v56l77-77zM469 450h202l-92-158zM900 450l-71-221-85 20zM744 249 833 0 652 213z" fill="#ff3456"
+            stroke="#ff3456" />
+        <path d="m829 229 4-229-89 249z" fill="#ffa600" stroke="#ffa600" />
+        <path d="M671 450h55l18-201z" fill="#ff3456ab" stroke="#ff3456ab" />
+        <path d="M900 201v-71l-71 99z" fill="#ff3456" stroke="#ff3456" />
+        <path d="m829 229 71-99L833 0zM900 450V201l-71 28z" fill="#ff3456" stroke="#ff3456" />
+        <path d="M900 130V0h-67z" fill="#ff3456" stroke="#ff3456" />
+        <path d="M726 450h174L744 249z" fill="#ff7300" stroke="#ff7300" />
+    </g>
+</svg>

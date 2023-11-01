@@ -18,7 +18,7 @@ export default function ProductCard(props) {
         <div className='infoDiv'>
           <p className='title'>{props.product.title}</p>
           <div className='ratingDiv'>
-            <Stars initialRating={props.product.rating.rate} id={props.product.id}></Stars>
+            <Stars initialRating={props.product.rating.rate} id={props.product.id} shouldHover={false}></Stars>
             <p>({props.product.rating.count})</p>
           </div>
           <div className='priceDiv'>

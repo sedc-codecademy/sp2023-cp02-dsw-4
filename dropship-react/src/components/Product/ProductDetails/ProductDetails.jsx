@@ -93,7 +93,7 @@ function ProductDetails() {
               <div className="product-header">
                 <h2 className="product-title">{product.title}</h2>
                 <div className="product-rating">
-                  <Stars initialRating={product.rating.rate} id={productId}></Stars>
+                  <Stars initialRating={product.rating.rate} id={productId} shouldHover={true}></Stars>
                   <p>(28)</p>
                 </div>
               </div>
@@ -131,27 +131,6 @@ function ProductDetails() {
                     ))}
                   </ul>
                 </div>}
-
-                {/* <div className="sizes">
-                  <h3>Sizes</h3>
-                  <ul>
-                    <li>
-                      <button className="active">
-                        <p>Large</p>
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <p>medium</p>
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <p>Small</p>
-                      </button>
-                    </li>
-                  </ul>
-                </div> */}
               </div>
               <div className="paymentDiv">
                 <div className="count">
