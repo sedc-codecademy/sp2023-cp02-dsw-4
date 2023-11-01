@@ -1,9 +1,16 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
 
 import SearchItem from "./SearchItem"
 import ViewAll from "./ViewAll"
 
 import { CSSTransition } from "react-transition-group"
+
+import { CatDP, SubCatDP, ViewAllSub, catArray, subCatArray } from "../CatDropDown/CatDP"
+import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice"
+import { setShouldFocus } from '../../../store/slices/search/search'
+
+import { NavLink } from "react-router-dom"
 
 const someArray = [
     {
@@ -11,63 +18,63 @@ const someArray = [
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "1231fse23",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "123ity123",
         title: "Firstdadwadwadwadwadwad Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "1230ba2eb123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12312bwda3",
         title: "First Titlte",
         category: "Sportffs",
         subcategory: "Outdotivity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12312h9i3",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12AWRJ3123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "123sdti,123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
     {
         id: "12a2habr3123",
         title: "First Titlte",
         category: "Sports",
         subcategory: "Outdoor Activity",
-        image: "imgs/cat/fWear/womensWear.png",
+        image: "/imgs/cat/fWear/womensWear.jpg",
     },
 ]
 
@@ -76,7 +83,21 @@ function SearchBar() {
     const [firstSixItems, setfirstSixItems] = useState([])
     const [showSearchSuggestions, setShowSearchSuggestions] = useState(false)
 
+    const dispatch = useDispatch()
     const csstransitionRef = useRef()
+    const catref = useRef()
+    const searchref = useRef()
+
+    const isMobile = useSelector((state) => state.mobile.isMobile)
+    const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
+    const shouldFocus = useSelector((state) => state.search.shouldFocus)
+
+    useEffect(() => {
+        if (shouldFocus && searchref.current) {
+            searchref.current.focus()
+            dispatch(setShouldFocus(false))
+        }
+    }, [shouldFocus, dispatch])
 
     const testFunc = () => {
         console.log(someArray.length)
@@ -97,18 +118,28 @@ function SearchBar() {
         setShowSearchSuggestions(true)
     }
 
+    const handleCategoriesClick = () => {
+        dispatch(toggleCatDropDown())
+    }
+
     return (
         <div className="search-form">
             <div className="search-bar-container">
                 <form action="">
                     <input
                         className="search-bar"
+                        name="search-bar"
                         type="search"
                         placeholder="Search for products"
                         onChange={testFunc}
+                        ref={searchref}
                     ></input>
                 </form>
-                <button className="searchButtons" id="clearButton" onClick={handleClearClick}>
+                <button
+                    className="searchButtons"
+                    id="clearButton"
+                    onClick={handleClearClick}
+                >
                     <svg viewBox="0 0 32 32">
                         <path
                             fill="currentColor"
@@ -116,7 +147,11 @@ function SearchBar() {
                         />
                     </svg>
                 </button>
-                <button className="searchButtons" id="searchButton" onClick={handleSearchClick}>
+                <button
+                    className="searchButtons"
+                    id="searchButton"
+                    onClick={handleSearchClick}
+                >
                     <svg viewBox="0 0 32 32">
                         <path
                             fill="currentColor"
@@ -125,7 +160,7 @@ function SearchBar() {
                     </svg>
                 </button>
                 <div className="divider"></div>
-                <button className="categoriesButton">
+                <button className="categoriesButton" onClick={handleCategoriesClick}>
                     <svg viewBox="0 0 32 32">
                         <path
                             fill="currentColor"
@@ -135,9 +170,52 @@ function SearchBar() {
                 </button>
             </div>
 
+            <div className="frequent-searches">
+                <h3>Frequent Searches</h3>
+                <ul>
+                    <li>
+                        <NavLink>iphone</NavLink>
+                    </li>
+                    <li>
+                        <NavLink>supreme</NavLink>
+                    </li>
+                    <li>
+                        <NavLink>samsung</NavLink>
+                    </li>
+                    <li>
+                        <NavLink>basketball</NavLink>
+                    </li>
+                </ul>
+            </div>
+
+            <CSSTransition
+                in={showCatDropDown && !isMobile}
+                timeout={200}
+                classNames="categories-dp"
+                unmountOnExit
+                nodeRef={catref}
+            >
+                <div className="categories-dp" ref={catref}>
+                    <ul className="catsList">
+                        {catArray.map((e) => (
+                            <CatDP key={e.id} category={e} />
+                        ))}
+                    </ul>
+                    <div className="divider"></div>
+                    <div className="subCatsList">
+                        <ul>
+                            {subCatArray.slice(0, 5).map((e) => (
+                                <SubCatDP key={e.id} subCategory={e} />
+                            ))}
+                        </ul>
+                        <ViewAllSub category="should contain path to category page"></ViewAllSub>
+                    </div>
+                </div>
+            </CSSTransition>
+
             <CSSTransition
                 in={showSearchSuggestions}
-                timeout={250}
+                timeout={100}
                 classNames="suggestions"
                 unmountOnExit
                 nodeRef={csstransitionRef}
@@ -153,8 +231,6 @@ function SearchBar() {
                     </ul>
                 </div>
             </CSSTransition>
-
-            
         </div>
     )
 }

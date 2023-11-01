@@ -1,11 +1,36 @@
 ///////////  STARS  ///////////// 
 
-
-.starsDiv{
+.starsDiv {
     display: flex;
-    color: var(--accent);
-    svg{
+    color: var(--secAccent);
+
+    svg {
         height: 2.5rem;
         width: 2.5rem;
+
+        &:not(.unHover) {
+            cursor: pointer;
+            .starGradient {
+                stop {
+                    transition: all .7s cubic-bezier(.19, 1, .22, 1);
+                }
+            }
+
+            &.hover {
+                .starGradient {
+                    stop {
+                        stop-color: orange;
+                    }
+                }
+            }
+
+            &:hover~svg {
+                .starGradient {
+                    stop {
+                        stop-color: gray;
+                    }
+                }
+            }
+        }
     }
 }

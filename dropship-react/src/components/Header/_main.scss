@@ -1,81 +1,17 @@
 ///////////  HEADER  /////////////
 
 header {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    $firstValue: 70svh;
-    $secondValue: 15rem;
-
-    height: max($firstValue, $secondValue);
+    height: clamp(15rem, 5.2941rem + 25.8824vw, 70rem);
 
     .headerBackground {
         position: absolute;
-        top: 0;
-        height: 100%;
-        z-index:-10;
-
-        &.leftBkg {
-            transform: rotateY(-180deg);
-            right: 0;
-            display: none;
-
-        }
-
-        &.rightBkg {
-            left: 0;
-        }
-
-        &.mobileBkg {
-            transform: rotateY(-180deg);
-            right: 0;
-            display: none;
-            height: 90%;
-            top: -5rem;
-        }
-
-        #headerBkgLinearLeft {
-            :first-child {
-                stop-color: var(--secAccent)
-            }
-
-            :nth-child(2) {
-                stop-color: var(--paleAccentTwo)
-            }
-
-            :last-child {
-                stop-color: var(--reverseSecAccent)
-            }
-        }
-
-        #headerBkgLinearMobile {
-            :first-child {
-                stop-color: var(--secAccent)
-            }
-
-            :nth-child(2) {
-                stop-color: var(--paleAccentTwo)
-            }
-
-            :last-child {
-                stop-color: var(--reverseAccent)
-            }
-        }
-
-        #headerBkgLinearRight {
-            :first-child {
-                stop-color: var(--accent)
-            }
-
-            :nth-child(2) {
-                stop-color: var(--reverseAccent)
-            }
-
-            :last-child {
-                stop-color: var(--reverseAccent)
-            }
-        }
+        width: 100%;
+        z-index: -10;
     }
 
     .logo {
@@ -83,21 +19,18 @@ header {
         transition: all 300ms ease-in-out;
         z-index: 11;
         top: 1rem;
-        left: 1rem;
+        left: .7rem;
         display: flex;
         align-items: center;
 
         svg {
-            width: 3.2rem;
-            height: 3.2rem;
-            border-radius: 50%;
-            padding: .1rem;
-            outline: .1rem solid var(--tpPri3);
+            height: 3.5rem;
+            padding-inline: .3rem;
             background-color: var(--tpPri3);
+            border-radius: 2rem;
             box-shadow: rgba(0, 0, 0, 0.24) 0 .2rem .5rem;
 
-            #headerLogoGradientMobile {
-
+            #headerLogoGradient {
                 :first-child {
                     stop-color: var(--logoAccentOne)
                 }
@@ -110,38 +43,67 @@ header {
     }
 
     &.smallHeader {
-        height: fit-content;
-        padding: 1rem;
+        position: relative;
+        padding-block: 2rem;
+        margin-bottom: 2rem;
         gap: .7rem;
 
-        .headerBackground{
+        @supports (height: fit-content) {
             height: fit-content;
         }
 
+        @supports not (height: fit-content) {
+            height: auto;
+        }
+
+        background: radial-gradient(circle at left, var(--paleAccentTwo) 0%, var(--someColor) 50%, var(--paleAccentTwo) 100%);
+
         .logo {
-            position: relative;
+            position: static;
             top: unset;
             left: unset;
             order: 0;
-            margin-right: -.7rem;
+            // min-width: 10%;
 
-            background-color: var(--tpPri3);
-            padding: .5rem;
-            border-radius: 1rem;
-            backdrop-filter: blur(.5rem);
-            box-shadow: var(--shadowColor) .12rem .2rem .5rem .1rem, var(--shadowColorTwo) 0 .5rem .5rem -.7rem;
+            height: max-content;
 
             svg {
-                height: 2.5rem;
-                width: 2.5rem;
+                border-radius: 1rem;
+                border-top-left-radius: 2rem;
+                border-bottom-left-radius: 2rem;
+                height: 3.65rem;
+                flex-grow: 1;
                 box-shadow: none;
+
+                path:not(:nth-child(11)) {
+                    fill: var(--tpSec2);
+                }
             }
         }
 
         .search-form {
             position: relative;
             top: unset;
+            width: fit-content;
             order: 1;
+
+            .frequent-searches {
+                display: none;
+            }
+
+            .search-bar-container {
+                box-shadow: none;
+                max-width: max-content;
+            }
+
+            .suggestions {
+                max-width: max-content;
+                width: max-content;
+            }
+
+            .frequent-searches {
+                display: none;
+            }
         }
 
         .mainNav {
@@ -155,6 +117,8 @@ header {
                     flex-direction: row-reverse;
 
                     &.navigationLinks {
+                        box-shadow: none;
+
                         &.loggedIn {
                             border-top-left-radius: 1.2rem;
                             border-bottom-left-radius: 1.2rem;
@@ -164,7 +128,7 @@ header {
                     }
                 }
 
-                .settingsContainer{
+                .settingsContainer {
                     position: absolute;
                     right: 1rem;
                 }
@@ -190,47 +154,26 @@ header {
 
 @media (max-width: 1000px) {
     header {
-        &.smallHeader{
+        &.smallHeader {
             padding: 0;
             gap: 0;
-            .logo{
+
+            .logo {
                 margin: 0;
             }
         }
+
         .headerBackground {
-            &.leftBkg {
-                display: none;
-            }
-
-            &.rightBkg {
-                display: none;
-            }
-
-            &.mobileBkg {
-                display: block;
-            }
+            width: 100%;
         }
     }
 }
 
 @media (max-width: 800px) {
     header {
+        padding-inline: 1rem;
         align-items: flex-start;
-        
-
-        .headerBackground {
-            &.leftBkg {
-                display: none;
-            }
-
-            &.rightBkg {
-                display: none;
-            }
-
-            &.mobileBkg {
-                display: block;
-            }
-        }
+        height: fit-content;
 
         .logo {
             display: none;
