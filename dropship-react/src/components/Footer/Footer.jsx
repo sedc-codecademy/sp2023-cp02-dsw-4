@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 function skewSelector(y, x, centerX, centerY, skewThreshold, maxSkewAngle) {
     if (Math.abs(x - centerX) <= skewThreshold) {
@@ -431,13 +432,13 @@ function Footer() {
                     <p>© 2023 Click & Ship All Rights and Lefts reserved.</p>
                     <ul>
                         <li>
-                            <a href="www.google.com" target="blank" rel="noreferrer noopener">Privacy Policy</a>
+                            <Link to={"/privacy"}>Privacy Policy</Link>
                         </li>
                         <li>
-                            <a href="ww.google.com" target="blank" rel="noreferrer noopener">Disclaimer</a>
+                            <Link to={"/disclaimer"}>Disclaimer</Link>
                         </li>
                         <li>
-                            <a href="ww.google.com" target="blank" rel="noreferrer noopener">Location Services</a>
+                            <Link to={"/location"}>Location Services</Link>
                         </li>
                     </ul>
                 </div>

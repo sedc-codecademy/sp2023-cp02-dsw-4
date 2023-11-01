@@ -6,18 +6,14 @@ function Privacy() {
     <main className="body-rights">
       <div className="page-container">
         <div className="rights-header">
-          <h2 className="title">
+          <h1 className="title">
             <span>privacy</span>
             <span>policy</span>
-          </h2>
+          </h1>
         </div>
 
         <div className="first-paragraph">
-          <p>
-            At{" "}
-            <Link to="http://localhost:3000/" className="link-style">
-              Click & Ship
-            </Link>{" "}
+          <p>At <Link to="http://localhost:3000/" className="link-style">Click & Ship </Link> 
             (hereinafter, "we," "us," "our"), we prioritize the protection and
             security of your personal information. We understand the
             significance of maintaining the confidentiality of the data you
@@ -45,7 +41,7 @@ function Privacy() {
           <h3>Information We Collect</h3>
         </div>
 
-        <div className="second-paragraph">
+        <div className="second paragraph">
           <h4>1. Personal information: </h4>
           <p>
             When you place an order on our website, we collect information such
@@ -80,7 +76,7 @@ function Privacy() {
           <h3>Disclosure of Your Information</h3>
         </div>
 
-        <div className="third-paragraph">
+        <div className="third paragraph">
           <p>
             We do not sell, rent, or trade your personal information to third
             parties. However, we may share your information with the following
@@ -110,7 +106,7 @@ function Privacy() {
           </p>
         </div>
 
-        <div className="fourth-paragraph">
+        <div className="fourth paragraph">
           <h4>Your Rights</h4>
           <p>
             You have the following rights regarding your personal information:
@@ -132,7 +128,7 @@ function Privacy() {
           <p>DIME NE ZNAM KOE CONTACT INFO DA GO STAVAM TUKA</p>
         </div>
 
-        <div className="fifth-paragraph">
+        <div className="fifth paragraph">
           <h2>Changes to this Privacy Policy</h2>
           <p>
             We may update this Privacy Policy to reflect changes in our

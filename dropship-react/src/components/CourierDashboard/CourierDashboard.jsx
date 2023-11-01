@@ -1,28 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectProducts } from "../../store/selectors/productSelector";
-import "./_main.scss";
-import ProductSwipe from "../Product/ProductSwipe/ProductSwipe";
-
-const getRandomProducts = (products, count) => {
-  const copiedProducts = [...products];
-  const shuffled = copiedProducts.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-};
+import React from "react"
+import { useSelector } from "react-redux"
+import { selectProducts } from "../../store/selectors/productSelector"
+import ProductCard from "../Product/ProductCard/ProductCard"
 
 function CourierDashboard() {
-  const allProducts = useSelector(selectProducts);
-  const [randomProducts, setRandomProducts] = useState([]);
-
-  useEffect(() => {
-    const randomProducts = getRandomProducts(allProducts, 10);
-    setRandomProducts(randomProducts);
-  }, [allProducts]);
+  const allProducts = useSelector(selectProducts)
 
   return (
     <>
       <div className="productSwipe">
-        <ProductSwipe products={randomProducts} />
+        <ul>
+          {allProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </ul>
       </div>
 
       <div className="order">
@@ -39,7 +30,7 @@ function CourierDashboard() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default CourierDashboard;
+export default CourierDashboard

@@ -112,7 +112,7 @@ function Cart() {
             <div className="cart">
                 {cartState !== "default" && (
                     <div className="checkout">
-                        <h2 className="mastertitle">
+                        <h2 className="mastertitle subTitle">
                             <span>Checkout</span>
                             <button onClick={handleBackClick}>
                                 <svg viewBox="0 0 32 32">
@@ -407,7 +407,7 @@ function Cart() {
                 )}
 
                 <div className="cart-items">
-                    <h2>Cart Items</h2>
+                    <h2 className="subTitle">Cart Items</h2>
                     <ul className="itemUl">
                         <li className={`itemLi ${cartState !== "default" && "concise"}`}>
                             <ImageLoader
@@ -558,7 +558,7 @@ function Cart() {
                 </div>
 
                 {cartState === "default" && (
-                    <div className="summary">
+                    <div className="summary subTitle">
                         <h2 className="title">Summary</h2>
                         <ul className="pricesUl">
                             <li>

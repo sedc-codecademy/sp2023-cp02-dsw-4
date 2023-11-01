@@ -102,6 +102,8 @@ footer {
                 gap: .5rem;
                 border-radius: .5rem;
 
+                font-family: Matter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+
                 ul {
                     display: flex;
                     align-items: center;
@@ -230,11 +232,12 @@ footer {
                     &::after {
                         background: linear-gradient(to right, var(--accent), var(--secAccent))
                     }
+                    font-family: Matter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
                 }
 
                 h1 {
-                    font-size: 4rem;
-                    letter-spacing: -0.3rem;
+                    font-size: 3.8rem;
+                    letter-spacing: -0.25rem;
                     line-height: 2.8rem;
                     font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                     text-transform: lowercase;
@@ -387,6 +390,7 @@ footer {
                     &::after {
                         background: linear-gradient(to right, var(--secAccent), var(--accent))
                     }
+                    font-family: Matter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
                 }
 
                 ul {
@@ -410,7 +414,6 @@ footer {
                                 color: var(--secColor);
                                 font-size: 1.8rem;
                                 font-weight: 600;
-                                font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                                 transition: color .8s cubic-bezier(.19, 1, .22, 1);
 
                                 span {

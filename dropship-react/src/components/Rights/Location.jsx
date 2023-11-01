@@ -5,10 +5,10 @@ function Location() {
     <main className="body-rights">
       <div className="page-container">
         <div className="rights-header">
-        <h2 className="title">
+        <h1 className="title">
             <span>location</span>
             <span>services</span>
-          </h2>
+          </h1>
         </div>
 
         <div className="first-paragraph">
@@ -24,7 +24,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="second-paragraph">
+        <div className="second paragraph">
           <h3>2. Inventory Management and Fulfillment:</h3>
           <p>
             Location services can assist in optimizing inventory management and
@@ -35,7 +35,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="third-paragraph">
+        <div className="third paragraph">
           <h3>3. Shipping Cost Calculation:</h3>
           <p>
             By leveraging location data, your store can provide accurate
@@ -45,7 +45,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="fourth-paragraph">
+        <div className="fourth paragraph">
           <h3>4. Order Tracking and Transparency:</h3>
           <p>
             Real-time order tracking is essential for a smooth customer
@@ -55,7 +55,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="fifth-paragraph">
+        <div className="fifth paragraph">
           <h3>5. International Expansion:</h3>
           <p>
             If you plan to expand internationally, location services are
@@ -65,7 +65,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="sixth-paragraph">
+        <div className="sixth paragraph">
           <h3>6. Localized Marketing Campaigns:</h3>
           <p>
             Tailor your marketing efforts to specific regions or countries using
@@ -75,7 +75,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="seventh-paragraph">
+        <div className="seventh paragraph">
           <h3>7. Fraud Prevention:</h3>
           <p>
             Location services can aid in fraud prevention by identifying unusual
@@ -84,7 +84,7 @@ function Location() {
           </p>
         </div>
 
-        <div className="eighth-paragraph">
+        <div className="eighth paragraph">
           <h3>8. Customer Support and Communication:</h3>
           <p>
             Offer location-specific customer support by providing contact

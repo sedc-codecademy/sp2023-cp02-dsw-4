@@ -103,13 +103,14 @@
                     gap: 5rem;
 
                     h1 {
-                        font-size: clamp(3rem, 0.8824rem + 5.6471vw, 15rem);
+                        font-size: clamp(2.5rem, 0.8824rem + 5.6471vw, 15rem);
                         letter-spacing: -0.3rem;
-                        line-height: clamp(2.5rem, 1.7059rem + 2.1176vw, 7rem);
+                        line-height: clamp(2rem, 1.7059rem + 2.1176vw, 7rem);
                         text-transform: lowercase;
                         color: #fff;
                         width: max-content;
                         text-shadow: 0.1rem 0.1rem 0 black;
+                        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
                         display: flex;
                         flex-direction: column;
@@ -186,7 +187,7 @@
                     p {
                         font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                         text-transform: uppercase;
-                        font-weight: 600;
+                        font-weight: 500;
                         font-size: 1.2rem;
                         letter-spacing: 0.1rem;
                         color: white;

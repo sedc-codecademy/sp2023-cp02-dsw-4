@@ -122,6 +122,12 @@ body {
     font-weight: bold;
 }
 
+@font-face {
+    font-family: "Matter";
+    src: local("Matter"),
+        url("../fonts/Matter/Matter-Regular.otf") format("truetype");
+}
+
 a,
 button {
     cursor: pointer;

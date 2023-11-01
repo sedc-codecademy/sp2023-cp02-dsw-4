@@ -5,4 +5,3 @@ export function applyNoScroll() {
 export function applyScroll() {
     if (document.body.classList.contains("noScroll")) document.body.classList.remove("noScroll")
 }
-
