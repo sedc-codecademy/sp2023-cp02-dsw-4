@@ -1,5 +1,5 @@
 ﻿using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ProductDtos.CategoryDtos;
+using Dropshiping.BackEnd.Dtos.CategoryDtos;
 
 namespace Dropshiping.BackEnd.Mappers.ProductMappers
 {
@@ -11,7 +11,6 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
             {
                 Id = category.Id,
                 Name = category.Name,
-                Description = category.Description,
             };
         }
     }

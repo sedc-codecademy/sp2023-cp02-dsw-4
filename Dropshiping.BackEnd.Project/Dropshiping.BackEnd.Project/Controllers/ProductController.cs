@@ -48,13 +48,122 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [HttpGet("SearchProduct/{id}")]
+        public IActionResult GetSearchedProductById(string id)
+        {
+            try
+            {
+                var product = _productService.GetSearchedProductById(id);
+
+                return Ok(product);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [HttpGet("SearchProductsByName/{name}")]
+        public IActionResult GetSearchedProductsByName(string name)
+        {
+            try
+            {
+                var products = _productService.GetSearchedProductsByName(name);
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [HttpGet("SearchedProducts")]
+        public IActionResult GetSearchedProducts()
+        {
+            try
+            {
+                var products = _productService.GetSearchedProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [HttpGet("DiscountedProducts")]
+        public IActionResult GetAllDiscountedProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllDiscountedProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+        
+        [HttpGet("MostPopularProducts")]
+        public IActionResult GetAllMostPopularProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllMostPopularProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+        
+        [HttpGet("TopRatedProducts")]
+        public IActionResult GetAllTopRatedProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllTopRatedProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+        
+        [HttpGet("NewProducts")]
+        public IActionResult GetAllNewProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllNewProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
         [HttpPost("AddProduct")]
-        public IActionResult AddProduct(ProductDto productDto)
+        public IActionResult AddProduct(NewProductDto productDto)
         {
             try
             {
                 _productService.Add(productDto);
-                return Ok();
+                return Ok("Product is created successfully!");
             }
             catch (ArgumentNullException ex)
             {
@@ -71,7 +180,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
         }
 
         [HttpPut("UpdateProduct")]
-        public IActionResult UpdateProduct([FromBody] ProductDto productDto)
+        public IActionResult UpdateProduct([FromBody] UpdateProductDto productDto)
         {
             try
             {
@@ -121,5 +230,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
             }
         }
+
+
     }
 }

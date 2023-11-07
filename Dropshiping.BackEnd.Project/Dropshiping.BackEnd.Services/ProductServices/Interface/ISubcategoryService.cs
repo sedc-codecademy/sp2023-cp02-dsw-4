@@ -1,4 +1,4 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
+﻿using Dropshiping.BackEnd.Dtos;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Interface
 {

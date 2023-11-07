@@ -5,10 +5,12 @@
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public decimal Discount { get; set; }
+        public int Discount { get; set; }
         public string Image { get; set; }
 
-        public DateTime CreateTime { get; set; }
+        public DateTime DateOfCreation { get; set; }
+
+        public int Searches { get; set; }
 
         // Its calculated from Raiting Table interaction // when ICollection<Raiting> Raitings its populated
         public decimal Rating
@@ -36,6 +38,7 @@
 
         public virtual ICollection<ProductSize> ProductSizes { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
+
     }
 }
 

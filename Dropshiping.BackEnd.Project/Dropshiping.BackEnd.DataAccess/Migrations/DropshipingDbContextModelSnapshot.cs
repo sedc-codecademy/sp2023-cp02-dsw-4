@@ -13,7 +13,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
     [DbContext(typeof(DropshipingDbContext))]
     partial class DropshipingDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder) 
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,10 +27,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Image")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -40,6 +39,63 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Image = "Image",
+                            Name = "Category1"
+                        });
+                });
+
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Color", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Colors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Black"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "White"
+                        });
+                });
+
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Manufacturer", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Manufacturers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Image = "Image",
+                            Name = "Manufacturer1"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Order", b =>
@@ -50,8 +106,20 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CardHolder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CardNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardType")
+                        .HasColumnType("int");
+
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
@@ -65,18 +133,63 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<string>("PostalCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Status")
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("PurchasedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SecurityCode")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TotalPrice")
+                    b.Property<decimal>("Shipping")
                         .HasColumnType("decimal(18,4)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Address = "address",
+                            CardNumber = 0,
+                            CardType = 0,
+                            City = "Skopje",
+                            ExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PaymentStatus = 2,
+                            PhoneNumber = 123123,
+                            PostalCode = "1000",
+                            Price = 1000m,
+                            PurchasedTime = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5012),
+                            SecurityCode = 0,
+                            Shipping = 0m,
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Address = "address",
+                            CardNumber = 0,
+                            CardType = 0,
+                            City = "Ohrid",
+                            ExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PaymentStatus = 2,
+                            PhoneNumber = 123123,
+                            PostalCode = "12345",
+                            Price = 3000m,
+                            PurchasedTime = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5027),
+                            SecurityCode = 0,
+                            Shipping = 150m,
+                            Status = 1
+                        });
                 });
 
-            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Orderitem", b =>
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.OrderItem", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -96,7 +209,23 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
                     b.HasIndex("ProductSizeId");
 
-                    b.ToTable("Orderitems");
+                    b.ToTable("OrderItems");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            OrderId = "1",
+                            ProductSizeId = "1",
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            Id = "2",
+                            OrderId = "2",
+                            ProductSizeId = "4",
+                            Quantity = 3
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Product", b =>
@@ -104,12 +233,23 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("DateOfCreation")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<decimal>("Discount")
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Discount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -119,24 +259,55 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,4)");
 
-                    b.Property<string>("RegoinId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Searches")
+                        .HasColumnType("int");
 
                     b.Property<string>("SubcategoryId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RegoinId");
+                    b.HasIndex("ManufacturerId");
 
                     b.HasIndex("SubcategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            DateOfCreation = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(4863),
+                            Description = "description",
+                            Discount = 50,
+                            Image = "Image",
+                            ManufacturerId = "1",
+                            Name = "Product1",
+                            Price = 1000m,
+                            Searches = 5,
+                            SubcategoryId = "1"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            DateOfCreation = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(4919),
+                            Description = "description",
+                            Discount = 0,
+                            Image = "Image",
+                            ManufacturerId = "1",
+                            Name = "Product2",
+                            Price = 500m,
+                            Searches = 0,
+                            SubcategoryId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.ProductSize", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ColorId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProductId")
@@ -150,29 +321,74 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ColorId");
+
                     b.HasIndex("ProductId");
 
                     b.HasIndex("SizeId");
 
                     b.ToTable("ProductSizes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            ColorId = "1",
+                            ProductId = "1",
+                            SizeId = "1",
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = "2",
+                            ColorId = "2",
+                            ProductId = "1",
+                            SizeId = "1",
+                            Stock = 15
+                        },
+                        new
+                        {
+                            Id = "3",
+                            ColorId = "2",
+                            ProductId = "1",
+                            SizeId = "2",
+                            Stock = 5
+                        },
+                        new
+                        {
+                            Id = "4",
+                            ColorId = "1",
+                            ProductId = "2",
+                            SizeId = "1",
+                            Stock = 30
+                        });
                 });
 
-            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Raiting", b =>
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Rating", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Cons")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ProductId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Pros")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<int>("Rate")
                         .HasColumnType("int");
 
                     b.Property<string>("Review")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -183,23 +399,25 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Raitings");
-                });
+                    b.ToTable("Ratings");
 
-            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Region", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Shipping")
-                        .HasColumnType("decimal(18,4)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Regions");
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Date = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5113),
+                            ProductId = "1",
+                            Rate = 5,
+                            UserId = "1"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Date = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5126),
+                            ProductId = "2",
+                            Rate = 4,
+                            UserId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Size", b =>
@@ -208,11 +426,25 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Sizes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "S"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "M"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Subcategory", b =>
@@ -224,9 +456,11 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -238,6 +472,16 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Subcategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            CategoryId = "1",
+                            Description = "description",
+                            Image = "Image",
+                            Name = "SubCategory1"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.UserModels.Card", b =>
@@ -249,6 +493,12 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CardNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardStatus")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardType")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ExpirationDate")
@@ -264,7 +514,20 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Card");
+                    b.ToTable("Cards");
+                });
+
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.UserModels.Subscriber", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribers");
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.UserModels.User", b =>
@@ -275,13 +538,11 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -317,6 +578,19 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Email = "Test",
+                            FirstName = "Test",
+                            LastName = "Test",
+                            Password = "Test",
+                            PhoneNumber = 0,
+                            Role = 1,
+                            Username = "Test"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.UserModels.UserOrder", b =>
@@ -339,14 +613,14 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.ToTable("UserOrders");
                 });
 
-            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Orderitem", b =>
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.OrderItem", b =>
                 {
                     b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Order", "Order")
-                        .WithMany("Orderitems")
+                        .WithMany("OrderItems")
                         .HasForeignKey("OrderId");
 
                     b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.ProductSize", "ProductSize")
-                        .WithMany("Orderitems")
+                        .WithMany("OrderItems")
                         .HasForeignKey("ProductSizeId");
 
                     b.Navigation("Order");
@@ -356,21 +630,25 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Product", b =>
                 {
-                    b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Region", "Region")
+                    b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Manufacturer", "Manufacturer")
                         .WithMany("Products")
-                        .HasForeignKey("RegoinId");
+                        .HasForeignKey("ManufacturerId");
 
                     b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Subcategory", "Subcategory")
                         .WithMany("Products")
                         .HasForeignKey("SubcategoryId");
 
-                    b.Navigation("Region");
+                    b.Navigation("Manufacturer");
 
                     b.Navigation("Subcategory");
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.ProductSize", b =>
                 {
+                    b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Color", "Color")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("ColorId");
+
                     b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Product", "Product")
                         .WithMany("ProductSizes")
                         .HasForeignKey("ProductId");
@@ -379,19 +657,21 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         .WithMany("ProductSizes")
                         .HasForeignKey("SizeId");
 
+                    b.Navigation("Color");
+
                     b.Navigation("Product");
 
                     b.Navigation("Size");
                 });
 
-            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Raiting", b =>
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Rating", b =>
                 {
                     b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Product", "Product")
-                        .WithMany("Raitings")
+                        .WithMany("Ratings")
                         .HasForeignKey("ProductId");
 
                     b.HasOne("Dropshiping.BackEnd.Domain.UserModels.User", "User")
-                        .WithMany("Raitings")
+                        .WithMany("Ratings")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Product");
@@ -420,7 +700,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.UserModels.UserOrder", b =>
                 {
                     b.HasOne("Dropshiping.BackEnd.Domain.ProductModels.Order", "Order")
-                        .WithMany("Userorders")
+                        .WithMany("UserOrders")
                         .HasForeignKey("OrderId");
 
                     b.HasOne("Dropshiping.BackEnd.Domain.UserModels.User", "User")
@@ -437,28 +717,33 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Navigation("Subcategories");
                 });
 
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Color", b =>
+                {
+                    b.Navigation("ProductSizes");
+                });
+
+            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Manufacturer", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Order", b =>
                 {
-                    b.Navigation("Orderitems");
+                    b.Navigation("OrderItems");
 
-                    b.Navigation("Userorders");
+                    b.Navigation("UserOrders");
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Product", b =>
                 {
                     b.Navigation("ProductSizes");
 
-                    b.Navigation("Raitings");
+                    b.Navigation("Ratings");
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.ProductSize", b =>
                 {
-                    b.Navigation("Orderitems");
-                });
-
-            modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Region", b =>
-                {
-                    b.Navigation("Products");
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.Size", b =>
@@ -475,7 +760,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                 {
                     b.Navigation("Cards");
 
-                    b.Navigation("Raitings");
+                    b.Navigation("Ratings");
 
                     b.Navigation("UserOrders");
                 });

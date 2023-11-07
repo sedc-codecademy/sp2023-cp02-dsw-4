@@ -1,13 +1,22 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
+﻿using Dropshiping.BackEnd.Domain.ProductModels;
+using Dropshiping.BackEnd.Dtos.ProductDtos;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Interface
 {
     public interface IProductService
     {
         List<ProductDto> GetAll();
-        ProductDto GetById(string id);
-        void Add(ProductDto productDto);
-        void Update(ProductDto productDto);
+        FullProductDto GetById(string id);
+        FullProductDto GetSearchedProductById(string id);
+        List<ProductDto> GetAllDiscountedProducts();
+        List<ProductDto> GetAllMostPopularProducts();
+        List<ProductDto> GetAllTopRatedProducts();
+        List<ProductDto> GetAllNewProducts();
+        List<ProductDto> GetSearchedProductsByName(string name);
+        List<ProductDto> GetSearchedProducts();
+        
+        void Add(NewProductDto newProductDto);
+        void Update(UpdateProductDto updateProductDto);
         void DeleteById(string id);
     }
 }

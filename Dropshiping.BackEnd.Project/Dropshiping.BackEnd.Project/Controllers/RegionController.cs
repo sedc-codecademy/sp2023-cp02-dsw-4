@@ -49,45 +49,45 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        [HttpPost("AddRegion")]
-        public IActionResult AddRegion(RegionDto regionDto)
-        {
-            try
-            {
-                _regionService.Add(regionDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Region added");
-            }
-            catch (ArgumentNullException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-            }
-        }
+        //[HttpPost("AddRegion")]
+        //public IActionResult AddRegion(RegionDto regionDto)
+        //{
+        //    try
+        //    {
+        //        _regionService.Add(regionDto);
+        //        return StatusCode(StatusCodes.Status204NoContent, "Region added");
+        //    }
+        //    catch (ArgumentNullException ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //    catch
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+        //    }
+        //}
 
-        [HttpPut("UpdateRegion")]
-        public IActionResult UpdateRegion(RegionDto regionDto)
-        {
-            try
-            {
-                _regionService.Update(regionDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Region updated");
-            }
-            catch (ArgumentNullException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (InvalidDataException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-            }
-        }
+        //[HttpPut("UpdateRegion")]
+        //public IActionResult UpdateRegion(RegionDto regionDto)
+        //{
+        //    try
+        //    {
+        //        _regionService.Update(regionDto);
+        //        return StatusCode(StatusCodes.Status204NoContent, "Region updated");
+        //    }
+        //    catch (ArgumentNullException ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //    catch (InvalidDataException ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //    catch
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+        //    }
+        //}
 
         [HttpDelete("{id}")]
         public IActionResult DeleteById(string id)

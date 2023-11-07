@@ -1,7 +1,7 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Dropshiping.BackEnd.Dtos.CategoryDtos;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Dtos.ProductDtos.CategoryDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 
@@ -9,10 +9,10 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
     public class CategoryService : ICategoryService
     {
-        private ICategoryRepository _categoryRepository;
+        private IRepository<Category> _categoryRepository;
        
         
-        public CategoryService(ICategoryRepository categoryRepository)
+        public CategoryService(IRepository<Category> categoryRepository)
         {
             _categoryRepository = categoryRepository;
      
@@ -38,27 +38,27 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         }
 
         // Nested
-        public List<ProductDto> GetByIdNested(string id)
-        {
-            var category = _categoryRepository.GetByIdNest(id);
+        //public List<ProductDto> GetByIdNested(string id)
+        //{
+        //    var category = _categoryRepository.GetByIdNest(id);
 
-            if (category == null)
-            {
-                throw new KeyNotFoundException($"Category with id {id} is not found");
-            }
+        //    if (category == null)
+        //    {
+        //        throw new KeyNotFoundException($"Category with id {id} is not found");
+        //    }
             
-            var  listOfProducts = category.Subcategories.SelectMany(x => x.Products).ToList();
+        //    var  listOfProducts = category.Subcategories.SelectMany(x => x.Products).ToList();
 
-            List<ProductDto> listOfProductMapped = new();
+        //    List<ProductDto> listOfProductMapped = new();
 
-            foreach(var product in listOfProducts)
-            {
-                listOfProductMapped.Add(product.ToDto());
-            }
+        //    foreach(var product in listOfProducts)
+        //    {
+        //        listOfProductMapped.Add(product.ToDto());
+        //    }
 
-            return listOfProductMapped;
+        //    return listOfProductMapped;
 
-        }
+        //}
 
         // Add Category
         public void Add(CategoryDto categoryDto)
@@ -71,19 +71,12 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             {
                 throw new InvalidDataException("Name Length must not be more then 50 characters!");
             }
-            if(categoryDto.Description == null)
-            {
-                throw new ArgumentNullException("Description must not be empty");
-            }
-            if (categoryDto.Description.Length > 250)
-            {
-                throw new InvalidDataException("Description Length must not be more then 250 characters!");
-            }
+           
 
             var category = new Category
             {
                 Name = categoryDto.Name,
-                Description = categoryDto.Description,
+               
             };
 
             _categoryRepository.Add(category);
@@ -96,7 +89,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
             category.Id = categoryDto.Id;
             category.Name = categoryDto.Name;
-            category.Description = categoryDto.Description;
+           
 
             if (categoryDto.Name == null)
             {
@@ -106,14 +99,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             {
                 throw new InvalidDataException("Name Length must not be more then 50 characters!");
             }
-            if (categoryDto.Description == null)
-            {
-                throw new ArgumentNullException("Description must not be empty");
-            }
-            if (categoryDto.Description.Length > 250)
-            {
-                throw new InvalidDataException("Description Length must not be more then 250 characters!");
-            }
+           
 
             _categoryRepository.Update(category);
         }

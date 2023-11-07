@@ -1,6 +1,7 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Implementation;
 using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
@@ -16,13 +17,13 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _manufacturerRepository = manufacturerRepository;
         }
 
-        public List<RegionDto> GetAll()
+        public List<ManufacturerDto> GetAll()
         {
             var regions = _manufacturerRepository.GetAll();
-            return regions.Select(x => x.ToDtoRegion()).ToList();
+            return regions.Select(x => x.ToManufacturerDto()).ToList();
         }
 
-        public RegionDto GetById(string id)
+        public ManufacturerDto GetById(string id)
         {
             var region = _manufacturerRepository.GetById(id);
 
@@ -31,10 +32,10 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
                 throw new KeyNotFoundException($"Region with id {id} is not found");
             }
 
-            return region.ToDtoRegion();
+            return region.ToManufacturerDto();
         }
 
-        public void Add(RegionDto regionDto)
+        public void Add(ManufacturerDto regionDto)
         {
             if (regionDto.Name == null)
             {
@@ -50,7 +51,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _manufacturerRepository.Add(region);
         }
 
-        public void Update(RegionDto regionDto)
+        public void Update(ManufacturerDto regionDto)
         {
             var region = _manufacturerRepository.GetById(regionDto.Id);
 
@@ -62,10 +63,10 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             {
                 throw new ArgumentNullException("Name must not be empty");
             }
-            if ((int)regionDto.Shipping > 3 || (int)regionDto.Shipping < 1)
-            {
-                throw new InvalidOperationException("Shipping must be set");
-            }
+            //if ((int)regionDto.Shipping > 3 || (int)regionDto.Shipping < 1)
+            //{
+            //    throw new InvalidOperationException("Shipping must be set");
+            //}
 
             _manufacturerRepository.Update(region);   
         }

@@ -1,4 +1,4 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos.CategoryDtos;
+﻿using Dropshiping.BackEnd.Dtos.CategoryDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,23 +48,23 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        [HttpGet("Nested{id}")]
-        public IActionResult GetByIdNested(string id)
-        {
-            try
-            {
-                var category = _categoryService.GetByIdNested(id);
-                return Ok(category);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-            }
-        }
+        //[HttpGet("Nested{id}")]
+        //public IActionResult GetByIdNested(string id)
+        //{
+        //    try
+        //    {
+        //        var category = _categoryService.GetByIdNested(id);
+        //        return Ok(category);
+        //    }
+        //    catch (KeyNotFoundException ex)
+        //    {
+        //        return NotFound(ex.Message);
+        //    }
+        //    catch
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+        //    }
+        //}
 
         [HttpPost("AddCategory")]
         public IActionResult AddCategory(CategoryDto categoryDto)

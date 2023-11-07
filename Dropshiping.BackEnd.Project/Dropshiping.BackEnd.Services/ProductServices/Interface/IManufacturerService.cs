@@ -1,13 +1,14 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
+﻿using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
+using Dropshiping.BackEnd.Dtos.ProductDtos;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Interface
 {
     public interface IManufacturerService
     {
-        List<RegionDto> GetAll();
-        RegionDto GetById(string id);
-        void Add(RegionDto regionDto);
-        void Update(RegionDto regionDto);
+        List<ManufacturerDto> GetAll();
+        ManufacturerDto GetById(string id);
+        void Add(ManufacturerDto regionDto);
+        void Update(ManufacturerDto regionDto);
         void DeleteById(string id);
     }
 }

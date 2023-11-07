@@ -9,8 +9,8 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
 {
     public class UserService : IUserService
     {
-        private IUserRepository<User> _userRepository;
-        public UserService(IUserRepository<User> userRepository)
+        private IUserRepository _userRepository;
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
@@ -64,7 +64,7 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
                 Username = registerUserDto.Username,
                 Password = stringHash, //hashed pass in Hexstring
                 Email = registerUserDto.Email,
-                Age = registerUserDto.Age,
+                
             };
 
             _userRepository.Add(user);
