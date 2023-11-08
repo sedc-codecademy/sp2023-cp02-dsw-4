@@ -7,7 +7,7 @@ import { selectProducts } from "../../../store/selectors/productSelector"
 import ProductCard from "../ProductCard/ProductCard"
 import Stars from '../../Stars/Stars'
 import { DetailsNav } from "../../UsefullComponents/Usefull"
-import Reviews from "../../Reviews/Reviews"
+import Reviews, { EditReview } from "../../Reviews/Reviews"
 import ImageLoader from "../../ImageLoader/ImageLoader"
 import { ReviewSvg } from "../../Reviews/review"
 import NotFound from "../../NotFound/NotFound"
@@ -20,24 +20,37 @@ const getRandomProducts = (products, count) => {
 
 const reviews = [
   {
+    authorId: "436hb5467457k",
     author: "DIme dimeski",
     date: Date(),
     title: "Great Product",
     rate: 4.6,
     body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
     id: '12h4iu12h4h7124h9',
-    good: ['good screen', 'good battery', 'price'],
-    bad: ['bad screen', 'bad battery', 'price']
+    good: 'good screen, good battery, price',
+    bad: 'bad screen, bad battery, price',
   },
   {
+    authorId: "436hoiu89b5467457k",
     author: "Dimeski Dime",
     date: Date(),
     title: "Bad Product",
     rate: 2.6,
     body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
     id: '12h4iu12h4h7124hjh9',
-    good: [],
-    bad: ['bad screen', 'bad battery', 'price']
+    good: '',
+    bad: 'bad screen,bad battery, price',
+  },
+  {
+    authorId: "4365452hb5467457k",
+    author: "Dimeski Dime",
+    date: Date(),
+    title: "Bad Product",
+    rate: 2.6,
+    body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
+    id: '12h4iu14232h4h7124hjh9',
+    good: '',
+    bad: ''
   }
 ]
 
@@ -46,7 +59,7 @@ const reviews = [
 function ProductDetails() {
   const { productId } = useParams()
   const products = useSelector(selectProducts)
-
+  const user = useSelector((state) => state.user.user)
   const [randomProducts, setRandomProducts] = useState([])
   const [quantity, setQuantity] = useState(0)
 
@@ -93,7 +106,7 @@ function ProductDetails() {
               <div className="product-header">
                 <h2 className="product-title">{product.title}</h2>
                 <div className="product-rating">
-                  <Stars initialRating={product.rating.rate} id={productId} shouldHover={true}></Stars>
+                  <Stars initialRating={product.rating.rate} id={productId}></Stars>
                   <p>(28)</p>
                 </div>
               </div>
@@ -178,8 +191,9 @@ function ProductDetails() {
             <div className="reviews">
               <ul className="reviews-ul">
                 {reviews.map((review) => (
-                  <Reviews key={review.id} review={review} />
+                  review.authorId === user.id ? <EditReview key={review.id} review={review} /> : <Reviews key={review.id} review={review} />
                 ))}
+
               </ul>
             </div>
             :

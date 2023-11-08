@@ -1,15 +1,65 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    cardObject:
+    cartCard:
     {
         holder: ``,
         number: ``,
         cvc: '',
         date: '',
+        type: {
+            mask: '0000 0000 0000 0000',
+            cardtype: 'unknown',
+            light: '#bdbdbd',
+            dark: '#616161'
+        },
     },
-    cardType: null,
-    flipped: false,
+    tempCards: [
+        {
+            id: "101",
+            holder: `Frosina Stamenkovska`,
+            number: `3500000000000000`,
+            cvc: '985',
+            date: '01/24',
+            type: {
+                mask: '0000 0000 0000 0000',
+                regex: '^(?:35\\d{0,2})\\d{0,12}',
+                cardtype: 'jcb',
+                light: '#ef5350',
+                dark: '#d32f2f'
+            },
+            cardStatus: "PRIMARY",
+            removal: false
+        },
+        {
+            id: "102",
+            holder: `Frosina Stamenkovska`,
+            number: `5000 3232 3232 3280`,
+            cvc: '985',
+            date: '05/24',
+            type: {
+                regex: '^(?:5[0678]\\d{0,2}|6304|67\\d{0,2})\\d{0,12}',
+                mask: '0000 0000 0000 0000',
+                cardtype: 'maestro',
+                light: '#ffeb3b',
+                dark: '#f9a825',
+            },
+            cardStatus: "SECONDARY",
+            removal: false
+        },
+    ],
+    newCard: {
+        holder: ``,
+        number: ``,
+        cvc: '',
+        date: '',
+        type: {
+            mask: '0000 0000 0000 0000',
+            cardtype: 'unknown',
+            light: '#bdbdbd',
+            dark: '#616161'
+        },
+    },
     cardPatterns: [
         {
             regex: '^(5[1-5]\\d{0,2}|22[2-9]\\d{0,1}|2[3-7]\\d{0,2})\\d{0,12}',
@@ -59,7 +109,8 @@ const initialState = {
             light: '#bdbdbd',
             dark: '#616161'
         },
-    ]
+    ],
+    createCard: false,
 }
 
 const cardSlice = createSlice({
@@ -68,23 +119,75 @@ const cardSlice = createSlice({
     reducers: {
         setCardFormValue: (state, action) => {
             const { name, value } = action.payload
-            state.cardObject[name] = value
+            state.cartCard[name] = value
         },
-        setCardFormNumber: (state, action) => {
-            state.cardObject['number'] = action.payload
+        setNewCardFormValue: (state, action) => {
+            const { name, value } = action.payload
+            state.newCard[name] = value
         },
-        setCardDate: (state, action) => {
-            state.cardObject['date'] = action.payload
+        setCardFormValueID: (state, action) => {
+            const { name, value, cardID } = action.payload
+            const cardIndex = state.tempCards.findIndex(card => card.id === cardID)
+            if (cardIndex !== -1) {
+                state.tempCards[cardIndex][name] = value
+            }
         },
         setCardType: (state, action) => {
-            state.cardType = action.payload
+            state.cartCard['type'] = action.payload
         },
-        flipCard: (state, action) => {
-            state.flipped = action.payload
+        setNewCardType: (state, action) => {
+            state.newCard['type'] = action.payload
+        },
+        setCardTypeID: (state, action) => {
+            const { cardID, matchedPattern } = action.payload
+            const cardIndex = state.tempCards.findIndex(card => card.id === cardID)
+
+            if (cardIndex !== -1) {
+                state.tempCards[cardIndex].type = matchedPattern
+            }
+        },
+        setCardStatusID: (state, action) => {
+            const cardIndex = state.tempCards.findIndex(card => card.id === action.payload)
+
+            if (cardIndex !== -1) {
+                state.tempCards[cardIndex].cardStatus = "PRIMARY"
+
+                state.tempCards.forEach((card, index) => {
+                    if (index !== cardIndex && card.cardStatus !== "SECONDARY") {
+                        state.tempCards[index].cardStatus = "SECONDARY"
+                    }
+                })
+            }
+        },
+        setRemoveCardID: (state, action) => {
+            const cardIndex = state.tempCards.findIndex(card => card.id === action.payload)
+            if (cardIndex !== -1) {
+                if (!state.tempCards[cardIndex].removal) {
+                    state.tempCards[cardIndex].removal = true
+                    if (state.tempCards[cardIndex].cardStatus === 'PRIMARY') {
+                        const firstNonRemovedIndex = state.tempCards.findIndex(card => !card.removal)
+                        if (firstNonRemovedIndex !== -1) {
+                            state.tempCards[firstNonRemovedIndex].cardStatus = "PRIMARY"
+                        }
+                    }
+                } else {
+                    state.tempCards[cardIndex].removal = false
+                    if (state.tempCards[cardIndex].cardStatus === 'PRIMARY') {
+                        state.tempCards.forEach((card, index) => {
+                            if (index !== cardIndex && card.cardStatus !== "SECONDARY") {
+                                state.tempCards[index].cardStatus = "SECONDARY"
+                            }
+                        })
+                    }
+                }
+            }
+        },
+        setCreateCard: (state, action) =>{
+            state.createCard = action.payload
         }
     },
 })
 
-export const { setCardFormValue, setCardFormNumber, setCardDate, setCardType,flipCard } = cardSlice.actions
+export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID,setNewCardFormValue,setNewCardType,setCreateCard } = cardSlice.actions
 
 export default cardSlice.reducer

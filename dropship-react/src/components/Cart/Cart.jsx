@@ -5,61 +5,16 @@ import ProductCard from "../Product/ProductCard/ProductCard"
 
 import { useDispatch, useSelector } from "react-redux"
 import { selectProducts } from "../../store/selectors/productSelector"
-import { setCardFormValue, setCardFormNumber, setCardType, setCardDate, flipCard } from "../../store/slices/cardSlice/cardSlice"
-import Card from "./Card/Card"
-import { CardSvg } from "./Card/CardSvgs"
+import { setCardFormValue, setCardType } from "../../store/slices/cardSlice/cardSlice"
+import { formatAsMMYY } from "../CardHelper/CardFunctions"
+import CardHelper from "../CardHelper/CardHelper"
 
 function Cart() {
     const [cartState, setCartState] = useState("default")
     const [showCards, setShowCards] = useState(false)
-
-    const cardType = useSelector((state) => state.card.cardType)
-    const cardObject = useSelector((state) => state.card.cardObject)
+    const cardObject = useSelector((state) => state.card.cartCard)
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
-    const cardFlipped = useSelector((state) => state.card.flipped)
     const dispatch = useDispatch()
-
-    function formatNumberWithSpaces(input) {
-        const value = input.replace(/\D/g, '')
-        const formattedValue = value.replace(/(.{4})/g, '$1 ')
-        return formattedValue.trim()
-    }
-
-    function formatAsMMYY(date) {
-        const value = date.replace(/\D/g, '')
-
-        const matches = value.match(/^(\d{1,2})(\d{0,2})$/)
-
-        if (!matches) {
-            return value.slice(0, -1)
-        }
-        
-        // eslint-disable-next-line
-        let [_, month, year] = matches
-
-        if (year) {
-            if (value.length === 3) {
-                if (year !== '2') {
-                    return value.slice(0, -1)
-                }
-            } else if (value.length === 4) {
-                const secondYearDigit = parseInt(year[1], 10);
-                if (secondYearDigit < 4 || secondYearDigit > 9) {
-                    return month + (year ? '/' + year : '').slice(0, -1)
-                }
-            }
-        }
-
-        if (month && value.length >= 2) {
-            month = parseInt(month, 10)
-            if (month < 1 || month > 12) {
-                return value.slice(0, -1)
-            }
-            month = month.toString().padStart(2, '0')
-        }
-
-        return month + (year ? '/' + year : '')
-    }
 
     const handleCollectionClick = () => {
         setCartState("collection")
@@ -78,32 +33,25 @@ function Cart() {
         setShowCards(!showCards)
     }
 
-    const handleCardInputChange = (e) => {
-        const { name, value } = e.target
+    const handleSetInputValue = (e) => {
+        const { name,value } = e.target
         dispatch(setCardFormValue({ name, value }))
     }
 
     const handleCardNumberChange = (e) => {
-        const { value } = e.target
+        const { name, value } = e.target
         const number = value.replace(/\D/g, '');
 
         const matchedPattern = cardPatterns.find((pattern) => number.match(pattern.regex) !== null)
 
         dispatch(setCardType(matchedPattern))
-        dispatch(setCardFormNumber(value))
+        dispatch(setCardFormValue({ name, value }))
     }
 
     const handleDateChange = (e) => {
-        dispatch(setCardDate(formatAsMMYY(e.target.value)))
-    }
-
-    const handleFocus = (e) => {
         const { name } = e.target
-        if (name === 'cvc') {
-            dispatch(flipCard(true))
-        } else {
-            if (cardFlipped) dispatch(flipCard(false))
-        }
+        let value = formatAsMMYY(e.target.value)
+        dispatch(setCardFormValue({ name, value }))
     }
 
     const products = useSelector(selectProducts)
@@ -324,68 +272,7 @@ function Cart() {
                                             </ul>
                                         }
                                     </h4>
-                                    <div className="cardContainer">
-                                        <Card></Card>
-                                    </div>
-                                    <div className="inputContainer">
-                                        <input
-                                            name="holder"
-                                            maxLength="20"
-                                            type="text"
-                                            required
-                                            placeholder=""
-                                            onFocus={e => handleFocus(e)}
-                                            onChange={(e) => handleCardInputChange(e)}
-                                        ></input>
-                                        <label htmlFor="holder">Card Holder</label>
-                                    </div>
-                                    <div className="inputContainer">
-                                        <input
-                                            name="number"
-                                            type="text"
-                                            pattern="[0-9 ]*"
-                                            inputMode="decimal"
-                                            maxLength={19}
-                                            required
-                                            placeholder=""
-                                            onFocus={e => handleFocus(e)}
-                                            value={formatNumberWithSpaces(cardObject.number)}
-                                            onChange={(e) => handleCardNumberChange(e)}
-                                        ></input>
-                                        <CardSvg small={true} cardType={cardType}></CardSvg>
-                                        <label htmlFor="number">Card Number</label>
-                                    </div>
-                                    <div className="lastInputContainer">
-                                        <div>
-                                            <input
-                                                name="date"
-                                                type="text"
-                                                pattern="[0-9/]*"
-                                                inputMode="numeric"
-                                                required
-                                                placeholder=""
-                                                onFocus={e => handleFocus(e)}
-                                                value={formatAsMMYY(cardObject.date)}
-                                                maxLength={5}
-                                                onChange={(e) => handleDateChange(e)}
-                                            ></input>
-                                            <label htmlFor="date">Expiration (mm/yy)</label>
-                                        </div>
-                                        <div>
-                                            <input
-                                                name="cvc"
-                                                type="text"
-                                                pattern="[0-9]*"
-                                                inputMode="numeric"
-                                                maxLength={4}
-                                                required
-                                                placeholder=""
-                                                onFocus={e => handleFocus(e)}
-                                                onChange={(e) => handleCardInputChange(e)}
-                                            ></input>
-                                            <label htmlFor="cvc">Security Code</label>
-                                        </div>
-                                    </div>
+                                    <CardHelper card={cardObject} handleSetInputValue={handleSetInputValue} handleCardNumberChange={handleCardNumberChange} handleDateChange={handleDateChange}></CardHelper>
                                     <button className="saveCardButton">
                                         <svg viewBox="0 0 32 32">
                                             <path

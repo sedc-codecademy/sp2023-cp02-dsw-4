@@ -1,11 +1,12 @@
 import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 import "./styles.scss" // Import Master css file
 
 // HELPERS
 import { useMobileWidthEffects } from "./helpers/MobileHelper/MobileHelper"
-import UseThemeEffects from "./helpers/ThemeHelper/ThemeHelepr"
+import UseThemeEffects from "./helpers/ThemeHelper/ThemeHelper"
 
 // COMPONENTS
 import Header from "./components/Header/Header"
@@ -26,41 +27,101 @@ import Location from "./components/Rights/Location"
 import NotFound from "./components/NotFound/NotFound"
 
 import CourierDashboard from "./components/CourierDashboard/CourierDashboard"
-import AdminDashboard from "./components/AdminDashboard/AdminDashboard"
-
+import DashboardHeader from "./components/Header/DashboardHeader"
+import AdminNav from "./components/AdminDashboard/AdminNav"
+import AdminSub from "./components/AdminDashboard/AdminSub"
+import AdminProducts from "./components/AdminDashboard/AdminProducts"
+import AdminOrders from "./components/AdminDashboard/AdminOrders"
+import AdminUsers from "./components/AdminDashboard/AdminUsers"
+import AdminCategories from "./components/AdminDashboard/AdminCategories"
 
 function App() {
+  const role = useSelector((state) => state.role.role);
   UseThemeEffects()
   useMobileWidthEffects()
 
   return (
     <>
-      <BrowserRouter>
-        <ScrollToTop />
-        <AccountDropDown />
-        <Header></Header>
-        <DDBkgf></DDBkgf>
-        <Routes>
-          <Route path="/" element={<Home />} />
-
-          <Route path="/categories" element={<CategoriesList />} />
-          <Route path="/category/:id" element={<CategoriesList />} />
-          <Route path="/subcategories/:id" element={<CategoriesDetails />} />
-          {/* <Route path="/search" element={<CategoriesList />} /> */}
-          <Route path="/search/:id" element={<CategoriesList />} />
-          <Route path="/productDetails/:productId" element={<ProductDetails />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/settings" element={<UserSettings />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="/location" element={<Location />} />
-          <Route path="/courier" element={<CourierDashboard />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          <Route path="*" element={<NotFound link={"/"} title={"oh no... disaster!!!"} message={"stop trying to break our website, please )"} />} />
-        </Routes>
-        <Footer></Footer>
-      </BrowserRouter>
+      {role === "admin" ? (
+        <main className="admin-dashboard">
+          <BrowserRouter>
+            <DashboardHeader></DashboardHeader>
+            <AdminNav></AdminNav>
+            <Routes>
+              <Route path="/" element={<AdminCategories />} />
+              <Route path="/sub" element={<AdminSub />} />
+              <Route path="/products" element={<AdminProducts />} />
+              <Route path="/orders" element={<AdminOrders />} />
+              <Route path="/users" element={<AdminUsers />} />
+              <Route
+                path="*"
+                element={
+                  <NotFound
+                    link={"/"}
+                    title={"oh no... disaster!!!"}
+                    message={"stop trying to break our website, please )"}
+                  />
+                }
+              />
+            </Routes>
+            <Footer></Footer>
+          </BrowserRouter>
+        </main>
+      ) : role === "courier" ? (
+        <BrowserRouter>
+          <DashboardHeader></DashboardHeader>
+          <Routes>
+            <Route path="/" element={<CourierDashboard />} />
+            <Route
+              path="*"
+              element={
+                <NotFound
+                  link={"/"}
+                  title={"oh no... disaster!!!"}
+                  message={"stop trying to break our website, please )"}
+                />
+              }
+            />
+          </Routes>
+          <Footer></Footer>
+        </BrowserRouter>
+      ) : (
+        <BrowserRouter>
+          <ScrollToTop />
+          <AccountDropDown />
+          <Header></Header>
+          <DDBkgf></DDBkgf>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<CategoriesList />} />
+            <Route path="/category/:id" element={<CategoriesList />} />
+            <Route path="/subcategories/:id" element={<CategoriesDetails />} />
+            {/* <Route path="/search" element={<CategoriesList />} /> */}
+            <Route path="/search/:id" element={<CategoriesList />} />
+            <Route
+              path="/productDetails/:productId"
+              element={<ProductDetails />}
+            />
+            <Route path="/user" element={<User />} />
+            <Route path="/settings" element={<UserSettings />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/location" element={<Location />} />
+            <Route
+              path="*"
+              element={
+                <NotFound
+                  link={"/"}
+                  title={"oh no... disaster!!!"}
+                  message={"stop trying to break our website, please )"}
+                />
+              }
+            />
+          </Routes>
+          <Footer></Footer>
+        </BrowserRouter>
+      )}
     </>
   )
 }

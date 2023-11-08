@@ -12,6 +12,7 @@ import filtersReducer from "./slices/filters/filtersSlice"
 import shippingReducer from "./slices/shipping/shippingSlice"
 import searchReducer from "./slices/search/search"
 import cardReducer from "./slices/cardSlice/cardSlice"
+import roleReducer from "./slices/role/roleSlice"
 
 const store = configureStore({
   reducer: {
@@ -27,7 +28,8 @@ const store = configureStore({
     ddBkg: ddBkgReducer,
     theme: themeReducer,
     filters: filtersReducer,
-    mobile: mobileReducer
+    mobile: mobileReducer,
+    role: roleReducer
   },
 })
 

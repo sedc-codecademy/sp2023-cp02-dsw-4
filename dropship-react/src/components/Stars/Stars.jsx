@@ -1,6 +1,46 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Stars({ initialRating, id, shouldHover }) {
+function Stars({ initialRating, id }) {
+    const rating = initialRating || 0
+
+    const stars = [1, 2, 3, 4, 5].map((starIndex) => {
+        const percentage = ((rating + 1) - Math.floor(starIndex)) * 100
+        const gradientId = `gradient-${id}-${starIndex}`
+
+        return (
+            <Star
+                key={`star-${id}-${starIndex}`}
+                percentage={percentage}
+                gradientId={gradientId}
+            />
+        )
+    })
+
+    return (
+        <div className="starsDiv">
+            {stars}
+        </div>
+    )
+}
+
+function Star({ percentage, gradientId }) {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill={`url(#${gradientId})`}
+        >
+            <path
+                d="M12 2L15.09 8.34L22 9.27L17 14.24L18.18 21L12 17.77L5.82 21L7 14.24L2 9.27L8.91 8.34L12 2Z"
+            />
+            <linearGradient id={gradientId} className='starGradient'>
+                <stop offset={`${percentage}%`} stopColor="currentColor" />
+                <stop offset="0%" stopColor="gray" />
+            </linearGradient>
+        </svg>
+    )
+}
+
+export function EditStars({ initialRating, id, onClick }) {
     const rating = initialRating || 0
     const [hoverState, setHoverState] = useState(Array(5).fill(false))
 
@@ -17,52 +57,54 @@ function Stars({ initialRating, id, shouldHover }) {
         const gradientId = `gradient-${id}-${starIndex}`
 
         return (
-            <Star
+            <EditStar
                 key={`star-${id}-${starIndex}`}
+                starId={id}
+                starIndex={starIndex + 1}
                 percentage={percentage}
                 gradientId={gradientId}
                 isHovered={hoverState[starIndex - 1]}
                 handleMouseOver={() => handleMouseOver(starIndex - 1)}
                 handleMouseOut={handleMouseOut}
-                shouldHover={shouldHover}
+                onClick={onClick}
             />
         )
     })
 
     return (
-        <div className="starsDiv">
+        <div className="starsDiv editStars">
             {stars}
         </div>
     )
 }
 
-function Star({ shouldHover, percentage, gradientId, isHovered, handleMouseOver, handleMouseOut }) {
-    const starRef = useRef(null)
+const EditStar = ({ starIndex, percentage, isHovered, handleMouseOver, handleMouseOut, onClick, starId }) => {
+    const [offset, setOffset] = useState(0)
+    const gradientId = `starGradient${starId}-${starIndex}`
 
     useEffect(() => {
-            const star = starRef.current
-            const gradient = star.querySelector('linearGradient')
-            gradient.children[0].setAttribute('offset', `${percentage}%`)
+        setOffset(percentage)
     }, [percentage])
 
     return (
         <svg
             viewBox="0 0 24 24"
             fill={`url(#${gradientId})`}
-            ref={starRef}
-            className={shouldHover ? (isHovered ? 'hover' : '') : 'unHover'}
-            onMouseOver={shouldHover ? handleMouseOver : undefined}
-            onMouseOut={shouldHover ? handleMouseOut : undefined}
+            className={isHovered ? 'hover' : 'unHover'}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            onClick={() => onClick(starIndex - 1)}
         >
             <path
                 d="M12 2L15.09 8.34L22 9.27L17 14.24L18.18 21L12 17.77L5.82 21L7 14.24L2 9.27L8.91 8.34L12 2Z"
             />
             <linearGradient id={gradientId} className='starGradient'>
-                <stop offset="0%" stopColor="currentColor" />
-                <stop offset="0%" stopColor="gray" />
+                <stop offset={`${offset}%`} stopColor="currentColor" />
+                <stop offset={`${offset}%`} stopColor="gray" />
             </linearGradient>
         </svg>
     )
 }
+
 
 export default Stars

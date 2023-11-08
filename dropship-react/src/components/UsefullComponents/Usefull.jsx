@@ -628,11 +628,9 @@ export const DetailsAllProducts = () => {
 }
 
 export function formatDate(inputDate) {
-  if (!inputDate) {
-      const currentDate = new Date()
-      return `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}`
-  }
-  const date = new Date(inputDate)
+  let tempDate = inputDate || new Date()
+  
+  const date = new Date(tempDate)
   const day = date.getDate()
   const month = date.getMonth() + 1 // Months are 0-indexed, so add 1
   const year = date.getFullYear()
@@ -643,5 +641,10 @@ export function formatDate(inputDate) {
 
   return `${formattedDay}/${formattedMonth}/${year}`
 }
+
+export function addSpaceAfterComma(str) {
+  return str.replace(/,(?=\S)/g, ', ');
+}
+
 
 

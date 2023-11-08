@@ -184,6 +184,28 @@ header {
             }
         }
 
+        &.dashboardNav {
+            all: unset;
+
+            ul {
+                &.navigationLinks {
+                    box-shadow: none;
+                    gap: .7rem;
+
+                    &.loggedIn {
+                        border-radius: .5rem;
+                        border-end-end-radius: 2rem;
+                        border-start-end-radius: 2rem;
+                    }
+                }
+            }
+
+            .settingsContainer {
+                position: absolute;
+                right: 1rem;
+            }
+        }
+
         &.mobileNav {
             bottom: 0;
             width: 100%;

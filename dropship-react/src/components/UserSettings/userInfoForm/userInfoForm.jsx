@@ -1,92 +1,60 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-
-function UserInfoForm({ handleUserInputChange }) {
-  const user = useSelector((state) => state.user.user);
-  const userSettings = useSelector((state) => state.userSettings.userInfo);
-  const [isExpandedUser, setIsExpandedUser] = useState(true);
-  // console.log(userSettings)
-
-  const handleExpandUser = () => {
-    setIsExpandedUser(!isExpandedUser);
-  };
-
+function UserInfoForm() {
   return (
-    <div className="user-settings-info container-div">
-      <h2>
-        User Info
-        <span className="clickable-span" onClick={handleExpandUser}>
-          EDIT
-        </span>
-      </h2>
-      <div className="user-firstname">
-        <h1>Firstname: {user.firstName}</h1>
-        <label></label>
-        {isExpandedUser && (
+    <form className="dataForm userInfoForm" onSubmit={(e) => { e.preventDefault() }}>
+      <div className="inputContainer fullname">
+        <p>First name: Dime</p>
+        <div>
           <input
-            className="user-input"
             type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="Enter First Name"
-            value={userSettings.firstName}
-            // onChange={handleUserInputChange}
-            onChange={(e) => handleUserInputChange(e)}
-          />
-        )}
-      </div>
-
-      <div className="user-lastname">
-        <h1>Lastname: {user.lastName}</h1>
-        <label></label>
-        {isExpandedUser && (
+            maxLength="25"
+            minLength="4"
+            name="fname"
+            required
+            placeholder=""
+          ></input>
+          <label htmlFor="fname">First Name</label>
+        </div>
+        <p>Last name: Dimeski</p>
+        <div>
           <input
-            className="user-input"
             type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="Enter Last Name"
-            value={userSettings.lastName}
-            onChange={(e) => handleUserInputChange(e)}
-          />
-        )}
+            maxLength="25"
+            minLength="4"
+            name="lname"
+            required
+            placeholder=""
+          ></input>
+          <label htmlFor="lname">Last Name</label>
+        </div>
       </div>
-
-      <div className="user-email">
-        <h3>Email: {user.email}</h3>
-        <label></label>
-        {isExpandedUser && (
+      <div className="inputContainer ePhone">
+        <p>Email address: dime@sarf.com</p>
+        <div>
           <input
-            className="user-input"
             type="email"
-            id="email"
+            maxLength="25"
+            minLength="8"
             name="email"
-            placeholder="Enter Email"
-            value={userSettings.email}
-            onChange={(e) => handleUserInputChange(e)}
-          />
-        )}
-      </div>
-
-      <div className="user-phone-number">
-        <p>Phone Number: {user.phoneNumber}</p>
-        <label></label>
-        {isExpandedUser && (
+            required
+            placeholder=""
+          ></input>
+          <label htmlFor="email">Email</label>
+        </div>
+        <p>Phone number: 075500000</p>
+        <div className="lname">
           <input
-            className="user-input"
+            name="phone"
             type="text"
-            id="phoneNumber"
-            name="phoneNumber"
-            placeholder="Enter Phone Number"
-            value={userSettings.phoneNumber}
-            onChange={(e) => handleUserInputChange(e)}
-          />
-        )}
+            pattern="[0-9]*"
+            inputMode="numeric"
+            required
+            placeholder=""
+          ></input>
+          <label htmlFor="phone">Phone Number</label>
+        </div>
       </div>
-
-      <button className="submit-button">SUBMIT</button>
-    </div>
-  );
+    </form>
+  )
 }
 
-export default UserInfoForm;
+export default UserInfoForm

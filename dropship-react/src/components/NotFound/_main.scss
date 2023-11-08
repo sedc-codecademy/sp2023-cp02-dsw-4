@@ -2,6 +2,7 @@
     display: flex;
     padding: 1rem;
     margin-inline: auto;
+    margin-block: 2rem 4rem;
     height: 70svh;
 
     a {
@@ -16,7 +17,6 @@
         }
 
         h1 {
-            font-size: 4rem;
             font-size: clamp(3rem, 2rem + 2.6667vw, 7rem);
             letter-spacing: -0.3rem;
             line-height: 2.8rem;
@@ -30,7 +30,6 @@
             position: relative;
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 1.1rem;
             letter-spacing: 0.2rem;
             color: var(--tpSec);
             margin-top: .7rem;
