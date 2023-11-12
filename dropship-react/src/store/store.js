@@ -13,6 +13,7 @@ import shippingReducer from "./slices/shipping/shippingSlice"
 import searchReducer from "./slices/search/search"
 import cardReducer from "./slices/cardSlice/cardSlice"
 import roleReducer from "./slices/role/roleSlice"
+import loaderReducer from "./slices/loaderSlice/loaderSlice"
 
 const store = configureStore({
   reducer: {
@@ -29,7 +30,8 @@ const store = configureStore({
     theme: themeReducer,
     filters: filtersReducer,
     mobile: mobileReducer,
-    role: roleReducer
+    role: roleReducer,
+    loader: loaderReducer
   },
 })
 

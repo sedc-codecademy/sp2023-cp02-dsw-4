@@ -14,40 +14,7 @@ const initialState = {
             dark: '#616161'
         },
     },
-    tempCards: [
-        {
-            id: "101",
-            holder: `Frosina Stamenkovska`,
-            number: `3500000000000000`,
-            cvc: '985',
-            date: '01/24',
-            type: {
-                mask: '0000 0000 0000 0000',
-                regex: '^(?:35\\d{0,2})\\d{0,12}',
-                cardtype: 'jcb',
-                light: '#ef5350',
-                dark: '#d32f2f'
-            },
-            cardStatus: "PRIMARY",
-            removal: false
-        },
-        {
-            id: "102",
-            holder: `Frosina Stamenkovska`,
-            number: `5000 3232 3232 3280`,
-            cvc: '985',
-            date: '05/24',
-            type: {
-                regex: '^(?:5[0678]\\d{0,2}|6304|67\\d{0,2})\\d{0,12}',
-                mask: '0000 0000 0000 0000',
-                cardtype: 'maestro',
-                light: '#ffeb3b',
-                dark: '#f9a825',
-            },
-            cardStatus: "SECONDARY",
-            removal: false
-        },
-    ],
+    tempCards: [],
     newCard: {
         holder: ``,
         number: ``,
@@ -184,10 +151,13 @@ const cardSlice = createSlice({
         },
         setCreateCard: (state, action) =>{
             state.createCard = action.payload
+        },
+        setTempCards: (state, action) =>{
+            state.tempCards = action.payload
         }
     },
 })
 
-export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID,setNewCardFormValue,setNewCardType,setCreateCard } = cardSlice.actions
+export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID,setNewCardFormValue,setNewCardType,setCreateCard,setTempCards } = cardSlice.actions
 
 export default cardSlice.reducer

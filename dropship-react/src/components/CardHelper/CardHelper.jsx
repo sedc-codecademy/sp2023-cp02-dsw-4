@@ -94,7 +94,7 @@ export function SettingsCardHelper({ cardID }) {
     const dispatch = useDispatch()
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
     const card = useSelector((state) => state.card.tempCards.find(card => card.id === cardID))
-    const originalCard = useSelector((state) => state.user.user.cards.find(card => card.id === cardID))
+    const originalCard = useSelector((state) => state.user.userCards.find(card => card.id === cardID))
 
     const [tempHolder, setTempHolder] = useState('')
     const [tempNumber, setTempNumber] = useState('')
@@ -255,7 +255,7 @@ export function NewCardHelper() {
     const dispatch = useDispatch()
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
     const card = useSelector((state) => state.card.newCard)
-    const userCards = useSelector((state) => state.user.user.cards)
+    const userCards = useSelector((state) => state.user.userCards)
 
     const handleSetInputValue = (e) => {
         const { name, value } = e.target
@@ -303,10 +303,10 @@ export function NewCardHelper() {
                 const hasMatchingProperties = checkForSimilarProperties(userCards, { number: card.number, date: card.date })
                 if (hasMatchingProperties) return console.log('Card already exists')
                 console.log('Should create card')
-                dispatch(toggleCreateCard())
+                dispatch(setCreateCard(false))
             } else {
                 console.log('Should create card')
-                dispatch(toggleCreateCard())
+                dispatch(setCreateCard(false))
             }
         } else {
             console.log('Fill out all properties')

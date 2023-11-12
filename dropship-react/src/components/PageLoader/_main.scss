@@ -1,0 +1,276 @@
+///////////  PAGE LOADER  ///////////// 
+
+.pageLoader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    width: 100svw;
+    height: 100vh;
+    height: 100svh;
+    background-color: var(--tpPri2);
+    z-index: 555;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    --letterSpacing: clamp(0.3rem, 0.4412rem + -0.3765vw, -0.4rem);
+    -webkit-user-select: none;
+    user-select: none;
+
+    .somethingWrong {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity .3s;
+
+        &.true {
+            opacity: 1;
+        }
+
+        p {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            color: var(--tpSec);
+            margin-top: .7rem;
+            font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        button {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5rem;
+            padding: .7rem;
+            background-color: var(--tpPri3);
+
+            span {
+                z-index: 1;
+                color: var(--secColor);
+                text-shadow: .05rem .05rem 0 #fff;
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-size: 1.3rem;
+                font-weight: 600;
+                letter-spacing: .1rem;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: .2rem;
+                opacity: 0;
+                border-radius: .5rem;
+                background-image: linear-gradient(160deg,
+                        hsl(350deg 100% 60%) 13%,
+                        hsla(7, 100%, 62%, 0.624) 43%,
+                        hsla(22, 95%, 56%, 0.566) 49%,
+                        hsl(36deg 100% 47%) 50%,
+                        hsl(45deg 100% 43%) 50%,
+                        hsl(56deg 100% 39%) 50%,
+                        hsl(72deg 64% 49%) 50%,
+                        hsl(94deg 69% 60%) 51%,
+                        hsla(129, 82%, 68%, 0.936) 57%,
+                        hsla(160, 100%, 50%, 0.592) 87%);
+            }
+
+            &:focus-visible {
+                outline: .2rem solid var(--accent);
+                color: var(--accent);
+                background-color: var(--tpPri);
+            }
+
+            @media(min-width: 600px) {
+                transition: background-color .5s, scale .3s;
+
+                &::before {
+                    transition: opacity .5s;
+                }
+
+                span {
+                    transition: color .5s, text-shadow .5s;
+                }
+
+                &:hover {
+                    span {
+                        color: #fff;
+                        text-shadow: .05rem .05rem 0 black;
+                    }
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+
+                &:active {
+                    &::before {
+                        opacity: .8;
+                    }
+
+                    scale: .9;
+
+                    background-color: var(--tpPri2);
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin-top: -5rem;
+        font-size: 11rem;
+        font-size: clamp(7rem, 5.5882rem + 3.7647vw, 15rem);
+        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        height: fit-content;
+        letter-spacing: var(--letterSpacing);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+
+        span:not(:nth-child(2)) {
+            animation: tighten 5s infinite;
+            animation-delay: 250ms;
+            text-align: end;
+            width: 50%;
+
+            &:last-child {
+                text-align: start;
+            }
+        }
+    }
+
+    svg {
+        height: 11rem;
+        font-size: clamp(7rem, 5.5882rem + 3.7647vw, 15rem);
+        animation: scaleLogo 5s infinite;
+        animation-delay: 250ms;
+        filter: drop-shadow(.1rem .1rem 0 var(--secColor));
+
+        linearGradient {
+            stop:first-child {
+                animation: gradient 5s infinite;
+            }
+
+            stop:last-child {
+                animation: gradient1 5s infinite;
+            }
+        }
+    }
+
+    @keyframes gradient {
+        0% {
+            stop-color: var(--logoAccentTwo);
+        }
+
+        50% {
+            stop-color: var(--logoReverseAccentTwo);
+        }
+
+        100% {
+            stop-color: var(--logoAccentTwo);
+        }
+    }
+
+    @keyframes gradient1 {
+        0% {
+            stop-color: var(--logoAccentOne);
+        }
+
+        50% {
+            stop-color: var(--logoReverseAccentOne);
+        }
+
+        100% {
+            stop-color: var(--logoAccentOne);
+        }
+    }
+
+    @keyframes tighten {
+        0% {
+            letter-spacing: var(--letterSpacing);
+        }
+
+        60% {
+            letter-spacing: calc(var(--letterSpacing) - 1.1rem);
+        }
+
+        80% {
+            letter-spacing: calc(var(--letterSpacing) - 1.1rem);
+        }
+
+        91% {
+            letter-spacing: calc(var(--letterSpacing) - .3rem)
+        }
+
+        100% {
+            letter-spacing: var(--letterSpacing);
+        }
+    }
+
+    @keyframes scaleLogo {
+        0% {
+            transform: scale(1);
+        }
+
+        60% {
+            transform: scale(.8);
+        }
+
+        80% {
+            transform: scale(.8);
+        }
+
+        91% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 800px) {
+        h1 {
+            flex-direction: column;
+            gap: 0rem;
+
+            span:not(:nth-child(2)) {
+                text-align: center;
+                width: unset;
+
+                &:last-child {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.pageLoader-enter {
+    opacity: 0;
+}
+
+.pageLoader-enter-active {
+    opacity: 1;
+    transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+}
+
+.pageLoader-enter-done,
+.pageLoader-exit {
+    opacity: 1;
+}
+
+.pageLoader-exit-active {
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+}

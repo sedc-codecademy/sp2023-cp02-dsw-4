@@ -388,6 +388,10 @@
     }
 }
 
+.laodingDiv{
+    min-height: 70vh;
+}
+
 @media(max-width: 1000px) {
     .user-main {
         --maxWidth: 80%;

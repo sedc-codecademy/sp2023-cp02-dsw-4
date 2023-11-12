@@ -1,8 +1,8 @@
-function UserInfoForm() {
+function UserInfoForm({user}) {
   return (
     <form className="dataForm userInfoForm" onSubmit={(e) => { e.preventDefault() }}>
       <div className="inputContainer fullname">
-        <p>First name: Dime</p>
+        <p>First name: {user.firstName}</p>
         <div>
           <input
             type="text"
@@ -14,7 +14,7 @@ function UserInfoForm() {
           ></input>
           <label htmlFor="fname">First Name</label>
         </div>
-        <p>Last name: Dimeski</p>
+        <p>Last name: {user.lastName}</p>
         <div>
           <input
             type="text"
@@ -28,7 +28,7 @@ function UserInfoForm() {
         </div>
       </div>
       <div className="inputContainer ePhone">
-        <p>Email address: dime@sarf.com</p>
+        <p>Email address: {user.email}</p>
         <div>
           <input
             type="email"
@@ -40,7 +40,7 @@ function UserInfoForm() {
           ></input>
           <label htmlFor="email">Email</label>
         </div>
-        <p>Phone number: 075500000</p>
+        <p>Phone number: {user.phoneNumber}</p>
         <div className="lname">
           <input
             name="phone"

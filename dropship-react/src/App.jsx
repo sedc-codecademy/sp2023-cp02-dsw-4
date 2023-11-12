@@ -7,6 +7,7 @@ import "./styles.scss" // Import Master css file
 // HELPERS
 import { useMobileWidthEffects } from "./helpers/MobileHelper/MobileHelper"
 import UseThemeEffects from "./helpers/ThemeHelper/ThemeHelper"
+import UserHelper from "./helpers/UserHelper/UserHelper"
 
 // COMPONENTS
 import Header from "./components/Header/Header"
@@ -35,8 +36,11 @@ import AdminOrders from "./components/AdminDashboard/AdminOrders"
 import AdminUsers from "./components/AdminDashboard/AdminUsers"
 import AdminCategories from "./components/AdminDashboard/AdminCategories"
 
+import PageLoader from './components/PageLoader/PageLoader'
+
 function App() {
-  const role = useSelector((state) => state.role.role);
+  UserHelper()
+  const role = useSelector((state) => state.role.role)
   UseThemeEffects()
   useMobileWidthEffects()
 
@@ -45,6 +49,7 @@ function App() {
       {role === "admin" ? (
         <main className="admin-dashboard">
           <BrowserRouter>
+            <PageLoader></PageLoader>
             <DashboardHeader></DashboardHeader>
             <AdminNav></AdminNav>
             <Routes>
@@ -69,6 +74,7 @@ function App() {
         </main>
       ) : role === "courier" ? (
         <BrowserRouter>
+          <PageLoader></PageLoader>
           <DashboardHeader></DashboardHeader>
           <Routes>
             <Route path="/" element={<CourierDashboard />} />
@@ -87,6 +93,7 @@ function App() {
         </BrowserRouter>
       ) : (
         <BrowserRouter>
+          <PageLoader></PageLoader>
           <ScrollToTop />
           <AccountDropDown />
           <Header></Header>

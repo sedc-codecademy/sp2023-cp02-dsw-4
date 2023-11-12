@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
-import { NavLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useRef } from "react"
+import { NavLink } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
 
-import { setShowAccDropDown } from "../../../store/slices/dropdowns/acDropDownSlice";
-import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice";
+import { setShowAccDropDown } from "../../../store/slices/dropdowns/acDropDownSlice"
+import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice"
 
-import { setThemeMode } from "../../../store/slices/theme/themeSlice";
-import { setIsSettingsOn } from "../../../store/slices/nav/navSettingsSlice";
-import { setShowShipping } from "../../../store/slices/shipping/shippingSlice";
-import { setShouldFocus } from "../../../store/slices/search/search";
+import { setThemeMode } from "../../../store/slices/theme/themeSlice"
+import { setIsSettingsOn } from "../../../store/slices/nav/navSettingsSlice"
+import { setShowShipping } from "../../../store/slices/shipping/shippingSlice"
+import { setShouldFocus } from "../../../store/slices/search/search"
 
 import {
     CatDPMobile,
@@ -16,75 +16,88 @@ import {
     ViewAllSub,
     catArray,
     subCatArray,
-} from "../CatDropDown/CatDP";
+} from "../CatDropDown/CatDP"
 import {
     LocationPicker,
     MiniLocationPicker,
-} from "../LocationPicker/LocationPicker";
+} from "../LocationPicker/LocationPicker"
 
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group"
+import { useLogout } from "../../../helpers/UserHelper/UserHelper"
+import { userLogOut } from "../../../store/slices/user/userSlices"
+import { setTempCards } from "../../../store/slices/cardSlice/cardSlice"
+import { clearTokens, setRole } from "../../../store/slices/role/roleSlice"
+import { setIsFetching } from "../../../store/slices/loaderSlice/loaderSlice"
 
 export default function Nav() {
-    const dispatch = useDispatch();
-    let isLoggedIn = true;
+    const dispatch = useDispatch()
+    const logout = useLogout()
+    const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+    const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
+    const themeMode = useSelector((state) => state.theme.themeMode)
+    const isMobile = useSelector((state) => state.mobile.isMobile)
+    const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
+    const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
 
-    const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown);
-    const themeMode = useSelector((state) => state.theme.themeMode);
-    const isMobile = useSelector((state) => state.mobile.isMobile);
-    const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn);
-    const showCatDropDown = useSelector(
-        (state) => state.catDropDown.showDropDown
-    );
-    const showShipping = useSelector((state) => state.shipping.showShipping);
-    const role = useSelector((state) => state.role.role);
+    const showShipping = useSelector((state) => state.shipping.showShipping)
+    const role = useSelector((state) => state.role.role)
 
-    const csstransitionRef = useRef();
-    const mobilecatref = useRef();
-    const activeLink = window.location.pathname;
+    const csstransitionRef = useRef()
+    const mobilecatref = useRef()
+    const activeLink = window.location.pathname
 
     const onLoginBtnClick = () => {
-        dispatch(setShowAccDropDown(true));
-    };
+        dispatch(setShowAccDropDown(true))
+    }
 
     const closeSettings = () => {
         if (isSettingsOn) {
-            dispatch(setIsSettingsOn(false));
+            dispatch(setIsSettingsOn(false))
         }
-    };
+    }
 
     const onAccountIconClick = () => {
-        if (showShipping) dispatch(setShowShipping(!showShipping));
-        dispatch(setIsSettingsOn(!isSettingsOn));
-    };
+        if (showShipping) dispatch(setShowShipping(!showShipping))
+        dispatch(setIsSettingsOn(!isSettingsOn))
+    }
 
     const handleDarkClick = () => {
-        dispatch(setThemeMode("dark"));
-    };
+        dispatch(setThemeMode("dark"))
+    }
 
     const handleLightClick = () => {
-        dispatch(setThemeMode("light"));
-    };
+        dispatch(setThemeMode("light"))
+    }
 
     const handleSystemClick = () => {
-        dispatch(setThemeMode("system"));
-    };
+        dispatch(setThemeMode("system"))
+    }
 
     const handleCategoriesClick = () => {
-        dispatch(toggleCatDropDown());
-    };
+        dispatch(toggleCatDropDown())
+    }
 
     const handleShipToClick = () => {
-        if (isSettingsOn) dispatch(setIsSettingsOn(false));
-        dispatch(setShowShipping(!showShipping));
-    };
+        if (isSettingsOn) dispatch(setIsSettingsOn(false))
+        dispatch(setShowShipping(!showShipping))
+    }
 
-    const handleLogOutClick = () => {
-        console.log("ive been clicked");
-    };
+    const handleLogOutClick = async () => {
+        const dime = await logout()
+        dispatch(setIsFetching(false))
+        dispatch(clearTokens())
+        dispatch(userLogOut())
+        dispatch(setRole('user'))
+        dispatch(setTempCards([]))
+        console.log(dime)
+        if (isSettingsOn) {
+            dispatch(setIsSettingsOn(false))
+        }
+    }
 
     const searchButtonClick = () => {
-        dispatch(setShouldFocus(true));
-    };
+        dispatch(setShouldFocus(true))
+    }
 
     return (
         <>
@@ -403,5 +416,5 @@ export default function Nav() {
                 )}
             </nav>
         </>
-    );
+    )
 }

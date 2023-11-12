@@ -17,6 +17,7 @@ export function useMobileWidthEffects() {
     const allowScroll = useSelector((state) => state.ddBkg.isScrollOn)
     const mobileFiltersOn = useSelector((state) => state.filters.mobileFiltersOn)
     const showAccDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
+    const showLoading = useSelector(state => state.loader.showLoading)
 
     useEffect(() => {
         if (isMobile) {
@@ -35,7 +36,12 @@ export function useMobileWidthEffects() {
         } else if (!isMobile && !showAccDropDown) {
             dispatch(setIsScrollOn(false))
         }
-    }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn, showAccDropDown]) // Drop Downs and Pop-Ups checker UseEffect
+        if (showLoading) {
+            dispatch(setIsScrollOn(true))
+        } else {
+            dispatch(setIsScrollOn(false))
+        }
+    }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn, showAccDropDown, showLoading]) // Drop Downs and Pop-Ups checker UseEffect
 
     useEffect(() => {
         if (allowScroll) {

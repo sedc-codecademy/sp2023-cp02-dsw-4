@@ -3,14 +3,20 @@ import { useSelector, useDispatch } from "react-redux"
 import { CSSTransition } from "react-transition-group"
 import { setShowAccDropDown } from "../../store/slices/dropdowns/acDropDownSlice"
 import { NavLink } from "react-router-dom"
+import { useLogin } from "../../helpers/UserHelper/UserHelper"
+import { setAuthTokens } from "../../store/slices/role/roleSlice"
 
 function AccountDropDown() {
     const dispatch = useDispatch()
+    const login = useLogin()
     const csstransitionRef = useRef()
     const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const isMobile = useSelector((state) => state.mobile.isMobile)
 
     const [currentMode, setCurrentMode] = useState(`${isMobile ? "default" : 'logIn'}`)
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     useEffect(() => {
         if (showDropDown) {
@@ -21,7 +27,7 @@ function AccountDropDown() {
         } else if (currentMode === 'default' && isMobile) {
             setCurrentMode("logIn")
         }
-    }, [showDropDown,isMobile, currentMode])
+    }, [showDropDown, isMobile, currentMode])
 
     const handleCloseLogin = () => {
         dispatch(setShowAccDropDown(false))
@@ -48,6 +54,19 @@ function AccountDropDown() {
         }
     }
 
+    const handleSignIn = async (e) => {
+        console.log(`Username: ${username}, Password: ${password}`)
+        if (username.length >= 4 && password.length >= 8) {
+            e.preventDefault()
+            const dime = await login({ username: username, password: password })
+            console.log(dime)
+            dispatch(setAuthTokens(dime))
+            handleCloseLogin()
+            setUsername('')
+            setPassword('')
+        }
+    }
+
     return (
         <CSSTransition
             in={showDropDown}
@@ -70,7 +89,7 @@ function AccountDropDown() {
                         />
                     </svg>
                 </button>
-                {(currentMode === "default" || currentMode === "logIn") && <form className="loginUi">
+                {(currentMode === "default" || currentMode === "logIn") && <form className="loginUi" onSubmit={handleSignIn}>
                     <h1>
                         Sign <span>In</span>
                     </h1>
@@ -139,6 +158,7 @@ function AccountDropDown() {
                                 maxLength="22"
                                 minLength="4"
                                 required
+                                value={username} onChange={(e) => setUsername(e.target.value)}
                                 placeholder=""
                             ></input>
                             <label htmlFor="uname">Enter username</label>
@@ -151,6 +171,7 @@ function AccountDropDown() {
                                 maxLength="16"
                                 minLength="8"
                                 required
+                                value={password} onChange={(e) => setPassword(e.target.value)}
                                 placeholder=""
                             ></input>
                             <label htmlFor="password">Enter password</label>
@@ -160,9 +181,9 @@ function AccountDropDown() {
                     <button className="forgotPassButton" onClick={handleForgotPassword}>Forgot Password</button>
 
                     {isMobile ? <div className="buttonsDiv">
-                        <button className="signInButton">Sign in</button>
+                        <button className="signInButton" onClick={handleSignIn}>Sign in</button>
                         <button className="signUpButton" onClick={handleSignUp}>Sign up</button>
-                    </div> : <button className="signInButton">Sign in</button>}
+                    </div> : <button className="signInButton" onClick={handleSignIn}>Sign in</button>}
 
                 </form>}
                 {currentMode === "forgotPass" && <form className={`forgotPass ${currentMode === 'forgotPass' && "current"}`}>
@@ -187,7 +208,7 @@ function AccountDropDown() {
                         </svg>
                     </button>
                     <h1>
-                        Forgot <span>Password</span>{" "}
+                        Forgot <span>Password</span>
                     </h1>
                     <p>
                         Enter recovery <span>email</span>

@@ -13,9 +13,10 @@ function ImageLoader(props) {
                     src={props.url}
                     onError={handleImageError}
                     alt={props.alt}
+                    loading='lazy'
                 />
             ) : (
-                <img src={props.backupUrl} alt={props.backupAlt} />
+                <img src={props.backupUrl} alt={props.backupAlt} loading='lazy' />
             )}
         </>
     )

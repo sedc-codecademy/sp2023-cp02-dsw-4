@@ -1,8 +1,8 @@
-function AddressInfoForm() {
+function AddressInfoForm({user}) {
   return (
     <form className="dataForm addressInfoFrom" onSubmit={(e) => {e.preventDefault()}}>
       <div className="inputContainer">
-        <p>Street: Boulevard Ilinden</p>
+        <p>Street: {user.street}</p>
         <div>
           <input
             type="text"
@@ -16,7 +16,7 @@ function AddressInfoForm() {
         </div>
       </div>
       <div className="inputContainer">
-        <p>City: Skopje</p>
+        <p>City: {user.city}</p>
         <div>
           <input
             type="text"
@@ -30,7 +30,7 @@ function AddressInfoForm() {
         </div>
       </div>
       <div className="inputContainer">
-        <p>Postal Code: 1000</p>
+        <p>Postal Code: {user.postalCode}</p>
         <div>
           <input
             name="postal"
@@ -44,7 +44,7 @@ function AddressInfoForm() {
         </div>
       </div>
     </form>
-  );
+  )
 }
 
-export default AddressInfoForm;
+export default AddressInfoForm

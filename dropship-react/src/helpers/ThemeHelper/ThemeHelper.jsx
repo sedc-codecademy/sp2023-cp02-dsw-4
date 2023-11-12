@@ -7,20 +7,27 @@ export default function UseThemeEffects() {
     const [mediaQueryList, setMediaQueryList] = useState(window.matchMedia("(prefers-color-scheme: dark)"))
 
     useEffect(() => {
+        const handleMediaQueryChange = (e) => {
+            if (themeMode === "system") {
+                setMediaQueryList(window.matchMedia("(prefers-color-scheme: dark)"))
+            }
+        }
+
+        const mql = window.matchMedia("(prefers-color-scheme: dark)")
+        mql.addEventListener("change", handleMediaQueryChange)
+
+        return () => {
+            mql.removeEventListener("change", handleMediaQueryChange)
+        }
+    }, [themeMode])
+
+    useEffect(() => {
         if (themeMode === "system") {
-            applySystemTheme(themeMode)
+            applySystemTheme(mediaQueryList.matches)
         } else if (themeMode === "dark") {
             applyDarkTheme()
         } else if (themeMode === "light") {
             applyLightTheme()
         }
-    }, [themeMode, mediaQueryList]) // Theme checker UseEffect
-
-    window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", () => {
-            if (themeMode === "system") {
-                setMediaQueryList(window.matchMedia("(prefers-color-scheme: dark)"))
-            }
-        })
+    }, [themeMode, mediaQueryList.matches])
 }

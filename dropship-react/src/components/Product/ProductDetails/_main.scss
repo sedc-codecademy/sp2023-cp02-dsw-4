@@ -485,6 +485,11 @@
             }
           }
         }
+
+        &:disabled{
+          color: var(--tpSec3);
+          pointer-events: none;
+        }
       }
 
       h1 {
