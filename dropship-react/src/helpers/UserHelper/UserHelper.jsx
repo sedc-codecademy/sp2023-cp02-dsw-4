@@ -63,7 +63,7 @@ export default function UserHelper() {
                 dispatch(userLogIn())
             }
         }
-    }, [tokens, showLoading, dispatch, userQuery])
+    }, [tokens, showLoading, dispatch, userQuery,cardPatterns])
 }
 
 export const useLogout = () => {

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import ProductCard from "../ProductCard/ProductCard";
-import { selectProducts } from "../../../store/selectors/productSelector";
+import React, { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
+import ProductCard from "../ProductCard/ProductCard"
 
-function NewArrivals() {
-    const products = useSelector(selectProducts).slice(0, 16);
+function NewArrivals({products}) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const isMobile = useSelector((state) => state.mobile.isMobile)
 

@@ -2,10 +2,10 @@ import { useDispatch, useSelector } from "react-redux"
 import React, { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 
-import ProfilePicture from './ProfilePicture/PPicture'
-import UserInfoForm from './UserInfo/UInfo'
-import AddressInfoForm from './AddressInfo/ADInfo'
-import PasswordInfoForm from './PasswordInfo/PInfo'
+import ProfilePicture from './PictureFolder/PPicture'
+import UserInfoForm from './InfoFolder/UInfo'
+import AddressInfoForm from './AddressFolder/ADInfo'
+import PasswordInfoForm from './PasswordFolder/PInfo'
 
 import { NewCardHelper, SettingsCardHelper } from "../CardHelper/CardHelper"
 import { NoCardSvg } from "../Cart/Card/CardSvgs"

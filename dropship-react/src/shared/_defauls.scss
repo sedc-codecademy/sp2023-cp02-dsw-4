@@ -72,12 +72,26 @@ body {
     }
 
     .newArrivals{
-        background-image: url("../components/Product/NewArrivals/sun-background-min.svg");
+        background-image: url("../components/Product/NewArrivals/sun-background-min.png");
+    }
+
+    .loadingDiv{
+        &.newArrivalsMain {
+            background-image: url("../components/PageLoader/loadingArrivals.png");
+        }
+    
+        &.popularProductsMain {
+            background-image: url("../components/PageLoader/loadingPopular.png");
+        }
+    
+        &.discountProductsMain {
+            background-image: url("../components/PageLoader/loadingDiscount.png");
+        }
     }
 
     &.dark-mode {
         .newArrivals{
-            background-image: url("../components/Product/NewArrivals/sun-background-dark-min.svg");
+            background-image: url("../components/Product/NewArrivals/sun-background-dark-min.png");
         }
     
         .scrollableProductsList {
@@ -87,6 +101,20 @@ body {
         
             &.popularProducts {
                 background-image: url("../components/Product/ScrollableProductsList/popular-dark-min.png");
+            }
+        }
+
+        .loadingDiv{
+            &.newArrivalsMain {
+                background-image: url("../components/PageLoader/arLoadDark.png");
+            }
+        
+            &.popularProductsMain {
+                background-image: url("../components/PageLoader/popLoadDark.png");
+            }
+        
+            &.discountProductsMain {
+                background-image: url("../components/PageLoader/discLoadDark.png");
             }
         }
     }
