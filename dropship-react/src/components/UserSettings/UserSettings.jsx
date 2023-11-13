@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useState } from "react"
+import React, { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
 
-import ProfilePicture from "./profilePicture/ProfilePicture"
-import UserInfoForm from "./userInfoForm/UserInfoForm"
-import PasswordInfoForm from "./passwordInfoForm/PasswordInfoForm"
-import AddressInfoForm from "./addressInfoForm/AddressInfoForm"
+import ProfilePicture from './ProfilePicture/PPicture'
+import UserInfoForm from './UserInfo/UInfo'
+import AddressInfoForm from './AddressInfo/ADInfo'
+import PasswordInfoForm from './PasswordInfo/PInfo'
 
 import { NewCardHelper, SettingsCardHelper } from "../CardHelper/CardHelper"
 import { NoCardSvg } from "../Cart/Card/CardSvgs"
 import { setCreateCard, setTempCards } from "../../store/slices/cardSlice/cardSlice"
-import { useQuery } from "@tanstack/react-query"
+
 import { getUser } from "../../helpers/API/user-api"
 import { useLogout } from "../../helpers/UserHelper/UserHelper"
 import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
