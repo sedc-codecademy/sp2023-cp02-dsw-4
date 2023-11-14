@@ -10,9 +10,9 @@ function ImageLoader(props) {
         <>
             {imageLoaded ? (
                 <img
-                    src={props.url}
+                    src={props.url || ''}
                     onError={handleImageError}
-                    alt={props.alt}
+                    alt={props.alt || ''}
                     loading='lazy'
                 />
             ) : (

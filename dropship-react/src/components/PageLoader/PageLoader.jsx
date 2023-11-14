@@ -1,31 +1,32 @@
-import React, { useRef, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { CSSTransition } from "react-transition-group";
-import { setShowLoading } from "../../store/slices/loaderSlice/loaderSlice";
+import React, { useRef, useEffect, useState } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { CSSTransition } from "react-transition-group"
+import { setShowLoading } from "../../store/slices/loaderSlice/loaderSlice"
+import { LoadingSvg } from "./LoadingSvg"
 
 function PageLoader() {
-    const dispatch = useDispatch();
-    const loaderRef = useRef();
-    const showLoading = useSelector((state) => state.loader.showLoading);
-    const isFetching = useSelector((state) => state.loader.isFetching);
-    const isError = useSelector((state) => state.loader.isError);
+    const dispatch = useDispatch()
+    const loaderRef = useRef()
+    const showLoading = useSelector((state) => state.loader.showLoading)
+    const isFetching = useSelector((state) => state.loader.isFetching)
+    const isError = useSelector((state) => state.loader.isError)
 
     const handleReload = () => {
-        window.location.reload();
-    };
+        window.location.reload()
+    }
 
     useEffect(() => {
-        let timer;
+        let timer
         if (showLoading && !isFetching && !isError) {
             timer = setTimeout(() => {
-                dispatch(setShowLoading(false));
-            }, 5200);
+                dispatch(setShowLoading(false))
+            }, 5200)
         }
 
         return () => {
-            clearTimeout(timer);
-        };
-    }, [showLoading, isFetching, dispatch, isError]);
+            clearTimeout(timer)
+        }
+    }, [showLoading, isFetching, dispatch, isError])
 
     return (
         <CSSTransition
@@ -73,7 +74,7 @@ function PageLoader() {
                 </div>
             </div>
         </CSSTransition>
-    );
+    )
 }
 
 export function LoadingErrorDiv(props) {
@@ -99,9 +100,9 @@ export function LoadingErrorDiv(props) {
                                 id="e"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="0;a.end"
+                                begin="0a.end"
                                 dur="0.2s"
-                                values="1;13"
+                                values="113"
                             />
                             <animate
                                 id="f"
@@ -109,7 +110,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="y"
                                 begin="b.end"
                                 dur="0.2s"
-                                values="1;13"
+                                values="113"
                             />
                             <animate
                                 id="g"
@@ -117,7 +118,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="x"
                                 begin="c.end"
                                 dur="0.2s"
-                                values="13;1"
+                                values="131"
                             />
                             <animate
                                 id="h"
@@ -125,7 +126,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="y"
                                 begin="d.end"
                                 dur="0.2s"
-                                values="13;1"
+                                values="131"
                             />
                         </rect>
                         <rect width="10" height="10" x="1" y="13" fill="var(--secAccent)" rx="1">
@@ -135,7 +136,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="y"
                                 begin="e.end"
                                 dur="0.2s"
-                                values="13;1"
+                                values="131"
                             />
                             <animate
                                 id="j"
@@ -143,7 +144,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="x"
                                 begin="f.end"
                                 dur="0.2s"
-                                values="1;13"
+                                values="113"
                             />
                             <animate
                                 id="k"
@@ -151,7 +152,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="y"
                                 begin="g.end"
                                 dur="0.2s"
-                                values="1;13"
+                                values="113"
                             />
                             <animate
                                 id="l"
@@ -159,7 +160,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="x"
                                 begin="h.end"
                                 dur="0.2s"
-                                values="13;1"
+                                values="131"
                             />
                         </rect>
                         <rect width="10" height="10" x="13" y="13" fill="var(--tertAccent)" rx="1">
@@ -169,7 +170,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="x"
                                 begin="i.end"
                                 dur="0.2s"
-                                values="13;1"
+                                values="131"
                             />
                             <animate
                                 id="c"
@@ -177,7 +178,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="y"
                                 begin="j.end"
                                 dur="0.2s"
-                                values="13;1"
+                                values="131"
                             />
                             <animate
                                 id="d"
@@ -185,7 +186,7 @@ export function LoadingErrorDiv(props) {
                                 attributeName="x"
                                 begin="k.end"
                                 dur="0.2s"
-                                values="1;13"
+                                values="113"
                             />
                             <animate
                                 id="a"
@@ -193,14 +194,34 @@ export function LoadingErrorDiv(props) {
                                 attributeName="y"
                                 begin="l.end"
                                 dur="0.2s"
-                                values="1;13"
+                                values="113"
                             />
                         </rect>
                     </svg>
                 </>
             )}
         </div>
-    );
+    )
 }
 
-export default PageLoader;
+export function BigLoadingDiv(props) {
+    const [clickCount, setClickCount] = useState(0)
+
+    const handleButtonClick = () => {
+        if (clickCount < 5) {
+            setClickCount(prevCount => prevCount + 1)
+            props.refetch()
+        }
+    }
+    return (
+        <main className='bigLoading'>
+            <LoadingSvg></LoadingSvg>
+            <button onClick={handleButtonClick} disabled={clickCount > 4}>
+                <h1>{props.title}</h1>
+                <p>{clickCount > 4 ? `sorry somehting went wrong please reload the page` : props.message}</p>
+            </button>
+        </main>
+    )
+}
+
+export default PageLoader

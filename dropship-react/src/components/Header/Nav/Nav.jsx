@@ -24,10 +24,6 @@ import {
 
 import { CSSTransition } from "react-transition-group"
 import { useLogout } from "../../../helpers/UserHelper/UserHelper"
-import { userLogOut } from "../../../store/slices/user/userSlices"
-import { setTempCards } from "../../../store/slices/cardSlice/cardSlice"
-import { clearTokens, setRole } from "../../../store/slices/role/roleSlice"
-import { setIsFetching } from "../../../store/slices/loaderSlice/loaderSlice"
 
 export default function Nav() {
     const dispatch = useDispatch()
@@ -83,13 +79,7 @@ export default function Nav() {
     }
 
     const handleLogOutClick = async () => {
-        const dime = await logout()
-        dispatch(setIsFetching(false))
-        dispatch(clearTokens())
-        dispatch(userLogOut())
-        dispatch(setRole('user'))
-        dispatch(setTempCards([]))
-        console.log(dime)
+        await logout()
         if (isSettingsOn) {
             dispatch(setIsSettingsOn(false))
         }

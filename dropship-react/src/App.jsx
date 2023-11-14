@@ -100,15 +100,11 @@ function App() {
           <DDBkgf></DDBkgf>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/categories" element={<CategoriesList />} />
-            <Route path="/category/:id" element={<CategoriesList />} />
-            <Route path="/subcategories/:id" element={<CategoriesDetails />} />
-            {/* <Route path="/search" element={<CategoriesList />} /> */}
+            <Route path="/category/:catId" element={<CategoriesList />} />
+            <Route path="/subcategory/:subId" element={<CategoriesDetails />} />
+            <Route path="/manufacturer/:manufacturerId" element={<CategoriesDetails />} />
             <Route path="/search/:id" element={<CategoriesList />} />
-            <Route
-              path="/productDetails/:productId"
-              element={<ProductDetails />}
-            />
+            <Route path="/productDetails/:productId" element={<ProductDetails />} />
             <Route path="/user" element={<User />} />
             <Route path="/settings" element={<UserSettings />} />
             <Route path="/cart" element={<Cart />} />

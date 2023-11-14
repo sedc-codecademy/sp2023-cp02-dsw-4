@@ -5,13 +5,12 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    // margin-top: 3rem;
     background-color: var(--tpPri2);
 
     &::before {
         content: '';
         position: absolute;
-        background: linear-gradient(to right, var(--reversePaleAccent), var(--paleAccentTwo));
+        background: linear-gradient(to right, var(--reversePaleAccent), var(--paleAccentTwo),var(--reversePaleAccent));
         height: 0.2rem;
         width: 100%;
         margin-inline: auto;

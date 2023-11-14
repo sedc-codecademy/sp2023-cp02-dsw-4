@@ -9,17 +9,14 @@ export async function getCategories() {
 }
 
 export async function getCategoryByID(ID) {
-    const response = await fetch('/mockData/categories.json')
+    console.log(ID)
+    const response = await fetch('/mockData/oneCat.json')
 
     if (!response.ok) {
         throw new Error('Cannot find category')
     }
 
     /// PLACEHOLDER
-    const category = response.json().find(e => e.id === ID)
-    if(category) {
-        return category
-    }
-    throw new Error('Cannot find category')
+    return response.json()
 }
 

@@ -319,7 +319,8 @@
         height: 3rem;
         width: 3rem;
         margin: 3.5rem;
-        rect{
+
+        rect {
             stroke: #fff;
             stroke-width: .05rem;
         }
@@ -357,21 +358,168 @@
     }
 }
 
-.pageLoader-enter {
-    opacity: 0;
-}
+.bigLoading {
+    display: flex;
+    padding: 1rem;
+    margin-inline: auto;
+    margin-block: 2rem 4rem;
+    height: 70svh;
 
-.pageLoader-enter-active {
-    opacity: 1;
-    transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
-}
+    button {
+        margin-top: 10%;
 
-.pageLoader-enter-done,
-.pageLoader-exit {
-    opacity: 1;
-}
+        @supports (height: fit-content) {
+            height: fit-content;
+        }
 
-.pageLoader-exit-active {
-    opacity: 0;
-    transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+        @supports not (height: fit-content) {
+            height: auto;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 2rem + 2.6667vw, 7rem);
+            letter-spacing: -0.3rem;
+            line-height: 2.8rem;
+            text-transform: lowercase;
+            color: var(--secColor);
+            width: max-content;
+            font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        p {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            color: var(--tpSec);
+            margin-top: .7rem;
+            font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        @media (min-width: 600px) {
+            p, h1 {
+                transition: .3s color;
+            }
+
+            &:focus-visible {
+                h1{
+                    color: var(--accent);
+                }
+                p {
+                    color: var(--secAccent);
+                }
+            }
+
+            &:hover {
+                h1{
+                    color: var(--tpSec);
+                }
+                p {
+                    color: var(--accent);
+                }
+            }
+
+            &:active {
+                h1{
+                    color: var(--tpSec);
+                }
+                p {
+                    color: var(--paleSecAccent);
+                }
+            }
+        }
+
+        &:disabled {
+            pointer-events: none;
+        }
+    }
+
+    svg {
+        height: 100%
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes counter-spin {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    @keyframes wind {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(1deg);
+        }
+
+        75% {
+            transform: rotate(-1deg);
+        }
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: unset;
+        width: 100%;
+
+        button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1rem;
+
+            h1,
+            p {
+                text-align: center;
+                width: unset;
+            }
+        }
+
+        svg {
+            // height: 30%;
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 450px) {
+        svg {
+            width: 100%;
+        }
+    }
+
+    .pageLoader-enter {
+        opacity: 0;
+    }
+
+    .pageLoader-enter-active {
+        opacity: 1;
+        transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+    }
+
+    .pageLoader-enter-done,
+    .pageLoader-exit {
+        opacity: 1;
+    }
+
+    .pageLoader-exit-active {
+        opacity: 0;
+        transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+    }
 }

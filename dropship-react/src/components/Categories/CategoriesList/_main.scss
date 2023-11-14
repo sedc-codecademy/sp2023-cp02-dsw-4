@@ -91,31 +91,31 @@
                         transition: scale .6s cubic-bezier(.19, 1, .22, 1);
                     }
 
-                    @media (min-width: 600px){
+                    @media (min-width: 600px) {
 
                         &:focus-visible {
                             &::after {
                                 transform: scaleX(1);
                                 opacity: .7;
                             }
-    
+
                             div {
                                 h3 {
                                     color: var(--accent);
                                 }
-    
+
                                 p {
                                     color: var(--accent);
                                 }
                             }
                         }
-    
+
                         &:hover {
                             &::after {
                                 transform: scaleX(1);
                                 opacity: .7;
                             }
-    
+
                             div {
                                 h3 {
                                     &::after {
@@ -123,22 +123,22 @@
                                     }
                                 }
                             }
-    
+
                             img {
                                 scale: .95;
                             }
                         }
-    
+
                         &:active {
                             &::after {
                                 transform: scaleX(.9);
                                 opacity: .7;
                             }
-    
+
                             img {
                                 scale: 1;
                             }
-    
+
                             div {
                                 p {
                                     color: var(--accent);
@@ -182,8 +182,8 @@
             padding-bottom: 1rem;
 
             li {
+                display: flex;
                 flex-grow: 1;
-                max-width: 21%;
 
                 a {
                     position: relative;
@@ -192,19 +192,24 @@
                     background-color: var(--tpPri3);
                     padding: 1rem;
                     border-radius: .3rem;
-                    gap: .5rem;
+                    gap: .3rem;
+                    flex-grow: 1;
 
                     box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
                     transition: scale .6s cubic-bezier(.19, 1, .22, 1);
 
                     div {
                         display: flex;
-                        gap: .5rem;
-                        width: max-content;
+                        flex-wrap: wrap;
+                        gap: 0rem .3rem;
                         color: var(--secColor);
 
                         h4 {
                             position: relative;
+                            max-width: clamp(9rem, 7.4118rem + 4.2353vw, 18rem);
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
 
                             &::after {
                                 position: absolute;
@@ -225,30 +230,34 @@
 
                     img {
                         border-radius: .3rem;
-                        height: 15rem;
-                        transition: scale .8s cubic-bezier(.19, 1, .22, 1);
+                        height: clamp(9rem, 7.4118rem + 4.2353vw, 18rem);
+
                     }
 
-                    @media(min-width: 600px){
+                    @media(min-width: 600px) {
+                        img {
+                            transition: scale .8s cubic-bezier(.19, 1, .22, 1);
+                        }
+
                         &:focus-visible {
                             background-color: var(--paleAccentTwo);
-    
+
                             div {
                                 h4 {
                                     color: var(--priColor);
-    
+
                                     &::after {
                                         transform: scaleX(1);
                                         background-color: var(--priColor);
                                     }
                                 }
-    
+
                                 p {
                                     color: var(--priColor);
                                 }
                             }
                         }
-    
+
                         &:hover {
                             div {
                                 h4 {
@@ -257,19 +266,19 @@
                                     }
                                 }
                             }
-    
+
                             img {
                                 scale: .95;
                             }
                         }
-    
+
                         &:active {
                             scale: .9;
-    
+
                             img {
                                 scale: 1;
                             }
-    
+
                             div {
                                 p {
                                     color: var(--accent);
@@ -297,7 +306,7 @@
             user-select: none;
             text-shadow: 0.15rem 0.15rem 0 var(--priColor);
             text-indent: .5rem;
-        }  
+        }
 
         ul {
             display: flex;
@@ -352,14 +361,6 @@
 @media (max-width: 1100px) {
     .categoriesListMain {
         max-width: 90%;
-
-        .smallCategoriesList {
-            ul {
-                li {
-                    max-width: 30%;
-                }
-            }
-        }
 
         .manufacturers {
             gap: .5rem;
@@ -441,68 +442,23 @@
         .smallCategoriesList {
             ul {
                 overflow: auto;
-                flex-wrap: wrap;
                 gap: .5rem;
 
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
                 li {
-                    max-width: 32%;
-                    flex-grow: 1;
 
                     a {
-                        padding: .5rem;
-                        border-radius: .5rem;
+                        padding: .7rem;
                         gap: .5rem;
-                        height: 100%;
-                        transition: none;
+                    }
 
-                        div {
-                            gap: 0;
-                            padding: .1rem;
-                            width: 100%;
+                    div {
+                        flex-direction: column;
 
-                            h4 {
-                                font-size: .8rem;
-                                font-weight: 500;
-                                max-width: 99%;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
-                                white-space: nowrap;
-
-                                &::after {
-                                    display: none;
-                                }
-
-                            }
-
-                            p {
-                                display: none;
-                            }
-                        }
-
-                        img {
-                            border-radius: .5rem;
-                            // height: 8rem;
-                            height: unset;
-                            width: 100%;
-                            transition: none;
-                        }
-
-                        &:hover {
-                            div {
-                                h4 {
-                                    &::after {
-                                        transform: none;
-                                    }
-                                }
-                            }
-
-                            img {
-                                scale: 1;
-                            }
-                        }
-
-                        &:active {
-                            scale: 1;
+                        h4 {
+                            max-width: unset;
                         }
                     }
                 }

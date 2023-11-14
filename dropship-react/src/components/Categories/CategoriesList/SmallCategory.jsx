@@ -14,7 +14,7 @@ export function SmallCategory(props) {
                 ></ImageLoader>
                 <div>
                     <h4>{props.subcategory.title}</h4>
-                    <p>({props.subcategory.products.length} Products)</p>
+                    <p>({props.subcategory.products?.length} Products)</p>
                 </div>
             </NavLink>
         </li>

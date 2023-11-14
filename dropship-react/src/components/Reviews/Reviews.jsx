@@ -57,7 +57,6 @@ function Reviews(props) {
 
 export function EditReview(props) {
     const [body, setBody] = useState(props.review.body)
-    const [date, setDate] = useState(formatDate(props.review.date))
     const [bad, setBad] = useState(addSpaceAfterComma(props.review.bad))
     const [good, setGood] = useState(addSpaceAfterComma(props.review.good))
     const [rating, setRating] = useState(props.review.rate)
@@ -81,17 +80,8 @@ export function EditReview(props) {
         }
     }
 
-    const handleSetDate = () => {
-        if (!edit) {
-            setDate(formatDate(props.review.date))
-        } else {
-            setDate(formatDate())
-        }
-    }
-
     const handleEdit = () => {
         setEdit(!edit)
-        handleSetDate()
     }
 
     const handleSetRating = (e) => {
@@ -134,7 +124,7 @@ export function EditReview(props) {
                             ></Stars>
                         )}
                     </div>
-                    <p className="review-date">{edit ? date : formatDate(props.review.date)}</p>
+                    <p className="review-date">{edit ? formatDate() : formatDate(props.review.date)}</p>
                 </div>
                 {edit ? (
                     <textarea

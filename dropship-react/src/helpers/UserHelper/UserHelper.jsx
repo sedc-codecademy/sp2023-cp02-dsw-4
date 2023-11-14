@@ -2,9 +2,9 @@ import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { setIsError, setIsFetching, setShowLoading } from "../../store/slices/loaderSlice/loaderSlice"
-import { setRole } from "../../store/slices/role/roleSlice"
+import { clearTokens, setRole } from "../../store/slices/role/roleSlice"
 import { getUser, logInApi, logOutApi } from '../API/user-api'
-import { userLogIn, setUserCards } from "../../store/slices/user/userSlices"
+import { userLogIn, setUserCards, userLogOut } from "../../store/slices/user/userSlices"
 import { setTempCards } from "../../store/slices/cardSlice/cardSlice"
 import { useNavigate } from 'react-router-dom'
 
@@ -70,7 +70,7 @@ export const useLogout = () => {
     const navigate = useNavigate()
     const queryClient = useQueryClient()
     const dispatch = useDispatch()
-    const logOutMutate = useMutation({ mutationFn: logOutApi, onSuccess: () => { queryClient.removeQueries(["userQuery"]); dispatch(setShowLoading(true)); navigateToHome(navigate) } })
+    const logOutMutate = useMutation({ mutationFn: logOutApi, onSuccess: () => { queryClient.resetQueries(["userQuery"]); dispatch(setShowLoading(true)); navigateToHome(navigate) } })
 
     useEffect(() => {
         const { isError, error } = logOutMutate
@@ -81,7 +81,12 @@ export const useLogout = () => {
     }, [logOutMutate, dispatch])
 
     const logout = async () => {
-        return await logOutMutate.mutateAsync()
+        dispatch(clearTokens())
+        await logOutMutate.mutateAsync()
+        dispatch(setIsFetching(false))
+        dispatch(userLogOut())
+        dispatch(setRole('user'))
+        dispatch(setTempCards([]))
     }
 
     return logout

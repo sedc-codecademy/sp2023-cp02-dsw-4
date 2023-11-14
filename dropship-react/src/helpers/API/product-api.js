@@ -1,16 +1,13 @@
 export async function getProductByID(ID) {
-    const response = await fetch('/mockData/products.json')
+    console.log(ID)
+    const response = await fetch('/mockData/product.json')
 
     if (!response.ok) {
         throw new Error('Cannot find product')
     }
 
     /// PLACEHOLDER
-    const product = response.json().find(e => e.id === ID)
-    if (product) {
-        return product
-    }
-    throw new Error('Cannot find product')
+    return response.json()
 }
 
 export async function getPopularProducts() {

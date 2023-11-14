@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-function BigCategory(props) {
+function BigCategory({subcategory}) {
     return (
         <li>
-            <NavLink to={`/subcategories/${props.subcategory.id}`}>
-                <img src={props.subcategory.image} alt="category" />
+            <NavLink to={`/subcategory/${subcategory.id}`}>
+                <img src={subcategory.image} alt="category" />
                 <div>
-                    <h3>{props.subcategory.title}</h3>
-                    <p>{props.subcategory.description}</p>
+                    <h3>{subcategory.title}</h3>
+                    <p>{subcategory.description}</p>
                 </div>
             </NavLink>
         </li>

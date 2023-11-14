@@ -9,14 +9,11 @@ import PasswordInfoForm from './PasswordFolder/PInfo'
 
 import { NewCardHelper, SettingsCardHelper } from "../CardHelper/CardHelper"
 import { NoCardSvg } from "../Cart/Card/CardSvgs"
-import { setCreateCard, setTempCards } from "../../store/slices/cardSlice/cardSlice"
+import { setCreateCard } from "../../store/slices/cardSlice/cardSlice"
 
 import { getUser } from "../../helpers/API/user-api"
 import { useLogout } from "../../helpers/UserHelper/UserHelper"
 import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
-import { clearTokens, setRole } from "../../store/slices/role/roleSlice"
-import { userLogOut } from "../../store/slices/user/userSlices"
-import { setIsFetching } from "../../store/slices/loaderSlice/loaderSlice"
 
 function UserSettings() {
   const dispatch = useDispatch()
@@ -85,8 +82,7 @@ function UserSettings() {
         clearPayment(e)
         break
       default:
-        null
-        break
+        return
     }
   }
 
@@ -102,19 +98,12 @@ function UserSettings() {
         submitPayment(e)
         break
       default:
-        null
-        break
+        return
     }
   }
 
   const handleLogOutClick = async () => {
-    const dime = await logout()
-    dispatch(setIsFetching(false))
-    dispatch(clearTokens())
-    dispatch(userLogOut())
-    dispatch(setRole('user'))
-    dispatch(setTempCards([]))
-    console.log(dime)
+    await logout()
     if (isSettingsOn) {
       dispatch(setIsSettingsOn(false))
     }
@@ -174,7 +163,7 @@ const AccountInfoFu = ({ user }) => {
   return (
     <div className="dataContainer">
       <h2 className="subTitle">Profile Picture</h2>
-      <ProfilePicture image={{ alt: `${user.firstName, user.lastName}`, url: user.image }}></ProfilePicture>
+      <ProfilePicture image={{ alt: `${user.firstName} ${user.lastName}`, url: user.image }}></ProfilePicture>
       <h2 className="subTitle">Credentials</h2>
       <UserInfoForm user={user}></UserInfoForm>
       <h2 className="subTitle">Address</h2>

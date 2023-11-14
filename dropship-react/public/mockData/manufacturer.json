@@ -1,0 +1,121 @@
+{
+    "id": "e2naknea2",
+    "title": "Samsung",
+    "image": "/imgs/manufacturers/samsung.jpg",
+    "products": [
+        {
+            "title": "Waterproof Car Cover",
+            "price": 89.99,
+            "description": "This car cover is made from waterproof material and is designed to protect your car from rain, snow, and other elements.",
+            "stock": 50,
+            "rating": {
+                "rate": 4.5,
+                "count": 10
+            },
+            "ratings": [],
+            "id": "aefa415c-82dc-4e6e-a7db-ac4c1525a742",
+            "sale": 10,
+            "categoryid": "autoaccessories",
+            "categorytitle": "Automobile Accessories",
+            "subcategoryid": "d3e3c11b-809b-4d22-98f8-58333377b784",
+            "subcategorytitle": "Car Covers",
+            "colors": [
+                "brown",
+                "green",
+                "violet",
+                "indigo",
+                "gold"
+            ],
+            "sizes": [
+                "x-small",
+                "small",
+                "medium",
+                "medium"
+            ]
+        },
+        {
+            "title": "Sun Shade Car Cover",
+            "price": 69.99,
+            "description": "This car cover is designed to protect your car from the sun's harmful rays, keeping your car's interior cool and preventing fading.",
+            "stock": 30,
+            "rating": {
+                "rate": 4,
+                "count": 8
+            },
+            "id": "0d92bd00-7f5b-4549-aec5-983ac4e40a99",
+            "sale": 26,
+            "categoryid": "autoaccessories",
+            "categorytitle": "Automobile Accessories",
+            "subcategoryid": "d3e3c11b-809b-4d22-98f8-58333377b784",
+            "subcategorytitle": "Car Covers",
+            "colors": [],
+            "sizes": [
+                "large",
+                "x-large"
+            ]
+        },
+        {
+            "title": "Heavy Duty Car Cover",
+            "price": 99.99,
+            "description": "This heavy-duty car cover is made from durable material and is designed to protect your car from dust, dirt, and scratches.",
+            "stock": 20,
+            "rating": {
+                "rate": 4.5,
+                "count": 12
+            },
+            "id": "9305a8a9-bb6c-4bba-ad49-d4dd867d3b4e",
+            "sale": 19,
+            "categoryid": "autoaccessories",
+            "categorytitle": "Automobile Accessories",
+            "subcategoryid": "d3e3c11b-809b-4d22-98f8-58333377b784",
+            "subcategorytitle": "Car Covers",
+            "colors": [],
+            "sizes": []
+        },
+        {
+            "title": "Indoor Car Cover",
+            "price": 49.99,
+            "description": "This indoor car cover is made from soft material and is designed to protect your car's paint from scratches and dust while it's parked in your garage.",
+            "stock": 40,
+            "rating": {
+                "rate": 3.5,
+                "count": 6
+            },
+            "id": "6dd4b8c5-9b5d-4de0-9d42-291b5d3d8743",
+            "sale": 18,
+            "categoryid": "autoaccessories",
+            "categorytitle": "Automobile Accessories",
+            "subcategoryid": "d3e3c11b-809b-4d22-98f8-58333377b784",
+            "subcategorytitle": "Car Covers",
+            "colors": [
+                "teal"
+            ],
+            "sizes": []
+        },
+        {
+            "title": "Breathable Car Cover",
+            "price": 79.99,
+            "description": "This car cover is made from breathable material and is designed to prevent moisture buildup and mildew, making it ideal for long-term storage.",
+            "stock": 15,
+            "rating": {
+                "rate": 4,
+                "count": 4
+            },
+            "id": "9cd39fa5-78c1-4df8-945b-86a91a24a645",
+            "sale": 27,
+            "categoryid": "autoaccessories",
+            "categorytitle": "Automobile Accessories",
+            "subcategoryid": "d3e3c11b-809b-4d22-98f8-58333377b784",
+            "subcategorytitle": "Car Covers",
+            "colors": [
+                "orange",
+                "amber",
+                "green",
+                "amber"
+            ],
+            "sizes": [
+                "large"
+            ]
+        }
+    ]
+}
