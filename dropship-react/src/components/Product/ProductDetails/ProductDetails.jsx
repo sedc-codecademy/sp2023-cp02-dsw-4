@@ -63,7 +63,7 @@ function ProductDetails() {
             title={"loading product..."}
             message={"you can click here to retry if its taking too long"}
             refetch={prodRefetch}
-            ></BigLoadingDiv>
+          ></BigLoadingDiv>
         ) : prodSuccess && productData ? (
           <main className="product-page">
             <DetailsNav
@@ -85,7 +85,18 @@ function ProductDetails() {
 
               <div className="product-info">
                 <div className="product-header">
-                  <h2 className="product-title">{productData.title}</h2>
+                  <h2 className="product-title">
+                    <span>{productData.title}</span>
+                    <NavLink to={`/manufacturer/${productData.manufacturer.id}`}>
+                      <p>{productData.manufacturer.title}</p>
+                      <ImageLoader
+                        url={productData.manufacturer.image}
+                        alt={productData.manufacturer.title}
+                        backupUrl="/imgs/404/category404.png"
+                        backupAlt="Manufacturer"
+                      ></ImageLoader>
+                    </NavLink>
+                  </h2>
                   <div className="product-rating">
                     {userReview || !isLoggedIn ? (
                       <Stars

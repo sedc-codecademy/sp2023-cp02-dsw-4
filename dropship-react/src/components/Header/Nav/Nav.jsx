@@ -191,7 +191,7 @@ export default function Nav() {
                                     </button>
                                 </li>
                             )}
-                            {!isMobile && (
+                            {!isMobile && isLoggedIn && (
                                 <li className="shippingLi">
                                     <button onClick={handleShipToClick}>
                                         <p>Ship To</p>

@@ -1026,10 +1026,11 @@ main {
                 flex-wrap: wrap;
                 gap: 1rem;
                 border-radius: .5rem;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
 
                 li {
                     flex-grow: 1;
-                    width: 22%;
 
                     a {
                         display: flex;
@@ -1049,6 +1050,7 @@ main {
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
+                            width: 100%;
                             gap: .5rem;
                             color: var(--secColor);
 
@@ -1158,13 +1160,10 @@ main {
     main {
         .detailsListBody {
             gap: 1rem;
-        }
 
-        .listContainer {
-            .allProducts {
-                li {
-                    min-width: 25%;
-                    max-width: 32%;
+            .listContainer {
+                .allProducts {
+                    grid-template-columns: repeat(3, 1fr);
                 }
             }
         }
@@ -1613,10 +1612,7 @@ main {
                 }
 
                 .allProducts {
-                    li {
-                        min-width: 33%;
-                        max-width: 49%;
-                    }
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 .topProducts {
@@ -1626,6 +1622,18 @@ main {
                             min-width: 49%;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    main {
+        .detailsListBody {
+            .listContainer {
+                .allProducts {
+                    grid-template-columns: repeat(1, 1fr);
                 }
             }
         }

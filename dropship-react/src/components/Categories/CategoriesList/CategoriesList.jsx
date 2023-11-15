@@ -12,6 +12,7 @@ import { useQuery } from "@tanstack/react-query"
 import { getCategoryByID } from '../../../helpers/API/category-api'
 import ImageLoader from "../../ImageLoader/ImageLoader"
 import { BigLoadingDiv } from "../../PageLoader/PageLoader"
+import NotFound from "../../NotFound/NotFound"
 
 function CategoriesList() {
     const { catId } = useParams()
@@ -24,6 +25,7 @@ function CategoriesList() {
         isError: isCatError,
         isPending: isCatPending,
         isSuccess: catSuccess,
+        refetch: catRefetch
     } = useQuery({
         queryKey: ["categoryQuery", catId],
         queryFn: () => getCategoryByID(catId),
@@ -37,7 +39,7 @@ function CategoriesList() {
                     link={"/"}
                     title={"loading category..."}
                     message={"you can click here to retry if it's taking too long"}
-                    refetch={prodRefetch}
+                    refetch={catRefetch}
                     ></BigLoadingDiv>
                 ) : catSuccess && catData ? (
                     <main className="categoriesListMain">

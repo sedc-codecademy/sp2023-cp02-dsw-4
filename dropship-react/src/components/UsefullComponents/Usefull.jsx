@@ -21,7 +21,7 @@ export function DetailsNav(props) {
   )
 }
 
-export function DetailsFilters() {
+export function DetailsFilters(props) {
   const dispatch = useDispatch()
   const isMobile = useSelector((state) => state.mobile.isMobile)
   const mobileFiltersOn = useSelector((state) => state.filters.mobileFiltersOn)
@@ -71,10 +71,12 @@ export function DetailsFilters() {
         </p>}
         <PriceRangeSlider></PriceRangeSlider>
       </div>
-      <div className="manufacturersFilter">
-        {isMobile ? <h3>Manufacturers</h3> : <p>Manufacturers</p>}
-        <ManufacturersFilter></ManufacturersFilter>
-      </div>
+      {props.origin !== "manufacturer" &&
+        <div className="manufacturersFilter">
+          {isMobile ? <h3>Manufacturers</h3> : <p>Manufacturers</p>}
+          <ManufacturersFilter></ManufacturersFilter>
+        </div>
+      }
       <div className="availabilityFilter">
         {isMobile ? <h3>Availability</h3> : <p>Availability</p>}
         <AvailabilityFilter></AvailabilityFilter>
@@ -470,9 +472,10 @@ const PillarGraph = ({ products, minPrice, maxPrice, progressLeft, progressWidth
   )
 }
 
-export const DetailsAllProducts = () => {
+export const DetailsAllProducts = ({ dataObject, origin }) => {
+  const products = dataObject.products
   const isMobile = useSelector((state) => state.mobile.isMobile)
-  const products = useSelector(selectProducts)
+
   const filters = [{
     title: 'Xiaomi'
   }, {
@@ -506,14 +509,14 @@ export const DetailsAllProducts = () => {
     <div className='listContainer'>
       <div className='listContainerHeader'>
         <div>
-          <h1>Smartphones <span>{products.length} products</span></h1>
+          <h1>{dataObject.title} <span>{products.length} products</span></h1>
           {!isMobile && <button>Price ASC</button>}
         </div>
 
         <div className='rightHeader'>
           <ul className='addedFilters'>
             <>
-              {filters.map((filter, index) => (
+              {filters?.map((filter, index) => (
                 <li key={index}>
                   <button>
                     <p>{filter.title}</p>
@@ -531,7 +534,7 @@ export const DetailsAllProducts = () => {
             </>
           </ul>
 
-          {!isMobile && (
+          {!isMobile || products.length >= 16 && (
             <div className="pagination top">
               <button onClick={prevPage} disabled={currentPage === 1}>
                 <svg viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z" /></svg>
@@ -572,64 +575,66 @@ export const DetailsAllProducts = () => {
         </div>
       </div>
 
-      <div className='topProducts'>
-        <h3>Most Popular Smartphones</h3>
+      {origin !== 'manufacturer' && <div className='topProducts'>
+        <h3>Most Popular {dataObject.title} products</h3>
         <ul>
           {currentProducts.slice(0, 4).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </ul>
-      </div>
+      </div>}
 
       <ul className="allProducts">
-        {currentProducts.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </ul>
 
-      <div className="pagination bottom">
-        <button onClick={prevPage} disabled={currentPage === 1}>
-          <svg viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z" /></svg>
-        </button>
-        <div>
-          {currentPage > 2 && (
-            <>
-              <span onClick={() => setCurrentPage(1)}>1</span>
-              {currentPage > 3 && <span className='dots'>...</span>}
-            </>
-          )}
-          {Array.from({ length: Math.min(3, totalPages) }).map((_, index) => {
-            const pageToShow = currentPage - 1 + index;
-            if (pageToShow <= totalPages - 1) {
-              return (
-                <span
-                  key={pageToShow}
-                  onClick={() => setCurrentPage(pageToShow + 1)}
-                  className={currentPage === pageToShow + 1 ? 'currentPage' : ''}
-                >
-                  {pageToShow + 1}
-                </span>
-              )
-            } return null
-          })}
-          {currentPage < totalPages - 2 && (
-            <>
-              {currentPage < totalPages - 3 && <span className='dots'>...</span>}
-              <span onClick={() => setCurrentPage(totalPages)}>{totalPages}</span>
-            </>
-          )}
+      {products.length >= 16 &&
+        <div className="pagination bottom">
+          <button onClick={prevPage} disabled={currentPage === 1}>
+            <svg viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z" /></svg>
+          </button>
+          <div>
+            {currentPage > 2 && (
+              <>
+                <span onClick={() => setCurrentPage(1)}>1</span>
+                {currentPage > 3 && <span className='dots'>...</span>}
+              </>
+            )}
+            {Array.from({ length: Math.min(3, totalPages) }).map((_, index) => {
+              const pageToShow = currentPage - 1 + index;
+              if (pageToShow <= totalPages - 1) {
+                return (
+                  <span
+                    key={pageToShow}
+                    onClick={() => setCurrentPage(pageToShow + 1)}
+                    className={currentPage === pageToShow + 1 ? 'currentPage' : ''}
+                  >
+                    {pageToShow + 1}
+                  </span>
+                )
+              } return null
+            })}
+            {currentPage < totalPages - 2 && (
+              <>
+                {currentPage < totalPages - 3 && <span className='dots'>...</span>}
+                <span onClick={() => setCurrentPage(totalPages)}>{totalPages}</span>
+              </>
+            )}
+          </div>
+          <button onClick={nextPage} disabled={currentPage === totalPages}>
+            <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
+          </button>
         </div>
-        <button onClick={nextPage} disabled={currentPage === totalPages}>
-          <svg viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z" /></svg>
-        </button>
-      </div>
+      }
     </div>
   )
 }
 
 export function formatDate(inputDate) {
   let tempDate = inputDate || new Date()
-  
+
   const date = new Date(tempDate)
   const day = date.getDate()
   const month = date.getMonth() + 1 // Months are 0-indexed, so add 1

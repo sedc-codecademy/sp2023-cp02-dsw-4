@@ -37,6 +37,7 @@ import AdminUsers from "./components/AdminDashboard/AdminUsers"
 import AdminCategories from "./components/AdminDashboard/AdminCategories"
 
 import PageLoader from './components/PageLoader/PageLoader'
+import Manufacturer from "./components/Manufacturer/Manufacturer"
 
 function App() {
   UserHelper()
@@ -102,7 +103,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/category/:catId" element={<CategoriesList />} />
             <Route path="/subcategory/:subId" element={<CategoriesDetails />} />
-            <Route path="/manufacturer/:manufacturerId" element={<CategoriesDetails />} />
+            <Route path="/manufacturer/:manufacturerId" element={<Manufacturer />} />
             <Route path="/search/:id" element={<CategoriesList />} />
             <Route path="/productDetails/:productId" element={<ProductDetails />} />
             <Route path="/user" element={<User />} />

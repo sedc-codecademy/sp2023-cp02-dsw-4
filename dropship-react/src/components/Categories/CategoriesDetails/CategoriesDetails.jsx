@@ -5,7 +5,7 @@ import { DetailsNav, DetailsFilters, DetailsAllProducts } from '../../UsefullCom
 import { useSelector, useDispatch } from "react-redux"
 import { setMobileFiltersOn } from '../../../store/slices/filters/filtersSlice'
 
-function CategoriesDetails() {
+function CategoriesDetails(props) {
     const dispatch = useDispatch()
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const mobileFiltersOn = useSelector((state) => state.filters.mobileFiltersOn)
@@ -17,13 +17,13 @@ function CategoriesDetails() {
     return (
         <main className="categoriesDetails">
             <DetailsNav
-                categoryid={"Testingid"}
-                categorytitle={"Testing Title"}
+                categoryid={props.dataObject.categoryid}
+                categorytitle={props.dataObject.categorytitle}
             ></DetailsNav>
 
             <div className='detailsListBody'>
-                {(!isMobile || (isMobile && mobileFiltersOn)) && <DetailsFilters></DetailsFilters>}
-                <DetailsAllProducts></DetailsAllProducts>
+                {(!isMobile || (isMobile && mobileFiltersOn)) && <DetailsFilters origin={props.origin}></DetailsFilters>}
+                <DetailsAllProducts dataObject={props.dataObject} origin={props.origin}></DetailsAllProducts>
             </div>
 
             {isMobile && (

@@ -50,7 +50,11 @@
     "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
     "subcategorytitle": "Floor Mats",
     "colors": [
-        "yellow"
+        "orange",
+        "green",
+        "red",
+        "teal",
+        "navy"
     ],
     "manufacturer": {
         "id": "e2naknea2",
