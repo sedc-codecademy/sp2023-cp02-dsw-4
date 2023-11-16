@@ -52,8 +52,7 @@
     "colors": [
         "orange",
         "green",
-        "red",
-        "teal",
+        "blue",
         "navy"
     ],
     "manufacturer": {
@@ -65,7 +64,80 @@
         "x-small",
         "small",
         "x-large",
-        "medium",
         "small"
+    ],
+    "productSizes": [
+        {
+            "id": "e2geeanak",
+            "stock": 6,
+            "color": "orange",
+            "size": "small"
+        },
+        {
+            "id": "e2nakuygk",
+            "stock": 3,
+            "color": "orange",
+            "size": "medium"
+        },
+        {
+            "id": "e21h35nak",
+            "stock": 1,
+            "color": "orange",
+            "size": "large"
+        },
+        {
+            "id": "e2nai7i67rk",
+            "stock": 12,
+            "color": "orange",
+            "size": "x-large"
+        },
+        {
+            "id": "e2nhw35ak",
+            "stock": 6,
+            "color": "blue",
+            "size": "small"
+        },
+        {
+            "id": "e2najsdkl8k",
+            "stock": 6,
+            "color": "blue",
+            "size": "x-small"
+        },
+        {
+            "id": "e2wa55kl6asnak",
+            "stock": 3,
+            "color": "blue",
+            "size": "medium"
+        },
+        {
+            "id": "e2noawmu49ak",
+            "stock": 1,
+            "color": "blue",
+            "size": "large"
+        },
+        {
+            "id": "e4g1234ojp092nak",
+            "stock": 12,
+            "color": "blue",
+            "size": "x-large"
+        },
+        {
+            "id": "e2wa55kl6441646468168snak",
+            "stock": 3,
+            "color": "green",
+            "size": "small"
+        },
+        {
+            "id": "e2noauntg189294789n7gn14wmu49ak",
+            "stock": 1,
+            "color": "green",
+            "size": "medium"
+        },
+        {
+            "id": "e4g123-gwaerg4ojp092nak",
+            "stock": 3,
+            "color": "green",
+            "size": "large"
+        }
     ]
 }

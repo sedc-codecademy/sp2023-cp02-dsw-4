@@ -28,7 +28,7 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
             <div className="inputContainer">
                 <input
                     name="holder"
-                    maxLength="20"
+                    maxLength="24"
                     pattern="[a-zA-Z ]+"
                     type="text"
                     required

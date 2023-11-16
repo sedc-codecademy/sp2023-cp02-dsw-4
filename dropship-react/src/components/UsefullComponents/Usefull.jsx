@@ -534,7 +534,7 @@ export const DetailsAllProducts = ({ dataObject, origin }) => {
             </>
           </ul>
 
-          {!isMobile || products.length >= 16 && (
+          {(!isMobile || products.length >= 16) && (
             <div className="pagination top">
               <button onClick={prevPage} disabled={currentPage === 1}>
                 <svg viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z" /></svg>

@@ -94,7 +94,7 @@ function App() {
         </BrowserRouter>
       ) : (
         <BrowserRouter>
-          <PageLoader></PageLoader>
+          {/* <PageLoader></PageLoader> */}
           <ScrollToTop />
           <AccountDropDown />
           <Header></Header>

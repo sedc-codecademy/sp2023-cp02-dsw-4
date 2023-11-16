@@ -1,12 +1,12 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { selectProducts } from "../../store/selectors/productSelector"
+// import { selectProducts } from "../../store/selectors/productSelector"
 
 import CategoryScrollHome from "../CategoriesScrollHome/CategoryScrollHome"
 import ParentPictureScroll from "../ParentPictureScroll/ParentPictureScroll"
 import ProductList from "../Product/ScrollableProductsList/ScrollableProductList"
 import NewArrivals from "../Product/NewArrivals/NewArrivals"
-import RandomProductList from "../Product/RandomProductList/RandomProductList"
+// import RandomProductList from "../Product/RandomProductList/RandomProductList"
 import { useQuery } from "@tanstack/react-query"
 import { getCategories } from "../../helpers/API/category-api"
 import {
@@ -17,7 +17,7 @@ import {
 import { LoadingErrorDiv } from "../PageLoader/PageLoader"
 
 function Home() {
-  const products = useSelector(selectProducts)
+  // const products = useSelector(selectProducts)
   const isMobile = useSelector((state) => state.mobile.isMobile)
 
   const {
@@ -99,7 +99,7 @@ function Home() {
         <NewArrivals products={newArrivals}></NewArrivals>
       ) : (<></>)}
 
-      <RandomProductList products={products.slice(0, 6)}></RandomProductList>
+      {/* <RandomProductList products={products.slice(0, 6)}></RandomProductList> */}
 
       {popularIsPending || popularIsError ? (
         <LoadingErrorDiv
@@ -116,7 +116,7 @@ function Home() {
         ></ProductList>
       ) : (<></>)}
 
-      <RandomProductList products={products.slice(6, 12)}></RandomProductList>
+      {/* <RandomProductList products={products.slice(6, 12)}></RandomProductList> */}
 
       {discountIsPending || discountIsError ? (
         <LoadingErrorDiv

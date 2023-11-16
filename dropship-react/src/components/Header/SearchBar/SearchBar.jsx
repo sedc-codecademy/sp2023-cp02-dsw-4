@@ -247,7 +247,7 @@ function SearchBar() {
             </CSSTransition>
 
             <CSSTransition
-                in={true}
+                in={isInputFocused && searchData?.length > 0 && searchSuccess}
                 timeout={100}
                 classNames="suggestions"
                 unmountOnExit

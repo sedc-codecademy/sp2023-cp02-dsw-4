@@ -54,6 +54,27 @@ function ProductDetails() {
     setCreateReview(false)
   }
 
+  // Ovie gi imav vishe napraveno vo filters za unikatni vadenje se
+  const allColors = productData?.productSizes?.reduce((acc, productSize) => {
+    if (productSize.color) {
+      acc.push(productSize.color)
+    }
+    return acc
+  }, [])
+
+  const allSizes = productData?.productSizes?.reduce((acc, productSize) => {
+    if (productSize.size) {
+      acc.push(productSize.size)
+    }
+    return acc
+  }, [])
+
+  const uniqueColors = [...new Set(allColors)]
+  const uniqueSizes = [...new Set(allSizes)]
+  console.log(uniqueColors,uniqueSizes)
+
+  /// ovde praj ja presmetaka productData e produktot koga kje go koristish tuka sekogash proveri dali ima neshto i ako ti plache staj mu ?
+
   return (
     <>
       {
@@ -118,48 +139,33 @@ function ProductDetails() {
                     <h3>Description</h3>
                     <p className="product-description">{productData.description}</p>
                   </div>
-                  {productData.colors.length > 1 && (
+
+
+                  {/* Ovde se boite || ako produktot ima samo edna boja ne ja pokazhuvaj*/}
+                  {uniqueColors.length > 1 && (
                     <div className="colors">
                       <h3>Colours</h3>
                       <ul>
-                        {productData.colors.map((color, index) => (
-                          <li key={index}>
-                            <button>
-                              <svg viewBox="0 0 150 150">
-                                <path
-                                  d="M121.875 18.75H28.125C25.6386 18.75 23.254 19.7377 21.4959 21.4959C19.7377 23.254 18.75 25.6386 18.75 28.125V121.875C18.75 124.361 19.7377 126.746 21.4959 128.504C23.254 130.262 25.6386 131.25 28.125 131.25H121.875C124.361 131.25 126.746 130.262 128.504 128.504C130.262 126.746 131.25 124.361 131.25 121.875V28.125C131.25 25.6386 130.262 23.254 128.504 21.4959C126.746 19.7377 124.361 18.75 121.875 18.75ZM28.125 121.875V28.125H121.875V121.875H28.125Z"
-                                  fill={color}
-                                />
-                                <rect
-                                  x="40"
-                                  y="40"
-                                  width="70"
-                                  height="70"
-                                  rx="5"
-                                  fill={color}
-                                />
-                              </svg>
-                              <p>{color}</p>
-                            </button>
-                          </li>
+                        {uniqueColors.map((color, index) => (
+                          <ProductColor key={index} color={color}></ProductColor>
                         ))}
                       </ul>
                     </div>
                   )}
-                  {productData.sizes?.length > 1 && (
+
+                  {/* Ovde se sizovvite || ako produktot ima samo size 'all' ne pokazhuvaj sizovi*/}
+                  {uniqueSizes?.length > 1 && (
                     <div className="sizes">
                       <h3>Sizes</h3>
                       <ul>
-                        {productData.sizes?.map((size, index) => (
-                          <li key={index}>
-                            <button>
-                              <p>{size}</p>
-                            </button>
-                          </li>
+                        {uniqueSizes?.map((size, index) => (
+                          <ProductSizesLi key={index} size={size}></ProductSizesLi>
                         ))}
                       </ul>
                     </div>
                   )}
+
+
                 </div>
                 <div className="paymentDiv">
                   <div className="count">
@@ -298,6 +304,42 @@ function ProductDetails() {
         ) : (<></>)
       }
     </>
+  )
+}
+
+const ProductColor = ({ color }) => {
+  // Should get onclick prop and should get disabled and given a class based on availability/selection
+  return (
+    <li>
+      <button>
+        <svg viewBox="0 0 150 150">
+          <path
+            d="M121.875 18.75H28.125C25.6386 18.75 23.254 19.7377 21.4959 21.4959C19.7377 23.254 18.75 25.6386 18.75 28.125V121.875C18.75 124.361 19.7377 126.746 21.4959 128.504C23.254 130.262 25.6386 131.25 28.125 131.25H121.875C124.361 131.25 126.746 130.262 128.504 128.504C130.262 126.746 131.25 124.361 131.25 121.875V28.125C131.25 25.6386 130.262 23.254 128.504 21.4959C126.746 19.7377 124.361 18.75 121.875 18.75ZM28.125 121.875V28.125H121.875V121.875H28.125Z"
+            fill={color}
+          />
+          <rect
+            x="40"
+            y="40"
+            width="70"
+            height="70"
+            rx="5"
+            fill={color}
+          />
+        </svg>
+        <p>{color}</p>
+      </button>
+    </li>
+  )
+}
+
+const ProductSizesLi = ({ size }) => {
+  // Should get onclick prop and should get disabled and given a class based on availability/selection
+  return (
+    <li>
+      <button>
+        <p>{size}</p>
+      </button>
+    </li>
   )
 }
 
