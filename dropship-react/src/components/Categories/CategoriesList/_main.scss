@@ -232,6 +232,10 @@
                         border-radius: .3rem;
                         height: clamp(9rem, 7.4118rem + 4.2353vw, 18rem);
 
+                        &[alt] {
+                            border-radius: .3rem;
+                            height: clamp(9rem, 7.4118rem + 4.2353vw, 18rem);
+                        }
                     }
 
                     @media(min-width: 600px) {
@@ -311,7 +315,6 @@
         ul {
             display: flex;
             width: fit-content;
-            // flex-wrap: wrap;
             gap: 1rem;
 
             li {
@@ -328,8 +331,10 @@
                     box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
 
                     img {
+                        &[alt] {
+                            width: 100%;
+                        }
                         width: 100%;
-                        // height: clamp(5rem, 4.5455rem + 10.9091vw, 15rem);
                         transition: scale .5s;
                     }
 
@@ -431,6 +436,10 @@
                         }
 
                         img {
+                            &[alt] {
+                                height: 10rem;
+                                border-radius: .7rem;
+                            }
                             height: 10rem;
                             border-radius: .7rem;
                         }

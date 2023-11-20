@@ -26,7 +26,9 @@
       transition: translate .5s ease-in-out;
 
       --translateVar: 0%;
-      translate: var(--translateVar);
+      @supports (translate: 1deg) {
+        translate: var(--translateVar);
+    }
 
       @media not (prefers-reduced-motion) {
 

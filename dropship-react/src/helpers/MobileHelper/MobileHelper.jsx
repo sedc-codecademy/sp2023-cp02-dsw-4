@@ -18,6 +18,7 @@ export function useMobileWidthEffects() {
     const mobileFiltersOn = useSelector((state) => state.filters.mobileFiltersOn)
     const showAccDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const showLoading = useSelector(state => state.loader.showLoading)
+    const finalPayment = useSelector((state) => state.cart.finalPayment)
 
     useEffect(() => {
         if (isMobile) {
@@ -31,17 +32,17 @@ export function useMobileWidthEffects() {
                 dispatch(setIsDDOn(false))
                 dispatch(setIsScrollOn(false))
             }
-        } else if (!isMobile && showAccDropDown) {
+        } else if (!isMobile && (showAccDropDown || finalPayment)) {
             dispatch(setIsScrollOn(true))
-        } else if (!isMobile && !showAccDropDown) {
+        } else if (!isMobile && (!showAccDropDown || !finalPayment)) {
             dispatch(setIsScrollOn(false))
         }
         if (showLoading) {
             dispatch(setIsScrollOn(true))
-        } else {
+        } else if(!showLoading && (!showCatDropDown || mobileFiltersOn || !isSettingsOn) && !isMobile) {
             dispatch(setIsScrollOn(false))
         }
-    }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn, showAccDropDown, showLoading]) // Drop Downs and Pop-Ups checker UseEffect
+    }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn, showAccDropDown, showLoading, finalPayment]) // Drop Downs and Pop-Ups checker UseEffect
 
     useEffect(() => {
         if (allowScroll) {

@@ -11,7 +11,11 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    contain: paint;
+
+    @supports (contain: paint) {
+        contain: paint;
+    }
+
     background-color: var(--darkAccent);
 
     ul {
@@ -27,7 +31,11 @@
                 flex-shrink: 0;
                 width: 100%;
                 height: 100%;
-                translate: var(--translateVar);
+
+                @supports (translate: 1deg) {
+                    translate: var(--translateVar);
+                }
+
                 transition: translate .7s ease;
 
                 a {
@@ -171,6 +179,7 @@
 
     @media(max-width:800px) {
         flex-direction: column;
+
         .arrivalsBody {
             div {
                 &:first-child {

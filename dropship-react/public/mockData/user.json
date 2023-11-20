@@ -177,7 +177,7 @@
         {
             "id": "101",
             "holder": "Frosina Stamenkovska",
-            "number": "3500000000000000",
+            "number": "3100000000000000",
             "cvc": "985",
             "date": "01/24",
             "type": "jcb",
@@ -186,7 +186,7 @@
         {
             "id": "102",
             "holder": "Frosina Stamenkovska",
-            "number": "5000 3232 3232 3280",
+            "number": "5000323232323280",
             "cvc": "985",
             "date": "05/24",
             "type": "maestro",

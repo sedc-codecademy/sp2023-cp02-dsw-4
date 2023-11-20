@@ -2,7 +2,465 @@
 
 .cartMain {
     width: 100%;
-    margin-block: 1rem 2rem;
+    margin-block: 1rem 3rem;
+
+    .finalPayment {
+        background-color: var(--tpPri2);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+        padding: .5rem;
+        margin-inline: auto;
+        margin-top: 3rem;
+        color: var(--secColor);
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        min-width: 60rem;
+        border-radius: .5rem;
+
+        h1 {
+            font-size: clamp(1.3rem, 0.9471rem + 0.9412vw, 3.3rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5rem;
+            gap: 5rem;
+            background-color: var(--tpPri3);
+            border-radius: .3rem;
+        }
+
+        button {
+            padding: .5rem;
+            font-size: 1rem;
+            background-color: var(--paleAccentThree);
+            border-radius: .3rem;
+            color: #fff;
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+            &:focus-visible {
+                color: var(--accent);
+                background-color: var(--tpPri4);
+                outline: .2rem solid var(--accent);
+            }
+
+            @media (min-width: 600px) {
+                transition: .3s background-color,
+                    .3s color;
+
+                &:hover {
+                    color: var(--accent);
+                    background-color: var(--paleAccent);
+                }
+
+                &:active {
+                    background-color: var(--tpPri3);
+                }
+            }
+        }
+
+        .orderDiv {
+            padding: .5rem;
+            background-color: var(--tpPri3);
+            border-radius: .3rem;
+
+            >h3 {
+                padding: .5rem;
+                background-color: var(--tpPri2);
+                border-radius: .3rem;
+                margin-bottom: .5rem;
+                display: flex;
+                align-items: center;
+                gap: .3rem;
+
+                span{
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    &:first-child{margin-left: auto;}
+                    &:last-child{
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .itemUl {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                overflow-y: auto;
+            max-height: 15rem;
+
+                .itemLi {
+                    position: relative;
+                    display: flex;
+                    padding: .5rem;
+                    gap: .5rem;
+                    border-radius: .5rem;
+                    background-color: var(--tpPri2);
+
+                    img {
+                        height: 10rem;
+                        background-color: var(--tpPri3);
+                        border-radius: .3rem;
+                    }
+
+                    .itemInfo {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .3rem;
+                        background-color: var(--tpPri);
+                        border-radius: .3rem;
+                        overflow: hidden;
+                        padding: .5rem;
+                        flex-grow: 1;
+
+                        .title {
+                            max-width: 45ch;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            color: var(--secColor);
+                        }
+
+                        ul {
+                            display: flex;
+
+                            li {
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            &:nth-child(2) {
+                                gap: .5rem;
+                                color: var(--tpSec);
+
+                                li {
+                                    &:first-child {
+                                        gap: .5rem;
+
+                                        p {
+                                            text-decoration: line-through;
+                                            color: red;
+                                        }
+                                    }
+
+                                    &:not(:first-child) {
+
+                                        gap: .3rem;
+
+                                        svg {
+                                            height: 1.3rem;
+                                            width: 1.3rem;
+                                        }
+
+                                        p {
+                                            text-transform: capitalize;
+                                            font-size: 1rem;
+                                            font-weight: 550;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                margin-top: auto;
+                                background-color: var(--tpPri3);
+                                padding: .5rem;
+                                border-radius: .3rem;
+                                gap: 2rem;
+                                color: var(--tpSec);
+
+                                li {
+                                    gap: .5rem;
+
+                                    div {
+                                        align-items: center;
+                                        display: flex;
+                                        -webkit-user-select: none;
+                                        user-select: none;
+
+                                        h3 {
+                                            border: .05rem solid var(--tpSec3);
+                                            background-color: var(--tpPri3);
+                                            width: 1.7rem;
+                                            height: 1.7rem;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
+
+                                        button {
+                                            border: .05rem solid var(--tpSec3);
+                                            background-color: var(--tpPri3);
+                                            width: 1.7rem;
+                                            height: 1.7rem;
+                                            text-align: center;
+
+                                            &:first-child {
+                                                border-top-left-radius: 2rem;
+                                                border-bottom-left-radius: 2rem;
+                                                border-right: 0;
+                                            }
+
+                                            &:last-child {
+                                                border-left: 0;
+                                                border-top-right-radius: 2rem;
+                                                border-bottom-right-radius: 2rem;
+                                            }
+
+                                            &:focus-visible {
+                                                outline: .3rem solid var(--accent);
+                                            }
+
+                                            @media (min-width: 600px) {
+                                                transition: border-color .3s, background-color .3s, color .3s;
+
+                                                &:hover {
+                                                    background-color: var(--tpPri4);
+                                                }
+
+                                                &:active {
+                                                    background-color: var(--tpPri);
+                                                    border-color: rgba(0, 0, 0, 0);
+                                                    color: var(--accent);
+                                                }
+                                            }
+
+                                            &:disabled {
+                                                pointer-events: none;
+                                                color: var(--tpSec3);
+                                                opacity: .6;
+                                            }
+                                        }
+                                    }
+
+                                    .totalPrice {
+                                        width: max-content;
+
+                                        span {
+                                            font-weight: 500;
+                                        }
+                                    }
+
+                                    &:last-child {
+                                        margin-left: auto;
+
+                                        button {
+                                            display: flex;
+                                            align-items: center;
+                                            padding: .3rem;
+                                            border-radius: .3rem;
+                                            background-color: var(--tpPri);
+
+                                            svg {
+                                                height: 1.2rem;
+                                                width: 1.2rem;
+                                            }
+
+                                            &:focus-visible {
+                                                outline: .3rem solid var(--accent);
+                                            }
+
+                                            @media (min-width: 600px) {
+                                                transition: background-color .3s, color .2s;
+
+                                                &:hover {
+                                                    background-color: var(--tpPri2);
+                                                }
+
+                                                &:active {
+                                                    color: var(--accent);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.concise {
+                        padding: .5rem;
+
+                        img {
+                            height: 7rem;
+                            background-color: var(--tpPri3);
+                            border-radius: .3rem;
+                        }
+
+                        .itemInfo {
+
+                            .title {
+                                width: unset;
+                                max-width: 30ch;
+                            }
+                        }
+
+                        ul {
+
+                            &:nth-child(3) {
+                                padding: .3rem;
+
+                                li {
+                                    p {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: .5rem;
+
+                                        span {
+                                            font-size: 1.1rem;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .specialRequest {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+            padding: .5rem;
+            gap: .5rem;
+            border-radius: .3rem;
+            background-color: var(--tpPri3);
+
+            >h3 {
+                padding: .5rem;
+                background-color: var(--tpPri2);
+                border-radius: .3rem;
+
+                span{
+                    font-size: 1.1rem;
+                    color: var(--tpSec2);
+                    font-weight: 500;
+                }
+            }
+
+            textarea {
+                padding: .5rem;
+                color: var(--tpSec2);
+                background-color: var(--tpPri2);
+                border-color: var(--tpPri);
+                border-width: .1rem;
+                border-style: solid;
+                flex-grow: 1;
+                min-height: 5rem;
+                max-height: 10rem;
+                max-width: 100%;
+                min-width: 50%;
+                font-size: 1.1rem;
+                border-radius: .3rem;
+
+                &::selection {
+                    background: var(--paleAccentTwo);
+                    color: var(--priColor);
+                }
+
+                &:invalid {
+                    border-color: red;
+                }
+
+                &:valid:not(:placeholder-shown) {
+                    border-color: var(--paleAccentTwo);
+                }
+
+                &:focus-visible {
+                    color: var(--secColor);
+                    border-color: var(--accent);
+                }
+
+                @media (min-width: 600px) {
+                    transition: color .3s, border-color .3s;
+                }
+            }
+        }
+
+        .priceP{
+            padding: .5rem;
+        }
+
+        @media(max-width: 800px){
+            width: 100vw;
+            width: 100svw;
+            height: 100vh;
+            height: 100svh;
+            margin: 0;
+            border-radius: 0;
+            min-width: unset;
+            min-height: unset;
+            max-width: unset;
+            max-height: unset;
+            box-shadow: none;
+            h1{
+                gap: 1rem;
+            }
+        }
+    }
+
+    .finalPayment-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 350ms, transform 350ms;
+
+        &::backdrop {
+            background-color: var(--backdropBackground);
+
+            @supports(backdrop-filter: blur()) {
+                backdrop-filter: blur(.2rem);
+            }
+
+            transition: backdrop-filter 350ms,
+            background-color 350ms;
+        }
+    }
+
+    .finalPayment-enter-done {
+        opacity: 1;
+        transform: translateY(0);
+
+        &::backdrop {
+            background-color: var(--backdropBackground);
+
+            @supports(backdrop-filter: blur()) {
+                backdrop-filter: blur(.2rem);
+            }
+        }
+    }
+
+    .finalPayment-exit {
+        opacity: 1;
+        transform: translateY(0);
+
+        &::backdrop {
+            background-color: var(--backdropBackground);
+
+            @supports(backdrop-filter: blur()) {
+                backdrop-filter: blur(.2rem);
+            }
+        }
+    }
+
+    .finalPayment-exit-active {
+        opacity: 0;
+        transform: translateY(130vh);
+        transition: opacity 350ms, transform 350ms;
+
+        &::backdrop {
+            background-color: rgba(0, 0, 0, 0);
+
+            @supports(backdrop-filter: blur()) {
+                backdrop-filter: blur(0rem);
+            }
+
+            transition: backdrop-filter 350ms,
+            background-color 350ms;
+        }
+    }
 
     .cart {
         display: flex;
@@ -13,8 +471,8 @@
         flex-wrap: wrap;
         justify-content: center;
 
-        .subTitle{
-            font-family: Matter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+        .subTitle {
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         }
 
         .cart-items {
@@ -30,7 +488,7 @@
                 .itemLi {
                     position: relative;
                     display: flex;
-                    padding: .7rem;
+                    padding: .5rem;
                     gap: .5rem;
                     border-radius: .5rem;
                     background-color: var(--tpPri3);
@@ -112,6 +570,8 @@
                                     div {
                                         align-items: center;
                                         display: flex;
+                                        -webkit-user-select: none;
+                                        user-select: none;
 
                                         h3 {
                                             border: .05rem solid var(--tpSec3);
@@ -223,7 +683,6 @@
                         }
 
                         .itemInfo {
-                            ul {}
 
                             .title {
                                 width: unset;
@@ -269,6 +728,7 @@
 
                     h4 {
                         font-size: 1.3rem;
+                        font-weight: 500;
                     }
 
                     &:first-child {
@@ -286,21 +746,11 @@
 
                         p {
                             font-size: 1.2rem;
-                            font-weight: 600;
+                            font-weight: 500;
                         }
 
                         h3 {
-                            span {
-                                &:first-child {
-                                    font-weight: 500;
-                                    font-size: 1rem;
-                                }
-
-                                &:last-child {
-                                    margin-left: .5rem;
-                                    font-size: 1.4rem;
-                                }
-                            }
+                            font-size: 1.4rem;
                         }
                     }
                 }
@@ -335,6 +785,7 @@
 
                     h4 {
                         font-size: 1.3rem;
+                        font-weight: 500;
                     }
 
                     &:first-child {
@@ -352,21 +803,11 @@
 
                         p {
                             font-size: 1.2rem;
-                            font-weight: 600;
+                            font-weight: 500;
                         }
 
                         h3 {
-                            span {
-                                &:first-child {
-                                    font-weight: 500;
-                                    font-size: 1rem;
-                                }
-
-                                &:last-child {
-                                    margin-left: .5rem;
-                                    font-size: 1.4rem;
-                                }
-                            }
+                            font-size: 1.4rem;
                         }
                     }
                 }
@@ -506,6 +947,37 @@
                 border-radius: .5rem;
                 box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
 
+                .nextButtondiv {
+                    position: relative;
+                    width: 100%;
+
+                    &::before {
+                        content: 'Please fill out all the forms';
+                        position: absolute;
+                        height: fit-content;
+                        width: max-content;
+                        top: var(--y);
+                        left: var(--x);
+                        padding: 1rem;
+                        background-color: var(--tpPri);
+                        color: var(--tpSec);
+                        pointer-events: none;
+                        opacity: 0;
+                        transition: all .3s;
+                    }
+
+                    &.disabled {
+                        &:hover {
+                            color: var(--tpSec);
+                            background-color: var(--tpPri3);
+
+                            &::before {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
                 button {
                     &.titleButton {
                         padding: 1rem;
@@ -581,15 +1053,33 @@
                             .arrow {
                                 transform: rotate(180deg);
                             }
+
+                            &.inactive {
+                                color: var(--tpSec3);
+
+                                h3 {
+                                    svg {
+                                        color: var(--tpSec3);
+                                    }
+                                }
+
+                                .arrow {
+                                    transform: rotate(0deg);
+                                }
+                            }
                         }
                     }
 
                     &.nextButton {
                         padding: .7rem;
-                        font-size: 1.1rem;
+                        font-size: 1.2rem;
                         background-color: var(--paleAccentThree);
                         border-radius: .3rem;
                         color: #fff;
+                        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        --x: 0;
+                        --y: 0;
+                        width: 100%;
 
                         &:focus-visible {
                             color: var(--accent);
@@ -609,6 +1099,12 @@
                             &:active {
                                 background-color: var(--tpPri3);
                             }
+                        }
+
+                        &:disabled {
+                            background-color: var(--tpPri3);
+                            color: var(--tpSec);
+                            cursor: not-allowed;
                         }
                     }
                 }
@@ -639,6 +1135,23 @@
                             svg {
                                 height: 1.3rem;
                                 width: 1.3rem;
+                            }
+
+                            @media (min-width: 600px) {
+                                transition: .2s color;
+
+                                &:hover {
+                                    color: var(--accent);
+                                }
+
+                                &:active {
+                                    color: var(--tpSec2);
+                                }
+                            }
+
+                            &:disabled {
+                                pointer-events: none;
+                                color: var(--tpSec3);
                             }
                         }
                     }
@@ -809,12 +1322,19 @@
 
                                     &:disabled {
                                         pointer-events: none;
-                                        background-color: var(--tpPri2);
+                                        background-color: var(--paleAccent);
+                                        color: var(--accent);
 
                                         svg {
+                                            color: var(--accent);
+
                                             :last-child {
                                                 opacity: 1;
                                             }
+                                        }
+
+                                        &.inactive {
+                                            color: var(--tpSec3);
                                         }
                                     }
                                 }
@@ -1030,6 +1550,7 @@
                     .saveCardButton {
                         display: flex;
                         align-items: center;
+                        flex-wrap: wrap;
                         gap: .5rem;
                         color: var(--tpSec);
                         padding: .1rem;
@@ -1038,36 +1559,227 @@
 
                         p {
                             font-size: 1.1rem;
+
+                            &:last-child {
+                                color: var(--tpSec2);
+                                font-size: 1rem;
+                                max-width: 100%;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
                         }
 
                         svg {
                             height: 1.5rem;
                             width: 1.5rem;
-                        }
+                            color: var(--tpSec2);
 
-                        &:focus-visible {
-                            color: var(--accent);
-                            outline: .2rem solid var(--accent);
+                            path:last-child {
+                                opacity: 0;
+                            }
                         }
 
                         @media (min-width: 600px) {
-                            transition: .2s color;
+
+                            p,
+                            svg {
+                                transition: color .3s;
+                            }
+
+                            &:focus-visible {
+                                color: var(--accent);
+
+                                outline: .15rem solid var(--accent);
+
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
 
                             &:hover {
                                 color: var(--accent);
+
+                                p {
+                                    color: var(--accent);
+                                }
+
+                                svg {
+                                    color: var(--accent);
+                                }
                             }
 
                             &:active {
-                                color: var(--tpSec2);
+                                color: var(--tpSec3);
+
+                                p {
+                                    color: var(--tpSec3);
+                                }
+
+                                svg {
+                                    color: var(--tpSec3);
+                                }
                             }
                         }
 
                         &:disabled {
                             pointer-events: none;
-                            color: var(--tpSec3);
+
+                            p {
+                                color: var(--tpSec3);
+                            }
+
+                            svg {
+                                color: var(--tpSec3);
+                            }
+                        }
+
+                        &.active {
+                            color: var(--accent);
+
+                            svg {
+                                color: var(--accent);
+
+                                path:last-child {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    .onDeliveryDiv {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        h3 {
+                            font-size: clamp(1.7rem, 1.3824rem + 0.8471vw, 3.5rem);
+                            letter-spacing: -0.1rem;
+                            text-transform: lowercase;
+                            color: var(--secColor);
+                            font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        }
+
+                        p {
+                            font-weight: 500;
+                            letter-spacing: 0.1rem;
+                            color: var(--tpSec);
+                            font-size: clamp(0.7rem, 0.5235rem + 0.4706vw, 1.7rem);
+                            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        }
+
+                        svg {
+                            min-width: 30rem;
+
+                            @media(max-width: 400px) {
+                                min-width: unset;
+                            }
                         }
                     }
                 }
+            }
+
+            .checkoutForm-enter {
+                opacity: 0;
+                max-height: 0;
+            }
+
+            .checkoutForm-enter-active {
+                opacity: 1;
+                max-height: 100vh;
+                transition: opacity .6s cubic-bezier(.19, 1, .22, 1), max-height .6s cubic-bezier(.19, 1, .22, 1);
+            }
+
+            .checkoutForm-enter-done,
+            .checkoutForm-exit {
+                opacity: 1;
+                max-height: 60rem;
+                padding-bottom: .5rem;
+            }
+
+            .checkoutForm-exit-active {
+                opacity: 0;
+                max-height: 0;
+                transition: opacity 200ms, max-height 200ms;
+            }
+        }
+    }
+
+    .cartEmptyDiv {
+        display: flex;
+        padding: 1rem;
+        margin-inline: auto;
+        margin-block: 2rem 4rem;
+        --maxWidth: 80%;
+        width: var(--maxWidth);
+
+        a {
+            margin-top: 10%;
+
+            @supports (height: fit-content) {
+                height: fit-content;
+            }
+
+            @supports not (height: fit-content) {
+                height: auto;
+            }
+
+            h1 {
+                font-size: clamp(2.5rem, 1.5294rem + 2.5882vw, 8rem);
+                letter-spacing: -0.2rem;
+                line-height: 2.8rem;
+                text-transform: lowercase;
+                color: var(--secColor);
+                width: max-content;
+                font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+            }
+
+            p {
+                position: relative;
+                text-transform: uppercase;
+                font-weight: 500;
+                letter-spacing: 0.1rem;
+                color: var(--tpSec);
+                margin-top: .7rem;
+                font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                width: max-content;
+            }
+        }
+
+        svg {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 800px) {
+            flex-direction: column-reverse;
+            align-items: center;
+            height: unset;
+            width: 100%;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+
+                h1,
+                p {
+                    text-align: center;
+                    width: unset;
+                }
+            }
+
+            svg {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            svg {
+                width: 100%;
             }
         }
     }

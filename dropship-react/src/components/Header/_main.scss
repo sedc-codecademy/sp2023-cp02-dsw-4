@@ -156,7 +156,9 @@ header {
         @media (max-width: 800px) {
             padding-inline: 1rem;
             align-items: flex-start;
-            height: fit-content;
+            @supports (height: fit-content) {
+                height: fit-content;
+            }
 
             .logo {
                 display: none;
