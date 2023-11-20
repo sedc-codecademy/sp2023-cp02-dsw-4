@@ -28,11 +28,13 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
             <div className="inputContainer">
                 <input
                     name="holder"
-                    maxLength="24"
+                    maxLength="35"
+                    minLength="3"
                     pattern="[a-zA-Z ]+"
                     type="text"
                     required
                     placeholder=""
+                    value={card.holder}
                     onFocus={e => handleFocus(e)}
                     onChange={(e) => handleSetInputValue(e)}
                 ></input>
@@ -42,9 +44,10 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
                 <input
                     name="number"
                     type="text"
-                    pattern="[0-9 ]*"
+                    pattern="^[0-9 ]*[0-9]$"
                     inputMode="decimal"
                     maxLength={19}
+                    minLength={19}
                     required
                     placeholder=""
                     onFocus={e => handleFocus(e)}
@@ -66,6 +69,7 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
                         onFocus={e => handleFocus(e)}
                         value={formatAsMMYY(card.date)}
                         maxLength={5}
+                        minLength={5}
                         onChange={(e) => handleDateChange(e)}
                     ></input>
                     <label htmlFor="date">Expiration (mm/yy)</label>
@@ -77,6 +81,7 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
                         pattern="[0-9]*"
                         inputMode="numeric"
                         maxLength={4}
+                        minLength={3}
                         required
                         placeholder=""
                         onFocus={e => handleFocus(e)}

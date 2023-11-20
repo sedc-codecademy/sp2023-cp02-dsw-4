@@ -38,6 +38,7 @@ main {
 
     .detailsListBody {
         display: flex;
+        flex-grow: 1;
         gap: 2.5rem;
 
         .pagination {
@@ -201,38 +202,6 @@ main {
                         margin-bottom: .5rem;
                         font-size: 1rem;
                         color: var(--tpSec);
-
-                        button {
-                            display: flex;
-                            align-items: center;
-                            color: white;
-                            padding: .05rem;
-                            height: 100%;
-                            border-radius: .3rem;
-                            background-color: var(--paleAccentThree);
-
-                            svg {
-                                height: 1.15rem;
-                                width: 1.15rem;
-                            }
-
-                            @media (min-width: 600px) {
-                                transition: .3s background-color;
-
-                                &:focus-visible {
-                                    outline: .15rem solid var(--secColor);
-                                    background-color: var(--accent);
-                                }
-
-                                &:hover {
-                                    background-color: var(--paleAccentTwo);
-                                }
-
-                                &:active {
-                                    background-color: var(--tpPri3);
-                                }
-                            }
-                        }
                     }
 
                     div {
@@ -363,7 +332,7 @@ main {
                             svg {
                                 height: 1.3rem;
                                 width: 1.3rem;
-                                color: var(--tpSec3);
+                                color: var(--tpSec2);
 
                                 path:last-child {
                                     opacity: 0;
@@ -423,13 +392,36 @@ main {
                                 }
                             }
 
+                            &:disabled {
+                                pointer-events: none;
+
+                                p {
+                                    color: var(--tpSec3);
+
+                                    span {
+                                        color: var(--tpSec3);
+                                    }
+                                }
+
+                                svg {
+                                    color: var(--tpSec3);
+                                }
+                            }
+
                             &.active {
+                                p {
+                                    color: var(--accent);
+
+                                    span {
+                                        color: var(--paleAccentThree);
+                                    }
+                                }
+
                                 svg {
                                     color: var(--accent);
 
                                     path:last-child {
                                         opacity: 1;
-                                        color: var(--accent);
                                     }
                                 }
                             }
@@ -472,7 +464,7 @@ main {
                             svg {
                                 height: 1.3rem;
                                 width: 1.3rem;
-                                color: var(--tpSec3);
+                                color: var(--tpSec2);
 
                                 rect {
                                     opacity: 0;
@@ -532,138 +524,11 @@ main {
                                 }
                             }
 
-                            &.active {
-                                svg {
-                                    p {
-                                        color: var(--accent);
-                                    }
-
-                                    span {
-                                        color: var(--paleAccentThree);
-                                    }
-
-                                    rect {
-                                        opacity: 1;
-                                        color: var(--accent);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .availabilityFilter {
-                border-bottom: .1rem solid var(--tertColor2);
-                padding-bottom: 1rem;
-
-                p:first-child {
-                    font-size: 1rem;
-                    color: var(--tpSec);
-                }
-
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    gap: .7rem;
-                    margin-top: 1rem;
-
-                    li {
-                        button {
-                            display: flex;
-                            align-items: center;
-                            gap: .5rem;
-
-                            p {
-                                color: var(--tpSec);
-                                font-size: .9rem;
-                            }
-
-                            span {
-                                color: var(--tpSec2);
-                                font-size: .85rem;
-                            }
-
-                            svg {
-                                height: 1.3rem;
-                                width: 1.3rem;
-                                color: var(--tpSec3);
-
-                                path:last-child {
-                                    opacity: 0;
-                                }
-                            }
-
-                            @media (min-width: 600px) {
-
-                                span,
-                                p,
-                                svg {
-                                    transition: color .3s;
-                                }
-
-                                &:focus-visible {
-                                    p {
-                                        color: var(--accent);
-                                    }
-
-                                    span {
-                                        color: var(--paleAccentThree);
-                                    }
-
-                                    outline: .15rem solid var(--accent);
-
-                                    svg {
-                                        color: var(--accent);
-                                    }
-                                }
-
-                                &:hover {
-                                    p {
-                                        color: var(--accent);
-                                    }
-
-                                    span {
-                                        color: var(--paleAccentThree);
-                                    }
-
-                                    svg {
-                                        color: var(--accent);
-                                    }
-                                }
-
-                                &:active {
-                                    p {
-                                        color: var(--tpSec3);
-                                    }
-
-                                    span {
-                                        color: var(--tpSec3);
-                                    }
-
-                                    svg {
-                                        color: var(--tpSec3);
-                                    }
-                                }
-
-                            }
-
-                            &.active {
-                                svg {
-                                    color: var(--accent);
-
-                                    path:last-child {
-                                        opacity: 1;
-                                        color: var(--accent);
-                                    }
-                                }
-                            }
-
-                            &.inactive {
+                            &:disabled {
                                 pointer-events: none;
 
                                 p {
-                                    color: var(--tpSec3);
+                                    color: var(--tpSec2);
                                 }
 
                                 span {
@@ -672,6 +537,28 @@ main {
 
                                 svg {
                                     color: var(--tpSec3);
+
+                                    path {
+                                        fill: var(--tpSec3);
+                                    }
+                                }
+                            }
+
+                            &.active {
+                                p {
+                                    color: var(--accent);
+                                }
+
+                                span {
+                                    color: var(--paleAccentThree);
+                                }
+
+                                svg {
+                                    color: var(--accent);
+
+                                    rect {
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
@@ -679,7 +566,8 @@ main {
                 }
             }
 
-            .colorFilter {
+            .colorFilter,
+            .sizeFilter {
                 border-bottom: .1rem solid var(--tertColor2);
                 padding-bottom: 1rem;
 
@@ -760,6 +648,26 @@ main {
                                 }
                             }
 
+                            &:disabled {
+                                pointer-events: none;
+
+                                p {
+                                    color: var(--tpSec2);
+                                }
+
+                                span {
+                                    color: var(--tpSec3);
+                                }
+
+                                svg {
+                                    color: var(--tpSec3);
+
+                                    path {
+                                        fill: var(--tpSec3);
+                                    }
+                                }
+                            }
+
                             &.active {
                                 p {
                                     color: var(--accent);
@@ -779,6 +687,24 @@ main {
                     }
                 }
             }
+
+            .sizeFilter {
+                ul {
+                    li {
+                        button {
+                            svg {
+                                color: var(--tpSec2);
+                            }
+
+                            &.active {
+                                svg {
+                                    color: var(--accent);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .listContainer {
@@ -787,6 +713,7 @@ main {
             gap: 1rem;
             padding: 1rem;
             border-radius: .7rem;
+            flex-grow: 1;
 
             .listContainerHeader {
                 display: flex;
@@ -795,6 +722,32 @@ main {
                 border-bottom: .1rem solid var(--tertColor2);
                 padding-bottom: 1rem;
                 gap: 1rem;
+
+                .sorterSelect {
+                    border: .1rem solid var(--tertColor2);
+                    background-color: var(--tpPri2);
+                    border-radius: .2rem;
+                    padding: .5rem;
+                    color: var(--tpSec);
+
+                    option {
+                        color: var(--tpSec);
+                    }
+
+                    @media (min-width: 600px) {
+                        transition: color .2s, background-color .2s, border-color .2s;
+
+                        &:focus-visible {
+                            color: var(--accent);
+                            border-color: var(--paleAccentThree);
+                        }
+
+                        &:hover {
+                            color: var(--accent);
+                            border-color: var(--paleAccentThree);
+                        }
+                    }
+                }
 
                 div:first-child {
                     display: flex;
@@ -863,8 +816,6 @@ main {
                         gap: .5rem;
 
                         li {
-                            height: 100%;
-
                             button {
                                 height: 100%;
                                 display: flex;
@@ -872,9 +823,10 @@ main {
                                 border: .1rem solid var(--tertColor2);
                                 background-color: var(--tpPri2);
                                 border-radius: .2rem;
-                                padding: .3rem;
+                                padding: .4rem;
                                 color: var(--tpSec);
                                 width: max-content;
+                                text-transform: capitalize;
 
                                 svg {
                                     height: 1.3rem;
@@ -1152,6 +1104,57 @@ main {
                     }
                 }
             }
+
+            .noFilteredProducts {
+                display: flex;
+                justify-content: center;
+                padding: 1rem;
+
+                @media (max-width: 800px) {
+                    align-items: center;
+                    flex-direction: column-reverse;
+                }
+
+                button {
+                    margin-top: 10%;
+
+                    @supports (height: fit-content) {
+                        height: fit-content;
+                    }
+
+                    @supports not (height: fit-content) {
+                        height: auto;
+                    }
+
+                    h1 {
+                        font-size: clamp(3rem, 2rem + 2.6667vw, 7rem);
+                        letter-spacing: -0.2rem;
+                        line-height: 2.8rem;
+                        text-transform: lowercase;
+                        color: var(--secColor);
+                        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        @media (min-width: 800px) {
+                            width: max-content;
+                        }
+                    }
+
+                    p {
+                        position: relative;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        letter-spacing: 0.2rem;
+                        color: var(--tpSec);
+                        margin-top: .7rem;
+                        font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+                        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    }
+                }
+
+                svg {
+                    height: 100%;
+                    flex-grow: 1;
+                }
+            }
         }
     }
 }
@@ -1173,6 +1176,9 @@ main {
 @media (max-width: 800px) {
     main {
         .detailsListBody {
+            min-height: 100vh;
+            min-height: 100svh;
+
             .filtersContainer {
                 position: fixed;
                 background: radial-gradient(circle at center, var(--tpPri) 0%, var(--tpPri3) 100%);
@@ -1208,46 +1214,6 @@ main {
 
                         svg {
                             height: 1.8rem;
-                        }
-                    }
-                }
-
-                .orderByDiv {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 1rem;
-                    gap: 1rem;
-
-                    border-bottom: .07rem solid var(--tertColor2);
-
-                    ul {
-                        display: flex;
-                        padding-block: .5rem;
-                        gap: .5rem;
-                        overflow: auto;
-
-                        @supports (scrollbar-width: none) {
-                            scrollbar-width: none;
-                        }
-
-                        &::-webkit-scrollbar {
-                            display: none;
-                        }
-
-                        li {
-                            button {
-                                border: .15rem solid var(--tertColor2);
-                                padding: .7rem;
-                                font-size: 1.1rem;
-                                border-radius: 2rem;
-                                width: max-content;
-                                color: var(--tpSec);
-
-                                &.active {
-                                    color: var(--accent);
-                                    border-color: var(--paleAccentThree);
-                                }
-                            }
                         }
                     }
                 }
@@ -1343,10 +1309,12 @@ main {
                     }
                 }
 
-                .manufacturersFilter {
+                .manufacturersFilter,
+                .sizeFilter {
                     padding: 1rem;
 
-                    .manufacturer-list {
+                    .manufacturer-list,
+                    .sizeUl {
                         margin-top: 1.5rem;
 
                         li {
@@ -1355,6 +1323,10 @@ main {
                                 justify-content: space-between;
                                 width: 100%;
                                 gap: .5rem;
+                                background-color: var(--tpPri3);
+                                border-radius: .3rem;
+                                border: .2rem solid var(--tpPri2);
+                                padding: .3rem;
 
                                 div {
                                     display: flex;
@@ -1362,96 +1334,23 @@ main {
                                     gap: .3rem;
 
                                     p {
-                                        font-size: 1.1rem;
+                                        font-size: 1.2rem;
                                     }
 
                                     span {
-                                        font-size: .9rem;
+                                        font-size: 1rem;
                                     }
                                 }
 
                                 svg {
-                                    height: 1.6rem;
-                                    width: 1.6rem;
+                                    height: 1.7rem;
+                                    width: 1.7rem;
                                     color: var(--tpSec3);
                                     opacity: .8;
                                 }
 
                                 &.active {
-                                    svg {
-                                        div {
-                                            p {
-                                                color: var(--accent);
-                                            }
-
-                                            span {
-                                                color: var(--paleAccentTwo);
-                                            }
-                                        }
-
-                                        rect {
-                                            opacity: 1;
-                                            color: var(--accent);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .availabilityFilter {
-                    padding: 1rem;
-
-                    ul {
-                        margin-top: 1.5rem;
-
-                        li {
-                            button {
-                                display: flex;
-                                justify-content: space-between;
-                                flex-direction: row-reverse;
-                                width: 100%;
-                                gap: .5rem;
-
-                                div {
-                                    display: flex;
-                                    align-items: center;
-                                    gap: .3rem;
-
-                                    p {
-                                        font-size: 1.1rem;
-                                    }
-
-                                    span {
-                                        font-size: .9rem;
-                                    }
-                                }
-
-                                svg {
-                                    height: 1.6rem;
-                                    width: 1.6rem;
-                                    color: var(--tpSec3);
-                                    opacity: .8;
-                                }
-
-                                &.active {
-                                    svg {
-                                        div {
-                                            p {
-                                                color: var(--accent);
-                                            }
-
-                                            span {
-                                                color: var(--paleAccentTwo);
-                                            }
-                                        }
-
-                                        rect {
-                                            opacity: 1;
-                                            color: var(--accent);
-                                        }
-                                    }
+                                    border-color: var(--paleAccent);
                                 }
                             }
                         }
@@ -1511,6 +1410,12 @@ main {
                                     font-size: .85rem;
                                 }
 
+                                &:disabled {
+                                    div {
+                                        background: var(--tpSec3);
+                                    }
+                                }
+
                                 &.active {
                                     p {
                                         color: var(--secColor);
@@ -1551,6 +1456,7 @@ main {
                         flex-grow: 1;
                         border-radius: .65rem;
                         border: .2rem solid;
+                        width: 50%;
 
                         font-size: 1.2rem;
 
@@ -1563,6 +1469,19 @@ main {
                             color: var(--priColor);
                             border-color: var(--secAccent);
                             background-color: var(--secAccent);
+                        }
+
+                        &:disabled {
+                            pointer-events: none;
+
+                            &:first-child {
+                                opacity: .6;
+                            }
+
+                            &:last-child {
+                                opacity: .6;
+                            }
+
                         }
                     }
                 }
@@ -1612,7 +1531,7 @@ main {
                 }
 
                 .allProducts {
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(2, 2fr);
                 }
 
                 .topProducts {
@@ -1628,7 +1547,7 @@ main {
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
     main {
         .detailsListBody {
             .listContainer {

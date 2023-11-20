@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useRef, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
 
-import SearchItem from "./SearchItem";
-import ViewAll from "./ViewAll";
+import SearchItem from "./SearchItem"
+import ViewAll from "./ViewAll"
 
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group"
 
 import {
     CatDP,
@@ -12,30 +12,30 @@ import {
     ViewAllSub,
     catArray,
     subCatArray,
-} from "../CatDropDown/CatDP";
-import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice";
-import { setShouldFocus } from "../../../store/slices/search/search";
+} from "../CatDropDown/CatDP"
+import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice"
+import { setShouldFocus } from "../../../store/slices/search/search"
 
-import { NavLink, useNavigate } from "react-router-dom";
-import { getSearch } from "../../../helpers/API/searchApi";
-import { useQuery } from "@tanstack/react-query";
+import { NavLink, useNavigate } from "react-router-dom"
+import { getSearch } from "../../../helpers/API/searchApi"
+import { useQuery } from "@tanstack/react-query"
 
 function SearchBar() {
-    const navigate = useNavigate();
-    const [searchValue, setSearchValue] = useState("");
-    const [showLoading, setShowLoading] = useState(false);
-    const [isInputFocused, setIsInputFocused] = useState(false);
+    const navigate = useNavigate()
+    const [searchValue, setSearchValue] = useState("")
+    const [showLoading, setShowLoading] = useState(false)
+    const [isInputFocused, setIsInputFocused] = useState(false)
 
-    const dispatch = useDispatch();
-    const csstransitionRef = useRef();
-    const catref = useRef();
-    const searchref = useRef();
+    const dispatch = useDispatch()
+    const csstransitionRef = useRef()
+    const catref = useRef()
+    const searchref = useRef()
 
-    const isMobile = useSelector((state) => state.mobile.isMobile);
+    const isMobile = useSelector((state) => state.mobile.isMobile)
     const showCatDropDown = useSelector(
         (state) => state.catDropDown.showDropDown
-    );
-    const shouldFocus = useSelector((state) => state.search.shouldFocus);
+    )
+    const shouldFocus = useSelector((state) => state.search.shouldFocus)
 
     const {
         // Need to do mutaiton for reviews
@@ -48,56 +48,69 @@ function SearchBar() {
         queryKey: ["searchQuery", searchValue],
         queryFn: () => getSearch(searchValue),
         enabled: !!searchValue,
-    });
+    })
 
     useEffect(() => {
         // For mobile search button
         if (isMobile && shouldFocus && searchref.current) {
-            searchref.current.focus();
-            dispatch(setShouldFocus(false));
+            searchref.current.focus()
+            dispatch(setShouldFocus(false))
         }
-        if (isSearchError) console.log(searchError);
+        if (isSearchError) console.log(searchError)
         if ((searchSuccess && searchData && !isSearchPending) || searchValue?.length < 1) setShowLoading(false)
-    }, [shouldFocus, dispatch, isSearchError, searchError, searchSuccess]);
+    }, [shouldFocus, dispatch, isSearchError, searchError, searchSuccess, isMobile,isSearchPending, searchData, searchValue])
 
     const handleClearClick = () => {
-        setSearchValue("");
-        if (searchref) searchref.current.value = "";
-    };
+        setSearchValue("")
+        if (searchref) searchref.current.value = ""
+    }
 
     const handleSearchClick = () => {
         if (searchData?.length > 0 && searchValue?.length > 0)
-            navigate(`/search/${searchValue}`);
-    };
+            navigate(`/search/${searchValue}`)
+    }
 
     const handleCategoriesClick = () => {
-        dispatch(toggleCatDropDown());
-    };
+        dispatch(toggleCatDropDown())
+    }
 
     const handleInputChange = (event) => {
-        const inputValue = event.target.value;
+        const inputValue = event.target.value
 
-        clearTimeout(handleInputChange.timeoutId);
+        clearTimeout(handleInputChange.timeoutId)
         setShowLoading(true)
         handleInputChange.timeoutId = setTimeout(() => {
-            setSearchValue(inputValue);
-        }, 500);
-    };
+            setSearchValue(inputValue)
+        }, 500)
+    }
 
     const handleFocus = () => {
-        setIsInputFocused(true);
-    };
+        setIsInputFocused(true)
+    }
 
     const handleBlur = () => {
-        setIsInputFocused(false);
-    };
+        setIsInputFocused(false)
+    }
+
+    const handleCatClick = () => {
+        console.log('Should Change the selecetd cat')
+    }
+
+    const handleSubCatClick = (e) => {
+        navigate(`/subcategory/${e}`)
+        dispatch(toggleCatDropDown())
+    }
+    const handleViewAllClick = (e) => {
+        navigate(`/category/${e}`)
+        dispatch(toggleCatDropDown())
+    }
 
     return (
         <div className="search-form">
             <div className="search-bar-container">
                 <form
                     onSubmit={(e) => {
-                        e.preventDefault();
+                        e.preventDefault()
                     }}
                 >
                     <div className="inputPDiv">
@@ -139,9 +152,9 @@ function SearchBar() {
                                             attributeName="cx"
                                             calcMode="spline"
                                             dur="2s"
-                                            keySplines=".36,.62,.43,.99;.79,0,.58,.57"
+                                            keySplines=".36,.62,.43,.99.79,0,.58,.57"
                                             repeatCount="indefinite"
-                                            values="5;8;5"
+                                            values="585"
                                         />
                                     </circle>
                                     <circle cx="19" cy="12" r="4" fill="var(--secAccent)">
@@ -149,9 +162,9 @@ function SearchBar() {
                                             attributeName="cx"
                                             calcMode="spline"
                                             dur="2s"
-                                            keySplines=".36,.62,.43,.99;.79,0,.58,.57"
+                                            keySplines=".36,.62,.43,.99.79,0,.58,.57"
                                             repeatCount="indefinite"
-                                            values="19;16;19"
+                                            values="191619"
                                         />
                                     </circle>
                                     <animateTransform
@@ -159,7 +172,7 @@ function SearchBar() {
                                         dur="0.75s"
                                         repeatCount="indefinite"
                                         type="rotate"
-                                        values="0 12 12;360 12 12"
+                                        values="0 12 12360 12 12"
                                     />
                                 </g>
                             </svg>
@@ -203,7 +216,7 @@ function SearchBar() {
                 </button>
             </div>
 
-            <div className="frequent-searches">
+            {!isMobile && <div className="frequent-searches">
                 <h3>Frequent Searches</h3>
                 <ul>
                     <li>
@@ -219,7 +232,7 @@ function SearchBar() {
                         <NavLink>basketball</NavLink>
                     </li>
                 </ul>
-            </div>
+            </div>}
 
             <CSSTransition
                 in={showCatDropDown && !isMobile}
@@ -231,17 +244,17 @@ function SearchBar() {
                 <div className="categories-dp" ref={catref}>
                     <ul className="catsList">
                         {catArray.map((e) => (
-                            <CatDP key={e.id} category={e} />
+                            <CatDP key={e.id} category={e} handleCatClick={handleCatClick} />
                         ))}
                     </ul>
                     <div className="divider"></div>
                     <div className="subCatsList">
                         <ul>
                             {subCatArray.slice(0, 5).map((e) => (
-                                <SubCatDP key={e.id} subCategory={e} />
+                                <SubCatDP key={e.id} subCategory={e} handleSubCatClick={handleSubCatClick} />
                             ))}
                         </ul>
-                        <ViewAllSub category="should contain path to category page"></ViewAllSub>
+                        <ViewAllSub category={catArray[0]} handleViewAllClick={handleViewAllClick}></ViewAllSub>
                     </div>
                 </div>
             </CSSTransition>
@@ -265,7 +278,7 @@ function SearchBar() {
                 </div>
             </CSSTransition>
         </div>
-    );
+    )
 }
 
-export default SearchBar;
+export default SearchBar

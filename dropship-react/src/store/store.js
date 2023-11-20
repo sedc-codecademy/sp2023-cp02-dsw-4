@@ -14,6 +14,7 @@ import searchReducer from "./slices/search/search"
 import cardReducer from "./slices/cardSlice/cardSlice"
 import roleReducer from "./slices/role/roleSlice"
 import loaderReducer from "./slices/loaderSlice/loaderSlice"
+import cartReducer from "./slices/cartSlice/cartSlice"
 
 const store = configureStore({
   reducer: {
@@ -31,7 +32,8 @@ const store = configureStore({
     filters: filtersReducer,
     mobile: mobileReducer,
     role: roleReducer,
-    loader: loaderReducer
+    loader: loaderReducer,
+    cart: cartReducer
   },
 })
 

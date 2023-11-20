@@ -1,7 +1,8 @@
 {
-    "id": "e2naknea2",
-    "title": "Samsung",
-    "image": "/imgs/manufacturers/samsung.jpg",
+    "id": "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
+    "title": "Personal Computers",
+    "image": "/imgs/cat/tech/sub/pc.png",
+    "description": "Get PCs, the latest components, PC accesories and everything else related to PCs.",
     "products": [
         {
             "title": "All-Weather Floor Mats",

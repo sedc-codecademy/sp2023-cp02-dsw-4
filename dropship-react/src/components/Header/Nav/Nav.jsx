@@ -54,6 +54,9 @@ export default function Nav() {
 
     const onAccountIconClick = () => {
         if (showShipping) dispatch(setShowShipping(!showShipping))
+        if(isMobile && showCatDropDown){
+            dispatch(toggleCatDropDown())
+        }
         dispatch(setIsSettingsOn(!isSettingsOn))
     }
 
@@ -70,6 +73,9 @@ export default function Nav() {
     }
 
     const handleCategoriesClick = () => {
+        if(isMobile && isSettingsOn){
+            dispatch(setIsSettingsOn(false))
+        }
         dispatch(toggleCatDropDown())
     }
 

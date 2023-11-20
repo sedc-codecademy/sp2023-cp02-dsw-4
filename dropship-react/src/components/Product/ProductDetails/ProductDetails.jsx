@@ -1,42 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react"
+import { useParams, NavLink } from "react-router-dom"
 
-import { useSelector } from "react-redux";
-import { selectProducts } from "../../../store/selectors/productSelector";
+import { useSelector, useDispatch } from "react-redux"
+import { selectProducts } from "../../../store/selectors/productSelector"
 
-import ProductCard from "../ProductCard/ProductCard";
-import Stars, { EditStars } from "../../Stars/Stars";
-import { DetailsNav } from "../../UsefullComponents/Usefull";
-import Reviews, { EditReview } from "../../Reviews/Reviews";
-import ImageLoader from "../../ImageLoader/ImageLoader";
-import { ReviewSvg } from "../../Reviews/review";
-import NotFound from "../../NotFound/NotFound";
-import { useQuery } from "@tanstack/react-query";
-import { getProductByID } from "../../../helpers/API/product-api";
-import { getUser } from "../../../helpers/API/user-api";
-import { BigLoadingDiv } from "../../PageLoader/PageLoader";
+import ProductCard from "../ProductCard/ProductCard"
+import Stars, { EditStars } from "../../Stars/Stars"
+import { DetailsNav } from "../../UsefullComponents/Usefull"
+import Reviews, { EditReview } from "../../Reviews/Reviews"
+import ImageLoader from "../../ImageLoader/ImageLoader"
+import { ReviewSvg } from "../../Reviews/review"
+import NotFound from "../../NotFound/NotFound"
+import { useQuery } from "@tanstack/react-query"
+import { getProductByID } from "../../../helpers/API/product-api"
+import { getUser } from "../../../helpers/API/user-api"
+import { BigLoadingDiv } from "../../PageLoader/PageLoader"
+
+import { addOrderItems } from "../../../store/slices/cartSlice/cartSlice"
 
 function ProductDetails() {
-  const { productId } = useParams();
-  const products = useSelector(selectProducts); // Need to get a different way to get these
-  const [quantity, setQuantity] = useState(1);
-  const [selectedSizeStock, setSelectedSizeStock] = useState(null);
-  const [createReview, setCreateReview] = useState(false);
-  const [tempRating, setTempRating] = useState(0);
-
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedProductSize, setSelectedProductSize] = useState([]);
-  const [currentProductSize, setCurrentProductSize] = useState(null);
-
-  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  const tokens = useSelector((state) => state.role.authTokens);
+  const { productId } = useParams()
+  const dispatch = useDispatch()
+  const products = useSelector(selectProducts) // Need to get a different way to get these
+  const tokens = useSelector((state) => state.role.authTokens)
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
 
   const { data: userData } = useQuery({
     queryKey: ["userQuery"],
     queryFn: getUser,
     enabled: !!(tokens?.accessToken && tokens?.refreshToken),
-  });
+  })
 
   const {
     // Need to do mutaiton for reviews
@@ -49,90 +42,117 @@ function ProductDetails() {
   } = useQuery({
     queryKey: ["productQuery", productId],
     queryFn: () => getProductByID(productId),
-  });
+  })
 
-  const userReview =
-    isLoggedIn && productData
-      ? productData.reviews.some((e) => e.authorId === userData?.id)
-      : false;
+  const [createReview, setCreateReview] = useState(false)
+  const [tempRating, setTempRating] = useState(0)
+  const [userReview, setUserReview] = useState(false)
+
+  const [selectedColor, setSelectedColor] = useState('')
+  const [selectedSize, setSelectedSize] = useState('')
+  const [currentProductSize, setCurrentProductSize] = useState(null)
+
+  const [allColors, setAllColors] = useState([])
+  const [allSizes, setAllSizes] = useState([])
+  const [uniqueColors, setUniqueColors] = useState([])
+  const [uniqueSizes, setUniqueSizes] = useState([])
+  const [filteredSizes, setFilteredSizes] = useState([])
+  const [amount, setAmount] = useState(1)
+
+  useEffect(() => {
+    setAllColors(productData?.productSizes?.reduce((acc, productSize) => {
+      if (productSize.color) {
+        acc.push(productSize.color)
+      }
+      return acc
+    }, []))
+    setAllSizes(productData?.productSizes?.reduce((acc, productSize) => {
+      if (productSize.size) {
+        acc.push(productSize.size)
+      }
+      return acc
+    }, []))
+  }, [productData])
+
+  useEffect(() => {
+    if (allSizes && allColors) {
+      setUniqueColors([...new Set(allColors)])
+      setUniqueSizes([...new Set(allSizes)])
+    }
+  }, [allColors, allSizes])
+
+  useEffect(() => {
+    setUserReview(isLoggedIn && productData ? productData.reviews.some((e) => e.authorId === userData?.id) : false)
+  }, [userReview, productData, isLoggedIn, userData])
+
+  useEffect(() => {
+    if (productData) {
+      if (productData.productSizes.length === 1) {
+        setCurrentProductSize(productData.productSizes[0])
+      } else if (selectedColor) {
+        if (uniqueSizes.length !== 1 && selectedSize) {
+          setCurrentProductSize(productData.productSizes.find(pSize => pSize.color === selectedColor && pSize.size === selectedSize))
+        } else if (uniqueSizes.length === 1) {
+          setCurrentProductSize(productData.productSizes.find(pSize => pSize.color === selectedColor))
+        }
+      } else {
+        setCurrentProductSize(null)
+      }
+    } else {
+      setCurrentProductSize(null)
+    }
+  }, [productData, selectedColor, selectedSize, uniqueSizes])
+
+  useEffect(() => {
+    setFilteredSizes(selectedColor && productData ? productData.productSizes.filter(e => e.color === selectedColor) : [])
+  }, [selectedColor, productData])
 
   const handleStarsClick = (e) => {
-    setTempRating(e);
-    setCreateReview(true);
-  };
+    setTempRating(e)
+    setCreateReview(true)
+  }
 
   const handleCancel = () => {
-    setCreateReview(false);
-  };
-
-  // Ovie gi imav vishe napraveno vo filters za unikatni vadenje se
-  const allColors = productData?.productSizes?.reduce((acc, productSize) => {
-    if (productSize.color) {
-      acc.push(productSize.color);
-    }
-    return acc;
-  }, []);
-
-  const allSizes = productData?.productSizes?.reduce((acc, productSize) => {
-    if (productSize.size) {
-      acc.push(productSize.size);
-    }
-    return acc;
-  }, []);
-
-  const uniqueColors = [...new Set(allColors)];
-  const uniqueSizes = [...new Set(allSizes)];
-  // console.log(uniqueColors, uniqueSizes);
-
-  /// ovde praj ja presmetaka productData e produktot koga kje go koristish tuka sekogash proveri dali ima neshto i ako ti plache staj mu ?
+    setCreateReview(false)
+  }
 
   const handleQuantityIncrement = () => {
-    if(selectedSizeStock !== null && quantity < selectedSizeStock) {
-      setQuantity(quantity + 1);
+    if (currentProductSize !== null && amount < currentProductSize.stock) {
+      setAmount(amount + 1)
     }
-  };
+  }
 
   const handleQuantityDecrement = () => {
-    setQuantity(quantity - 1);
-  };
+    if (currentProductSize !== null && amount > currentProductSize.stock) {
+      setAmount(amount - 1)
+    }
+  }
 
   const handleColorSelection = (color) => {
-    setSelectedColor(color);
-    setSelectedSize(null);
-    setSelectedSizeStock(null);
-    setQuantity(1);
-  };
+    setSelectedColor(color)
+    setSelectedSize('')
+    setCurrentProductSize(null)
+    setAmount(1)
+  }
 
   const handleSizeSelection = (size) => {
-    const selectedSize = selectedProductSize.find((prodSize) => prodSize.size === size);
-    if (selectedSize) {
-      setSelectedSize(selectedSize);
-      setSelectedSizeStock(selectedSize.stock);
-      setQuantity(1);
+    setSelectedSize(size)
+    setAmount(1)
+  }
+
+  const handleAddToCart = () => {
+    let tempProduct = {
+      ...currentProductSize,
+      amount: amount,
+      title: productData.title,
+      price: productData.price,
+      total: productData.total,
+      image: productData.image,
+      sale: productData.sale,
     }
-
-    console.log(size);
-  };
-
-  useEffect(() => {
-    if(productData && selectedColor && productData.productSizes) {
-      const sizesForSelectedColor = productData.productSizes.filter(
-        size => size.color === selectedColor
-      );
-
-      setSelectedProductSize(sizesForSelectedColor)
-    }
-  }, [productData, selectedColor]);
-
-  useEffect(() => {
-    if(selectedSize && selectedColor) {
-      const foundProdSize = productData.productSizes.find(s => s.size === selectedSize.size && s.color === selectedColor);
-      setCurrentProductSize(foundProdSize);
-    }else {
-      setCurrentProductSize(null);
-    }
-  }, [selectedSize, selectedColor, productData]);
-
+    console.log(tempProduct)
+    dispatch(addOrderItems(tempProduct))
+  }
 
   return (
     <>
@@ -200,7 +220,6 @@ function ProductDetails() {
                   </p>
                 </div>
 
-                {/* Ovde se boite || ako produktot ima samo edna boja ne ja pokazhuvaj*/}
                 {uniqueColors.length > 1 && (
                   <div className="colors">
                     <h3>Colours</h3>
@@ -209,15 +228,14 @@ function ProductDetails() {
                         <ProductColor
                           key={index}
                           color={color}
-                          onClick={handleColorSelection}
-                          currentColor={selectedColor}
+                          handleColorSelection={handleColorSelection}
+                          selectedColor={selectedColor}
                         ></ProductColor>
                       ))}
                     </ul>
                   </div>
                 )}
 
-                {/* Ovde se sizovvite || ako produktot ima samo size 'all' ne pokazhuvaj sizovi*/}
                 {uniqueSizes?.length > 1 && (
                   <div className="sizes">
                     <h3>Sizes</h3>
@@ -225,10 +243,11 @@ function ProductDetails() {
                       {uniqueSizes?.map((size, index) => (
                         <ProductSizesLi
                           key={index}
-                          size={size}
-                          onClick={handleSizeSelection}
-                          availableSizes={selectedProductSize}
-                          selectedColor={selectedColor || null}
+                          uniqueSize={size}
+                          handleSizeSelection={handleSizeSelection}
+                          currentSize={filteredSizes.find(e => e.size === size)}
+                          selectedSize={selectedSize}
+                          selectedColor={selectedColor}
                         ></ProductSizesLi>
                       ))}
                     </ul>
@@ -238,23 +257,20 @@ function ProductDetails() {
               <div className="paymentDiv">
                 <div className="count">
                   <button
-                    className="quantity-btn"
-                    // onClick={() => setQuantity((prev) => Math.max(0, prev - 1))}
+                    className="amount-btn"
                     onClick={handleQuantityDecrement}
-                    disabled={quantity <= 1}
+                    disabled={amount <= 1}
                   >
                     -
                   </button>
-                  {/* Stokot se gleda spored productSize.stock, mora da se napravi nekoja logika za shto da se pravi koga se nema selecnato productSize */}
-                  <p className="product-count">Amount: {quantity}</p>
+                  <p className="product-count">Amount: {amount}</p>
                   <p className="product-count">
-                    Available: {selectedSizeStock !== null ? selectedSizeStock : "?"}
+                    Available: {currentProductSize !== null ? currentProductSize.stock : "?"}
                   </p>
                   <button
-                    className="quantity-btn"
-                    // onClick={() => setQuantity((prev) => Math.max(0, prev + 1))}
+                    className="amount-btn"
                     onClick={handleQuantityIncrement}
-                    disabled={selectedSizeStock === null || quantity >= selectedSizeStock}
+                    disabled={currentProductSize === null || amount >= currentProductSize.stock}
                   >
                     +
                   </button>
@@ -264,13 +280,12 @@ function ProductDetails() {
                     <span>Price:</span>
                     <span>${productData.price.toFixed(2)}</span>
                   </p>
-                  <p className="product-shipping">
+                  {/* <p className="product-shipping">
                     <span>Shipping:</span> <span>${30}</span>
-                    {/* Should make shipping dynamic */}
-                  </p>
+                  </p> */}
                   {productData.sale && (
                     <p className="product-discount">
-                      <span>Discount:</span> <span>${productData.sale}</span>
+                      <span>Discount:</span> <span>${productData.price}</span>
                     </p>
                   )}
                   <p className="product-total">
@@ -278,7 +293,7 @@ function ProductDetails() {
                   </p>
                 </div>
 
-                <button disabled={currentProductSize === null} className="buy-button">
+                <button disabled={currentProductSize === null} className="buy-button" onClick={handleAddToCart}>
                   <svg viewBox="0 0 32 32">
                     <circle cx="10" cy="28" r="2" fill="currentColor" />
                     <circle cx="24" cy="28" r="2" fill="currentColor" />
@@ -383,13 +398,13 @@ function ProductDetails() {
         <></>
       )}
     </>
-  );
+  )
 }
 
-const ProductColor = ({ color, onClick, currentColor }) => {
+const ProductColor = ({ color, handleColorSelection, selectedColor }) => {
   return (
     <li>
-      <button disabled={color === currentColor} onClick={() => onClick(color)}>
+      <button disabled={color === selectedColor} onClick={() => handleColorSelection(color)}>
         <svg viewBox="0 0 150 150">
           <path
             d="M121.875 18.75H28.125C25.6386 18.75 23.254 19.7377 21.4959 21.4959C19.7377 23.254 18.75 25.6386 18.75 28.125V121.875C18.75 124.361 19.7377 126.746 21.4959 128.504C23.254 130.262 25.6386 131.25 28.125 131.25H121.875C124.361 131.25 126.746 130.262 128.504 128.504C130.262 126.746 131.25 124.361 131.25 121.875V28.125C131.25 25.6386 130.262 23.254 128.504 21.4959C126.746 19.7377 124.361 18.75 121.875 18.75ZM28.125 121.875V28.125H121.875V121.875H28.125Z"
@@ -400,35 +415,17 @@ const ProductColor = ({ color, onClick, currentColor }) => {
         <p>{color}</p>
       </button>
     </li>
-  );
-};
+  )
+}
 
-const ProductSizesLi = ({ size, onClick, availableSizes, selectedColor }) => {
-  const isColorSelected = selectedColor !== null;
-
-  const handleClick = () => {
-    onClick(size);
-  };
-
-  if (!isColorSelected) {
-    return (
-      <li>
-        <button disabled onClick={handleClick}>
-          <p>{size}</p>
-        </button>
-      </li>
-    );
-  }
-
-  const selectedSize = availableSizes.find(s => s.size === size && s.color === selectedColor);
-
+const ProductSizesLi = ({ uniqueSize, currentSize, handleSizeSelection, selectedSize, selectedColor }) => {
   return (
     <li>
-      <button onClick={handleClick} disabled={!(selectedSize && selectedSize.stock > 0)}>
-        <p>{size} {(selectedSize && selectedSize.stock > 0) ? `(${selectedSize.stock})` : "(Out of stock)"}</p>
+      <button disabled={!currentSize || currentSize?.size === selectedSize || currentSize?.stock < 1 || !selectedColor} className={currentSize?.size === selectedSize ? 'active' : ''} onClick={() => handleSizeSelection(currentSize?.size)}>
+        <p>{uniqueSize}</p>
       </button>
     </li>
-  );
-};
+  )
+}
 
-export default ProductDetails;
+export default ProductDetails

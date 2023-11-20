@@ -1,10 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 export function CatDP(props) {
     return (
         <li>
-            <button>
+            <button onClick={() => props.handleCatClick(props.category.id)}>
                 <div>
                     <img src={props.category.image} alt="category" />
                     <h4>{props.category.title}</h4>
@@ -18,7 +17,7 @@ export function CatDP(props) {
 export function CatDPMobile(props) {
     return (
         <li>
-            <button>
+            <button onClick={() => props.handleCatClick(props.category.id)}>
                 <img src={props.category.image} alt="category" />
                 <h4>{props.category.title}</h4>
             </button>
@@ -29,23 +28,22 @@ export function CatDPMobile(props) {
 export function SubCatDP(props) {
     return (
         <li>
-            <NavLink>
+            <button onClick={() => props.handleSubCatClick(props.subCategory.id)}>
                 <img src={props.subCategory.image} alt="Sub Category" />
                 <div>
                     <h4>{props.subCategory.title}</h4>
                     <p>{props.subCategory.description}</p>
                 </div>
-            </NavLink>
+            </button>
         </li>
     )
 }
 
 export function ViewAllSub(props) {
-    console.log(props)
     return (
-        <NavLink className="viewAllSubCats">
+        <button className="viewAllSubCats" onClick={() => props.handleViewAllClick(props.category.id)}>
             <h4>Browse All</h4>
-        </NavLink>
+        </button>
     )
 }
 

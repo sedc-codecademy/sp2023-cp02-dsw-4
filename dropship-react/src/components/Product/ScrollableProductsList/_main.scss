@@ -14,10 +14,14 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    contain: paint;
+
+    @supports (contain: paint) {
+        contain: paint;
+    }
+
     padding: 1rem;
     background-color: var(--secAccent);
-    
+
     &.discountedProducts {
         flex-direction: row-reverse;
         background-color: var(--tertAccent);
@@ -244,7 +248,7 @@
                 padding: .3rem;
                 gap: .5rem;
 
-                .product-card { 
+                .product-card {
                     a {
                         padding: .5rem;
                         gap: .5rem;

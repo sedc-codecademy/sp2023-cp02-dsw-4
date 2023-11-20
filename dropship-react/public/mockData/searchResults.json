@@ -1,650 +1,376 @@
 [
     {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
+        "title": "D",
+        "price": 37,
+        "total": 37,
         "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
         "rating": {
-            "rate": 4.5,
+            "rate": 2,
             "count": 10
         },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-c7af-4964-a28a-244b57b80d7c",
-        "sale": 25,
+        "image": "/imgs/cat/fWear/womensWear.jpg",
+        "id": "8357161fgsef1-c7af-4964-a28a-244b57b80d7c",
+        "sale": 0,
         "categoryid": "autoaccessories",
         "categorytitle": "Automobile Accessories",
         "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
         "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
         "manufacturer": {
             "id": "e2naknea2",
-            "title": "Samsung",
+            "title": "Apple",
             "image": "/imgs/manufacturers/samsung.jpg"
         },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
+        "productSizes": [
+            {
+                "id": "e2geeanak",
+                "stock": 6,
+                "color": "orange",
+                "size": "small"
+            },
+            {
+                "id": "e2nakuygk",
+                "stock": 3,
+                "color": "orange",
+                "size": "medium"
+            },
+            {
+                "id": "e21h35nak",
+                "stock": 1,
+                "color": "orange",
+                "size": "large"
+            },
+            {
+                "id": "e2nai7i67rk",
+                "stock": 12,
+                "color": "orange",
+                "size": "x-large"
+            },
+            {
+                "id": "e2nhw35ak",
+                "stock": 6,
+                "color": "blue",
+                "size": "small"
+            },
+            {
+                "id": "e2najsdkl8k",
+                "stock": 6,
+                "color": "blue",
+                "size": "x-small"
+            },
+            {
+                "id": "e2wa55kl6asnak",
+                "stock": 3,
+                "color": "blue",
+                "size": "medium"
+            },
+            {
+                "id": "e2noawmu49ak",
+                "stock": 1,
+                "color": "blue",
+                "size": "large"
+            },
+            {
+                "id": "e4g1234ojp092nak",
+                "stock": 12,
+                "color": "blue",
+                "size": "x-large"
+            },
+            {
+                "id": "e2wa55kl6441646468168snak",
+                "stock": 3,
+                "color": "green",
+                "size": "small"
+            },
+            {
+                "id": "e2noauntg189294789n7gn14wmu49ak",
+                "stock": 1,
+                "color": "green",
+                "size": "medium"
+            },
+            {
+                "id": "e4g123-gwaerg4ojp092nak",
+                "stock": 3,
+                "color": "green",
+                "size": "large"
+            }
         ]
     },
     {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
+        "title": "C",
+        "price": 475,
+        "total": 475,
         "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
+        "image": "/imgs/cat/auto/autoacc.jpg",
         "rating": {
             "rate": 4.5,
             "count": 10
         },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-c7af-4964-a28a-2fges44b57b80d7c",
-        "sale": 25,
+        "id": "83571611-c7af56089-4964-a28a-244b57b80d7c",
+        "sale": 0,
         "categoryid": "autoaccessories",
         "categorytitle": "Automobile Accessories",
         "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
         "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
         "manufacturer": {
             "id": "e2naknea2",
             "title": "Samsung",
             "image": "/imgs/manufacturers/samsung.jpg"
         },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
+        "productSizes": [
+            {
+                "id": "e2geeanak",
+                "stock": 6,
+                "color": "yellow",
+                "size": "small"
+            },
+            {
+                "id": "e2nakuygk",
+                "stock": 3,
+                "color": "yellow",
+                "size": "medium"
+            },
+            {
+                "id": "e21h35nak",
+                "stock": 1,
+                "color": "yellow",
+                "size": "large"
+            },
+            {
+                "id": "e2nai7i67rk",
+                "stock": 12,
+                "color": "yellow",
+                "size": "x-large"
+            },
+            {
+                "id": "e2nhw35ak",
+                "stock": 6,
+                "color": "blue",
+                "size": "small"
+            },
+            {
+                "id": "e2najsdkl8k",
+                "stock": 6,
+                "color": "blue",
+                "size": "x-small"
+            },
+            {
+                "id": "e2wa55kl6asnak",
+                "stock": 3,
+                "color": "blue",
+                "size": "medium"
+            },
+            {
+                "id": "e2noawmu49ak",
+                "stock": 1,
+                "color": "blue",
+                "size": "large"
+            },
+            {
+                "id": "e4g1234ojp092nak",
+                "stock": 12,
+                "color": "blue",
+                "size": "x-large"
+            },
+            {
+                "id": "e2wa55kl6441646468168snak",
+                "stock": 3,
+                "color": "cyan",
+                "size": "small"
+            },
+            {
+                "id": "e2noauntg189294789n7gn14wmu49ak",
+                "stock": 1,
+                "color": "cyan",
+                "size": "medium"
+            },
+            {
+                "id": "e4g123-gwaerg4ojp092nak",
+                "stock": 3,
+                "color": "cyan",
+                "size": "large"
+            }
         ]
     },
     {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
+        "title": "B",
+        "price": 35,
+        "total": 35,
         "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
+        "image": "/imgs/cat/sports/sports.jpg",
         "rating": {
-            "rate": 4.5,
+            "rate": 3,
             "count": 10
         },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-cdawd7af-4964-a28a-244b57b80d7c",
-        "sale": 25,
+        "id": "83571611-c7af56089-8704964-a28a-244b57b80d7c",
+        "sale": 0,
         "categoryid": "autoaccessories",
         "categorytitle": "Automobile Accessories",
         "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
         "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
         "manufacturer": {
             "id": "e2naknea2",
             "title": "Samsung",
             "image": "/imgs/manufacturers/samsung.jpg"
         },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
+        "productSizes": [
+            {
+                "id": "e2geeanak",
+                "stock": 6,
+                "color": "yellow",
+                "size": "small"
+            },
+            {
+                "id": "e2nakuygk",
+                "stock": 3,
+                "color": "yellow",
+                "size": "medium"
+            },
+            {
+                "id": "e21h35nak",
+                "stock": 1,
+                "color": "yellow",
+                "size": "large"
+            },
+            {
+                "id": "e2nai7i67rk",
+                "stock": 12,
+                "color": "yellow",
+                "size": "x-large"
+            },
+            {
+                "id": "e2nhw35ak",
+                "stock": 6,
+                "color": "magenta",
+                "size": "small"
+            },
+            
+            {
+                "id": "e2wa55kl6asnak",
+                "stock": 3,
+                "color": "magenta",
+                "size": "medium"
+            },
+            {
+                "id": "e2noawmu49ak",
+                "stock": 1,
+                "color": "magenta",
+                "size": "large"
+            },
+            {
+                "id": "e4g1234ojp092nak",
+                "stock": 12,
+                "color": "magenta",
+                "size": "x-large"
+            },
+            {
+                "id": "e2wa55kl6441646468168snak",
+                "stock": 3,
+                "color": "navy",
+                "size": "small"
+            },
+            {
+                "id": "e2noauntg189294789n7gn14wmu49ak",
+                "stock": 1,
+                "color": "navy",
+                "size": "medium"
+            },
+            {
+                "id": "e4g123-gwaerg4ojp092nak",
+                "stock": 3,
+                "color": "navy",
+                "size": "large"
+            }
         ]
     },
     {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
+        "title": "Awesome product title that takes up a lot of space",
+        "price": 2000,
+        "total": 2000,
         "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
+        "image": "/imgs/cat/sports/sportssmall.jpg",
         "rating": {
-            "rate": 4.5,
+            "rate": 5,
             "count": 10
         },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83124fr571611-c7af-4964-a28a-244b57b80d7c",
-        "sale": 25,
+        "id": "83571611-c7af56089h-8kk704964-a28a-244b57b80d7c",
+        "sale": 0,
         "categoryid": "autoaccessories",
         "categorytitle": "Automobile Accessories",
         "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
         "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
         "manufacturer": {
             "id": "e2naknea2",
             "title": "Samsung",
             "image": "/imgs/manufacturers/samsung.jpg"
         },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
-        ]
-    },
-    {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
-        "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
-        "rating": {
-            "rate": 4.5,
-            "count": 10
-        },
-        "reviews": [
+        "productSizes": [
             {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
+                "id": "e2geehanak",
+                "stock": 6,
+                "color": "yellow",
+                "size": "small"
             },
             {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
+                "id": "e2nakuyghk",
+                "stock": 3,
+                "color": "yellow",
+                "size": "medium"
             },
             {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
+                "id": "e2123h35nak",
+                "stock": 1,
+                "color": "yellow",
+                "size": "large"
+            },
+            {
+                "id": "e2nai7i67754rk",
+                "stock": 12,
+                "color": "yellow",
+                "size": "x-large"
+            },
+            {
+                "id": "e2nhwsefk35ak",
+                "stock": 6,
+                "color": "magenta",
+                "size": "small"
+            },
+            
+            {
+                "id": "e2wa55klfl,67t6asnak",
+                "stock": 3,
+                "color": "magenta",
+                "size": "medium"
+            },
+            {
+                "id": "e2noawr2nr3mu49ak",
+                "stock": 1,
+                "color": "magenta",
+                "size": "large"
+            },
+            {
+                "id": "e4g1234agdgwojp092nak",
+                "stock": 12,
+                "color": "magenta",
+                "size": "x-large"
+            },
+            {
+                "id": "e2wa55kl644164ab 436468168snak",
+                "stock": 3,
+                "color": "navy",
+                "size": "small"
+            },
+            {
+                "id": "e2noauntg189294ah22789n7gn14wmu49ak",
+                "stock": 1,
+                "color": "navy",
+                "size": "medium"
+            },
+            {
+                "id": "e4g123-gwaen45nrg4ojp092nak",
+                "stock": 3,
+                "color": "navy",
+                "size": "large"
             }
-        ],
-        "id": "83571611-c7af-4964-a28a-244b57gfhgkhb80d7c",
-        "sale": 25,
-        "categoryid": "autoaccessories",
-        "categorytitle": "Automobile Accessories",
-        "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
-        "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
-        "manufacturer": {
-            "id": "e2naknea2",
-            "title": "Samsung",
-            "image": "/imgs/manufacturers/samsung.jpg"
-        },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
-        ]
-    },
-    {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
-        "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
-        "rating": {
-            "rate": 4.5,
-            "count": 10
-        },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-c7af-dad4964-a28a-244b57b80d7c",
-        "sale": 25,
-        "categoryid": "autoaccessories",
-        "categorytitle": "Automobile Accessories",
-        "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
-        "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
-        "manufacturer": {
-            "id": "e2naknea2",
-            "title": "Samsung",
-            "image": "/imgs/manufacturers/samsung.jpg"
-        },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
-        ]
-    },
-    {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
-        "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
-        "rating": {
-            "rate": 4.5,
-            "count": 10
-        },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-c7efrdgfthhujkaf-4964-a28a-244b57b80d7c",
-        "sale": 25,
-        "categoryid": "autoaccessories",
-        "categorytitle": "Automobile Accessories",
-        "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
-        "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
-        "manufacturer": {
-            "id": "e2naknea2",
-            "title": "Samsung",
-            "image": "/imgs/manufacturers/samsung.jpg"
-        },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
-        ]
-    },
-    {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
-        "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
-        "rating": {
-            "rate": 4.5,
-            "count": 10
-        },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-c7af-1245trydr4964-a28a-244b57b80d7c",
-        "sale": 25,
-        "categoryid": "autoaccessories",
-        "categorytitle": "Automobile Accessories",
-        "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
-        "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
-        "manufacturer": {
-            "id": "e2naknea2",
-            "title": "Samsung",
-            "image": "/imgs/manufacturers/samsung.jpg"
-        },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
-        ]
-    },
-    {
-        "title": "All-Weather Floor Mats",
-        "price": 49.99,
-        "total": 70,
-        "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
-        "stock": 20,
-        "rating": {
-            "rate": 4.5,
-            "count": 10
-        },
-        "reviews": [
-            {
-                "authorId": "436hb5467457k",
-                "author": "DIme dimeski",
-                "date": "2022-10-31T09:00:00.594Z",
-                "title": "Great Product",
-                "rate": 4.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124h9",
-                "good": "good screen, good battery, price",
-                "bad": "bad screen, bad battery, price"
-            },
-            {
-                "authorId": "436hoiu89b5467457k",
-                "author": "Dimeski Dime",
-                "date": "2023-07-03T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu12h4h7124hjh9",
-                "good": "",
-                "bad": "bad screen,bad battery, price"
-            },
-            {
-                "authorId": "4365452hb54674j57k",
-                "author": "Dimeski Dime",
-                "date": "2021-05-25T09:00:00.594Z",
-                "title": "Bad Product",
-                "rate": 2.6,
-                "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
-                "id": "12h4iu14232h4h7124hjh9",
-                "good": "",
-                "bad": ""
-            }
-        ],
-        "id": "83571611-c7af-421432rfs964-a28a-244b57b80d7c",
-        "sale": 25,
-        "categoryid": "autoaccessories",
-        "categorytitle": "Automobile Accessories",
-        "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
-        "subcategorytitle": "Floor Mats",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "teal",
-            "navy"
-        ],
-        "image": "/imgs/cat/fWear/womensWear.jpg",
-        "manufacturer": {
-            "id": "e2naknea2",
-            "title": "Samsung",
-            "image": "/imgs/manufacturers/samsung.jpg"
-        },
-        "sizes": [
-            "x-small",
-            "small",
-            "x-large",
-            "medium",
-            "small"
         ]
     }
 ]

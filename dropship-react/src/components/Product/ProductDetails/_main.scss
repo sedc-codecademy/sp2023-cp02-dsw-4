@@ -296,7 +296,6 @@
                 justify-content: center;
                 width: 100%;
                 background-color: var(--tpPri2);
-                border: .2rem solid var(--tpPri4);
 
                 font-size: 1.05rem;
                 text-transform: capitalize;
@@ -308,8 +307,7 @@
                     transition: .3s color;
                   }
 
-                  transition: .3s border-color,
-                  .3s background-color,
+                  transition: .3s background-color,
                   .3s;
 
                   &:focus-visible {
@@ -317,7 +315,7 @@
                       color: var(--accent);
                     }
 
-                    border-color: var(--accent);
+                    outline: .2rem solid var(--accent);
                   }
 
                   &:hover {
@@ -333,37 +331,26 @@
                   }
                 }
 
-                .availability {
-                  &.disabled {
-                    pointer-events: none;
-                    opacity: 0.5;
-                
-                    &.clickable-disabled {
-                      pointer-events: auto; 
-                      cursor: not-allowed;  
-                    }
-                  }
-                }
-                
-
                 &:disabled {
                   pointer-events: none;
                   opacity: 0.5;
 
                   p {
-                    color: var(--tpSec2);
+                    color: var(--tpSec);
                   }
 
-                  border-color: var(--tpSec2);
-                }
+                  &.active {
+                    opacity: 1;
 
-                &.active {
-                  p {
-                    color: var(--accent);
-                  }
+                    background-color: var(--paleAccent);
 
-                  span {
-                    color: var(--paleAccentThree);
+                    p {
+                      color: var(--accent);
+                    }
+
+                    span {
+                      color: var(--paleAccentThree);
+                    }
                   }
                 }
               }

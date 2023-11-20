@@ -345,7 +345,10 @@ ul {
                 padding: .3rem;
                 border-radius: .5rem;
                 color: var(--tpSec);
-                height: fit-content;
+
+                @supports (height: fit-content) {
+                    height: fit-content;
+                }
 
                 img {
                     max-width: 10rem;
