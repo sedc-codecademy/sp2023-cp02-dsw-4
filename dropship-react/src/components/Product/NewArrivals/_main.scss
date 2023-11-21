@@ -12,10 +12,6 @@
     background-size: cover;
     background-position: center;
 
-    @supports (contain: paint) {
-        contain: paint;
-    }
-
     background-color: var(--darkAccent);
 
     ul {

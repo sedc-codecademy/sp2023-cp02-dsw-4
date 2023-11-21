@@ -21,24 +21,24 @@
                 font-size: 2.8rem;
                 font-family: 'Fugaz One', sans-serif;
             }
-    
+
             .title {
                 text-align: center;
-                font-size: 8.5rem;
+                font-size: clamp(3rem, 0.8824rem + 5.6471vw, 15rem);
                 letter-spacing: -.2rem;
-                line-height: 8.5rem;
+                line-height: clamp(3rem, 0.8824rem + 5.6471vw, 15rem);
             }
-    
+
             span:first-child {
                 margin-left: -8rem;
             }
-    
+
             span:nth-child(2) {
                 margin-left: 6.5rem;
                 display: block;
             }
         }
-    
+
         .first-paragraph {
             padding-top: 4rem;
             padding-bottom: 2.5rem;

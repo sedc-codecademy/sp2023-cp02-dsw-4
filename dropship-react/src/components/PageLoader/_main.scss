@@ -277,10 +277,6 @@
     background-size: cover;
     background-position: center;
 
-    @supports (contain: paint) {
-        contain: paint;
-    }
-
     @supports (backdrop-filter: blur(0)) {
         backdrop-filter: blur(.5rem);
     }

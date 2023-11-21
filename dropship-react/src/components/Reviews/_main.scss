@@ -229,6 +229,7 @@ ul {
                 height: 3.5rem;
                 border-radius: 50%;
                 background-color: var(--tpPri3);
+                aspect-ratio: 1/1;
                 object-fit: contain;
             }
 
@@ -244,7 +245,6 @@ ul {
 
                 .starsDiv {
                     svg {
-                        // color: var(--secAccent);
                         height: 1.3rem;
                         width: 1.3rem;
                     }

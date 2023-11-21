@@ -15,10 +15,6 @@
     background-size: cover;
     background-position: center;
 
-    @supports (contain: paint) {
-        contain: paint;
-    }
-
     padding: 1rem;
     background-color: var(--secAccent);
 

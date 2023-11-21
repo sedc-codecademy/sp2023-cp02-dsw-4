@@ -106,7 +106,6 @@ export function SettingsCardHelper({ cardID }) {
     const [tempCVC, setTempCVC] = useState('')
     const [tempDate, setTempDate] = useState('')
 
-
     const handleSetInputValue = (e) => {
         const { name, value } = e.target
         if (name === 'cvc') {
@@ -173,7 +172,7 @@ export function SettingsCardHelper({ cardID }) {
                             value={tempHolder}
                             onFocus={e => handleFocus(e)}
                             onChange={(e) => handleSetInputValue(e)}
-
+                            disabled={card.removal}
                         ></input>
                         <label htmlFor="holder">Card Holder</label>
                     </div>
@@ -192,7 +191,7 @@ export function SettingsCardHelper({ cardID }) {
                             onFocus={e => handleFocus(e)}
                             value={formatNumberWithSpaces(tempNumber)}
                             onChange={(e) => handleCardNumberChange(e)}
-
+                            disabled={card.removal}
                         ></input>
                         <CardSvg small={true} cardType={card.type}></CardSvg>
                         <label htmlFor="number">Card Number</label>
@@ -212,7 +211,7 @@ export function SettingsCardHelper({ cardID }) {
                                 value={formatAsMMYY(tempDate)}
                                 maxLength={5}
                                 onChange={(e) => handleDateChange(e)}
-
+                                disabled={card.removal}
                             ></input>
                             <label htmlFor="date">Expiration (mm/yy)</label>
                         </div>
@@ -231,7 +230,7 @@ export function SettingsCardHelper({ cardID }) {
                                 value={tempCVC}
                                 onFocus={e => handleFocus(e)}
                                 onChange={(e) => handleSetInputValue(e)}
-
+                                disabled={card.removal}
                             ></input>
                             <label htmlFor="cvc">Security Code</label>
                         </div>

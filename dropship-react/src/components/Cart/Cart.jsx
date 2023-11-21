@@ -177,7 +177,6 @@ function Cart() {
 
     const handleInputEdit = (e) => {
         e.preventDefault()
-        console.log(e.target.value)
         dispatch(setOrderFormValue({ name: e.target.name, value: e.target.value }))
     }
 
@@ -415,7 +414,7 @@ function Cart() {
                                                 <input
                                                     name="phoneNumber"
                                                     type="text"
-                                                    pattern="[0-9+]*"
+                                                    pattern="[0-9+ ]*"
                                                     min={9}
                                                     max={20}
                                                     inputMode="numeric"

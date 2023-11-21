@@ -82,6 +82,8 @@
             img {
               height: clamp(1.3rem, 1.1765rem + 0.3294vw, 2rem);
               opacity: .8;
+              object-fit: cover;
+              aspect-ratio: 14/16;
             }
 
             @media (min-width: 600px) {
@@ -674,7 +676,6 @@
     }
 
     .related-products {
-      // width: 100%;
       padding-block: .5rem 1rem;
       padding-inline: 1rem;
       overflow-x: auto;

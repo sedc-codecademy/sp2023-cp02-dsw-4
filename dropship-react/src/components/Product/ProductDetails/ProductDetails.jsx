@@ -143,7 +143,7 @@ function ProductDetails() {
   }
 
   const handleQuantityDecrement = () => {
-    if (currentProductSize !== null && amount > currentProductSize.stock) {
+    if (currentProductSize !== null && amount > 1) {
       setAmount(amount - 1)
     }
   }
@@ -279,7 +279,7 @@ function ProductDetails() {
                   <button
                     className="amount-btn"
                     onClick={handleQuantityDecrement}
-                    disabled={amount <= 1}
+                    disabled={amount <= 1 || isInCart}
                   >
                     -
                   </button>
@@ -290,7 +290,7 @@ function ProductDetails() {
                   <button
                     className="amount-btn"
                     onClick={handleQuantityIncrement}
-                    disabled={currentProductSize === null || amount >= currentProductSize.stock}
+                    disabled={currentProductSize === null || amount >= currentProductSize.stock || isInCart}
                   >
                     +
                   </button>

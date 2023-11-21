@@ -45,7 +45,7 @@ function UserInfoForm({user}) {
           <input
             name="phone"
             type="text"
-            pattern="[0-9]*"
+            pattern="[0-9 ]*"
             inputMode="numeric"
             required
             placeholder=""
