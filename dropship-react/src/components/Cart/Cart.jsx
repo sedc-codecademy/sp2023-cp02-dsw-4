@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 import ImageLoader from "../ImageLoader/ImageLoader"
 import { NavLink } from "react-router-dom"
 import ProductCard from "../Product/ProductCard/ProductCard"
+import { LoadingErrorDiv } from "../PageLoader/PageLoader"
 
 import { useDispatch, useSelector } from "react-redux"
 
@@ -555,7 +556,7 @@ function Cart() {
                                             <>
                                                 <h4>
                                                     Card Info
-                                                    <button onClick={handleCardAutofill}>
+                                                    <button disabled={!isLoggedIn} onClick={handleCardAutofill}>
                                                         <span>Autofill</span>
                                                         <svg viewBox="0 0 24 24">
                                                             <path
@@ -607,7 +608,7 @@ function Cart() {
                                                 <button
                                                     className={`saveCardButton ${saveCard && "active"}`}
                                                     disabled={
-                                                        userData.cards.some(
+                                                        userData?.cards.some(
                                                             (card) =>
                                                                 card.holder === cardObject.holder &&
                                                                 card.number === cardObject.number &&
