@@ -61,8 +61,8 @@ function Order({ order }) {
                     {order.orderItems.map((orderItem) =>
                         <li key={orderItem.id}>
                             <ImageLoader
-                                url={orderItem.image || ""}
-                                alt={orderItem.title || ''}
+                                url={orderItem.image}
+                                alt={orderItem.title}
                                 backupUrl="/imgs/404/product404.png"
                                 backupAlt="Product Image 404"
                             ></ImageLoader>
@@ -147,8 +147,8 @@ export function UserOrder({ order }) {
                     <li key={orderItem.id}>
                         <NavLink to={`/productDetails/${orderItem.id}`}>
                             <ImageLoader
-                                url={orderItem.image || ""}
-                                alt={orderItem.title || ''}
+                                url={orderItem.image}
+                                alt={orderItem.title}
                                 backupUrl="/imgs/404/product404.png"
                                 backupAlt="Product Image 404"
                             ></ImageLoader>

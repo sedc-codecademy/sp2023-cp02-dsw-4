@@ -9,8 +9,8 @@ function Reviews(props) {
         <li className="review">
             <div className="review-header">
                 <ImageLoader
-                    url={props.review.image || ""}
-                    alt={props.review.title || ""}
+                    url={props.review.image}
+                    alt={props.review.title}
                     backupUrl="/imgs/404/user404.png"
                     backupAlt="Usere 404"
                 ></ImageLoader>
@@ -104,8 +104,8 @@ export function EditReview(props) {
             >
                 <div className="review-header">
                     <ImageLoader
-                        url={props.review.image || ""}
-                        alt={props.review.title || ""}
+                        url={props.review.image}
+                        alt={props.review.title}
                         backupUrl="/imgs/404/user404.png"
                         backupAlt="Usere 404"
                     ></ImageLoader>
@@ -283,8 +283,8 @@ export function UserReviews(props) {
                 <div className="contentDiv">
                     <div className="review-header">
                         <ImageLoader
-                            url={props.review.image || ""}
-                            alt={props.review.title || ""}
+                            url={props.review.image}
+                            alt={props.review.title}
                             backupUrl="/imgs/404/user404.png"
                             backupAlt="Usere 404"
                         ></ImageLoader>
@@ -409,8 +409,8 @@ export function UserReviews(props) {
                 className="product"
             >
                 <ImageLoader
-                    url={props.review.product.image || ""}
-                    alt={props.review.product.title || ""}
+                    url={props.review.product.image}
+                    alt={props.review.product.title}
                     backupUrl="/imgs/404/product404.png"
                     backupAlt="Product 404"
                 ></ImageLoader>

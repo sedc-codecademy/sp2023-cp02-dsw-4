@@ -8,7 +8,7 @@ function TempProductCard(props) {
         <li>
             <NavLink>
                 <ImageLoader
-                    url={props.product.image || ''}    
+                    url={props.product.image}    
                     alt={props.product.title}
                     backupUrl="/imgs/404/product404.png"
                     backupAlt="Product Image 404"

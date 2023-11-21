@@ -26,9 +26,10 @@
       transition: translate .5s ease-in-out;
 
       --translateVar: 0%;
-      @supports (translate: 1deg) {
+
+      @supports (translate: 0) {
         translate: var(--translateVar);
-    }
+      }
 
       @media not (prefers-reduced-motion) {
 
@@ -46,11 +47,12 @@
     .dots-container {
       opacity: 1;
 
-      .dots{
+      .dots {
         transform: translateY(0);
       }
 
-      &.left, &.right {
+      &.left,
+      &.right {
         transform: translateX(0);
       }
     }

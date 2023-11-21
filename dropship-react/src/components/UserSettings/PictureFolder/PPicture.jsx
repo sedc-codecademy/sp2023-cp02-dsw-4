@@ -27,8 +27,8 @@ function ProfilePicture({ image }) {
     <div className="photoUploader">
       <div className="imageDiv">
         <ImageLoader
-          url={image.url || ""}
-          alt={image.alt || ''}
+          url={image.url}
+          alt={image.alt}
           backupUrl="/imgs/404/user404.png"
           backupAlt="User 404"
         ></ImageLoader>

@@ -38,7 +38,7 @@ function User() {
         <div className="user-parent-info">
           <div className="user-image">
             <ImageLoader
-              url={data.image || ""}
+              url={data.image}
               alt={data.name}
               backupUrl="/imgs/404/user404.png"
               backupAlt="User 404"

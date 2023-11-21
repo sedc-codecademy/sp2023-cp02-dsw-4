@@ -7,8 +7,8 @@ export function SmallCategory(props) {
         <li>
             <NavLink to={`/subcategory/${props.subcategory.id}`}>
                 <ImageLoader
-                    url={props.subcategory.image || ""}
-                    alt={props.subcategory.title || ''}
+                    url={props.subcategory.image}
+                    alt={props.subcategory.title}
                     backupUrl="/imgs/404/category404.png"
                     backupAlt={props.subcategory.title || 'Sub-Category'}
                 ></ImageLoader>
@@ -26,8 +26,8 @@ export function BiggerCategory(props) {
         <li>
             <NavLink to={`/category/${props.category.id}`}>
                 <ImageLoader
-                    url={props.category.image || ""}
-                    alt={props.category.title || ''}
+                    url={props.category.image}
+                    alt={props.category.title}
                     backupUrl="/imgs/404/category404.png"
                     backupAlt={props.category.title || 'Sub-Category'}
                 ></ImageLoader>
@@ -45,8 +45,8 @@ export function AdminSmallCategory(props) {
         <li>
             <button onClick={props.handleClick}>
                 <ImageLoader
-                    url={props.subcategory.image || ""}
-                    alt={props.subcategory.title || ''}
+                    url={props.subcategory.image}
+                    alt={props.subcategory.title}
                     backupUrl="/imgs/404/category404.png"
                     backupAlt={props.subcategory.title || 'Sub-Category'}
                 ></ImageLoader>
@@ -64,8 +64,8 @@ export function AdminBiggerCategory(props) {
         <li>
             <button onClick={props.handleClick}>
                 <ImageLoader
-                    url={props.category.image || ""}
-                    alt={props.category.title || ''}
+                    url={props.category.image}
+                    alt={props.category.title}
                     backupUrl="/imgs/404/category404.png"
                     backupAlt={props.category.title || 'Sub-Category'}
                 ></ImageLoader>

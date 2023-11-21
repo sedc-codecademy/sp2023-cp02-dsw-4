@@ -9,7 +9,7 @@ export default function ProductCard({product}) {
     <li className="product-card">
       <NavLink to={`/productDetails/${product.id}`}>
         <ImageLoader
-          url={product.image || ''}
+          url={product.image}
           alt={product.title}
           backupUrl="/imgs/404/product404.png"
           backupAlt="Product Image 404"
