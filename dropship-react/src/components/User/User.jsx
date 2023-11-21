@@ -14,6 +14,9 @@ function User() {
   const [showPending, setShowPending] = useState(false)
   const [showCompleted, setShowCompleted] = useState(false)
 
+  const orderInfo = useSelector((state) => state.cart.orderInfo)
+  const orderItems = useSelector((state) => state.cart.orderItems)
+
   const tokens = useSelector(state => state.role.authTokens)
 
   const { data } = useQuery({
@@ -29,7 +32,6 @@ function User() {
   if (data) {
     const completed = data.orders?.filter(order => order.status === 'completed')
     const pending = data.orders?.filter(order => order.status === 'pending')
-    const available = data.orders?.filter(order => order.status === 'available')
 
     return (
       <main className="user-main">
@@ -147,9 +149,10 @@ function User() {
             </NavLink>
           </div>
         </div>
-        {data.orders?.length ? (
+        {data.orders?.length || orderItems?.length ? (
           <div className="ordersDiv">
-            {available.length > 0 && <div className="draftDiv orderCo">
+            {orderItems?.length > 0 && 
+            <div className="draftDiv orderCo">
               <button onClick={() => setShowDraft(!showDraft)} className={`titleButton ${!showDraft && 'hidden'}`}>
                 <h2>Current Order</h2>
                 <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z" /></svg>
@@ -161,11 +164,11 @@ function User() {
                 unmountOnExit
                 nodeRef={draftref}>
                 <ul className="orderUL single" ref={draftref}>
-                  <UserOrder order={available[0]} />
+                  <UserOrder order={{...orderInfo, orderItems: [...orderItems]}} />
                 </ul>
               </CSSTransition>
             </div>}
-            {pending.length > 0 &&
+            {pending?.length > 0 &&
               <div className="pendingOrders orderCo">
                 <button onClick={() => setShowPending(!showPending)} className={`titleButton ${!showPending && 'hidden'}`}>
                   <h2>Pending Order</h2>
@@ -184,7 +187,7 @@ function User() {
                   </ul>
                 </CSSTransition>
               </div>}
-            {completed.length > 0 &&
+            {completed?.length > 0 &&
               <div className="completedOrders orderCo">
                 <button onClick={() => setShowCompleted(!showCompleted)} className={`titleButton ${!showCompleted && 'hidden'}`}>
                   <h2>Completed Order</h2>

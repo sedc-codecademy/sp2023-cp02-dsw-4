@@ -639,7 +639,7 @@
     margin-inline: auto;
     display: flex;
     gap: 1rem;
-    max-width: var(--maxWidth);
+    width: var(--maxWidth);
   }
 }
 
@@ -674,7 +674,7 @@
     }
 
     .related-products {
-      width: 100%;
+      // width: 100%;
       padding-block: .5rem 1rem;
       padding-inline: 1rem;
       overflow-x: auto;
@@ -733,6 +733,10 @@
           text-align: center;
         }
       }
+    }
+
+    .related-products {
+      width: 100%;
     }
   }
 }

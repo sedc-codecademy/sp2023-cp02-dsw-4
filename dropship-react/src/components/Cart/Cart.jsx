@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import ProductCard from "../Product/ProductCard/ProductCard"
 
 import { useDispatch, useSelector } from "react-redux"
-import { selectProducts } from "../../store/selectors/productSelector"
+
 import {
     setCardFormValue,
     setCardType,
@@ -24,33 +24,7 @@ import {
     setFinalPaymentState,
     setOrderFormValue,
 } from "../../store/slices/cartSlice/cartSlice"
-
-// let dimeorderItems = [
-//     {
-//         id: "nuj214ujnk2n4fv4",
-//         title: "First Product in this list",
-//         stock: 3,
-//         amount: 1,
-//         total: 35,
-//         price: 90,
-//         sale: 3,
-//         image: "/imgs/manufacturers/apple.jpg",
-//         color: "gold",
-//         size: '5"',
-//     },
-//     {
-//         id: "nuj214ujn523532k2n4fv4",
-//         title: "Second Product in this list",
-//         stock: 7,
-//         amount: 3,
-//         total: 90,
-//         price: 90,
-//         sale: 0,
-//         image: "/imgs/manufacturers/xiaomi.jpg",
-//         color: "blue",
-//         size: "X-Small",
-//     },
-// ]
+import { getPopularProducts } from "../../helpers/API/product-api"
 
 function Cart() {
     const dispatch = useDispatch()
@@ -144,7 +118,6 @@ function Cart() {
     }, [orderInfo, cardObject, cardInfoValidity, orderInfoValidity])
 
     useEffect(() => {
-        // dispatch(addOrderItems(dimeorderItems))
         if (finalPayment && cartState === "final") {
             finalref.current.showModal()
         }
@@ -166,7 +139,7 @@ function Cart() {
         } else {
             calculatedShippingCost = 200;
         }
-        
+
         if (shippingLocation && !orderInfo.city) {
             if (shippingLocation.toLowerCase() === "skopje") {
                 calculatedShippingCost = 0;
@@ -203,6 +176,7 @@ function Cart() {
 
     const handleInputEdit = (e) => {
         e.preventDefault()
+        console.log(e.target.value)
         dispatch(setOrderFormValue({ name: e.target.name, value: e.target.value }))
     }
 
@@ -307,7 +281,18 @@ function Cart() {
         setXandY({ x: `${x}px`, y: `${y}px` })
     }
 
-    const products = useSelector(selectProducts)
+    const {
+        data: popularProducts,
+        error: popularError,
+        isError: popularIsError,
+        isPending: popularIsPending,
+        isSuccess: popularSuccess,
+        refetch: popularRefetch,
+    } = useQuery({
+        queryKey: ["popularQuery"],
+        queryFn: getPopularProducts,
+    })
+
     return (
         <main className="cartMain">
             {orderItems.length > 0 ? (
@@ -679,17 +664,6 @@ function Cart() {
 
                     <div className="cart-items">
                         <h2 className="subTitle">Cart Items</h2>
-                        <ul className="itemUl">
-                            {orderItems?.map((e) => (
-                                <CartItem
-                                    key={e.id}
-                                    item={e}
-                                    cartState={cartState}
-                                    handleChangeOrderAmount={handleChangeOrderAmount}
-                                    handleRemove={handleRemoveOrderItem}
-                                ></CartItem>
-                            ))}
-                        </ul>
                         {cartState !== "default" && (
                             <ul className="pricesUl">
                                 <li>
@@ -708,6 +682,18 @@ function Cart() {
                                 </li>
                             </ul>
                         )}
+
+                        <ul className="itemUl">
+                            {orderItems?.map((e) => (
+                                <CartItem
+                                    key={e.id}
+                                    item={e}
+                                    cartState={cartState}
+                                    handleChangeOrderAmount={handleChangeOrderAmount}
+                                    handleRemove={handleRemoveOrderItem}
+                                ></CartItem>
+                            ))}
+                        </ul>
                     </div>
 
                     {cartState === "default" && (
@@ -764,8 +750,8 @@ function Cart() {
 
             <div className="block-header">
                 <div>
-                    <h1>Related products</h1>
-                    <NavLink>
+                    <h1>Popular products</h1>
+                    <NavLink to={'/'}>
                         <p>Browse All</p>
                         <svg viewBox="0 0 32 32">
                             <path
@@ -777,11 +763,21 @@ function Cart() {
                 </div>
             </div>
 
-            <div className="related-products">
-                {products.slice(0, 4).map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
+            {popularIsPending || popularIsError ? (
+                <LoadingErrorDiv
+                    isError={popularIsError}
+                    classTitle={"popularProductsMain"}
+                    errorMessage={popularError?.message}
+                    refetch={popularRefetch}
+                    loadMessage={"Loading Popular Products"}
+                ></LoadingErrorDiv>
+            ) : popularSuccess ? (
+                <div className="related-products">
+                    {popularProducts.slice(0, 4).map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </div>
+            ) : (<></>)}
 
             <CSSTransition
                 in={finalPayment && cartState === "final"}
@@ -817,12 +813,12 @@ function Cart() {
                             Special Message <span>(Optional)</span>
                         </h3>
                         <textarea
-                            name="specialRequest"
+                            name="note"
                             cols="30"
                             rows="10"
                             placeholder=""
-                            value={orderInfo.specialRequest}
-                            onChange={handleSetInputValue}
+                            value={orderInfo.note}
+                            onChange={handleInputEdit}
                         ></textarea>
                     </div>
                     <button onClick={handlePurchase}>Purchase</button>

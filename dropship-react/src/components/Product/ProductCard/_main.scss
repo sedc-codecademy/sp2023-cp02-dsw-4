@@ -1,5 +1,6 @@
 .product-card {
   flex-grow: 1;
+
   a {
     display: flex;
     flex-direction: column;
@@ -17,6 +18,8 @@
       border-radius: .3rem;
       background-color: var(--tpPri2);
       transition: scale .6s cubic-bezier(.19, 1, .22, 1);
+      aspect-ratio: 12/16;
+      object-fit: cover;
     }
 
     .infoDiv {
@@ -88,28 +91,28 @@
       }
     }
 
-    @media (min-width: 600px){
+    @media (min-width: 600px) {
       &:hover {
         .infoDiv {
           p {
             color: var(--accent);
           }
         }
-  
+
         img {
           scale: .95;
         }
       }
-  
+
       &:active {
         scale: .9;
-  
+
         .infoDiv {
           h4 {
             color: var(--accent);
           }
         }
-  
+
         img {
           scale: 1;
         }

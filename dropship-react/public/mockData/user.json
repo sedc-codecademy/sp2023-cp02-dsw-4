@@ -19,7 +19,7 @@
             "postalCode": 1241235,
             "email": "joho@gmail.com",
             "total": 399,
-            "paymentStatus": "Paid",
+            "paymentMethod": "Paid",
             "note": "Leave it here to receive payments and receipayments andpayments andve payments for customers",
             "status": "pending",
             "orderItems": [
@@ -55,7 +55,7 @@
             "phoneNumber": 1284719274,
             "email": "joho@gmail.com",
             "total": 399,
-            "paymentStatus": "Paid",
+            "paymentMethod": "Paid",
             "note": "Leave it here to receive payments and receipayments andpayments andve payments for customers",
             "status": "pending",
             "orderItems": [
@@ -91,7 +91,7 @@
             "phoneNumber": 1284719274,
             "email": "joho@gmail.com",
             "total": 399,
-            "paymentStatus": "Paid",
+            "paymentMethod": "Paid",
             "note": "Leave it here to receive payments and receive payments for customers",
             "status": "available",
             "orderItems": [
@@ -113,7 +113,7 @@
             "phoneNumber": 1285646419274,
             "email": "joho@gmail.com",
             "total": 399,
-            "paymentStatus": "Paid",
+            "paymentMethod": "Paid",
             "note": "Leave it here to payments for customers",
             "status": "completed",
             "orderItems": [

@@ -96,16 +96,21 @@
         max-width: 50%;
 
         li {
-            display: flex;
-            flex-direction: column;
-            padding: .5rem;
-            background-color: var(--tpPri3);
-            border-radius: .3rem;
-            height: 100%;
+            a {
+                display: flex;
+                flex-direction: column;
+                padding: .5rem;
+                background-color: var(--tpPri3);
+                border-radius: .3rem;
+                height: 100%;
+                flex-grow: 1;
+            }
 
             img {
                 max-width: 13rem;
                 flex-grow: 1;
+                aspect-ratio: 12/16;
+                object-fit: cover;
             }
 
             div {

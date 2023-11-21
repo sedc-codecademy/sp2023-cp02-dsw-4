@@ -1,32 +1,32 @@
-import React, { useRef, useEffect, useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { CSSTransition } from "react-transition-group"
-import { setShowLoading } from "../../store/slices/loaderSlice/loaderSlice"
-import { LoadingSvg } from "./LoadingSvg"
+import React, { useRef, useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { CSSTransition } from "react-transition-group";
+import { setShowLoading } from "../../store/slices/loaderSlice/loaderSlice";
+import { LoadingSvg } from "./LoadingSvg";
 
 function PageLoader() {
-    const dispatch = useDispatch()
-    const loaderRef = useRef()
-    const showLoading = useSelector((state) => state.loader.showLoading)
-    const isFetching = useSelector((state) => state.loader.isFetching)
-    const isError = useSelector((state) => state.loader.isError)
+    const dispatch = useDispatch();
+    const loaderRef = useRef();
+    const showLoading = useSelector((state) => state.loader.showLoading);
+    const isFetching = useSelector((state) => state.loader.isFetching);
+    const isError = useSelector((state) => state.loader.isError);
 
     const handleReload = () => {
-        window.location.reload()
-    }
+        window.location.reload();
+    };
 
     useEffect(() => {
-        let timer
+        let timer;
         if (showLoading && !isFetching && !isError) {
             timer = setTimeout(() => {
-                dispatch(setShowLoading(false))
-            }, 5200)
+                dispatch(setShowLoading(false));
+            }, 5200);
         }
 
         return () => {
-            clearTimeout(timer)
-        }
-    }, [showLoading, isFetching, dispatch, isError])
+            clearTimeout(timer);
+        };
+    }, [showLoading, isFetching, dispatch, isError]);
 
     return (
         <CSSTransition
@@ -74,7 +74,7 @@ function PageLoader() {
                 </div>
             </div>
         </CSSTransition>
-    )
+    );
 }
 
 export function LoadingErrorDiv(props) {
@@ -97,131 +97,135 @@ export function LoadingErrorDiv(props) {
                     >
                         <rect width="10" height="10" x="1" y="1" fill="var(--accent)" rx="1">
                             <animate
-                                id="e"
+                                id="svgSpinnersBlocksShuffle30"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="0a.end"
+                                begin="0;svgSpinnersBlocksShuffle3b.end"
                                 dur="0.2s"
-                                values="113"
+                                values="1;13"
                             />
                             <animate
-                                id="f"
+                                id="svgSpinnersBlocksShuffle31"
                                 fill="freeze"
                                 attributeName="y"
-                                begin="b.end"
+                                begin="svgSpinnersBlocksShuffle38.end"
                                 dur="0.2s"
-                                values="113"
+                                values="1;13"
                             />
                             <animate
-                                id="g"
+                                id="svgSpinnersBlocksShuffle32"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="c.end"
+                                begin="svgSpinnersBlocksShuffle39.end"
                                 dur="0.2s"
-                                values="131"
+                                values="13;1"
                             />
                             <animate
-                                id="h"
+                                id="svgSpinnersBlocksShuffle33"
                                 fill="freeze"
                                 attributeName="y"
-                                begin="d.end"
+                                begin="svgSpinnersBlocksShuffle3a.end"
                                 dur="0.2s"
-                                values="131"
+                                values="13;1"
                             />
                         </rect>
                         <rect width="10" height="10" x="1" y="13" fill="var(--secAccent)" rx="1">
                             <animate
-                                id="i"
+                                id="svgSpinnersBlocksShuffle34"
                                 fill="freeze"
                                 attributeName="y"
-                                begin="e.end"
+                                begin="svgSpinnersBlocksShuffle30.end"
                                 dur="0.2s"
-                                values="131"
+                                values="13;1"
                             />
                             <animate
-                                id="j"
+                                id="svgSpinnersBlocksShuffle35"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="f.end"
+                                begin="svgSpinnersBlocksShuffle31.end"
                                 dur="0.2s"
-                                values="113"
+                                values="1;13"
                             />
                             <animate
-                                id="k"
+                                id="svgSpinnersBlocksShuffle36"
                                 fill="freeze"
                                 attributeName="y"
-                                begin="g.end"
+                                begin="svgSpinnersBlocksShuffle32.end"
                                 dur="0.2s"
-                                values="113"
+                                values="1;13"
                             />
                             <animate
-                                id="l"
+                                id="svgSpinnersBlocksShuffle37"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="h.end"
+                                begin="svgSpinnersBlocksShuffle33.end"
                                 dur="0.2s"
-                                values="131"
+                                values="13;1"
                             />
                         </rect>
                         <rect width="10" height="10" x="13" y="13" fill="var(--tertAccent)" rx="1">
                             <animate
-                                id="b"
+                                id="svgSpinnersBlocksShuffle38"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="i.end"
+                                begin="svgSpinnersBlocksShuffle34.end"
                                 dur="0.2s"
-                                values="131"
+                                values="13;1"
                             />
                             <animate
-                                id="c"
+                                id="svgSpinnersBlocksShuffle39"
                                 fill="freeze"
                                 attributeName="y"
-                                begin="j.end"
+                                begin="svgSpinnersBlocksShuffle35.end"
                                 dur="0.2s"
-                                values="131"
+                                values="13;1"
                             />
                             <animate
-                                id="d"
+                                id="svgSpinnersBlocksShuffle3a"
                                 fill="freeze"
                                 attributeName="x"
-                                begin="k.end"
+                                begin="svgSpinnersBlocksShuffle36.end"
                                 dur="0.2s"
-                                values="113"
+                                values="1;13"
                             />
                             <animate
-                                id="a"
+                                id="svgSpinnersBlocksShuffle3b"
                                 fill="freeze"
                                 attributeName="y"
-                                begin="l.end"
+                                begin="svgSpinnersBlocksShuffle37.end"
                                 dur="0.2s"
-                                values="113"
+                                values="1;13"
                             />
                         </rect>
                     </svg>
                 </>
             )}
         </div>
-    )
+    );
 }
 
 export function BigLoadingDiv(props) {
-    const [clickCount, setClickCount] = useState(0)
+    const [clickCount, setClickCount] = useState(0);
 
     const handleButtonClick = () => {
         if (clickCount < 5) {
-            setClickCount(prevCount => prevCount + 1)
-            props.refetch()
+            setClickCount((prevCount) => prevCount + 1);
+            props.refetch();
         }
-    }
+    };
     return (
-        <main className='bigLoading'>
+        <main className="bigLoading">
             <LoadingSvg></LoadingSvg>
             <button onClick={handleButtonClick} disabled={clickCount > 4}>
                 <h1>{props.title}</h1>
-                <p>{clickCount > 4 ? `sorry somehting went wrong please reload the page` : props.message}</p>
+                <p>
+                    {clickCount > 4
+                        ? `sorry somehting went wrong please reload the page`
+                        : props.message}
+                </p>
             </button>
         </main>
-    )
+    );
 }
 
-export default PageLoader
+export default PageLoader;

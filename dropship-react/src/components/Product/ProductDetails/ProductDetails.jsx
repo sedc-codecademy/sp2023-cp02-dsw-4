@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { useParams, NavLink } from "react-router-dom"
 
 import { useSelector, useDispatch } from "react-redux"
-import { selectProducts } from "../../../store/selectors/productSelector"
 
 import ProductCard from "../ProductCard/ProductCard"
 import Stars, { EditStars } from "../../Stars/Stars"
@@ -14,16 +13,18 @@ import NotFound from "../../NotFound/NotFound"
 import { useQuery } from "@tanstack/react-query"
 import { getProductByID } from "../../../helpers/API/product-api"
 import { getUser } from "../../../helpers/API/user-api"
-import { BigLoadingDiv } from "../../PageLoader/PageLoader"
+import { BigLoadingDiv, LoadingErrorDiv } from "../../PageLoader/PageLoader"
 
 import { addOrderItems } from "../../../store/slices/cartSlice/cartSlice"
+import { getSubCategoryByID } from "../../../helpers/API/sub-category-api"
 
 function ProductDetails() {
   const { productId } = useParams()
   const dispatch = useDispatch()
-  const products = useSelector(selectProducts) // Need to get a different way to get these
   const tokens = useSelector((state) => state.role.authTokens)
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+  const orderItems = useSelector((state) => state.cart.orderItems)
+  const [isInCart, setIsInCart] = useState(false)
 
   const { data: userData } = useQuery({
     queryKey: ["userQuery"],
@@ -42,6 +43,18 @@ function ProductDetails() {
   } = useQuery({
     queryKey: ["productQuery", productId],
     queryFn: () => getProductByID(productId),
+  })
+
+  const {
+    data: subData,
+    error: subError,
+    isError: isSubError,
+    isPending: isSubPending,
+    isSuccess: subSuccess,
+    refetch: subRefetch,
+  } = useQuery({
+    queryKey: ["subcategoryQuery", productData?.subcategoryid],
+    queryFn: () => getSubCategoryByID(productData?.subcategoryid),
   })
 
   const [createReview, setCreateReview] = useState(false)
@@ -106,6 +119,13 @@ function ProductDetails() {
   useEffect(() => {
     setFilteredSizes(selectedColor && productData ? productData.productSizes.filter(e => e.color === selectedColor) : [])
   }, [selectedColor, productData])
+
+  useEffect(() => {
+    if(orderItems && currentProductSize){
+      const isInCart = orderItems.some(item => item.id === currentProductSize.id)
+      setIsInCart(isInCart)
+    }
+  }, [orderItems, currentProductSize])
 
   const handleStarsClick = (e) => {
     setTempRating(e)
@@ -293,7 +313,7 @@ function ProductDetails() {
                   </p>
                 </div>
 
-                <button disabled={currentProductSize === null} className="buy-button" onClick={handleAddToCart}>
+                <button disabled={currentProductSize === null || isInCart} className="buy-button" onClick={handleAddToCart}>
                   <svg viewBox="0 0 32 32">
                     <circle cx="10" cy="28" r="2" fill="currentColor" />
                     <circle cx="24" cy="28" r="2" fill="currentColor" />
@@ -371,7 +391,7 @@ function ProductDetails() {
           <div className="block-header">
             <div>
               <h1>Related products</h1>
-              <NavLink>
+              <NavLink to={subData ? `/subcategory/${subData.id}` : '/'}>
                 <p>Browse All</p>
                 <svg viewBox="0 0 32 32">
                   <path
@@ -383,9 +403,23 @@ function ProductDetails() {
             </div>
           </div>
           <div className="related-products">
-            {products.slice(0, 4).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+            {
+              isSubPending || isSubError ? (
+                <LoadingErrorDiv
+                  isError={isSubError}
+                  classTitle={"relatedProductsMain"}
+                  errorMessage={subError?.message}
+                  refetch={subRefetch}
+                  loadMessage={"Loading Related Products"}
+                ></LoadingErrorDiv>
+              ) : subSuccess && subData ? (
+                <>
+                  {subData.products.slice(0, 4).map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </>
+              ) : (<></>)
+            }
           </div>
         </main>
       ) : isProdError ? (

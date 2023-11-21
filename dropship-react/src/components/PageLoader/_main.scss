@@ -285,7 +285,6 @@
         backdrop-filter: blur(.5rem);
     }
 
-
     &.scrollCatMain {
         height: clamp(20rem, 17.3529rem + 7.0588vw, 35rem);
         background-color: var(--paleAccent);
@@ -307,6 +306,12 @@
         background-color: var(--tertAccent);
     }
 
+    &.relatedProductsMain {
+        height: clamp(20rem, 22.3529rem + 7.0588vw, 35rem);
+        width: 100%;
+        background-color: var(--paleAccent);
+    }
+
     h1 {
         font-size: clamp(2.5rem, 1.7941rem + 1.8824vw, 6.5rem);
         letter-spacing: -0.2rem;
@@ -314,7 +319,7 @@
         text-transform: lowercase;
         color: #fff;
         text-shadow: 0.1rem 0.1rem 0 black;
-        width: max-content;
+        text-align: center;
         font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     }
 

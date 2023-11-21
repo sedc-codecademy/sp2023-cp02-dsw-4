@@ -86,7 +86,7 @@ export function UserOrder({ order }) {
                 <div className="orderInfo">
                     <div>
                         <p>
-                            <span>Recipient:</span> {order.recepient}
+                            <span>Recipient:</span> {order.firstName} {order.lastName}
                         </p>
                         <p>
                             <span>Phone Number:</span> {order.phoneNumber}
@@ -95,7 +95,7 @@ export function UserOrder({ order }) {
                             <span>City:</span> {order.city}
                         </p>
                         <p>
-                            <span>Street:</span> {order.address}
+                            <span>Street:</span> {order.street}
                         </p>
                         <p>
                             <span>Postal Code:</span> {order.postalCode}
@@ -103,10 +103,13 @@ export function UserOrder({ order }) {
                     </div>
                     <div>
                         <p>
-                            Total: <span>{order.total}</span>
+                            Total: <span>{order.total}$</span>
                         </p>
                         <p>
-                            Payment Method: <span>{order.paymentStatus}</span>
+                            Payment Method: <span>{
+                            order.paymentMethod === 'ondelivery' ? 'On-Delivery' : order.paymentMethod === 'prepaid' ? 'Pre-Paid' : 
+                            'Unset'
+                            }</span>
                         </p>
                     </div>
                     <div className="orderNote">

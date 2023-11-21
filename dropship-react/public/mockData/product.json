@@ -49,23 +49,11 @@
     "categorytitle": "Automobile Accessories",
     "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
     "subcategorytitle": "Floor Mats",
-    "colors": [
-        "orange",
-        "green",
-        "blue",
-        "navy"
-    ],
     "manufacturer": {
         "id": "e2naknea2",
         "title": "Samsung",
         "image": "/imgs/manufacturers/samsung.jpg"
     },
-    "sizes": [
-        "x-small",
-        "small",
-        "x-large",
-        "small"
-    ],
     "productSizes": [
         {
             "id": "e2geeanak",
