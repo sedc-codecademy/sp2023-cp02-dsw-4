@@ -36,7 +36,7 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-This section will list any prerequisites for using the project.
+You need Node.js 18.17.0+ to be able to run the Front-End - [NodeJS](https://nodejs.org/en/)
 
 ### Installation
 
