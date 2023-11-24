@@ -276,7 +276,6 @@ function AccountDropDown() {
                                 name="email"
                                 maxLength="25"
                                 minLength="6"
-                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
                                 required
                                 placeholder=""
                                 onChange={recoveryChange}
@@ -333,7 +332,6 @@ function AccountDropDown() {
                                 name="email"
                                 maxLength="25"
                                 minLength="6"
-                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
                                 required
                                 placeholder=""
                                 onChange={handleRegisterInfoChange}

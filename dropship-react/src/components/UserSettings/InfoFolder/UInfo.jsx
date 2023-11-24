@@ -36,17 +36,17 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
       <div className="inputContainer ePhone">
         <p>Email address: {user.email}</p>
         <div>
-          <input
+        <input
             type="email"
             maxLength="25"
             minLength="6"
             name="email"
-            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
             value={userInfo.email}
             onChange={handleInputEdit}
             required
             placeholder=""
           ></input>
+
           <label htmlFor="email">Email</label>
         </div>
         <p>Phone number: {user.phoneNumber}</p>

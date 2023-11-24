@@ -79,7 +79,9 @@ function UserSettings() {
           modifiedTempUser[key] = userInfo[key]
         }
       }
-      console.log(modifiedTempUser) ////////////
+      console.log(modifiedTempUser) 
+      // const byteArray = new Uint8Array(atob(modifiedTempUser.image.base64).split("").map(char => char.charCodeAt(0))); /////////////// SHOULD DO THIS WHEN SENDING IAMGE
+      // console.log(byteArray) ////////////
       setModifiedUser(modifiedTempUser)
     }
   }, [userInfo, data])

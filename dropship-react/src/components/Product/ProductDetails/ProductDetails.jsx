@@ -55,6 +55,7 @@ function ProductDetails() {
   } = useQuery({
     queryKey: ["subcategoryQuery", productData?.subcategoryid],
     queryFn: () => getSubCategoryByID(productData?.subcategoryid),
+    enabled: !!productData
   })
 
   const [createReview, setCreateReview] = useState(false)
