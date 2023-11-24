@@ -43,8 +43,8 @@ function Cart() {
     })
 
     const [orderInfoValidity] = useState([
-        { inputName: "firstName", max: 30, min: 3, regex: "" },
-        { inputName: "lastName", max: 30, min: 3, regex: "" },
+        { inputName: "firstName", max: 30, min: 3, regex: "^[a-zA-Z\\s ]*$" },
+        { inputName: "lastName", max: 30, min: 3, regex: "^[a-zA-Z\\s ]*$" },
         {
             inputName: "email",
             max: 25,
@@ -53,12 +53,12 @@ function Cart() {
         },
         { inputName: "phoneNumber", max: 20, min: 9, regex: "" },
         { inputName: "street", max: 30, min: 5, regex: "" },
-        { inputName: "city", max: 22, min: 5, regex: "" },
+        { inputName: "city", max: 22, min: 5, regex: "^[a-zA-Z\\s ]*$" },
         { inputName: "postalCode", max: 7, min: 2, regex: "[0-9]*" },
     ])
 
     const [cardInfoValidity] = useState([
-        { inputName: "holder", max: 35, min: 3, regex: "[a-zA-Z ]+" },
+        { inputName: "holder", max: 20, min: 3, regex: "^[a-zA-Z\\s ]*$" },
         { inputName: "number", max: 16, min: 16, regex: "^[0-9 ]*[0-9]$" },
         { inputName: "date", max: 5, min: 5, regex: "[0-9\\/]*" },
         { inputName: "cvc", max: 4, min: 3, regex: "[0-9]*" },
@@ -374,6 +374,7 @@ function Cart() {
                                                     type="text"
                                                     maxLength="30"
                                                     minLength="4"
+                                                    pattern="^[a-zA-Z\\s ]*$"
                                                     name="firstName"
                                                     value={orderInfo.firstName}
                                                     onChange={(e) => handleInputEdit(e)}
@@ -388,6 +389,7 @@ function Cart() {
                                                     maxLength="30"
                                                     minLength="4"
                                                     name="lastName"
+                                                    pattern="^[a-zA-Z\\s ]*$"
                                                     value={orderInfo.lastName}
                                                     onChange={(e) => handleInputEdit(e)}
                                                     required
@@ -464,6 +466,7 @@ function Cart() {
                                                     maxLength="22"
                                                     minLength="3"
                                                     name="city"
+                                                    pattern="^[a-zA-Z\\s ]*$"
                                                     value={orderInfo.city}
                                                     onChange={(e) => handleInputEdit(e)}
                                                     required

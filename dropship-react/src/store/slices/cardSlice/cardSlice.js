@@ -149,15 +149,26 @@ const cardSlice = createSlice({
                 }
             }
         },
-        setCreateCard: (state, action) =>{
+        setCreateCard: (state, action) => {
             state.createCard = action.payload
         },
-        setTempCards: (state, action) =>{
+        setTempCards: (state, action) => {
             state.tempCards = action.payload
+        },
+        clearTempCards: (state) => {
+            state.tempCards.forEach(e => {
+                e.holder = ''
+                e.number = ''
+                e.cvc = ''
+                e.date = ''
+                e.type = state.cardPatterns[6]
+                if (e.removal) e.removal = false
+                e.cardStatus = e.originalStatus
+            })
         }
     },
 })
 
-export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID,setNewCardFormValue,setNewCardType,setCreateCard,setTempCards } = cardSlice.actions
+export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID, setNewCardFormValue, setNewCardType, setCreateCard, setTempCards, clearTempCards } = cardSlice.actions
 
 export default cardSlice.reducer

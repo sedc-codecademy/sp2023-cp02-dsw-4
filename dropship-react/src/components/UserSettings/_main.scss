@@ -373,6 +373,13 @@
                     }
                   }
                 }
+
+                &:disabled {
+                  pointer-events: none;
+                  background-color: var(--tpSec3);
+                  color: var(--tpSec2);
+                  opacity: .7;
+                }
               }
             }
 
@@ -680,6 +687,31 @@
             font-size: 1rem;
             font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
           }
+
+          &.password {
+            span {
+              position: absolute;
+              right: 1rem;
+              cursor: pointer;
+
+              svg {
+                height: 2rem;
+                width: 2rem;
+              }
+
+              @media (min-width: 600px){
+                transition: .3s color;
+
+                &:hover{
+                  color: var(--accent);
+                }
+
+                &:active{
+                  color: var(--secAccent);
+                }
+              }
+            }
+          }
         }
 
         &.courierForm,
@@ -879,6 +911,13 @@
           &:active {
             opacity: 1;
           }
+        }
+
+        &:disabled {
+          pointer-events: none;
+          background-color: var(--tpSec3);
+          color: var(--tpSec2);
+          opacity: .7;
         }
       }
     }

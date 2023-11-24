@@ -90,7 +90,7 @@ const EditStar = ({ starIndex, percentage, isHovered, handleMouseOver, handleMou
         <svg
             viewBox="0 0 24 24"
             fill={`url(#${gradientId})`}
-            className={isHovered ? 'hover' : 'unHover'}
+            className={isHovered ? 'hover' : ''}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             onClick={() => onClick(starIndex - 1)}

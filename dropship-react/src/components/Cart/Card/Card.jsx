@@ -6,6 +6,7 @@ import { maskCardNumber } from "../../CardHelper/CardFunctions"
 function Card({ cardFlipped, flipCard, card, originalCard }) {
     let cardType = (card.type.cardtype !== 'unknown') ? card.type : originalCard.type;
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
+    
     function getCardNumber(number) {
         number = number.replace(/\D/g, "")
 

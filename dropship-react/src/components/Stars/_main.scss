@@ -16,7 +16,8 @@
 
             .starGradient {
                 stop {
-                    transition: all .7s cubic-bezier(.19, 1, .22, 1);
+                    -webkit-transition: none !important;
+                    transition: stop-color 0.7s cubic-bezier(0.19, 1, 0.22, 1);
                 }
             }
 
@@ -28,7 +29,7 @@
                 }
             }
 
-            &:active{
+            &:active {
                 scale: 1.25;
                 .starGradient {
                     stop {

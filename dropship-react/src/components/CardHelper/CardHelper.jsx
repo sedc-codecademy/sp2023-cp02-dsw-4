@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Card, { NewCard } from "../Cart/Card/Card"
 import { formatAsMMYY, formatNumberWithSpaces } from "./CardFunctions"
 import { CardSvg } from "../Cart/Card/CardSvgs"
 import { setCardFormValueID, setCardStatusID, setCardTypeID, setCreateCard, setNewCardFormValue, setNewCardType, setRemoveCardID } from "../../store/slices/cardSlice/cardSlice"
 
 import { useSelector, useDispatch } from "react-redux"
+import { cardInfoValidity, isInfoValid } from "../UsefullComponents/Usefull"
 
 function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetInputValue }) {
     const [flipped, setFlipped] = useState(false)
@@ -28,7 +29,7 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
             <div className="inputContainer">
                 <input
                     name="holder"
-                    maxLength="35"
+                    maxLength="20"
                     minLength="3"
                     pattern="[a-zA-Z ]+"
                     type="text"
@@ -101,36 +102,26 @@ export function SettingsCardHelper({ cardID }) {
     const card = useSelector((state) => state.card.tempCards.find(card => card.id === cardID))
     const originalCard = useSelector((state) => state.user.userCards.find(card => card.id === cardID))
 
-    const [tempHolder, setTempHolder] = useState('')
-    const [tempNumber, setTempNumber] = useState('')
-    const [tempCVC, setTempCVC] = useState('')
-    const [tempDate, setTempDate] = useState('')
-
     const handleSetInputValue = (e) => {
         const { name, value } = e.target
-        if (name === 'cvc') {
-            setTempCVC(value)
-        }
-        if (name === 'holder') {
-            setTempHolder(value)
-        }
         dispatch(setCardFormValueID({ name, value, cardID }))
     }
 
     const handleCardNumberChange = (e) => {
         const { name, value } = e.target
-        const number = value.replace(/\D/g, '')
+        const number = value.replace(/\D/g, "")
 
-        const matchedPattern = cardPatterns.find((pattern) => number.match(pattern.regex) !== null)
-        setTempNumber(value)
+        const matchedPattern = cardPatterns.find(
+            (pattern) => number.match(pattern.regex) !== null
+        )
+
         dispatch(setCardTypeID({ cardID, matchedPattern }))
-        dispatch(setCardFormValueID({ name, value, cardID }))
+        dispatch(setCardFormValueID({ name, value: number, cardID }))
     }
 
     const handleDateChange = (e) => {
         const { name } = e.target
         let value = formatAsMMYY(e.target.value)
-        setTempDate(value)
         dispatch(setCardFormValueID({ name, value, cardID }))
     }
 
@@ -165,11 +156,12 @@ export function SettingsCardHelper({ cardID }) {
                         <input
                             name="holder"
                             maxLength="20"
+                            minLength={3}
                             pattern="[a-zA-Z ]+"
                             type="text"
                             required
                             placeholder=""
-                            value={tempHolder}
+                            value={card.holder}
                             onFocus={e => handleFocus(e)}
                             onChange={(e) => handleSetInputValue(e)}
                             disabled={card.removal}
@@ -186,10 +178,11 @@ export function SettingsCardHelper({ cardID }) {
                             pattern="[0-9 ]*"
                             inputMode="decimal"
                             maxLength={19}
+                            minLength={19}
                             required
                             placeholder=""
                             onFocus={e => handleFocus(e)}
-                            value={formatNumberWithSpaces(tempNumber)}
+                            value={formatNumberWithSpaces(card.number)}
                             onChange={(e) => handleCardNumberChange(e)}
                             disabled={card.removal}
                         ></input>
@@ -208,7 +201,7 @@ export function SettingsCardHelper({ cardID }) {
                                 required
                                 placeholder=""
                                 onFocus={e => handleFocus(e)}
-                                value={formatAsMMYY(tempDate)}
+                                value={formatAsMMYY(card.date)}
                                 maxLength={5}
                                 onChange={(e) => handleDateChange(e)}
                                 disabled={card.removal}
@@ -225,9 +218,10 @@ export function SettingsCardHelper({ cardID }) {
                                 pattern="[0-9]*"
                                 inputMode="numeric"
                                 maxLength={4}
+                                minLength={3}
                                 required
                                 placeholder=""
-                                value={tempCVC}
+                                value={card.cvc}
                                 onFocus={e => handleFocus(e)}
                                 onChange={(e) => handleSetInputValue(e)}
                                 disabled={card.removal}
@@ -237,14 +231,14 @@ export function SettingsCardHelper({ cardID }) {
                     </div>
                 </div>
                 <div className="cardButtons">
-                    <button onClick={setStatus} disabled={card.cardStatus === 'PRIMARY'} className={`cardStatus ${card.removal ? 'active' : ''}`} >
+                    <button type="button" onClick={setStatus} disabled={card.cardStatus === 'PRIMARY'} className={`cardStatus ${card.removal ? 'active' : ''}`} >
                         <p>Primary card</p>
                         <svg viewBox="0 0 32 32">
                             <path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z" />
                             <path fill="currentColor" d="M16 10a6 6 0 1 0 6 6a6 6 0 0 0-6-6Z" />
                         </svg>
                     </button>
-                    <button onClick={setRemoval} className={`removeCard ${card.removal ? 'active' : ''}`}>
+                    <button type="button" onClick={setRemoval} className={`removeCard ${card.removal ? 'active' : ''}`}>
                         <p>Remove card</p>
                         <svg viewBox="0 0 32 32"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z" /><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z" /></svg>
                     </button>
@@ -254,12 +248,44 @@ export function SettingsCardHelper({ cardID }) {
     )
 }
 
-export function NewCardHelper() {
+export function NewCardHelper({ data }) {
     const [flipped, setFlipped] = useState(false)
     const dispatch = useDispatch()
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
     const card = useSelector((state) => state.card.newCard)
     const userCards = useSelector((state) => state.user.userCards)
+
+    const [newModifiedCard, setNewModifiedCard] = useState(null)
+    const [newCardValid, setNewCardValid] = useState(false)
+
+    useEffect(() => {
+        let modifiedCard = {}
+        for (let key in card) {
+            if (card[key] !== '' && key !== 'id') {
+                let isSameInAnyOriginalCard = data?.cards?.some(originalCard => card[key] === originalCard[key])
+                if (isSameInAnyOriginalCard) {
+                    continue
+                }
+
+                modifiedCard[key] = card[key]
+            }
+        }
+
+        if (modifiedCard.number) {
+            modifiedCard.type = modifiedCard.type.cardtype
+        } else {
+            delete modifiedCard.type
+        }
+
+        console.log(modifiedCard) ////////////////
+        setNewModifiedCard(modifiedCard || null)
+    }, [card, data])
+
+    useEffect(() => {
+        if (newModifiedCard) {
+            setNewCardValid(isInfoValid(cardInfoValidity, newModifiedCard, ['holder', 'number', 'cvc', 'date']))
+        }
+    }, [cardInfoValidity, newModifiedCard])
 
     const handleSetInputValue = (e) => {
         const { name, value } = e.target
@@ -272,7 +298,7 @@ export function NewCardHelper() {
 
         const matchedPattern = cardPatterns.find((pattern) => number.match(pattern.regex) !== null)
         dispatch(setNewCardType(matchedPattern))
-        dispatch(setNewCardFormValue({ name, value }))
+        dispatch(setNewCardFormValue({ name, value: number }))
     }
 
     const handleDateChange = (e) => {
@@ -302,7 +328,7 @@ export function NewCardHelper() {
     }
 
     const handleSaveCard = () => {
-        if ((card.holder.length > 4 && card.holder.length < 31) && card.number.length !== 19 && (card.cvc.length > 2 && card.cvc.length < 5) && card.date.length !== 5) {
+        if (newCardValid) {
             if (userCards.length > 0) {
                 const hasMatchingProperties = checkForSimilarProperties(userCards, { number: card.number, date: card.date })
                 if (hasMatchingProperties) return console.log('Card already exists')
@@ -335,8 +361,8 @@ export function NewCardHelper() {
                             type="text"
                             required
                             placeholder=""
-                            maxLength="30"
-                            minLength={5}
+                            maxLength="20"
+                            minLength={3}
                             value={card.holder}
                             onFocus={e => handleFocus(e)}
                             onChange={(e) => handleSetInputValue(e)}
@@ -377,7 +403,6 @@ export function NewCardHelper() {
                                 maxLength={5}
                                 minLength={5}
                                 onChange={(e) => handleDateChange(e)}
-
                             ></input>
                             <label htmlFor="date">Expiration (mm/yy)</label>
                         </div>
@@ -405,7 +430,7 @@ export function NewCardHelper() {
                     <button onClick={handleCancel}>
                         <p>Cancel</p>
                     </button>
-                    <button onClick={handleSaveCard}>
+                    <button onClick={handleSaveCard} disabled={!newCardValid}>
                         <p>Create</p>
                     </button>
                 </div>

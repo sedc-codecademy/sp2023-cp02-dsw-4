@@ -228,6 +228,53 @@ main {
                                 border-color: var(--paleAccentTwo);
                             }
                         }
+
+                        button {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            border: .1rem solid var(--tertColor2);
+                            background-color: var(--tpPri2);
+                            border-radius: .2rem;
+                            padding: .4rem;
+                            color: var(--tpSec2);
+                            width: max-content;
+                            text-transform: capitalize;
+
+                            svg {
+                                height: 1.3rem;
+                                width: 1.3rem;
+                            }
+
+                            @media (min-width: 600px) {
+                                transition: color .2s,
+                                    background-color .2s,
+                                    border-color .2s;
+
+                                &:focus-visible {
+                                    color: var(--accent);
+                                    background-color: var(--paleAccent);
+                                    border-color: var(--paleAccentThree);
+                                }
+
+                                &:hover {
+                                    color: var(--accent);
+                                    background-color: var(--paleAccent);
+                                    border-color: var(--paleAccentThree);
+                                }
+
+                                &:active {
+                                    color: var(--tpSec);
+                                    background-color: var(--tpPri2);
+                                    border-color: var(--tertColor2);
+                                }
+                            }
+                            &:disabled{
+                                pointer-events: none;
+                                color: var(--tpSec3);
+                                opacity: .8;
+                            }
+                        }
                     }
                 }
 
@@ -758,7 +805,7 @@ main {
                     h1 {
                         display: flex;
                         flex-direction: column;
-
+                        font-size: clamp(1.3rem, 0.9118rem + 1.0353vw, 3.5rem);
                         span {
                             font-size: .8rem;
                             font-family: 500;
@@ -1536,9 +1583,10 @@ main {
 
                 .topProducts {
                     ul {
-                        li {
-                            width: max-content;
-                            min-width: 49%;
+                        flex-direction: column;
+                        .product-card {
+                            min-width: unset;
+                            width: unset;
                         }
                     }
                 }

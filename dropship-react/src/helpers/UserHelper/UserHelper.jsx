@@ -50,10 +50,16 @@ export default function UserHelper() {
                         const matchedPattern = cardPatterns.find((pattern) => number.match(pattern.regex) !== null)
                         if (matchedPattern) {
                             const updatedCard = { ...card, type: matchedPattern }
-
                             tempCardsForSetUser.push(updatedCard)
 
-                            tempCardsForSetTemp.push({ ...updatedCard, removal: false })
+                            const emptyCard = Object.keys(updatedCard).reduce((obj, key) => {
+                                obj[key] = (key === 'id' || key === 'cardStatus' || key === 'type') ? updatedCard[key] : ''
+                                return obj
+                            }, {})
+
+                            emptyCard.originalStatus = updatedCard.cardStatus;
+
+                            tempCardsForSetTemp.push({ ...emptyCard, removal: false })
                         }
                     })
 
@@ -63,7 +69,7 @@ export default function UserHelper() {
                 dispatch(userLogIn())
             }
         }
-    }, [tokens, showLoading, dispatch, userQuery,cardPatterns])
+    }, [tokens, showLoading, dispatch, userQuery, cardPatterns])
 }
 
 export const useLogout = () => {

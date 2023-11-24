@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 
 import { setShowAccDropDown } from "../../../store/slices/dropdowns/acDropDownSlice"
@@ -26,6 +26,7 @@ import { CSSTransition } from "react-transition-group"
 import { useLogout } from "../../../helpers/UserHelper/UserHelper"
 
 export default function Nav() {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const logout = useLogout()
     const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
@@ -54,7 +55,7 @@ export default function Nav() {
 
     const onAccountIconClick = () => {
         if (showShipping) dispatch(setShowShipping(!showShipping))
-        if(isMobile && showCatDropDown){
+        if (isMobile && showCatDropDown) {
             dispatch(toggleCatDropDown())
         }
         dispatch(setIsSettingsOn(!isSettingsOn))
@@ -73,7 +74,7 @@ export default function Nav() {
     }
 
     const handleCategoriesClick = () => {
-        if(isMobile && isSettingsOn){
+        if (isMobile && isSettingsOn) {
             dispatch(setIsSettingsOn(false))
         }
         dispatch(toggleCatDropDown())
@@ -93,6 +94,19 @@ export default function Nav() {
 
     const searchButtonClick = () => {
         dispatch(setShouldFocus(true))
+    }
+
+    const handleCatClick = () => {
+        console.log('Should Change the selecetd cat')
+    }
+
+    const handleSubCatClick = (e) => {
+        dispatch(toggleCatDropDown())
+        navigate(`/subcategory/${e}`)
+    }
+    const handleViewAllClick = (e) => {
+        dispatch(toggleCatDropDown())
+        navigate(`/category/${e}`)
     }
 
     return (
@@ -249,17 +263,17 @@ export default function Nav() {
                                 <div className="divider"></div>
                                 <ul className="catsList">
                                     {catArray.map((e) => (
-                                        <CatDPMobile key={e.id} category={e} />
+                                        <CatDPMobile key={e.id} category={e} handleCatClick={handleCatClick} />
                                     ))}
                                 </ul>
                                 <div className="divider"></div>
                                 <div className="subCatsList">
                                     <ul>
                                         {subCatArray.slice(0, 5).map((e) => (
-                                            <SubCatDP key={e.id} subCategory={e} />
+                                            <SubCatDP key={e.id} subCategory={e} handleSubCatClick={handleSubCatClick} />
                                         ))}
                                     </ul>
-                                    <ViewAllSub category="should contain path to category page"></ViewAllSub>
+                                    <ViewAllSub category={catArray[0]} handleViewAllClick={handleViewAllClick}></ViewAllSub>
                                 </div>
                             </div>
                         </CSSTransition>
