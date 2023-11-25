@@ -15,14 +15,6 @@ You've just landed on the README page of our exciting Dropshipping Project. Get 
 
 Check out our live project [here](https://clickandship-sedc.github.io/store/).
 
-## Table of Contents 📚
-
-1. [Getting Started](#getting-started)
-2. [Meet the Team](#meet-the-team)
-3. [Tools and Libraries](#tools-and-libraries)
-4. [Acknowledgements](#acknowledgements)
-5. [Shining Stars: Our Mentors](#shining-stars-our-mentors)
-
 ### Getting Started 🚀
 
 To get a local copy up and running, follow these simple steps.
