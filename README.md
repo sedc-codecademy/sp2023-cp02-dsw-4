@@ -18,21 +18,20 @@ Check out our live project [here](https://clickandship-sedc.github.io/store/).
 ## Table of Contents 📚
 
 1. [Getting Started](#getting-started)
-2. [Local Setup](#local-setup)
-3. [Meet the Team](#meet-the-team)
-4. [Tools and Libraries](#tools-and-libraries)
-5. [Acknowledgements](#acknowledgements)
-6. [Shining Stars: Our Mentors](#shining-stars-our-mentors)
+2. [Meet the Team](#meet-the-team)
+3. [Tools and Libraries](#tools-and-libraries)
+4. [Acknowledgements](#acknowledgements)
+5. [Shining Stars: Our Mentors](#shining-stars-our-mentors)
 
-## Getting Started 🚀
+### Getting Started 🚀
 
 To get a local copy up and running, follow these simple steps.
 
-### Prerequisites
+## Prerequisites
 
 You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/)
 
-### Installation
+## Installation
 
 1. **Front-end** - Clone the repo
    ```sh
@@ -47,7 +46,7 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
    npm start
    ```
 
-## Meet the Team 👥
+### Meet the Team 👥
 
 - **Aleksandar Dimov** - _Front-End_ - [GitHub](https://github.com/mvd7)
 - **Ana Bogdanovska** - _Back-End_ - [GitHub](https://github.com/annabananna)
@@ -71,7 +70,7 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
 - **Clamp Generator**: _Generate linearly scale font-size with clamp()_ - [Visit Site](https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjYwMHB4IiwibWF4V2lkdGgiOiI0MDAwcHgiLCJtaW5Gb250U2l6ZSI6IjFyZW0iLCJtYXhGb250U2l6ZSI6IjNyZW0ifQ%3D%3D)
 - **ImgBB**: _Free online image hosting service_ - [Visit Site](https://imgbb.com/)
 
-### Libraries
+## Libraries
 - **Tanstack**: _Headless, type-safe, & powerful utilities for State Management, Routing, Data Visualization, Charts, Tables, and more._ - [Visit Site](https://tanstack.com/)
 - **Redux Toolkit**: _The official, opinionated, batteries-included toolset for efficient Redux development_ - [Visit Site](https://redux-toolkit.js.org/)
 
