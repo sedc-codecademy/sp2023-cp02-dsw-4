@@ -7,10 +7,9 @@ using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
-{
-    //  IT'S CHANGED FROM REGION TO MANUFACTURER, BUT IT'S NOT FINISHED *** DO THE REST ***
-    public class ManufacturerService : IManufacturerService
+{  public class ManufacturerService : IManufacturerService
     {
+
         private IRepository<Manufacturer> _manufacturerRepository;
         public ManufacturerService(IRepository<Manufacturer> manufacturerRepository)
         {
@@ -19,72 +18,68 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
         public List<ManufacturerDto> GetAll()
         {
-            var regions = _manufacturerRepository.GetAll();
-            return regions.Select(x => x.ToManufacturerDto()).ToList();
+            var manufacturer = _manufacturerRepository.GetAll();
+            return manufacturer.Select(x => x.ToManufacturerDto()).ToList();
         }
 
         public ManufacturerDto GetById(string id)
         {
-            var region = _manufacturerRepository.GetById(id);
+            var manufacturer = _manufacturerRepository.GetById(id);
 
-            if (region == null)
+            if (manufacturer == null)
             {
-                throw new KeyNotFoundException($"Region with id {id} is not found");
+                throw new KeyNotFoundException($"Manufacturer with id {id} is not found");
             }
 
-            return region.ToManufacturerDto();
+            return manufacturer.ToManufacturerDto();
         }
 
-        public void Add(ManufacturerDto regionDto)
+        public void Add(ManufacturerDto manufacturerDto)
         {
-            if (regionDto.Name == null)
+            if (manufacturerDto.Name == null)
             {
                 throw new ArgumentNullException("Name must not be empty");
             }
 
-            var region = new Manufacturer
+            var manufacturer = new Manufacturer
             {
-                Name = regionDto.Name,
-                
+                Name = manufacturerDto.Name,
+                Image = manufacturerDto.Image,
+
             };
 
-            _manufacturerRepository.Add(region);
+            _manufacturerRepository.Add(manufacturer);
         }
 
-        public void Update(ManufacturerDto regionDto)
+        public void Update(ManufacturerDto manufacturerDto)
         {
-            var region = _manufacturerRepository.GetById(regionDto.Id);
+            var manufacturer = _manufacturerRepository.GetById(manufacturerDto.Id);
 
-            region.Id = regionDto.Id;
-            region.Name = regionDto.Name;
-            
+            manufacturer.Name = manufacturerDto.Name;
+            manufacturer.Image = manufacturerDto.Image;
 
-            if (regionDto.Name == null)
+
+            if (manufacturerDto.Name == null)
             {
                 throw new ArgumentNullException("Name must not be empty");
             }
-            //if ((int)regionDto.Shipping > 3 || (int)regionDto.Shipping < 1)
-            //{
-            //    throw new InvalidOperationException("Shipping must be set");
-            //}
-
-            _manufacturerRepository.Update(region);   
+            _manufacturerRepository.Update(manufacturer);
         }
 
         public void DeleteById(string id)
         {
-            var region = GetById(id);
+            var manufacturer = GetById(id);
 
-            if (region.Id == null)
+            if (manufacturer.Id == null)
             {
-                throw new KeyNotFoundException($"Region with id {id} was not found.");
+                throw new KeyNotFoundException($"Manufacturer with id {id} was not found.");
             }
             if (id == "")
             {
                 throw new ArgumentException("You must enter id");
             }
 
-            _manufacturerRepository.Delete(region.Id);
+            _manufacturerRepository.Delete(manufacturer.Id);
         }
     }
 }

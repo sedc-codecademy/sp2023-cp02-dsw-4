@@ -3,7 +3,7 @@ using Dropshiping.BackEnd.Domain.ProductModels;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
-    //  IT'S CHANGED FROM REGION TO MANUFACTURER, BUT IT'S NOT FINISHED *** DO THE REST ***
+
     public class ManufacturerRepository : IRepository<Manufacturer>
     {
         private DropshipingDbContext _dbContext;
@@ -20,13 +20,13 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public Manufacturer GetById(string id)
         {
-            var region = _dbContext.Manufacturers.FirstOrDefault(r => r.Id == id);
-            if (region == null)
+            var manufacturer = _dbContext.Manufacturers.FirstOrDefault(r => r.Id == id);
+            if (manufacturer == null)
             {
                 throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
             }
-          
-            return region;
+
+            return manufacturer;
         }
 
         public void Add(Manufacturer entity)
@@ -43,12 +43,12 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public void Delete(string id)
         {
-            var region = GetById(id);
-            if (region == null)
+            var manufacturer = GetById(id);
+            if (manufacturer == null)
             {
-                throw new KeyNotFoundException($"Region id {id} does not exist");
+                throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
             }
-            _dbContext.Manufacturers.Remove(region);  
+            _dbContext.Manufacturers.Remove(manufacturer);
             _dbContext.SaveChanges();
         }
     }
