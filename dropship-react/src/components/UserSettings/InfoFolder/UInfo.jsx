@@ -37,10 +37,11 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
         <p>Email address: {user.email}</p>
         <div>
         <input
-            type="email"
+            type="text"
             maxLength="25"
             minLength="6"
             name="email"
+            pattern="^[a-zA-Z0-9+._]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
             value={userInfo.email}
             onChange={handleInputEdit}
             required

@@ -105,7 +105,7 @@ function UserSettings() {
     } else {
       setUserPasswordValid(false)
     }
-  }, [modifiedPassword, data, passwordInfoValidity])
+  }, [modifiedPassword, data])
 
   useEffect(() => {
     let modifiedTempCards = tempCards?.map((card) => {
@@ -154,7 +154,7 @@ function UserSettings() {
     } else {
       setUpdateCardsValid(false)
     }
-  }, [cardInfoValidity, modifiedCards])
+  }, [modifiedCards])
 
   useEffect(() => {
     if (modifiedUser) {
@@ -172,7 +172,7 @@ function UserSettings() {
         setUserInfoValid(false)
       }
     }
-  }, [userInfoValidity, modifiedUser])
+  }, [modifiedUser])
 
   useEffect(() => {
     switch (currentPage) {

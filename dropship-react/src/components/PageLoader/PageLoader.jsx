@@ -1,19 +1,21 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { CSSTransition } from "react-transition-group";
-import { setShowLoading } from "../../store/slices/loaderSlice/loaderSlice";
-import { LoadingSvg } from "./LoadingSvg";
+import React, { useRef, useEffect, useState } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { CSSTransition } from "react-transition-group"
+import { setShowLoading } from "../../store/slices/loaderSlice/loaderSlice"
+import { LoadingSvg } from "./LoadingSvg"
+import { FooterLogo } from "../Footer/footerLogo"
 
 function PageLoader() {
-    const dispatch = useDispatch();
-    const loaderRef = useRef();
-    const showLoading = useSelector((state) => state.loader.showLoading);
-    const isFetching = useSelector((state) => state.loader.isFetching);
-    const isError = useSelector((state) => state.loader.isError);
+    const dispatch = useDispatch()
+    const loaderRef = useRef()
+    const showLoading = useSelector((state) => state.loader.showLoading)
+    const isFetching = useSelector((state) => state.loader.isFetching)
+    const isError = useSelector((state) => state.loader.isError)
+    const isMobile = useSelector((state) => state.mobile.isMobile)
 
     const handleReload = () => {
-        window.location.reload();
-    };
+        window.location.reload()
+    }
 
     useEffect(() => {
         let timer;
@@ -37,9 +39,15 @@ function PageLoader() {
             nodeRef={loaderRef}
         >
             <div className="pageLoader" ref={loaderRef}>
-                <h1>
-                    <span>Click</span>
-                    <span>
+                {isMobile ? 
+                <FooterLogo></FooterLogo>
+                :  <h1>
+                    <span style={{ '--i': '1' }}>C</span>
+                    <span style={{ '--i': '2' }}>l</span>
+                    <span style={{ '--i': '3' }}>i</span>
+                    <span style={{ '--i': '4' }}>c</span>
+                    <span style={{ '--i': '5' }}>k</span>
+                    <span className="svgSpan">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -64,8 +72,12 @@ function PageLoader() {
                             </defs>
                         </svg>
                     </span>
-                    <span>Ship</span>
-                </h1>
+                    <span style={{ '--i': '6' }}>S</span>
+                    <span style={{ '--i': '7' }}>h</span>
+                    <span style={{ '--i': '8' }}>i</span>
+                    <span style={{ '--i': '9' }}>p</span>
+                </h1>}
+               
                 <div className={`somethingWrong ${isError && "true"}`}>
                     <p>Something went wrong, please reload the page.</p>
                     <button disabled={!isError} onClick={handleReload}>
@@ -74,7 +86,7 @@ function PageLoader() {
                 </div>
             </div>
         </CSSTransition>
-    );
+    )
 }
 
 export function LoadingErrorDiv(props) {
@@ -228,4 +240,4 @@ export function BigLoadingDiv(props) {
     );
 }
 
-export default PageLoader;
+export default PageLoader

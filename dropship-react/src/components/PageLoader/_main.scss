@@ -142,26 +142,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: .5rem;
         width: 100%;
 
-        span:not(:nth-child(2)) {
-            animation: tighten 5s infinite;
-            animation-delay: 250ms;
-            text-align: end;
-            width: 50%;
+        span:not(.svgSpan) {
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+        }
 
-            &:last-child {
-                text-align: start;
-            }
+        .svgSpan {
+            margin-inline: 1rem;
         }
     }
 
-    svg {
+    svg:not(.bigFooterLogo) {
         height: 11rem;
         font-size: clamp(7rem, 5.5882rem + 3.7647vw, 15rem);
-        animation: scaleLogo 5s infinite;
-        animation-delay: 250ms;
         filter: drop-shadow(.1rem .1rem 0 var(--secColor));
 
         linearGradient {
@@ -172,6 +168,36 @@
             stop:last-child {
                 animation: gradient1 5s infinite;
             }
+        }
+    }
+
+    .bigFooterLogo{
+        max-width: 90%;
+        path:not(:first-child){
+            fill: var(--secColor);
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+        }
+        #paint0_linear_5_13{
+            stop:first-child {
+                animation: gradient 5s infinite;
+            }
+
+            stop:last-child {
+                animation: gradient1 5s infinite;
+            }
+        }
+    }
+    @keyframes waviy {
+
+        0%,
+        40%,
+        100% {
+            transform: translateY(0)
+        }
+
+        20% {
+            transform: translateY(-2rem)
         }
     }
 
@@ -200,50 +226,6 @@
 
         100% {
             stop-color: var(--logoAccentOne);
-        }
-    }
-
-    @keyframes tighten {
-        0% {
-            letter-spacing: var(--letterSpacing);
-        }
-
-        60% {
-            letter-spacing: calc(var(--letterSpacing) - 1.1rem);
-        }
-
-        80% {
-            letter-spacing: calc(var(--letterSpacing) - 1.1rem);
-        }
-
-        91% {
-            letter-spacing: calc(var(--letterSpacing) - .3rem)
-        }
-
-        100% {
-            letter-spacing: var(--letterSpacing);
-        }
-    }
-
-    @keyframes scaleLogo {
-        0% {
-            transform: scale(1);
-        }
-
-        60% {
-            transform: scale(.8);
-        }
-
-        80% {
-            transform: scale(.8);
-        }
-
-        91% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            transform: scale(1);
         }
     }
 
