@@ -15,15 +15,15 @@ You've just landed on the README page of our exciting Dropshipping Project. Get 
 
 Check out our live project [here](https://clickandship-sedc.github.io/store/).
 
-### Getting Started 🚀
+## Getting Started 🚀
 
 To get a local copy up and running, follow these simple steps.
 
-## Prerequisites
+### Prerequisites
 
 You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/)
 
-## Installation
+### Installation
 
 1. **Front-end** - Clone the repo
    ```sh
@@ -38,7 +38,7 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
    npm start
    ```
 
-### Meet the Team 👥
+## Meet the Team 👥
 
 - **Aleksandar Dimov** - _Front-End_ - [GitHub](https://github.com/mvd7)
 - **Ana Bogdanovska** - _Back-End_ - [GitHub](https://github.com/annabananna)
@@ -50,9 +50,9 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
 - **Marko Gigoski** - _Back-End_ - [GitHub](https://github.com/MarkoGigoski)
 - **Pavel Kocev** - _Front-End_ - [GitHub](https://github.com/pkocev49)
 
-### Tools and Libraries 🛠️📚
+## Tools and Libraries 🛠️📚
 
-## Tools
+### Tools
 - **Icones**: _Massive collection of icons in all shapes and sizes_ - [Visit Site](https://icones.js.org/)
 - **Storyset**: _Awesome free customizable illustrations_ - [Visit Site](https://storyset.com/)
 - **SVGOMG**: _Optimize and minify SVG's_ - [Visit Site](https://svgomg.net/)
@@ -62,7 +62,7 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
 - **Clamp Generator**: _Generate linearly scale font-size with clamp()_ - [Visit Site](https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjYwMHB4IiwibWF4V2lkdGgiOiI0MDAwcHgiLCJtaW5Gb250U2l6ZSI6IjFyZW0iLCJtYXhGb250U2l6ZSI6IjNyZW0ifQ%3D%3D)
 - **ImgBB**: _Free online image hosting service_ - [Visit Site](https://imgbb.com/)
 
-## Libraries
+### Libraries
 - **Tanstack**: _Headless, type-safe, & powerful utilities for State Management, Routing, Data Visualization, Charts, Tables, and more._ - [Visit Site](https://tanstack.com/)
 - **Redux Toolkit**: _The official, opinionated, batteries-included toolset for efficient Redux development_ - [Visit Site](https://redux-toolkit.js.org/)
 
