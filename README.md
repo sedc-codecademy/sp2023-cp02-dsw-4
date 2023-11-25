@@ -1,50 +1,44 @@
 <div align="center">
-  <img width="100%" height="auto" background-color="gray" src="https://github.com/sedc-codecademy/sp2023-cp02-dsw-4/blob/master/dropship-react/public/imgs/bigLogo.svg" alt="Your Project Name Logo">
+  <img width="100%" height="auto" src="https://github.com/sedc-codecademy/sp2023-cp02-dsw-4/blob/master/dropship-react/public/imgs/bigLogo.svg" alt="Your Project Name Logo">
 </div>
 
-## 🚀 Welcome to Click & Ship! 🚀
+# Click & Ship 🚀
 
-Drop-shipping store where elegance meets convenience, offering a minimalist
-design that ensures seamless navigation. Enchanting shopping experience that
-prioritizes style, functionality, and customer satisfaction!
+Welcome to Click & Ship - where elegance meets convenience in our minimalist drop-shipping store. We offer a seamless and enchanting shopping experience, prioritizing style, functionality, and customer satisfaction!
 
-## 🎯 Project Overview 🎯
+## Project Overview 🎯
 
-Hello there, brave explorer! You've just landed on the README page of our exciting Dropshipping Project. Buckle up and get ready for a thrilling journey!
+You've just landed on the README page of our exciting Dropshipping Project. Get ready for a thrilling journey through **Click & Ship** - a dynamic platform built with modern technologies:
 
-**Click & Ship** is a dynamic and robust platform built with a variety of modern technologies. The frontend of the application was constructed using React, a popular JavaScript library for building user interfaces. To manage the application state, we utilized Redux Toolkit, a powerful toolset for efficient Redux development. For data fetching, caching, and state updates, we incorporated React Query into our tech stack. To style our components and layout, we used SCSS, a preprocessor scripting language that is interpreted into CSS.
+- **Frontend**: React, Redux Toolkit, React Query, SCSS
+- **Backend**: C#.NET, MySQL
 
-On the backend, we used C#.NET, a multi-paradigm programming language for building robust and scalable web applications. For our database, we chose MySQL, a reliable and efficient open-source relational database management system.
+Check out our live project [here](https://clickandship-sedc.github.io/store/).
 
-This diverse tech stack allowed us to create a highly interactive and user-friendly dropshipping platform.
+## Table of Contents 📚
 
-🌐 Check out our live project [here](https://clickandship-sedc.github.io/store/). 🌐
+1. [Getting Started](#getting-started)
+2. [Local Setup](#local-setup)
+3. [Meet the Team](#meet-the-team)
+4. [Tools and Libraries](#tools-and-libraries)
+5. [Acknowledgements](#acknowledgements)
+6. [Shining Stars: Our Mentors](#shining-stars-our-mentors)
 
-## 📚 Table of Contents 📚
-
-1. [Project Overview](#project-overview)
-2. [Getting Started](#getting-started)
-3. [Prerequisites](#prerequisites)
-4. [Installation](#installation)
-5. [Our Team](#our-team)
-6. [Assets](#assets)
-7. [Acknowledgements](#acknowledgements)
-
-## 🚀 Getting Started 🚀
+## Getting Started 🚀
 
 To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-You need Node.js 18.17.0+ to be able to run the Front-End - [NodeJS](https://nodejs.org/en/)
+You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/)
 
 ### Installation
 
 1. **Front-end** - Clone the repo
    ```sh
-   git clone https://github.com/sedc-codecademy/sp2023-cp02-dsw-4/tree/master/dropship-react
+   git clone https://github.com/sedc-codecademy/sp2023-cp02-dsw-4
    ```
-2. **Front-end** - Install packages
+2. **Front-end** - Install packages (In cd dropship-react)
    ```sh
    npm install
    ```
@@ -53,7 +47,7 @@ You need Node.js 18.17.0+ to be able to run the Front-End - [NodeJS](https://nod
    npm start
    ```
 
-## 👥 Our Team 👥
+## Meet the Team 👥
 
 - **Aleksandar Dimov** - _Front-End_ - [GitHub](https://github.com/mvd7)
 - **Ana Bogdanovska** - _Back-End_ - [GitHub](https://github.com/annabananna)
@@ -65,11 +59,9 @@ You need Node.js 18.17.0+ to be able to run the Front-End - [NodeJS](https://nod
 - **Marko Gigoski** - _Back-End_ - [GitHub](https://github.com/MarkoGigoski)
 - **Pavel Kocev** - _Front-End_ - [GitHub](https://github.com/pkocev49)
 
-## 🎨 Assets 🎨
+### Tools and Libraries 🛠️📚
 
-This project wouldn't be possible without these wonderful services and libraries:
-
-## 🛠️ Tools 🛠️
+## Tools
 - **Icones**: _Massive collection of icons in all shapes and sizes_ - [Visit Site](https://icones.js.org/)
 - **Storyset**: _Awesome free customizable illustrations_ - [Visit Site](https://storyset.com/)
 - **SVGOMG**: _Optimize and minify SVG's_ - [Visit Site](https://svgomg.net/)
@@ -79,16 +71,15 @@ This project wouldn't be possible without these wonderful services and libraries
 - **Clamp Generator**: _Generate linearly scale font-size with clamp()_ - [Visit Site](https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjYwMHB4IiwibWF4V2lkdGgiOiI0MDAwcHgiLCJtaW5Gb250U2l6ZSI6IjFyZW0iLCJtYXhGb250U2l6ZSI6IjNyZW0ifQ%3D%3D)
 - **ImgBB**: _Free online image hosting service_ - [Visit Site](https://imgbb.com/)
 
-## 📚 Libraries 📚
+### Libraries
 - **Tanstack**: _Headless, type-safe, & powerful utilities for State Management, Routing, Data Visualization, Charts, Tables, and more._ - [Visit Site](https://tanstack.com/)
 - **Redux Toolkit**: _The official, opinionated, batteries-included toolset for efficient Redux development_ - [Visit Site](https://redux-toolkit.js.org/)
 
-## 🎉 Acknowledgements 🎉
+### Acknowledgements 🎉
+- Hat tip to anyone whose code was used
+- Inspiration from Skrouts, Poppr
 
-* Hat tip to anyone whose code was used
-* We looked to these sites [**Skrouts**](https://www.skroutz.gr/), [**Poppr**](https://www.poppr.be/en) for inspiration.
-
-## 🌟 Shining Stars: Our Mentors 🌟
+### 🌟 Shining Stars: Our Mentors 🌟
 
 We would like to express our deepest gratitude to our mentors who guided us through this journey. Their expertise, patience, and dedication have been invaluable to our project. They have been our guiding stars, illuminating our path and helping us navigate the challenges of building this platform.
 
