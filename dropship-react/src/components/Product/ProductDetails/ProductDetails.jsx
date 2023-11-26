@@ -12,7 +12,6 @@ import { ReviewSvg } from "../../Reviews/review"
 import NotFound from "../../NotFound/NotFound"
 import { useQuery } from "@tanstack/react-query"
 import { getProductByID } from "../../../helpers/API/product-api"
-import { getUser } from "../../../helpers/API/user-api"
 import { BigLoadingDiv, LoadingErrorDiv } from "../../PageLoader/PageLoader"
 
 import { addOrderItems } from "../../../store/slices/cartSlice/cartSlice"
@@ -22,15 +21,14 @@ function ProductDetails() {
   const { productId } = useParams()
   const dispatch = useDispatch()
   const tokens = useSelector((state) => state.role.authTokens)
+  const userid = useSelector(state => state.role.userid)
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
   const orderItems = useSelector((state) => state.cart.orderItems)
   const [isInCart, setIsInCart] = useState(false)
 
   const { data: userData } = useQuery({
-    queryKey: ["userQuery"],
-    queryFn: getUser,
-    enabled: !!(tokens?.accessToken && tokens?.refreshToken),
-  })
+    queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+})
 
   const {
     // Need to do mutaiton for reviews
@@ -337,7 +335,7 @@ function ProductDetails() {
             <div>
               <h1>Customer Reviews</h1>
               <button
-                disabled={createReview || userReview || !userData}
+                disabled={createReview || userReview || !userData || !isLoggedIn}
                 onClick={() => setCreateReview(true)}
               >
                 <p>Review this product</p>
@@ -371,7 +369,7 @@ function ProductDetails() {
                   />
                 )}
                 {productData.reviews.map((review) =>
-                  review.authorId === userData?.id ? (
+                  (review.authorId === userData?.id && isLoggedIn) ? (
                     <EditReview key={review.id} review={review} />
                   ) : (
                     <Reviews key={review.id} review={review} />

@@ -285,7 +285,7 @@ export function NewCardHelper({ data }) {
         if (newModifiedCard) {
             setNewCardValid(isInfoValid(cardInfoValidity, newModifiedCard, ['holder', 'number', 'cvc', 'date']))
         }
-    }, [cardInfoValidity, newModifiedCard])
+    }, [newModifiedCard])
 
     const handleSetInputValue = (e) => {
         const { name, value } = e.target

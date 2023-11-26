@@ -17,7 +17,7 @@ import { DeliverySvg, EmptyCard } from "./delivery"
 import { CSSTransition } from "react-transition-group"
 
 import { useQuery } from "@tanstack/react-query"
-import { getUser } from "../../helpers/API/user-api"
+
 import {
     changeItemAmount,
     purchase,
@@ -31,11 +31,10 @@ import { cardInfoValidity, isInfoValid, userInfoValidity } from "../UsefullCompo
 function Cart() {
     const dispatch = useDispatch()
     const tokens = useSelector((state) => state.role.authTokens)
+    const userid = useSelector(state => state.role.userid)
 
     const { data: userData } = useQuery({
-        queryKey: ["userQuery"],
-        queryFn: getUser,
-        enabled: !!(tokens?.accessToken && tokens?.refreshToken),
+        queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     })
 
     const [fieldMapping] = useState({

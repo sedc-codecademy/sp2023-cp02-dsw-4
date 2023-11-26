@@ -15,7 +15,7 @@ import {
 } from "../../store/slices/cardSlice/cardSlice"
 
 import { useLogout } from "../../helpers/UserHelper/UserHelper"
-import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
+
 import {
   clearUser,
   updatePasswordInfo,
@@ -38,7 +38,6 @@ function UserSettings() {
   const tempCards = useSelector((state) => state.card.tempCards)
   const userInfo = useSelector((state) => state.userSettings.userInfo)
   const userPassword = useSelector((state) => state.userSettings.passwordInfo)
-  const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
   const [currentPage, setCurrentPage] = useState("accountInfo")
 
   const [modifiedCards, setModifiedCards] = useState([])
@@ -260,9 +259,6 @@ function UserSettings() {
 
   const handleLogOutClick = async () => {
     await logout()
-    if (isSettingsOn) {
-      dispatch(setIsSettingsOn(false))
-    }
   }
 
   const handleInputEdit = (e) => {

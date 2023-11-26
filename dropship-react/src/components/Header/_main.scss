@@ -115,6 +115,9 @@ header {
                     ul {
                         &.navigationLinks {
                             box-shadow: none;
+                            border-radius: 1.5rem;
+                            border-top-right-radius: 3rem;
+                            border-bottom-right-radius: 3rem;
 
                             &.loggedIn {
                                 border-radius: 3rem;
@@ -156,6 +159,7 @@ header {
         @media (max-width: 800px) {
             padding-inline: 1rem;
             align-items: flex-start;
+
             @supports (height: fit-content) {
                 height: fit-content;
             }
