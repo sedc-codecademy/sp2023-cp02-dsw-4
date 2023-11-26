@@ -1,8 +1,11 @@
 import React, { useState } from "react"
 import ImageLoader from "../../ImageLoader/ImageLoader"
 import { dataURLtoFile } from "../../UsefullComponents/Usefull"
+import { useDispatch } from "react-redux"
+import { setNotificationData, setShowNotification } from "../../../store/slices/notificationSlice/notificationSlice"
 
 function ProfilePicture({ image, userInfo, handleInputEdit }) {
+  const dispatch = useDispatch()
   const [drag, setDrag] = useState(false)
 
   const handleDragOver = () => {
@@ -13,26 +16,7 @@ function ProfilePicture({ image, userInfo, handleInputEdit }) {
     setDrag(false)
   }
 
-  const handleDrop = (e) => {
-    e.preventDefault()
-    const file = e.dataTransfer.files[0]
-    if (file && file.type.startsWith("image/")) {
-      const img = new Image()
-      img.onload = function () {
-        if (this.width >= 600 && this.width <= 1024 && this.height >= 600 && this.height <= 1024) {
-          const reader = new FileReader();
-          reader.onloadend = function() {
-            const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-            handleInputEdit({ name: 'image', value: { base64: base64String, name: file.name } })
-          }
-          reader.readAsDataURL(file);
-        } else {
-          alert("Please select an image of width and height between 600 and 1024 pixels.")
-        }
-      }
-      img.src = URL.createObjectURL(file)
-    }
-  }
+  const [fileInputKey, setFileInputKey] = useState(Date.now()); // Add a key state
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0]
@@ -41,17 +25,24 @@ function ProfilePicture({ image, userInfo, handleInputEdit }) {
       img.onload = function () {
         if (this.width >= 600 && this.width <= 1024 && this.height >= 600 && this.height <= 1024) {
           const reader = new FileReader();
-          reader.onloadend = function() {
+          reader.onloadend = function () {
             const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
             handleInputEdit({ name: 'image', value: { base64: base64String, name: file.name } })
           }
           reader.readAsDataURL(file);
         } else {
-          alert("Please select an image of width and height between 600 and 1024 pixels.")
+          setFileInputKey(Date.now()) // Reset the key state to clear the file input
+          dispatch(setNotificationData({ title: 'Image not compatible', success: '', error: 'Please select an image of width and height between 600 and 1024 pixels.' }))
+          dispatch(setShowNotification(true))
         }
       }
       img.src = URL.createObjectURL(file)
     }
+  }
+
+  const handleCancel = () => {
+    handleInputEdit({ name: 'image', value: '' }); // Clear the image
+    setFileInputKey(Date.now()); // Reset the key state to clear the file input
   }
 
   return (
@@ -66,7 +57,7 @@ function ProfilePicture({ image, userInfo, handleInputEdit }) {
       </div>
       <div
         className={`image-uploader ${userInfo?.image?.file && 'noBorder'} ${drag && 'dragged'}`}
-        onDrop={handleDrop}
+        onDrop={handleFileInputChange}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
       >
@@ -79,8 +70,8 @@ function ProfilePicture({ image, userInfo, handleInputEdit }) {
             </>
           )
         }
-        <input type="file" accept="image/*" onChange={handleFileInputChange} />
-        {userInfo?.image?.base64 && <button onClick={() => handleInputEdit({ name: 'image', value: '' })}>Cancel</button>}
+        <input key={fileInputKey} type="file" accept="image/*" onChange={handleFileInputChange} />
+        {userInfo?.image?.base64 && <button onClick={handleCancel}>Cancel</button>}
       </div>
     </div>
   )

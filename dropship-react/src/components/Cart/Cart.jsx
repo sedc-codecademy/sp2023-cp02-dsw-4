@@ -346,7 +346,7 @@ function Cart() {
                                                     required
                                                     placeholder=""
                                                 ></input>
-                                                <label htmlFor="fname">First Name</label>
+                                                <label htmlFor="firstName">First Name</label>
                                             </div>
                                             <div>
                                                 <input
@@ -360,7 +360,7 @@ function Cart() {
                                                     required
                                                     placeholder=""
                                                 ></input>
-                                                <label htmlFor="lname">Last Name</label>
+                                                <label htmlFor="lastName">Last Name</label>
                                             </div>
                                         </div>
                                         <div className="inputContainer ePhone">
@@ -391,7 +391,7 @@ function Cart() {
                                                     required
                                                     placeholder=""
                                                 ></input>
-                                                <label htmlFor="phone">Phone Number</label>
+                                                <label htmlFor="phoneNumber">Phone Number</label>
                                             </div>
                                         </div>
                                         <h4>
@@ -453,7 +453,7 @@ function Cart() {
                                                     required
                                                     placeholder=""
                                                 ></input>
-                                                <label htmlFor="postal">Postal Code</label>
+                                                <label htmlFor="postalCode">Postal Code</label>
                                             </div>
                                         </div>
                                         <button

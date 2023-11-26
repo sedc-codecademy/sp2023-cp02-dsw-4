@@ -64,7 +64,7 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
             required
             placeholder=""
           ></input>
-          <label htmlFor="phone">Phone Number</label>
+          <label htmlFor="phoneNumber">Phone Number</label>
         </div>
       </div>
     </form>

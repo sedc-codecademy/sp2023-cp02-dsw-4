@@ -231,7 +231,7 @@ function AccountDropDown() {
                                 onChange={(e) => setUsername(e.target.value)}
                                 placeholder=""
                             ></input>
-                            <label htmlFor="uname">Enter username</label>
+                            <label htmlFor="username">Enter username</label>
                         </div>
 
                         <div className="pass">
