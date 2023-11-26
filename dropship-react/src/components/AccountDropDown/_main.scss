@@ -1,6 +1,7 @@
 ///////////  Account DropDown  ///////////// 
 
 .loginDropdown {
+    position: relative;
     display: flex;
     top: 0;
     left: 0;
@@ -18,6 +19,7 @@
     min-width: 40rem;
     min-height: 36rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+    overflow: visible;
 
     .closeLoginButton {
         position: absolute;
@@ -393,6 +395,17 @@
                     opacity: .7;
                 }
             }
+
+            .inputGroup {
+                display: flex;
+                gap: .5rem;
+                flex-wrap: wrap;
+
+                @media(max-width: 500px) {
+                    gap: .5;
+                    flex-direction: column;
+                }
+            }
         }
 
         &.forgotPass {
@@ -527,6 +540,10 @@
                     font-size: 1.1rem;
                 }
             }
+
+            @media(max-width: 500px) {
+                gap: .5rem;
+            }
         }
 
         &.current {
@@ -622,6 +639,103 @@
             }
         }
     }
+
+    .notificationLogin {
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        right: 0;
+        margin-inline: auto;
+        left: 0;
+        z-index: 444;
+        width: fit-content;
+
+        display: flex;
+        flex-direction: column;
+        padding: .2rem;
+        border-radius: .7rem;
+        background-color: var(--tpPri3);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+
+        h3 {
+            padding: .5rem;
+            background-color: var(--tpPri);
+            border-radius: .7rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            display: flex;
+            gap: .3rem;
+            align-items: center;
+
+            span {
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-size: clamp(1.3rem, 1.1765rem + 0.3294vw, 2rem);
+            }
+
+            svg {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+
+        p {
+            padding: .7rem;
+            border-radius: .7rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            font-size: clamp(1rem, 0.8765rem + 0.3294vw, 1.7rem);
+        }
+
+        &.errorNotify {
+            outline: .15rem solid rgb(245, 49, 49);
+
+            h3 {
+                svg {
+                    color: rgb(245, 49, 49);
+                }
+            }
+        }
+
+        &.successNotify {
+            outline: .15rem solid var(--paleAccentThree);
+
+            h3 {
+                svg {
+                    color: var(--paleAccentTwo);
+                }
+            }
+        }
+
+        @media(max-width: 500px) {
+            top: unset;
+            width: unset;
+            margin-inline: 1.5rem;
+            bottom: 1.5rem;
+        }
+    }
+
+    .notificationLogin-enter {
+        opacity: 0;
+        transform: translateX(-130vw) scale(0);
+    }
+    
+    .notificationLogin-enter-active {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        transition: opacity 200ms, transform 200ms;
+    }
+    
+    .notificationLogin-enter-done,
+    .notificationLogin-exit {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    
+    .notificationLogin-exit-active {
+        opacity: 0;
+        transform: translateX(130vw) scale(0);
+        transition: opacity 200ms, transform 200ms;
+    }
 }
 
 @keyframes fadeIn {
@@ -650,7 +764,7 @@
 .loginDropdown-enter-active {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 350ms, transform 350ms;
+    transition: opacity 300ms, transform 300ms;
 
     &::backdrop {
         background-color: var(--backdropBackground);
@@ -659,8 +773,8 @@
             backdrop-filter: blur(.2rem);
         }
 
-        transition: backdrop-filter 350ms,
-        background-color 350ms;
+        transition: backdrop-filter 300ms,
+        background-color 300ms;
     }
 }
 
@@ -693,7 +807,7 @@
 .loginDropdown-exit-active {
     opacity: 0;
     transform: translateY(130vh);
-    transition: opacity 350ms, transform 350ms;
+    transition: opacity 200ms, transform 200ms;
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0);
@@ -702,7 +816,7 @@
             backdrop-filter: blur(0rem);
         }
 
-        transition: backdrop-filter 350ms,
-        background-color 350ms;
+        transition: backdrop-filter 200ms,
+        background-color 200ms;
     }
 }

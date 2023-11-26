@@ -7,7 +7,7 @@ const initialState = {
         lastName: "",
         email: "",
         phoneNumber: "",
-        street: "",
+        address: "",
         city: "",
         postalCode: "",
         paymentMethod: "prepaid",

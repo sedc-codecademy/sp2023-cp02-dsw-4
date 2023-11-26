@@ -7,7 +7,7 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
           <input
             type="text"
             maxLength="30"
-            minLength="3"
+            minLength="2"
             pattern="^[a-zA-Z\\s ]*$"
             name="firstName"
             value={userInfo.firstName}
@@ -22,7 +22,7 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
           <input
             type="text"
             maxLength="30"
-            minLength="3"
+            minLength="2"
             pattern="^[a-zA-Z\\s ]*$"
             name="lastName"
             required
@@ -38,8 +38,8 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
         <div>
         <input
             type="text"
-            maxLength="25"
-            minLength="6"
+            maxLength="40"
+            minLength="9"
             name="email"
             pattern="^[a-zA-Z0-9+._]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
             value={userInfo.email}
@@ -54,11 +54,11 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
         <div>
           <input
             name="phoneNumber"
-            type="text"
-            pattern="[0-9+ ]*"
-            inputMode="numeric"
-            maxLength={20}
+            type="tel"
+            pattern="^[+0]\d+$"
+            maxLength={14}
             minLength={9}
+            inputMode="numeric"
             value={userInfo.phoneNumber}
             onChange={handleInputEdit}
             required

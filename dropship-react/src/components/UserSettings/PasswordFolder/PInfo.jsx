@@ -13,7 +13,7 @@ function PasswordInfoForm({handlePasswordChange}) {
             maxLength="25"
             minLength="8"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least one special character"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\$])[A-Za-z\d@$!%*?&^#\$]*$"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\\$=+_\-*\.])[A-Za-z\d@$!%*?&^#\\$=+_\-*\.]*$"
             name="originalPassword"
             required
             placeholder=""
@@ -28,7 +28,7 @@ function PasswordInfoForm({handlePasswordChange}) {
             maxLength="25"
             minLength="8"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least one special character"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\$])[A-Za-z\d@$!%*?&^#\$]*$"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\\$=+_\-*\.])[A-Za-z\d@$!%*?&^#\\$=+_\-*\.]*$"
             name="password"
             required
             placeholder=""

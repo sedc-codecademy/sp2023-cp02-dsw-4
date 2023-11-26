@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom"
 import { UserReviews } from "../Reviews/Reviews"
 import { ReviewSvg } from "../Reviews/review"
 import { CSSTransition } from "react-transition-group"
-import { getUser } from "../../helpers/API/user-api"
 import { useQuery } from "@tanstack/react-query"
 
 function User() {
@@ -18,11 +17,10 @@ function User() {
   const orderItems = useSelector((state) => state.cart.orderItems)
 
   const tokens = useSelector(state => state.role.authTokens)
+  const userid = useSelector(state => state.role.userid)
 
   const { data } = useQuery({
-    queryKey: ['userQuery'],
-    queryFn: getUser,
-    enabled: !!(tokens?.accessToken && tokens?.refreshToken)
+    queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
   const draftref = useRef()
@@ -128,7 +126,7 @@ function User() {
                       d="M2 2h20v20H2V2Zm2 2v16h16V4H4Zm6.177 2.216l-2.393 11.96l-1.96-.391L8.215 5.823l1.96.393Zm5.607-.393l2.393 11.962l-1.962.392l-2.392-11.961l1.961-.393ZM13 7v3h-2V7h2Zm0 4v3h-2v-3h2Zm0 4v3h-2v-3h2Z"
                     />
                   </svg>
-                  <p>Street: {data.street}</p>
+                  <p>Street: {data.address}</p>
                 </li>
               </ul>
             </div>
@@ -151,23 +149,23 @@ function User() {
         </div>
         {data.orders?.length || orderItems?.length ? (
           <div className="ordersDiv">
-            {orderItems?.length > 0 && 
-            <div className="draftDiv orderCo">
-              <button onClick={() => setShowDraft(!showDraft)} className={`titleButton ${!showDraft && 'hidden'}`}>
-                <h2>Current Order</h2>
-                <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z" /></svg>
-              </button>
-              <CSSTransition
-                in={showDraft}
-                timeout={200}
-                classNames="orderUL"
-                unmountOnExit
-                nodeRef={draftref}>
-                <ul className="orderUL single" ref={draftref}>
-                  <UserOrder order={{...orderInfo, orderItems: [...orderItems]}} />
-                </ul>
-              </CSSTransition>
-            </div>}
+            {orderItems?.length > 0 &&
+              <div className="draftDiv orderCo">
+                <button onClick={() => setShowDraft(!showDraft)} className={`titleButton ${!showDraft && 'hidden'}`}>
+                  <h2>Current Order</h2>
+                  <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z" /></svg>
+                </button>
+                <CSSTransition
+                  in={showDraft}
+                  timeout={200}
+                  classNames="orderUL"
+                  unmountOnExit
+                  nodeRef={draftref}>
+                  <ul className="orderUL single" ref={draftref}>
+                    <UserOrder order={{ ...orderInfo, orderItems: [...orderItems] }} />
+                  </ul>
+                </CSSTransition>
+              </div>}
             {pending?.length > 0 &&
               <div className="pendingOrders orderCo">
                 <button onClick={() => setShowPending(!showPending)} className={`titleButton ${!showPending && 'hidden'}`}>

@@ -2,19 +2,19 @@ function AddressInfoForm({user, userInfo, handleInputEdit}) {
   return (
     <form className="dataForm addressInfoFrom" onSubmit={(e) => {e.preventDefault()}}>
       <div className="inputContainer">
-        <p>Street: {user.street}</p>
+        <p>Address: {user.address}</p>
         <div>
           <input
             type="text"
             maxLength="30"
-            minLength="5"
-            name="street"
-            value={userInfo.street}
+            minLength="3"
+            name="address"
+            value={userInfo.address}
             onChange={handleInputEdit}
             required
             placeholder=""
           ></input>
-          <label htmlFor="street">Street Address</label>
+          <label htmlFor="address">Address</label>
         </div>
       </div>
       <div className="inputContainer">
@@ -22,8 +22,8 @@ function AddressInfoForm({user, userInfo, handleInputEdit}) {
         <div>
           <input
             type="text"
-            maxLength="22"
-            minLength="5"
+            maxLength="30"
+            minLength="4"
             pattern="^[a-zA-Z\\s ]*$"
             name="city"
             value={userInfo.city}
@@ -45,8 +45,8 @@ function AddressInfoForm({user, userInfo, handleInputEdit}) {
             value={userInfo.postalCode}
             onChange={handleInputEdit}
             required
-            maxLength={7}
-            minLength={2}
+            maxLength={4}
+            minLength={4}
             placeholder=""
           ></input>
           <label htmlFor="postalCode">Postal Code</label>

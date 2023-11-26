@@ -26,7 +26,7 @@ import {
     setOrderFormValue,
 } from "../../store/slices/cartSlice/cartSlice"
 import { getPopularProducts } from "../../helpers/API/product-api"
-import { cardInfoValidity, userInfoValidity } from "../UsefullComponents/Usefull"
+import { cardInfoValidity, isInfoValid, userInfoValidity } from "../UsefullComponents/Usefull"
 
 function Cart() {
     const dispatch = useDispatch()
@@ -39,7 +39,7 @@ function Cart() {
     })
 
     const [fieldMapping] = useState({
-        address: ["street", "city", "postalCode"],
+        address: ["address", "city", "postalCode"],
         userInfo: ["firstName", "lastName", "email", "phoneNumber"],
     })
 
@@ -69,33 +69,21 @@ function Cart() {
     const [xAndY, setXandY] = useState({ x: 0, y: 0 })
 
     useEffect(() => {
-        const isOrderInfoValid = userInfoValidity.every(
-            ({ inputName, max, min, regex }) => {
-                const value = orderInfo[inputName]
-                return (
-                    value.length >= min &&
-                    value.length <= max &&
-                    (regex ? new RegExp(regex).test(value) : true)
-                )
-            }
-        )
+        if (orderInfo) {
+            const keysToCheck = Object.keys(orderInfo).filter((key) => key !== "id")
+            const isOrderValid = isInfoValid(userInfoValidity, orderInfo, keysToCheck)
+            setCollectionFormValid(isOrderValid)
+        }
 
-        let isCardInfoValid = cardInfoValidity.every(
-            ({ inputName, max, min, regex }) => {
-                const value = cardObject[inputName]
-                return (
-                    value.length >= min &&
-                    value.length <= max &&
-                    (regex ? new RegExp(regex).test(value) : true)
-                )
-            }
-        )
+        const keysToCheck = Object.keys(cardObject).filter((key) => key !== "id")
+        let isCardValid = isInfoValid(cardInfoValidity, cardObject, keysToCheck)
 
-        if (orderInfo.paymentMethod === "ondelivery") isCardInfoValid = true
+        if (orderInfo.paymentMethod === "ondelivery") isCardValid = true
 
-        setCollectionFormValid(isOrderInfoValid)
-        setPaymentFormValid(isCardInfoValid)
-    }, [orderInfo, cardObject])
+        setPaymentFormValid(isCardValid)
+
+    }, [orderInfo, cardObject, collectionFormValid])
+
     useEffect(() => {
         if (finalPayment && cartState === "final") {
             finalref.current.showModal()
@@ -351,7 +339,7 @@ function Cart() {
                                                 <input
                                                     type="text"
                                                     maxLength="30"
-                                                    minLength="4"
+                                                    minLength="2"
                                                     pattern="^[a-zA-Z\\s ]*$"
                                                     name="firstName"
                                                     value={orderInfo.firstName}
@@ -365,7 +353,7 @@ function Cart() {
                                                 <input
                                                     type="text"
                                                     maxLength="30"
-                                                    minLength="4"
+                                                    minLength="2"
                                                     name="lastName"
                                                     pattern="^[a-zA-Z\\s ]*$"
                                                     value={orderInfo.lastName}
@@ -380,9 +368,10 @@ function Cart() {
                                             <div>
                                                 <input
                                                     type="email"
-                                                    maxLength="25"
-                                                    minLength="6"
+                                                    maxLength="40"
+                                                    minLength="9"
                                                     name="email"
+                                                    pattern="^[a-zA-Z0-9+._]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
                                                     value={orderInfo.email}
                                                     onChange={(e) => handleInputEdit(e)}
                                                     required
@@ -393,10 +382,10 @@ function Cart() {
                                             <div>
                                                 <input
                                                     name="phoneNumber"
-                                                    type="text"
-                                                    pattern="[0-9+ ]*"
-                                                    min={9}
-                                                    max={20}
+                                                    type="tel"
+                                                    pattern="^[+0]\d+$"
+                                                    maxLength={14}
+                                                    minLength={9}
                                                     inputMode="numeric"
                                                     value={orderInfo.phoneNumber}
                                                     onChange={(e) => handleInputEdit(e)}
@@ -407,7 +396,7 @@ function Cart() {
                                             </div>
                                         </div>
                                         <h4>
-                                            Shipping Address
+                                            Ship To
                                             <button
                                                 name="address"
                                                 onClick={(e) => handleCollectionAutofill(e)}
@@ -427,22 +416,22 @@ function Cart() {
                                                 <input
                                                     type="text"
                                                     maxLength="30"
-                                                    minLength="5"
-                                                    name="street"
-                                                    value={orderInfo.street}
+                                                    minLength="3"
+                                                    name="address"
+                                                    value={orderInfo.address}
                                                     onChange={(e) => handleInputEdit(e)}
                                                     required
                                                     placeholder=""
                                                 ></input>
-                                                <label htmlFor="street">Street Address</label>
+                                                <label htmlFor="address">Address</label>
                                             </div>
                                         </div>
                                         <div className="inputContainer cityAddress">
                                             <div className="city">
                                                 <input
                                                     type="text"
-                                                    maxLength="22"
-                                                    minLength="3"
+                                                    maxLength="30"
+                                                    minLength="4"
                                                     name="city"
                                                     pattern="^[a-zA-Z\\s ]*$"
                                                     value={orderInfo.city}
@@ -456,8 +445,8 @@ function Cart() {
                                                 <input
                                                     name="postalCode"
                                                     type="text"
-                                                    min={2}
-                                                    max={7}
+                                                    minLength={4}
+                                                    maxLength={4}
                                                     pattern="[0-9]*"
                                                     inputMode="numeric"
                                                     value={orderInfo.postalCode}

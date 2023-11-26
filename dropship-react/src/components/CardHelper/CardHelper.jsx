@@ -30,7 +30,7 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
                 <input
                     name="holder"
                     maxLength="20"
-                    minLength="3"
+                    minLength="6"
                     pattern="[a-zA-Z ]+"
                     type="text"
                     required
@@ -156,7 +156,7 @@ export function SettingsCardHelper({ cardID }) {
                         <input
                             name="holder"
                             maxLength="20"
-                            minLength={3}
+                            minLength={6}
                             pattern="[a-zA-Z ]+"
                             type="text"
                             required
@@ -362,7 +362,7 @@ export function NewCardHelper({ data }) {
                             required
                             placeholder=""
                             maxLength="20"
-                            minLength={3}
+                            minLength={6}
                             value={card.holder}
                             onFocus={e => handleFocus(e)}
                             onChange={(e) => handleSetInputValue(e)}

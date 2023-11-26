@@ -19,7 +19,6 @@ import { LoadingErrorDiv } from "../PageLoader/PageLoader"
 function Home() {
   // const products = useSelector(selectProducts)
   const isMobile = useSelector((state) => state.mobile.isMobile)
-
   const {
     data: categoriesData,
     error: categoriesError,
@@ -67,6 +66,7 @@ function Home() {
     queryKey: ["discountQuery"],
     queryFn: getDiscountedProducts,
   })
+
 
   return (
     <main className="homeMain">
@@ -120,12 +120,12 @@ function Home() {
 
       {discountIsPending || discountIsError ? (
         <LoadingErrorDiv
-        isError={discountIsError}
-        classTitle={"discountProductsMain"}
-        errorMessage={discountError?.message}
-        refetch={discountRefetch}
-        loadMessage={"Loading Discounted Products"}
-      ></LoadingErrorDiv>
+          isError={discountIsError}
+          classTitle={"discountProductsMain"}
+          errorMessage={discountError?.message}
+          refetch={discountRefetch}
+          loadMessage={"Loading Discounted Products"}
+        ></LoadingErrorDiv>
       ) : discountSuccess ? (
         <ProductList
           products={discountProducts.filter((e) => e.sale > 1)}

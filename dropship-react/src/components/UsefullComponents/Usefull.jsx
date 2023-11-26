@@ -911,7 +911,7 @@ export const DetailsAllProducts = ({
       )}
     </div>
   );
-};
+}
 
 export function formatDate(inputDate) {
   let tempDate = inputDate || new Date();
@@ -929,7 +929,7 @@ export function formatDate(inputDate) {
 }
 
 export function addSpaceAfterComma(str) {
-  return str.replace(/,(?=\S)/g, ", ");
+  return str.replace(/,(?=\S)/g, ", ")
 }
 
 export function filterProducts(products, filters) {
@@ -1046,7 +1046,7 @@ export const getColorCountsInProducts = (products, uniqueColors) => {
   });
 
   return colorCounts;
-};
+}
 
 export const getSizeCountsInProducts = (products, uniqueSizes) => {
   const sizeCounts = {};
@@ -1062,7 +1062,7 @@ export const getSizeCountsInProducts = (products, uniqueSizes) => {
   });
 
   return sizeCounts;
-};
+}
 
 export function sortProducts(products, sortBy, sortOrder) {
   // Create a new copy of the array
@@ -1161,54 +1161,64 @@ const Filters = ({
 }
 
 export const cardInfoValidity = [
-  { inputName: "holder", max: 20, min: 3, regex: "[a-zA-Z ]+" },
-  { inputName: "number", max: 16, min: 16, regex: "^[0-9 ]*[0-9]$" },
-  { inputName: "date", max: 5, min: 5, regex: "[0-9\\/]*" },
-  { inputName: "cvc", max: 4, min: 3, regex: "[0-9]*" },
+  { inputName: "holder", max: 20, min: 6, regex: "[a-zA-Z ]+" }, /// 20 // Min 6
+  { inputName: "number", max: 16, min: 16, regex: "^[0-9 ]*[0-9]$" }, /// 16
+  { inputName: "date", max: 5, min: 5, regex: "[0-9\\/]*" }, // 5
+  { inputName: "cvc", max: 4, min: 3, regex: "[0-9]*" }, /// Min 3 // Max 4
 ]
 
 export const userInfoValidity = [
-  { inputName: "firstName", max: 30, min: 3, regex: "^[a-zA-Z\\s ]*$" },
-  { inputName: "lastName", max: 30, min: 3, regex: "^[a-zA-Z\\s ]*$" },
+  { inputName: "firstName", max: 30, min: 2, regex: "^[a-zA-Z\\s ]*$" }, /// Min 2
+  { inputName: "lastName", max: 30, min: 2, regex: "^[a-zA-Z\\s ]*$" }, /// Min 2
   {
     inputName: "email",
-    max: 25,
-    min: 6,
-    regex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    max: 40,
+    min: 9,
+    regex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", /// Min 9 // Max 40
   },
-  { inputName: "phoneNumber", max: 20, min: 9, regex: "" },
-  { inputName: "street", max: 30, min: 5, regex: "" },
-  { inputName: "city", max: 22, min: 5, regex: "^[a-zA-Z\\s ]*$" },
-  { inputName: "postalCode", max: 7, min: 2, regex: "[0-9]*" },
+  { inputName: "phoneNumber", max: 14, min: 9, regex: "^[+0]\\d+$" }, /// Min 9 // Max 14
+  { inputName: "address", max: 30, min: 3, regex: "" }, /// Max 30 //, Min 3
+  { inputName: "city", max: 30, min: 4, regex: "^[a-zA-Z\\s ]*$" }, /// Min 4 // Max 30
+  { inputName: "postalCode", max: 4, min: 4, regex: "[0-9]*" }, /// Min 4 // Max 4
 ]
 
 export const passwordInfoValidity = [
   {
-    inputName: "password",
+    inputName: "password", ///Min 8 // Max 25
     max: 25,
     min: 8,
     regex:
       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$])[A-Za-z\\d@$!%*?&^#\\$]*$",
   },
   {
-    inputName: "originalPassword",
+    inputName: "originalPassword", ///Min 8 // Max 25
     max: 25,
     min: 8,
     regex:
       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$])[A-Za-z\\d@$!%*?&^#\\$]*$",
   },
   {
-    inputName: "username",
+    inputName: "username", ///Min 4 // 22
     max: 22,
     min: 4,
     regex: "^[a-zA-Z0-9]*$"
+  },
+  {
+    inputName: "cpassword", ///Min 8 // Max 25
+    max: 25,
+    min: 8,
+    regex:
+      "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$=+_\\-*\\.])[A-Za-z\\d@$!%*?&^#\\$=+_\\-*\\.]*$",
   }
 ]
 
 export function isInfoValid(validityFields, objectToValidate, keysToCheck) {
   return validityFields.every(({ inputName, max, min, regex }) => {
     if (keysToCheck.includes(inputName)) {
-      const value = objectToValidate[inputName] || ""
+      let value = objectToValidate[inputName] || ""
+      if (typeof value === 'number') {
+        value = value.toString()
+      }
       return (
         value.length >= min &&
         value.length <= max &&
@@ -1220,16 +1230,16 @@ export function isInfoValid(validityFields, objectToValidate, keysToCheck) {
 }
 
 export function dataURLtoFile(dataurl, filename) {
-  let arr = dataurl.split(','), 
-      mime = arr[0].match(/:(.*?);/)[1],
-      bstr = atob(arr[1]), 
-      n = bstr.length, 
-      u8arr = new Uint8Array(n);
-      
-  while(n--){
-      u8arr[n] = bstr.charCodeAt(n);
+  let arr = dataurl.split(','),
+    mime = arr[0].match(/:(.*?);/)[1],
+    bstr = atob(arr[1]),
+    n = bstr.length,
+    u8arr = new Uint8Array(n)
+
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
   }
 
-  return new File([u8arr], filename, {type:mime});
+  return new File([u8arr], filename, { type: mime })
 }
 

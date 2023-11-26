@@ -37,10 +37,12 @@ const AdminUsers = lazy(() => import("./components/AdminDashboard/AdminUsers"))
 const AdminCategories = lazy(() => import("./components/AdminDashboard/AdminCategories"))
 const PageLoader = lazy(() => import("./components/PageLoader/PageLoader"))
 const Search = lazy(() => import("./components/Search/Search"))
+const Notification = lazy(() => import("./components/Notification/Notification"))
 
 function App() {
   UserHelper()
   const role = useSelector((state) => state.role.role)
+  const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
   UseThemeEffects()
   useMobileWidthEffects()
 
@@ -99,6 +101,7 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<></>}>
             <PageLoader></PageLoader>
+            {!showDropDown && <Notification></Notification>}
             <ScrollToTop />
             <AccountDropDown />
             <Header></Header>

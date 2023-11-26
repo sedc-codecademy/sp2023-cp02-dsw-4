@@ -95,7 +95,7 @@ export function UserOrder({ order }) {
                             <span>City:</span> {order.city}
                         </p>
                         <p>
-                            <span>Street:</span> {order.street}
+                            <span>Street:</span> {order.address}
                         </p>
                         <p>
                             <span>Postal Code:</span> {order.postalCode}

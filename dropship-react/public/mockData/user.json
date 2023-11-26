@@ -5,8 +5,8 @@
     "password": "dimeA@4124enajubav",
     "email": "dimesarf@yahoo.com",
     "role": "user",
-    "phoneNumber": 356568434593,
-    "street": "Skopje, drachevksa ulica",
+    "phoneNumber": "0446465456",
+    "address": "Skopje, drachevksa ulica",
     "postalCode": "1000",
     "city": "Skopje",
     "orders": [
@@ -181,7 +181,7 @@
             "cvc": "985",
             "date": "01/24",
             "type": "jcb",
-            "cardStatus": "PRIMARY"
+            "cardStatus": 1
         },
         {
             "id": "102",
@@ -190,7 +190,7 @@
             "cvc": "985",
             "date": "05/24",
             "type": "maestro",
-            "cardStatus": "SECONDARY"
+            "cardStatus": 2
         }
     ]
 }

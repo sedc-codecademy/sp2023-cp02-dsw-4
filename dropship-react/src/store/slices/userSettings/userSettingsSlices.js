@@ -6,7 +6,7 @@ const initialState = {
     lastName: "",
     email: "",
     phoneNumber: "",
-    street: "",
+    address: "",
     postalCode: "",
     city: "",
     image: "",

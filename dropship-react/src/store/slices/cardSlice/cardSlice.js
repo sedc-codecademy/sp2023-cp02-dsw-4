@@ -49,27 +49,27 @@ const initialState = {
             light: '#d4e157',
             dark: '#afb42b'
         },
-        {
-            mask: '0000 0000 0000 0000',
-            regex: '^(?:6011|65\\d{0,2}|64[4-9]\\d?)\\d{0,12}',
-            cardtype: 'discover',
-            light: '#ab47bc',
-            dark: '#7b1fa2'
-        },
-        {
-            mask: '0000 0000 0000 0000',
-            regex: '^(?:35\\d{0,2})\\d{0,12}',
-            cardtype: 'jcb',
-            light: '#ef5350',
-            dark: '#d32f2f'
-        },
-        {
-            mask: '0000 0000 0000 0000',
-            regex: '^62\\d{0,14}',
-            cardtype: 'unionpay',
-            light: '#26c6da',
-            dark: '#0097a7'
-        },
+        // {
+        //     mask: '0000 0000 0000 0000',
+        //     regex: '^(?:6011|65\\d{0,2}|64[4-9]\\d?)\\d{0,12}',
+        //     cardtype: 'discover',
+        //     light: '#ab47bc',
+        //     dark: '#7b1fa2'
+        // },
+        // {
+        //     mask: '0000 0000 0000 0000',
+        //     regex: '^(?:35\\d{0,2})\\d{0,12}',
+        //     cardtype: 'jcb',
+        //     light: '#ef5350',
+        //     dark: '#d32f2f'
+        // },
+        // {
+        //     mask: '0000 0000 0000 0000',
+        //     regex: '^62\\d{0,14}',
+        //     cardtype: 'unionpay',
+        //     light: '#26c6da',
+        //     dark: '#0097a7'
+        // },
         {
             mask: '0000 0000 0000 0000',
             cardtype: 'unknown',
@@ -161,7 +161,7 @@ const cardSlice = createSlice({
                 e.number = ''
                 e.cvc = ''
                 e.date = ''
-                e.type = state.cardPatterns[6]
+                e.type = state.cardPatterns[state.cardPatterns.length - 1]
                 if (e.removal) e.removal = false
                 e.cardStatus = e.originalStatus
             })

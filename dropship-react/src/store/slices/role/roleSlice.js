@@ -4,11 +4,17 @@ const roleSlice = createSlice({
     name: "role",
     initialState: {
         role: 'user',
-        authTokens: JSON.parse(localStorage.getItem("tokens")) || null,
+        authTokens: localStorage.getItem("tokens") ? JSON.parse(localStorage.getItem("tokens")) : null,
+        userid: localStorage.getItem("userid") ? JSON.parse(localStorage.getItem("userid")) : ''
     },
     reducers: {
         setRole(state, action) {
             state.role = action.payload
+        },
+
+        setUserId(state, action) {
+            state.userid = action.payload
+            localStorage.setItem("userid", JSON.stringify(action.payload))
         },
 
         setAuthTokens(state, action) {
@@ -18,11 +24,13 @@ const roleSlice = createSlice({
 
         clearTokens(state) {
             localStorage.removeItem("tokens")
+            localStorage.removeItem("userid")
             state.authTokens = null
+            state.userid = ''
         }
     },
 })
 
-export const { setRole, setAuthTokens, clearTokens } = roleSlice.actions
+export const { setRole, setAuthTokens, setUserId, clearTokens } = roleSlice.actions
 
 export default roleSlice.reducer

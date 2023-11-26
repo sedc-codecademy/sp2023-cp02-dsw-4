@@ -15,6 +15,7 @@ import cardReducer from "./slices/cardSlice/cardSlice"
 import roleReducer from "./slices/role/roleSlice"
 import loaderReducer from "./slices/loaderSlice/loaderSlice"
 import cartReducer from "./slices/cartSlice/cartSlice"
+import notificationReducer from "./slices/notificationSlice/notificationSlice"
 
 const store = configureStore({
   reducer: {
@@ -33,6 +34,7 @@ const store = configureStore({
     mobile: mobileReducer,
     role: roleReducer,
     loader: loaderReducer,
+    notification: notificationReducer,
     cart: cartReducer
   },
 })

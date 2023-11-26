@@ -3,13 +3,14 @@ import { useSelector, useDispatch } from "react-redux"
 import { CSSTransition } from "react-transition-group"
 import { setShowAccDropDown } from "../../store/slices/dropdowns/acDropDownSlice"
 import { NavLink } from "react-router-dom"
-import { useLogin } from "../../helpers/UserHelper/UserHelper"
-import { setAuthTokens } from "../../store/slices/role/roleSlice"
+import { useLogin, useRegister } from "../../helpers/UserHelper/UserHelper"
 import { isInfoValid, passwordInfoValidity, userInfoValidity } from "../UsefullComponents/Usefull"
+import { LoginNotification } from "../Notification/Notification"
 
 function AccountDropDown() {
     const dispatch = useDispatch()
     const login = useLogin()
+    const register = useRegister()
     const csstransitionRef = useRef()
     const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const isMobile = useSelector((state) => state.mobile.isMobile)
@@ -19,7 +20,7 @@ function AccountDropDown() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [infoValid, setInfoValid] = useState(false)
-    const [registerInfo, setRegisterInfo] = useState({ password: '', username: '', email: '' })
+    const [registerInfo, setRegisterInfo] = useState({ password: '', cpassword: '', username: '', email: '', firstName: '', lastName: '' })
     const [registerInfoValid, setRegisterInfoValid] = useState(false)
     const [recoveryEmail, setRecoveryEmail] = useState('')
     const [recoveryEmailValid, setRecoveryEmailValid] = useState(false)
@@ -46,7 +47,6 @@ function AccountDropDown() {
     useEffect(() => {
         if (recoveryEmail) {
             setRecoveryEmailValid(isInfoValid(userInfoValidity, { email: recoveryEmail }, ["email"]))
-            console.log(isInfoValid(userInfoValidity, { email: recoveryEmail }, ["email"]))
         } else {
             setRecoveryEmailValid(false)
         }
@@ -54,12 +54,11 @@ function AccountDropDown() {
 
     useEffect(() => {
         if (registerInfo && registerInfo?.password && registerInfo?.username && registerInfo?.email) {
-            const registerPassUssValid = isInfoValid(passwordInfoValidity, { password: registerInfo.password, username: registerInfo.username }, ["password", "username"])
-            const registerEmailValid = isInfoValid(userInfoValidity, { email: registerInfo.email }, ["email"])
-            setRegisterInfoValid(registerEmailValid && registerPassUssValid)
-            console.log(registerEmailValid && registerPassUssValid)
+            const registerPassUssValid = isInfoValid(passwordInfoValidity, { password: registerInfo.password, username: registerInfo.username, cpassword: registerInfo.cpassword }, ["password", "username", "cpassword"])
+            const registerEmailValid = isInfoValid(userInfoValidity, { email: registerInfo.email, firstName: registerInfo.firstName, lastName: registerInfo.lastName }, ["email", "firstName", "lastName"])
+            setRegisterInfoValid(registerEmailValid && registerPassUssValid && (registerInfo.password === registerInfo.cpassword))
         } else {
-            setInfoValid(false)
+            setRegisterInfoValid(false)
         }
     }, [registerInfo])
 
@@ -71,21 +70,38 @@ function AccountDropDown() {
         setCurrentMode("forgotPass")
     }
 
-    const handleSignUp = (e) => {
-        if (currentMode === "default") {
+    const handleSignUp = async (e) => {
+        if (currentMode === "default" || currentMode === "logIn") {
             e.preventDefault()
             setCurrentMode("createAccount")
         } else if (currentMode === "createAccount") {
             if (registerInfoValid) {
                 e.preventDefault()
-                console.log('Should try to create acc', registerInfo)
+                e.preventDefault()
+                let tempRegisterInfo = {
+                    Username: registerInfo.username,
+                    Password: registerInfo.password,
+                    CurrentPassword: registerInfo.cpassword,
+                    Email: registerInfo.email,
+                    PhoneNumber: '',
+                    FirstName: registerInfo.firstName,
+                    LastName: registerInfo.lastName,
+                    Address: '',
+                    City: '',
+                    PostalCode: ''
+                }
+                await register(tempRegisterInfo)
+                if (isMobile) {
+                    setCurrentMode("logIn")
+                } else {
+                    setCurrentMode("default")
+                }
+                setRegisterInfo({ password: '', cpassword: '', username: '', email: '', firstName: '', lastName: '' })
             }
         }
     }
 
-    const handleCancel = (e) => {
-        e.preventDefault()
-
+    const handleCancel = () => {
         if (isMobile) {
             setCurrentMode("logIn")
         } else {
@@ -97,9 +113,7 @@ function AccountDropDown() {
         console.log(`Username: ${username}, Password: ${password}`)
         if (username.length >= 4 && password.length >= 8) {
             e.preventDefault()
-            const dime = await login({ username: username, password: password })
-            console.log(dime)
-            dispatch(setAuthTokens(dime))
+            await login({ username: username, password: password })
             handleCloseLogin()
             setUsername('')
             setPassword('')
@@ -124,7 +138,7 @@ function AccountDropDown() {
     return (
         <CSSTransition
             in={showDropDown}
-            timeout={350}
+            timeout={250}
             classNames="loginDropdown"
             unmountOnExit
             nodeRef={csstransitionRef}
@@ -206,6 +220,7 @@ function AccountDropDown() {
                         <div className="uname">
                             <input
                                 className="uname"
+                                name="username"
                                 type="text"
                                 maxLength="22"
                                 minLength="4"
@@ -239,11 +254,11 @@ function AccountDropDown() {
 
                     {isMobile ? <div className="buttonsDiv">
                         <button className="signInButton" disabled={!infoValid} onClick={handleSignIn}>Sign in</button>
-                        <button className="signUpButton" onClick={handleSignUp}>Sign up</button>
+                        <button type="button" className="signUpButton" onClick={handleSignUp}>Sign up</button>
                     </div> : <button className="signInButton" disabled={!infoValid} onClick={handleSignIn}>Sign in</button>}
                 </form>}
                 {currentMode === "forgotPass" && <form onSubmit={handleSendCode} className={`forgotPass ${currentMode === 'forgotPass' && "current"}`}>
-                    <button className="cancelFP" onClick={handleCancel}>
+                    <button className="cancelFP" type="button" onClick={handleCancel}>
                         <svg viewBox="0 0 48 48" fill="currentColor">
                             <g>
                                 <g>
@@ -274,8 +289,9 @@ function AccountDropDown() {
                             <input
                                 type="email"
                                 name="email"
-                                maxLength="25"
-                                minLength="6"
+                                pattern="^[a-zA-Z0-9+._]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
+                                maxLength="40"
+                                minLength="9"
                                 required
                                 placeholder=""
                                 onChange={recoveryChange}
@@ -287,7 +303,7 @@ function AccountDropDown() {
                 </form>}
                 {(currentMode === "default" || currentMode === "createAccount") && <form onSubmit={handleSignUp} className={`registerUi ${currentMode === 'createAccount' && "current"}`}>
                     {currentMode === "createAccount" && (
-                        <button className="cancel" onClick={handleCancel}>
+                        <button type="button" className="cancel" onClick={handleCancel}>
                             <svg viewBox="0 0 48 48" fill="currentColor">
                                 <g>
                                     <g>
@@ -312,53 +328,107 @@ function AccountDropDown() {
 
                     {!(currentMode === "createAccount") && <p>Don't have an account? Create one now, and unlock themes!</p>}
                     {currentMode === "createAccount" && (<div className="fields">
-                        <div className="uname">
-                            <input
-                                name="username"
-                                type="text"
-                                maxLength="22"
-                                minLength="4"
-                                title="Must not contain spaces and/or special characters"
-                                required
-                                pattern="^[a-zA-Z0-9]*$"
-                                placeholder=""
-                                onChange={handleRegisterInfoChange}
-                            ></input>
-                            <label htmlFor="username">Enter username</label>
+                        <div className="inputGroup">
+                            <div>
+                                <input
+                                    type="text"
+                                    maxLength="30"
+                                    minLength="2"
+                                    pattern="^[a-zA-Z\\s ]*$"
+                                    name="firstName"
+                                    value={registerInfo?.firstName}
+                                    required
+                                    placeholder=""
+                                    onChange={handleRegisterInfoChange}
+                                ></input>
+                                <label htmlFor="firstName">First Name</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    maxLength="30"
+                                    minLength="2"
+                                    pattern="^[a-zA-Z\\s ]*$"
+                                    name="lastName"
+                                    value={registerInfo?.lastName}
+                                    required
+                                    placeholder=""
+                                    onChange={handleRegisterInfoChange}
+                                ></input>
+                                <label htmlFor="lastName">Last Name</label>
+                            </div>
                         </div>
-                        <div className="email">
-                            <input
-                                type="email"
-                                name="email"
-                                maxLength="25"
-                                minLength="6"
-                                required
-                                placeholder=""
-                                onChange={handleRegisterInfoChange}
-                            ></input>
-                            <label htmlFor="email">Enter email</label>
+                        <div className="inputGroup">
+                            <div className="uname">
+                                <input
+                                    name="username"
+                                    type="text"
+                                    maxLength="22"
+                                    minLength="4"
+                                    title="Must not contain spaces and/or special characters"
+                                    required
+                                    value={registerInfo?.username}
+                                    pattern="^[a-zA-Z0-9]*$"
+                                    placeholder=""
+                                    onChange={handleRegisterInfoChange}
+                                ></input>
+                                <label htmlFor="username">Enter username</label>
+                            </div>
+                            <div className="email">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    pattern="^[a-zA-Z0-9+._]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
+                                    maxLength="40"
+                                    minLength="9"
+                                    value={registerInfo?.email}
+                                    required
+                                    placeholder=""
+                                    onChange={handleRegisterInfoChange}
+                                ></input>
+                                <label htmlFor="email">Enter email</label>
+                            </div>
                         </div>
-                        <div className="pass">
-                            <input
-                                type="password"
-                                name="password"
-                                maxLength="25"
-                                minLength="8"
-                                title="Must contain at least one number and one uppercase and lowercase letter, and at least one special character"
-                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\$])[A-Za-z\d@$!%*?&^#\$]*$"
-                                required
-                                placeholder=""
-                                onChange={handleRegisterInfoChange}
-                            ></input>
-                            <label htmlFor="password">Enter password</label>
+                        <div className="inputGroup">
+                            <div className="pass">
+                                <input
+                                    type="password"
+                                    name="password"
+                                    maxLength="25"
+                                    minLength="8"
+                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least one special character"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\\$=+_\-*\.])[A-Za-z\d@$!%*?&^#\\$=+_\-*\.]*$"
+                                    required
+                                    placeholder=""
+                                    value={registerInfo?.password}
+                                    onChange={handleRegisterInfoChange}
+                                ></input>
+                                <label htmlFor="password">Enter password</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="password"
+                                    name="cpassword"
+                                    maxLength="25"
+                                    minLength="8"
+                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least one special character"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#\\$=+_\-*\.])[A-Za-z\d@$!%*?&^#\\$=+_\-*\.]*$"
+                                    required
+                                    placeholder=""
+                                    value={registerInfo?.cpassword}
+                                    onChange={handleRegisterInfoChange}
+                                ></input>
+                                <label htmlFor="cpassword">Confirm password</label>
+                            </div>
                         </div>
                         <p className="eula">By signing up you accept our <NavLink>Terms of Use </NavLink> &<NavLink> Privacy Policy</NavLink>.</p>
                     </div>
                     )}
                     <button className="registerButton" disabled={currentMode === "createAccount" && !registerInfoValid} onClick={handleSignUp}>Sign Up</button>
                 </form>}
+                <LoginNotification></LoginNotification>
             </dialog>
-        </CSSTransition>
+        </CSSTransition >
     )
 }
 

@@ -14,7 +14,6 @@ import {
   setCreateCard,
 } from "../../store/slices/cardSlice/cardSlice"
 
-import { getUser } from "../../helpers/API/user-api"
 import { useLogout } from "../../helpers/UserHelper/UserHelper"
 import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
 import {
@@ -33,6 +32,7 @@ function UserSettings() {
   const dispatch = useDispatch()
   const logout = useLogout()
   const tokens = useSelector((state) => state.role.authTokens)
+  const userid = useSelector(state => state.role.userid)
   const userCards = useSelector((state) => state.user.userCards)
   const createCard = useSelector((state) => state.card.createCard)
   const tempCards = useSelector((state) => state.card.tempCards)
@@ -53,13 +53,11 @@ function UserSettings() {
   const [isClearButtonDisabled, setIsClearButtonDisabled] = useState(true)
 
   const { data } = useQuery({
-    queryKey: ["userQuery"],
-    queryFn: getUser,
-    enabled: !!(tokens?.accessToken && tokens?.refreshToken),
+    queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
   useEffect(() => {
-    if(data){
+    if (data) {
       let modifiedTempUser = {}
       for (let key in userInfo) {
         if (userInfo[key] !== "" && userInfo[key] !== data[key]) {
@@ -79,7 +77,7 @@ function UserSettings() {
           modifiedTempUser[key] = userInfo[key]
         }
       }
-      console.log(modifiedTempUser) 
+      console.log(modifiedTempUser)
       // const byteArray = new Uint8Array(atob(modifiedTempUser.image.base64).split("").map(char => char.charCodeAt(0))); /////////////// SHOULD DO THIS WHEN SENDING IAMGE
       // console.log(byteArray) ////////////
       setModifiedUser(modifiedTempUser)
@@ -188,7 +186,7 @@ function UserSettings() {
       default:
         setIsSubmitButtonDisabled(true)
     }
-  }, [currentPage, updateCardsValid, userInfoValid])
+  }, [currentPage, updateCardsValid, userInfoValid, userPasswordValid])
 
   useEffect(() => {
     switch (currentPage) {
@@ -212,7 +210,7 @@ function UserSettings() {
       default:
         setIsClearButtonDisabled(true)
     }
-  }, [currentPage, modifiedCards, modifiedUser])
+  }, [currentPage, modifiedCards, modifiedUser, userPassword])
 
   const showSubmitDiv = () => {
     if (currentPage === "manage") {
