@@ -10,6 +10,6 @@ namespace Dropshiping.BackEnd.DataAccess.Interface
     public interface IUserRepository : IRepository<User>
     {
         User LoginUser(string username, string hashedPassword);
-        User GetUserByUsername(string username);
+        User GetUserByUserName(string userName);
     }
 }

@@ -165,7 +165,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PhoneNumber = 123123,
                             PostalCode = "1000",
                             Price = 1000m,
-                            PurchasedTime = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5012),
+                            PurchasedTime = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3934),
                             SecurityCode = 0,
                             Shipping = 0m,
                             Status = 1
@@ -182,7 +182,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PhoneNumber = 123123,
                             PostalCode = "12345",
                             Price = 3000m,
-                            PurchasedTime = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5027),
+                            PurchasedTime = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3980),
                             SecurityCode = 0,
                             Shipping = 150m,
                             Status = 1
@@ -277,7 +277,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            DateOfCreation = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(4863),
+                            DateOfCreation = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3315),
                             Description = "description",
                             Discount = 50,
                             Image = "Image",
@@ -290,7 +290,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2",
-                            DateOfCreation = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(4919),
+                            DateOfCreation = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3433),
                             Description = "description",
                             Discount = 0,
                             Image = "Image",
@@ -405,7 +405,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            Date = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5113),
+                            Date = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(4140),
                             ProductId = "1",
                             Rate = 5,
                             UserId = "1"
@@ -413,7 +413,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2",
-                            Date = new DateTime(2023, 11, 4, 0, 1, 30, 955, DateTimeKind.Local).AddTicks(5126),
+                            Date = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(4181),
                             ProductId = "2",
                             Rate = 4,
                             UserId = "1"
@@ -490,10 +490,12 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CardHolder")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("CardNumber")
-                        .HasColumnType("int");
+                    b.Property<long>("CardNumber")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("CardStatus")
                         .HasColumnType("int");
@@ -501,8 +503,10 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<int>("CardType")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ExpirationDate")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
 
                     b.Property<int>("SecurityCode")
                         .HasColumnType("int");
@@ -515,6 +519,19 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Cards");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            CardHolder = "Ana B",
+                            CardNumber = 4111111111111111L,
+                            CardStatus = 1,
+                            CardType = 1,
+                            ExpirationDate = "05/25",
+                            SecurityCode = 123,
+                            UserId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.UserModels.Subscriber", b =>
@@ -543,26 +560,28 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostalCode")
                         .HasColumnType("nvarchar(max)");
@@ -572,8 +591,8 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
@@ -587,7 +606,6 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             FirstName = "Test",
                             LastName = "Test",
                             Password = "Test",
-                            PhoneNumber = 0,
                             Role = 1,
                             Username = "Test"
                         });
@@ -611,6 +629,20 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserOrders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            OrderId = "1",
+                            UserId = "1"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            OrderId = "2",
+                            UserId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Dropshiping.BackEnd.Domain.ProductModels.OrderItem", b =>

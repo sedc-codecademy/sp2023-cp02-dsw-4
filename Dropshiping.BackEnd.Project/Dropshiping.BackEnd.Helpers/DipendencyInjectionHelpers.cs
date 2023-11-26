@@ -42,6 +42,8 @@ namespace Dropshiping.BackEnd.Helpers
 
             // User Repository
             services.AddTransient<IUserRepository,UserRepository> ();
+            services.AddTransient<IRepository<Card>, CardRepository>();
+            
         }
 
         //Services
@@ -55,9 +57,9 @@ namespace Dropshiping.BackEnd.Helpers
             services.AddTransient<IRatingService, RatingService>();
 
 
-
             // User Services
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICardService, CardService>();
         }
 
     }

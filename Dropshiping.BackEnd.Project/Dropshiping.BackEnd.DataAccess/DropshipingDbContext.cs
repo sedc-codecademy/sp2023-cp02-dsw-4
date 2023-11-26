@@ -127,29 +127,54 @@ namespace Dropshiping.BackEnd.DataAccess
             // User
             modelBuilder.Entity<User>()
                 .Property(x => x.FirstName)
-                .HasMaxLength(50)
+                .HasMaxLength(30)
                 .IsRequired();
 
             modelBuilder.Entity<User>()
                 .Property(x => x.LastName)
-                .HasMaxLength(50)
+                .HasMaxLength(30)
                 .IsRequired();
 
             modelBuilder.Entity<User>()
                 .Property(x => x.Username)
-                .HasMaxLength(25)
+                .HasMaxLength(30)
                 .IsRequired();
 
             modelBuilder.Entity<User>()
                 .Property(x => x.Password)
-                .HasMaxLength(50)
                 .IsRequired();
 
             modelBuilder.Entity<User>()
                 .Property(x => x.Email)
-                .HasMaxLength(50)
+                .HasMaxLength(25)
                 .IsRequired();
 
+            modelBuilder.Entity<Card>()
+                .Property(x => x.CardStatus)
+                .IsRequired();
+
+            modelBuilder.Entity<Card>()
+                .Property(x => x.CardType)
+                .IsRequired();
+            modelBuilder.Entity<Card>()
+                .Property(x => x.CardNumber)
+                .IsRequired();
+
+            modelBuilder.Entity<Card>()
+                .Property(x => x.CardHolder)
+                .HasMaxLength(20)
+                .IsRequired();
+
+            modelBuilder.Entity<Card>()
+                .Property(x => x.ExpirationDate)
+                .HasMaxLength(5)
+                .IsRequired();
+
+            modelBuilder.Entity<Card>()
+                .Property(x => x.SecurityCode)
+                .IsRequired();
+
+            //phonenumber min 11 - max15
             // Configure relations ........
 
             // For nesting category,sub,product
@@ -411,10 +436,34 @@ namespace Dropshiping.BackEnd.DataAccess
                    ProductId = "2",
                    UserId = "1",
                });
+            modelBuilder.Entity<UserOrder>().HasData(
+               new UserOrder
+               {
+                   Id = "1",
+                   UserId = "1",
+                   OrderId = "1",
+               });
+            modelBuilder.Entity<UserOrder>().HasData(
+            new UserOrder
+            {
+                Id = "2",
+                UserId = "1",
+                OrderId = "2",
+            });
+            modelBuilder.Entity<Card>().HasData(
+                new Card
+                {
+                    Id ="1",
+                    CardType = Enums.CardTypeEnum.Visa,
+                    CardStatus = Enums.CardStatusEnum.Primary,
+                    CardNumber = 4111111111111111,
+                    CardHolder = "Ana B",
+                    ExpirationDate = "05/25",
+                    SecurityCode = 123,
+                    UserId = "1",
+
+        });
         }
-
-
-
 
     }
 }
