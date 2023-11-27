@@ -7,8 +7,8 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Interface
     {
         List<ManufacturerDto> GetAll();
         ManufacturerDto GetById(string id);
-        void Add(ManufacturerDto regionDto);
-        void Update(ManufacturerDto regionDto);
+        void Add(ManufacturerDto manufacturerDto);
+        void Update(ManufacturerDto manufacturerDto);
         void DeleteById(string id);
     }
 }

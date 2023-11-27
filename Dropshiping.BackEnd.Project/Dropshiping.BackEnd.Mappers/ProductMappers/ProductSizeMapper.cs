@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
+using Dropshiping.BackEnd.Dtos.ProductSizeDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
                 Color = productSize.Color.Name
             };
         }
+
+        
     }
 }

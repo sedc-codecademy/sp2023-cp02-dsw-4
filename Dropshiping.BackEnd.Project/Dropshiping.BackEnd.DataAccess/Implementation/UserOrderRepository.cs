@@ -35,6 +35,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
             return _dbContext.Set<UserOrder>().Include(u => u.User)
                                               .Include(o => o.Order).ToList();
         }
+
         public UserOrder GetById(string id)
         {
             var entity = _dbContext.UserOrders.Include(u => u.User).FirstOrDefault(x => x.Id == id);
@@ -45,10 +46,27 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
             return entity;
         }
 
+        public void Add(UserOrder entity)
+        {
+            _dbContext.UserOrders.Add(entity);
+            _dbContext.SaveChanges();
+        }
+
         public void Update(UserOrder entity)
         {
             _dbContext.Update(entity);
             _dbContext.SaveChanges();
         }
+
+        public void Delete(string id)
+        {
+            var userOrder = GetById(id);
+            if (userOrder == null)
+            {
+                throw new KeyNotFoundException($"UserOrder id {id} does not exist");
+            }
+            _dbContext.UserOrders.Remove(userOrder);
+            _dbContext.SaveChanges();
+        } 
     }
 }

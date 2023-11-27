@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
@@ -17,13 +18,25 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public Subcategory GetById(string id)
         {
-            var subcategory = _dbContext.Subcategories.FirstOrDefault(s => s.Id == id);
-            
+            var subcategory = _dbContext.Subcategories.
+                Where(subcategory => subcategory.Id == id)
+                .Include(x => x.Products).ThenInclude(x => x.Manufacturer)
+                .Include(x => x.Products).ThenInclude(x => x.Rating)
+                .FirstOrDefault();
+
             if (subcategory == null)
             {
                 throw new KeyNotFoundException($"Subcategory with id {id} does not exist");
             }
             return subcategory;
+
+            //var subcategory = _dbContext.Subcategories.FirstOrDefault(s => s.Id == id);
+            
+            //if (subcategory == null)
+            //{
+            //    throw new KeyNotFoundException($"Subcategory with id {id} does not exist");
+            //}
+            //return subcategory;
         }
 
         public void Add(Subcategory entity)
