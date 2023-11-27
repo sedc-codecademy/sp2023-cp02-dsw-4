@@ -7,7 +7,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Interface
 {
     public interface IProductSizeService
     {
-        List<ProductSizeColorDto>GetAll();
+        List<ProductSizeDto>GetAll();
         ProductSizeColorDto GetById(string id);
         void Add(AddProductSizeDto addProductSizeDto);
         void Update(ProductSizeDto productSizeDto);

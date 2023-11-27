@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
@@ -18,7 +19,9 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public ProductSize GetById(string id)
         {
-            var productSize = _dbContext.ProductSizes.FirstOrDefault(r => r.Id == id);
+            var productSize = _dbContext.ProductSizes.Include(ps => ps.Color)
+                .Include(ps => ps.Size)
+                .FirstOrDefault(r => r.Id == id);
             if (productSize == null)
             {
                 throw new KeyNotFoundException($"ProductSize id {id} does not exist");

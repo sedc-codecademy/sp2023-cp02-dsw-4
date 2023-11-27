@@ -15,10 +15,10 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _productSizeRepository = productSizeRepository;
         }
 
-        public List<ProductSizeColorDto> GetAll()
+        public List<ProductSizeDto> GetAll()
         {
             var productSize = _productSizeRepository.GetAll();
-            return productSize.Select(x => x.ToProductSizeColorDto()).ToList();
+            return productSize.Select(x => x.ToProductSizeDto()).ToList();
         }
 
         public ProductSizeColorDto GetById(string id)

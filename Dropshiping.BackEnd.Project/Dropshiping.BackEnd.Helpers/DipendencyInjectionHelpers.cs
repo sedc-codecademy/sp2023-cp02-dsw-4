@@ -37,7 +37,7 @@ namespace Dropshiping.BackEnd.Helpers
             services.AddTransient<IRepository<Size>, Repository<Size>>();
             services.AddTransient<IRepository<Color>, Repository<Color>>();
             services.AddTransient<IRepository<Order>, Repository<Order>>();
-            services.AddTransient<IRepository<ProductSize>, Repository<ProductSize>>();
+            services.AddTransient<IRepository<ProductSize>, ProductSizeRepository>();
             services.AddTransient<IRepository<Subscriber>, Repository<Subscriber>>();
             services.AddTransient<IRepository<Size>, Repository<Size>>();
 
