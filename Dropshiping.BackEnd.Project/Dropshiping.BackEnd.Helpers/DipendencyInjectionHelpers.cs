@@ -27,6 +27,7 @@ namespace Dropshiping.BackEnd.Helpers
         //Repositories
         public static void InjectRepositories(IServiceCollection services)
         {
+
             // Product menagment Repositories
             services.AddTransient<IRepository<Category>, CategoryRepository>();
             services.AddTransient<IRepository<Subcategory>, SubcategoryRepository>();
@@ -40,15 +41,18 @@ namespace Dropshiping.BackEnd.Helpers
             services.AddTransient<IRepository<ProductSize>, ProductSizeRepository>();
             services.AddTransient<IRepository<Subscriber>, Repository<Subscriber>>();
             services.AddTransient<IRepository<Size>, Repository<Size>>();
+            //services.AddTransient<IOrderRepository, OrderRepository>();
 
 
             // User Repository
             services.AddTransient<IUserRepository,UserRepository> ();
+            services.AddTransient<IRepository<UserOrder>, Repository<UserOrder>>();
         }
 
         //Services
         public static void InjectService(IServiceCollection services)
         {
+
             // Product menagment Services
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<ISubcategoryService, SubcategoryService>();
@@ -59,11 +63,13 @@ namespace Dropshiping.BackEnd.Helpers
             services.AddTransient<ISizeService, SizeServices>();
             services.AddTransient<IColorService, ColorServices> ();
             services.AddTransient<IProductSizeService, ProductSizeService>();
-
+            services.AddTransient<IOrderitemService, OrderitemService>();
+            //services.AddTransient<IOrderService, OrderService>();
 
 
             // User Services
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserOrderService, UserOrderService>();
         }
 
     }
