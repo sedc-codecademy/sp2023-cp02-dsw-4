@@ -24,11 +24,23 @@ import {
 
 import { CSSTransition } from "react-transition-group"
 import { useLogout } from "../../../helpers/UserHelper/UserHelper"
+import { getUser } from "../../../helpers/API/user-api"
+import { useQuery } from "@tanstack/react-query"
+import ImageLoader from "../../ImageLoader/ImageLoader"
 
 export default function Nav() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const logout = useLogout()
+
+    const tokens = useSelector(state => state.role.authTokens)
+    const userid = useSelector(state => state.role.userid)
+    const { data: userData } = useQuery({
+        queryKey: ['userQuery', userid],
+        queryFn: () => getUser(userid),
+        enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+    })
+
     const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
     const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const themeMode = useSelector((state) => state.theme.themeMode)
@@ -174,7 +186,12 @@ export default function Nav() {
                                         className={`logInIcon ${isSettingsOn ? "active" : ""}`}
                                         onClick={onAccountIconClick}
                                     >
-                                        <img src="/imgs/user.png" alt="user" />
+                                        <ImageLoader
+                                            url={userData?.image}
+                                            alt={userData?.name}
+                                            backupUrl="/imgs/404/user404.png"
+                                            backupAlt="User"
+                                        ></ImageLoader>
                                     </button>
                                 ) : (
                                     <button
@@ -285,7 +302,7 @@ export default function Nav() {
                         }
                     >
                         <li>
-                            <h3>DIme Dimeski</h3>
+                            <h3>{userData?.username}</h3>
                         </li>
                         <li>
 
@@ -293,7 +310,12 @@ export default function Nav() {
                                 className={`logInIcon ${isSettingsOn ? "active" : ""}`}
                                 onClick={onAccountIconClick}
                             >
-                                <img src="/imgs/user.png" alt="user" />
+                                <ImageLoader
+                                    url={userData?.image}
+                                    alt={userData?.name}
+                                    backupUrl="/imgs/404/user404.png"
+                                    backupAlt="User"
+                                ></ImageLoader>
                             </button>
                         </li>
                     </ul>
@@ -333,10 +355,10 @@ export default function Nav() {
                                 </li>
                                 <li>
                                     <NavLink
+                                        // onClick={closeSettings}
                                         to="/user"
                                         disabled={activeLink === "/user"}
                                         tabIndex={0}
-                                        onClick={closeSettings}
                                     >
                                         <svg height="32" viewBox="0 0 32 32">
                                             <path
@@ -355,9 +377,9 @@ export default function Nav() {
                                 {!isMobile && <li className="divider"></li>}
                                 <li>
                                     <NavLink
+                                        // onClick={closeSettings}
                                         to="/settings"
                                         disabled={activeLink === "/settings"}
-                                        onClick={closeSettings}
                                     >
                                         <svg viewBox="0 0 32 32">
                                             <path

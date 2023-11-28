@@ -100,7 +100,7 @@ function App() {
       ) : (
         <BrowserRouter>
           <Suspense fallback={<></>}>
-            <PageLoader></PageLoader>
+            {/* <PageLoader></PageLoader> */}
             {!showDropDown && <Notification></Notification>}
             <ScrollToTop />
             <AccountDropDown />

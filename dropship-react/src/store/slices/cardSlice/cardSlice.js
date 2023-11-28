@@ -165,10 +165,13 @@ const cardSlice = createSlice({
                 if (e.removal) e.removal = false
                 e.cardStatus = e.originalStatus
             })
+        },
+        clearNewCard: (state) => {
+            state.newCard = initialState.newCard
         }
     },
 })
 
-export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID, setNewCardFormValue, setNewCardType, setCreateCard, setTempCards, clearTempCards } = cardSlice.actions
+export const { setCardFormValue, setCardType, setCardTypeID, setCardStatusID, setRemoveCardID, setCardFormValueID, setNewCardFormValue, setNewCardType, setCreateCard, setTempCards, clearTempCards, clearNewCard } = cardSlice.actions
 
 export default cardSlice.reducer

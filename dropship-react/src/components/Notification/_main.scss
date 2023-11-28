@@ -54,11 +54,11 @@
     }
 
     &.successNotify {
-        outline: .15rem solid var(--paleAccentThree);
+        outline: .15rem solid rgb(54, 196, 54);
 
         h3 {
             svg {
-                color: var(--paleAccentTwo);
+                color: rgb(0, 170, 0);
             }
         }
     }

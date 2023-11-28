@@ -128,7 +128,7 @@ function Home() {
         ></LoadingErrorDiv>
       ) : discountSuccess ? (
         <ProductList
-          products={discountProducts.filter((e) => e.sale > 1)}
+          products={discountProducts.filter((e) => e.discount > 1)}
           origin="discount"
         ></ProductList>
       ) : (<></>)}

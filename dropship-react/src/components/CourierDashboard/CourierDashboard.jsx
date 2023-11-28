@@ -1,129 +1,23 @@
 import React from "react"
 import Order from "../Order/Order"
-
-const orders = [
-  {
-    id: '1233254mjn2134jnkldhwah23n54',
-    recepient: 'John Doe',
-    city: 'San Francisco',
-    address: 'Holywood Boulevard',
-    phoneNumber: 35634593,
-    postalCode: 1241235,
-    email: 'joho@gmail.com',
-    total: 399,
-    paymentStatus: 'Paid',
-    note: 'Leave it here to receive payments and receipayments andpayments andve payments for customers',
-    status: 'pending',
-    orderItems: [
-      {
-        id: '1233254mjn21hadhwa34jn123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 0,
-        total: 300
-      },
-      {
-        id: '1233254mjn21hadhwa34j123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 0,
-        total: 300
-      },
-      {
-        id: '1233254mn21hadhwa34jn123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 0,
-        total: 300
-      }
-    ]
-  },
-  {
-    id: '1233254mn2134jnkldhwah23n54',
-    recepient: 'John Doe',
-    city: 'San Francisco',
-    address: 'Holywood Boulevard',
-    postalCode: 1241235,
-    phoneNumber: 1284719274,
-    email: 'joho@gmail.com',
-    total: 399,
-    paymentStatus: 'Paid',
-    note: 'Leave it here to receive payments and receipayments andpayments andve payments for customers',
-    status: 'pending',
-    orderItems: [
-      {
-        id: '1233254mjn21hadwa34jn123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 0,
-        total: 300
-      },
-      {
-        id: '1233254mjn21hdhwa34j123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 0,
-        total: 300
-      },
-      {
-        id: '1233254mn2hadhwa34jn123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 0,
-        total: 300
-      }
-    ]
-  },
-  {
-    id: '1233254m12556yjn2134jnkl2hadwd3n54',
-    recepient: 'John Dime',
-    city: 'San Francisco',
-    address: 'Holywood Boulevard',
-    postalCode: 12435,
-    phoneNumber: 1284719274,
-    email: 'joho@gmail.com',
-    total: 399,
-    paymentStatus: 'Paid',
-    note: 'Leave it here to receive payments and receive payments for customers',
-    status: 'available',
-    orderItems: [
-      {
-        id: '1233254mjn213owwfenj4jn123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 6,
-        total: 300
-      }
-    ]
-  },
-  {
-    id: '123dhawhd3254mjn2134jgrdnkl23n54',
-    recepient: 'Dime Doe',
-    city: 'San Francisco',
-    address: 'Holywood Boulevard',
-    postalCode: 12487635,
-    phoneNumber: 1285646419274,
-    email: 'joho@gmail.com',
-    total: 399,
-    paymentStatus: 'Paid',
-    note: 'Leave it here to payments for customers',
-    status: 'completed',
-    orderItems: [
-      {
-        id: '123gfesgpio325kuoi4mjn2134jn123123',
-        title: 'Some Nice product or something',
-        image: 'babooey.jpg',
-        amount: 1,
-        total: 300
-      }
-    ]
-  }
-]
+import { useSelector } from "react-redux"
+import { useQuery } from "@tanstack/react-query"
+import { getUser } from "../../helpers/API/user-api"
 
 function CourierDashboard() {
-  const completed = orders.filter(order => order.status === 'completed')
-  const pending = orders.filter(order => order.status === 'pending')
-  const available = orders.filter(order => order.status === 'available')
+  const tokens = useSelector(state => state.role.authTokens)
+  const userid = useSelector(state => state.role.userid)
+
+  const { data } = useQuery({
+    queryKey: ['userQuery', userid],
+    queryFn: () => getUser(userid),
+    enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+  })
+
+  if (data) {
+    const completed = data.orders?.filter(order => order.status === 'Delivered')
+    const pending = data.orders?.filter(order => order.status === 'OnTheWay')
+    const available = data.orders?.filter(order => order.status === 'Purchased')
 
   return (
     <main className="courierMain">
@@ -153,6 +47,6 @@ function CourierDashboard() {
       </div>
     </main>
   )
-}
+}}
 
 export default CourierDashboard

@@ -7,6 +7,7 @@ import { UserReviews } from "../Reviews/Reviews"
 import { ReviewSvg } from "../Reviews/review"
 import { CSSTransition } from "react-transition-group"
 import { useQuery } from "@tanstack/react-query"
+import { getUser } from "../../helpers/API/user-api"
 
 function User() {
   const [showDraft, setShowDraft] = useState(true)
@@ -20,7 +21,9 @@ function User() {
   const userid = useSelector(state => state.role.userid)
 
   const { data } = useQuery({
-    queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+    queryKey: ['userQuery', userid],
+    queryFn: () => getUser(userid),
+    enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
   const draftref = useRef()
@@ -28,8 +31,8 @@ function User() {
   const completedref = useRef()
 
   if (data) {
-    const completed = data.orders?.filter(order => order.status === 'completed')
-    const pending = data.orders?.filter(order => order.status === 'pending')
+    const completed = data.orders?.filter(order => order.status === 'Delivered')
+    const pending = data.orders?.filter(order => order.status === 'OnTheWay' || order.status === 'Purchased')
 
     return (
       <main className="user-main">
@@ -218,7 +221,7 @@ function User() {
         <div className="block-header">
           <div>
             <h1>User Reviews</h1>
-            <NavLink>
+            <NavLink to={'/'}>
               <p>Browse Products</p>
               <svg viewBox="0 0 32 32">
                 <path

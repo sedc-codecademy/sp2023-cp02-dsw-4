@@ -14,7 +14,7 @@ import {
   setCreateCard,
 } from "../../store/slices/cardSlice/cardSlice"
 
-import { useLogout } from "../../helpers/UserHelper/UserHelper"
+import { useLogout, useUpdateCard, useUpdateUser } from "../../helpers/UserHelper/UserHelper"
 
 import {
   clearUser,
@@ -23,14 +23,19 @@ import {
 } from "../../store/slices/userSettings/userSettingsSlices"
 import {
   cardInfoValidity,
+  getCardStatusEnum,
+  getCardTypeEnum,
   isInfoValid,
   passwordInfoValidity,
   userInfoValidity,
 } from "../UsefullComponents/Usefull"
+import { getUser } from "../../helpers/API/user-api"
 
 function UserSettings() {
   const dispatch = useDispatch()
   const logout = useLogout()
+  const updateUser = useUpdateUser()
+  const updateCard = useUpdateCard()
   const tokens = useSelector((state) => state.role.authTokens)
   const userid = useSelector(state => state.role.userid)
   const userCards = useSelector((state) => state.user.userCards)
@@ -52,7 +57,9 @@ function UserSettings() {
   const [isClearButtonDisabled, setIsClearButtonDisabled] = useState(true)
 
   const { data } = useQuery({
-    queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+    queryKey: ['userQuery', userid],
+    queryFn: () => getUser(userid),
+    enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
   useEffect(() => {
@@ -63,7 +70,6 @@ function UserSettings() {
           modifiedTempUser[key] = userInfo[key]
         }
       }
-      console.log(modifiedTempUser) ////////////
       setModifiedUser(modifiedTempUser)
     }
   }, [userInfo, data])
@@ -76,7 +82,6 @@ function UserSettings() {
           modifiedTempUser[key] = userInfo[key]
         }
       }
-      console.log(modifiedTempUser)
       // const byteArray = new Uint8Array(atob(modifiedTempUser.image.base64).split("").map(char => char.charCodeAt(0))); /////////////// SHOULD DO THIS WHEN SENDING IAMGE
       // console.log(byteArray) ////////////
       setModifiedUser(modifiedTempUser)
@@ -91,12 +96,13 @@ function UserSettings() {
     if (
       modifiedPassword &&
       modifiedPassword?.password !== data?.password &&
-      modifiedPassword?.originalPassword === data?.password
+      modifiedPassword?.originalPassword === data?.password && modifiedPassword?.password === modifiedPassword?.cpassword
     ) {
       setUserPasswordValid(
         isInfoValid(passwordInfoValidity, modifiedPassword, [
           "password",
           "originalPassword",
+          "cpassword",
         ])
       )
     } else {
@@ -110,9 +116,8 @@ function UserSettings() {
       let originalCard = data?.cards.find((c) => c.id === card.id)
       for (let key in card) {
         if (card[key] !== "" && key !== "removal" && key !== "originalStatus") {
-          if (
-            (key === "cardStatus" && card[key] === card.originalStatus) ||
-            (originalCard && card[key] === originalCard[key])
+          if ((key === "cardStatus" && card[key] === card.originalStatus) ||
+            (originalCard && card[key] === originalCard[key] && key !== "id")
           ) {
             continue
           }
@@ -241,16 +246,84 @@ function UserSettings() {
     }
   }
 
+  const handleSubmitUserInfo = async () => {
+    let tempImage
+    if (modifiedUser?.image?.base64) {
+      const byteArray = new Uint8Array(atob(modifiedUser.image.base64).split("").map(char => char.charCodeAt(0)))
+      console.log(byteArray) ////////////
+      tempImage = byteArray
+    }
+
+    const tempUser = {
+      FirstName: modifiedUser.firstName || '',
+      LastName: modifiedUser.lastName || '',
+      Username: modifiedUser.username || '',
+      Password: '',
+      ConfirmationPassword: '',
+      Email: modifiedUser.email || '',
+      PhoneNumber: modifiedUser.phoneNumber || '',
+      Address: modifiedUser.address || '',
+      PostalCode: modifiedUser.postalCode || '',
+      City: modifiedUser.city || '',
+      Image: tempImage || '',
+    }
+    await updateUser(tempUser)
+  }
+
+  const handleSubmitUserCards = () => {
+    const tempAsyncCards = modifiedCards.slice()
+    tempAsyncCards.forEach(async card => {
+      if (card.type || card.cardStatus || card.number || card.holder || card.cvc) {
+        const tempCard = {
+          Id: card.id,
+          CardType: card.type ? getCardTypeEnum(card.type) : '',
+          CardStatus: card.cardStatus ? getCardStatusEnum(card.cardStatus) : '',
+          CardNumber: card.number || '',
+          CardHolder: card.holder || '',
+          ExpirationDate: card.date || '',
+          SecurityCode: card.cvc || '',
+          UserId: data.id,
+        }
+        await updateCard(tempCard)
+      }
+    })
+  }
+
+  const handleSubmitUserPassword = async () => {
+    if (
+      modifiedPassword &&
+      modifiedPassword?.password !== data?.password &&
+      modifiedPassword?.originalPassword === data?.password && modifiedPassword?.password === modifiedPassword?.cpassword
+    ) {
+      const tempUser = {
+        FirstName: '',
+        LastName: '',
+        Username: '',
+        Password: modifiedPassword.password,
+        ConfirmationPassword: modifiedPassword.cpassword,
+        OriginalPassword: modifiedPassword.orignalPassword,
+        Email: '',
+        PhoneNumber: '',
+        Address: '',
+        PostalCode: '',
+        City: '',
+        Image: '',
+      }
+
+      await updateUser(tempUser)
+    }
+  }
+
   function handleSubmitClick() {
     switch (currentPage) {
       case "accountInfo":
-        console.log(modifiedUser)
+        handleSubmitUserInfo()
         break
       case "security":
-        console.log(modifiedPassword)
+        handleSubmitUserPassword()
         break
       case "payment":
-        console.log(updateCardsValid)
+        handleSubmitUserCards()
         break
       default:
         return

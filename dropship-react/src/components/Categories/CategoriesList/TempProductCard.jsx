@@ -3,30 +3,33 @@ import { NavLink } from "react-router-dom"
 import Stars from '../../Stars/Stars'
 import ImageLoader from '../../ImageLoader/ImageLoader'
 
-function TempProductCard(props) {
+function TempProductCard({ product }) {
     return (
         <li>
             <NavLink>
                 <ImageLoader
-                    url={props.product.image}    
-                    alt={props.product.title}
+                    url={product.image}
+                    alt={product.title}
                     backupUrl="/imgs/404/product404.png"
                     backupAlt="Product Image 404"
                 ></ImageLoader>
                 <div className='infoDiv'>
-                    <p className='title'>{props.product.title}</p>
+                    <p className='title'>{product.title}</p>
                     <div className='ratingDiv'>
-                        <Stars initialRating={props.product.rating.rate} id={props.product.id}></Stars>
-                        <p>({props.product.rating.count})</p>
+                        <Stars initialRating={product.rating.rate} id={product.id}></Stars>
+                        <p>({product.rating.count})</p>
                     </div>
                     <div className='priceDiv'>
-                        {props.product.sale || props.product.sale === 1 ? (
+                        {product.discount > 1 ?
                             <>
-                                <p>{props.product.price}</p>
+                                <p>${product.price}</p>
                                 <h4>
-                                    {(props.product.price - (props.product.price * (props.product.sale / 100)).toFixed(2)).toFixed(2)}
+                                    ${product.total}
                                 </h4>
-                            </>) : (<h4>{props.product.price}</h4>)}
+                            </>
+                            :
+                            <h4>${product.total}</h4>
+                        }
                     </div>
                 </div>
             </NavLink>

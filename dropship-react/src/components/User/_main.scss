@@ -366,7 +366,7 @@
 
             .orderUL-enter-active {
                 opacity: 1;
-                max-height: 100vh;
+                max-height: 200vh;
                 padding-bottom: .5rem;
                 transition: opacity .6s cubic-bezier(.19, 1, .22, 1), max-height .6s cubic-bezier(.19, 1, .22, 1), padding-bottom .6s cubic-bezier(.19, 1, .22, 1);
             }
@@ -374,7 +374,7 @@
             .orderUL-enter-done,
             .orderUL-exit {
                 opacity: 1;
-                max-height: 100vh;
+                max-height: 200vh;
                 padding-bottom: .5rem;
             }
 

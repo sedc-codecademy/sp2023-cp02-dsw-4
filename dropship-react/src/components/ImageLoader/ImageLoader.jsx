@@ -17,14 +17,13 @@ function ImageLoader(props) {
         <>
             {imageLoaded ? (
                 <img
-                    className='dime'
                     src={props?.url || ''}
                     onError={handleImageError}
                     alt={props?.alt || ''}
                     loading='lazy'
                 />
             ) : (
-                <img className='dime2' src={props?.backupUrl} alt={props?.backupAlt} loading='lazy' />
+                <img src={props?.backupUrl} alt={props?.backupAlt} loading='lazy' />
             )}
         </>
     )

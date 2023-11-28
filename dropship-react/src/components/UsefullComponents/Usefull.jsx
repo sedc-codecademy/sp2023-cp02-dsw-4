@@ -1243,3 +1243,28 @@ export function dataURLtoFile(dataurl, filename) {
   return new File([u8arr], filename, { type: mime })
 }
 
+export function getCardTypeEnum(cardType) {
+  switch(cardType) {
+    case 'visa':
+      return 1;
+    case 'master':
+      return 2;
+    case 'maestro':
+      return 3;
+    default:
+      return 4; // Unknown
+  }
+}
+
+export function getCardStatusEnum(cardStatus) {
+  switch(cardStatus) {
+    case 'PRIMARY':
+      return 1;
+    case 'SECONDARY':
+      return 2;
+    default:
+      return 2; // Unknown
+  }
+}
+
+

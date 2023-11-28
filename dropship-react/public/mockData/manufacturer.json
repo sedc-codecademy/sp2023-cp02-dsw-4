@@ -14,7 +14,7 @@
             },
             "image": "/imgs/cat/fWear/womensWear.jpg",
             "id": "8357161fgsef1-c7af-4964-a28a-244b57b80d7c",
-            "sale": 25,
+            "discount": 25,
             "categoryid": "autoaccessories",
             "categorytitle": "Automobile Accessories",
             "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
@@ -110,7 +110,7 @@
                 "count": 10
             },
             "id": "83571611-c7af56089-4964-a28a-244b57b80d7c",
-            "sale": 5,
+            "discount": 5,
             "categoryid": "autoaccessories",
             "categorytitle": "Automobile Accessories",
             "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
@@ -206,7 +206,7 @@
                 "count": 10
             },
             "id": "83571611-c7af56089-8704964-a28a-244b57b80d7c",
-            "sale": 5,
+            "discount": 5,
             "categoryid": "autoaccessories",
             "categorytitle": "Automobile Accessories",
             "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",
@@ -297,7 +297,7 @@
                 "count": 10
             },
             "id": "83571611-c7af56089h-8kk704964-a28a-244b57b80d7c",
-            "sale": 5,
+            "discount": 5,
             "categoryid": "autoaccessories",
             "categorytitle": "Automobile Accessories",
             "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",

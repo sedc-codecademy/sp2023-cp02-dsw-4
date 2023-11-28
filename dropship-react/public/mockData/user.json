@@ -5,6 +5,7 @@
     "password": "dimeA@4124enajubav",
     "email": "dimesarf@yahoo.com",
     "role": "user",
+    "username": "dimeskidim",
     "phoneNumber": "0446465456",
     "address": "Skopje, drachevksa ulica",
     "postalCode": "1000",
@@ -21,7 +22,7 @@
             "total": 399,
             "paymentMethod": "Paid",
             "note": "Leave it here to receive payments and receipayments andpayments andve payments for customers",
-            "status": "pending",
+            "status": "OnTheWay",
             "orderItems": [
                 {
                     "id": "1233254mjn21hadhwa34jn123123",
@@ -57,7 +58,7 @@
             "total": 399,
             "paymentMethod": "Paid",
             "note": "Leave it here to receive payments and receipayments andpayments andve payments for customers",
-            "status": "pending",
+            "status": "Purchased",
             "orderItems": [
                 {
                     "id": "1233254mjn21hadwa34jn123123",
@@ -93,7 +94,7 @@
             "total": 399,
             "paymentMethod": "Paid",
             "note": "Leave it here to receive payments and receive payments for customers",
-            "status": "available",
+            "status": "OnTheWay",
             "orderItems": [
                 {
                     "id": "1233254mjn213owwfenj4jn123123",
@@ -115,7 +116,7 @@
             "total": 399,
             "paymentMethod": "Paid",
             "note": "Leave it here to payments for customers",
-            "status": "completed",
+            "status": "Delivered",
             "orderItems": [
                 {
                     "id": "123gfgpio325kuoi4mjn2134jn123123",
@@ -149,8 +150,8 @@
             "rate": 4.6,
             "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
             "id": "12h4iufes12h4h7124h9",
-            "good": "good screen, good battery, price",
-            "bad": "bad screen, bad battery, price",
+            "pros": "good screen, good battery, price",
+            "cons": "bad screen, bad battery, price",
             "product": {
                 "id": "12h4iu12h4h7124h9",
                 "image": "/productImage",
@@ -164,8 +165,8 @@
             "rate": 2.6,
             "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor dawdwadawdawd adwdwadwad adwdwadawd dwadawdawd dadwadwadwad dawdwadwad awdwadwadwa.",
             "id": "12h4iu12h4h7124hjh9",
-            "good": "",
-            "bad": "bad screen, bad battery, price",
+            "pros": "",
+            "cons": "bad screen, bad battery, price",
             "product": {
                 "id": "12h4iu12h4h79",
                 "image": "/productImage",

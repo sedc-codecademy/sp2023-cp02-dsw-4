@@ -13,12 +13,12 @@
             "authorId": "436hb5467457k",
             "author": "DIme dimeski",
             "date": "2022-10-31T09:00:00.594Z",
-            "title": "Great Product",
+            "title": "",
             "rate": 4.6,
-            "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
+            "body": "",
             "id": "12h4iu12h4h7124h9",
-            "good": "good screen, good battery, price",
-            "bad": "bad screen, bad battery, price"
+            "pros": "",
+            "cons": ""
         },
         {
             "authorId": "436hoiu89b5467457k",
@@ -28,8 +28,8 @@
             "rate": 2.6,
             "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
             "id": "12h4iu12h4h7124hjh9",
-            "good": "",
-            "bad": "bad screen,bad battery, price"
+            "pros": "",
+            "cons": "bad screen,bad battery, price"
         },
         {
             "authorId": "4365452hb54674j57k",
@@ -39,12 +39,12 @@
             "rate": 2.6,
             "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum orem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias placeat autem! Dolores corrupti eaque eligendi porro tenetur vero? Hic exercitationem quidem quis iste dolores. Asperiores voluptatibus maxime sed voluptatum.",
             "id": "12h4iu14232h4h7124hjh9",
-            "good": "",
-            "bad": ""
+            "pros": "",
+            "cons": ""
         }
     ],
     "id": "83571611-c7af-4964-a28a-244b57b80d7c",
-    "sale": 25,
+    "discount": 25,
     "categoryid": "autoaccessories",
     "categorytitle": "Automobile Accessories",
     "subcategoryid": "10884d4e-343f-43f8-9094-2c2e12f072ef",

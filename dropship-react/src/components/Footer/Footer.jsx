@@ -287,7 +287,7 @@ function Footer() {
                     </ul>
                 </div>
 
-                <ul className="footerLanguage">
+                {/* <ul className="footerLanguage">
                     <li>
                         <button className="english">
                             english
@@ -299,7 +299,7 @@ function Footer() {
                             macedonian
                         </button>
                     </li>
-                </ul>
+                </ul> */}
             </div>
         </footer>
     )

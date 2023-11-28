@@ -15,6 +15,7 @@ const initialState = {
   passwordInfo: {
     password: "",
     orignalPassword: "",
+    cpassword: ""
   },
 }
 
@@ -35,10 +36,15 @@ export const userSettingsSlice = createSlice({
       Object.keys(state.userInfo).forEach(key => {
         state.userInfo[key] = ''
       })
+    },
+    clearPasswordInfo: (state) => {
+      Object.keys(state.passwordInfo).forEach(key => {
+        state.passwordInfo[key] = ''
+      })
     }
   },
 })
 
-export const { clearUser, updateUserInfo, updatePasswordInfo, updateAddressInfo } = userSettingsSlice.actions
+export const { clearUser,clearPasswordInfo, updateUserInfo, updatePasswordInfo, updateAddressInfo } = userSettingsSlice.actions
 
 export const userSettingsReducer = userSettingsSlice.reducer

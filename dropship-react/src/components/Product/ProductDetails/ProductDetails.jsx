@@ -16,6 +16,8 @@ import { BigLoadingDiv, LoadingErrorDiv } from "../../PageLoader/PageLoader"
 
 import { addOrderItems } from "../../../store/slices/cartSlice/cartSlice"
 import { getSubCategoryByID } from "../../../helpers/API/sub-category-api"
+import { getUser } from "../../../helpers/API/user-api"
+import { setNotificationData, setShowNotification } from "../../../store/slices/notificationSlice/notificationSlice"
 
 function ProductDetails() {
   const { productId } = useParams()
@@ -27,8 +29,10 @@ function ProductDetails() {
   const [isInCart, setIsInCart] = useState(false)
 
   const { data: userData } = useQuery({
-    queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
-})
+    queryKey: ['userQuery', userid],
+    queryFn: () => getUser(userid),
+    enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+  })
 
   const {
     // Need to do mutaiton for reviews
@@ -70,6 +74,7 @@ function ProductDetails() {
   const [uniqueSizes, setUniqueSizes] = useState([])
   const [filteredSizes, setFilteredSizes] = useState([])
   const [amount, setAmount] = useState(1)
+  const [allReviewsInvalid, setAllReviewsInvalid] = useState(false)
 
   useEffect(() => {
     setAllColors(productData?.productSizes?.reduce((acc, productSize) => {
@@ -99,6 +104,12 @@ function ProductDetails() {
 
   useEffect(() => {
     if (productData) {
+      setAllReviewsInvalid(!userReview && productData?.reviews?.every((review) => review.body === "" && review.good === "" && review.bad === ""))
+    }
+  }, [userReview, productData])
+
+  useEffect(() => {
+    if (productData) {
       if (productData.productSizes.length === 1) {
         setCurrentProductSize(productData.productSizes[0])
       } else if (selectedColor) {
@@ -120,7 +131,7 @@ function ProductDetails() {
   }, [selectedColor, productData])
 
   useEffect(() => {
-    if(orderItems && currentProductSize){
+    if (orderItems && currentProductSize) {
       const isInCart = orderItems.some(item => item.id === currentProductSize.id)
       setIsInCart(isInCart)
     }
@@ -167,10 +178,12 @@ function ProductDetails() {
       price: productData.price,
       total: productData.total,
       image: productData.image,
-      sale: productData.sale,
+      discount: productData.discount,
     }
     console.log(tempProduct)
     dispatch(addOrderItems(tempProduct))
+    dispatch(setNotificationData({ title: 'Product added to cart', success: 'You can add different colors and sizes too, and change amount in the Cart.', error: '' }))
+    dispatch(setShowNotification(true))
   }
 
   return (
@@ -299,12 +312,9 @@ function ProductDetails() {
                     <span>Price:</span>
                     <span>${productData.price.toFixed(2)}</span>
                   </p>
-                  {/* <p className="product-shipping">
-                    <span>Shipping:</span> <span>${30}</span>
-                  </p> */}
-                  {productData.sale && (
+                  {productData.discount > 1 && (
                     <p className="product-discount">
-                      <span>Discount:</span> <span>${productData.price}</span>
+                      <span>Discount:</span> <span>{productData.discount}%</span>
                     </p>
                   )}
                   <p className="product-total">
@@ -348,7 +358,8 @@ function ProductDetails() {
               </button>
             </div>
           </div>
-          {productData.reviews?.length ? (
+
+          {(!allReviewsInvalid || (userReview && isLoggedIn) || createReview) ? (
             <div className="reviews">
               <ul className="reviews-ul">
                 {createReview && (
@@ -363,16 +374,17 @@ function ProductDetails() {
                       rate: tempRating,
                       body: "",
                       id: Date.now(),
-                      good: "",
-                      bad: "",
+                      pros: "",
+                      cons: "",
                     }}
+                    new={true}
                   />
                 )}
-                {productData.reviews.map((review) =>
-                  (review.authorId === userData?.id && isLoggedIn) ? (
-                    <EditReview key={review.id} review={review} />
+                {productData?.reviews?.map((review) =>
+                  (review.authorId === userData?.id && isLoggedIn && userReview) ? (
+                    <EditReview key={review.id} review={review} productid={productData.id} new={false}/>
                   ) : (
-                    <Reviews key={review.id} review={review} />
+                    (review.body !== "" || review.pros !== "" || review.cons !== "") && <Reviews key={review.id} review={review} />
                   )
                 )}
               </ul>

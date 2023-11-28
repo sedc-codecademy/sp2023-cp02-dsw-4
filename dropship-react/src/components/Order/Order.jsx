@@ -9,10 +9,7 @@ function Order({ order }) {
                 <div className="orderInfo">
                     <div>
                         <p>
-                            <span>Recipient:</span> {order.recepient}
-                        </p>
-                        <p>
-                            <span>Email:</span> {order.email}
+                            <span>Recipient:</span> {order.firstName} {order.lastName}
                         </p>
                         <p>
                             <span>Phone Number:</span> {order.phoneNumber}
@@ -29,10 +26,13 @@ function Order({ order }) {
                     </div>
                     <div>
                         <p>
-                            Total: <span>{order.total}</span>
+                            Total: <span>{order.total}$</span>
                         </p>
                         <p>
-                            Payment Method: <span>{order.paymentStatus}</span>
+                            Payment Method: <span>{
+                                order.paymentMethod === 'ondelivery' ? 'On-Delivery' : order.paymentMethod === 'prepaid' ? 'Pre-Paid' :
+                                    'Unset'
+                            }</span>
                         </p>
                     </div>
                     <div className="orderNote">
@@ -41,13 +41,16 @@ function Order({ order }) {
                     </div>
                 </div>
                 <div>
-                    {order.status === "pending" ? (
+                    {order.status === "OnTheWay" ? (
                         <>
-                            <p>Status: <span>Pending</span></p>
+                            <p>Status: <span>On the way</span></p>
                             <button>Mark Delivered</button>
                         </>
-                    ) : order.status === "completed" ? (
-                        <p>Status: <span>Completed</span></p>
+                    ) : order.status === "Delivered" ? (
+                        <div className='statusDiv'>
+                            <svg className='completed' viewBox="0 0 24 24"><path fill="currentColor" d="m6 17.3l-4.25-4.25q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l3.55 3.55l1.4 1.4l-.725.7q-.3.275-.7.288T6 17.3Zm5.65 0L7.4 13.05q-.275-.275-.275-.688t.275-.712q.3-.3.713-.3t.712.3l3.525 3.525l8.5-8.5q.3-.3.7-.287t.7.312q.275.3.288.7t-.288.7l-9.2 9.2q-.3.3-.7.3t-.7-.3Zm.7-4.95l-1.425-1.4l4.25-4.25q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712L12.35 12.35Z" /></svg>
+                            <p>Status: <span>Completed</span></p>
+                            </div>
                     ) : (
                         <>
                             <p>Status: <span>Available</span></p>
@@ -56,25 +59,24 @@ function Order({ order }) {
                     )}
                 </div>
             </div>
-            <div className="orderItems">
-                <ul>
-                    {order.orderItems.map((orderItem) =>
-                        <li key={orderItem.id}>
-                            <ImageLoader
-                                url={orderItem.image}
-                                alt={orderItem.title}
-                                backupUrl="/imgs/404/product404.png"
-                                backupAlt="Product Image 404"
-                            ></ImageLoader>
-                            <div>
-                                <p>{orderItem.title}</p>
-                                <p>Amount: {orderItem.amount || 1}</p>
-                                <h3>Price: {orderItem.total}$</h3>
-                            </div>
-                        </li>
-                    )}
-                </ul>
-            </div>
+
+            <ul className="orderItems">
+                {order.orderItems.map((orderItem) =>
+                    <li key={orderItem.id}>
+                        <ImageLoader
+                            url={orderItem.image}
+                            alt={orderItem.title}
+                            backupUrl="/imgs/404/product404.png"
+                            backupAlt="Product Image 404"
+                        ></ImageLoader>
+                        <div>
+                            <p>{orderItem.title}</p>
+                            <p>Amount: {orderItem.amount || 1}</p>
+                            <h3>Price: {orderItem.total}$</h3>
+                        </div>
+                    </li>
+                )}
+            </ul>
         </li>
     )
 }
@@ -107,8 +109,8 @@ export function UserOrder({ order }) {
                         </p>
                         <p>
                             Payment Method: <span>{
-                            order.paymentMethod === 'ondelivery' ? 'On-Delivery' : order.paymentMethod === 'prepaid' ? 'Pre-Paid' : 
-                            'Unset'
+                                order.paymentMethod === 'ondelivery' ? 'On-Delivery' : order.paymentMethod === 'prepaid' ? 'Pre-Paid' :
+                                    'Unset'
                             }</span>
                         </p>
                     </div>
@@ -118,12 +120,12 @@ export function UserOrder({ order }) {
                     </div>
                 </div>
                 <div className='statusDiv'>
-                    {order.status === "pending" ? (
+                    {order.status === "Purchased" || order.status === "OnTheWay" ? (
                         <>
                             <svg className='pending' viewBox="0 0 32 32"><path fill="currentColor" d="M4 16h12v2H4zm-2-5h10v2H2z" /><path fill="currentColor" d="m29.919 16.606l-3-7A.999.999 0 0 0 26 9h-3V7a1 1 0 0 0-1-1H6v2h15v12.556A3.992 3.992 0 0 0 19.142 23h-6.284a4 4 0 1 0 0 2h6.284a3.98 3.98 0 0 0 7.716 0H29a1 1 0 0 0 1-1v-7a.997.997 0 0 0-.081-.394ZM9 26a2 2 0 1 1 2-2a2.002 2.002 0 0 1-2 2Zm14-15h2.34l2.144 5H23Zm0 15a2 2 0 1 1 2-2a2.002 2.002 0 0 1-2 2Zm5-3h-1.142A3.995 3.995 0 0 0 23 20v-2h5Z" /></svg>
                             <p>Status: <span>Pending</span></p>
                         </>
-                    ) : order.status === "completed" ? (
+                    ) : order.status === "Delivered" ? (
                         <>
                             <svg className='completed' viewBox="0 0 24 24"><path fill="currentColor" d="m6 17.3l-4.25-4.25q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l3.55 3.55l1.4 1.4l-.725.7q-.3.275-.7.288T6 17.3Zm5.65 0L7.4 13.05q-.275-.275-.275-.688t.275-.712q.3-.3.713-.3t.712.3l3.525 3.525l8.5-8.5q.3-.3.7-.287t.7.312q.275.3.288.7t-.288.7l-9.2 9.2q-.3.3-.7.3t-.7-.3Zm.7-4.95l-1.425-1.4l4.25-4.25q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712L12.35 12.35Z" /></svg>
                             <p>Status: <span>Completed</span></p>

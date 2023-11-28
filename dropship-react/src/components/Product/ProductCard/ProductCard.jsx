@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import Stars from '../../Stars/Stars'
 import ImageLoader from '../../ImageLoader/ImageLoader'
 
-export default function ProductCard({product}) {
+export default function ProductCard({ product }) {
 
   return (
     <li className="product-card">
@@ -21,13 +21,16 @@ export default function ProductCard({product}) {
             <p>({product.rating.count})</p>
           </div>
           <div className='priceDiv'>
-            {product.sale || product.sale === 1 ? (
+            {product.discount > 1 ?
               <>
-                <p>{product.price}</p>
+                <p>${product.price}</p>
                 <h4>
-                  {(product.price - (product.price * (product.sale / 100)).toFixed(2)).toFixed(2)}
+                  ${product.total}
                 </h4>
-              </>) : (<h4>{product.price}</h4>)}
+              </>
+              :
+              <h4>${product.total}</h4>
+            }
           </div>
         </div>
       </NavLink>

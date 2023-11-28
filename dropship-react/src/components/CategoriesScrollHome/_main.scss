@@ -160,6 +160,7 @@
                         border-radius: .3rem;
                         background-color: var(--tpPri2);
                         height: clamp(10rem, 4.5455rem + 10.9091vw, 25rem);
+                        width: clamp(10rem, 4.5455rem + 10.9091vw, 25rem);
                         transition: scale .6s cubic-bezier(.19, 1, .22, 1);
                     }
                 }

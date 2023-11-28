@@ -5,95 +5,94 @@ export async function getProductByID(ID) {
     const response = await fetch('/mockData/product.json')
 
     if (!response.ok) {
-        throw new Error('Cannot find product')
+        throw new Error(await response.text())
     }
 
-    /// PLACEHOLDER
-    return response.json()
+    return await response.json()
 }
 
 export async function getPopularProducts() {
     const response = await fetch('/mockData/products.json')
 
     if (!response.ok) {
-        throw new Error('Cannot find products')
+        throw new Error(await response.text())
     }
 
-    /// PLACEHOLDER
-    const products = response.json()
-    if (products) {
-        return products
-    }
-    throw new Error('Cannot find products')
+    return await response.json()
 }
 
 export async function getNewArrivalsProducts() {
     const response = await fetch('/mockData/products.json')
 
     if (!response.ok) {
-        throw new Error('Cannot find products')
+        throw new Error(await response.text())
     }
 
-    /// PLACEHOLDER
-    const products = response.json()
-    if (products) {
-        return products
-    }
-    throw new Error('Cannot find products')
+    return await response.json()
 }
 
 export async function getDiscountedProducts() {
     const response = await fetch('/mockData/products.json')
 
     if (!response.ok) {
-        throw new Error('Cannot find products')
+        throw new Error(await response.text())
     }
 
-    /// PLACEHOLDER
-    const products = response.json()
-    if (products) {
-        return products
-    }
-    throw new Error('Cannot find products')
+    return await response.json()
 }
 
-export async function deleteReview(ID) {
-    const url = `${mainURL}/news/delete/${ID}`
+export async function deleteReviewApi({ ID, tokens }) {
+    const url = `${mainURL}/reviews/delete/${ID}`
 
     const response = await fetch(url, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokens.accessToken}`,
+        },
     })
 
-    const data = await response.text()
-    return data
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
+
+    return await response.json()
 }
 
-export async function updateReview(ID, updatedData) {
-    const url = `${mainURL}/news/update/${ID}`
+export async function updateReviewApi({ updatedData, tokens }) {
+    const url = `${mainURL}/reviews/update/${updatedData.id}`
 
     const response = await fetch(url, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokens.accessToken}`,
         },
         body: JSON.stringify(updatedData),
     })
 
-    const data = await response.text()
-    return data
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
+
+    return await response.json()
 }
 
-export async function createReview(reviewData) {
-    const url = `${mainURL}/news/create`
+export async function createReviewApi({ reviewData, tokens }) {
+    const url = `${mainURL}/reviews/create`
 
     const response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokens.accessToken}`,
         },
         body: JSON.stringify(reviewData),
     })
 
-    const data = await response.text()
-    return data
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
+
+    return await response.json()
 }

@@ -20,21 +20,26 @@ import { useQuery } from "@tanstack/react-query"
 
 import {
     changeItemAmount,
-    purchase,
+    // purchase,
     removeOrderItems,
     setFinalPaymentState,
     setOrderFormValue,
 } from "../../store/slices/cartSlice/cartSlice"
 import { getPopularProducts } from "../../helpers/API/product-api"
 import { cardInfoValidity, isInfoValid, userInfoValidity } from "../UsefullComponents/Usefull"
+import { usePurchaseOrder } from "../../helpers/UserHelper/UserHelper"
+import { getUser } from "../../helpers/API/user-api"
 
 function Cart() {
     const dispatch = useDispatch()
+    const purchaseOrder = usePurchaseOrder()
     const tokens = useSelector((state) => state.role.authTokens)
     const userid = useSelector(state => state.role.userid)
 
     const { data: userData } = useQuery({
-        queryKey: ['userQuery', userid], enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+        queryKey: ['userQuery', userid],
+        queryFn: () => getUser(userid),
+        enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     })
 
     const [fieldMapping] = useState({
@@ -100,7 +105,7 @@ function Cart() {
 
         if (orderInfo.city.toLowerCase() === 'skopje') {
             calculatedShippingCost = 0;
-        } else if (["prilep", "shtip", "bitola"].includes(orderInfo.city.toLowerCase())) {
+        } else if (["prilep", "kumanovo", "shtip", "veles"].includes(orderInfo.city.toLowerCase())) {
             calculatedShippingCost = 130;
         } else {
             calculatedShippingCost = 200;
@@ -109,7 +114,7 @@ function Cart() {
         if (shippingLocation && !orderInfo.city) {
             if (shippingLocation.toLowerCase() === "skopje") {
                 calculatedShippingCost = 0;
-            } else if (["prilep", "shtip", "bitola"].includes(shippingLocation.toLowerCase())) {
+            } else if (["prilep","kumanovo", "shtip", "veles"].includes(shippingLocation.toLowerCase())) {
                 calculatedShippingCost = 130;
             } else {
                 calculatedShippingCost = 200;
@@ -217,8 +222,10 @@ function Cart() {
         dispatch(setCardFormValue({ name, value }))
     }
 
-    const handlePurchase = () => {
-        dispatch(purchase())
+    const handlePurchase = async () => {
+        const orderData = { ...orderInfo, orderItems: orderItems }
+        const purchaseStatus = await purchaseOrder(orderData)
+        if (purchaseStatus === 'error') setCartState("payment")
     }
 
     const handleCancel = () => {
@@ -816,7 +823,7 @@ const CartItem = ({
                 <ul>
                     <li>
                         <span>Price:</span>
-                        {item.sale > 1 && <p>{item.price}$</p>}
+                        {item.discount > 1 && <p>{item.price}$</p>}
                         <h3>{item.total}$</h3>
                     </li>
                     {item.color && (

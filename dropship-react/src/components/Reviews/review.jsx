@@ -1953,4 +1953,240 @@ export const ReviewSvg = () => {
             </g>
         </svg>
     )
-} 
+}
+
+export const EmptyReviewSvg = () => {
+    return (
+        <svg className="emptyReviewSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+            <path
+                fill="var(--accent)"
+                d="m425 239 4-16a96 96 0 0 0 0-32 126 126 0 0 0-24-57c-13-17-33-32-54-26-22 5-41 22-62 30-37 13-74-11-111-10-31 1-65 12-86 41-8 11-14 27-12 42 2 18 16 32 26 46 16 21 22 44 8 69-8 16-20 31-19 52 1 33 32 53 57 62 26 9 55 10 80 0 23-9 39-29 59-42a93 93 0 0 1 61-13c22 2 44 7 66-3 20-9 29-33 30-56a92 92 0 0 0-5-33c-5-14-15-24-18-38a43 43 0 0 1 0-16Z"
+            />
+            <path
+                fill="var(--tpPri)"
+                d="m425 239 4-16a96 96 0 0 0 0-32 126 126 0 0 0-24-57c-13-17-33-32-54-26-22 5-41 22-62 30-37 13-74-11-111-10-31 1-65 12-86 41-8 11-14 27-12 42 2 18 16 32 26 46 16 21 22 44 8 69-8 16-20 31-19 52 1 33 32 53 57 62 26 9 55 10 80 0 23-9 39-29 59-42a93 93 0 0 1 61-13c22 2 44 7 66-3 20-9 29-33 30-56a92 92 0 0 0-5-33c-5-14-15-24-18-38a43 43 0 0 1 0-16Z"
+                opacity=".7"
+            />
+            <path
+                fill="var(--accent)"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.1"
+                d="m296 436 128-48 1-10-127 47-2 11"
+            />
+            <path
+                fill="var(--tpSec4"
+                d="M275 266a10 10 0 0 1-6-2 11 11 0 0 1-4-7 2 2 0 0 1 4-1 7 7 0 0 0 2 5 6 6 0 0 0 9-1 2 2 0 0 1 3 2 10 10 0 0 1-7 4 9 9 0 0 1-1 0ZM256 272c-4 0-9-4-10-9a2 2 0 0 1 2-3 2 2 0 0 1 2 2c1 4 4 7 7 6a6 6 0 0 0 4-3 2 2 0 0 1 3 3 10 10 0 0 1-6 4 9 9 0 0 1-2 0ZM240 278a10 10 0 0 1-7-2 11 11 0 0 1-4-7 2 2 0 0 1 4 0 7 7 0 0 0 3 4 6 6 0 0 0 4 2 6 6 0 0 0 4-3 2 2 0 0 1 4 2 10 10 0 0 1-7 4 9 9 0 0 1-1 0ZM221 284c-5 0-9-4-10-10a2 2 0 1 1 4 0c0 4 4 6 7 6a6 6 0 0 0 4-3 2 2 0 1 1 3 2 10 10 0 0 1-6 5 10 10 0 0 1-2 0ZM202 291c-5 0-9-4-10-9a2 2 0 0 1 4-1c1 4 4 7 7 6a6 6 0 0 0 4-2 2 2 0 0 1 3 2 10 10 0 0 1-6 4 10 10 0 0 1-2 0ZM184 298a10 10 0 0 1-6-2 11 11 0 0 1-4-7 2 2 0 0 1 4-1 7 7 0 0 0 2 5 6 6 0 0 0 9-2 2 2 0 0 1 3 3 10 10 0 0 1-6 4 9 9 0 0 1-2 0Z"
+            />
+            <path
+                fill="#fff"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth=".6"
+                d="m300 429 106-38M297 433l68-25"
+            />
+            <path
+                fill="var(--accent)"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.1"
+                d="M169 293v13l127 130 2-11-129-132"
+            />
+            <path
+                fill="#fff"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth=".6"
+                d="m171 303 76 76M207 335l79 81"
+            />
+            <path
+                fill="#fff"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.1"
+                d="m169 293 129 132 127-47-131-126-125 41z"
+            />
+            <path
+                fill="var(--accent)"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.1"
+                d="M168 291 48 180l123-38 122 108-125 41z"
+            />
+            <path
+                fill="none"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.2"
+                d="m66 181 35-11M72 185l35-11"
+            />
+            <path
+                fill="var(--tpSec4"
+                d="M190 294a2 2 0 0 1-1 0 2 2 0 0 1 0-3 7 7 0 0 0 1-5 7 7 0 0 0-5-6 2 2 0 0 1 1-4 11 11 0 0 1 8 10 11 11 0 0 1-2 8 2 2 0 0 1-2 0ZM209 288a2 2 0 0 1-1-1 2 2 0 0 1-1-2 7 7 0 0 0 1-6 7 7 0 0 0-5-5 2 2 0 1 1 1-4 11 11 0 0 1 8 9 11 11 0 0 1-2 8 2 2 0 0 1-1 1ZM281 263a2 2 0 0 1-1-3 7 7 0 0 0 1-5 7 7 0 0 0-5-6 2 2 0 0 1-2-3 2 2 0 0 1 3-1 11 11 0 0 1 8 9 11 11 0 0 1-2 8 2 2 0 0 1-2 1ZM263 268a2 2 0 0 1-1 0 2 2 0 0 1-1-3 7 7 0 0 0 1-5 7 7 0 0 0-5-6 2 2 0 1 1 1-4 11 11 0 0 1 8 10 11 11 0 0 1-2 8 2 2 0 0 1-1 0ZM246 275a2 2 0 0 1-1 0 2 2 0 0 1-1-3 7 7 0 0 0 1-5 7 7 0 0 0-5-6 2 2 0 1 1 1-4 11 11 0 0 1 8 9 11 11 0 0 1-1 8 2 2 0 0 1-2 1ZM228 280a2 2 0 0 1-2 0 2 2 0 0 1 0-3 7 7 0 0 0 1-5 7 7 0 0 0-5-6 2 2 0 1 1 1-4 11 11 0 0 1 8 9 11 11 0 0 1-2 8 2 2 0 0 1-1 1Z"
+            />
+            <path
+                fill="#fff"
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth=".6"
+                d="m401 375 5-2M304 410l92-34M306 395l89-33M293 400l7-3M281 390l103-38M270 379l103-38M357 333l5-2M259 369l92-34M248 358l103-37M237 348l102-38M226 337l102-37M215 327l102-38M303 280l3-1M204 316l96-35M224 295l71-27M193 306l20-7"
+            />
+            <path
+                fill="none"
+                stroke="var(--accent)"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.1"
+                d="M229 333c10 1 9-16 7-22a21 21 0 0 0-5 16 8 8 0 0 0 1 4 3 3 0 0 0 4 1 5 5 0 0 0 2-2l5-8c3 2 13 5 11-2-1-4 1-3 3-1h4l10-5a12 12 0 0 1 4-1c4 0 8 4 12 1l5-6 6-2c7 0 11-4 17-8M237 344c4 1 7-3 10-4 5-1 7-3 11-5 5-2 12-3 11-12l-2 10c5 2 6-2 6-5a13 13 0 0 0 5-1v2c2 0 3 0 3-2 3 0 4-3 6-3 0 5 2 10 1 16-4 1-4-6-3-8l5-8v1c5-3 11-2 16-5l4-4c3-2 4 0 7-4M272 377c7-2 10-19 8-26-3-7-6 1-7 5 0 4-1 12 2 15 7 5 11-6 12-11 0 3-2 7-1 10 5 1 8-4 8-8a5 5 0 0 1 1 5c5 0 4-9 5-13-1 3 0 6 1 8 2 1 4 2 6 1s2-5-1-6v22a3 3 0 0 1 0 2h-3a6 6 0 0 1-1-4c0-7 2-17 7-21a4 4 0 0 1 1 2 4 4 0 0 0 2-3c0 2 1 4 3 4a3 3 0 0 0 1-1l8-7v3l4-4a19 19 0 0 1 6-1l6-1a18 18 0 0 0 3-2 14 14 0 0 1 7-2"
+                style={{ mixBlendMode: "multiply" }}
+            />
+            <g
+                stroke="var(--tpSec4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.3"
+            >
+                <path
+                    fill="#fff"
+                    d="m189 187 22-27 9-13s3 2 2 5l-24 35c-4 7-4 15-4 18s-8-7-5-18Z"
+                />
+                <path
+                    fill="var(--tpSec4"
+                    d="m220 147 17-25c7-11 18-29 21-31s3 3 2 7-9 16-15 25l-15 22c-5 6-5 6-8 7s-3-2-2-5ZM186 189c1-7 3-21 9-25s23-1 24-1 24 5 31 9 12 17 14 24l6 20s6 3 9 2 7-15 16-23 13-10 23-9 47 10 51 14 6 12 5 18 0 13 0 14 4 5 3 8-2 10-4 11-22 0-36-2-33-10-46-16-19-8-29-8-28 0-45-4-28-11-31-14-1-10 0-18Zm101 35c5 7 23 14 33 17s35 7 41 4 9-24 9-31-4-11-4-11c-12-8-51-16-59-13s-15 14-18 22-2 12-2 12Zm-81-12c13 8 32 10 40 10s15-4 15-12-4-24-6-28-7-7-7-7c-8-4-40-12-46-11s-10 9-11 21 3 20 15 27Z"
+                />
+                <path
+                    fill="#fff"
+                    d="M373 232s3 5 6 1l31-36s1-1 1 2-31 43-32 45-6 3-7 2 1-14 1-14Z"
+                />
+                <path
+                    fill="var(--tpSec4"
+                    d="M408 198a94 94 0 0 0 5-9c3-7 5-21 5-35s1-22 4-19 0 16 0 27-4 22-5 27c0 5-4 11-6 11s-2 0-3-2Z"
+                />
+            </g>
+            <g stroke="var(--tpSec4">
+                <path
+                    fill="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.4"
+                    d="m219 377 13 15-19-5-133-81 6-10 133 81z"
+                />
+                <path
+                    fill="var(--accent)"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.4"
+                    d="m219 377 13 15-19-5-133-81 6-10 133 81z"
+                    opacity=".5"
+                    style={{ mixBlendMode: "multiply" }}
+                />
+                <path
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth=".7"
+                    d="m82 303 3-5 133 82-3 5z"
+                />
+                <path
+                    fill="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.4"
+                    d="m219 377-6 10 19 5-13-15z"
+                />
+                <path
+                    fill="var(--accent)"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.4"
+                    d="m223 390 9 2-6-7-3 5z"
+                />
+                <path
+                    fill="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.4"
+                    d="M68 292h0a6 6 0 0 0 2 8l10 6 6-10-10-6a6 6 0 0 0-8 2Z"
+                />
+                <path
+                    fill="var(--tpSec4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.4"
+                    d="M68 292h0a6 6 0 0 0 2 8l5 3 6-10-5-3a6 6 0 0 0-8 2Z"
+                />
+                <path
+                    fill="#fff"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="m337 244-4-2a4 4 0 0 0-3-1l-13 6c-3 3-3 8-2 10l6 5 22-13Z"
+                />
+                <path
+                    fill="var(--accent)"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="m337 244-4-2a4 4 0 0 0-3-1l-13 6c-3 3-3 8-2 10l6 5 22-13Z"
+                    opacity=".5"
+                    style={{ mixBlendMode: "multiply" }}
+                />
+                <path
+                    fill="#fff"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="m339 243-17 8s-6 3-4 13l100 73s3 3 10 1 12-10 14-16-3-8-4-9l-95-69a5 5 0 0 0-4-1Z"
+                />
+                <path
+                    fill="var(--accent)"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="m339 243-17 8s-6 3-4 13l100 73s3 3 10 1 12-10 14-16-3-8-4-9l-95-69a5 5 0 0 0-4-1Z"
+                    opacity=".5"
+                    style={{ mixBlendMode: "multiply" }}
+                />
+                <path
+                    fill="#fff"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="M435 333c-6 5-14 7-17 4s-1-11 6-16 13-8 17-5 0 11-6 17Z"
+                />
+                <path
+                    fill="var(--accent)"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="M435 333c-6 5-14 7-17 4s-1-11 6-16 13-8 17-5 0 11-6 17Z"
+                    style={{ mixBlendMode: "multiply" }}
+                />
+                <path
+                    fill="var(--tpSec4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.3"
+                    d="M343 244a5 5 0 0 0-4-1l-17 8s-6 3-4 13l69 51c0-3 0-6 2-10 3-4 14-10 20-13l-66-48Z"
+                />
+                <path
+                    fill="#fff"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="m422 320-37-26a4 4 0 0 1 1-7l5-3a4 4 0 0 1 4 0l39 28"
+                />
+                <path
+                    fill="var(--accent)"
+                    strokeMiterlimit={10}
+                    strokeWidth=".9"
+                    d="m422 320-37-26a4 4 0 0 1 1-7l5-3a4 4 0 0 1 4 0l39 28"
+                    opacity=".5"
+                    style={{ mixBlendMode: "multiply" }}
+                />
+            </g>
+        </svg>
+
+    )
+}

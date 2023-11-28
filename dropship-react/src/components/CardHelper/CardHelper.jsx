@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react"
 import Card, { NewCard } from "../Cart/Card/Card"
 import { formatAsMMYY, formatNumberWithSpaces } from "./CardFunctions"
 import { CardSvg } from "../Cart/Card/CardSvgs"
-import { setCardFormValueID, setCardStatusID, setCardTypeID, setCreateCard, setNewCardFormValue, setNewCardType, setRemoveCardID } from "../../store/slices/cardSlice/cardSlice"
+import { clearNewCard, setCardFormValueID, setCardStatusID, setCardTypeID, setCreateCard, setNewCardFormValue, setNewCardType, setRemoveCardID } from "../../store/slices/cardSlice/cardSlice"
 
 import { useSelector, useDispatch } from "react-redux"
-import { cardInfoValidity, isInfoValid } from "../UsefullComponents/Usefull"
+import { cardInfoValidity, getCardTypeEnum, isInfoValid } from "../UsefullComponents/Usefull"
+import { setNotificationData, setShowNotification } from "../../store/slices/notificationSlice/notificationSlice"
+import { useCreateCard } from "../../helpers/UserHelper/UserHelper"
 
 function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetInputValue }) {
     const [flipped, setFlipped] = useState(false)
@@ -251,6 +253,7 @@ export function SettingsCardHelper({ cardID }) {
 export function NewCardHelper({ data }) {
     const [flipped, setFlipped] = useState(false)
     const dispatch = useDispatch()
+    const createCard = useCreateCard()
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
     const card = useSelector((state) => state.card.newCard)
     const userCards = useSelector((state) => state.user.userCards)
@@ -262,11 +265,6 @@ export function NewCardHelper({ data }) {
         let modifiedCard = {}
         for (let key in card) {
             if (card[key] !== '' && key !== 'id') {
-                let isSameInAnyOriginalCard = data?.cards?.some(originalCard => card[key] === originalCard[key])
-                if (isSameInAnyOriginalCard) {
-                    continue
-                }
-
                 modifiedCard[key] = card[key]
             }
         }
@@ -277,7 +275,6 @@ export function NewCardHelper({ data }) {
             delete modifiedCard.type
         }
 
-        console.log(modifiedCard) ////////////////
         setNewModifiedCard(modifiedCard || null)
     }, [card, data])
 
@@ -327,24 +324,42 @@ export function NewCardHelper({ data }) {
         return false
     }
 
+    const handleCreateCard = async () => {
+        await createCard({
+            CardType: getCardTypeEnum(newModifiedCard.type),
+            CardStatus: 2,
+            CardNumber: newModifiedCard.number,
+            CardHolder: newModifiedCard.holder,
+            ExpirationDate: newModifiedCard.date,
+            SecurityCode: newModifiedCard.cvc
+        }, data.id)
+    }
+
     const handleSaveCard = () => {
         if (newCardValid) {
             if (userCards.length > 0) {
                 const hasMatchingProperties = checkForSimilarProperties(userCards, { number: card.number, date: card.date })
-                if (hasMatchingProperties) return console.log('Card already exists')
-                console.log('Should create card')
-                dispatch(setCreateCard(false))
+                if (hasMatchingProperties) {
+                    dispatch(setNotificationData({ title: 'Card already exists', success: '', error: 'This card is already saved in your account' }))
+                    dispatch(setShowNotification(true))
+                    return
+                }
+                handleCreateCard()
             } else {
-                console.log('Should create card')
-                dispatch(setCreateCard(false))
+                handleCreateCard()
             }
         } else {
-            console.log('Fill out all properties')
+            dispatch(setNotificationData({ title: 'Invalid Data', success: '', error: 'Please fill out all of the fields correctly' }))
+            dispatch(setShowNotification(true))
         }
     }
 
     const handleCancel = () => {
         dispatch(setCreateCard(false))
+    }
+
+    const handleClear = () => {
+        dispatch(clearNewCard())
     }
 
     return (
@@ -427,8 +442,11 @@ export function NewCardHelper({ data }) {
                     </div>
                 </div>
                 <div className="cardButtons">
-                    <button onClick={handleCancel}>
+                    <button type="button" onClick={handleCancel}>
                         <p>Cancel</p>
+                    </button>
+                    <button type="button" className="clearButton" onClick={handleClear} disabled={!card.holder && !card.number && !card.cvc && !card.date}>
+                        <p>Clear</p>
                     </button>
                     <button onClick={handleSaveCard} disabled={!newCardValid}>
                         <p>Create</p>

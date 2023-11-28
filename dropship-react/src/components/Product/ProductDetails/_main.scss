@@ -628,7 +628,7 @@
   }
 
   .reviews {
-    max-width: var(--maxWidth);
+    width: var(--maxWidth);
 
     .reviews-ul {
       display: flex;
@@ -735,6 +735,11 @@
         }
       }
     }
+
+    .reviews {
+      width: 100%;
+    }
+
 
     .related-products {
       width: 100%;
