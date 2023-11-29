@@ -17,10 +17,6 @@ import {
     catArray,
     subCatArray,
 } from "../CatDropDown/CatDP"
-import {
-    LocationPicker,
-    MiniLocationPicker,
-} from "../LocationPicker/LocationPicker"
 
 import { CSSTransition } from "react-transition-group"
 import { useLogout } from "../../../helpers/UserHelper/UserHelper"
@@ -90,11 +86,6 @@ export default function Nav() {
             dispatch(setIsSettingsOn(false))
         }
         dispatch(toggleCatDropDown())
-    }
-
-    const handleShipToClick = () => {
-        if (isSettingsOn) dispatch(setIsSettingsOn(false))
-        dispatch(setShowShipping(!showShipping))
     }
 
     const handleLogOutClick = async () => {
@@ -228,20 +219,14 @@ export default function Nav() {
                                     </button>
                                 </li>
                             )}
-                            {!isMobile && isLoggedIn && (
-                                <li className="shippingLi">
-                                    <button onClick={handleShipToClick}>
-                                        <p>Ship To</p>
-                                    </button>
-                                    <LocationPicker></LocationPicker>
-                                </li>
-                            )}
                             <li>
                                 <NavLink
                                     to="/cart"
                                     disabled={activeLink === "/cart"}
                                     onClick={closeSettings}
+                                    className='cartLink'
                                 >
+                                    {!isMobile && <p className="cartP">Cart</p>}
                                     <svg viewBox="0 0 32 32">
                                         <circle cx="10" cy="28" r="2" fill="currentColor" />
                                         <circle cx="24" cy="28" r="2" fill="currentColor" />
@@ -391,12 +376,6 @@ export default function Nav() {
                                     </NavLink>
                                 </li>
                             </ul>
-                            {isMobile && (
-                                <div className="shippingDiv">
-                                    <h3>Shipping</h3>
-                                    <MiniLocationPicker></MiniLocationPicker>
-                                </div>
-                            )}
                             <ul className="themeSettings">
                                 <li>
                                     <h3>Theme</h3>

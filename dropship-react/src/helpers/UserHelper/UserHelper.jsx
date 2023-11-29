@@ -5,7 +5,7 @@ import { setIsError, setIsFetching, setShowLoading } from "../../store/slices/lo
 import { clearTokens, setAuthTokens, setRole, setUserId } from "../../store/slices/role/roleSlice"
 import { createCardApi, deleteCardApi, deleteUserApi, getUser, logInApi, logOutApi, registerApi, updateCardApi, updateUserApi } from '../API/user-api'
 import { userLogIn, setUserCards, userLogOut } from "../../store/slices/user/userSlices"
-import { clearTempCards, setCreateCard, setTempCards } from "../../store/slices/cardSlice/cardSlice"
+import { clearCartCard, clearTempCards, setCreateCard, setTempCards } from "../../store/slices/cardSlice/cardSlice"
 import { useNavigate } from 'react-router-dom'
 import { setNotificationData, setShowNotification } from "../../store/slices/notificationSlice/notificationSlice"
 import { createReviewApi, deleteReviewApi, updateReviewApi } from "../API/product-api"
@@ -432,6 +432,7 @@ export const usePurchaseOrder = () => {
                         console.log(data)
                         dispatch(setNotificationData({ title: 'Succesfully Made Purchase', success: data.message || 'View the progress of your order in user settings', error: '' }))
                         dispatch(setShowNotification(true))
+                        dispatch(clearCartCard())
                         dispatch(purchase())
                         queryClient.invalidateQueries(['productQuery', 'userQuery'])
                     },

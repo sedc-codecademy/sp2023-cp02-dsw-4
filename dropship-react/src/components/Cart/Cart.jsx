@@ -26,9 +26,23 @@ import {
     setOrderFormValue,
 } from "../../store/slices/cartSlice/cartSlice"
 import { getPopularProducts } from "../../helpers/API/product-api"
-import { cardInfoValidity, isInfoValid, userInfoValidity } from "../UsefullComponents/Usefull"
+import { cardInfoValidity, getCardTypeEnum, isInfoValid, userInfoValidity } from "../UsefullComponents/Usefull"
 import { usePurchaseOrder } from "../../helpers/UserHelper/UserHelper"
 import { getUser } from "../../helpers/API/user-api"
+
+function getPaymentStatus(existingCard, orderInfo) {
+    if (orderInfo.paymentMethod === 'ondelivery') {
+        return 1
+    } else if (orderInfo.paymentMethod === 'prepaid') {
+        if (existingCard && Object.keys(existingCard).length > 0) return 2
+        if (orderInfo.saveCard) {
+            return 3
+        } else {
+            return 4
+        }
+    }
+    return 1
+}
 
 function Cart() {
     const dispatch = useDispatch()
@@ -51,7 +65,7 @@ function Cart() {
     const [showCards, setShowCards] = useState(false)
     const [collectionFormValid, setCollectionFormValid] = useState(false)
     const [paymentFormValid, setPaymentFormValid] = useState(false)
-    const [saveCard, setSaveCard] = useState(false)
+    const [existingCard, setExistingCard] = useState(null)
 
     const cardObject = useSelector((state) => state.card.cartCard)
     const cardPatterns = useSelector((state) => state.card.cardPatterns)
@@ -65,6 +79,7 @@ function Cart() {
     const orderItems = useSelector((state) => state.cart.orderItems)
     const finalPayment = useSelector((state) => state.cart.finalPayment)
     const shippingLocation = useSelector((state) => state.shipping.shippingLocation)
+    const shippingArray = useSelector((state) => state.shipping.shippingArray)
 
     const [subtotal, setSubtotal] = useState(0)
     const [shippingCost, setShippingCost] = useState(0)
@@ -81,12 +96,16 @@ function Cart() {
 
         const keysToCheck = Object.keys(cardObject).filter((key) => key !== "id")
         let isCardValid = isInfoValid(cardInfoValidity, cardObject, keysToCheck)
-
+        if (existingCard && Object.keys(existingCard).length > 0) {
+            if (cardObject.cvc !== existingCard.cvc) {
+                isCardValid = false
+            }
+        }
         if (orderInfo.paymentMethod === "ondelivery") isCardValid = true
 
         setPaymentFormValid(isCardValid)
 
-    }, [orderInfo, cardObject, collectionFormValid])
+    }, [orderInfo, cardObject, collectionFormValid, existingCard])
 
     useEffect(() => {
         if (finalPayment && cartState === "final") {
@@ -112,9 +131,9 @@ function Cart() {
         }
 
         if (shippingLocation && !orderInfo.city) {
-            if (shippingLocation.toLowerCase() === "skopje") {
+            if (shippingLocation.toLowerCase() === "Skopje") {
                 calculatedShippingCost = 0;
-            } else if (["prilep","kumanovo", "shtip", "veles"].includes(shippingLocation.toLowerCase())) {
+            } else if (["Prilep", "Kumanovo", "Shtip", "Veles"].includes(shippingLocation.toLowerCase())) {
                 calculatedShippingCost = 130;
             } else {
                 calculatedShippingCost = 200;
@@ -127,6 +146,31 @@ function Cart() {
         setTotal(calculatedTotal)
         dispatch(setOrderFormValue({ name: "total", value: calculatedTotal }))
     }, [orderItems, orderInfo, shippingLocation, dispatch])
+
+    useEffect(() => {
+        if (orderInfo) {
+            const saveCardActive = userData?.cards.some(
+                (card) =>
+                    card.holder === cardObject.holder &&
+                    card.number === cardObject.number &&
+                    card.date === cardObject.date
+            ) || !paymentFormValid
+            if (saveCardActive) {
+                dispatch(setOrderFormValue({ name: "saveCard", value: false }))
+            }
+        }
+    }, [orderInfo, cardObject, paymentFormValid, userData, dispatch])
+
+    useEffect(() => {
+        const existingCard = userData?.cards.find(
+            (card) =>
+                card.holder === cardObject.holder &&
+                card.number === cardObject.number &&
+                card.date === cardObject.date
+        )
+        setExistingCard(existingCard || null)
+
+    }, [userData, cardObject])
 
     const handleCollectionClick = () => {
         setCartState("collection")
@@ -223,9 +267,33 @@ function Cart() {
     }
 
     const handlePurchase = async () => {
-        const orderData = { ...orderInfo, orderItems: orderItems }
+        const orderData = {
+            Items: orderItems?.map(item => ({
+                Quantity: item.amount,
+                ProductSizeId: item.id
+            })),
+            UserId: userData.id,
+            Address: orderInfo.address,
+            PostalCode: orderInfo.postalCode,
+            City: orderInfo.city,
+            PhoneNumber: orderInfo.phoneNumber,
+            Note: orderInfo.note,
+            PaymentStatus: getPaymentStatus(existingCard, orderInfo),
+            CardType: orderInfo.paymentMethod === "ondelivery" ? '' : getCardTypeEnum(cardObject.type.cardtype),
+            CardHolder: orderInfo.paymentMethod === "ondelivery" ? '' : cardObject.holder,
+            ExpirationDate: orderInfo.paymentMethod === "ondelivery" ? '' : cardObject.date,
+            SecurityCode: orderInfo.paymentMethod === "ondelivery" ? '' : cardObject.cvc,
+            ExistingCardId: orderInfo.paymentMethod === "ondelivery" ? '' : existingCard && Object.keys(existingCard).length > 0 ? existingCard.id : ''
+        }
+        console.log(orderData)
         const purchaseStatus = await purchaseOrder(orderData)
-        if (purchaseStatus === 'error') setCartState("payment")
+        if (purchaseStatus === 'error') {
+            setCartState("payment")
+            dispatch(setFinalPaymentState(false))
+        } else if (purchaseStatus === 'ok') {
+            setCartState("default")
+            dispatch(setFinalPaymentState(false))
+        }
     }
 
     const handleCancel = () => {
@@ -241,9 +309,8 @@ function Cart() {
         dispatch(changeItemAmount(e))
     }
 
-    const handleSaveCard = (e) => {
-        e.preventDefault()
-        setSaveCard(!saveCard)
+    const handleSaveCard = () => {
+        dispatch(setOrderFormValue({ name: "saveCard", value: !orderInfo.saveCard }))
     }
 
     const handleOnMouseEnter = (e) => {
@@ -433,7 +500,7 @@ function Cart() {
                                             </div>
                                         </div>
                                         <div className="inputContainer cityAddress">
-                                            <div className="city">
+                                            {/* <div className="city">
                                                 <input
                                                     type="text"
                                                     maxLength="30"
@@ -446,6 +513,20 @@ function Cart() {
                                                     placeholder=""
                                                 ></input>
                                                 <label htmlFor="city">City</label>
+                                            </div> */}
+                                            <div className="city">
+                                                <select
+                                                    className="citySelect"
+                                                    name="city"
+                                                    onChange={handleInputEdit}
+                                                    value={orderInfo.city}
+                                                >
+                                                    {shippingArray.map((e, i) => (
+                                                        <option key={i} value={e} name={e} >
+                                                            {e}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                             <div className="pCode">
                                                 <input
@@ -581,7 +662,8 @@ function Cart() {
                                                     handleDateChange={handleDateChange}
                                                 ></CardHelper>
                                                 <button
-                                                    className={`saveCardButton ${saveCard && "active"}`}
+                                                    type="button"
+                                                    className={`saveCardButton ${orderInfo.saveCard && "active"}`}
                                                     disabled={
                                                         userData?.cards.some(
                                                             (card) =>

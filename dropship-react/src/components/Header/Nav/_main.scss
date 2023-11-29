@@ -37,65 +37,85 @@ header {
 
                         a,
                         button:not(.logInIcon) {
-                            &:not(.shippingButtons) {
-                                position: relative;
+                            position: relative;
+                            border-radius: .5rem;
+                            color: var(--secColor);
+
+                            padding: .6rem .8rem;
+
+                            &.cartLink {
+                                @media(min-width: 800px) {
+                                    padding-block: .3rem;
+                                    padding-inline: .3rem .5rem;
+                                }
+                            }
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: .5rem;
+                            transition: .3s ease background-color,
+                            color .3s ease;
+
+                            background-color: var(--tpPri2);
+                            outline: .15rem solid rgba(0, 0, 0, 0);
+                            user-select: none;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
+                                opacity: 0;
                                 border-radius: .5rem;
-                                color: var(--secColor);
+                                z-index: 0;
+                                transition: opacity .3s ease;
+                            }
 
-                                padding: .6rem .8rem;
+                            p {
+                                font-size: 1.2rem;
+                                z-index: 1;
+                            }
 
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                gap: .5rem;
-                                transition: .3s ease background-color, color .3s ease;
-
+                            .cartP {
                                 background-color: var(--tpPri2);
-                                outline: .15rem solid rgba(0, 0, 0, 0);
-                                user-select: none;
+                                color: var(--secColor);
+                                padding: .2rem .5rem;
+                                border-radius: .3rem;
+                                
+                                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                            }
+
+                            svg {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                z-index: 1;
+                            }
+
+                            &:focus-visible {
+                                outline-color: var(--reverseSecAccent);
+                            }
+
+                            &:hover {
+                                color: var(--accent);
+                                background-color: var(--paleAccent);
+                            }
+
+                            &:active {
+                                background-color: var(--tpPri3);
+                            }
+
+                            &.active {
+                                color: var(--priColor);
+                                pointer-events: none;
 
                                 &::after {
-                                    content: '';
-                                    position: absolute;
-                                    inset: 0;
-                                    background: linear-gradient(to right, var(--paleSecAccent), var(--paleAccentTwo));
-                                    opacity: 0;
-                                    border-radius: .5rem;
-                                    z-index: 0;
-                                    transition: opacity .3s ease;
+                                    opacity: 1;
                                 }
 
-                                p {
-                                    font-size: 1.2rem;
-                                    z-index: 1;
-                                }
-
-                                svg {
-                                    width: 1.5rem;
-                                    height: 1.5rem;
-                                    z-index: 1;
-                                }
-
-                                &:focus-visible {
-                                    outline-color: var(--reverseSecAccent);
-                                }
-
-                                &:hover {
-                                    color: var(--accent);
-                                    background-color: var(--paleAccent);
-                                }
-
-                                &:active {
+                                .cartP {
                                     background-color: var(--tpPri3);
-                                }
-
-                                &.active {
-                                    color: var(--priColor);
-                                    pointer-events: none;
-
-                                    &::after {
-                                        opacity: 1;
-                                    }
+                                    color: var(--secAccent);font-weight: 600;
                                 }
                             }
                         }
@@ -187,7 +207,7 @@ header {
         }
 
         &.dashboardNav {
-            all: unset!important;
+            all: unset !important;
 
             ul {
                 &.navigationLinks {
@@ -875,10 +895,6 @@ header {
                     z-index: 5;
                 }
 
-                .shippingDiv {
-                    z-index: 4;
-                }
-
                 .accountSettings {
                     z-index: 3;
                 }
@@ -890,8 +906,7 @@ header {
             &.mobileSettings {
 
                 .themeSettings,
-                .accountSettings,
-                .shippingDiv {
+                .accountSettings {
                     transform: translateY(130vh);
                 }
             }
@@ -909,14 +924,9 @@ header {
             &.mobileSettings {
 
                 .themeSettings,
-                .accountSettings,
-                .shippingDiv {
+                .accountSettings{
                     transform: translate(0);
                     transition: transform .5s;
-                }
-
-                .shippingDiv {
-                    transition-delay: .10s;
                 }
 
                 .accountSettings {
@@ -945,8 +955,7 @@ header {
             &.normalSettings {
 
                 .themeSettings,
-                .accountSettings,
-                .shippingDiv {
+                .accountSettings {
                     transform: translate(0);
                 }
             }
@@ -956,18 +965,13 @@ header {
             &.mobileSettings {
 
                 .themeSettings,
-                .accountSettings,
-                .shippingDiv {
+                .accountSettings {
                     transform: translateY(130vh);
                     transition: transform .5s;
                 }
 
                 .accountSettings {
                     transition-delay: 0;
-                }
-
-                .shippingDiv {
-                    transition-delay: .10s;
                 }
 
                 .themeSettings {

@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    orderItems: JSON.parse(localStorage.getItem("orderItems")) || [],
-    orderInfo: JSON.parse(localStorage.getItem("orderInfo")) || {
+    orderItems: localStorage.getItem("orderItems") ? JSON.parse(localStorage.getItem("orderItems")) : [],
+    orderInfo: localStorage.getItem("orderInfo") ? JSON.parse(localStorage.getItem("orderInfo")) : {
         firstName: "",
         lastName: "",
         email: "",
@@ -14,6 +14,7 @@ const initialState = {
         note: "",
         total: "",
         orderStatus: "draft",
+        saveCard: false,
     },
     finalPayment: false,
 }
@@ -68,10 +69,24 @@ const cartSlice = createSlice({
             })
         },
 
-        purchase() {
+        purchase(state) {
             localStorage.removeItem("orderItems")
             localStorage.removeItem("orderInfo")
-            return initialState
+            state.orderInfo = {
+                firstName: "",
+                lastName: "",
+                email: "",
+                phoneNumber: "",
+                address: "",
+                city: "",
+                postalCode: "",
+                paymentMethod: "prepaid",
+                note: "",
+                total: "",
+                orderStatus: "draft",
+                saveCard: false,
+            }
+            state.orderItems = []
         },
     },
 })

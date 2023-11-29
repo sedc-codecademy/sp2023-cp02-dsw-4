@@ -1247,7 +1247,7 @@ export function getCardTypeEnum(cardType) {
   switch(cardType) {
     case 'visa':
       return 1;
-    case 'master':
+    case 'mastercard':
       return 2;
     case 'maestro':
       return 3;
@@ -1267,4 +1267,18 @@ export function getCardStatusEnum(cardStatus) {
   }
 }
 
+export function getOrderStatusEnum(orderStatus) {
+  switch(orderStatus) {
+    case 'ondelivery':
+      return 1;
+    case 'existing':
+      return 2;
+    case 'newCardSave':
+      return 3;
+    case 'newCard':
+      return 4;
+    default:
+      return 1;
+  }
+}
 
