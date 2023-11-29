@@ -70,7 +70,7 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
 - Hat tip to anyone whose code was used
 - Inspiration from Skrouts, Poppr
 
-### 🌟 Shining Stars: Our Mentors 🌟
+## 🌟 Shining Stars: Our Mentors 🌟
 
 We would like to express our deepest gratitude to our mentors who guided us through this journey. Their expertise, patience, and dedication have been invaluable to our project. They have been our guiding stars, illuminating our path and helping us navigate the challenges of building this platform.
 
