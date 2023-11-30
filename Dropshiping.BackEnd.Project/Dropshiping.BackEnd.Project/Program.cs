@@ -19,40 +19,40 @@ namespace Dropshiping.BackEnd.Project
             builder.Services.AddSwaggerGen();
 
             //Ineject Configuration String - SQL server
-            DipendencyInjectionHelpers.InjectDbContext(builder.Services, builder.Configuration);
+            DependencyInjectionHelpers.InjectDbContext(builder.Services, builder.Configuration);
 
             //Inject Repository
-            DipendencyInjectionHelpers.InjectRepositories(builder.Services);
+            DependencyInjectionHelpers.InjectRepositories(builder.Services);
 
             //Inject Service
-            DipendencyInjectionHelpers.InjectService(builder.Services);
+            DependencyInjectionHelpers.InjectService(builder.Services);
 
 
-            //builder.Services.AddAuthentication(x =>
-            //{
-            //    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(x =>
-            //{
-            //    x.RequireHttpsMetadata = false;
-            //    //caches the token so that we can access it during the request lifetime
-            //    x.SaveToken = true;
-            //    x.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateAudience = false,
-            //        ValidateIssuer = false,
-            //        //Check if the expiration time has passes
-            //        ValidateLifetime = true,
-            //        //Token musth have an expiration time
-            //        RequireExpirationTime = true,
-            //        //should be sto to true to validate the key
-            //        ValidateIssuerSigningKey = true,
-            //        // set the time buffer for client-server difference. default is 300 sec
-            //        ClockSkew = TimeSpan.Zero,
-            //        IssuerSigningKey = new SymmetricSecurityKey
-            //        (Encoding.ASCII.GetBytes(builder.Configuration["AppSettings:SecretKey"]))
-            //    };
-            //});
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                //caches the token so that we can access it during the request lifetime
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                    //Check if the expiration time has passes
+                    ValidateLifetime = true,
+                    //Token musth have an expiration time
+                    RequireExpirationTime = true,
+                    //should be sto to true to validate the key
+                    ValidateIssuerSigningKey = true,
+                    // set the time buffer for client-server difference. default is 300 sec
+                    ClockSkew = TimeSpan.Zero,
+                    IssuerSigningKey = new SymmetricSecurityKey
+                    (Encoding.ASCII.GetBytes(builder.Configuration["AppSettings:SecretKey"]))
+                };
+            });
 
 
             var app = builder.Build();

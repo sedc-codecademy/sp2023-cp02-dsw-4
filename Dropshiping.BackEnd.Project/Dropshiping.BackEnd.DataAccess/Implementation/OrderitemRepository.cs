@@ -1,10 +1,5 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
@@ -23,13 +18,12 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public OrderItem GetById(string id)
         {
-            var orderitem = _dbContext.OrderItems.FirstOrDefault(r => r.Id == id);
-            if (orderitem == null)
+            var orderItem = _dbContext.OrderItems.FirstOrDefault(oi => oi.Id == id);
+            if (orderItem == null)
             {
-                throw new KeyNotFoundException($"Orderitem id {id} does not exist");
+                throw new KeyNotFoundException($"OrderItem id {id} does not exist");
             }
-
-            return orderitem;
+            return orderItem;
         }
 
         public void Add(OrderItem entity)
@@ -40,17 +34,13 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public void Update(OrderItem entity)
         {
-            _dbContext.Update(entity);
+            _dbContext.OrderItems.Update(entity);
             _dbContext.SaveChanges();
         }
 
         public void Delete(string id)
         {
             var orderitem = GetById(id);
-            if (orderitem == null)
-            {
-                throw new KeyNotFoundException($"Orderitem id {id} does not exist");
-            }
             _dbContext.OrderItems.Remove(orderitem);
             _dbContext.SaveChanges();
         }

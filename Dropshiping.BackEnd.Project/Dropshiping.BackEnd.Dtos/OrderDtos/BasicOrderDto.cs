@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Dropshiping.BackEnd.Enums;
 
 namespace Dropshiping.BackEnd.Dtos.OrderDtos
@@ -19,7 +15,7 @@ namespace Dropshiping.BackEnd.Dtos.OrderDtos
         public decimal Shipping { get; set; }
         public decimal Price { get; set; }
 
-        public StatusEnum Status { get; set; }
+        public DeliveryStatusEnum Status { get; set; }
         public PaymentStatusEnum PaymentStatus { get; set; }
         public CardTypeEnum CardType { get; set; }
     }

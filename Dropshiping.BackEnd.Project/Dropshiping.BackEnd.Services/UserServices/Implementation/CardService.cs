@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dropshiping.BackEnd.DataAccess.Implementation;
+﻿
 using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.UserModels;
-using Dropshiping.BackEnd.Dtos.RatingDtos;
 using Dropshiping.BackEnd.Dtos.UserDtos;
 using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Mappers.UserMappers;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
 using Dropshiping.BackEnd.Services.UserServices.Validations;
 using XAct.Security;
-using XAct.Users;
 
 namespace Dropshiping.BackEnd.Services.UserServices.Implementation
 {

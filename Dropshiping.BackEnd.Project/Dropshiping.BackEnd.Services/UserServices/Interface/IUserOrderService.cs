@@ -1,5 +1,4 @@
-﻿using Dropshiping.BackEnd.Dtos.OrderitemDtos;
-using Dropshiping.BackEnd.Dtos.UserOrderDtos;
+﻿using Dropshiping.BackEnd.Dtos.UserOrderDtos;
 
 namespace Dropshiping.BackEnd.Services.UserServices.Interface
 {
@@ -7,7 +6,7 @@ namespace Dropshiping.BackEnd.Services.UserServices.Interface
     {
         List<UserOrderDto> GetAll();
         UserOrderDto GetById(string id);
-        void Add(UserOrderAddDto userOrderAddDto);
+        void Add(string userId, string orderId);
         void Update(UserOrderDto userOrderDto);
         void DeleteById(string id);
     }

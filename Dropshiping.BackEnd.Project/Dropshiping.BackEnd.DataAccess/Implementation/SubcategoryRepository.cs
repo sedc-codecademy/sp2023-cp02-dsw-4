@@ -18,11 +18,9 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public Subcategory GetById(string id)
         {
-            var subcategory = _dbContext.Subcategories.
-                Where(subcategory => subcategory.Id == id)
-                .Include(x => x.Products).ThenInclude(x => x.Manufacturer)
-                .Include(x => x.Products).ThenInclude(x => x.Rating)
-                .FirstOrDefault();
+            var subcategory = _dbContext.Subcategories.Include(x => x.Products).ThenInclude(x => x.Manufacturer)
+                .Include(x => x.Products).ThenInclude(x => x.Ratings)
+                .FirstOrDefault(x => x.Id == id);
 
             if (subcategory == null)
             {

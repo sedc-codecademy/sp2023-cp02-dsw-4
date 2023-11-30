@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Dropshiping.BackEnd.Domain.ProductModels;
+﻿using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.OrderDtos;
-using Dropshiping.BackEnd.Dtos.UserDtos;
-using Microsoft.VisualBasic;
+using Dropshiping.BackEnd.Enums;
 
 namespace Dropshiping.BackEnd.Mappers.OrderMappers
 {
     public static class OrderMapper
     {
-        public static BasicOrderDto ToBasicOrderDto(this Order order)
+        public static OrderDto ToOrderDto(this Order order)
         {
-            return new BasicOrderDto
+            var userOrderRecepient = order.UserOrders.FirstOrDefault(x => x.User.Role == RoleEnum.User);
+            var userOrderCourier = order.UserOrders.FirstOrDefault(x => x.User.Role == RoleEnum.Courier);
+
+            if (userOrderRecepient == null)
+            {
+                throw new KeyNotFoundException("User info is not found!");
+            }
+
+            var user = userOrderRecepient.User;
+
+            var orderDto = new OrderDto
             {
                 Id = order.Id,
                 PurchasedTime = order.PurchasedTime,
@@ -25,12 +27,49 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
                 City = order.City,
                 PhoneNumber = order.PhoneNumber,
                 Note = order.Note,
+                Recepient = $"{user.FirstName} {user.LastName}",
+                Email = user.Email,
                 Shipping = order.Shipping,
-                Price = order.Price,
                 Status = order.Status,
                 PaymentStatus = order.PaymentStatus,
-                CardType = order.CardType,
+                OrderItems = order.OrderItems.Select(x => x.ToOrderItemDto()).ToList()
             };
+
+            if (userOrderCourier != null)
+            {
+                orderDto.Courier = $"{userOrderCourier.User.FirstName} {userOrderCourier.User.LastName}";
+            }
+
+            return orderDto;
+        }
+
+        public static Order ToOrderDomain(this AddOrderDto order)
+        {
+
+            var newOrder = new Order
+            {
+                PurchasedTime = DateTime.Now,
+                Address = order.Address,
+                PostalCode= order.PostalCode,
+                City = order.City,
+                PhoneNumber = order.PhoneNumber,
+                PaymentStatus = order.PaymentStatus,
+                Status = DeliveryStatusEnum.Purchased,
+            };
+            if(!string.IsNullOrEmpty(order.Note))
+            {
+                newOrder.Note = order.Note;
+            }
+            if(order.PaymentStatus == PaymentStatusEnum.Paid)
+            {
+                if (long.TryParse(order.CardNumber, out long cardNumberValue))
+                {
+                    newOrder.CardNumber = cardNumberValue;
+                }
+                newOrder.CardType = order.CardType;
+            }
+
+            return newOrder;
         }
     }
 }

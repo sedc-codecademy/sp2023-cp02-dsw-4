@@ -77,5 +77,18 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _productSizeRepository.Delete(productSize.Id);
         }
 
+        public void UpdateStock(string productSizeId, int quantity)
+        {
+            var productSize = _productSizeRepository.GetById(productSizeId);
+            if (productSize != null)
+            {
+                if(productSize.Stock < quantity)
+                {
+                    throw new InvalidOperationException($"The availabale stock for this product is {productSize.Stock} pieces.");
+                }
+                productSize.Stock -= quantity;
+                _productSizeRepository.Update(productSize);
+            }
+        }
     }
 }

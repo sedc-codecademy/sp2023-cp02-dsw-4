@@ -109,8 +109,8 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<string>("CardHolder")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CardNumber")
-                        .HasColumnType("int");
+                    b.Property<long>("CardNumber")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("CardType")
                         .HasColumnType("int");
@@ -127,8 +127,8 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.Property<int>("PaymentStatus")
                         .HasColumnType("int");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostalCode")
                         .HasColumnType("nvarchar(max)");
@@ -157,15 +157,15 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         {
                             Id = "1",
                             Address = "address",
-                            CardNumber = 0,
+                            CardNumber = 0L,
                             CardType = 0,
                             City = "Skopje",
                             ExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentStatus = 2,
-                            PhoneNumber = 123123,
+                            PhoneNumber = "123123",
                             PostalCode = "1000",
                             Price = 1000m,
-                            PurchasedTime = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3934),
+                            PurchasedTime = new DateTime(2023, 11, 29, 15, 37, 58, 507, DateTimeKind.Local).AddTicks(149),
                             SecurityCode = 0,
                             Shipping = 0m,
                             Status = 1
@@ -174,15 +174,15 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         {
                             Id = "2",
                             Address = "address",
-                            CardNumber = 0,
+                            CardNumber = 0L,
                             CardType = 0,
                             City = "Ohrid",
                             ExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentStatus = 2,
-                            PhoneNumber = 123123,
+                            PhoneNumber = "123123",
                             PostalCode = "12345",
                             Price = 3000m,
-                            PurchasedTime = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3980),
+                            PurchasedTime = new DateTime(2023, 11, 29, 15, 37, 58, 507, DateTimeKind.Local).AddTicks(163),
                             SecurityCode = 0,
                             Shipping = 150m,
                             Status = 1
@@ -277,7 +277,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            DateOfCreation = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3315),
+                            DateOfCreation = new DateTime(2023, 11, 29, 15, 37, 58, 507, DateTimeKind.Local).AddTicks(11),
                             Description = "description",
                             Discount = 50,
                             Image = "Image",
@@ -290,7 +290,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2",
-                            DateOfCreation = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(3433),
+                            DateOfCreation = new DateTime(2023, 11, 29, 15, 37, 58, 507, DateTimeKind.Local).AddTicks(60),
                             Description = "description",
                             Discount = 0,
                             Image = "Image",
@@ -405,7 +405,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1",
-                            Date = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(4140),
+                            Date = new DateTime(2023, 11, 29, 15, 37, 58, 507, DateTimeKind.Local).AddTicks(245),
                             ProductId = "1",
                             Rate = 5,
                             UserId = "1"
@@ -413,7 +413,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2",
-                            Date = new DateTime(2023, 11, 26, 20, 54, 35, 983, DateTimeKind.Local).AddTicks(4181),
+                            Date = new DateTime(2023, 11, 29, 15, 37, 58, 507, DateTimeKind.Local).AddTicks(260),
                             ProductId = "2",
                             Rate = 4,
                             UserId = "1"

@@ -61,8 +61,10 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             
 
             var product = newProductDto.ToProductDomain();
+            var productId = product.Id;
           
              _productRepository.Add(product);
+           
         }
 
        

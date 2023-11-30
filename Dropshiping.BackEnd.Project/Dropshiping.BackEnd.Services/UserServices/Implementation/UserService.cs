@@ -1,15 +1,11 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Dropshiping.BackEnd.DataAccess.Implementation;
 using Dropshiping.BackEnd.DataAccess.Interface;
-using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Domain.UserModels;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Dtos.UserDtos;
 using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Mappers.UserMappers;
-using Dropshiping.BackEnd.Services.UserServices.Helpers;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
 using Dropshiping.BackEnd.Services.UserServices.Validations;
 using Microsoft.Extensions.Configuration;

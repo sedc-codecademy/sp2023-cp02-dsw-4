@@ -1,8 +1,5 @@
-﻿using Dropshiping.BackEnd.Dtos.OrderitemDtos;
-using Dropshiping.BackEnd.Dtos.UserOrderDtos;
-using Dropshiping.BackEnd.Services.UserServices.Implementation;
+﻿using Dropshiping.BackEnd.Dtos.UserOrderDtos;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -52,11 +49,11 @@ namespace Dropshiping.BackEnd.Project.Controllers
         }
 
         [HttpPost("AddUserOrder")]
-        public IActionResult AddUserOrder(UserOrderAddDto userOrderAddDto)
+        public IActionResult AddUserOrder(string userId, string orderId)
         {
             try
             {
-                _userOrderService.Add(userOrderAddDto);
+                _userOrderService.Add(userId, orderId);
                 return StatusCode(StatusCodes.Status204NoContent, "ProductSize added");
             }
             catch (ArgumentNullException ex)

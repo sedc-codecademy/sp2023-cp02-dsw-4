@@ -1,12 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
+﻿
 using Dropshiping.BackEnd.DataAccess.Interface;
-using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Domain.UserModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {

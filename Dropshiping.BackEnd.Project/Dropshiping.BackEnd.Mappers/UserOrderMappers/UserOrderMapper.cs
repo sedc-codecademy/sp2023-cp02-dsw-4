@@ -1,6 +1,4 @@
-﻿using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Domain.UserModels;
-using Dropshiping.BackEnd.Dtos.OrderitemDtos;
+﻿using Dropshiping.BackEnd.Domain.UserModels;
 using Dropshiping.BackEnd.Dtos.UserOrderDtos;
 
 namespace Dropshiping.BackEnd.Mappers.UserOrderMappers
@@ -14,6 +12,15 @@ namespace Dropshiping.BackEnd.Mappers.UserOrderMappers
                 Id = userOrder.Id,
                 UserId = userOrder.UserId,
                 OrderId = userOrder.OrderId,
+            };
+        }
+
+        public static UserOrder ToUserOrderDomain(string userId, string orderId)
+        {
+            return new UserOrder
+            {
+                UserId = userId,
+                OrderId = orderId,
             };
         }
     }

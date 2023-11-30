@@ -1,6 +1,5 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation

@@ -1,8 +1,9 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Implementation;
 using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.OrderitemDtos;
+using Dropshiping.BackEnd.Dtos.OrderItemDtos;
 using Dropshiping.BackEnd.Dtos.ProductSizeDtos;
+using Dropshiping.BackEnd.Mappers.OrderMappers;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 
@@ -10,67 +11,63 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
     public class OrderitemService : IOrderitemService
     {
-        private IRepository<OrderItem> _orderitemRepository;
+        private IRepository<OrderItem> _orderItemRepository;
         public OrderitemService(IRepository<OrderItem> orderitemRepository)
         {
-            _orderitemRepository = orderitemRepository;
+            _orderItemRepository = orderitemRepository;
         }
 
-        public List<OrderitemDto> GetAll()
+        public List<OrderItemDto> GetAll()
         {
-            var orderitem = _orderitemRepository.GetAll();
-            return orderitem.Select(x => x.ToDtoOrderitem()).ToList();
+            var orderitem = _orderItemRepository.GetAll();
+            return orderitem.Select(x => x.ToOrderItemDto()).ToList();
         }
 
-        public OrderitemDto GetById(string id)
+        public OrderItemDto GetById(string id)
         {
-            var orderitem = _orderitemRepository.GetById(id);
+            var orderitem = _orderItemRepository.GetById(id);
 
             if (orderitem == null)
             {
                 throw new KeyNotFoundException($"Orderitem with id {id} is not found");
             }
 
-            return orderitem.ToDtoOrderitem();
+            return orderitem.ToOrderItemDto();
         }
 
-        public void Add(OrderitemAddDto orderitemAddDto)
+        public void Add(List<AddOrderItemDto> orderItemDtos, string orderId)
         {
-            var orderitem = new OrderItem
+            
+            var mappedOrderItems = orderItemDtos.Select(x => x.ToOrderItemDomain(orderId)).ToList();
+            foreach (var item in mappedOrderItems)
             {
-                Quantity = orderitemAddDto.Quantity,
-                OrderId = orderitemAddDto.OrderId,
-                ProductSizeId = orderitemAddDto.ProductSizeId,
-            };
-
-            _orderitemRepository.Add(orderitem);
+                _orderItemRepository.Add(item);
+            }
         }
 
-        public void Update(OrderitemDto orderitemDto)
+        public void Update(OrderItemDto orderitemDto)
         {
-            var orderitem = _orderitemRepository.GetById(orderitemDto.Id);
+            var orderitem = _orderItemRepository.GetById(orderitemDto.Id);
 
             orderitem.Quantity = orderitemDto.Quantity;
-            orderitem.OrderId = orderitemDto.OrderId;
-            orderitem.ProductSizeId = orderitemDto.ProductSizeId;
 
-            _orderitemRepository.Update(orderitem);
+            _orderItemRepository.Update(orderitem);
         }
 
         public void DeleteById(string id)
         {
-            var orderitem = GetById(id);
+            //var orderitem = GetById(id);
 
-            if (orderitem.Id == null)
-            {
-                throw new KeyNotFoundException($"Orderitem with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
+            //if (orderitem == null)
+            //{
+            //    throw new KeyNotFoundException($"Orderitem with id {id} was not found.");
+            //}
+            //if (id == "")
+            //{
+            //    throw new ArgumentException("You must enter id");
+            //}
 
-            _orderitemRepository.Delete(orderitem.Id);
+            _orderItemRepository.Delete(id);
         }
     }
 }

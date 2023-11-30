@@ -1,7 +1,5 @@
-﻿using Dropshiping.BackEnd.DataAccess.Implementation;
-using Dropshiping.BackEnd.DataAccess.Interface;
+﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.UserModels;
-using Dropshiping.BackEnd.Dtos.OrderitemDtos;
 using Dropshiping.BackEnd.Dtos.UserOrderDtos;
 using Dropshiping.BackEnd.Mappers.UserOrderMappers;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
@@ -34,14 +32,9 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
             return userOrder.ToDtoUserOrder();
         }
 
-        public void Add(UserOrderAddDto userOrderAddDto)
+        public void Add(string userId, string orderId)
         {
-            var userOrder = new UserOrder
-            {
-                UserId = userOrderAddDto.UserId,
-                OrderId = userOrderAddDto.OrderId,
-            };
-
+            var userOrder = UserOrderMapper.ToUserOrderDomain(userId, orderId);
             _userOrderRepository.Add(userOrder);
         }
 
@@ -58,18 +51,18 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
 
         public void DeleteById(string id)
         {
-            var userOrder = GetById(id);
+            //var userOrder = GetById(id);
 
-            if (userOrder.Id == null)
-            {
-                throw new KeyNotFoundException($"UserOrder with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
+            //if (userOrder.Id == null)
+            //{
+            //    throw new KeyNotFoundException($"UserOrder with id {id} was not found.");
+            //}
+            //if (id == "")
+            //{
+            //    throw new ArgumentException("You must enter id");
+            //}
 
-            _userOrderRepository.Delete(userOrder.Id);
+            _userOrderRepository.Delete(id);
         }
     }
 }

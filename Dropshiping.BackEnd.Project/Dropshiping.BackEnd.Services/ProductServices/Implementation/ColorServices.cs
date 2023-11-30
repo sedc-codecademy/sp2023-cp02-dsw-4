@@ -1,15 +1,9 @@
-﻿using Dropshiping.BackEnd.DataAccess.Implementation;
-using Dropshiping.BackEnd.DataAccess.Interface;
+﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {

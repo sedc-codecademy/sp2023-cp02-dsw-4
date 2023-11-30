@@ -163,7 +163,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _productService.Add(productDto);
-                return Ok("Product is created successfully!");
+                return Ok($"Product is created successfully!");
             }
             catch (ArgumentNullException ex)
             {

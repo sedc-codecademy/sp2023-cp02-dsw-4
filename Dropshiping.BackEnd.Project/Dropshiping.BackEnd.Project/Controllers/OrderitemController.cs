@@ -1,8 +1,5 @@
-﻿using Dropshiping.BackEnd.Dtos.OrderitemDtos;
-using Dropshiping.BackEnd.Dtos.ProductSizeDtos;
-using Dropshiping.BackEnd.Services.ProductServices.Implementation;
+﻿using Dropshiping.BackEnd.Dtos.OrderItemDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -50,26 +47,26 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        [HttpPost("AddOrderitem")]
-        public IActionResult AddOrderitem(OrderitemAddDto orderitemAddDto)
-        {
-            try
-            {
-                _orderitemService.Add(orderitemAddDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Orderitem added");
-            }
-            catch (ArgumentNullException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-            }
-        }
+        //[HttpPost("AddOrderitem")]
+        //public IActionResult AddOrderitem(AddOrderItemDto orderitemAddDto)
+        //{
+        //    try
+        //    {
+        //        _orderitemService.Add(orderitemAddDto);
+        //        return StatusCode(StatusCodes.Status204NoContent, "Orderitem added");
+        //    }
+        //    catch (ArgumentNullException ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //    catch
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+        //    }
+        //}
 
         [HttpPut("UpdateOrderitem")]
-        public IActionResult UpdateOrderitem(OrderitemDto orderitemDto)
+        public IActionResult UpdateOrderitem(OrderItemDto orderitemDto)
         {
             try
             {
