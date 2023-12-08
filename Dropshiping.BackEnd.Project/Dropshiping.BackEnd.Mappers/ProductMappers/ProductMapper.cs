@@ -19,11 +19,15 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
                 DiscountPercentage = product.Discount,
                 Image = product.Image,
             };
-
-            if (product.Ratings != null && product.Ratings.Count > 0)
+            if(product.Ratings.Any())
             {
-                productDto.Ratings = product.Ratings.Select(r => r.ToRatingDto()).ToList();
+                productDto.Rating = (decimal)product.Ratings.Average(x => (int)x.Rate);
             }
+            else
+            {
+                productDto.Rating = 0;
+            }
+
             return productDto;
 
         }
@@ -73,13 +77,13 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
                 }
             };
 
-            if (product.Ratings != null && product.Ratings.Count > 0)
+            if (product.Ratings.Any())
             {
+                fullProductDto.Rating = (decimal)product.Ratings.Average(x => (int)x.Rate);
                 fullProductDto.Ratings = product.Ratings.Select(r => r.ToRatingDto()).ToList();
-
             }
 
-            if (product.ProductSizes != null && product.ProductSizes.Count > 0)
+            if (product.ProductSizes.Any())
             {
                 fullProductDto.ProductSizes = product.ProductSizes.Select(ps => ps.ToProductSizeColorDto()).ToList();
             }

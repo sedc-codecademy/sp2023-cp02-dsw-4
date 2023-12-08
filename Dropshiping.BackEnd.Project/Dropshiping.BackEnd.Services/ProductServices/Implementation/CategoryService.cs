@@ -39,6 +39,11 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             categoryDto.ValidateNewCategory();
 
+            if(CategoryNameExists(categoryDto.Name))
+            {
+                throw new ArgumentException($"Category with name {categoryDto.Name} already exists!");
+            }
+
             var category = categoryDto.ToCategoryDomain();
 
             _categoryRepository.Add(category);
@@ -48,6 +53,14 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         public void Update(UpdateCategoryDto categoryDto)
         {
             var category = _categoryRepository.GetById(categoryDto.Id);
+
+            if(category.Name != categoryDto.Name)
+            {
+                if (CategoryNameExists(categoryDto.Name))
+                {
+                    throw new ArgumentException($"Category with name {categoryDto.Name} already exists!");
+                }
+            }
 
             var updatedCategory = categoryDto.ValidateUpdateCategory(category);
 
@@ -61,6 +74,14 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _categoryRepository.Delete(id);
         }
 
-        
+        public bool CategoryNameExists(string categoryName)
+        {
+            var category = _categoryRepository.GetAll().FirstOrDefault(x => x.Name == categoryName);
+            if (category == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
