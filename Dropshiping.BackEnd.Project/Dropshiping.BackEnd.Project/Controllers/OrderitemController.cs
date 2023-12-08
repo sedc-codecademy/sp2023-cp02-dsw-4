@@ -65,8 +65,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
         //    }
         //}
 
-        [HttpPut("UpdateOrderitem")]
-        public IActionResult UpdateOrderitem(OrderItemDto orderitemDto)
+        [HttpPut("UpdateOrderItem")]
+        public IActionResult UpdateOrderItem(OrderItemDto orderitemDto)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _orderitemService.DeleteById(id);
-                return StatusCode(StatusCodes.Status204NoContent, "Orderitem  deleted");
+                return StatusCode(StatusCodes.Status204NoContent, "Order Item  deleted");
             }
             catch (ArgumentException ex)
             {

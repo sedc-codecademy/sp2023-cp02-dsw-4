@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
@@ -20,13 +21,15 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public Manufacturer GetById(string id)
         {
-            var manufacturer = _dbContext.Manufacturers.FirstOrDefault(r => r.Id == id);
-            if (manufacturer == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
-            }
+            var manufacturer = _dbContext.Manufacturers
+                .Include(x => x.Products).ThenInclude(x => x.ProductSizes).ThenInclude(x =>x.Color)
+                .Include(x => x.Products).ThenInclude(x => x.ProductSizes).ThenInclude(x => x.Size)
+                .Include(x => x.Products).ThenInclude(x => x.Ratings).ThenInclude(x => x.User)
+                .Include(x => x.Products).ThenInclude(x => x.Subcategory).ThenInclude(x => x.Category)
+                .Include(x => x.Products).ThenInclude(x => x.Manufacturer)
+                .FirstOrDefault(x => x.Id == id);
 
-            return manufacturer;
+            return manufacturer ?? throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
         }
 
         public void Add(Manufacturer entity)
@@ -44,10 +47,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public void Delete(string id)
         {
             var manufacturer = GetById(id);
-            if (manufacturer == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
-            }
+            
             _dbContext.Manufacturers.Remove(manufacturer);
             _dbContext.SaveChanges();
         }

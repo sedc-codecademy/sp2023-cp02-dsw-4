@@ -1,20 +1,20 @@
 ﻿using Dropshiping.BackEnd.Dtos.OrderItemDtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Validations
 {
     public static class OrderItemValidations
     {
-        public static void ValidateQuantity(List<AddOrderItemDto> orderItems)
+        public static void ValidateOrderItem(this AddOrderItemDto orderItem)
         {
-            foreach (var item in orderItems)
-            {
+           if(orderItem.ProductSizeId == null)
+           {
+                throw new ArgumentException("ProductSize id is required");
+           }
 
-            }
+           if(orderItem.Quantity < 1 || orderItem.Quantity > 100)
+           {
+                throw new ArgumentException("Invalid Quantity amount!");
+           }
         }
     }
 }

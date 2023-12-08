@@ -73,7 +73,8 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public List<Product> GetAllTopRatedProducts()
         {
-            return _dbContext.Products.Include(p => p.Ratings).ToList().Where(p => p.Rating >= 4 && p.Discount < 100).OrderByDescending(p => p.Rating).ToList();
+           // return _dbContext.Products.Include(p => p.Ratings).ToList().Where(p => p.Rating >= 4 && p.Discount < 100).OrderByDescending(p => p.Rating).ToList();
+            return _dbContext.Products.Include(p => p.Ratings).ToList().Where(p => p.Discount < 100).OrderByDescending(p => p.Ratings.Average(r => (int) r.Rate)).ToList();
         }
 
         public List<Product> GetAllNewProducts()

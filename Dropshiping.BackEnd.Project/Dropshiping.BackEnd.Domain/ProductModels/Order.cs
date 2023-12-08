@@ -12,17 +12,13 @@ namespace Dropshiping.BackEnd.Domain.ProductModels
         public string City { get; set; }
         public string PhoneNumber {  get; set; }
         public string Note {  get; set; }
-        public decimal Shipping { get; set; }
-        public decimal Price { get; set; }
+        //public decimal Shipping {  get; set; }
+        //public decimal Price { get; set; }
 
         public DeliveryStatusEnum Status { get; set; }
         public PaymentStatusEnum PaymentStatus { get; set; }
         public CardTypeEnum CardType { get; set; }
         public long CardNumber { get; set; }
-        public string CardHolder { get; set; }
-        public DateTime ExpirationDate { get; set; }
-        public int SecurityCode { get; set; }
-
         //Relation conections
         public virtual ICollection<OrderItem> OrderItems { get; set; }
         public virtual ICollection<UserOrder> UserOrders { get; set; }

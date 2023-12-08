@@ -29,9 +29,8 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
                 Note = order.Note,
                 Recepient = $"{user.FirstName} {user.LastName}",
                 Email = user.Email,
-                Shipping = order.Shipping,
-                Status = order.Status,
-                PaymentStatus = order.PaymentStatus,
+                Status = Enum.GetName(typeof(DeliveryStatusEnum), order.Status),
+                PaymentStatus = Enum.GetName(typeof(PaymentStatusEnum), order.PaymentStatus),
                 OrderItems = order.OrderItems.Select(x => x.ToOrderItemDto()).ToList()
             };
 
@@ -56,7 +55,9 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
                 PaymentStatus = order.PaymentStatus,
                 Status = DeliveryStatusEnum.Purchased,
             };
-            if(!string.IsNullOrEmpty(order.Note))
+
+            
+            if (!string.IsNullOrEmpty(order.Note))
             {
                 newOrder.Note = order.Note;
             }

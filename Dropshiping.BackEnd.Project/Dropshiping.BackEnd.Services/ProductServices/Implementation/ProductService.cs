@@ -1,12 +1,9 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Helpers;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
-using System.Text;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
@@ -49,19 +46,8 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             var productSubcategory = _subcategoryRepository.GetById(newProductDto.SubcategoryId);
             var productManufacturer = _manufacturerRepository.GetById(newProductDto.ManufacturerId);
 
-            if (productSubcategory == null)
-            {
-                throw new KeyNotFoundException($"Subcategory with id {newProductDto.SubcategoryId} does not exist!");
-            }
-            if (productManufacturer == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer with id {newProductDto.ManufacturerId} does not exist!");
-            }
-
-            
 
             var product = newProductDto.ToProductDomain();
-            var productId = product.Id;
           
              _productRepository.Add(product);
            
@@ -76,38 +62,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             var productSubcategory = _subcategoryRepository.GetById(updateProductDto.SubcategoryId);
             var productManufacturer = _manufacturerRepository.GetById(updateProductDto.ManufacturerId);
 
-            if (product == null)
-            {
-                throw new KeyNotFoundException($"Product with id {updateProductDto.Id} does not exist!");
-            }
-            if (productSubcategory == null)
-            {
-                throw new KeyNotFoundException($"Subcategory with id {updateProductDto.SubcategoryId} does not exist!");
-            }
-            if (productManufacturer == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer with id {updateProductDto.ManufacturerId} does not exist!");
-            }
-
-            updateProductDto.ValidateUpdatedProduct();
-
-            if (!string.IsNullOrEmpty(updateProductDto.Name))
-            {
-                product.Name = updateProductDto.Name;
-            }
-            if (!string.IsNullOrEmpty(updateProductDto.Description))
-            {
-                product.Description = updateProductDto.Description;
-            }
-            if (!string.IsNullOrEmpty(updateProductDto.Image))
-            {
-                product.Image = updateProductDto.Image;
-            }
-
-            product.Price = updateProductDto.Price;
-            product.Discount = updateProductDto.Discount;
-            product.SubcategoryId = updateProductDto.SubcategoryId;
-            product.ManufacturerId = updateProductDto.ManufacturerId;
+            var updatedProduct = updateProductDto.ValidateUpdatedProduct(product);
 
             _productRepository.Update(product);
         }

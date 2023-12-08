@@ -3,6 +3,7 @@ using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.OrderDtos;
 using Dropshiping.BackEnd.Mappers.OrderMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
@@ -23,6 +24,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
         public void Add(AddOrderDto addOrderDto)
         {
+            addOrderDto.ValidateOrder();
             var orderItems = addOrderDto.OrderItems;
 
             foreach (var item in orderItems)
@@ -54,7 +56,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
         public List<OrderDto> GetPurchased()
         {
-            var orders =  GetAll().Where(x => x.Status == Enums.DeliveryStatusEnum.Purchased).ToList();
+            var orders =  GetAll().Where(x => x.Status == "Purchased").ToList();
             if (orders.Count == 0)
             {
                 throw new ArgumentException("There are no new orders!");

@@ -4,8 +4,7 @@
     {
         public string Name { get; set; }
         public string Image { get; set; }
-
-        // Properties for relations
+        public string Icon { get; set; }
         public virtual ICollection<Subcategory> Subcategories { get; set; }
     }
 }

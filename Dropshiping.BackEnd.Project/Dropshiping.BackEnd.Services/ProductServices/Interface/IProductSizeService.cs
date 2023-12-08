@@ -1,7 +1,5 @@
-﻿using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
+﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Dtos.ProductSizeDtos;
-using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Interface
 {

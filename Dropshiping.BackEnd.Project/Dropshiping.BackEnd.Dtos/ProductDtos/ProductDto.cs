@@ -1,5 +1,5 @@
-﻿using Dropshiping.BackEnd.Domain;
-using Dropshiping.BackEnd.Domain.ProductModels;
+﻿
+using Dropshiping.BackEnd.Dtos.RatingDtos;
 
 namespace Dropshiping.BackEnd.Dtos.ProductDtos
 {
@@ -24,9 +24,28 @@ namespace Dropshiping.BackEnd.Dtos.ProductDtos
             }
         }
         public string Image { get; set; }
-        public decimal Rating { get; set; }
+        public ICollection<RatingDto> Ratings { get; set; }
+        public decimal Rating
+        {
+            get
+            {
+                if (!Ratings.Any())
+                {
+                    return 0;
+                }
+                decimal sum = Ratings.Sum(r => (int)r.Rate);
 
+                return sum / Ratings.Count;
+            }
+        }
+
+        public ProductDto()
+        {
+            Ratings = new List<RatingDto>();
+        }
         
+
+
 
     }
 }

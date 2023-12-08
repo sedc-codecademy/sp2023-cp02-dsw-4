@@ -1,10 +1,6 @@
 ﻿using Dropshiping.BackEnd.Domain.ProductModels;
+using Dropshiping.BackEnd.Domain.UserModels;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dropshiping.BackEnd.Helpers
 {
@@ -50,7 +46,7 @@ namespace Dropshiping.BackEnd.Helpers
             }
         }
 
-        public static void ValidateUpdatedProduct(this UpdateProductDto productDto)
+        public static Product ValidateUpdatedProduct(this UpdateProductDto productDto, Product product)
         {
             if (productDto.Name.Length > 50)
             {
@@ -68,6 +64,25 @@ namespace Dropshiping.BackEnd.Helpers
             {
                 throw new InvalidDataException("Invalid discount value!");
             }
+            if (!string.IsNullOrEmpty(productDto.Name))
+            {
+                product.Name = productDto.Name;
+            }
+            if (!string.IsNullOrEmpty(productDto.Description))
+            {
+                product.Description = productDto.Description;
+            }
+            if (!string.IsNullOrEmpty(productDto.Image))
+            {
+                product.Image = productDto.Image;
+            }
+
+            product.Price = productDto.Price;
+            product.Discount = productDto.Discount;
+            product.SubcategoryId = productDto.SubcategoryId;
+            product.ManufacturerId = productDto.ManufacturerId;
+
+            return product;
         }
     }
 }

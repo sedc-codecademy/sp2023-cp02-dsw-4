@@ -32,12 +32,11 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public UserOrder GetById(string id)
         {
-            var entity = _dbContext.UserOrders.Include(u => u.User).FirstOrDefault(x => x.Id == id);
+            var entity = _dbContext.UserOrders.Include(u => u.User)
+                                              .Include(o => o.Order)
+                                              .FirstOrDefault(x => x.Id == id);
 
-            if (entity == null)
-                throw new KeyNotFoundException($"Entity with id {id} does not exist");
-
-            return entity;
+            return entity ?? throw new KeyNotFoundException($"Entity with id {id} does not exist");
         }
 
 

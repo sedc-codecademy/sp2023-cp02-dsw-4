@@ -1,11 +1,7 @@
 ﻿using Dropshiping.BackEnd.Domain.UserModels;
 using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Dtos.UserDtos;
-using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Mappers.RatingMappers;
-using Dropshiping.BackEnd.Mappers.ProductMappers;
-using Dropshiping.BackEnd.Mappers.OrderMappers;
+
 
 namespace Dropshiping.BackEnd.Mappers.UserMappers
 {

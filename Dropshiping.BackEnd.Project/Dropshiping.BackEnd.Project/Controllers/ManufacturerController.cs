@@ -1,8 +1,5 @@
-﻿using System;
-using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
+﻿using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -51,12 +48,12 @@ namespace Dropshiping.BackEnd.Project.Controllers
         }
 
         [HttpPost("AddManufacturer")]
-        public IActionResult AddRegion(ManufacturerDto manufacturerDto)
+        public IActionResult AddManufacturer(NewManufacturerDto manufacturerDto)
         {
             try
             {
                 _manufacturerService.Add(manufacturerDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Region added");
+                return Ok("New Manufacturer added");
             }
             catch (ArgumentNullException ex)
             {
@@ -69,7 +66,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
         }
 
         [HttpPut("UpdateManufacturer")]
-        public IActionResult UpdateRegion(ManufacturerDto manufacturerDto)
+        public IActionResult UpdateManufacturer(ManufacturerDto manufacturerDto)
         {
             try
             {

@@ -55,9 +55,13 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _productSizeService.Add(addProductSizeDto);
                 return StatusCode(StatusCodes.Status204NoContent, "ProductSize added");
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch
             {
@@ -73,9 +77,13 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _productSizeService.Update(productSizeDto);
                 return StatusCode(StatusCodes.Status204NoContent, "ProductSize updated");
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch
             {
@@ -90,10 +98,6 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _productSizeService.DeleteById(id);
                 return StatusCode(StatusCodes.Status204NoContent, "Product Size deleted");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (KeyNotFoundException ex)
             {

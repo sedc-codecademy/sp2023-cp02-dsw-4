@@ -1,5 +1,4 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Dtos.UserDtos;
+﻿using Dropshiping.BackEnd.Dtos.UserDtos;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
 using Microsoft.AspNetCore.Mvc;
 

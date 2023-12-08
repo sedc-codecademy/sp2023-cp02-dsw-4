@@ -18,23 +18,15 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public Subcategory GetById(string id)
         {
-            var subcategory = _dbContext.Subcategories.Include(x => x.Products).ThenInclude(x => x.Manufacturer)
-                .Include(x => x.Products).ThenInclude(x => x.Ratings)
+            var subcategory = _dbContext.Subcategories
+                .Include(x => x.Products).ThenInclude(x => x.Manufacturer)
+                .Include(x => x.Products).ThenInclude(x => x.Ratings).ThenInclude(x => x.User)
+                .Include(x => x.Products).ThenInclude(p => p.ProductSizes).ThenInclude(ps => ps.Size)
+                .Include(x => x.Products).ThenInclude(x => x.ProductSizes).ThenInclude(ps => ps.Color)
                 .FirstOrDefault(x => x.Id == id);
 
-            if (subcategory == null)
-            {
-                throw new KeyNotFoundException($"Subcategory with id {id} does not exist");
-            }
-            return subcategory;
+            return subcategory ?? throw new KeyNotFoundException($"Subcategory with id {id} does not exist");
 
-            //var subcategory = _dbContext.Subcategories.FirstOrDefault(s => s.Id == id);
-            
-            //if (subcategory == null)
-            //{
-            //    throw new KeyNotFoundException($"Subcategory with id {id} does not exist");
-            //}
-            //return subcategory;
         }
 
         public void Add(Subcategory entity)

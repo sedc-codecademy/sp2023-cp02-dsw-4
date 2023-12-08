@@ -3,6 +3,7 @@ using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
@@ -23,26 +24,14 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var size = _sizeRepository.GetById(id);
 
-            if (size == null)
-            {
-                throw new KeyNotFoundException($"Size with id {id} is not found");
-            }
-
-            return size.ToDtoSize();
+            return size == null ? throw new KeyNotFoundException($"Size with id {id} is not found") : size.ToDtoSize();
         }
 
         public void Add(SizeDto sizeDto)
         {
-            if (sizeDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
+            sizeDto.ValidateSize();
 
-            var size = new Size
-            {
-                Name = sizeDto.Name,
-
-            };
+            var size = sizeDto.ToSizeDomain();
 
             _sizeRepository.Add(size);
         }
@@ -51,28 +40,16 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var size = _sizeRepository.GetById(sizeDto.Id);
 
+            sizeDto.ValidateSize();
+
             size.Name = sizeDto.Name;
 
-
-            if (sizeDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
             _sizeRepository.Update(size);
         }
 
         public void DeleteById(string id)
         {
             var size = GetById(id);
-
-            if (size.Id == null)
-            {
-                throw new KeyNotFoundException($"Size with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
 
             _sizeRepository.Delete(size.Id);
         }

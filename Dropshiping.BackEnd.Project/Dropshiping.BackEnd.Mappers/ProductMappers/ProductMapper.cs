@@ -1,7 +1,6 @@
 ﻿using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Dtos.RatingDtos;
 using Dropshiping.BackEnd.Mappers.RatingMappers;
 
 namespace Dropshiping.BackEnd.Mappers.ProductMappers
@@ -11,15 +10,22 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
         
         public static ProductDto ToProductDto(this Product product)
         {
-            return new ProductDto
+            
+            var productDto = new ProductDto
             {
                 Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
                 DiscountPercentage = product.Discount,
                 Image = product.Image,
-                Rating = product.Rating,
             };
+
+            if (product.Ratings != null && product.Ratings.Count > 0)
+            {
+                productDto.Ratings = product.Ratings.Select(r => r.ToRatingDto()).ToList();
+            }
+            return productDto;
+
         }
 
         public static Product ToProductDomain(this NewProductDto product)
@@ -48,7 +54,6 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
                 Price = product.Price,
                 DiscountPercentage = product.Discount,
                 Image = product.Image,
-                Rating = product.Rating,
                 Description = product.Description,
                 Category = new ProductCategoryDto
                 {

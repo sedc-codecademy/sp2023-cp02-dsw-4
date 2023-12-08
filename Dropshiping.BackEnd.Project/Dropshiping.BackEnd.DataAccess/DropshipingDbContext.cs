@@ -43,6 +43,10 @@ namespace Dropshiping.BackEnd.DataAccess
                 .Property(x => x.Image)
                 .IsRequired();
 
+            modelBuilder.Entity<Category>()
+                .Property(x => x.Icon)
+                .IsRequired();
+
             // Subcategory
             modelBuilder.Entity<Subcategory>()
                 .Property(x => x.Name)
@@ -116,13 +120,30 @@ namespace Dropshiping.BackEnd.DataAccess
                 .Property(x => x.Quantity)
                 .IsRequired();
 
-            //Order
             modelBuilder.Entity<Order>()
-                .Property(x => x.Price)
-                .HasColumnType("decimal(18,4)");
+                .Property(x => x.City)
+                .HasMaxLength (50)
+                .IsRequired();
+
             modelBuilder.Entity<Order>()
-                .Property(x => x.Shipping)
-                .HasColumnType("decimal(18,4)");
+                .Property(x => x.Address)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            modelBuilder.Entity<Order>()
+                .Property(x => x.PostalCode)
+                .HasMaxLength(10)
+                .IsRequired();
+
+            modelBuilder.Entity<Order>()
+                .Property(x => x.PhoneNumber)
+                .HasMaxLength(15)
+                .IsRequired();
+
+            modelBuilder.Entity<Order>()
+                .Property(x => x.Note)
+                .HasMaxLength(250);
+                
 
             // User
             modelBuilder.Entity<User>()
@@ -252,7 +273,8 @@ namespace Dropshiping.BackEnd.DataAccess
                 {
                     Id = "1",
                     Name = "Category1",
-                    Image ="Image"
+                    Image ="Image",
+                    Icon = "Icon"
                 });
 
             modelBuilder.Entity<Subcategory>().HasData(
@@ -370,8 +392,6 @@ namespace Dropshiping.BackEnd.DataAccess
                    PhoneNumber = "123123",
                    Status = Enums.DeliveryStatusEnum.Purchased,
                    PaymentStatus = Enums.PaymentStatusEnum.PayingOnDelivery,
-                   Shipping = 0,
-                   Price = 1000,
 
                });
             modelBuilder.Entity<Order>().HasData(
@@ -385,9 +405,7 @@ namespace Dropshiping.BackEnd.DataAccess
                    PhoneNumber = "123123",
                    Status = Enums.DeliveryStatusEnum.Purchased,
                    PaymentStatus = Enums.PaymentStatusEnum.PayingOnDelivery,
-                   Shipping = 150,
-                   Price = 3000,
-
+                   
                });
             modelBuilder.Entity<OrderItem>().HasData(
                new OrderItem
@@ -462,7 +480,7 @@ namespace Dropshiping.BackEnd.DataAccess
                     SecurityCode = 123,
                     UserId = "1",
 
-        });
+                });
         }
 
     }

@@ -19,11 +19,8 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public OrderItem GetById(string id)
         {
             var orderItem = _dbContext.OrderItems.FirstOrDefault(oi => oi.Id == id);
-            if (orderItem == null)
-            {
-                throw new KeyNotFoundException($"OrderItem id {id} does not exist");
-            }
-            return orderItem;
+            
+            return orderItem ?? throw new KeyNotFoundException($"OrderItem id {id} does not exist"); ;
         }
 
         public void Add(OrderItem entity)

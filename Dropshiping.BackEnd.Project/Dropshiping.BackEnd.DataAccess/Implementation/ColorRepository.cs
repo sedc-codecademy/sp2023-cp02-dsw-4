@@ -19,12 +19,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public Color GetById(string id)
         {
             var color = _dbContext.Colors.FirstOrDefault(r => r.Id == id);
-            if (color == null)
-            {
-                throw new KeyNotFoundException($"Color id {id} does not exist");
-            }
-
-            return color;
+            return color ?? throw new KeyNotFoundException($"Color id {id} does not exist");
         }
 
         public void Add(Color entity)
@@ -42,10 +37,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public void Delete(string id)
         {
             var color = GetById(id);
-            if (color == null)
-            {
-                throw new KeyNotFoundException($"Color id {id} does not exist");
-            }
+            
             _dbContext.Colors.Remove(color);
             _dbContext.SaveChanges();
         }

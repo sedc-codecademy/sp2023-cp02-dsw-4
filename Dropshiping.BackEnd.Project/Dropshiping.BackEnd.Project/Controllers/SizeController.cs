@@ -1,8 +1,5 @@
-﻿using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
-using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
-using Dropshiping.BackEnd.Services.ProductServices.Implementation;
+﻿using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -58,7 +55,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _sizeService.Add(sizeDto);
                 return StatusCode(StatusCodes.Status204NoContent, "Size added");
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -76,9 +73,13 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _sizeService.Update(sizeDto);
                 return StatusCode(StatusCodes.Status204NoContent, "Size updated");
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch
             {

@@ -5,8 +5,8 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Interface
     public interface ISubcategoryService
     {
         List<SubcategoryDto> GetAll();
-        SubcategoryDto GetById(string id);
-        void Add(SubcategoryDto subcategoryDto);
+        FullSubcategoryDto GetById(string id);
+        void Add(NewSubcategoryDto subcategoryDto);
         void Update(SubcategoryDto subcategoryDto);
         void DeleteById(string id);
     }

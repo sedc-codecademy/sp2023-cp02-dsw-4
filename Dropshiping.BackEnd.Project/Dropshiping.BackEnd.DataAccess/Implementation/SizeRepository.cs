@@ -19,12 +19,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public Size GetById(string id)
         {
             var size = _dbContext.Sizes.FirstOrDefault(r => r.Id == id);
-            if (size == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
-            }
-
-            return size;
+            return size ?? throw new KeyNotFoundException($"Size id {id} does not exist");
         }
 
         public void Add(Size entity)
@@ -42,10 +37,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public void Delete(string id)
         {
             var size = GetById(id);
-            if (size == null)
-            {
-                throw new KeyNotFoundException($"Size id {id} does not exist");
-            }
+            
             _dbContext.Sizes.Remove(size);
             _dbContext.SaveChanges();
         }

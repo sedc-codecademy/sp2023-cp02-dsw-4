@@ -1,6 +1,5 @@
 ﻿using Dropshiping.BackEnd.Dtos.SubcategoryDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -48,12 +47,12 @@ namespace Dropshiping.BackEnd.Project.Controllers
         }
 
         [HttpPost("AddSubcategory")]
-        public IActionResult AddSubcategory(SubcategoryDto subcategoryDto)
+        public IActionResult AddSubcategory(NewSubcategoryDto subcategoryDto)
         {
             try
             {
                 _subcategoryService.Add(subcategoryDto);
-                return Ok();
+                return Ok("Subcategory was created successfully");
             }
             catch (InvalidDataException ex)
             {

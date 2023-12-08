@@ -1,9 +1,9 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.CategoryDtos;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Mappers.ProductMappers;
+using Dropshiping.BackEnd.Mappers.CategoryMapper;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
@@ -22,103 +22,43 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         public List<CategoryDto> GetAll()
         {
             var categories = _categoryRepository.GetAll();
-            return categories.Select(x => x.ToDtoCat()).ToList();
+            return categories.Select(x => x.ToCategoryDto()).ToList();
         }
 
         // Get Category by Id
-        public CategoryDto GetById(string id)
+        public FullCategoryDto GetById(string id)
         {
             var category = _categoryRepository.GetById(id);
 
-            if(category == null)
-            {
-                throw new KeyNotFoundException($"Category with id {id} is not found");
-            }
-            return category.ToDtoCat();
+            return category == null ? throw new KeyNotFoundException($"Category with id {id} is not found") : category.ToFullCategoryDto();
         }
 
-        // Nested
-        //public List<ProductDto> GetByIdNested(string id)
-        //{
-        //    var category = _categoryRepository.GetByIdNest(id);
-
-        //    if (category == null)
-        //    {
-        //        throw new KeyNotFoundException($"Category with id {id} is not found");
-        //    }
-            
-        //    var  listOfProducts = category.Subcategories.SelectMany(x => x.Products).ToList();
-
-        //    List<ProductDto> listOfProductMapped = new();
-
-        //    foreach(var product in listOfProducts)
-        //    {
-        //        listOfProductMapped.Add(product.ToDto());
-        //    }
-
-        //    return listOfProductMapped;
-
-        //}
 
         // Add Category
-        public void Add(CategoryDto categoryDto)
+        public void Add(AddCategoryDto categoryDto)
         {
-            if (categoryDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if (categoryDto.Name.Length > 50)
-            {
-                throw new InvalidDataException("Name Length must not be more then 50 characters!");
-            }
-           
+            categoryDto.ValidateNewCategory();
 
-            var category = new Category
-            {
-                Name = categoryDto.Name,
-               
-            };
+            var category = categoryDto.ToCategoryDomain();
 
             _categoryRepository.Add(category);
         }
 
         // Update Category
-        public void Update(CategoryDto categoryDto)
+        public void Update(UpdateCategoryDto categoryDto)
         {
             var category = _categoryRepository.GetById(categoryDto.Id);
 
-            category.Id = categoryDto.Id;
-            category.Name = categoryDto.Name;
-           
+            var updatedCategory = categoryDto.ValidateUpdateCategory(category);
 
-            if (categoryDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if (categoryDto.Name.Length > 50)
-            {
-                throw new InvalidDataException("Name Length must not be more then 50 characters!");
-            }
-           
-
-            _categoryRepository.Update(category);
+            _categoryRepository.Update(updatedCategory);
         }
 
         // Delete Category by Id
         public void DeleteById(string id)
         {
-            var category = GetById(id);
-
-            if (category.Id == null)
-            {
-                throw new KeyNotFoundException($"Category with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
-
-            _categoryRepository.Delete(category.Id);
+            var category = GetById(id) ?? throw new KeyNotFoundException($"Category with id {id} was not found.");
+            _categoryRepository.Delete(id);
         }
 
         

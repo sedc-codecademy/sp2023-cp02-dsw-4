@@ -9,6 +9,15 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
         {
             return new SizeDto
             {
+                Id = size.Id,
+                Name = size.Name,
+            };
+        }
+
+        public static Size ToSizeDomain(this SizeDto size)
+        {
+            return new Size
+            {
                 Name = size.Name,
             };
         }

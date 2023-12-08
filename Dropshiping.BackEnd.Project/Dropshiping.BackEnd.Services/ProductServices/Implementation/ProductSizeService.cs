@@ -10,9 +10,16 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
     public class ProductSizeService : IProductSizeService
     {
         private IRepository<ProductSize> _productSizeRepository;
-        public ProductSizeService(IRepository<ProductSize> productSizeRepository)
+        private IProductRepository _productRepository;
+        private IRepository<Color> _colorRepository;
+        private IRepository<Size> _sizeRepository;
+
+        public ProductSizeService(IRepository<ProductSize> productSizeRepository, IProductRepository productRepository, IRepository<Color> colorRepository, IRepository<Size> sizeRepository)
         {
             _productSizeRepository = productSizeRepository;
+            _productRepository = productRepository;
+            _colorRepository = colorRepository;
+            _sizeRepository = sizeRepository;
         }
 
         public List<ProductSizeDto> GetAll()
@@ -25,56 +32,43 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var productSize = _productSizeRepository.GetById(id);
 
-            if (productSize == null)
-            {
-                throw new KeyNotFoundException($"ProductSize with id {id} is not found");
-            }
-
-            return productSize.ToProductSizeColorDto();
+            return productSize == null
+                ? throw new KeyNotFoundException($"ProductSize with id {id} is not found")
+                : productSize.ToProductSizeColorDto();
         }
 
         public void Add(AddProductSizeDto addProductSizeDto)
         {
-            var productSize = new ProductSize
+            var product = _productRepository.GetById(addProductSizeDto.ProductId);
+            var size = _sizeRepository.GetById(addProductSizeDto.SizeId);
+            var color = _colorRepository.GetById(addProductSizeDto.ColorId);
+
+            if(addProductSizeDto.Stock < 1)
             {
-                Stock = addProductSizeDto.Stock,
-                ProductId = addProductSizeDto.ProductId,
-                SizeId = addProductSizeDto.SizeId,
-                ColorId = addProductSizeDto.ColorId
+                throw new ArgumentException("Invalid stock amount! Should be at least 1!");
+            }
 
-            };
-
+            var productSize = addProductSizeDto.ToProductSizeDomain();
             _productSizeRepository.Add(productSize);
         }
 
         public void Update(ProductSizeDto productSizeDto)
         {
             var productSize = _productSizeRepository.GetById(productSizeDto.Id);
+            var product = _productRepository.GetById(productSizeDto.ProductId);
+            var size = _sizeRepository.GetById(productSizeDto.SizeId);
+            var color = _colorRepository.GetById(productSizeDto.ColorId);
 
-            productSize.Stock = productSizeDto.Stock;
-            productSize.ProductId = productSizeDto.ProductId;
-            productSize.SizeId = productSizeDto.SizeId;
-            productSize.ColorId = productSizeDto.ColorId;
+            var updatedProductSize = productSizeDto.ToProductSizeDomain(productSize);
 
-
-
-            _productSizeRepository.Update(productSize);
+            _productSizeRepository.Update(updatedProductSize);
         }
 
         public void DeleteById(string id)
         {
             var productSize = GetById(id);
 
-            if (productSize.Id == null)
-            {
-                throw new KeyNotFoundException($"ProductSize with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
-
-            _productSizeRepository.Delete(productSize.Id);
+            _productSizeRepository.Delete(id);
         }
 
         public void UpdateStock(string productSizeId, int quantity)

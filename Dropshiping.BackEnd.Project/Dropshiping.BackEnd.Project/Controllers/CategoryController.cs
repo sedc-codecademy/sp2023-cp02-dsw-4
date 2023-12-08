@@ -48,26 +48,9 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        //[HttpGet("Nested{id}")]
-        //public IActionResult GetByIdNested(string id)
-        //{
-        //    try
-        //    {
-        //        var category = _categoryService.GetByIdNested(id);
-        //        return Ok(category);
-        //    }
-        //    catch (KeyNotFoundException ex)
-        //    {
-        //        return NotFound(ex.Message);
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-        //    }
-        //}
 
         [HttpPost("AddCategory")]
-        public IActionResult AddCategory(CategoryDto categoryDto)
+        public IActionResult AddCategory(AddCategoryDto categoryDto)
         {
             try
             {
@@ -89,7 +72,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
         }
 
         [HttpPut("UpdateCategory")]
-        public IActionResult UpdateCategory([FromBody]CategoryDto categoryDto)
+        public IActionResult UpdateCategory([FromBody]UpdateCategoryDto categoryDto)
         {
             try
             {
@@ -121,7 +104,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
 
                 _categoryService.DeleteById(id);
-                return StatusCode(StatusCodes.Status204NoContent, "Category deleted");
+                return Ok("Category deleted");
 
             }
             catch (ArgumentException ex)

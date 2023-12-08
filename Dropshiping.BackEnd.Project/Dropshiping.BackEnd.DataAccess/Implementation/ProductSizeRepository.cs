@@ -22,12 +22,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
             var productSize = _dbContext.ProductSizes.Include(ps => ps.Color)
                 .Include(ps => ps.Size)
                 .FirstOrDefault(r => r.Id == id);
-            if (productSize == null)
-            {
-                throw new KeyNotFoundException($"ProductSize id {id} does not exist");
-            }
-
-            return productSize;
+            return productSize ?? throw new KeyNotFoundException($"ProductSize id {id} does not exist");
         }
 
         public void Add(ProductSize entity)
@@ -45,10 +40,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         public void Delete(string id)
         {
             var productSize = GetById(id);
-            if (productSize == null)
-            {
-                throw new KeyNotFoundException($"ProductSize id {id} does not exist");
-            }
+            
             _dbContext.ProductSizes.Remove(productSize);
             _dbContext.SaveChanges();
         }

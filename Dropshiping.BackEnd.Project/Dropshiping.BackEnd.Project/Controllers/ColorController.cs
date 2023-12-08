@@ -57,7 +57,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _colorService.Add(colorDto);
                 return StatusCode(StatusCodes.Status204NoContent, "Color added");
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -75,7 +75,11 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _colorService.Update(colorDto);
                 return StatusCode(StatusCodes.Status204NoContent, "Color updated");
             }
-            catch (ArgumentNullException ex)
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }

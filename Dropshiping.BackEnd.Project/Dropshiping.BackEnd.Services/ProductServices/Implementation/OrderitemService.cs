@@ -1,11 +1,9 @@
-﻿using Dropshiping.BackEnd.DataAccess.Implementation;
-using Dropshiping.BackEnd.DataAccess.Interface;
+﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.OrderItemDtos;
-using Dropshiping.BackEnd.Dtos.ProductSizeDtos;
 using Dropshiping.BackEnd.Mappers.OrderMappers;
-using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
@@ -19,8 +17,8 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
         public List<OrderItemDto> GetAll()
         {
-            var orderitem = _orderItemRepository.GetAll();
-            return orderitem.Select(x => x.ToOrderItemDto()).ToList();
+            var orderitems = _orderItemRepository.GetAll();
+            return orderitems.Select(x => x.ToOrderItemDto()).ToList();
         }
 
         public OrderItemDto GetById(string id)
@@ -29,20 +27,19 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
             if (orderitem == null)
             {
-                throw new KeyNotFoundException($"Orderitem with id {id} is not found");
+                throw new KeyNotFoundException($"Order Item with id {id} is not found");
             }
 
             return orderitem.ToOrderItemDto();
         }
 
-        public void Add(List<AddOrderItemDto> orderItemDtos, string orderId)
+        public void Add(List<AddOrderItemDto> orderItemsDto, string orderId)
         {
-            
-            var mappedOrderItems = orderItemDtos.Select(x => x.ToOrderItemDomain(orderId)).ToList();
-            foreach (var item in mappedOrderItems)
-            {
-                _orderItemRepository.Add(item);
-            }
+            orderItemsDto.ForEach(x => x.ValidateOrderItem());
+
+            var mappedOrderItems = orderItemsDto.Select(x => x.ToOrderItemDomain(orderId)).ToList();
+
+            mappedOrderItems.ForEach(x => _orderItemRepository.Add(x));
         }
 
         public void Update(OrderItemDto orderitemDto)
@@ -56,16 +53,12 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
         public void DeleteById(string id)
         {
-            //var orderitem = GetById(id);
+            var orderitem = GetById(id);
 
-            //if (orderitem == null)
-            //{
-            //    throw new KeyNotFoundException($"Orderitem with id {id} was not found.");
-            //}
-            //if (id == "")
-            //{
-            //    throw new ArgumentException("You must enter id");
-            //}
+            if (orderitem == null)
+            {
+                throw new KeyNotFoundException($"Order Item with id {id} was not found.");
+            }
 
             _orderItemRepository.Delete(id);
         }

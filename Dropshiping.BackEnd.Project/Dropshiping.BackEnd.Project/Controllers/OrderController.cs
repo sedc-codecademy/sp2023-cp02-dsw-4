@@ -73,7 +73,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        [HttpPost("AddOrder")]
+        [HttpPost("NewOrder")]
         public IActionResult AddOrder(AddOrderDto order)
         {
             try
@@ -81,11 +81,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 _orderService.Add(order);
                 return Ok("Order is created successfully!");
             }
-            catch (ArgumentNullException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (InvalidDataException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }

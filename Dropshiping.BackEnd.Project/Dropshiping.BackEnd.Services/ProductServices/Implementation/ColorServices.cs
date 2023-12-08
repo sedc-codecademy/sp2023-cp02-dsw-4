@@ -3,6 +3,7 @@ using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
@@ -18,34 +19,21 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         public List<ColorDto> GetAll()
         {
             var color = _colorRepository.GetAll();
-            return color.Select(x => x.ToDtoCol()).ToList();
+            return color.Select(x => x.ToColorDto()).ToList();
         }
 
         public ColorDto GetById(string id)
         {
             var color = _colorRepository.GetById(id);
 
-            if (color == null)
-            {
-                throw new KeyNotFoundException($"Color with id {id} is not found");
-            }
-
-            return color.ToDtoCol();
+            return color == null ? throw new KeyNotFoundException($"Color with id {id} is not found") : color.ToColorDto();
         }
 
         public void Add(ColorDto colorDto)
         {
-            if (colorDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
+            colorDto.ValidateColor();
 
-            var color = new Color
-            {
-                Name = colorDto.Name,
-                
-
-            };
+           var color = colorDto.ToColorDomain();
 
             _colorRepository.Add(color);
         }
@@ -54,13 +42,10 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var color = _colorRepository.GetById(colorDto.Id);
 
+            colorDto.ValidateColor();
+
             color.Name = colorDto.Name;
 
-
-            if (colorDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
             _colorRepository.Update(color);
         }
 
@@ -68,14 +53,6 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var color = GetById(id);
 
-            if (color.Id == null)
-            {
-                throw new KeyNotFoundException($"color with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
 
             _colorRepository.Delete(color.Id);
         }

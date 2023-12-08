@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.UserDtos;
-using Dropshiping.BackEnd.Enums;
 
 namespace Dropshiping.BackEnd.Mappers.UserMappers
 {
@@ -24,7 +19,7 @@ namespace Dropshiping.BackEnd.Mappers.UserMappers
                 ProductId = rating.ProductId,
                 ProductName = rating.Product.Name,
                 ProductImage = rating.Product.Image,
-                ProductAvgRating = rating.Product.Rating,
+                ProductAvgRating = (decimal)rating.Product.Ratings.Average(x => (int)x.Rate),
             };
 
     }

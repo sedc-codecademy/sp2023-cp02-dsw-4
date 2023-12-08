@@ -5,6 +5,7 @@ using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {  public class ManufacturerService : IManufacturerService
@@ -22,31 +23,20 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             return manufacturer.Select(x => x.ToManufacturerDto()).ToList();
         }
 
-        public ManufacturerDto GetById(string id)
+        public FullManufacturerDto GetById(string id)
         {
             var manufacturer = _manufacturerRepository.GetById(id);
 
-            if (manufacturer == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer with id {id} is not found");
-            }
-
-            return manufacturer.ToManufacturerDto();
+            return manufacturer == null
+                ? throw new KeyNotFoundException($"Manufacturer with id {id} is not found")
+                : manufacturer.ToFullManufacturerDto();
         }
 
-        public void Add(ManufacturerDto manufacturerDto)
+        public void Add(NewManufacturerDto manufacturerDto)
         {
-            if (manufacturerDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
+            manufacturerDto.ValidateManufacturer();
 
-            var manufacturer = new Manufacturer
-            {
-                Name = manufacturerDto.Name,
-                Image = manufacturerDto.Image,
-
-            };
+            var manufacturer = manufacturerDto.ToManufacturerDomain();
 
             _manufacturerRepository.Add(manufacturer);
         }
@@ -55,31 +45,16 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var manufacturer = _manufacturerRepository.GetById(manufacturerDto.Id);
 
-            manufacturer.Name = manufacturerDto.Name;
-            manufacturer.Image = manufacturerDto.Image;
+            var updatedManufacturer = manufacturerDto.ValidateUpdateManufacturer(manufacturer);
 
-
-            if (manufacturerDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            _manufacturerRepository.Update(manufacturer);
+            _manufacturerRepository.Update(updatedManufacturer);
         }
 
         public void DeleteById(string id)
         {
             var manufacturer = GetById(id);
 
-            if (manufacturer.Id == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
-
-            _manufacturerRepository.Delete(manufacturer.Id);
+            _manufacturerRepository.Delete(id);
         }
     }
 }
