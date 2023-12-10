@@ -1,8 +1,5 @@
-﻿using Dropshiping.BackEnd.DataAccess.Implementation;
-using Dropshiping.BackEnd.DataAccess.Interface;
-using Dropshiping.BackEnd.Domain.ProductModels;
+﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.UserModels;
-using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.SubscriberDtos;
 using Dropshiping.BackEnd.Mappers.SubsriberUselessMaper;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;

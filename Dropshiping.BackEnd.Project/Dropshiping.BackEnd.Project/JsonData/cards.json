@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "cardType": 1,
+    "cardStatus": 1,
+    "cardNumber": 4111111111111111,
+    "cardHolder": "Mark G",
+    "expirationDate": "05/25",
+    "securityCode": 123,
+    "userId": "1"
+  },
+  {
+    "id": "2",
+    "cardType": 2,
+    "cardStatus": 1,
+    "cardNumber": 4444111111111111,
+    "cardHolder": "Aurora S",
+    "expirationDate": "07/24",
+    "securityCode": 123,
+    "userid": "2"
+  },
+  {
+    "id": "3",
+    "cardType": 1,
+    "cardStatus": 1,
+    "cardNumber": 4444666633338888,
+    "cardHolder": "Eleanor B",
+    "expirationDate": "09/25",
+    "securityCode": 123,
+    "userId": "3"
+  }
+]

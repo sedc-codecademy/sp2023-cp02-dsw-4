@@ -1,0 +1,44 @@
+[
+    {
+        "id": "technology",
+        "name": "Technology",
+        "image": "https://i.ibb.co/MS3CdYh/technology.jpg",
+        "icon": "https://i.ibb.co/XZh7XLg/technologysmall.jpg"
+    },
+    {
+        "id": "menswear",
+        "name": "Men's Clothing",
+        "image": "https://i.ibb.co/3W6cbRJ/mensWear.jpg",
+        "icon": "https://i.ibb.co/2WTFYC7/mens-Wearsmall.jpg"
+    },
+    {
+        "id": "womenswear",
+        "name": "Women's Clothing",
+        "image": "https://i.ibb.co/QKK7cVn/womens-Wear.jpg",
+        "icon": "https://i.ibb.co/CVWfwSW/womens-Wearsmall.jpg"
+    },
+    {
+        "id": "beauty",
+        "name": "Beauty",
+        "image": "https://i.ibb.co/WytydBV/beauty.jpg",
+        "icon": "https://i.ibb.co/gV2npD1/beautysmall.jpg"
+    },
+    {
+        "id": "autoaccessories",
+        "name": "Automobile Accessories",
+        "image": "https://i.ibb.co/m4tvvf8/autoacc.jpg",
+        "icon": "https://i.ibb.co/MBQ2gD9/autoaccsmall.jpg"
+    },
+    {
+        "id": "sports",
+        "name": "Sports",
+        "image": "https://i.ibb.co/bNfN5BQ/sports.jpg",
+        "icon": "https://i.ibb.co/C1r0BQV/sportssmall.jpg"
+    },
+    {
+        "id": "homeandgarden",
+        "name": "Home & Garden",
+        "image": "https://i.ibb.co/n6ycm1s/home.jpg",
+        "icon": "https://i.ibb.co/w645hqv/homesmall.jpg"
+    }
+]

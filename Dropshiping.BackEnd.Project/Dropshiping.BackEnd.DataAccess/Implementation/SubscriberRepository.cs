@@ -1,5 +1,4 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
-using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Domain.UserModels;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation

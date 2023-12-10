@@ -1,12 +1,14 @@
 ﻿using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Domain.UserModels;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Dropshiping.BackEnd.DataAccess
 {
     public class DropshipingDbContext : DbContext
     {
-        public DropshipingDbContext(DbContextOptions options): base(options)
+        public DropshipingDbContext(DbContextOptions options) : base(options)
         {
 
         }
@@ -69,10 +71,6 @@ namespace Dropshiping.BackEnd.DataAccess
                 .IsRequired();
 
             modelBuilder.Entity<Product>()
-                .Property(x => x.Image)
-                .IsRequired();
-
-            modelBuilder.Entity<Product>()
                 .Property(x => x.Price)
                 .HasColumnType("decimal(18,4)")
                 .IsRequired();
@@ -122,7 +120,7 @@ namespace Dropshiping.BackEnd.DataAccess
 
             modelBuilder.Entity<Order>()
                 .Property(x => x.City)
-                .HasMaxLength (50)
+                .HasMaxLength(50)
                 .IsRequired();
 
             modelBuilder.Entity<Order>()
@@ -143,7 +141,7 @@ namespace Dropshiping.BackEnd.DataAccess
             modelBuilder.Entity<Order>()
                 .Property(x => x.Note)
                 .HasMaxLength(250);
-                
+
 
             // User
             modelBuilder.Entity<User>()
@@ -203,7 +201,7 @@ namespace Dropshiping.BackEnd.DataAccess
             modelBuilder.Entity<Category>()
                         .HasMany(c => c.Subcategories)
                         .WithOne(s => s.Category)
-                        .HasForeignKey(s => s.CategoryId); 
+                        .HasForeignKey(s => s.CategoryId);
 
             modelBuilder.Entity<Subcategory>()
                 .HasMany(s => s.Products)
@@ -268,219 +266,166 @@ namespace Dropshiping.BackEnd.DataAccess
                 .HasForeignKey(c => c.UserId);
 
             //Seeding
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id = "1",
-                    Name = "Category1",
-                    Image ="Image",
-                    Icon = "Icon"
-                });
 
-            modelBuilder.Entity<Subcategory>().HasData(
-                new Subcategory
-                {
-                    Id = "1",
-                    Name = "SubCategory1",
-                    Description = "description",
-                    Image = "Image",
-                    CategoryId = "1"
-                });
-            modelBuilder.Entity<Manufacturer>().HasData(
-                new Manufacturer
-                {
-                    Id = "1",
-                    Name = "Manufacturer1",
-                    Image = "Image",
-                });
-            modelBuilder.Entity<Product>().HasData(
-                new Product
-                {
-                    Id = "1",
-                    Name = "Product1",
-                    Description = "description",
-                    Image = "Image",
-                    Price = 1000,
-                    DateOfCreation = DateTime.Now,
-                    Discount = 50,
-                    Searches = 5,
-                    ManufacturerId = "1",
-                    SubcategoryId = "1",
-                });
-            modelBuilder.Entity<Product>().HasData(
-                new Product
-                {
-                    Id = "2",
-                    Name = "Product2",
-                    Description = "description",
-                    Image = "Image",
-                    Price = 500,
-                    DateOfCreation = DateTime.Now,
-                    Discount = 0,
-                    Searches = 0,
-                    ManufacturerId = "1",
-                    SubcategoryId = "1",
-                });
-            modelBuilder.Entity<Size>().HasData(
-                new Size
-                {
-                    Id = "1",
-                    Name = "S",
-                });
-            modelBuilder.Entity<Size>().HasData(
-               new Size
-               {
-                   Id = "2",
-                   Name = "M",
-               });
-            modelBuilder.Entity<Color>().HasData(
-               new Color
-               {
-                   Id = "1",
-                   Name = "Black",
-               });
-            modelBuilder.Entity<Color>().HasData(
-               new Color
-               {
-                   Id = "2",
-                   Name = "White",
-               });
-            modelBuilder.Entity<ProductSize>().HasData(
-               new ProductSize
-               {
-                   Id = "1",
-                   Stock = 10,
-                   SizeId = "1",
-                   ProductId = "1",
-                   ColorId = "1",
-               });
-            modelBuilder.Entity<ProductSize>().HasData(
-               new ProductSize
-               {
-                   Id = "2",
-                   Stock = 15,
-                   SizeId = "1",
-                   ProductId = "1",
-                   ColorId = "2",
-               });
-            modelBuilder.Entity<ProductSize>().HasData(
-               new ProductSize
-               {
-                   Id = "3",
-                   Stock = 5,
-                   SizeId = "2",
-                   ProductId = "1",
-                   ColorId = "2",
-               });
-            modelBuilder.Entity<ProductSize>().HasData(
-               new ProductSize
-               {
-                   Id = "4",
-                   Stock = 30,
-                   SizeId = "1",
-                   ProductId = "2",
-                   ColorId = "1",
-               });
-            modelBuilder.Entity<Order>().HasData(
-               new Order
-               {
-                   Id = "1",
-                   PurchasedTime = DateTime.Now,
-                   Address = "address",
-                   PostalCode = "1000",
-                   City = "Skopje",
-                   PhoneNumber = "123123",
-                   Status = Enums.DeliveryStatusEnum.Purchased,
-                   PaymentStatus = Enums.PaymentStatusEnum.PayingOnDelivery,
+            string currentDirectory = Directory.GetCurrentDirectory();
 
-               });
-            modelBuilder.Entity<Order>().HasData(
-               new Order
-               {
-                   Id = "2",
-                   PurchasedTime = DateTime.Now,
-                   Address = "address",
-                   PostalCode = "12345",
-                   City = "Ohrid",
-                   PhoneNumber = "123123",
-                   Status = Enums.DeliveryStatusEnum.Purchased,
-                   PaymentStatus = Enums.PaymentStatusEnum.PayingOnDelivery,
-                   
-               });
-            modelBuilder.Entity<OrderItem>().HasData(
-               new OrderItem
-               {
-                   Id = "1",
-                   Quantity = 1,
-                   ProductSizeId = "1",
-                   OrderId = "1",
-               });
-            modelBuilder.Entity<OrderItem>().HasData(
-               new OrderItem
-               {
-                   Id = "2",
-                   Quantity = 3,
-                   ProductSizeId = "4",
-                   OrderId = "2",
-               });
-            modelBuilder.Entity<User>().HasData(
-               new User
-               {
-                   Id = "1",
-                   FirstName = "Test",
-                   LastName = "Test",
-                   Username = "Test",
-                   Password = "Test",
-                   Email = "Test",
-                   Role = Enums.RoleEnum.User,
+            //Categories
 
-               });
-            modelBuilder.Entity<Rating>().HasData(
-               new Rating
-               {
-                   Id = "1",
-                   Rate = Enums.RateEnum.Five,
-                   Date = DateTime.Now,
-                   ProductId = "1",
-                   UserId = "1",
-                   
-               });
-            modelBuilder.Entity<Rating>().HasData(
-               new Rating
-               {
-                   Id = "2",
-                   Rate = Enums.RateEnum.Four,
-                   Date = DateTime.Now,
-                   ProductId = "2",
-                   UserId = "1",
-               });
-            modelBuilder.Entity<UserOrder>().HasData(
-               new UserOrder
-               {
-                   Id = "1",
-                   UserId = "1",
-                   OrderId = "1",
-               });
-            modelBuilder.Entity<UserOrder>().HasData(
-            new UserOrder
+            string categoryFilePath = Path.Combine(currentDirectory, "JsonData/categories.json");
+            var categoriesData = File.ReadAllText(categoryFilePath);
+            var categories = JsonConvert.DeserializeObject<List<Category>>(categoriesData);
+
+            if (categories != null)
             {
-                Id = "2",
-                UserId = "1",
-                OrderId = "2",
-            });
-            modelBuilder.Entity<Card>().HasData(
-                new Card
-                {
-                    Id ="1",
-                    CardType = Enums.CardTypeEnum.Visa,
-                    CardStatus = Enums.CardStatusEnum.Primary,
-                    CardNumber = 4111111111111111,
-                    CardHolder = "Ana B",
-                    ExpirationDate = "05/25",
-                    SecurityCode = 123,
-                    UserId = "1",
+                modelBuilder.Entity<Category>().HasData(categories.ToList());
+            }
 
-                });
+
+            //Subcategories
+
+            string subcategoryFilePath = Path.Combine(currentDirectory, "JsonData/subcategories.json");
+            var subcategoriesData = File.ReadAllText(subcategoryFilePath);
+            var subcategories = JsonConvert.DeserializeObject<List<Subcategory>>(subcategoriesData);
+
+            if (subcategories != null)
+            {
+                modelBuilder.Entity<Subcategory>().HasData(subcategories.ToList());
+            }
+
+            //Manufacturers
+
+            string manufacturerFilePath = Path.Combine(currentDirectory, "JsonData/manufacturers.json");
+            var manufacturersData = File.ReadAllText(manufacturerFilePath);
+            var manufacturers = JsonConvert.DeserializeObject<List<Manufacturer>>(manufacturersData);
+
+            if (manufacturers != null)
+            {
+                modelBuilder.Entity<Manufacturer>().HasData(manufacturers.ToList());
+            }
+
+            //Products
+            string productsFilePath = Path.Combine(currentDirectory, "JsonData/products.json");
+            var productsData = File.ReadAllText(productsFilePath);
+            var products = JsonConvert.DeserializeObject<List<Product>>(productsData);
+            
+
+            if (products != null)
+            {
+                products.ForEach(x => x.DateOfCreation = DateTime.Now);
+                modelBuilder.Entity<Product>().HasData(products.ToList());
+            }
+
+            //Sizes
+
+            string sizesFilePath = Path.Combine(currentDirectory, "JsonData/sizes.json");
+            var sizesData = File.ReadAllText(sizesFilePath);
+            var sizes = JsonConvert.DeserializeObject<List<Size>>(sizesData);
+
+            if (sizes != null)
+            {
+                modelBuilder.Entity<Size>().HasData(sizes.ToList());
+            }
+
+            // Colors
+
+            string colorsFilePath = Path.Combine(currentDirectory, "JsonData/colors.json");
+            var colorsData = File.ReadAllText(colorsFilePath);
+            var colors = JsonConvert.DeserializeObject<List<Color>>(colorsData);
+
+            if (colors != null)
+            {
+                modelBuilder.Entity<Color>().HasData(colors.ToList());
+            }
+
+
+            //ProductSizes
+
+            string productsizesFilePath = Path.Combine(currentDirectory, "JsonData/productSizes.json");
+            var productsizesData = File.ReadAllText(productsizesFilePath);
+            var productsizes = JsonConvert.DeserializeObject<List<ProductSize>>(productsizesData);
+
+            if (productsizes != null)
+            {
+                modelBuilder.Entity<ProductSize>().HasData(productsizes.ToList());
+            }
+
+            //Orders
+            string ordersFilePath = Path.Combine(currentDirectory, "JsonData/orders.json");
+            var ordersData = File.ReadAllText(ordersFilePath);
+            var orders = JsonConvert.DeserializeObject<List<Order>>(ordersData);
+
+            if (orders != null)
+            {
+                orders.ForEach(x => x.PurchasedTime = DateTime.Now);
+                modelBuilder.Entity<Order>().HasData(orders.ToList());
+            }
+
+            //OrderItems
+
+            string orderItemsFilePath = Path.Combine(currentDirectory, "JsonData/orderItems.json");
+            var orderItemsData = File.ReadAllText(orderItemsFilePath);
+            var orderItems = JsonConvert.DeserializeObject<List<OrderItem>>(orderItemsData);
+
+            if (orderItems != null)
+            {
+                modelBuilder.Entity<OrderItem>().HasData(orderItems.ToList());
+            }
+
+
+            //Users
+            string usersFilePath = Path.Combine(currentDirectory, "JsonData/users.json");
+            var usersData = File.ReadAllText(usersFilePath);
+            var users = JsonConvert.DeserializeObject<List<User>>(usersData);
+
+            if (users != null)
+            {
+                modelBuilder.Entity<User>().HasData(users.ToList());
+            }
+
+            //Ratings
+
+            string ratingsFilePath = Path.Combine(currentDirectory, "JsonData/ratings.json");
+            var ratingsData = File.ReadAllText(ratingsFilePath);
+            var ratings = JsonConvert.DeserializeObject<List<Rating>>(ratingsData);
+
+            if (ratings != null)
+            {
+                ratings.ForEach(x => x.Date = DateTime.Now);
+                modelBuilder.Entity<Rating>().HasData(ratings.ToList());
+            }
+
+            //UserOrders
+
+            string userordersFilePath = Path.Combine(currentDirectory, "JsonData/userOrders.json");
+            var userordersData = File.ReadAllText(userordersFilePath);
+            var userorders = JsonConvert.DeserializeObject<List<UserOrder>>(userordersData);
+
+            if (userorders != null)
+            {
+                modelBuilder.Entity<UserOrder>().HasData(userorders.ToList());
+            }
+
+
+            //Cards
+            string cardsFilePath = Path.Combine(currentDirectory, "JsonData/cards.json");
+            var cardsData = File.ReadAllText(cardsFilePath);
+            var cards = JsonConvert.DeserializeObject<List<Card>>(cardsData);
+
+            if (cards != null)
+            {
+                modelBuilder.Entity<Card>().HasData(cards.ToList());
+            }
+
+            //Subscribers
+
+            string subscribersFilePath = Path.Combine(currentDirectory, "JsonData/subscribers.json");
+            var subscribersData = File.ReadAllText(subscribersFilePath);
+            var subscribers = JsonConvert.DeserializeObject<List<Subscriber>>(subscribersData);
+
+            if (subscribers != null)
+            {
+                modelBuilder.Entity<Subscriber>().HasData(subscribers.ToList());
+            }
         }
 
     }

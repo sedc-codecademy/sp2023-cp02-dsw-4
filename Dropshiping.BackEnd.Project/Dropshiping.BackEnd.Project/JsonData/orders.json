@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "address": "address1",
+    "postalcode": "1234",
+    "city": "Skopje",
+    "phonenumber": "070123456",
+    "status": 1,
+    "paymentstatus": 2
+  },
+  {
+    "id": "2",
+    "address": "address2",
+    "postalcode": "1234",
+    "city": "Veles",
+    "phonenumber": "070123456",
+    "status": 1,
+    "paymentstatus": 2
+  },
+  {
+    "id": "3",
+    "address": "address3",
+    "postalcode": "1234",
+    "city": "Ohrid",
+    "phonenumber": "070123456",
+    "status": 1,
+    "paymentstatus": 2
+  },
+  {
+    "id": "4",
+    "address": "address4",
+    "postalcode": "1234",
+    "city": "Tetovo",
+    "phonenumber": "070123456",
+    "status": 1,
+    "paymentstatus": 2
+  },
+  {
+    "id": "5",
+    "address": "address5",
+    "postalcode": "1234",
+    "city": "Bitola",
+    "phonenumber": "070123456",
+    "status": 1,
+    "paymentstatus": 2
+  }
+]

@@ -26,12 +26,12 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
                 .Include(x => x.Products).ThenInclude(x => x.ProductSizes).ThenInclude(x => x.Size)
                 .Include(x => x.Products).ThenInclude(x => x.Ratings).ThenInclude(x => x.User)
                 .Include(x => x.Products).ThenInclude(x => x.Subcategory).ThenInclude(x => x.Category)
-                .Include(x => x.Products).ThenInclude(x => x.Manufacturer)
                 .FirstOrDefault(x => x.Id == id);
 
             return manufacturer ?? throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
         }
 
+      
         public void Add(Manufacturer entity)
         {
             _dbContext.Manufacturers.Add(entity);
