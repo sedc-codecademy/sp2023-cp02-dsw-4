@@ -6,7 +6,6 @@ using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Mappers.UserMappers;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
 using Dropshiping.BackEnd.Services.UserServices.Validations;
-using XAct.Security;
 
 namespace Dropshiping.BackEnd.Services.UserServices.Implementation
 {
@@ -48,6 +47,10 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
                 throw new KeyNotFoundException($"User with id {id} is not found");
             }
 
+            if (user.Cards.Count >= 2)
+            {
+                throw new ArgumentException("Maximum of 2 cards allowed");
+            }
 
             addCardDto.ValidateAddedCard();
 
@@ -82,18 +85,41 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
             }
             if (card.UserId != cardDto.UserId)
             {
-                throw new NotAuthorizedException($"Not authorized to update this card!");
+                throw new ArgumentException("Not authorized to update this card!");
             }
 
             cardDto.ValidateUpdateCard();
 
+            if (cardDto.CardType != null)
+            {
+                card.CardType = (CardTypeEnum)cardDto.CardType;
+            }
+           
+            if (cardDto.CardStatus != null)
+            {
+                card.CardStatus = (CardStatusEnum)cardDto.CardStatus;
+            }
 
-            card.CardType = cardDto.CardType;
-            card.CardStatus = cardDto.CardStatus;
-            card.CardNumber = cardDto.CardNumber;
-            card.CardHolder = cardDto.CardHolder;
-            card.ExpirationDate = cardDto.ExpirationDate;
-            card.SecurityCode = cardDto.SecurityCode;
+            if (cardDto.CardNumber != null)
+            {
+                card.CardNumber = (long)cardDto.CardNumber;
+            }
+
+            if (cardDto.CardHolder != null)
+            {
+                card.CardHolder = cardDto.CardHolder;
+            }
+
+            if (cardDto.ExpirationDate != null)
+            {
+                card.ExpirationDate = cardDto.ExpirationDate;
+            }
+
+            if (cardDto.SecurityCode != null)
+            {
+                card.SecurityCode = (int)cardDto.SecurityCode;
+            }
+
 
             _cardRepository.Update(card);
         }

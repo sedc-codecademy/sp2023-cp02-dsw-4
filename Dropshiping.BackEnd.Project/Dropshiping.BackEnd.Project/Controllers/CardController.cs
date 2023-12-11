@@ -1,10 +1,6 @@
-﻿using Dropshiping.BackEnd.Dtos.RatingDtos;
-using Dropshiping.BackEnd.Dtos.UserDtos;
-using Dropshiping.BackEnd.Services.UserServices.Implementation;
+﻿using Dropshiping.BackEnd.Dtos.UserDtos;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using XAct.Security;
 
 namespace Dropshiping.BackEnd.Project.Controllers
 {
@@ -56,11 +52,9 @@ namespace Dropshiping.BackEnd.Project.Controllers
         {
             try
             {
-
                 _cardService.DeleteById(id);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Card deleted");
-
+                return Ok("Card deleted succesfully");
             }
             catch (ArgumentException ex)
             {
@@ -104,7 +98,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _cardService.Update(card);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Card updated");
+                return Ok("Card updated");
             }
             catch (KeyNotFoundException ex)
             {
@@ -114,9 +108,9 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch (NotAuthorizedException ex)
+            catch (InvalidDataException ex)
             {
-                return Forbid(ex.Message);
+                return BadRequest(ex.Message);
             }
             catch
             {
