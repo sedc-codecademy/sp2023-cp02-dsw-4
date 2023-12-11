@@ -15,8 +15,8 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
                 ProductId = orderItem.ProductSize.ProductId,
                 ProductName = orderItem.ProductSize.Product.Name,
                 ProductImage = orderItem.ProductSize.Product.Image,
-                Size = orderItem.ProductSize.Size.Name,
-                Color = orderItem.ProductSize.Color.Name,
+                Size = orderItem.ProductSize.SizeId,
+                Color = orderItem.ProductSize.ColorId,
                 Price = orderItem.ProductSize.Product.Price,
             };
         }

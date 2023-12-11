@@ -80,7 +80,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _productRepository.Delete(id);
         }
 
-        public FullProductDto GetSearchedProductById(string id)
+        public void UpdateProductSearches(string id)
         {
             var product = _productRepository.GetById(id);
 
@@ -90,7 +90,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             }
             product.Searches++;
             _productRepository.Update(product);
-            return product.ToFullProductDto();
+           
         }
 
         public List<ProductDto> GetAllDiscountedProducts()
@@ -114,9 +114,9 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             return _productRepository.GetAllNewProducts().Select(p => p.ToProductDto()).ToList();
         }
 
-        public List<ProductDto> GetSearchedProductsByName(string name)
+        public List<FullProductDto> GetSearchedProductsByName(string name)
         {
-            return _productRepository.GetSearchedProductsByName(name).Select(p => p.ToProductDto()).ToList();
+            return _productRepository.GetSearchedProductsByName(name).Select(p => p.ToFullProductDto()).ToList();
         }
 
         public List<ProductDto> GetSearchedProducts()

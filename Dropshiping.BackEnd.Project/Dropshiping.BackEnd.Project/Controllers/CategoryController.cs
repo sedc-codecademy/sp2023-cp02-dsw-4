@@ -55,7 +55,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _categoryService.Add(categoryDto);
-                return Ok();
+                return Ok("Category is created successfully!");
             }
             catch(InvalidDataException ex)
             {
@@ -77,7 +77,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _categoryService.Update(categoryDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Category updated");
+                return Ok("Category is updated successfully!");
             }
             catch (KeyNotFoundException ex)
             {
@@ -104,7 +104,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
 
                 _categoryService.DeleteById(id);
-                return Ok("Category deleted");
+                return Ok("Category is deleted");
 
             }
             catch (ArgumentException ex)

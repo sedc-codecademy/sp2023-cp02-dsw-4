@@ -31,7 +31,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             var subcategory = _subcategoryRepository.GetById(id);
 
             return subcategory == null
-                ? throw new KeyNotFoundException($"Subcategory with id {id} is not found")
+                ? throw new KeyNotFoundException($"The Subcategory does not exist!")
                 : subcategory.ToFullSubcategoryDto();
         }
 
@@ -51,7 +51,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         public void Update(SubcategoryDto subcategoryDto)
         {
             var subcategory = _subcategoryRepository.GetById(subcategoryDto.Id);
-            var category = _categoryRepository.GetById(subcategoryDto.CategoryId);
+            var _category = _categoryRepository.GetById(subcategoryDto.Category.Id);
 
            var updatedSubcategory = subcategoryDto.ValidateSubcategory(subcategory);
             _subcategoryRepository.Update(updatedSubcategory);
@@ -60,7 +60,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         //Delete Subcategory by Id
         public void DeleteById(string id)
         {
-            var subcategory = _subcategoryRepository.GetById(id) ?? throw new KeyNotFoundException($"Subcategory with id {id} was not found.");
+            var _subcategory = _subcategoryRepository.GetById(id) ?? throw new KeyNotFoundException($"Subcategory doesn't exist.");
             _subcategoryRepository.Delete(id);
         } 
     }

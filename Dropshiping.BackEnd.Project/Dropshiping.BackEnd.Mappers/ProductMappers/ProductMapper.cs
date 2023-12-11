@@ -92,6 +92,38 @@ namespace Dropshiping.BackEnd.Mappers.ProductMappers
 
         }
 
+        public static FullProductDto ToFullProductDtoForSubcategory(this Product product)
+        {
+            var fullProductDto = new FullProductDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                DiscountPercentage = product.Discount,
+                Image = product.Image,
+                Description = product.Description,
 
+                Manufacturer = new ManufacturerDto
+                {
+                    Id = product.ManufacturerId,
+                    Name = product.Manufacturer.Name,
+                    Image = product.Manufacturer.Image,
+                }
+            };
+
+            if (product.Ratings.Any())
+            {
+                fullProductDto.Rating = (decimal)product.Ratings.Average(x => (int)x.Rate);
+                fullProductDto.Ratings = product.Ratings.Select(r => r.ToRatingDto()).ToList();
+            }
+
+            if (product.ProductSizes.Any())
+            {
+                fullProductDto.ProductSizes = product.ProductSizes.Select(ps => ps.ToProductSizeColorDto()).ToList();
+            }
+
+            return fullProductDto;
+
+        }
     }
 }

@@ -7,12 +7,12 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Interface
     {
         List<ProductDto> GetAll();
         FullProductDto GetById(string id);
-        FullProductDto GetSearchedProductById(string id);
+        void UpdateProductSearches(string id);
         List<ProductDto> GetAllDiscountedProducts();
         List<ProductDto> GetAllMostPopularProducts();
         List<ProductDto> GetAllTopRatedProducts();
         List<ProductDto> GetAllNewProducts();
-        List<ProductDto> GetSearchedProductsByName(string name);
+        List<FullProductDto> GetSearchedProductsByName(string name);
         List<ProductDto> GetSearchedProducts();
         
         void Add(NewProductDto newProductDto);

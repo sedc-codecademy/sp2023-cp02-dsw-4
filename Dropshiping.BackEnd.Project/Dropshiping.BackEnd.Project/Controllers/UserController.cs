@@ -51,6 +51,10 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            catch (KeyNotFoundException ex)
+            {
+                return BadRequest(ex.Message);
+            }
             catch
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
@@ -119,11 +123,15 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _userService.Update(id, registerUserDto);
 
-                return StatusCode(StatusCodes.Status204NoContent, "User updated");
+                return Ok("User is updated successfully!");
             }
             catch (InvalidDataException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch (ArgumentException ex)
             {
@@ -143,7 +151,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
 
                 _userService.DeleteById(id);
 
-                return StatusCode(StatusCodes.Status204NoContent, "User deleted");
+                return Ok("User is deleted successfully!");
 
             }
             catch (ArgumentException ex)

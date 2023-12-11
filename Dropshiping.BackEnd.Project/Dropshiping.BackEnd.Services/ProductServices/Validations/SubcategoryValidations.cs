@@ -57,7 +57,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Validations
                 subcategory.Description = subcategoryDto.Description;
             }
 
-            subcategory.CategoryId = subcategoryDto.CategoryId;
+            subcategory.CategoryId = subcategoryDto.Category.Id;
 
             return subcategory;
         }

@@ -2,6 +2,8 @@
 using Dropshiping.BackEnd.Domain.UserModels;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System.Text;
+using XSystem.Security.Cryptography;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Dropshiping.BackEnd.DataAccess
@@ -29,6 +31,7 @@ namespace Dropshiping.BackEnd.DataAccess
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Card> Cards { get; set; }
 
+        
 
         // OnModel
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -373,12 +376,26 @@ namespace Dropshiping.BackEnd.DataAccess
 
 
             //Users
+            string GenerateHashPassword(string password)
+            {
+                MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
+
+                byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+
+                byte[] hash = md5CryptoServiceProvider.ComputeHash(passwordBytes);
+
+                string hashedPAssword = Convert.ToHexString(hash);
+
+                return hashedPAssword;
+            }
+
             string usersFilePath = Path.Combine(currentDirectory, "JsonData/users.json");
             var usersData = File.ReadAllText(usersFilePath);
             var users = JsonConvert.DeserializeObject<List<User>>(usersData);
 
             if (users != null)
             {
+                users.ForEach(x => x.Password = GenerateHashPassword(x.Password));
                 modelBuilder.Entity<User>().HasData(users.ToList());
             }
 

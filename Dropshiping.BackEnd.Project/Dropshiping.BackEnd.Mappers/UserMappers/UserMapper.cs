@@ -1,6 +1,7 @@
 ﻿using Dropshiping.BackEnd.Domain.UserModels;
 using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Dtos.UserDtos;
+using Dropshiping.BackEnd.Mappers.OrderMappers;
 
 
 namespace Dropshiping.BackEnd.Mappers.UserMappers
@@ -52,7 +53,7 @@ namespace Dropshiping.BackEnd.Mappers.UserMappers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
-                Role = user.Role,
+                Role = Enum.GetName(typeof(RoleEnum), user.Role),
                 PhoneNumber = user.PhoneNumber,
                 Address = user.Address,
                 PostalCode = user.PostalCode,
@@ -68,12 +69,12 @@ namespace Dropshiping.BackEnd.Mappers.UserMappers
             }
             if (user.Cards != null && user.Cards.Count > 0)
             {
-                userDto.Cards = user.Cards.Select(c => c.ToCardDto()).ToList();
+                userDto.Cards = user.Cards.Select(c => c.ToUserCardDto()).ToList();
 
             }
             if (user.UserOrders != null && user.UserOrders.Count > 0)
             {
-                userDto.UserOrders = user.UserOrders.Select(c => c.ToUserOrderDto()).ToList();
+                userDto.UserOrders = user.UserOrders.Select(c => c.Order.ToOrderDto()).ToList();
 
             }
 
@@ -88,7 +89,7 @@ namespace Dropshiping.BackEnd.Mappers.UserMappers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
-                Role = user.Role,
+                Role = Enum.GetName(typeof(RoleEnum), user.Role),
                 PhoneNumber = user.PhoneNumber,
                 Address = user.Address,
                 PostalCode = user.PostalCode,

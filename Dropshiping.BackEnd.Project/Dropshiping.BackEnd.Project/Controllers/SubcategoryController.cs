@@ -74,7 +74,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _subcategoryService.Update(subcategoryDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Subcategory updated");
+                return Ok("Subcategory is updated successfully!");
             }
             catch (KeyNotFoundException ex)
             {
@@ -100,7 +100,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _subcategoryService.DeleteById(id);
-                return StatusCode(StatusCodes.Status204NoContent, "Subcategory deleted");
+                return Ok("Subcategory is deleted successfully!");
             }
             catch (ArgumentException ex)
             {

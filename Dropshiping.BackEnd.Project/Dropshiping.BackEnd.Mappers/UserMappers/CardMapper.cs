@@ -38,5 +38,19 @@ namespace Dropshiping.BackEnd.Mappers.UserMappers
                 SecurityCode = addCardDto.SecurityCode,
             };
         }
+
+        public static UserCardDto ToUserCardDto(this Card card)
+        {
+            return new UserCardDto
+            {
+                Id = card.Id,
+                Type = card.CardType,
+                CardStatus = card.CardStatus,
+                Number = card.CardNumber.ToString(),
+                Holder = card.CardHolder,
+                Date = card.ExpirationDate,
+                Cvc = card.SecurityCode,
+            };
+        }
     }
 }

@@ -59,9 +59,9 @@ namespace Dropshiping.BackEnd.Project.Controllers
         {
             try
             {
-                var rating = _orderService.GetById(id);
+                var order = _orderService.GetById(id);
 
-                return Ok(rating);
+                return Ok(order);
             }
             catch (KeyNotFoundException ex)
             {
@@ -108,7 +108,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 var order = _orderService.GetById(id);
                 var status = Enum.GetName(typeof(DeliveryStatusEnum), order.Status);
 
-                //return StatusCode(StatusCodes.Status204NoContent, $"Order status updated to: {status}!");
+                
                 return Ok($"Order status updated to: {status}!");
             }
             catch (KeyNotFoundException ex)
@@ -136,7 +136,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _orderService.DeleteById(id);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Order deleted");
+                return Ok("Order is deleted successfully!");
 
             }
             catch (KeyNotFoundException ex)

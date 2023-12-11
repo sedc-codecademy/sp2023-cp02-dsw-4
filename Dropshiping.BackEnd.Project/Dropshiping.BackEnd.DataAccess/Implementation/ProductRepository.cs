@@ -88,7 +88,13 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public List<Product> GetSearchedProductsByName(string name)
         {
-            return _dbContext.Products.Where(p => p.Name.ToLower().Contains(name.ToLower()) && p.Discount < 100).Include(p => p.Ratings).ToList();
+            return _dbContext.Products.Where(p => p.Name.ToLower().Contains(name.ToLower()) && p.Discount < 100)
+                .Include(p => p.Subcategory).ThenInclude(s => s.Category)
+                .Include(p => p.Manufacturer)
+                .Include(p => p.Ratings).ThenInclude(r => r.User)
+                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
+                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Color)
+                .ToList();
         }
 
         public List<Product> GetSearchedProducts()

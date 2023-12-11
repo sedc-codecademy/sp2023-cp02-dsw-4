@@ -48,25 +48,6 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        [HttpGet("SearchProduct/{id}")]
-        public IActionResult GetSearchedProductById(string id)
-        {
-            try
-            {
-                var product = _productService.GetSearchedProductById(id);
-
-                return Ok(product);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-            }
-        }
-
         [HttpGet("SearchProductsByName/{name}")]
         public IActionResult GetSearchedProductsByName(string name)
         {
@@ -163,7 +144,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _productService.Add(productDto);
-                return Ok($"Product is created successfully!");
+                return Ok("Product is created successfully!");
             }
             catch (ArgumentNullException ex)
             {
@@ -186,7 +167,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _productService.Update(productDto);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Product updated");
+                return Ok("Product is updated successfully!");
             }
             catch (KeyNotFoundException ex)
             {
@@ -206,6 +187,25 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [HttpPut("UpdateSearches/{id}")]
+        public IActionResult UpdateProductSearches(string id)
+        {
+            try
+            {
+                _productService.UpdateProductSearches(id);
+
+                return Ok();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(string id)
         {
@@ -214,7 +214,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
 
                 _productService.DeleteById(id);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Product deleted");
+                return Ok("Product is deleted successfully!");
 
             }
             catch (ArgumentException ex)

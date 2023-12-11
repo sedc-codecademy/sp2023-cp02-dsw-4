@@ -101,7 +101,7 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
 
             if (user == null)
             {
-                throw new KeyNotFoundException($"User with id {id} is not found");
+                throw new KeyNotFoundException($"User is not found");
             }
 
             registerUserDto.ValidateUpdateUser();
@@ -125,9 +125,17 @@ namespace Dropshiping.BackEnd.Services.UserServices.Implementation
             {
                 user.Username = registerUserDto.Username;
             }
-            if (!string.IsNullOrEmpty(registerUserDto.Password) && (registerUserDto.Password == registerUserDto.ConfirmationPassword))
+            if (!string.IsNullOrEmpty(registerUserDto.Password))
             {
+                var oldPassword = GenerateHashPassword(registerUserDto.ConfirmationPassword);
+
+                if(user.Password != oldPassword)
+                {
+                    throw new ArgumentException("Your old password is incorrect!");
+                }
+
                 var hashedPassword = GenerateHashPassword(registerUserDto.Password);
+                
                 user.Password = hashedPassword;
             }
             if (!string.IsNullOrEmpty(registerUserDto.Email))

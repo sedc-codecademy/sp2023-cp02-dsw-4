@@ -1,10 +1,6 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Dtos.RatingDtos;
-using Dropshiping.BackEnd.Services.ProductServices.Implementation;
+﻿using Dropshiping.BackEnd.Dtos.RatingDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using XAct.Security;
 
 namespace Dropshiping.BackEnd.Project.Controllers
 {
@@ -68,6 +64,10 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
             catch (KeyNotFoundException ex)
             {
                 return NotFound(ex.Message);
@@ -85,7 +85,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _ratingService.Update(rating);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Rating updated");
+                return Ok("Rating is updated successfully!"); ;
             }
             catch (KeyNotFoundException ex)
             {
@@ -95,9 +95,13 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch (NotAuthorizedException ex)
+            catch (InvalidDataException ex)
             {
-                return Forbid(ex.Message);
+                return BadRequest(ex.Message);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch
             {
@@ -112,16 +116,16 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _ratingService.DeleteById(id, userId);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Product deleted");
+                return Ok("Rating is deleted successfully!");
 
             }
             catch (KeyNotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
-            catch (NotAuthorizedException ex)
+            catch (ArgumentException ex)
             {
-                return Forbid(ex.Message);
+                return BadRequest(ex.Message);
             }
             catch
             {

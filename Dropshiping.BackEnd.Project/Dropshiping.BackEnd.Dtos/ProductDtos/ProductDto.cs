@@ -1,6 +1,4 @@
 ﻿
-using Dropshiping.BackEnd.Dtos.RatingDtos;
-
 namespace Dropshiping.BackEnd.Dtos.ProductDtos
 {
     public class ProductDto
@@ -20,7 +18,7 @@ namespace Dropshiping.BackEnd.Dtos.ProductDtos
                 
                 decimal discount = Price * DiscountPercentage / 100; 
 
-                return Price - discount;
+                return Math.Round(Price - discount);
             }
         }
         public string Image { get; set; }

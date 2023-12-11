@@ -1,4 +1,5 @@
 ﻿using Dropshiping.BackEnd.Domain.ProductModels;
+using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Dtos.SubcategoryDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 
@@ -26,7 +27,11 @@ namespace Dropshiping.BackEnd.Mappers.SubcategoryMappers
                 Name = subcategory.Name,
                 Image = subcategory.Image,
                 Description = subcategory.Description,
-                CategoryId = subcategory.CategoryId,
+                Category = new ProductCategoryDto
+                {
+                    Id = subcategory.CategoryId,
+                    Name = subcategory.Category.Name,
+                },
             };
         }
 
@@ -38,8 +43,12 @@ namespace Dropshiping.BackEnd.Mappers.SubcategoryMappers
                 Name = subcategory.Name,
                 Image = subcategory.Image,
                 Description = subcategory.Description,
-                CategoryId = subcategory.CategoryId,
-                Products = subcategory.Products.Select(x => x.ToFullProductDto()).ToList()
+                Category = new ProductCategoryDto
+                {
+                    Id = subcategory.CategoryId,
+                    Name = subcategory.Category.Name,
+                },
+                Products = subcategory.Products.Select(x => x.ToFullProductDtoForSubcategory()).ToList()
             };
             
         }

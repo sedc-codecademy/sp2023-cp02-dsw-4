@@ -13,12 +13,13 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
         }
         public List<Subcategory> GetAll()
         { 
-            return _dbContext.Subcategories.ToList();
+            return _dbContext.Subcategories.Include(x => x.Category).ToList();
         }
 
         public Subcategory GetById(string id)
         {
             var subcategory = _dbContext.Subcategories
+                .Include(x => x.Category)
                 .Include(x => x.Products).ThenInclude(x => x.Manufacturer)
                 .Include(x => x.Products).ThenInclude(x => x.Ratings).ThenInclude(x => x.User)
                 .Include(x => x.Products).ThenInclude(p => p.ProductSizes).ThenInclude(ps => ps.Size)

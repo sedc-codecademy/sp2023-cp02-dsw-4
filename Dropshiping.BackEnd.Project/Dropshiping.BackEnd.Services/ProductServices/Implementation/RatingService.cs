@@ -27,19 +27,28 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         public void Add(NewRatingDto newRatingDto)
         {
             newRatingDto.ValidateNewRating();
-            var validUser = _userRepository.GetById(newRatingDto.UserId);
-            var validProduct = _productRepository.GetById(newRatingDto.ProductId);
+            var user = _userRepository.GetById(newRatingDto.UserId);
+            var product = _productRepository.GetById(newRatingDto.ProductId);
 
-            if(validUser == null)
+            var userRatingExists = product.Ratings.FirstOrDefault(x => x.UserId == newRatingDto.UserId);
+
+            if(user == null)
             {
                 throw new KeyNotFoundException($"A User with id:{newRatingDto.UserId} does not exist");
             }
-            if (validProduct == null)
+            if (product == null)
             {
                 throw new KeyNotFoundException($"A Product with id:{newRatingDto.ProductId} does not exist");
             }
+            if(userRatingExists != null ) 
+            {
+                throw new ArgumentException($"You have already rated this product!");
+            }
+
             _ratingRepository.Add(newRatingDto.ToRatingDomain());
         }
+            
+        
 
         public void DeleteById(string id, string userId)
         {
@@ -56,7 +65,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             }
             if (rating.UserId != userId && user.Role != Enums.RoleEnum.Admin)
             {
-                throw new NotAuthorizedException($"Not authorized to delete this rating!");
+                throw new ArgumentException($"Not authorized to delete this rating!");
             }
             _ratingRepository.Delete(id);
         }
@@ -86,7 +95,7 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             }
             if(rating.UserId != ratingDto.UserId)
             {
-                throw new NotAuthorizedException($"Not authorized to update this rating!");
+                throw new ArgumentException($"Not authorized to update this rating!");
             }
 
             ratingDto.ValidateUpdateRating();

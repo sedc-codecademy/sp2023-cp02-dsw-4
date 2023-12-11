@@ -18,6 +18,18 @@ namespace Dropshiping.BackEnd.Project
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+
+                    });
+            });
+            
+
             //Ineject Configuration String - SQL server
             DependencyInjectionHelpers.InjectDbContext(builder.Services, builder.Configuration);
 
@@ -65,7 +77,7 @@ namespace Dropshiping.BackEnd.Project
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
 

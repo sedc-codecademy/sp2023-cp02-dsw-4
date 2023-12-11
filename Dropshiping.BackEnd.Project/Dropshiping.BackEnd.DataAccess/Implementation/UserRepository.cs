@@ -22,7 +22,7 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
             var user = _dbContext.Users.Include(u => u.Ratings).ThenInclude(r => r.Product)
                                        .Include(u => u.Cards)
-                                       .Include(u => u.UserOrders).ThenInclude(x => x.Order)
+                                       .Include(u => u.UserOrders).ThenInclude(x => x.Order).ThenInclude(x => x.OrderItems).ThenInclude(x => x.ProductSize).ThenInclude(x => x.Product)
                                        .FirstOrDefault(u => u.Id == id);
 
             return user ?? throw new KeyNotFoundException($"User with id {id} does not exist");

@@ -78,10 +78,10 @@ namespace Dropshiping.BackEnd.Services.UserServices.Validations
 
         public static void ValidateUpdateUser(this RegisterUserDto registerUserDto)
         {
-            if (registerUserDto.Password != registerUserDto.ConfirmationPassword)
-            {
-                throw new InvalidDataException("Password and ConfirmationPassword must match.");
-            }
+            //if (registerUserDto.Password != registerUserDto.ConfirmationPassword)
+            //{
+            //    throw new InvalidDataException("Password and ConfirmationPassword must match.");
+            //}
             if (registerUserDto.FirstName.Length > 50)
             {
                 throw new InvalidDataException("FirstName cannot have more then 50 chars.");
