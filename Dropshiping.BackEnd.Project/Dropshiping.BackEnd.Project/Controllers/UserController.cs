@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Dtos.UserDtos;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -61,7 +62,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        //treba da e admin ruta
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -76,6 +77,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
             }
         }
+
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
@@ -95,6 +98,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddUser")]
         public IActionResult AddUser(AddUserDto addUserDto)
         {
@@ -116,6 +120,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
             }
         }
+
+        [Authorize]
         [HttpPut("UpdateUser/{id}")]
         public IActionResult UpdateUser(string id,[FromBody] RegisterUserDto registerUserDto)
         {
@@ -143,6 +149,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(string id)
         {

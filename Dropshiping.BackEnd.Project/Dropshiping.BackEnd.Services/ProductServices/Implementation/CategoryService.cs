@@ -1,7 +1,9 @@
-﻿using Dropshiping.BackEnd.DataAccess.Interface;
+﻿using Dropshiping.BackEnd.DataAccess.Implementation;
+using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.CategoryDtos;
 using Dropshiping.BackEnd.Mappers.CategoryMapper;
+using Dropshiping.BackEnd.Mappers.SubcategoryMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
@@ -10,12 +12,16 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
     public class CategoryService : ICategoryService
     {
         private IRepository<Category> _categoryRepository;
-       
-        
-        public CategoryService(IRepository<Category> categoryRepository)
+
+        private ISubcategoryService _subcategoryService;
+
+        private IManufacturerService _manufacturerService;
+
+        public CategoryService(IRepository<Category> categoryRepository, ISubcategoryService subcategoryService, IManufacturerService manufacturerService)
         {
             _categoryRepository = categoryRepository;
-     
+            _subcategoryService = subcategoryService;
+            _manufacturerService = manufacturerService;
         }
 
         // Get all Categories
@@ -47,6 +53,13 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             var category = categoryDto.ToCategoryDomain();
 
             _categoryRepository.Add(category);
+
+            categoryDto.Subcategories.ForEach(x => x.CategoryId = category.Id);
+
+            categoryDto.Subcategories.ForEach(x => _subcategoryService.Add(x));
+
+            categoryDto.Manufacturers.ForEach(x => _manufacturerService.Add(x));
+
         }
 
         // Update Category

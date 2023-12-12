@@ -1,6 +1,8 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.OrderDtos;
+using Dropshiping.BackEnd.Dtos.UserDtos;
+using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Mappers.OrderMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 using Dropshiping.BackEnd.Services.ProductServices.Validations;
@@ -14,12 +16,14 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         private IUserOrderService _userOrderService;
         private IOrderitemService _orderItemService;
         private IProductSizeService _productSizeService;
-        public OrderService(IRepository<Order> orderRepository, IUserOrderService userOrderService, IOrderitemService orderItemService, IProductSizeService productSizeService)
+        private ICardService _cardService;
+        public OrderService(IRepository<Order> orderRepository, IUserOrderService userOrderService, IOrderitemService orderItemService, IProductSizeService productSizeService, ICardService cardService)
         {
             _orderRepository = orderRepository;
             _userOrderService = userOrderService;
             _orderItemService = orderItemService;
             _productSizeService = productSizeService;
+            _cardService = cardService;
         }
 
         public void Add(AddOrderDto addOrderDto)
@@ -37,6 +41,26 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             _orderRepository.Add(newOrder);
             _orderItemService.Add(orderItems, newOrder.Id);
             _userOrderService.Add(addOrderDto.UserId, newOrder.Id);
+
+            if (addOrderDto.SaveCard && addOrderDto.PaymentStatus == PaymentStatusEnum.Paid)
+            {
+                var newCard = new AddNewCardDto
+                {
+                    CardType = addOrderDto.CardType,
+                    CardStatus = CardStatusEnum.Primary,
+                    CardHolder =  addOrderDto.CardHolder,
+                    ExpirationDate = addOrderDto.ExpirationDate,
+                    SecurityCode = addOrderDto.SecurityCode
+                };
+
+                if (long.TryParse(addOrderDto.CardNumber.Trim(), out long cardNumber))
+                {
+                    newCard.CardNumber = cardNumber;
+                }
+
+
+                _cardService.Add(addOrderDto.UserId, newCard);
+            }
         }
 
         public void DeleteById(string id)

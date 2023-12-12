@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Dtos.SubcategoryDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -46,6 +47,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddSubcategory")]
         public IActionResult AddSubcategory(NewSubcategoryDto subcategoryDto)
         {
@@ -68,6 +70,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateSubcategory")]
         public IActionResult UpdateSubcategory([FromBody]SubcategoryDto subcategoryDto)
         {
@@ -94,6 +97,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteSubcategory(string id)
         {

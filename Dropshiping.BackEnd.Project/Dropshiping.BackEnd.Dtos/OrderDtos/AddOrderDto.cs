@@ -18,5 +18,6 @@ namespace Dropshiping.BackEnd.Dtos.OrderDtos
         public string CardHolder { get; set; } //??
         public string ExpirationDate { get; set; } //???
         public int SecurityCode { get; set; } //???
+        public bool SaveCard  { get; set; }   
     }
 }

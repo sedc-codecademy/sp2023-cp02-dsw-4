@@ -1,9 +1,11 @@
 ﻿using Dropshiping.BackEnd.Dtos.ProductSizeDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductSizeController : ControllerBase

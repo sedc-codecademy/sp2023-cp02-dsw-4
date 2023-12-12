@@ -1,6 +1,7 @@
 ﻿using Dropshiping.BackEnd.Dtos.OrderDtos;
 using Dropshiping.BackEnd.Enums;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using XAct.Security;
 
@@ -16,6 +17,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             _orderService = orderService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -35,6 +37,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin, Courier")]
         [HttpGet("PurchasedOrders")]
         public IActionResult GetPurchased()
         {
@@ -54,6 +57,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
@@ -73,6 +77,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost("NewOrder")]
         public IActionResult AddOrder(AddOrderDto order)
         {
@@ -99,6 +104,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin, Courier")]
         [HttpPut("UpdateOrder/{id}")]
         public IActionResult UpdateOrder(string id)
         {
@@ -129,6 +135,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteOrder(string id)
         {

@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Dtos.RatingDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -14,6 +15,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             _ratingService = ratingService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -29,6 +31,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
@@ -48,6 +51,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost("AddRating")]
         public IActionResult AddRating(NewRatingDto rating)
         {
@@ -78,6 +82,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin, User")]
         [HttpPut("UpdateRating")]
         public IActionResult UpdateRating([FromBody] UpdateRatingDto rating)
         {
@@ -109,6 +114,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}/user/{userId}")]
         public IActionResult DeleteRating(string id, string userId)
         {

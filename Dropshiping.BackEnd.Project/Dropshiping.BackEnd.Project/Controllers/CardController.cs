@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Dtos.UserDtos;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -14,6 +15,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
         {
             _cardService = cardService;
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -28,6 +31,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
             }
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
@@ -47,6 +52,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}")]
         public IActionResult DeleteCard(string id)
         {
@@ -69,6 +75,8 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
             }
         }
+
+        [Authorize(Roles = "User")]
         [HttpPost("AddCard/{id}")]
         public IActionResult AddNewCardByUserId(string id, [FromBody] AddNewCardDto addCardDto)
         {
@@ -91,6 +99,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "User")]
         [HttpPut("UpdateCard")]
         public IActionResult UpdateCard([FromBody] CardDto card)
         {

@@ -1,8 +1,6 @@
-﻿using Dropshiping.BackEnd.Dtos.CategoryDtos;
-using Dropshiping.BackEnd.Dtos.SubscriberDtos;
-using Dropshiping.BackEnd.Services.ProductServices.Implementation;
+﻿using Dropshiping.BackEnd.Dtos.SubscriberDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 
@@ -18,6 +16,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             _subscriberService = subscriberService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -33,7 +32,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        // Ova treba da ostane vaka u kontrolerot ili? email mesto id?
+        [Authorize(Roles = "Admin")]
         [HttpGet("{email}")]
         public IActionResult GetById(string email)
         {
@@ -71,6 +70,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateSubscriber")]
         public IActionResult UpdateSubscriber([FromBody] SubscriberDto subscriberDto)
         {
@@ -90,6 +90,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{email}")]
         public IActionResult DeleteCategory(string email)
         {

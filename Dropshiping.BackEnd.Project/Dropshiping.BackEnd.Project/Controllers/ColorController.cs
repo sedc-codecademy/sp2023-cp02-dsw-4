@@ -1,11 +1,11 @@
 ﻿using Dropshiping.BackEnd.Dtos.Size_ColorDtos;
-using Dropshiping.BackEnd.Services.ProductServices.Implementation;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ColorController : ControllerBase
@@ -16,6 +16,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             _colorService = colorService;
         }
 
+        
         [HttpGet]
         public IActionResult GetAll()
         {

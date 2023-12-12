@@ -2,181 +2,181 @@
   {
     "id": "mensadidas",
     "name": "Adidas",
-    "image": "https://ibb.co/bWp0hfY"
+    "image": "/imgs/manufacturers/adidas.jpg"
   },
   {
     "id": "mensnike",
     "name": "Nike",
-    "image": "https://ibb.co/bbrp9RM"
+    "image": "/imgs/manufacturers/nike.jpg"
   },
   {
     "id": "mensclarks",
     "name": "Clarks",
-    "image": "https://ibb.co/cQkvh6g"
+    "image": "/imgs/manufacturers/clarks.jpg"
   },
   {
     "id": "menshugo",
     "name": "Hugo Boss",
-    "image": "https://ibb.co/VMWn6PR"
+    "image": "/imgs/manufacturers/hugo.jpg"
   },
   {
     "id": "menstom",
     "name": "Tom Ford",
-    "image": "https://ibb.co/GMyPGrb"
+    "image": "/imgs/manufacturers/tom.jpg"
   },
   {
     "id": "womenshm",
     "name": "H&M",
-    "image": "https://ibb.co/dBdyMLZ"
+    "image": "/imgs/manufacturers/h-m.jpg"
   },
   {
     "id": "womensvictoria",
     "name": "Victoria's Secret",
-    "image": "https://ibb.co/1mKyxFX"
+    "image": "/imgs/manufacturers/victoria.jpg"
   },
   {
     "id": "womenszara",
     "name": "Zara",
-    "image": "https://ibb.co/SmwKDhq"
+    "image": "/imgs/manufacturers/zara.jpg"
   },
   {
     "id": "womenschanel",
     "name": "Chanel",
-    "image": "https://ibb.co/R60gmNc"
+    "image": "/imgs/manufacturers/chanel-1.jpg"
   },
   {
     "id": "womensprada",
     "name": "Prada",
-    "image": "https://ibb.co/ZffnnDK"
+    "image": "/imgs/manufacturers/prada.jpg"
   },
   {
     "id": "techsamsung",
     "name": "Samsung",
-    "image": "https://ibb.co/6BKY2FC"
+    "image": "/imgs/manufacturers/samsung.jpg"
   },
   {
     "id": "technokia",
     "name": "Nokia",
-    "image": "https://ibb.co/NYWqrjv"
+    "image": "/imgs/manufacturers/nokia.jpg"
   },
   {
     "id": "techapple",
     "name": "Apple",
-    "image": "https://ibb.co/PxHqDDF"
+    "image": "/imgs/manufacturers/apple.jpg"
   },
   {
     "id": "techsony",
     "name": "Sony",
-    "image": "https://ibb.co/gyWGcc1"
+    "image": "/imgs/manufacturers/sony.jpg"
   },
   {
     "id": "techlg",
     "name": "LG",
-    "image": "https://ibb.co/xFr4K1c"
+    "image": "/imgs/manufacturers/lg.jpg"
   },
   {
     "id": "techxiaomi",
     "name": "Xiaomi",
-    "image": "https://ibb.co/vkvRrwg"
+    "image": "/imgs/manufacturers/xiaomi.jpg"
   },
   {
     "id": "autocraft",
     "name": "Covercraft",
-    "image": "https://ibb.co/kg3kHN0"
+    "image": "/imgs/manufacturers/covercraft.jpg"
   },
   {
     "id": "autopioneer",
     "name": "Pioneer",
-    "image": "https://ibb.co/tY11zrN"
+    "image": "/imgs/manufacturers/pioneer.jpg"
   },
   {
     "id": "automichelin",
     "name": "Michelin",
-    "image": "https://ibb.co/G2TTLVD"
+    "image": "/imgs/manufacturers/michelin.jpg"
   },
   {
     "id": "autobosch",
     "name": "Bosch",
-    "image": "https://ibb.co/5rkgx0S"
+    "image": "/imgs/manufacturers/bosch.jpg"
   },
   {
     "id": "autogarmin",
     "name": "Garmin",
-    "image": "https://ibb.co/JmGJdzt"
+    "image": "/imgs/manufacturers/garmin-1.jpg"
   },
   {
     "id": "sportsnorth",
     "name": "The North Face",
-    "image": "https://ibb.co/VqyrynX"
+    "image": "/imgs/manufacturers/northface.jpg"
   },
   {
     "id": "sportsmizuno",
     "name": "Mizuno",
-    "image": "https://ibb.co/xjGyLwR"
+    "image": "/imgs/manufacturers/mizuno.jpg"
   },
   {
     "id": "sportsrebook",
     "name": "Reebok",
-    "image": "https://ibb.co/XXWwqzf"
+    "image": "/imgs/manufacturers/reebok.jpg"
   },
   {
     "id": "sportspuma",
     "name": "Puma",
-    "image": "https://ibb.co/b6YTxvw"
+    "image": "/imgs/manufacturers/puma.jpg"
   },
   {
     "id": "sportsuarmour",
     "name": "Under Armour",
-    "image": "https://ibb.co/xJnF2dg"
+    "image": "/imgs/manufacturers/underarmour.jpg"
   },
   {
     "id": "beautyolay",
     "name": "Olay",
-    "image": "https://ibb.co/Wtkzv9t"
+    "image": "/imgs/manufacturers/olay.jpg"
   },
   {
     "id": "beautydove",
     "name": "Dove",
-    "image": "https://ibb.co/r4fx2cN"
+    "image": "/imgs/manufacturers/dove.jpg"
   },
   {
     "id": "beautygarnier",
     "name": "Garnier",
-    "image": "https://ibb.co/Hxzgd7M"
+    "image": "/imgs/manufacturers/garnier.jpg"
   },
   {
     "id": "beautyestee",
     "name": "Esteѐ lauder",
-    "image": "https://ibb.co/4FR5Tr2"
+    "image": "/imgs/manufacturers/este.jpg"
   },
   {
     "id": "beautyloreal",
     "name": "L'Oréal",
-    "image": "https://ibb.co/d5DfKc1"
+    "image": "/imgs/manufacturers/loreal.jpg"
   },
   {
     "id": "handgdecker",
     "name": "Black & Decker",
-    "image": "https://ibb.co/LYNZ19y"
+    "image": "/imgs/manufacturers/black-decker-2.jpg"
   },
   {
     "id": "handbehr",
     "name": "Behr",
-    "image": "https://ibb.co/PhrHy45"
+    "image": "/imgs/manufacturers/behr.jpg"
   },
   {
     "id": "handlowes",
     "name": "Lowe's",
-    "image": "https://ibb.co/y4RD3r5"
+    "image": "/imgs/manufacturers/lowes.jpg"
   },
   {
     "id": "handdepot",
     "name": "Home Depot",
-    "image": "https://ibb.co/jRdKrDB"
+    "image": "/imgs/manufacturers/homedepot.jpg"
   },
   {
     "id": "handikea",
     "name": "IKEA",
-    "image": "https://ibb.co/S75K0fj"
+    "image": "/imgs/manufacturers/ikea.jpg"
   }
 ]

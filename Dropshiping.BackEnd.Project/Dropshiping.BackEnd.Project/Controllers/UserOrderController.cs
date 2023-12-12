@@ -1,6 +1,7 @@
 ﻿using Dropshiping.BackEnd.Dtos.UserOrderDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 using Dropshiping.BackEnd.Services.UserServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -20,6 +21,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             _userService = userService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -34,6 +36,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
@@ -52,6 +55,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Courier")]
         [HttpPost("AssignCourier/{userId}/toOrder/{orderId}")]
         public IActionResult AddUserOrder(string userId, string orderId)
         {
@@ -79,13 +83,14 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateUserOrder")]
         public IActionResult UpdateUserOrder(UserOrderDto userOrderDto)
         {
             try
             {
                 _userOrderService.Update(userOrderDto);
-                return StatusCode(StatusCodes.Status204NoContent, "UserOrder updated");
+                return Ok("UserOrder updated");
             }
             catch (ArgumentNullException ex)
             {
@@ -97,6 +102,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteById(string id)
         {

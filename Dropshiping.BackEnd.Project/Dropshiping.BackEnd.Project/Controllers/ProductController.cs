@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -138,6 +139,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddProduct")]
         public IActionResult AddProduct(NewProductDto productDto)
         {
@@ -160,6 +162,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateProduct")]
         public IActionResult UpdateProduct([FromBody] UpdateProductDto productDto)
         {
@@ -206,6 +209,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(string id)
         {
