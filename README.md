@@ -11,7 +11,7 @@ Welcome to Click & Ship - where elegance meets convenience in our minimalist dro
 You've just landed on the README page of our exciting Dropshipping Project. Get ready for a thrilling journey through **Click & Ship** - a dynamic platform built with modern technologies:
 
 - **Frontend**: React, Redux Toolkit, React Query, SCSS
-- **Backend**: C#.NET, MySQL
+- **Backend**: ASP.NET Web API , C#, Entity Framework Core, Microsoft SQL Server
 
 Check out our live project [here](https://clickandship-sedc.github.io/store/).
 
@@ -22,10 +22,11 @@ To get a local copy up and running, follow these simple steps.
 ### Prerequisites
 
 You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/)
+Backend: .Net 6.0 and SQL Server
 
 ### Installation
 
-1. **Front-end** - Clone the repo
+1. **Front-end and Back-end** - Clone the repo
    ```sh
    git clone https://github.com/sedc-codecademy/sp2023-cp02-dsw-4
    ```
@@ -33,10 +34,18 @@ You need Node.js 18.17.0+ to run the Front-End - [NodeJS](https://nodejs.org/en/
    ```sh
    npm install
    ```
-3. **Front-end** - Run
+   **Back-end**
+   - Update connection string in appsettings.json to point to the correct database instance
+   - apply migrations to create the database schema by updating the database (dotnet ef database update or Update-Database in Package manager Console)
+     
+3. **Back-end**
+   Run the Api application
+   
+   **Front-end** - Run
    ```sh
    npm start
    ```
+   
 
 ## Meet the Team 👥
 
@@ -76,5 +85,10 @@ We would like to express our deepest gratitude to our mentors who guided us thro
 
 - Gjorge Dimitrov - [Github](https://github.com/dzocespd)
 - Aneta Stankovska - [Github](https://github.com/anetastankovska)
-
+- Risto Panchevski
+- Panche Manaskov
+- Dragan Manaskov
+- Tijana Stojanovska
+- Bojan Damchevski
+  
 Thank you for believing in us, for inspiring us, and for helping us grow. Your guidance has made all the difference in our journey. 🙏🎉
