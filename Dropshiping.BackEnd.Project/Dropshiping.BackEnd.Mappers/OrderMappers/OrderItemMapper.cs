@@ -8,6 +8,8 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
     {
         public static OrderItemDto ToOrderItemDto(this OrderItem orderItem)
         {
+            var discount = (orderItem.ProductSize.Product.Price * orderItem.ProductSize.Product.Discount) / 100;
+
             return new OrderItemDto
             {
                 Id = orderItem.Id,
@@ -17,7 +19,7 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
                 ProductImage = orderItem.ProductSize.Product.Image,
                 Size = orderItem.ProductSize.SizeId,
                 Color = orderItem.ProductSize.ColorId,
-                Price = orderItem.ProductSize.Product.Price,
+                Price = orderItem.ProductSize.Product.Price - discount,
             };
         }
 
