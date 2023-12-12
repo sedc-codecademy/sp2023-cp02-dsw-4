@@ -8,11 +8,11 @@ const initialState = {
         email: "",
         phoneNumber: "",
         address: "",
-        city: "",
+        city: "Skopje",
         postalCode: "",
         paymentMethod: "prepaid",
         note: "",
-        total: "",
+        total: 0,
         orderStatus: "draft",
         saveCard: false,
     },
@@ -63,7 +63,7 @@ const cartSlice = createSlice({
         changeItemAmount(state, action) {
             state.orderItems.forEach((item) => {
                 if (item.id === action.payload.id) {
-                    item.amount = action.payload.amount
+                    item.quantity = action.payload.quantity
                     localStorage.setItem("orderItems", JSON.stringify(state.orderItems))
                 }
             })
@@ -78,11 +78,11 @@ const cartSlice = createSlice({
                 email: "",
                 phoneNumber: "",
                 address: "",
-                city: "",
+                city: "Skopje",
                 postalCode: "",
                 paymentMethod: "prepaid",
                 note: "",
-                total: "",
+                total: 0,
                 orderStatus: "draft",
                 saveCard: false,
             }

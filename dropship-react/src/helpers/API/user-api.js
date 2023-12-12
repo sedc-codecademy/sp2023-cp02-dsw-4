@@ -1,8 +1,7 @@
 const mainURL = 'mockData/'
 
-export async function getUser(ID) {
-    console.log(ID)
-    const response = await fetch('/mockData/user.json')
+export async function getUser(ID) { // api/User/${ID}
+    const response = await fetch(`https://localhost:7168/api/User/${ID}`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -11,18 +10,16 @@ export async function getUser(ID) {
     return await response.json()
 }
 
-export const logInApi = async (credentials) => {
-    console.log(credentials)
-    const response = await fetch('/mockData/tokenExample.json')
+// export const logInApi = async (credentials) => { // api/User/Login
+//     const response = await fetch('/mockData/tokenExample.json')
 
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
-}
+//     if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//     }
+//     return response.json();
+// }
 
 export const logOutApi = async ({ ID, tokens }) => { // Should post log out Route instead
-    console.log(ID, tokens)
     const response = await fetch('/mockData/tokenExample.json')
 
     if (!response.ok) {
@@ -32,9 +29,26 @@ export const logOutApi = async ({ ID, tokens }) => { // Should post log out Rout
     return await response.json()
 }
 
-export const registerApi = async (credentials) => {
-    console.log(credentials)
-    const response = await fetch('/mockData/register.json')
+// export const registerApi = async (credentials) => { // api/User/Register
+//     const response = await fetch('/mockData/register.json')
+
+//     if (!response.ok) {
+//         throw new Error(await response.text())
+//     }
+
+//     return await response.json()
+// }
+
+/// LOGIN
+export async function logInApi(credentials) {
+    const url = `https://localhost:7168/api/User/Login`
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+    })
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -42,21 +56,6 @@ export const registerApi = async (credentials) => {
 
     return await response.json()
 }
-
-// /// LOGIN
-// export async function logInApi(credentials) {
-//     const url = `${mainURL}/auth/login`
-//     const response = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(credentials),
-//     })
-
-//     const textResponse = await response.text() /////////// ?????????????
-//     return textResponse
-// }
 
 // /// LOGOUT
 // export async function logOutApi(userId, tokens) {
@@ -73,26 +72,24 @@ export const registerApi = async (credentials) => {
 //     return textResponse
 // }
 
+/// REGISTER
+export async function registerApi(credentials) {
+    const url = `https://localhost:7168/api/User/Register`
 
-// /// REGISTER
-// export async function registerApi(credentials) {
-//     const url = `${mainURL}/auth/createAcc`
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+    })
 
-//     const response = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(credentials),
-//     })
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
 
-//     if(!response.ok){
-//         throw new Error(await response.text())
-//     }
-
-//     const textResponse = await response.text() ///////////// ??????????
-//     return textResponse
-// }
+    return await response.text()
+}
 
 export async function deleteUserApi({ ID, tokens }) {
     const url = `${mainURL}/user/delete/${ID}`
@@ -110,13 +107,13 @@ export async function deleteUserApi({ ID, tokens }) {
 }
 
 export async function updateUserApi({ updatedData, tokens }) {
-    const url = `${mainURL}/user/update/${updatedData.id}`
+    const url = `https://localhost:7168/api/User/UpdateUser/${updatedData.id}`
 
     const response = await fetch(url, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${tokens.accessToken}`,
+            // 'Authorization': `Bearer ${tokens.accessToken}`,
         },
         body: JSON.stringify(updatedData),
     })
@@ -125,10 +122,10 @@ export async function updateUserApi({ updatedData, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
-export async function deleteCardApi({ ID, tokens }) {
+export async function deleteCardApi({ ID, tokens }) { // api/Card/${ID}
     const url = `${mainURL}/cards/delete/${ID}`
 
     const response = await fetch(url, {
@@ -143,17 +140,16 @@ export async function deleteCardApi({ ID, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
-export async function updateCardApi({ updatedData, tokens }) {
-    const url = `${mainURL}/cards/update/${updatedData.id}`
-
+export async function updateCardApi({ updatedData, tokens }) { // api/Card/UpdateCard
+    const url = `https://localhost:7168/api/Card/UpdateCard`
     const response = await fetch(url, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${tokens.accessToken}`,
+            // 'Authorization': `Bearer ${tokens.accessToken}`,
         },
         body: JSON.stringify(updatedData),
     })
@@ -162,17 +158,17 @@ export async function updateCardApi({ updatedData, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
-export async function createCardApi({ cardData, userID, tokens }) {
-    const url = `${mainURL}/cards/create/${userID}`
+export async function createCardApi({ cardData, userID, tokens }) { // api/Card/AddCard/${ID}
+    const url = `https://localhost:7168/api/Card/AddCard/${userID}`
 
     const response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${tokens.accessToken}`,
+            // 'Authorization': `Bearer ${tokens.accessToken}`,
         },
         body: JSON.stringify(cardData),
     })
@@ -181,5 +177,23 @@ export async function createCardApi({ cardData, userID, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
+}
+
+export async function subscribeApi(subscriberData) {
+    const url = `https://localhost:7168/api/Subscriber/AddSubscriber`
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(subscriberData),
+    })
+
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
+
+    return await response.text()
 }

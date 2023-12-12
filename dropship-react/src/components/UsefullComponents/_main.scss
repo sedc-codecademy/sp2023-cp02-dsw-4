@@ -1052,6 +1052,7 @@ main {
                             width: 100%;
                             gap: .5rem;
                             color: var(--secColor);
+                            flex-grow: 1;
 
                             .title {
                                 max-width: 25ch;
@@ -1066,9 +1067,10 @@ main {
                                 width: 100%;
 
                                 &.priceDiv {
-                                    gap: 1rem;
+                                    gap: .5rem;
                                     align-items: center;
-
+                                    flex-grow: 1;
+                                    // justify-content: center;
                                     p {
                                         text-decoration: line-through;
                                         color: red;

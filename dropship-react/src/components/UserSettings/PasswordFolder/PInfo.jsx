@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function PasswordInfoForm({handlePasswordChange}) {
+function PasswordInfoForm({handlePasswordChange, passwordInfo}) {
   const [showPassword, setShowPassword] = useState(false)
   const [showCpassword, setShowCpassword] = useState(false)
   const [showOriginalPassword, setShowOriginalPassword] = useState(false)
@@ -18,6 +18,7 @@ function PasswordInfoForm({handlePasswordChange}) {
             name="originalPassword"
             required
             placeholder=""
+            value={passwordInfo.orignalPassword}
             onChange={handlePasswordChange}
           ></input>
           <label htmlFor="originalPassword">Current Password</label>
@@ -33,6 +34,7 @@ function PasswordInfoForm({handlePasswordChange}) {
             name="password"
             required
             placeholder=""
+            value={passwordInfo.password}
             onChange={handlePasswordChange}
           ></input>
           <label htmlFor="password">New Password</label>
@@ -48,6 +50,7 @@ function PasswordInfoForm({handlePasswordChange}) {
             name="cpassword"
             required
             placeholder=""
+            value={passwordInfo.cpassword}
             onChange={handlePasswordChange}
           ></input>
           <label htmlFor="password">Confirm Password</label>

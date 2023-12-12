@@ -7,7 +7,7 @@ header {
         justify-content: center;
         align-items: center;
 
-        height: clamp(15rem, 5.2941rem + 25.8824vw, 70rem);
+        height: clamp(10rem, 5.2941rem + 25.8824vw, 50rem);
 
         .headerBackground {
             position: absolute;
@@ -93,11 +93,6 @@ header {
                 .search-bar-container {
                     box-shadow: none;
                     max-width: max-content;
-                }
-
-                .suggestions {
-                    max-width: max-content;
-                    width: max-content;
                 }
 
                 .frequent-searches {
@@ -186,7 +181,7 @@ header {
             left: unset;
             display: flex;
             align-items: center;
-            position: relative!important;
+            position: relative !important;
 
             svg {
                 height: 3.5rem;
@@ -211,6 +206,10 @@ header {
             background-color: var(--tpPri3);
             padding: .5rem 1rem;
             border-radius: .5rem;
+        }
+
+        @media(max-width: 800px) {
+            flex-direction: column;
         }
     }
 }

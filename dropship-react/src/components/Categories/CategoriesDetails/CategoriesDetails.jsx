@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { setMobileFiltersOn } from "../../../store/slices/filters/filtersSlice"
 
 function CategoriesDetails({ dataObject, origin }) {
+
     const dispatch = useDispatch()
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const mobileFiltersOn = useSelector((state) => state.filters.mobileFiltersOn)
@@ -26,7 +27,10 @@ function CategoriesDetails({ dataObject, origin }) {
     }
 
     const [products] = useState(dataObject.products)
-    const [initialsPrices] = useState(products.reduce((range, product) => ({ min: Math.min(range.min, product.total), max: Math.max(range.max, product.total), }), { min: 1, max: 1000 }))
+    const [initialsPrices] = useState(products.reduce((range, product) => ({
+        min: Math.min(1, product.discountedPrice),
+        max: Math.max(range.max, product.discountedPrice),
+    }), { min: 0, max: 1 }))
 
     const [allSizes] = useState(getAllSizes(products))
     const [allColors] = useState(getAllColors(products))
@@ -38,7 +42,7 @@ function CategoriesDetails({ dataObject, origin }) {
 
     const [allManufacturers] = useState(
         products.reduce((counts, product) => {
-            counts[product.manufacturer?.title] = (counts[product.manufacturer?.title] || 0) + 1
+            counts[product.manufacturer?.name] = (counts[product.manufacturer?.name] || 0) + 1
             return counts
         }, {})
     )
@@ -71,14 +75,14 @@ function CategoriesDetails({ dataObject, origin }) {
             setUniqueFilterSizes([...new Set(allFilterSizes)])
             setFilteredManufacturers([
                 ...new Set(
-                    filteredProducts.map((product) => product.manufacturer?.title)
+                    filteredProducts.map((product) => product.manufacturer?.name)
                 ),
             ])
         } else {
             setUniqueFilterColors(uniqueColors)
             setUniqueFilterSizes(uniqueSizes)
             setFilteredManufacturers([
-                ...new Set(products.map((product) => product.manufacturer?.title)),
+                ...new Set(products.map((product) => product.manufacturer?.name)),
             ])
         }
     }, [filteredProducts, uniqueColors, uniqueSizes, products])
@@ -117,13 +121,13 @@ function CategoriesDetails({ dataObject, origin }) {
     }
 
     const handleCloseButtonClick = () => {
-        if(mobileFiltersOn){
+        if (mobileFiltersOn) {
             setCurrentFilters(previousFilters || null)
         }
         dispatch(setMobileFiltersOn(!mobileFiltersOn))
     }
 
-    const applyFilters = () =>{
+    const applyFilters = () => {
         dispatch(setMobileFiltersOn(!mobileFiltersOn))
     }
 
@@ -131,8 +135,8 @@ function CategoriesDetails({ dataObject, origin }) {
         <main className="categoriesDetails">
             {origin !== "search" && (
                 <DetailsNav
-                    categoryid={dataObject.categoryid}
-                    categorytitle={dataObject.categorytitle}
+                    categoryid={dataObject?.category?.id || dataObject.products[0]?.category?.id}
+                    categorytitle={dataObject?.category?.name || dataObject.products[0]?.category?.name}
                 ></DetailsNav>
             )}
 

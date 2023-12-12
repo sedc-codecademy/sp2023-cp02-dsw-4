@@ -37,11 +37,11 @@ export function useMobileWidthEffects() {
         } else if (!isMobile && (!showAccDropDown || !finalPayment)) {
             dispatch(setIsScrollOn(false))
         }
-        // if (showLoading) {
-        //     dispatch(setIsScrollOn(true))
-        // } else if (!showLoading && (!showCatDropDown && !showAccDropDown && !mobileFiltersOn && !isSettingsOn) && isMobile) { // might need to redo
-        //     dispatch(setIsScrollOn(false))
-        // }
+        if (showLoading) {
+            dispatch(setIsScrollOn(true))
+        } else if (!showLoading && (!showCatDropDown && !showAccDropDown && !mobileFiltersOn && !isSettingsOn) && isMobile) { // might need to redo
+            dispatch(setIsScrollOn(false))
+        }
     }, [dispatch, isMobile, isSettingsOn, showCatDropDown, mobileFiltersOn, showAccDropDown, showLoading, finalPayment]) // Drop Downs and Pop-Ups checker UseEffect
 
     useEffect(() => {

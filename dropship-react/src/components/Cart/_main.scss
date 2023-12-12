@@ -1907,6 +1907,16 @@
         max-width: var(--maxWidth);
         overflow-x: auto;
     }
+
+    .loadingDiv{
+        max-width: var(--maxWidth);
+        margin-inline: auto;
+        // margin-inline: 1rem;
+        margin-top: 1rem;
+        @media (max-width: 1000px) {
+            margin-inline: 1rem;
+        }
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1933,7 +1943,7 @@
             }
         }
 
-        .related-products {
+        .related-products  {
             @media (max-width: 600px) {
                 @supports (scrollbar-width: none) {
                     scrollbar-width: none;

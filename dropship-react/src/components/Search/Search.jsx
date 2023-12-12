@@ -9,7 +9,6 @@ import { getSearch } from '../../helpers/API/searchApi'
 function Search() {
     const { searchid } = useParams()
     const {
-        // Need to do mutaiton for reviews
         data: searchData,
         error: searchError,
         isError: isSearchError,
@@ -32,7 +31,7 @@ function Search() {
                     ></BigLoadingDiv>
                 ) : searchSuccess && searchData ? (
                     <CategoriesDetails origin={'search'} dataObject={{
-                        title: searchid,
+                        name: searchid,
                         products: searchData
                     }}></CategoriesDetails>
                 ) : isSearchError ? (

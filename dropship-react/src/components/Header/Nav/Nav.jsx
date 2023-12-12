@@ -1,9 +1,9 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 
 import { setShowAccDropDown } from "../../../store/slices/dropdowns/acDropDownSlice"
-import { toggleCatDropDown } from "../../../store/slices/dropdowns/catDropDownSlice"
+import { toggleCatDropDown, turnOffCatDP } from "../../../store/slices/dropdowns/catDropDownSlice"
 
 import { setThemeMode } from "../../../store/slices/theme/themeSlice"
 import { setIsSettingsOn } from "../../../store/slices/nav/navSettingsSlice"
@@ -14,8 +14,6 @@ import {
     CatDPMobile,
     SubCatDP,
     ViewAllSub,
-    catArray,
-    subCatArray,
 } from "../CatDropDown/CatDP"
 
 import { CSSTransition } from "react-transition-group"
@@ -23,6 +21,7 @@ import { useLogout } from "../../../helpers/UserHelper/UserHelper"
 import { getUser } from "../../../helpers/API/user-api"
 import { useQuery } from "@tanstack/react-query"
 import ImageLoader from "../../ImageLoader/ImageLoader"
+import { getCategories } from "../../../helpers/API/category-api"
 
 export default function Nav() {
     const navigate = useNavigate()
@@ -31,11 +30,27 @@ export default function Nav() {
 
     const tokens = useSelector(state => state.role.authTokens)
     const userid = useSelector(state => state.role.userid)
+
     const { data: userData } = useQuery({
         queryKey: ['userQuery', userid],
         queryFn: () => getUser(userid),
         enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     })
+
+    const {
+        data: allCatData,
+    } = useQuery({
+        queryKey: ["allCategories"],
+        queryFn: () => getCategories(),
+    })
+
+    const [currentCategory, setCurrentCategory] = useState(null)
+
+    useEffect(() => {
+        if (allCatData && currentCategory === null) {
+            setCurrentCategory(allCatData[0])
+        }
+    }, [allCatData, currentCategory])
 
     const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
     const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
@@ -56,9 +71,9 @@ export default function Nav() {
     }
 
     const closeSettings = () => {
-        if (isSettingsOn) {
+        setTimeout(() => {
             dispatch(setIsSettingsOn(false))
-        }
+        }, 100)
     }
 
     const onAccountIconClick = () => {
@@ -88,8 +103,8 @@ export default function Nav() {
         dispatch(toggleCatDropDown())
     }
 
-    const handleLogOutClick = async () => {
-        await logout()
+    const handleLogOutClick = () => {
+        logout()
         if (isSettingsOn) {
             dispatch(setIsSettingsOn(false))
         }
@@ -99,23 +114,28 @@ export default function Nav() {
         dispatch(setShouldFocus(true))
     }
 
-    const handleCatClick = () => {
-        console.log('Should Change the selecetd cat')
+    const handleCatClick = (e) => {
+        setCurrentCategory(allCatData.find(cat => cat.id === e))
     }
 
     const handleSubCatClick = (e) => {
-        dispatch(toggleCatDropDown())
-        navigate(`/subcategory/${e}`)
+        setTimeout(() => {
+            navigate(`/subcategory/${e}`)
+        }, 300)
+        dispatch(turnOffCatDP())
     }
+
     const handleViewAllClick = (e) => {
-        dispatch(toggleCatDropDown())
-        navigate(`/category/${e}`)
+        dispatch(turnOffCatDP())
+        setTimeout(() => {
+            navigate(`/category/${e}`)
+        }, 300)
     }
 
     return (
         <>
-            <nav className={`mainNav ${isMobile && role === 'user' ? "mobileNav" : "normalNav"} ${role !== 'user' && 'dashboardNav'}`}>
-                {role === "user" ? (
+            <nav className={`mainNav ${isMobile ? "mobileNav" : "normalNav"} ${(role !== 'User' && isLoggedIn) && !isMobile && 'dashboardNav'}`}>
+                {role === "User" ? (
                     <>
                         <ul
                             className={
@@ -238,6 +258,7 @@ export default function Nav() {
                                 </NavLink>
                             </li>
                         </ul>
+
                         <CSSTransition
                             in={showCatDropDown && isMobile}
                             timeout={200}
@@ -264,18 +285,18 @@ export default function Nav() {
                                 </div>
                                 <div className="divider"></div>
                                 <ul className="catsList">
-                                    {catArray.map((e) => (
-                                        <CatDPMobile key={e.id} category={e} handleCatClick={handleCatClick} />
+                                    {allCatData?.map((e) => (
+                                        <CatDPMobile key={e.id} category={e} currentCategory={currentCategory} handleCatClick={handleCatClick} />
                                     ))}
                                 </ul>
                                 <div className="divider"></div>
                                 <div className="subCatsList">
                                     <ul>
-                                        {subCatArray.slice(0, 5).map((e) => (
+                                        {currentCategory?.subcategory?.slice(0, 5).map((e) => (
                                             <SubCatDP key={e.id} subCategory={e} handleSubCatClick={handleSubCatClick} />
                                         ))}
                                     </ul>
-                                    <ViewAllSub category={catArray[0]} handleViewAllClick={handleViewAllClick}></ViewAllSub>
+                                    <ViewAllSub category={currentCategory} handleViewAllClick={handleViewAllClick}></ViewAllSub>
                                 </div>
                             </div>
                         </CSSTransition>
@@ -315,7 +336,7 @@ export default function Nav() {
                         nodeRef={csstransitionRef}
                     >
                         <div
-                            className={`settingsContainer ${isMobile && role === 'user' ? "mobileSettings" : "normalSettings"
+                            className={`settingsContainer ${isMobile ? "mobileSettings" : "normalSettings"
                                 }`}
                             ref={csstransitionRef}
                         >
@@ -340,10 +361,10 @@ export default function Nav() {
                                 </li>
                                 <li>
                                     <NavLink
-                                        // onClick={closeSettings}
                                         to="/user"
                                         disabled={activeLink === "/user"}
                                         tabIndex={0}
+                                        onClick={closeSettings}
                                     >
                                         <svg height="32" viewBox="0 0 32 32">
                                             <path
@@ -362,9 +383,9 @@ export default function Nav() {
                                 {!isMobile && <li className="divider"></li>}
                                 <li>
                                     <NavLink
-                                        // onClick={closeSettings}
                                         to="/settings"
                                         disabled={activeLink === "/settings"}
+                                        onClick={closeSettings}
                                     >
                                         <svg viewBox="0 0 32 32">
                                             <path

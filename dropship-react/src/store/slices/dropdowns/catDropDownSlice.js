@@ -9,11 +9,14 @@ const catDropDownSlice = createSlice({
         toggleCatDropDown(state) {
             state.showDropDown = !state.showDropDown
         },
+        turnOffCatDP(state) {
+            state.showDropDown = false
+        },
     },
 })
 
 
 
-export const { toggleCatDropDown } = catDropDownSlice.actions
+export const { toggleCatDropDown,turnOffCatDP } = catDropDownSlice.actions
 
 export default catDropDownSlice.reducer

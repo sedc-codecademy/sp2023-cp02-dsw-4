@@ -35,6 +35,7 @@
         overflow: hidden;
         white-space: nowrap;
         transition: color .6s cubic-bezier(.19, 1, .22, 1);
+        text-align: center;
       }
 
       div {
@@ -42,18 +43,24 @@
         width: 100%;
 
         &.priceDiv {
-          gap: 1rem;
+          background-color: var(--tpPri2);
+          padding: .5rem;
+          // flex-direction: column;
+          gap: .3rem;
+          border-radius: .3rem;
           align-items: center;
+          justify-content: center;
+          flex-grow: 1;
 
           p {
             text-decoration: line-through;
-            color: red;
-            font-size: 1rem;
+            color: #dd713f;
+            font-size: 1.15rem;
             transition: color .6s cubic-bezier(.19, 1, .22, 1);
           }
 
           h4 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             transition: color .6s cubic-bezier(.19, 1, .22, 1);
           }
         }
@@ -61,6 +68,7 @@
         &.ratingDiv {
           width: max-content;
           align-items: center;
+          margin-inline: auto;
           gap: .5rem;
 
           p {

@@ -1,129 +1,109 @@
-import React from "react";
-import { AdminBiggerCategory } from "../Categories/CategoriesList/SmallCategory";
-
-const catArray = [
-    {
-        id: "technology",
-        title: "Technology",
-        sub: [
-            "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
-            "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
-            "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
-            "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
-            "57dcef31-e8c0-429f-8dea-0089afcbf945",
-            "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
-            "1ba269cb-5d2b-4975-be75-0979930cb10e",
-            "58b31959-1232-453f-b631-6411be333ed3",
-            "50292d51-a80b-40e0-ab12-47e7557cedb8",
-            "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
-        ],
-        image: "../imgs/cat/tech/technology.jpg",
-    },
-    {
-        id: "menswear",
-        title: "Men's Clothing",
-        sub: [
-            "95448f8a-49ea-4930-b91f-193892a687e8",
-            "c05c19eb-f67b-48f3-b4ca-922326df53ff",
-            "fc160538-ed47-4b02-8ff9-32addec8b3a6",
-            "e1adeac0-4152-4a32-a789-ca9a2c99921b",
-            "2ec55d9f-c9dd-49c8-af86-10b7fd4f7dd3",
-            "e72f789f-3032-43b1-bb90-1faacbaa6c9c",
-            "24b62ef4-3d30-4f01-b621-1a849edc5f5e",
-            "eac02249-e78d-4f89-b949-7b2bacdbfd2a",
-            "c886c2eb-fc04-4d2a-8c9e-1cb71bbac941",
-            "af8cd7b9-683a-48d9-8be4-25eb2237ee39",
-        ],
-        image: "../imgs/cat/mWear/mensWear.jpg",
-    },
-    {
-        id: "womenswear",
-        title: "Women's Clothing",
-        sub: [
-            "a2bb30f6-be86-4e1c-b58f-e1599b8e30c3",
-            "2986c60e-1876-4c73-84be-95855807a23e",
-            "28bbdaaa-7997-4cf5-9336-0da1b3fc8026",
-            "56feed6d-93a3-4ff1-a28b-bba8337a2ade",
-            "68fda0af-4632-4bf5-94bc-cb18f8aef5f9",
-            "4c9db19d-87b1-4380-846c-62547aeeb2de",
-            "a39cf50b-b311-468e-8e43-eefb0ef53fe2",
-            "f641cfb0-5506-46ee-bb60-0c8150df3585",
-            "e666d9e6-3f05-410e-b93d-457a71cf0123",
-            "8f1d8954-e266-49a4-a7a5-2ac1f8620aeb",
-        ],
-        image: "../imgs/cat/fWear/womensWear.jpg",
-    },
-    {
-        id: "beauty",
-        title: "Beauty",
-        sub: [
-            "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
-            "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
-            "f01b6cc6-1917-40ff-9344-184e978a68d8",
-            "8d12a370-ad82-4c33-a99a-006b040abbe2",
-            "c8e24060-a3cc-4909-a295-a20490698732",
-            "67447359-bb55-4510-a696-06207f11625b",
-            "29a045e0-76cd-4fa8-9dd1-12a72fbac60b",
-            "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
-            "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
-            "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
-        ],
-        image: "../imgs/cat/beauty/beauty.jpg",
-    },
-    {
-        id: "autoaccessories",
-        title: "Automobile Accessories",
-        sub: [
-            "d3e3c11b-809b-4d22-98f8-58333377b784",
-            "10884d4e-343f-43f8-9094-2c2e12f072ef",
-            "ba523e6e-32cb-43a5-be44-734bd769aaa2",
-            "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
-            "dcc14cf4-623e-46a5-b993-06722b09a093",
-            "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
-            "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
-            "d821754f-9e4d-4758-b162-52f0fee2d7f9",
-            "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
-            "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
-        ],
-        image: "../imgs/cat/auto/autoacc.jpg",
-    },
-    {
-        id: "sports",
-        title: "Sports",
-        sub: [
-            "bdfb4f4e-c9ae-4590-a62b-f491e4aea479",
-            "a201ef9c-3206-4449-8eab-86ed6e2220a9",
-            "2fcef4d6-0f0a-490b-9b12-57ad0eb0bc9a",
-            "24ffe98a-3970-4226-9895-bc0267f73cef",
-            "8cec5cb9-b7ac-480d-9c60-899307478643",
-            "7407db30-6510-4b5e-8e1e-0e8e72e78f2f",
-            "b29fd5c9-ea24-4d83-bf97-fc355f8c672c",
-            "d3022cd3-e081-41f5-a7a9-06375898811e",
-            "413916b7-99d7-4d46-bd9b-86169ca97373",
-            "d9c023b9-ead8-4a2c-8acb-68ee100831d3",
-        ],
-        image: "../imgs/cat/sports/sports.jpg",
-    },
-    {
-        id: "homeandgarden",
-        title: "Home & Garden",
-        sub: [
-            "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
-            "21010f6a-2891-4fc9-969f-4886c993e95c",
-            "86f9eabb-c453-4c95-bef2-e7538df76294",
-            "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
-            "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
-            "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
-            "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
-            "7cf5b026-3725-4149-8602-1a0f65da4bd0",
-            "7d214c1c-09ac-4645-b389-16e146c4e9d2",
-            "0fc1779f-8256-402b-bfce-aa7938a7dce0",
-        ],
-        image: "../imgs/cat/hAndG/home.jpg",
-    },
-];
+import React, { useEffect, useState } from "react"
+import { AdminBiggerCategory } from "../Categories/CategoriesList/SmallCategory"
+import { useQuery } from "@tanstack/react-query"
+import { getCategories, getCategoryByID } from "../../helpers/API/category-api"
+import { LoadingErrorDiv } from "../PageLoader/PageLoader"
+import ImageLoader from "../ImageLoader/ImageLoader"
+import { NavLink } from "react-router-dom"
+import { PhotoPicker, dataURLtoFile, extractAndSortProductsFromCategory, getUniqueManufacturers } from "../UsefullComponents/Usefull"
+import {
+    useCreateCategory,
+    useDeleteCategory,
+    useUpdateCategory,
+} from "../../helpers/UserHelper/UserHelper"
 
 function AdminCategories() {
+    const [currentCategoryId, setCurrentCategoryId] = useState("")
+    const [inputCategoryId, setInputCategoryId] = useState("")
+    const [showEdit, setShowEdit] = useState(false)
+    const [shouldDelete, setShouldDelete] = useState(false)
+    const [shouldCreate, setShouldCreate] = useState(false)
+
+    const [popularProducts, setPopularProducts] = useState([])
+    const [manufacturers, setManufacturers] = useState([])
+
+    const updateCategory = useUpdateCategory()
+    const deleteCategory = useDeleteCategory()
+
+    const {
+        data: categoriesData,
+        error: categoriesError,
+        isError: isCatError,
+        isPending: isCatPending,
+        isSuccess: catSuccess,
+        refetch: catRefetch,
+    } = useQuery({
+        queryKey: ["categoriesQuery"],
+        queryFn: getCategories,
+    })
+
+    const {
+        data: cCatData,
+        error: cCatError,
+        isError: isCCatError,
+        isPending: isCCatPending,
+        isSuccess: cCatSuccess,
+        refetch: cCatRefetch,
+    } = useQuery({
+        queryKey: ["categoryQuery", currentCategoryId],
+        queryFn: () => getCategoryByID(currentCategoryId),
+    })
+
+    useEffect(() => {
+        if (cCatData) setPopularProducts(extractAndSortProductsFromCategory(cCatData))
+    }, [cCatData])
+
+    useEffect(() => {
+        if (popularProducts) setManufacturers(getUniqueManufacturers(popularProducts))
+    }, [popularProducts])
+
+    useEffect(() => {
+        let timer
+        if (shouldDelete) {
+            timer = setTimeout(() => {
+                setShouldDelete(false)
+            }, 5000)
+        }
+
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [shouldDelete])
+
+    useEffect(() => {
+        if (categoriesData) {
+            setCurrentCategoryId(categoriesData[0].id)
+        }
+    }, [categoriesData])
+
+    const handleSelectCategory = (e) => {
+        setCurrentCategoryId(e)
+    }
+
+    const handleSearchCat = () => {
+        setCurrentCategoryId(inputCategoryId)
+    }
+
+    const handleDelete = () => {
+        if (shouldDelete) {
+            setShouldDelete(false)
+            deleteCategory(cCatData.id)
+        } else {
+            setShouldDelete(true)
+        }
+    }
+
+    const handleEdit = () => {
+        if (shouldDelete) {
+            setShouldDelete(false)
+        }
+        setShowEdit(!showEdit)
+    }
+
+    const handleToggleCreate = () => {
+        setShouldCreate(!shouldCreate)
+    }
+
     return (
         <div className="swag categories">
             <div className="title">
@@ -131,24 +111,675 @@ function AdminCategories() {
                     <h1>Categories</h1>
                     <p>Click on a category to view/edit info</p>
                 </div>
+                <button onClick={handleToggleCreate}>
+                    {!shouldCreate ? (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M30 24h-4v-4h-2v4h-4v2h4v4h2v-4h4z"
+                            />
+                            <path
+                                fill="currentColor"
+                                d="M15.4 30L5 23.8c-.6-.4-1-1-1-1.7V9.9c0-.7.4-1.4 1-1.7l10-5.9c.3-.2.6-.3 1-.3s.7.1 1 .3l10 5.9c.6.4 1 1 1 1.7V16h-2V9.9L16 4L6 9.9v12.2l10.5 6.2l-1.1 1.7z"
+                            />
+                        </svg>
+                    ) : (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M30 21.4L28.6 20L25 23.6L21.4 20L20 21.4l3.6 3.6l-3.6 3.6l1.4 1.4l3.6-3.6l3.6 3.6l1.4-1.4l-3.6-3.6z"
+                            />
+                            <path
+                                fill="currentColor"
+                                d="M15.4 30L5 23.8c-.6-.4-1-1-1-1.7V9.9c0-.7.4-1.4 1-1.7l10-5.9c.3-.2.6-.3 1-.3s.7.1 1 .3l10 5.9c.6.4 1 1 1 1.7V16h-2V9.9L16 4L6 9.9v12.2l10.5 6.2l-1.1 1.7z"
+                            />
+                        </svg>
+                    )}
+                </button>
             </div>
-            <ul>
-                {catArray.map((e) => (
-                    <AdminBiggerCategory key={e.id} category={e}></AdminBiggerCategory>
-                ))}
-            </ul>
+            {isCatPending || isCatError ? (
+                <LoadingErrorDiv
+                    isError={isCatError}
+                    classTitle={"pOrders"}
+                    errorMessage={categoriesError?.message}
+                    refetch={catRefetch}
+                    loadMessage={"Loading Available Orders..."}
+                ></LoadingErrorDiv>
+            ) : catSuccess ? (
+                <>
+                    {shouldCreate ? (
+                        <CreateCategory categories={categoriesData}></CreateCategory>
+                    ) : (
+                        <ul className="swagList">
+                            {categoriesData.map((e) => (
+                                <AdminBiggerCategory
+                                    key={e.id}
+                                    category={e}
+                                    selectCategory={handleSelectCategory}
+                                ></AdminBiggerCategory>
+                            ))}
+                        </ul>
+                    )}
+                </>
+            ) : (
+                <></>
+            )}
             <div className="title">
                 <div className="infos">
                     <h1>Category Info</h1>
                     <p>Click on or search a category by its ID</p>
                 </div>
                 <div className="buttons">
-                    <input type="text" placeholder="Enter ID" />
-                    <button>find</button>
+                    <input
+                        onChange={(e) => setInputCategoryId(e.target.value)}
+                        type="text"
+                        placeholder="Enter ID"
+                    />
+                    <button disabled={!inputCategoryId} onClick={handleSearchCat}>
+                        find
+                    </button>
                 </div>
             </div>
+
+            {categoriesData && (
+                <>
+                    {isCCatPending || isCCatError ? (
+                        <LoadingErrorDiv
+                            isError={isCCatError}
+                            classTitle={"pOrders"}
+                            errorMessage={cCatError?.message}
+                            refetch={cCatRefetch}
+                            loadMessage={"Loading Available Orders..."}
+                        ></LoadingErrorDiv>
+                    ) : cCatSuccess ? (
+                        <div className="singleCat">
+                            <div className="catInfo">
+                                <div className="imageDiv">
+                                    <ImageLoader
+                                        url={cCatData.image}
+                                        alt={cCatData.name}
+                                        backupUrl="/imgs/404/category404.png"
+                                        backupAlt={cCatData.name || "Category"}
+                                    ></ImageLoader>
+                                    <div>
+                                        <ImageLoader
+                                            url={cCatData.icon}
+                                            alt={cCatData.name}
+                                            backupUrl="/imgs/404/category404.png"
+                                            backupAlt={cCatData.name || "Category"}
+                                        ></ImageLoader>
+                                        <section>
+                                            <h2>{cCatData.name}</h2>
+                                            <p>ID: {cCatData.id}</p>
+                                        </section>
+                                        <section className="buttonSection">
+                                            <button onClick={handleEdit}>EDIT</button>
+                                            <button
+                                                className={`delete ${shouldDelete && "active"}`}
+                                                onClick={handleDelete}
+                                            >
+                                                DELETE
+                                            </button>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div className="subList">
+                                    <ul>
+                                        <li className="subTitle">
+                                            <h3>Manufacturers</h3>
+                                        </li>
+                                        {manufacturers?.map((e) => (
+                                            <li key={e.id}>
+                                                <NavLink>
+                                                    <ImageLoader
+                                                        url={e.image}
+                                                        alt={e.name}
+                                                        backupUrl="/imgs/404/category404.png"
+                                                        backupAlt={e.name || "Manufacturer"}
+                                                    ></ImageLoader>
+                                                    <p>{e.name}</p>
+                                                </NavLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <ul>
+                                        <li className="subTitle">
+                                            <h3>Sub-Categories</h3>
+                                        </li>
+                                        {cCatData.subcategories.map((e) => (
+                                            <li key={e.id}>
+                                                <NavLink to={`/sub/${e.id}`}>
+                                                    <ImageLoader
+                                                        url={e.image}
+                                                        alt={e.name}
+                                                        backupUrl="/imgs/404/category404.png"
+                                                        backupAlt={e.name || "Manufacturer"}
+                                                    ></ImageLoader>
+                                                    <p>{e.name}</p>
+                                                </NavLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                            {showEdit && (
+                                <EditCreateCategory
+                                    category={cCatData}
+                                    updateCategory={updateCategory}
+                                ></EditCreateCategory>
+                            )}
+                        </div>
+                    ) : (
+                        <></>
+                    )}
+                </>
+            )}
         </div>
-    );
+    )
 }
 
-export default AdminCategories;
+const EditCreateCategory = ({ category, updateCategory }) => {
+    const [categoryObject, setCategoryObject] = useState({
+        name: "",
+        image: null,
+        icon: null,
+    })
+
+    const handleChangeInfo = ({ name, value }) => {
+        setCategoryObject({ ...categoryObject, [name]: value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (
+            categoryObject.name !== category.name &&
+            (categoryObject.name ||
+                categoryObject.image !== null ||
+                categoryObject.icon !== null)
+        ) {
+            updateCategory(categoryObject)
+        }
+    }
+
+    return (
+        <form className="editCategory" onSubmit={handleSubmit}>
+            <div className="images">
+                <div>
+                    <h3>Category Image</h3>
+                    <PhotoPicker
+                        image={categoryObject.image}
+                        setImage={handleChangeInfo}
+                        imageName={"image"}
+                    ></PhotoPicker>
+                </div>
+                <div>
+                    <h3>Category Icon</h3>
+                    <PhotoPicker
+                        image={categoryObject.icon}
+                        setImage={handleChangeInfo}
+                        imageName={"icon"}
+                    ></PhotoPicker>
+                </div>
+            </div>
+            <div className="info">
+                <h3>Category Name</h3>
+                <div>
+                    <input
+                        type="text"
+                        maxLength="15"
+                        minLength="3"
+                        pattern="^[a-zA-Z\\s ]*$"
+                        name="name"
+                        value={categoryObject.name}
+                        onChange={(e) =>
+                            handleChangeInfo({
+                                name: e.target.name,
+                                value:
+                                    e.target.value.charAt(0).toUpperCase() +
+                                    e.target.value.slice(1),
+                            })
+                        }
+                        placeholder=""
+                    ></input>
+                    <label htmlFor="name">Category Name</label>
+                </div>
+                <button
+                    disabled={
+                        (categoryObject.name && categoryObject.name === category.name) ||
+                        (!categoryObject.name &&
+                            categoryObject.image === null &&
+                            categoryObject.icon === null)
+                    }
+                    type="submit"
+                >
+                    SAVE
+                </button>
+            </div>
+        </form>
+    )
+}
+
+const CreateCategory = ({ categories }) => {
+    const createCategory = useCreateCategory()
+    const [categoryObject, setCategoryObject] = useState({
+        name: "",
+        image: null,
+        icon: null,
+        manufacturers: [],
+        subCategories: [],
+    })
+    const [subCategory, setSubCategory] = useState({
+        name: "",
+        image: null,
+        description: "",
+    })
+    const [manufacturer, setManufacturer] = useState({ name: "", image: null })
+    const [subCatValid, setSubCatValid] = useState(false)
+    const [manufacturerValid, setManufacturerValid] = useState(false)
+    const [categoryValid, setCategoryValid] = useState(false)
+    const [crSubCat, setCrSubCat] = useState(true)
+    const [crMan, setMan] = useState(true)
+
+    const handleChangeCategoryInfo = ({ name, value }) => {
+        if (name === "subCategories" || name === "manufacturers") {
+            setCategoryObject({
+                ...categoryObject,
+                [name]: [...categoryObject[name], value],
+            })
+        } else {
+            setCategoryObject({ ...categoryObject, [name]: value })
+        }
+    }
+
+    const handleRemoveSubCat = (e) => {
+        setCategoryObject({
+            ...categoryObject,
+            'subCategories': categoryObject['subCategories'].filter(c => c.name !== e),
+        })
+    }
+
+    const handleRemoveMan = (e) => {
+        setCategoryObject({
+            ...categoryObject,
+            'manufacturers': categoryObject['manufacturers'].filter(c => c.name !== e),
+        })
+    }
+
+    const handleChangeSUBInfo = ({ name, value }) => {
+        setSubCategory({
+            ...subCategory,
+            [name]: value
+        })
+    }
+
+    const handleChangeMNInfo = ({ name, value }) => {
+        setManufacturer({
+            ...manufacturer,
+            [name]: value
+        })
+    }
+
+    const handleAddManufacturer = () => {
+        handleChangeCategoryInfo({ name: "manufacturers", value: manufacturer })
+        setManufacturer({ name: "", image: null })
+        setMan(false)
+    }
+
+    const handleAddSubCat = () => {
+        handleChangeCategoryInfo({ name: "subCategories", value: subCategory })
+        setSubCategory({ name: "", image: null, description: "" })
+        setCrSubCat(false)
+    }
+
+    const handleToggleMan = () => {
+        setMan(!crMan)
+    }
+
+    const handleToggleSubCat = () => {
+        setCrSubCat(!crSubCat)
+    }
+
+    const resetAll = () => {
+        setCategoryObject({
+            name: "",
+            image: null,
+            icon: null,
+            manufacturers: [],
+            subCategories: [],
+        })
+        setSubCategory({ name: "", image: null, description: "" })
+        setManufacturer({ name: "", image: null })
+        setCrSubCat(false)
+        setMan(false)
+    }
+
+    useEffect(() => {
+        const isSubCatNameInArray = categoryObject.subCategories.some(
+            (subCat) => subCat.name === subCategory.name
+        )
+        const isSubCatEmpty =
+            subCategory.image !== null &&
+            subCategory.name.length >= 3 &&
+            subCategory.description.length >= 10
+        setSubCatValid(!isSubCatNameInArray && isSubCatEmpty)
+    }, [subCategory, categoryObject.subCategories])
+
+    useEffect(() => {
+        const isManufacturerNameInArray = categoryObject.manufacturers.some(
+            (man) => man.name === manufacturer.name
+        )
+        const isManufacturerEmpty =
+            manufacturer.image !== null && manufacturer.name.length >= 3
+        setManufacturerValid(!isManufacturerNameInArray && isManufacturerEmpty)
+    }, [manufacturer, categoryObject.manufacturers])
+
+    useEffect(() => {
+        const isCategoryNameUnique = !categories.some(
+            (category) => category.name === categoryObject.name
+        )
+
+        const isImageAndIconNotNull =
+            categoryObject.image !== null && categoryObject.icon !== null
+
+        const categoryValid =
+            categoryObject.manufacturers.length >= 3 &&
+            categoryObject.manufacturers.length === 5 &&
+            isCategoryNameUnique &&
+            isImageAndIconNotNull
+
+        setCategoryValid(categoryValid)
+    }, [categoryObject, categories])
+
+    useEffect(() => {
+        if (categoryObject.subCategories.length === 0) setCrSubCat(true)
+    }, [categoryObject.subCategories])
+
+    useEffect(() => {
+        if (categoryObject.manufacturers.length === 0) setMan(true)
+    }, [categoryObject.manufacturers])
+
+    const handleSubmit = (e) => {
+        if (categoryValid) {
+            e.preventDefault()
+            const category = {
+                
+            }
+            createCategory(categoryObject)
+        }
+    }
+
+    return (
+        <form className="createCategory" onSubmit={handleSubmit}>
+            <div className="crCatInfo">
+                <div className="bigImg">
+                    <h3>Category Image</h3>
+                    <PhotoPicker
+                        image={categoryObject.image}
+                        setImage={handleChangeCategoryInfo}
+                        imageName={"image"}
+                    ></PhotoPicker>
+                </div>
+                <div className="crInfoB">
+                    <div className="smallImage">
+                        <h3>Category Icon</h3>
+                        <PhotoPicker
+                            image={categoryObject.icon}
+                            setImage={handleChangeCategoryInfo}
+                            imageName={"icon"}
+                        ></PhotoPicker>
+                    </div>
+                    <div className="info">
+                        <input
+                            type="text"
+                            maxLength="15"
+                            minLength="3"
+                            pattern="^[a-zA-Z\\s ]*$"
+                            name="name"
+                            value={categoryObject.name}
+                            onChange={(e) =>
+                                handleChangeCategoryInfo({
+                                    name: e.target.name,
+                                    value:
+                                        e.target.value.charAt(0).toUpperCase() +
+                                        e.target.value.slice(1),
+                                })
+                            }
+                            placeholder=""
+                            required
+                        ></input>
+                        <label htmlFor="name">Category Name</label>
+                    </div>
+                    <section className="buttonSection">
+                        <button onClick={resetAll} type="button">
+                            RESET
+                        </button>
+                        <button disabled={!categoryValid} type="submit">
+                            CREATE
+                        </button>
+                    </section>
+                </div>
+            </div>
+            <div className="subList">
+                <div className="crDiv createSUB">
+                    <h3 className="subTitle">
+                        Sub-Categories{" "}
+                        <button type="button" onClick={handleToggleSubCat}>
+                            {!crSubCat ? (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M30 24h-4v-4h-2v4h-4v2h4v4h2v-4h4z"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="M15.4 30L5 23.8c-.6-.4-1-1-1-1.7V9.9c0-.7.4-1.4 1-1.7l10-5.9c.3-.2.6-.3 1-.3s.7.1 1 .3l10 5.9c.6.4 1 1 1 1.7V16h-2V9.9L16 4L6 9.9v12.2l10.5 6.2l-1.1 1.7z"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M30 21.4L28.6 20L25 23.6L21.4 20L20 21.4l3.6 3.6l-3.6 3.6l1.4 1.4l3.6-3.6l3.6 3.6l1.4-1.4l-3.6-3.6z"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="M15.4 30L5 23.8c-.6-.4-1-1-1-1.7V9.9c0-.7.4-1.4 1-1.7l10-5.9c.3-.2.6-.3 1-.3s.7.1 1 .3l10 5.9c.6.4 1 1 1 1.7V16h-2V9.9L16 4L6 9.9v12.2l10.5 6.2l-1.1 1.7z"
+                                    />
+                                </svg>
+                            )}
+                        </button>
+                    </h3>
+                    {crSubCat ? (
+                        <div className="subCatsDiv">
+                            <textarea
+                                className="review-textArea"
+                                name="description"
+                                type="text"
+                                value={subCategory.description}
+                                onChange={(e) =>
+                                    handleChangeSUBInfo({
+                                        name: e.target.name,
+                                        value:
+                                            e.target.value.charAt(0).toUpperCase() +
+                                            e.target.value.slice(1),
+                                    })
+                                }
+                                placeholder="Write a description for this sub-category"
+                            ></textarea>
+                            <PhotoPicker
+                                image={subCategory.image}
+                                setImage={handleChangeSUBInfo}
+                                imageName={"image"}
+                            ></PhotoPicker>
+                            <section className="titleSubmit">
+                                <div className="inputDiv">
+                                    <input
+                                        type="text"
+                                        maxLength="15"
+                                        minLength="3"
+                                        pattern="^[a-zA-Z\\s ]*$"
+                                        name="name"
+                                        value={subCategory.name}
+                                        onChange={(e) =>
+                                            handleChangeSUBInfo({
+                                                name: e.target.name,
+                                                value:
+                                                    e.target.value.charAt(0).toUpperCase() +
+                                                    e.target.value.slice(1),
+                                            })
+                                        }
+                                        placeholder=""
+                                        required
+                                    ></input>
+                                    <label htmlFor="name">Category Name</label>
+                                </div>
+                                <button
+                                    disabled={!subCatValid}
+                                    onClick={handleAddSubCat}
+                                    type="button"
+                                >
+                                    ADD
+                                </button>
+                            </section>
+                        </div>
+                    )
+                        :
+                        <ul>
+                            {categoryObject.subCategories.map((e) => (
+                                <li key={e.name}>
+                                    <ImageLoader
+                                        url={URL.createObjectURL(dataURLtoFile('data:image/png;base64,' + e.image?.base64, e.image?.name))}
+                                        alt={e.name}
+                                        backupUrl="/imgs/404/category404.png"
+                                        backupAlt={e.name || "SubCategory"}
+                                    ></ImageLoader>
+                                    <p>{e.name}</p>
+                                    <button onClick={() => handleRemoveSubCat(e.name)} type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z" /><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z" /></svg>
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    }
+                </div>
+                <div className="crDiv createMAN">
+                    <h3 className="subTitle">
+                        Manufacturers
+                        <button type="button" onClick={handleToggleMan}>
+                            {!crMan ? (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M30 24h-4v-4h-2v4h-4v2h4v4h2v-4h4z"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="M15.4 30L5 23.8c-.6-.4-1-1-1-1.7V9.9c0-.7.4-1.4 1-1.7l10-5.9c.3-.2.6-.3 1-.3s.7.1 1 .3l10 5.9c.6.4 1 1 1 1.7V16h-2V9.9L16 4L6 9.9v12.2l10.5 6.2l-1.1 1.7z"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M30 21.4L28.6 20L25 23.6L21.4 20L20 21.4l3.6 3.6l-3.6 3.6l1.4 1.4l3.6-3.6l3.6 3.6l1.4-1.4l-3.6-3.6z"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="M15.4 30L5 23.8c-.6-.4-1-1-1-1.7V9.9c0-.7.4-1.4 1-1.7l10-5.9c.3-.2.6-.3 1-.3s.7.1 1 .3l10 5.9c.6.4 1 1 1 1.7V16h-2V9.9L16 4L6 9.9v12.2l10.5 6.2l-1.1 1.7z"
+                                    />
+                                </svg>
+                            )}
+                        </button>
+                    </h3>
+                    {crMan ? (
+                        <div className="manDiv">
+                            <PhotoPicker
+                                image={manufacturer.image}
+                                setImage={handleChangeMNInfo}
+                                imageName={"image"}
+                            ></PhotoPicker>
+                            <section className="titleSubmit">
+                                <div className="inputDiv">
+                                    <input
+                                        type="text"
+                                        maxLength="15"
+                                        minLength="3"
+                                        pattern="^[a-zA-Z\\s ]*$"
+                                        name="name"
+                                        value={manufacturer.name}
+                                        onChange={(e) =>
+                                            handleChangeMNInfo({
+                                                name: e.target.name,
+                                                value:
+                                                    e.target.value.charAt(0).toUpperCase() +
+                                                    e.target.value.slice(1),
+                                            })
+                                        }
+                                        placeholder=""
+                                        required
+                                    ></input>
+                                    <label htmlFor="name">Category Name</label>
+                                </div>
+                                <button
+                                    disabled={!manufacturerValid}
+                                    onClick={handleAddManufacturer}
+                                    type="button"
+                                >
+                                    ADD
+                                </button>
+                            </section>
+                        </div>
+                    )
+                        :
+                        <ul>
+                            {categoryObject.manufacturers.map((e) => (
+                                <li key={e.name}>
+                                    <ImageLoader
+                                        url={URL.createObjectURL(dataURLtoFile('data:image/png;base64,' + e.image?.base64, e.image?.name))}
+                                        alt={e.name}
+                                        backupUrl="/imgs/404/category404.png"
+                                        backupAlt={e.name || "Manufacturer"}
+                                    ></ImageLoader>
+                                    <p>{e.name}</p>
+                                    <button onClick={() => handleRemoveMan(e.name)} type="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z" /><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z" /></svg></button>
+                                </li>
+                            ))}
+                        </ul>
+                    }
+                </div>
+            </div>
+        </form>
+    )
+}
+
+export default AdminCategories

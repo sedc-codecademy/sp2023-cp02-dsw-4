@@ -30,19 +30,19 @@ import { cardInfoValidity, getCardTypeEnum, isInfoValid, userInfoValidity } from
 import { usePurchaseOrder } from "../../helpers/UserHelper/UserHelper"
 import { getUser } from "../../helpers/API/user-api"
 
-function getPaymentStatus(existingCard, orderInfo) {
-    if (orderInfo.paymentMethod === 'ondelivery') {
-        return 1
-    } else if (orderInfo.paymentMethod === 'prepaid') {
-        if (existingCard && Object.keys(existingCard).length > 0) return 2
-        if (orderInfo.saveCard) {
-            return 3
-        } else {
-            return 4
-        }
-    }
-    return 1
-}
+// function getPaymentStatus(existingCard, orderInfo) {
+//     if (orderInfo.paymentMethod === 'ondelivery') {
+//         return 2
+//     } else if (orderInfo.paymentMethod === 'prepaid') {
+//         if (existingCard && Object.keys(existingCard).length > 0) return 1
+//         if (orderInfo.saveCard) {
+//             return 3
+//         } else {
+//             return 4
+//         }
+//     }
+//     return 1
+// }
 
 function Cart() {
     const dispatch = useDispatch()
@@ -115,35 +115,35 @@ function Cart() {
 
     useEffect(() => {
         const calculatedSubtotal = orderItems.reduce(
-            (sum, item) => sum + item.total * item.amount,
+            (sum, item) => sum + item.total * item.quantity,
             0
         )
-        setSubtotal(calculatedSubtotal)
+        setSubtotal(calculatedSubtotal.toFixed())
 
         let calculatedShippingCost = 0
 
         if (orderInfo.city.toLowerCase() === 'skopje') {
             calculatedShippingCost = 0;
-        } else if (["prilep", "kumanovo", "shtip", "veles"].includes(orderInfo.city.toLowerCase())) {
-            calculatedShippingCost = 130;
+        // } else if (["prilep", "kumanovo", "shtip", "veles"].includes(orderInfo.city.toLowerCase())) {
+        //     calculatedShippingCost = 130;
         } else {
-            calculatedShippingCost = 200;
+            calculatedShippingCost = 150;
         }
 
         if (shippingLocation && !orderInfo.city) {
             if (shippingLocation.toLowerCase() === "Skopje") {
                 calculatedShippingCost = 0;
-            } else if (["Prilep", "Kumanovo", "Shtip", "Veles"].includes(shippingLocation.toLowerCase())) {
-                calculatedShippingCost = 130;
+            // } else if (["Prilep", "Kumanovo", "Shtip", "Veles"].includes(shippingLocation.toLowerCase())) {
+            //     calculatedShippingCost = 130;
             } else {
-                calculatedShippingCost = 200;
+                calculatedShippingCost = 150;
             }
         }
 
         setShippingCost(calculatedShippingCost)
 
         const calculatedTotal = calculatedSubtotal + calculatedShippingCost
-        setTotal(calculatedTotal)
+        setTotal(calculatedTotal.toFixed())
         dispatch(setOrderFormValue({ name: "total", value: calculatedTotal }))
     }, [orderItems, orderInfo, shippingLocation, dispatch])
 
@@ -267,25 +267,35 @@ function Cart() {
     }
 
     const handlePurchase = async () => {
+
         const orderData = {
-            Items: orderItems?.map(item => ({
-                Quantity: item.amount,
-                ProductSizeId: item.id
+            orderItems: orderItems?.map(item => ({
+                quantity: item.quantity,
+                productSizeId: item.id
             })),
-            UserId: userData.id,
-            Address: orderInfo.address,
-            PostalCode: orderInfo.postalCode,
-            City: orderInfo.city,
-            PhoneNumber: orderInfo.phoneNumber,
-            Note: orderInfo.note,
-            PaymentStatus: getPaymentStatus(existingCard, orderInfo),
-            CardType: orderInfo.paymentMethod === "ondelivery" ? '' : getCardTypeEnum(cardObject.type.cardtype),
-            CardHolder: orderInfo.paymentMethod === "ondelivery" ? '' : cardObject.holder,
-            ExpirationDate: orderInfo.paymentMethod === "ondelivery" ? '' : cardObject.date,
-            SecurityCode: orderInfo.paymentMethod === "ondelivery" ? '' : cardObject.cvc,
-            ExistingCardId: orderInfo.paymentMethod === "ondelivery" ? '' : existingCard && Object.keys(existingCard).length > 0 ? existingCard.id : ''
+            userId: userData.id,
+            address: orderInfo.address,
+            postalCode: orderInfo.postalCode,
+            city: orderInfo.city,
+            phoneNumber: "012123123",
+            note: orderInfo.note || '',
+            paymentStatus: 2
+            
         }
-        console.log(orderData)
+
+        if (orderInfo.paymentMethod !== "ondelivery") {
+            orderData.cardType = getCardTypeEnum(cardObject.type.cardtype)
+            orderData.cardHolder = cardObject.holder
+            orderData.cardNumber = cardObject.number
+            orderData.expirationDate = cardObject.date
+            orderData.securityCode = cardObject.cvc
+            orderData.paymentMethod = 1
+            orderData.saveCard = existingCard
+            // orderData.existingCardId = existingCard && Object.keys(existingCard).length > 0 ? existingCard.id : ''
+        } else{
+            orderData.paymentMethod = 2
+        }
+
         const purchaseStatus = await purchaseOrder(orderData)
         if (purchaseStatus === 'error') {
             setCartState("payment")
@@ -456,7 +466,7 @@ function Cart() {
                                                 <input
                                                     name="phoneNumber"
                                                     type="tel"
-                                                    pattern="^[+0]\d+$"
+                                                    pattern="^0\d+$"
                                                     maxLength={14}
                                                     minLength={9}
                                                     inputMode="numeric"
@@ -500,20 +510,6 @@ function Cart() {
                                             </div>
                                         </div>
                                         <div className="inputContainer cityAddress">
-                                            {/* <div className="city">
-                                                <input
-                                                    type="text"
-                                                    maxLength="30"
-                                                    minLength="4"
-                                                    name="city"
-                                                    pattern="^[a-zA-Z\\s ]*$"
-                                                    value={orderInfo.city}
-                                                    onChange={(e) => handleInputEdit(e)}
-                                                    required
-                                                    placeholder=""
-                                                ></input>
-                                                <label htmlFor="city">City</label>
-                                            </div> */}
                                             <div className="city">
                                                 <select
                                                     className="citySelect"
@@ -612,7 +608,7 @@ function Cart() {
                                             <>
                                                 <h4>
                                                     Card Info
-                                                    <button disabled={!isLoggedIn} onClick={handleCardAutofill}>
+                                                    <button disabled={!isLoggedIn || userData?.cards.length < 1} onClick={handleCardAutofill}>
                                                         <span>Autofill</span>
                                                         <svg viewBox="0 0 24 24">
                                                             <path
@@ -852,7 +848,7 @@ function Cart() {
                     <div className="orderDiv">
                         <h3>
                             Order Items<span>Total Price:</span>
-                            <span>{orderInfo.total}$</span>
+                            <span>{orderInfo?.total.toFixed()}$</span>
                         </h3>
                         <ul className="itemUl">
                             {orderItems?.map((e) => (
@@ -896,17 +892,17 @@ const CartItem = ({
         <li className={`itemLi ${cartState !== "default" && "concise"}`}>
             <ImageLoader
                 url={item.image}
-                alt={item.title}
+                alt={item.name}
                 backupUrl="/imgs/404/product404.png"
                 backupAlt="Product Image 404"
             ></ImageLoader>
             <div className="itemInfo">
-                <h3 className="title">{item.title}</h3>
+                <h3 className="title">{item.name}</h3>
                 <ul>
                     <li>
                         <span>Price:</span>
-                        {item.discount > 1 && <p>{item.price}$</p>}
-                        <h3>{item.total}$</h3>
+                        {item.discount > 1 && <p>{item.price.toFixed()}$</p>}
+                        <h3>{item.total.toFixed()}$</h3>
                     </li>
                     {item.color && (
                         <li>
@@ -926,28 +922,28 @@ const CartItem = ({
                 <ul>
                     <li>
                         <p>
-                            Amount: {cartState !== "default" && <span>{item.amount}</span>}
+                            Amount: {cartState !== "default" && <span>{item.quantity}</span>}
                         </p>
                         {cartState === "default" && (
                             <div>
                                 <button
-                                    disabled={item.amount <= 1}
+                                    disabled={item.quantity <= 1}
                                     onClick={() =>
                                         handleChangeOrderAmount({
                                             id: item.id,
-                                            amount: item.amount - 1,
+                                            quantity: item.quantity - 1,
                                         })
                                     }
                                 >
                                     -
                                 </button>
-                                <h3>{item.amount}</h3>
+                                <h3>{item.quantity}</h3>
                                 <button
-                                    disabled={item.amount >= item.stock}
+                                    disabled={item.quantity >= item.stock}
                                     onClick={() =>
                                         handleChangeOrderAmount({
                                             id: item.id,
-                                            amount: item.amount + 1,
+                                            quantity: item.quantity + 1,
                                         })
                                     }
                                 >
@@ -958,7 +954,7 @@ const CartItem = ({
                     </li>
                     <li>
                         <h3 className="totalPrice">
-                            <span>Total:</span> {item.total * item.amount}$
+                            <span>Total:</span> {(item.total * item.quantity).toFixed()}$
                         </h3>
                     </li>
                     {cartState === "default" && (

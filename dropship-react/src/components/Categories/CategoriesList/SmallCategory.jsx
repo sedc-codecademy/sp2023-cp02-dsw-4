@@ -8,12 +8,12 @@ export function SmallCategory(props) {
             <NavLink to={`/subcategory/${props.subcategory.id}`}>
                 <ImageLoader
                     url={props.subcategory.image}
-                    alt={props.subcategory.title}
+                    alt={props.subcategory.name}
                     backupUrl="/imgs/404/category404.png"
-                    backupAlt={props.subcategory.title || 'Sub-Category'}
+                    backupAlt={props.subcategory.name || 'Sub-Category'}
                 ></ImageLoader>
                 <div>
-                    <h4>{props.subcategory.title}</h4>
+                    <h4>{props.subcategory.name}</h4>
                     <p>({props.subcategory.products?.length} Products)</p>
                 </div>
             </NavLink>
@@ -27,13 +27,13 @@ export function BiggerCategory(props) {
             <NavLink to={`/category/${props.category.id}`}>
                 <ImageLoader
                     url={props.category.image}
-                    alt={props.category.title}
+                    alt={props.category.name}
                     backupUrl="/imgs/404/category404.png"
-                    backupAlt={props.category.title || 'Sub-Category'}
+                    backupAlt={props.category.name || 'Sub-Category'}
                 ></ImageLoader>
                 <div>
-                    <h4>{props.category.title}</h4>
-                    <p>({props.category.sub.length} Categories)</p>
+                    <h4>{props.category.name}</h4>
+                    <p>({props.category.subcategories.length} Categories)</p>
                 </div>
             </NavLink>
         </li>
@@ -46,12 +46,12 @@ export function AdminSmallCategory(props) {
             <button onClick={props.handleClick}>
                 <ImageLoader
                     url={props.subcategory.image}
-                    alt={props.subcategory.title}
+                    alt={props.subcategory.name}
                     backupUrl="/imgs/404/category404.png"
-                    backupAlt={props.subcategory.title || 'Sub-Category'}
+                    backupAlt={props.subcategory.name || 'Sub-Category'}
                 ></ImageLoader>
                 <div>
-                    <h4>{props.subcategory.title}</h4>
+                    <h4>{props.subcategory.name}</h4>
                     <p>({props.subcategory.products.length} Products)</p>
                 </div>
             </button>
@@ -62,16 +62,16 @@ export function AdminSmallCategory(props) {
 export function AdminBiggerCategory(props) {
     return (
         <li>
-            <button onClick={props.handleClick}>
+            <button onClick={() => props.selectCategory(props.category.id)}>
                 <ImageLoader
                     url={props.category.image}
-                    alt={props.category.title}
+                    alt={props.category.name}
                     backupUrl="/imgs/404/category404.png"
-                    backupAlt={props.category.title || 'Sub-Category'}
+                    backupAlt={props.category.name || 'Sub-Category'}
                 ></ImageLoader>
                 <div>
-                    <h4>{props.category.title}</h4>
-                    <p>({props.category.sub.length} Categories)</p>
+                    <h4>{props.category.name}</h4>
+                    <p>({props?.category?.subcategories?.length || 0} Categories)</p>
                 </div>
             </button>
         </li>

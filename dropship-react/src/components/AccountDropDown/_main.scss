@@ -467,6 +467,7 @@
             animation: fadeIn 1s;
 
             div {
+                position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -538,6 +539,37 @@
                     padding-inline: .3rem;
                     transition: all .5s cubic-bezier(.19, 1, .22, 1);
                     font-size: 1.1rem;
+                }
+
+                &.pass {
+
+                    span {
+                        position: absolute;
+                        right: .5rem;
+                        cursor: pointer;
+
+                        svg {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+
+                        @media (min-width: 600px) {
+                            transition: .3s color;
+
+                            &:hover {
+                                color: var(--accent);
+                            }
+
+                            &:active {
+                                color: var(--secAccent);
+                            }
+                        }
+
+                        &.active {
+                            color: var(--accent);
+                        }
+                    }
+
                 }
             }
 
@@ -718,19 +750,19 @@
         opacity: 0;
         transform: translateX(-130vw) scale(0);
     }
-    
+
     .notificationLogin-enter-active {
         opacity: 1;
         transform: translateX(0) scale(1);
         transition: opacity 200ms, transform 200ms;
     }
-    
+
     .notificationLogin-enter-done,
     .notificationLogin-exit {
         opacity: 1;
         transform: translateX(0) scale(1);
     }
-    
+
     .notificationLogin-exit-active {
         opacity: 0;
         transform: translateX(130vw) scale(0);

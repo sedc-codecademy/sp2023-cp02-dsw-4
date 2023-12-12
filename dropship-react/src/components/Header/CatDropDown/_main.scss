@@ -46,9 +46,29 @@ header {
                         border: .2rem solid var(--tpPri);
 
                         img {
+                            position: relative;
                             height: 5rem;
                             border-radius: .5rem;
                             background-color: var(--tpPri4);
+                            aspect-ratio: 1/1;
+                            object-fit: cover;
+
+                            &[alt] {
+                                position: relative;
+                                height: 5rem;
+                                border-radius: .5rem;
+                                background-color: var(--tpPri4);
+                                aspect-ratio: 1/1;
+                                object-fit: cover;
+                            }
+
+                            &::before {
+                                inset: .3rem;
+                                position: absolute;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
                         }
 
                         div {
@@ -189,6 +209,25 @@ header {
                             height: 3.5rem;
                             border-radius: 50%;
                             border: .15rem solid var(--tertColor2);
+                            aspect-ratio: 1/1;
+                            object-fit: cover;
+
+                            &[alt] {
+                                position: relative;
+                                height: 3.5rem;
+                                border-radius: 50%;
+                                border: .15rem solid var(--tertColor2);
+                                aspect-ratio: 1/1;
+                                object-fit: cover;
+                            }
+
+                            &::before {
+                                inset: .3rem;
+                                position: absolute;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
                         }
                     }
 
@@ -220,7 +259,21 @@ header {
 
                     &:active {
                         background-color: var(--tpPri2);
-                        border-color: var(--tpPri2);
+                    }
+
+                    &.active {
+                        &::after {
+                            background-color: var(--paleAccentTwo);
+                        }
+                        svg {
+                            color: var(--accent);
+                        }
+
+                        div {
+                            h4 {
+                                color: var(--accent);
+                            }
+                        }
                     }
                 }
             }

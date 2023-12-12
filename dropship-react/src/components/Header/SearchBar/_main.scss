@@ -250,10 +250,10 @@ header {
                     width: 100%;
                     overflow: hidden;
 
-                    a {
+                    a, button {
                         display: flex;
                         align-items: center;
-                        flex-wrap: wrap;
+                        // flex-wrap: wrap;
                         justify-content: space-between;
 
                         width: 100%;
@@ -283,11 +283,9 @@ header {
                             }
 
                             h3 {
-                                max-width: 20ch;
-
+                                max-width: 15ch;
                                 text-overflow: ellipsis;
                                 overflow: hidden;
-
                                 white-space: nowrap;
                             }
                         }
@@ -303,7 +301,7 @@ header {
                             span {
                                 text-overflow: ellipsis;
                                 overflow: hidden;
-
+                                max-width: 15ch;
                                 white-space: nowrap;
 
                                 &:first-child {
@@ -377,10 +375,11 @@ header {
                 }
 
                 .resultsViewAll {
-                    a {
+                    a,button {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        width: 100%;
 
                         border-radius: 1rem;
                         padding: .5rem;
@@ -538,7 +537,7 @@ header {
                     gap: .4rem;
 
                     li:not(.resultsViewAll) {
-                        a {
+                        a,button {
                             border-radius: 2rem;
                             padding: .4rem;
 
@@ -557,13 +556,14 @@ header {
 
                                 h3 {
                                     font-size: 1.1rem;
-                                    max-width: 15ch;
+                                    max-width: unset;
                                 }
                             }
 
                             p {
                                 gap: .3rem;
                                 font-size: .85rem;
+                                display: none;
                             }
 
                             &:active {
@@ -593,7 +593,7 @@ header {
                     }
 
                     .resultsViewAll {
-                        a {
+                        a,button {
                             border-radius: .4rem;
                             padding: .2rem;
 

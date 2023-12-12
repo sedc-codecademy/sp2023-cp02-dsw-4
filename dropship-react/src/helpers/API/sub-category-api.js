@@ -1,6 +1,5 @@
-export async function getSubCategoryByID(ID) {
-    console.log(ID)
-    const response = await fetch('/mockData/subCategory.json')/// PLACEHOLDER
+export async function getSubCategoryByID(ID) { // api/Subcategory/{ID}
+    const response = await fetch(`https://localhost:7168/api/Subcategory/${ID}`)/// PLACEHOLDER
 
     if (!response.ok) {
         throw new Error('Cannot find subcategory')

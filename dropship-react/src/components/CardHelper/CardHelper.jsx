@@ -324,8 +324,8 @@ export function NewCardHelper({ data }) {
         return false
     }
 
-    const handleCreateCard = async () => {
-        await createCard({
+    const handleCreateCard = () => {
+        createCard({
             CardType: getCardTypeEnum(newModifiedCard.type),
             CardStatus: 2,
             CardNumber: newModifiedCard.number,

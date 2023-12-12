@@ -1,6 +1,9 @@
-function AddressInfoForm({user, userInfo, handleInputEdit}) {
+import { useSelector } from "react-redux"
+
+function AddressInfoForm({ user, userInfo, handleInputEdit }) {
+  const shippingArray = useSelector((state) => state.shipping.shippingArray)
   return (
-    <form className="dataForm addressInfoFrom" onSubmit={(e) => {e.preventDefault()}}>
+    <form className="dataForm addressInfoFrom" onSubmit={(e) => { e.preventDefault() }}>
       <div className="inputContainer">
         <p>Address: {user.address}</p>
         <div>
@@ -19,7 +22,7 @@ function AddressInfoForm({user, userInfo, handleInputEdit}) {
       </div>
       <div className="inputContainer">
         <p>City: {user.city}</p>
-        <div>
+        {/* <div>
           <input
             type="text"
             maxLength="30"
@@ -32,6 +35,20 @@ function AddressInfoForm({user, userInfo, handleInputEdit}) {
             placeholder=""
           ></input>
           <label htmlFor="city">City</label>
+        </div> */}
+        <div className="city">
+          <select
+            className="citySelect"
+            name="city"
+            onChange={handleInputEdit}
+            value={userInfo.city}
+          >
+            {shippingArray.map((e, i) => (
+              <option key={i} value={e} name={e} >
+                {e}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
       <div className="inputContainer">

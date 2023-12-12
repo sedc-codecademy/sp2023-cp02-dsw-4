@@ -1,22 +1,77 @@
-export async function getCategories() {
-    const response = await fetch('/mockData/categories.json')
+const mainURL = 'https://localhost:7168/api/Category'
+
+export async function getCategories() { // /api/Category
+    const response = await fetch(mainURL)
 
     if (!response.ok) {
-        throw new Error('Cannot get categories')
+        throw new Error(await response.text())
+    }
+
+    return await response.json()
+}
+
+export async function getCategoryByID(ID) { // /api/Category/{id}
+    const response = await fetch(mainURL + `/${ID}`)
+
+    if (!response.ok) {
+        throw new Error(await response.text())
     }
 
     return response.json()
 }
 
-export async function getCategoryByID(ID) {
-    console.log(ID)
-    const response = await fetch('/mockData/oneCat.json')
+export async function updateCategoryApi({ catData, tokens }) { // api/Category/UpdateCategory
+    const url = `${mainURL}/category/update/${catData.id}`
+
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokens.accessToken}`,
+        },
+        body: JSON.stringify(catData),
+    })
 
     if (!response.ok) {
-        throw new Error('Cannot find category')
+        throw new Error(await response.text())
     }
 
-    /// PLACEHOLDER
-    return response.json()
+    return await response.json()
 }
 
+export async function createCategoryApi({ catData, tokens }) { // api/Category/AddCategory
+    const url = `${mainURL}/category/create`
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokens.accessToken}`,
+        },
+        body: JSON.stringify(catData),
+    })
+
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
+
+    return await response.json()
+}
+
+export async function deleteCategoryApi({ ID, tokens }) { // api/Category/${ID}
+    const url = `${mainURL}/category/delete/${ID}`
+
+    const response = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokens.accessToken}`,
+        },
+    })
+
+    if (!response.ok) {
+        throw new Error(await response.text())
+    }
+
+    return await response.json()
+}

@@ -4,7 +4,7 @@ const shippingSlice = createSlice({
     name: "shipping",
     initialState: {
         shippingLocation: 'Skopje',
-        shippingArray: ['Skopje', 'Prilep', "Kumanovo", 'Bitola', 'Ohrid', 'Strumica', 'Gevgelija']
+        shippingArray: ['Skopje', 'Prilep', "Kumanovo", 'Bitola', 'Ohrid', 'Strumica', 'Gevgelija','Shtip','Debar']
     },
     reducers: {
         setShippingLocation(state, action) {

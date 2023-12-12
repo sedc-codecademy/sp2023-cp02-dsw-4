@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 const roleSlice = createSlice({
     name: "role",
     initialState: {
-        role: 'user',
+        role: 'User',
         authTokens: localStorage.getItem("tokens") ? JSON.parse(localStorage.getItem("tokens")) : null,
         userid: localStorage.getItem("userid") ? JSON.parse(localStorage.getItem("userid")) : ''
     },

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../Product/ProductCard/ProductCard";
 import { FilterSvg } from "./filtersSvg";
+import { setNotificationData, setShowNotification } from "../../store/slices/notificationSlice/notificationSlice";
 
 export function DetailsNav(props) {
   return (
@@ -169,14 +170,15 @@ const ProductColorList = ({
   handleOtherFiltersAdd,
   handleOtherFiltersRemove,
 }) => {
-  const isMobile = useSelector((state) => state.mobile.isMobile);
+  const isMobile = useSelector((state) => state.mobile.isMobile)
   const handleClick = (color) => {
     if (selectedColors?.includes(color)) {
-      handleOtherFiltersRemove([color], "color");
+      handleOtherFiltersRemove([color], "color")
     } else {
-      handleOtherFiltersAdd([color], "color");
+      handleOtherFiltersAdd([color], "color")
     }
-  };
+  }
+
   return (
     <ul>
       {uniqueColors.map((color, index) => (
@@ -494,7 +496,7 @@ const PriceRangeSlider = ({
   const handlePriceChangeExtra = (min, max) => {
     min = Number(min);
     max = Number(max);
-    if (min <= initialPrices.min && max >= initialPrices.max) {
+    if (min <= initialPrices.min && Math.abs(max - initialPrices.max) <= 5) {
       handlePriceRemove();
       setInputPrices({ min: 1, max: initialPrices.max });
     } else {
@@ -504,7 +506,7 @@ const PriceRangeSlider = ({
   };
 
   const handlePriceSectionExtra = (min, max) => {
-    if (min === currentPrices?.from && max === currentPrices?.to) {
+    if (min === currentPrices?.from && Math.abs(max - currentPrices?.to) <= 5) {
       handlePriceRemove();
       setInputPrices({ min: 1, max: initialPrices.max });
     } else {
@@ -565,6 +567,7 @@ const PriceRangeSlider = ({
             name="minRangeValue"
             value={currentPrices?.from || initialPrices.min}
             min={0}
+            // step={5}
             max={maxRangeValue}
             onChange={handleRangeInputChange}
           />
@@ -575,6 +578,7 @@ const PriceRangeSlider = ({
             value={currentPrices?.to || initialPrices.max}
             min={minRangeValue}
             max={maxRangeValue}
+            // step={5}
             onChange={handleRangeInputChange}
           />
         </div>
@@ -606,19 +610,20 @@ const ProductList = ({ products, from, to, handlePriceSectionExtra }) => {
   const [sections, setSections] = useState([]);
 
   useEffect(() => {
-    const totalValues = products.map((product) => product.total);
+    const totalValues = products.map((product) => Math.floor(product.discountedPrice));
+    const minTotal = Math.min(...totalValues); // Smallest discountedPrice
     const maxTotal = Math.max(...totalValues);
-    const minTotal = Math.min(...totalValues);
-    const range = maxTotal - minTotal;
+    const range = maxTotal - (minTotal + 5); // Adjust range to start from minTotal + 5
     const numSections = totalValues.length % 2 === 0 ? 4 : 3;
-    const sectionSize = range / numSections;
+    const sectionSize = Math.floor(range / (numSections - 1)); // Adjust for one less section
 
     const newSections = [];
     for (let i = 0; i < numSections; i++) {
-      const lowerBound = minTotal + sectionSize * i;
-      const upperBound = lowerBound + sectionSize;
+      let lowerBound = i === 0 ? 0 : Math.floor(minTotal + 5 + sectionSize * (i - 1)); // First section starts at 0
+      let upperBound = i === 0 ? Math.floor(minTotal + 5) : Math.floor(lowerBound + sectionSize); // First section to value 5 higher
+
       const productsInSection = products.filter(
-        (product) => product.total >= lowerBound && product.total <= upperBound
+        (product) => product.discountedPrice >= lowerBound && (i === numSections - 1 || product.discountedPrice < upperBound)
       );
       newSections.push({ lowerBound, upperBound, products: productsInSection });
     }
@@ -636,10 +641,10 @@ const ProductList = ({ products, from, to, handlePriceSectionExtra }) => {
             disabled={
               section.products?.length < 1 ||
               section.lowerBound < from ||
-              section.upperBound > to
+              (section.upperBound !== Infinity && section.upperBound > to)
             }
             className={
-              section.lowerBound === from && section.upperBound === to
+              section.lowerBound === from && (section.upperBound === to || section.upperBound === Infinity)
                 ? "active"
                 : ""
             }
@@ -657,7 +662,7 @@ const ProductList = ({ products, from, to, handlePriceSectionExtra }) => {
               </svg>
             )}
             <p>
-              {section.lowerBound} - {section.upperBound}{" "}
+              ${section.lowerBound} - ${section.upperBound === Infinity ? '∞' : section.upperBound}
               <span>({section.products?.length})</span>
             </p>
           </button>
@@ -666,6 +671,7 @@ const ProductList = ({ products, from, to, handlePriceSectionExtra }) => {
     </ul>
   );
 };
+
 
 const PillarGraph = ({
   products,
@@ -728,7 +734,6 @@ const PillarGraph = ({
 
 export const DetailsAllProducts = ({
   dataObject,
-  origin,
   clearFilters,
   initialProducts,
   currentFilters,
@@ -767,40 +772,23 @@ export const DetailsAllProducts = ({
     sortFilters(selectedValue);
   };
 
-  const itemsPerPage = 16;
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(products.length / itemsPerPage);
-
-  const nextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
   return (
     <div className="listContainer">
       <div className="listContainerHeader">
         <div>
           <h1>
-            {dataObject.title} <span>{products.length} products</span>
+            {dataObject.name} <span>{products.length} products</span>
           </h1>
           <select
             className="sorterSelect"
             name="sort"
             onChange={(e) => handleSortChange(e)}
           >
-            <option value={JSON.stringify({ sort: "title", order: "asc" })}>
-              Title ASC
+            <option value={JSON.stringify({ sort: "name", order: "asc" })}>
+              Name ASC
             </option>
-            <option value={JSON.stringify({ sort: "title", order: "desc" })}>
-              Title DESC
+            <option value={JSON.stringify({ sort: "name", order: "desc" })}>
+              Name DESC
             </option>
             <option value={JSON.stringify({ sort: "price", order: "asc" })}>
               Price ASC
@@ -828,20 +816,11 @@ export const DetailsAllProducts = ({
           )}
         </div>
       </div>
-      {/* 
-      {(origin === 'subcategory') && <div className='topProducts'>
-        <h3>Most Popular {dataObject.title} products</h3>
-        <ul>
-          {products.slice(0, 4).map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ul>
-      </div>} */}
 
       {products.length > 0 ? (
         <ul className="allProducts">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} subCatImage={dataObject.image} />
           ))}
         </ul>
       ) : (
@@ -853,64 +832,8 @@ export const DetailsAllProducts = ({
           </button>
         </div>
       )}
-
-      {products.length >= 16 && (
-        <div className="pagination bottom">
-          <button onClick={prevPage} disabled={currentPage === 1}>
-            <svg viewBox="0 0 32 32">
-              <path
-                fill="currentColor"
-                d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z"
-              />
-            </svg>
-          </button>
-          <div>
-            {currentPage > 2 && (
-              <>
-                <span onClick={() => setCurrentPage(1)}>1</span>
-                {currentPage > 3 && <span className="dots">...</span>}
-              </>
-            )}
-            {Array.from({ length: Math.min(3, totalPages) }).map((_, index) => {
-              const pageToShow = currentPage - 1 + index;
-              if (pageToShow <= totalPages - 1) {
-                return (
-                  <span
-                    key={pageToShow}
-                    onClick={() => setCurrentPage(pageToShow + 1)}
-                    className={
-                      currentPage === pageToShow + 1 ? "currentPage" : ""
-                    }
-                  >
-                    {pageToShow + 1}
-                  </span>
-                );
-              }
-              return null;
-            })}
-            {currentPage < totalPages - 2 && (
-              <>
-                {currentPage < totalPages - 3 && (
-                  <span className="dots">...</span>
-                )}
-                <span onClick={() => setCurrentPage(totalPages)}>
-                  {totalPages}
-                </span>
-              </>
-            )}
-          </div>
-          <button onClick={nextPage} disabled={currentPage === totalPages}>
-            <svg viewBox="0 0 32 32">
-              <path
-                fill="currentColor"
-                d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z"
-              />
-            </svg>
-          </button>
-        </div>
-      )}
     </div>
-  );
+  )
 }
 
 export function formatDate(inputDate) {
@@ -936,11 +859,11 @@ export function filterProducts(products, filters) {
   return products.filter((product) => {
     // Check each filter criterion
     return Object.keys(filters).every((filterKey) => {
-      const productValue = product[filterKey];
+      let productValue = product[filterKey]
 
       if (filterKey === "manufacturer") {
         // Handle 'manufacturer' filter
-        return filters[filterKey].includes(productValue && productValue.title);
+        return filters[filterKey].includes(productValue && productValue.name);
       } else if (filterKey === "color" || filterKey === "size") {
         // Handle 'colors' and 'sizes' filters
         const productSizes = product.productSizes || [];
@@ -955,17 +878,17 @@ export function filterProducts(products, filters) {
         filters[filterKey].from !== undefined &&
         filters[filterKey].to !== undefined
       ) {
-        // If the property is a number, check if it falls within the specified range
+        productValue = product.discountedPrice
         return (
-          productValue >= filters[filterKey].from &&
-          productValue <= filters[filterKey].to
-        );
+          productValue >= filters[filterKey].from - 2 &&
+          productValue <= filters[filterKey].to + 2
+        )
       } else {
         // For other types, perform a direct equality check
         return filters[filterKey].includes(productValue);
       }
-    });
-  });
+    })
+  })
 }
 
 export function setFilter(currentFilters, filterType, selectedValues) {
@@ -1064,6 +987,68 @@ export const getSizeCountsInProducts = (products, uniqueSizes) => {
   return sizeCounts;
 }
 
+export function PhotoPicker({ image, setImage, imageName }) {
+  const dispatch = useDispatch()
+  const [drag, setDrag] = useState(false)
+
+  const handleDragOver = () => {
+    setDrag(true)
+  }
+
+  const handleDragLeave = () => {
+    setDrag(false)
+  }
+  const [fileInputKey, setFileInputKey] = useState(Date.now())
+
+  const handleFileInputChange = (e) => {
+    const file = e.target.files[0]
+    if (file && file.type.startsWith("image/")) {
+      const img = new Image()
+      img.onload = function () {
+        if (this.width >= 600 && this.width <= 1024 && this.height >= 600 && this.height <= 1024) {
+          const reader = new FileReader();
+          reader.onloadend = function () {
+            const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+            setImage({ name: imageName, value: { base64: base64String, filename: file.name } });
+          }
+          reader.readAsDataURL(file);
+        } else {
+          setFileInputKey(Date.now())
+          dispatch(setNotificationData({ title: 'Image not compatible', success: '', error: 'Please select an image of width and height between 600 and 1024 pixels.' }))
+          dispatch(setShowNotification(true))
+        }
+      }
+      img.src = URL.createObjectURL(file)
+    }
+  }
+
+  const handleCancel = () => {
+    setImage({ name: imageName, value: null })
+    setFileInputKey(Date.now())
+  }
+
+  return (
+    <div
+      className={`photo-picker ${image?.base64 && 'noBorder'} ${drag && 'dragged'}`}
+      onDrop={handleFileInputChange}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+    >
+      {image?.base64 && <img src={URL.createObjectURL(dataURLtoFile('data:image/png;base64,' + image?.base64, image?.name))} alt="Selected Img" />}
+      {!image?.base64 &&
+        (
+          <>
+            <h4>Drag and drop an image file here</h4>
+            <p>Max size x1024, Min size x600</p>
+          </>
+        )
+      }
+      {!image?.base64 && <input key={fileInputKey} type="file" accept="image/*" onChange={handleFileInputChange} />}
+      {image?.base64 && <button onClick={handleCancel}>Cancel</button>}
+    </div>
+  )
+}
+
 export function sortProducts(products, sortBy, sortOrder) {
   // Create a new copy of the array
   let productsCopy = [...products];
@@ -1073,20 +1058,20 @@ export function sortProducts(products, sortBy, sortOrder) {
 
     switch (sortBy) {
       case "price":
-        aValue = a.total;
-        bValue = b.total;
+        aValue = a.discountedPrice;
+        bValue = b.discountedPrice;
         break;
       case "rating":
-        aValue = a.rating.rate;
-        bValue = b.rating.rate;
+        aValue = a.rating;
+        bValue = b.rating;
         break;
-      case "title":
-        aValue = a.title.toLowerCase();
-        bValue = b.title.toLowerCase();
+      case "name":
+        aValue = a.name.toLowerCase();
+        bValue = b.name.toLowerCase();
         break;
       default:
-        aValue = a.title.toLowerCase();
-        bValue = b.title.toLowerCase();
+        aValue = a.name.toLowerCase();
+        bValue = b.name.toLowerCase();
         break;
     }
 
@@ -1160,6 +1145,31 @@ const Filters = ({
   )
 }
 
+export function extractAndSortProductsFromCategory(category) {
+  // Flatten the subcategories into a single array of products
+  let allProducts = category.subcategories.reduce((acc, subcategory) => {
+    return acc.concat(subcategory.products)
+  }, [])
+
+  // Sort the products based on the searched value in descending order
+  allProducts.sort((a, b) => b.searched - a.searched)
+
+  return allProducts
+}
+
+export function getUniqueManufacturers(products) {
+  let manufacturers = products.map(product => product.manufacturer)
+
+  // Filter out duplicate manufacturers based on a unique property, e.g., 'id'
+  let uniqueManufacturers = manufacturers.filter((manufacturer, index, self) =>
+    index === self.findIndex((m) => (
+      m.id === manufacturer.id
+    ))
+  )
+
+  return uniqueManufacturers
+}
+
 export const cardInfoValidity = [
   { inputName: "holder", max: 20, min: 6, regex: "[a-zA-Z ]+" }, /// 20 // Min 6
   { inputName: "number", max: 16, min: 16, regex: "^[0-9 ]*[0-9]$" }, /// 16
@@ -1176,7 +1186,7 @@ export const userInfoValidity = [
     min: 9,
     regex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", /// Min 9 // Max 40
   },
-  { inputName: "phoneNumber", max: 14, min: 9, regex: "^[+0]\\d+$" }, /// Min 9 // Max 14
+  { inputName: "phoneNumber", max: 14, min: 9, regex: "^0\\d+$" }, /// Min 9 // Max 14
   { inputName: "address", max: 30, min: 3, regex: "" }, /// Max 30 //, Min 3
   { inputName: "city", max: 30, min: 4, regex: "^[a-zA-Z\\s ]*$" }, /// Min 4 // Max 30
   { inputName: "postalCode", max: 4, min: 4, regex: "[0-9]*" }, /// Min 4 // Max 4
@@ -1188,14 +1198,14 @@ export const passwordInfoValidity = [
     max: 25,
     min: 8,
     regex:
-      "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$])[A-Za-z\\d@$!%*?&^#\\$]*$",
+      "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$=+_\\-*\\.])[A-Za-z\\d@$!%*?&^#\\$=+_\\-*\\.]*$",
   },
   {
     inputName: "originalPassword", ///Min 8 // Max 25
     max: 25,
     min: 8,
     regex:
-      "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$])[A-Za-z\\d@$!%*?&^#\\$]*$",
+      "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&^#\\$=+_\\-*\\.])[A-Za-z\\d@$!%*?&^#\\$=+_\\-*\\.]*$",
   },
   {
     inputName: "username", ///Min 4 // 22
@@ -1244,7 +1254,7 @@ export function dataURLtoFile(dataurl, filename) {
 }
 
 export function getCardTypeEnum(cardType) {
-  switch(cardType) {
+  switch (cardType) {
     case 'visa':
       return 1;
     case 'mastercard':
@@ -1257,7 +1267,7 @@ export function getCardTypeEnum(cardType) {
 }
 
 export function getCardStatusEnum(cardStatus) {
-  switch(cardStatus) {
+  switch (cardStatus) {
     case 'PRIMARY':
       return 1;
     case 'SECONDARY':
@@ -1268,7 +1278,7 @@ export function getCardStatusEnum(cardStatus) {
 }
 
 export function getOrderStatusEnum(orderStatus) {
-  switch(orderStatus) {
+  switch (orderStatus) {
     case 'ondelivery':
       return 1;
     case 'existing':
@@ -1281,4 +1291,5 @@ export function getOrderStatusEnum(orderStatus) {
       return 1;
   }
 }
+
 

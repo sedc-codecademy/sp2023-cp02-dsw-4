@@ -3,15 +3,17 @@ import { useSelector, useDispatch } from "react-redux"
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { setIsError, setIsFetching, setShowLoading } from "../../store/slices/loaderSlice/loaderSlice"
 import { clearTokens, setAuthTokens, setRole, setUserId } from "../../store/slices/role/roleSlice"
-import { createCardApi, deleteCardApi, deleteUserApi, getUser, logInApi, logOutApi, registerApi, updateCardApi, updateUserApi } from '../API/user-api'
+import { createCardApi, deleteCardApi, deleteUserApi, getUser, logInApi, registerApi, subscribeApi, updateCardApi, updateUserApi } from '../API/user-api'
 import { userLogIn, setUserCards, userLogOut } from "../../store/slices/user/userSlices"
 import { clearCartCard, clearTempCards, setCreateCard, setTempCards } from "../../store/slices/cardSlice/cardSlice"
 import { useNavigate } from 'react-router-dom'
 import { setNotificationData, setShowNotification } from "../../store/slices/notificationSlice/notificationSlice"
 import { createReviewApi, deleteReviewApi, updateReviewApi } from "../API/product-api"
-import { purchaseOrderApi, updateOrderApi } from "../API/order-api"
+import { acceptOrderApi, purchaseOrderApi, updateOrderApi } from "../API/order-api"
 import { purchase } from "../../store/slices/cartSlice/cartSlice"
 import { clearPasswordInfo, clearUser } from "../../store/slices/userSettings/userSettingsSlices"
+import { createCategoryApi, deleteCategoryApi, updateCategoryApi } from "../API/category-api"
+import { searchProductApi } from "../API/searchApi"
 
 const navigateToHome = (navigate) => {
     setTimeout(() => {
@@ -33,7 +35,7 @@ export default function UserHelper() {
 
     useEffect(() => {
         if (tokens?.accessToken && tokens?.refreshToken) {
-            const { isLoading, isSuccess, isError, data, error } = userQuery
+            const { isLoading, isSuccess, isError, data } = userQuery
             if (isLoading) {
                 dispatch(setIsFetching(true))
                 if (!showLoading) dispatch(setShowLoading(true))
@@ -41,7 +43,6 @@ export default function UserHelper() {
 
             if (isError) {
                 dispatch(setIsError(true))
-                console.log(error)
             }
 
             if (isSuccess) {
@@ -50,7 +51,6 @@ export default function UserHelper() {
                 if (data.cards.length > 0) {
                     const tempCardsForSetUser = []
                     const tempCardsForSetTemp = []
-
                     data.cards.forEach((card) => {
                         const number = card.number.replace(/\D/g, '')
                         const matchedPattern = cardPatterns.find((pattern) => number.match(pattern.regex) !== null)
@@ -88,32 +88,38 @@ export const useLogout = () => {
     const navigate = useNavigate()
     const queryClient = useQueryClient()
     const dispatch = useDispatch()
-    const tokens = useSelector(state => state.role.authTokens)
-    const userid = useSelector(state => state.role.userid)
-    const logOutMutate = useMutation({ mutationFn: logOutApi })
+    // const tokens = useSelector(state => state.role.authTokens)
+    // const userid = useSelector(state => state.role.userid)
+    // const logOutMutate = useMutation({ mutationFn: logOutApi })
 
-    const logout = async () => {
-        try {
-            await logOutMutate.mutateAsync({ ID: userid, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Log-Out Error', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: () => {
-                        dispatch(clearTokens())
-                        queryClient.resetQueries(["userQuery"])
-                        dispatch(setShowLoading(true))
-                        navigateToHome(navigate)
-                        dispatch(setIsFetching(false))
-                        dispatch(userLogOut())
-                        dispatch(setRole('user'))
-                        dispatch(setTempCards([]))
-                    },
-                })
-        } catch (error) {
-        }
+    const logout = () => {
+        // logOutMutate.mutate({ ID: userid, tokens }, {
+        //     onError: (err) => {
+        //         dispatch(setNotificationData({ title: 'Log-Out Error', success: '', error: err.message || 'Could not log out' }))
+        //         dispatch(setShowNotification(true))
+        //         
+        //     },
+        //     onSuccess: () => {
+        //         dispatch(clearTokens())
+        //         dispatch(userLogOut())
+        //         queryClient.resetQueries(["userQuery"])
+        //         dispatch(setShowLoading(true))
+        //         navigateToHome(navigate)
+        //         dispatch(setIsFetching(false))
+        //         dispatch(userLogOut())
+        //         dispatch(setRole('User'))
+        //         dispatch(setTempCards([]))
+        //     },
+        // })
+        dispatch(clearTokens())
+        dispatch(userLogOut())
+        queryClient.resetQueries(["userQuery"])
+        dispatch(setShowLoading(true))
+        navigateToHome(navigate)
+        dispatch(setIsFetching(false))
+        dispatch(userLogOut())
+        dispatch(setRole('User'))
+        dispatch(setTempCards([]))
     }
     return logout
 }
@@ -124,25 +130,21 @@ export const useLogin = () => {
     const dispatch = useDispatch()
     const logInMutate = useMutation({ mutationFn: logInApi })
 
-    const login = async (credentials) => {
-        try {
-            await logInMutate.mutateAsync(credentials,
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Login Error', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setAuthTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken }))
-                        dispatch(setUserId(data.userid))
-                        queryClient.resetQueries(["userQuery"])
-                        navigateToHome(navigate)
-                    },
-                })
-        } catch (error) {
-        }
+    const login = (credentials) => {
+        logInMutate.mutate(credentials,
+            {
+                onError: (err) => {
+                    dispatch(setNotificationData({ title: 'Login Error', success: '', error: err.message || 'Login has failed' }))
+                    dispatch(setShowNotification(true))
+                },
+                onSuccess: (data) => {
+                    // dispatch(setNotificationData({ title: 'Login Succesfull', success: 'Yu', error: '' }))
+                    dispatch(setAuthTokens({ accessToken: data.token, refreshToken: "dnb jakwbdjkwabjkdbjkwa" }))
+                    dispatch(setUserId(data.id))
+                    queryClient.resetQueries(["userQuery"])
+                    navigateToHome(navigate)
+                },
+            })
     }
     return login
 }
@@ -151,23 +153,17 @@ export const useRegister = () => {
     const dispatch = useDispatch()
     const registerMutate = useMutation({ mutationFn: registerApi })
 
-    const register = async (credentials) => {
-        try {
-            await registerMutate.mutateAsync(credentials,
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Register Error', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Register Succesfull', success: data.message, error: '' }))
-                        dispatch(setShowNotification(true))
-                    },
-                })
-        } catch (error) {
-        }
+    const register = (credentials) => {
+        registerMutate.mutate(credentials, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Register Error', success: '', error: err.message || 'Registration was not complete' }))
+                dispatch(setShowNotification(true))
+            },
+            onSuccess: (data) => {
+                dispatch(setNotificationData({ title: 'Register Succesfull', success: data, error: '' }))
+                dispatch(setShowNotification(true))
+            },
+        })
     }
     return register
 }
@@ -179,66 +175,57 @@ export const useUpdateUser = () => {
     const updateUserMutate = useMutation({ mutationFn: updateUserApi })
     const queryClient = useQueryClient()
 
-    const updateUser = async (updatedData) => {
-        try {
-            await updateUserMutate.mutateAsync({ updatedData, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error updating user', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Updated User', success: data.message, error: '' }))
-                        dispatch(setShowNotification(true))
-                        dispatch(clearUser())
-                        dispatch(clearPasswordInfo())
-                        queryClient.invalidateQueries(['userQuery'])
-                    },
-                })
-        } catch (error) {
-        }
+    const updateUser = (updatedData) => {
+        updateUserMutate.mutate({ updatedData, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error updating user', success: '', error: err.message || 'User has not been updated' }))
+                dispatch(setShowNotification(true))
+            },
+            onSuccess: (data) => {
+
+                dispatch(setNotificationData({ title: 'Succesfully Updated User', success: data, error: '' }))
+                dispatch(setShowNotification(true))
+                dispatch(clearUser())
+                dispatch(clearPasswordInfo())
+                queryClient.invalidateQueries(['userQuery'])
+            },
+        })
     }
     return updateUser
 }
 
 export const useDeleteUser = () => {
     const navigate = useNavigate()
+    const logout = useLogout()
     const dispatch = useDispatch()
     const tokens = useSelector(state => state.role.authTokens)
     const deleteUserMutate = useMutation({ mutationFn: deleteUserApi })
     const queryClient = useQueryClient()
-    const deleteUser = async (userData) => {
-        try {
-            await deleteUserMutate.mutateAsync({ ID: userData.id, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error deleting User', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(clearTokens())
-                        queryClient.resetQueries(["userQuery"])
-                        dispatch(setShowLoading(true))
-                        navigateToHome(navigate)
-                        dispatch(setIsFetching(false))
-                        dispatch(userLogOut())
-                        dispatch(setRole('user'))
-                        dispatch(setTempCards([]))
-                        setTimeout(() => {
-                            dispatch(setNotificationData({ title: 'Successfully Deleted User', success: data.message, error: '' }))
-                            dispatch(setShowNotification(true))
-                        }, 2000);
-                    },
-                })
-        } catch (error) {
-        }
+    const deleteUser = (userData) => {
+        deleteUserMutate.mutate({ ID: userData.id, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error deleting User', success: '', error: err.message || 'User has not been deleted' }))
+                dispatch(setShowNotification(true))
+            },
+            onSuccess: (data) => {
+                // dispatch(clearTokens())
+                // queryClient.resetQueries(["userQuery"])
+                // dispatch(setShowLoading(true))
+                // navigateToHome(navigate)
+                // dispatch(setIsFetching(false))
+                // dispatch(userLogOut())
+                // dispatch(setRole('User'))
+                // dispatch(setTempCards([]))
+                logout()
+                setTimeout(() => {
+                    dispatch(setNotificationData({ title: 'Successfully Deleted User', success: data, error: '' }))
+                    dispatch(setShowNotification(true))
+                }, 2000)
+            },
+        })
     }
     return deleteUser
-} //Only for testing purposes
+}
 
 ///// CARDS
 export const useCreateCard = () => {
@@ -247,25 +234,21 @@ export const useCreateCard = () => {
     const createCardMutate = useMutation({ mutationFn: createCardApi })
     const queryClient = useQueryClient()
 
-    const createCard = async (cardData, userID) => {
-        try {
-            await createCardMutate.mutateAsync({ cardData, userID, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error creating card', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Created Card', success: data.message, error: '' }))
-                        dispatch(setShowNotification(true))
-                        dispatch(setCreateCard(false))
-                        queryClient.invalidateQueries(['userQuery'])
-                    },
-                })
-        } catch (error) {
-        }
+    const createCard = (cardData, userID) => {
+        createCardMutate.mutate({ cardData, userID, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error creating card', success: '', error: err.message || 'Card has not been created' }))
+                dispatch(setShowNotification(true))
+
+            },
+            onSuccess: (data) => {
+
+                dispatch(setNotificationData({ title: 'Succesfully Created Card', success: data, error: '' }))
+                dispatch(setShowNotification(true))
+                dispatch(setCreateCard(false))
+                queryClient.invalidateQueries(['userQuery'])
+            },
+        })
     }
     return createCard
 }
@@ -276,25 +259,21 @@ export const useUpdateCard = () => {
     const updateCardMutate = useMutation({ mutationFn: updateCardApi })
     const queryClient = useQueryClient()
 
-    const updateCard = async (updatedData) => {
-        try {
-            await updateCardMutate.mutateAsync({ updatedData, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error updating card', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Updated Card', success: data.message, error: '' }))
-                        dispatch(setShowNotification(true))
-                        dispatch(clearTempCards())
-                        queryClient.invalidateQueries(['userQuery'])
-                    },
-                })
-        } catch (error) {
-        }
+    const updateCard = (updatedData) => {
+        updateCardMutate.mutate({ updatedData, tokens },
+            {
+                onError: (err) => {
+                    dispatch(setNotificationData({ title: 'Error updating card', success: '', error: err.message || 'Card has not been updated' }))
+                    dispatch(setShowNotification(true))
+                },
+                onSuccess: (data) => {
+
+                    dispatch(setNotificationData({ title: 'Succesfully Updated Card', success: data, error: '' }))
+                    dispatch(setShowNotification(true))
+                    dispatch(clearTempCards())
+                    queryClient.invalidateQueries(['userQuery'])
+                },
+            })
     }
     return updateCard
 }
@@ -305,24 +284,20 @@ export const useDeleteCard = () => {
     const deleteCardMutate = useMutation({ mutationFn: deleteCardApi })
     const queryClient = useQueryClient()
 
-    const deleteCard = async (ID) => {
-        try {
-            await deleteCardMutate.mutateAsync({ ID, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error deleting card', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Successfully Deleted Card', success: data.message, error: '' }))
-                        dispatch(setShowNotification(true))
-                        queryClient.invalidateQueries(['userQuery'])
-                    },
-                })
-        } catch (error) {
-        }
+    const deleteCard = (ID) => {
+        deleteCardMutate.mutate({ ID, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error deleting card', success: '', error: err.message || 'Card has not been deleted' }))
+                dispatch(setShowNotification(true))
+
+            },
+            onSuccess: (data) => {
+
+                dispatch(setNotificationData({ title: 'Successfully Deleted Card', success: data, error: '' }))
+                dispatch(setShowNotification(true))
+                queryClient.invalidateQueries(['userQuery'])
+            },
+        })
     }
     return deleteCard
 }
@@ -339,18 +314,20 @@ export const useCreateReview = () => {
             await createReviewMutate.mutateAsync({ reviewData, tokens },
                 {
                     onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error creating review', success: '', error: err.message }))
+                        dispatch(setNotificationData({ title: 'Error creating review', success: '', error: err.message || 'Review has not been created' }))
                         dispatch(setShowNotification(true))
-                        console.log(err)
+
                     },
                     onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Created Review', success: data.message || 'The page will update soon, refresh if it does not', error: '' }))
+
+                        dispatch(setNotificationData({ title: 'Succesfully Created Review', success: data || 'The page will update soon, refresh if it does not', error: '' }))
                         dispatch(setShowNotification(true))
                         queryClient.invalidateQueries(['productQuery', reviewData.productId])
                     },
                 })
-        } catch (e) {
+            return true
+        } catch (error) {
+            return false
         }
     }
     return createReview
@@ -364,21 +341,21 @@ export const useUpdateReview = () => {
 
     const updateReview = async (updatedData) => {
         try {
-            await updateReviewMutate.mutateAsync({ updatedData, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error updating review', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Updated Review', success: data.message || 'The page will update soon, refresh if it does not', error: '' }))
-                        dispatch(setShowNotification(true))
-                        queryClient.invalidateQueries(['productQuery', updatedData.productid])
-                    },
-                })
-        } catch (e) {
+            await updateReviewMutate.mutateAsync({ updatedData, tokens }, {
+                onError: (err) => {
+                    dispatch(setNotificationData({ title: 'Error updating review', success: '', error: err.message || 'Review has not been updated' }))
+                    dispatch(setShowNotification(true))
+                },
+                onSuccess: (data) => {
+
+                    dispatch(setNotificationData({ title: 'Succesfully Updated Review', success: data || 'The page will update soon, refresh if it does not', error: '' }))
+                    dispatch(setShowNotification(true))
+                    queryClient.invalidateQueries(['productQuery', updatedData.productid])
+                },
+            })
+            return true
+        } catch (error) {
+            return false
         }
     }
     return updateReview
@@ -392,21 +369,21 @@ export const useDeleteReview = () => {
 
     const deleteReview = async (reviewData) => {
         try {
-            await deleteReviewMutate.mutateAsync({ ID: reviewData.id, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error deleting review', success: '', error: err.message }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Successfully Deleted Review', success: data.message || 'The page will update soon, refresh if it does not', error: '' }))
-                        dispatch(setShowNotification(true))
-                        queryClient.invalidateQueries([['productQuery', reviewData.productId], 'userQuery']);
-                    },
-                })
-        } catch (e) {
+            await deleteReviewMutate.mutateAsync({ ratingId: reviewData.id, userId: reviewData.userId, tokens }, {
+                onError: (err) => {
+                    dispatch(setNotificationData({ title: 'Error deleting review', success: '', error: err.message || 'Review has not been deleted' }))
+                    dispatch(setShowNotification(true))
+                },
+                onSuccess: (data) => {
+
+                    dispatch(setNotificationData({ title: 'Successfully Deleted Review', success: data || 'The page will update soon, refresh if it does not', error: '' }))
+                    dispatch(setShowNotification(true))
+                    queryClient.invalidateQueries([['productQuery', reviewData.productId], 'userQuery'])
+                },
+            })
+            return true
+        } catch (error) {
+            return false
         }
     }
     return deleteReview
@@ -424,13 +401,13 @@ export const usePurchaseOrder = () => {
             await purchaseOrderMutate.mutateAsync({ orderData, tokens },
                 {
                     onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error confirming purchase', success: '', error: err.message }))
+                        dispatch(setNotificationData({ title: 'Error confirming purchase', success: '', error: err.message || 'Purchase has not been completed' }))
                         dispatch(setShowNotification(true))
-                        console.log(err)
+
                     },
                     onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Made Purchase', success: data.message || 'View the progress of your order in user settings', error: '' }))
+
+                        dispatch(setNotificationData({ title: 'Succesfully Made Purchase', success: data || 'View the progress of your order in user settings', error: '' }))
                         dispatch(setShowNotification(true))
                         dispatch(clearCartCard())
                         dispatch(purchase())
@@ -451,29 +428,153 @@ export const useUpdateOrder = () => {
     const updateOrderMutate = useMutation({ mutationFn: updateOrderApi })
     const queryClient = useQueryClient()
 
-    const updateOrder = async (orderData) => {
-        try {
-            await updateOrderMutate.mutateAsync({ orderData, tokens },
-                {
-                    onError: (err) => {
-                        dispatch(setNotificationData({ title: 'Error updating order', success: '', error: err.message || 'Order has not been updated' }))
-                        dispatch(setShowNotification(true))
-                        console.log(err)
-                    },
-                    onSuccess: (data) => {
-                        console.log(data)
-                        dispatch(setNotificationData({ title: 'Succesfully Updated', success: data.message || 'Order has beeen succesfully updated', error: '' }))
-                        dispatch(setShowNotification(true))
-                        queryClient.invalidateQueries(['userQuery'])
-                    },
-                })
-        } catch (e) {
-        }
+    const updateOrder = (orderId) => {
+        updateOrderMutate.mutate({ orderId, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error updating order', success: '', error: err.message || 'Order has not been updated' }))
+                dispatch(setShowNotification(true))
+
+            },
+            onSuccess: (data) => {
+
+                dispatch(setNotificationData({ title: 'Succesfully Updated', success: data || 'Order has beeen succesfully updated', error: '' }))
+                dispatch(setShowNotification(true))
+                queryClient.invalidateQueries(['userQuery'])
+            },
+        })
     }
     return updateOrder
 }
 
+export const useAcceptOrder = () => {
+    const dispatch = useDispatch()
+    const tokens = useSelector(state => state.role.authTokens)
+    const updateOrderMutate = useMutation({ mutationFn: acceptOrderApi })
+    const queryClient = useQueryClient()
 
+    const acceptOrder = (orderData) => {
+        updateOrderMutate.mutate({ orderData, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error accepting order', success: '', error: err.message || 'Order has not been accepted' }))
+                dispatch(setShowNotification(true))
 
+            },
+            onSuccess: (data) => {
+                dispatch(setNotificationData({ title: 'Succesfully Accepted', success: data || 'This Order will be moved to pending orders', error: '' }))
+                dispatch(setShowNotification(true))
+                queryClient.invalidateQueries(['userQuery'])
+            },
+        })
+    }
+    return acceptOrder
+}
 
+//// CATEGORY
 
+export const useCreateCategory = () => {
+    const dispatch = useDispatch()
+    const tokens = useSelector(state => state.role.authTokens)
+    const createCategoryMutate = useMutation({ mutationFn: createCategoryApi })
+    const queryClient = useQueryClient()
+
+    const createCategory = (catData) => {
+        createCategoryMutate.mutate({ catData, tokens },
+            {
+                onError: (err) => {
+                    dispatch(setNotificationData({ title: 'Error creating category', success: '', error: err.message || 'Category has not been created' }))
+                    dispatch(setShowNotification(true))
+
+                },
+                onSuccess: (data) => {
+
+                    dispatch(setNotificationData({ title: 'Succesfully Created Category', success: data || 'The page will update soon, refresh if it does not', error: '' }))
+                    dispatch(setShowNotification(true))
+                    queryClient.invalidateQueries([['categoryQuery', catData.id], 'categoriesQuery'])
+                },
+            })
+    }
+    return createCategory
+}
+
+export const useUpdateCategory = () => {
+    const dispatch = useDispatch()
+    const tokens = useSelector(state => state.role.authTokens)
+    const updateCategoryMutate = useMutation({ mutationFn: updateCategoryApi })
+    const queryClient = useQueryClient()
+
+    const updateOrder = (catData) => {
+        updateCategoryMutate.mutate({ catData, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error updating category', success: '', error: err.message || 'Category has not been updated' }))
+                dispatch(setShowNotification(true))
+
+            },
+            onSuccess: (data) => {
+
+                dispatch(setNotificationData({ title: 'Succesfully Updated', success: data || 'Order has beeen succesfully updated', error: '' }))
+                dispatch(setShowNotification(true))
+                queryClient.invalidateQueries([['categoryQuery', catData.id], 'categoriesQuery'])
+            },
+        })
+    }
+    return updateOrder
+}
+
+export const useDeleteCategory = () => {
+    const dispatch = useDispatch()
+    const tokens = useSelector(state => state.role.authTokens)
+    const deleteCategoryMutate = useMutation({ mutationFn: deleteCategoryApi })
+    const queryClient = useQueryClient()
+
+    const deleteReview = (id) => {
+        deleteCategoryMutate.mutate({ ID: id, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error deleting category', success: '', error: err.message || 'Category has not been deleted' }))
+                dispatch(setShowNotification(true))
+
+            },
+            onSuccess: (data) => {
+
+                dispatch(setNotificationData({ title: 'Successfully Deleted Category', success: data || 'The page will update soon, refresh if it does not', error: '' }))
+                dispatch(setShowNotification(true))
+                queryClient.invalidateQueries([['categoryQuery', id], 'categoriesQuery'])
+            },
+        })
+    }
+    return deleteReview
+}
+
+//// SEARCH PRODUCT 
+
+export const useSearchProduct = () => {
+    const dispatch = useDispatch()
+    const tokens = useSelector(state => state.role.authTokens)
+    const searchProductMutate = useMutation({ mutationFn: searchProductApi })
+
+    const searchProduct = (ID) => {
+        searchProductMutate.mutate({ ID, tokens }, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error finding product', success: '', error: err.message || 'Item has not been found please try again' }))
+                dispatch(setShowNotification(true))
+            },
+        })
+    }
+    return searchProduct
+}
+
+//// SEARCH PRODUCT 
+
+export const useSubscribe = () => {
+    const dispatch = useDispatch()
+    const useSubscribeMutate = useMutation({ mutationFn: subscribeApi })
+
+    const subscribe = (subscriberData) => {
+        useSubscribeMutate.mutate(subscriberData, {
+            onError: (err) => {
+                dispatch(setNotificationData({ title: 'Error subscribing', success: '', error: err.message || 'You have not been subscribed to our newsletter' }))
+                dispatch(setShowNotification(true))
+            },
+        })
+    }
+    return subscribe
+}

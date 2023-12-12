@@ -7,7 +7,7 @@ function BigCategory({subcategory}) {
             <NavLink to={`/subcategory/${subcategory.id}`}>
                 <img src={subcategory.image} alt="category" />
                 <div>
-                    <h3>{subcategory.title}</h3>
+                    <h3>{subcategory.name}</h3>
                     <p>{subcategory.description}</p>
                 </div>
             </NavLink>

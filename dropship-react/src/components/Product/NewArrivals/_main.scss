@@ -41,6 +41,7 @@
                     .infoDiv {
                         gap: .3rem;
                         color: var(--secColor);
+                        flex-grow: 1;
 
                         .title {
                             max-width: 25ch;

@@ -1,7 +1,8 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { FooterLogo } from "./footerLogo"
+import { useSubscribe } from "../../helpers/UserHelper/UserHelper"
 
 function skewSelector(y, x, centerX, centerY, skewThreshold, maxSkewAngle) {
     if (Math.abs(x - centerX) <= skewThreshold) {
@@ -57,7 +58,9 @@ function hueSelector(x, y, rect, hueValues) {
 
 function Footer() {
     const cardContainerRef = useRef(null)
+    const subscribe = useSubscribe()
     const isMobile = useSelector((state) => state.mobile.isMobile)
+    const [subscriber, setSubscriber] = useState('')
 
     const hueValues = {
         topLeft: -80,
@@ -100,6 +103,12 @@ function Footer() {
     const handleMouseIn = () => {
         const cardContainer = cardContainerRef.current
         cardContainer.style.setProperty("--opacity", 1)
+    }
+
+    const handleSubscribe = (e) => {
+        e.preventDefault()
+        subscribe({email: subscriber, id: ''})
+        setSubscriber('')
     }
 
     return (
@@ -236,18 +245,21 @@ function Footer() {
                     <div className="foooterCard newsletter">
                         <p className="footerCardTitle">stay in touch</p>
                         <h1>subscribe to our newsletter</h1>
-                        <form className="email">
+                        <form className="email" onSubmit={handleSubscribe}>
                             <div>
                                 <input
                                     className="footerEmail"
                                     id="footerEmail"
                                     type="email"
+                                    pattern="^[a-zA-Z0-9+._]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
                                     required
                                     placeholder=""
+                                    value={subscriber}
+                                    onChange={(e) => setSubscriber(e.target.value)}
                                 ></input>
                                 <label htmlFor="footerEmail">Enter email</label>
                             </div>
-                            <button>
+                            <button type="submit">
                                 <svg viewBox="0 0 48 48" transform="scale(-1, 1)">
                                     <g>
                                         <g>

@@ -9,12 +9,12 @@ function TempProductCard({ product }) {
             <NavLink>
                 <ImageLoader
                     url={product.image}
-                    alt={product.title}
+                    alt={product.name}
                     backupUrl="/imgs/404/product404.png"
                     backupAlt="Product Image 404"
                 ></ImageLoader>
                 <div className='infoDiv'>
-                    <p className='title'>{product.title}</p>
+                    <p className='title'>{product.name}</p>
                     <div className='ratingDiv'>
                         <Stars initialRating={product.rating.rate} id={product.id}></Stars>
                         <p>({product.rating.count})</p>
@@ -24,11 +24,11 @@ function TempProductCard({ product }) {
                             <>
                                 <p>${product.price}</p>
                                 <h4>
-                                    ${product.total}
+                                    ${product.discountedPrice}
                                 </h4>
                             </>
                             :
-                            <h4>${product.total}</h4>
+                            <h4>${product.discountedPrice}</h4>
                         }
                     </div>
                 </div>

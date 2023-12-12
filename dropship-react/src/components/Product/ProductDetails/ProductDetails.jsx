@@ -35,7 +35,6 @@ function ProductDetails() {
   })
 
   const {
-    // Need to do mutaiton for reviews
     data: productData,
     error: productError,
     isError: isProdError,
@@ -55,8 +54,8 @@ function ProductDetails() {
     isSuccess: subSuccess,
     refetch: subRefetch,
   } = useQuery({
-    queryKey: ["subcategoryQuery", productData?.subcategoryid],
-    queryFn: () => getSubCategoryByID(productData?.subcategoryid),
+    queryKey: ["subcategoryQuery", productData?.subcategory.id],
+    queryFn: () => getSubCategoryByID(productData?.subcategory.id),
     enabled: !!productData
   })
 
@@ -73,7 +72,7 @@ function ProductDetails() {
   const [uniqueColors, setUniqueColors] = useState([])
   const [uniqueSizes, setUniqueSizes] = useState([])
   const [filteredSizes, setFilteredSizes] = useState([])
-  const [amount, setAmount] = useState(1)
+  const [quantity, setQuantity] = useState(1)
   const [allReviewsInvalid, setAllReviewsInvalid] = useState(false)
 
   useEffect(() => {
@@ -99,12 +98,12 @@ function ProductDetails() {
   }, [allColors, allSizes])
 
   useEffect(() => {
-    setUserReview(isLoggedIn && productData ? productData.reviews.some((e) => e.authorId === userData?.id) : false)
+    setUserReview(isLoggedIn && productData ? productData.ratings.some((e) => e.userId === userData?.id) : false)
   }, [userReview, productData, isLoggedIn, userData])
 
   useEffect(() => {
     if (productData) {
-      setAllReviewsInvalid(!userReview && productData?.reviews?.every((review) => review.body === "" && review.good === "" && review.bad === ""))
+      setAllReviewsInvalid(!userReview && productData?.ratings?.every((review) => review.review === "" && review.pros === "" && review.cons === ""))
     }
   }, [userReview, productData])
 
@@ -147,14 +146,14 @@ function ProductDetails() {
   }
 
   const handleQuantityIncrement = () => {
-    if (currentProductSize !== null && amount < currentProductSize.stock) {
-      setAmount(amount + 1)
+    if (currentProductSize !== null && quantity < currentProductSize.stock) {
+      setQuantity(quantity + 1)
     }
   }
 
   const handleQuantityDecrement = () => {
-    if (currentProductSize !== null && amount > 1) {
-      setAmount(amount - 1)
+    if (currentProductSize !== null && quantity > 1) {
+      setQuantity(quantity - 1)
     }
   }
 
@@ -162,27 +161,27 @@ function ProductDetails() {
     setSelectedColor(color)
     setSelectedSize('')
     setCurrentProductSize(null)
-    setAmount(1)
+    setQuantity(1)
   }
 
   const handleSizeSelection = (size) => {
     setSelectedSize(size)
-    setAmount(1)
+    setQuantity(1)
   }
 
   const handleAddToCart = () => {
     let tempProduct = {
       ...currentProductSize,
-      amount: amount,
-      title: productData.title,
+      quantity: quantity,
+      name: productData.name,
       price: productData.price,
-      total: productData.total,
+      total: productData.discountedPrice,
       image: productData.image,
-      discount: productData.discount,
+      discount: productData.discountPercentage,
+      productId: productData.id
     }
-    console.log(tempProduct)
     dispatch(addOrderItems(tempProduct))
-    dispatch(setNotificationData({ title: 'Product added to cart', success: 'You can add different colors and sizes too, and change amount in the Cart.', error: '' }))
+    dispatch(setNotificationData({ title: 'Product added to cart', success: 'You can add different colors and sizes too, and change quantity in the Cart.', error: '' }))
     dispatch(setShowNotification(true))
   }
 
@@ -198,17 +197,17 @@ function ProductDetails() {
       ) : prodSuccess && productData ? (
         <main className="product-page">
           <DetailsNav
-            categoryid={productData.categoryid}
-            categorytitle={productData.categorytitle}
-            subcategoryid={productData.subcategoryid}
-            subcategorytitle={productData.subcategorytitle}
+            categoryid={productData.category.id}
+            categorytitle={productData.category.name}
+            subcategoryid={productData.subcategory.id}
+            subcategorytitle={productData.subcategory.name}
           ></DetailsNav>
 
           <div className="product-details">
             <div className="product-image">
               <ImageLoader
                 url={productData.image}
-                alt={productData.title}
+                alt={productData.name}
                 backupUrl="/imgs/404/product404.png"
                 backupAlt="Product Image 404"
               ></ImageLoader>
@@ -217,31 +216,31 @@ function ProductDetails() {
             <div className="product-info">
               <div className="product-header">
                 <h2 className="product-title">
-                  <span>{productData.title}</span>
+                  <span>{productData.name}</span>
                   <NavLink to={`/manufacturer/${productData.manufacturer.id}`}>
-                    <p>{productData.manufacturer.title}</p>
+                    <p>{productData.manufacturer.name}</p>
                     <ImageLoader
                       url={productData.manufacturer.image}
-                      alt={productData.manufacturer.title}
+                      alt={productData.manufacturer.name}
                       backupUrl="/imgs/404/category404.png"
                       backupAlt="Manufacturer"
                     ></ImageLoader>
                   </NavLink>
                 </h2>
                 <div className="product-rating">
-                  {userReview || !isLoggedIn ? (
+                  {userReview || !isLoggedIn || createReview ? (
                     <Stars
-                      initialRating={productData.rating.rate}
+                      initialRating={productData.rating}
                       id={productId}
                     ></Stars>
                   ) : (
                     <EditStars
-                      initialRating={productData.rating.rate}
+                      initialRating={productData.rating}
                       id={productId}
                       onClick={handleStarsClick}
                     ></EditStars>
                   )}
-                  <p>(28)</p>
+                  <p>({productData.ratings.length || 0})</p>
                 </div>
               </div>
               <div className="variants">
@@ -291,18 +290,18 @@ function ProductDetails() {
                   <button
                     className="amount-btn"
                     onClick={handleQuantityDecrement}
-                    disabled={amount <= 1 || isInCart}
+                    disabled={quantity <= 1 || isInCart}
                   >
                     -
                   </button>
-                  <p className="product-count">Amount: {amount}</p>
+                  <p className="product-count">Amount: {quantity}</p>
                   <p className="product-count">
                     Available: {currentProductSize !== null ? currentProductSize.stock : "?"}
                   </p>
                   <button
                     className="amount-btn"
                     onClick={handleQuantityIncrement}
-                    disabled={currentProductSize === null || amount >= currentProductSize.stock || isInCart}
+                    disabled={currentProductSize === null || quantity >= currentProductSize.stock || isInCart}
                   >
                     +
                   </button>
@@ -310,15 +309,15 @@ function ProductDetails() {
                 <div className="prices">
                   <p className="product-price">
                     <span>Price:</span>
-                    <span>${productData.price.toFixed(2)}</span>
+                    <span>${productData.price}</span>
                   </p>
-                  {productData.discount > 1 && (
+                  {productData.discountPercentage > 1 && (
                     <p className="product-discount">
-                      <span>Discount:</span> <span>{productData.discount}%</span>
+                      <span>Discount:</span> <span>{productData.discountPercentage}%</span>
                     </p>
                   )}
                   <p className="product-total">
-                    <span>Total:</span> <span>${productData.total}</span>
+                    <span>Total:</span> <span>${productData.discountedPrice}</span>
                   </p>
                 </div>
 
@@ -367,24 +366,25 @@ function ProductDetails() {
                     shouldEdit={true}
                     handleCancel={handleCancel}
                     review={{
-                      authorId: userData?.id,
                       author: `${userData?.firstName} ${userData?.lastName}`,
                       date: Date(),
                       title: "",
                       rate: tempRating,
-                      body: "",
+                      review: "",
                       id: Date.now(),
                       pros: "",
                       cons: "",
                     }}
+                    productId={productData.id}
+                    userId={userData?.id}
                     new={true}
                   />
                 )}
-                {productData?.reviews?.map((review) =>
-                  (review.authorId === userData?.id && isLoggedIn && userReview) ? (
-                    <EditReview key={review.id} review={review} productid={productData.id} new={false}/>
+                {productData?.ratings?.map((review) =>
+                  (review.userId === userData?.id && isLoggedIn && userReview) ? (
+                    <EditReview key={review.id} review={review} userId={userData?.id} productId={productData.id} new={false}/>
                   ) : (
-                    (review.body !== "" || review.pros !== "" || review.cons !== "") && <Reviews key={review.id} review={review} />
+                    (review.review !== "" || review.pros !== "" || review.cons !== "") && <Reviews key={review.id} review={review} />
                   )
                 )}
               </ul>
@@ -426,7 +426,7 @@ function ProductDetails() {
               ) : subSuccess && subData ? (
                 <>
                   {subData.products.slice(0, 4).map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} subCatImage={subData.image} />
                   ))}
                 </>
               ) : (<></>)

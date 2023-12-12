@@ -1,8 +1,5 @@
-const mainURL = 'mockData/'
-
-export async function getProductByID(ID) {
-    console.log(ID)
-    const response = await fetch('/mockData/product.json')
+export async function getProductByID(ID) { // api/Product/${ID}
+    const response = await fetch(`https://localhost:7168/api/Product/${ID}`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -11,8 +8,8 @@ export async function getProductByID(ID) {
     return await response.json()
 }
 
-export async function getPopularProducts() {
-    const response = await fetch('/mockData/products.json')
+export async function getPopularProducts() { // api/Product/MostPopularProducts
+    const response = await fetch(`https://localhost:7168/api/Product/MostPopularProducts`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -21,8 +18,8 @@ export async function getPopularProducts() {
     return await response.json()
 }
 
-export async function getNewArrivalsProducts() {
-    const response = await fetch('/mockData/products.json')
+export async function getNewArrivalsProducts() { // api/Product/NewProducts
+    const response = await fetch(`https://localhost:7168/api/Product/NewProducts`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -31,8 +28,8 @@ export async function getNewArrivalsProducts() {
     return await response.json()
 }
 
-export async function getDiscountedProducts() {
-    const response = await fetch('/mockData/products.json')
+export async function getDiscountedProducts() { // api/Product/DiscountedProducts
+    const response = await fetch(`https://localhost:7168/api/Product/DiscountedProducts`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -41,8 +38,8 @@ export async function getDiscountedProducts() {
     return await response.json()
 }
 
-export async function deleteReviewApi({ ID, tokens }) {
-    const url = `${mainURL}/reviews/delete/${ID}`
+export async function deleteReviewApi({ ratingId, userId, tokens }) { // api/Rating/${ID}/user/${userID}
+    const url = `https://localhost:7168/api/Rating/${ratingId}/user/${userId}`
 
     const response = await fetch(url, {
         method: 'DELETE',
@@ -56,17 +53,17 @@ export async function deleteReviewApi({ ID, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
-export async function updateReviewApi({ updatedData, tokens }) {
-    const url = `${mainURL}/reviews/update/${updatedData.id}`
+export async function updateReviewApi({ updatedData, tokens }) { // api/Rating/UpdateRating
+    const url = `https://localhost:7168/api/Rating/UpdateRating`
 
     const response = await fetch(url, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${tokens.accessToken}`,
+            // 'Authorization': `Bearer ${tokens.accessToken}`,
         },
         body: JSON.stringify(updatedData),
     })
@@ -75,11 +72,11 @@ export async function updateReviewApi({ updatedData, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
 export async function createReviewApi({ reviewData, tokens }) {
-    const url = `${mainURL}/reviews/create`
+    const url = `https://localhost:7168/api/Rating/AddRating`
 
     const response = await fetch(url, {
         method: 'POST',
@@ -94,5 +91,5 @@ export async function createReviewApi({ reviewData, tokens }) {
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }

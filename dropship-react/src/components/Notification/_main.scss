@@ -41,6 +41,11 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         font-size: clamp(1rem, 0.8765rem + 0.3294vw, 1.7rem);
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 70ch;
     }
 
     &.errorNotify {

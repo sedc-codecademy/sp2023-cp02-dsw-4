@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const productsData = [
     {
-        "title": "Waterproof Car Cover",
+        "name": "Waterproof Car Cover",
         "price": 89.99,
         "description": "This car cover is made from waterproof material and is designed to protect your car from rain, snow, and other elements.",
         "stock": 50,
@@ -32,7 +32,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sun Shade Car Cover",
+        "name": "Sun Shade Car Cover",
         "price": 69.99,
         "description": "This car cover is designed to protect your car from the sun's harmful rays, keeping your car's interior cool and preventing fading.",
         "stock": 30,
@@ -53,7 +53,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Heavy Duty Car Cover",
+        "name": "Heavy Duty Car Cover",
         "price": 99.99,
         "description": "This heavy-duty car cover is made from durable material and is designed to protect your car from dust, dirt, and scratches.",
         "stock": 20,
@@ -71,7 +71,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Indoor Car Cover",
+        "name": "Indoor Car Cover",
         "price": 49.99,
         "description": "This indoor car cover is made from soft material and is designed to protect your car's paint from scratches and dust while it's parked in your garage.",
         "stock": 40,
@@ -91,7 +91,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Breathable Car Cover",
+        "name": "Breathable Car Cover",
         "price": 79.99,
         "description": "This car cover is made from breathable material and is designed to prevent moisture buildup and mildew, making it ideal for long-term storage.",
         "stock": 15,
@@ -116,7 +116,7 @@ const productsData = [
         ]
     },
     {
-        "title": "All-Weather Floor Mats",
+        "name": "All-Weather Floor Mats",
         "price": 49.99,
         "description": "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
         "stock": 20,
@@ -142,7 +142,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Carpeted Floor Mats",
+        "name": "Carpeted Floor Mats",
         "price": 39.99,
         "description": "These carpeted floor mats provide a comfortable and stylish addition to your car's interior, while also protecting the original carpet from wear and tear.",
         "stock": 15,
@@ -172,7 +172,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Custom-Fit Floor Mats",
+        "name": "Custom-Fit Floor Mats",
         "price": 69.99,
         "description": "These custom-fit floor mats are designed specifically for your make and model, ensuring a perfect fit and maximum protection for your car's interior.",
         "stock": 10,
@@ -197,7 +197,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Rubber Floor Mats",
+        "name": "Rubber Floor Mats",
         "price": 29.99,
         "description": "These rubber floor mats are perfect for heavy-duty use, protecting your car's interior from mud, water, and other debris.",
         "stock": 25,
@@ -220,7 +220,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Logo Floor Mats",
+        "name": "Logo Floor Mats",
         "price": 59.99,
         "description": "These logo floor mats feature your favorite sports team or car brand logo, adding a personalized touch to your car's interior.",
         "stock": 5,
@@ -240,7 +240,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Seat Covers",
+        "name": "Leather Seat Covers",
         "price": 149.99,
         "description": "These premium leather seat covers add a luxurious and elegant touch to your car's interior, while also providing protection against spills and stains.",
         "stock": 5,
@@ -265,7 +265,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sports Seat Covers",
+        "name": "Sports Seat Covers",
         "price": 99.99,
         "description": "These sports-inspired seat covers provide a sleek and stylish look to your car's interior, while also offering protection and comfort during long drives.",
         "stock": 8,
@@ -286,7 +286,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Custom Fit Seat Covers",
+        "name": "Custom Fit Seat Covers",
         "price": 129.99,
         "description": "These custom fit seat covers are tailored to fit your car's seats perfectly, providing maximum protection and comfort for you and your passengers.",
         "stock": 3,
@@ -314,7 +314,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Universal Fit Seat Covers",
+        "name": "Universal Fit Seat Covers",
         "price": 79.99,
         "description": "These universal fit seat covers are designed to fit most cars, trucks, and SUVs, making them a versatile and affordable option for any car owner.",
         "stock": 12,
@@ -340,7 +340,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Neoprene Seat Covers",
+        "name": "Neoprene Seat Covers",
         "price": 119.99,
         "description": "These neoprene seat covers provide a durable and waterproof barrier against spills and stains, while also offering a sporty and rugged look to your car's interior.",
         "stock": 6,
@@ -364,7 +364,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Trunk Organizer",
+        "name": "Trunk Organizer",
         "price": 39.99,
         "description": "Keep your trunk neat and organized with this spacious and durable trunk organizer. Features multiple compartments and foldable design for easy storage.",
         "stock": 8,
@@ -384,7 +384,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Backseat Organizer",
+        "name": "Backseat Organizer",
         "price": 24.99,
         "description": "This backseat organizer provides ample storage space for all your travel essentials, including water bottles, snacks, electronics, and more. Attaches easily to the back of the front seats.",
         "stock": 15,
@@ -406,7 +406,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sun Visor Organizer",
+        "name": "Sun Visor Organizer",
         "price": 9.99,
         "description": "Keep your sunglasses, phone, and other small items within reach with this handy sun visor organizer. Features multiple pockets and a secure clip-on design.",
         "stock": 20,
@@ -434,7 +434,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Seat Gap Filler",
+        "name": "Seat Gap Filler",
         "price": 12.99,
         "description": "This seat gap filler prevents items from falling in between the seats and is a great way to keep your car clean and organized. Fits most cars and is easy to install.",
         "stock": 30,
@@ -459,7 +459,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Center Console Organizer",
+        "name": "Center Console Organizer",
         "price": 19.99,
         "description": "Maximize your center console storage space with this handy organizer. Features multiple compartments and a non-slip bottom to keep items in place.",
         "stock": 12,
@@ -484,7 +484,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Belkin Car Vent Mount",
+        "name": "Belkin Car Vent Mount",
         "price": 19.99,
         "description": "The Belkin Car Vent Mount provides a safe, hands-free way to use your smartphone in the car. The adjustable brackets expand to fit most smartphones and keep them securely in place.",
         "stock": 100,
@@ -504,7 +504,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Spigen Magnetic Phone Mount",
+        "name": "Spigen Magnetic Phone Mount",
         "price": 24.99,
         "description": "The Spigen Magnetic Phone Mount uses powerful magnets to securely hold your phone in place while you drive. The mount can be attached to your car's dashboard or air vent for easy access.",
         "stock": 50,
@@ -528,7 +528,7 @@ const productsData = [
         ]
     },
     {
-        "title": "iOttie Easy One Touch Car Mount",
+        "name": "iOttie Easy One Touch Car Mount",
         "price": 29.99,
         "description": "The iOttie Easy One Touch Car Mount features a universal design that fits most smartphones. The mount can be attached to your car's dashboard or windshield for maximum convenience.",
         "stock": 75,
@@ -556,7 +556,7 @@ const productsData = [
         ]
     },
     {
-        "title": "WizGear Dashboard Phone Mount",
+        "name": "WizGear Dashboard Phone Mount",
         "price": 14.99,
         "description": "The WizGear Dashboard Phone Mount provides a stable, non-slip surface for your phone while you drive. The mount can be attached to your car's dashboard with a strong adhesive.",
         "stock": 200,
@@ -577,7 +577,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Mpow Car Phone Holder",
+        "name": "Mpow Car Phone Holder",
         "price": 18.99,
         "description": "The Mpow Car Phone Holder features a flexible arm that can be adjusted to any angle for easy viewing. The mount can be attached to your car's air vent or dashboard for maximum convenience.",
         "stock": 150,
@@ -604,7 +604,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fast Charging USB Car Charger",
+        "name": "Fast Charging USB Car Charger",
         "price": 14.99,
         "description": "Charge your devices quickly and efficiently with this fast charging USB car charger.",
         "stock": 50,
@@ -630,7 +630,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Dual USB Car Charger",
+        "name": "Dual USB Car Charger",
         "price": 12.99,
         "description": "Charge two devices at once with this dual USB car charger.",
         "stock": 30,
@@ -652,7 +652,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wireless Car Charger",
+        "name": "Wireless Car Charger",
         "price": 29.99,
         "description": "Charge your phone wirelessly while on the go with this wireless car charger.",
         "stock": 20,
@@ -677,7 +677,7 @@ const productsData = [
         ]
     },
     {
-        "title": "USB-C Car Charger",
+        "name": "USB-C Car Charger",
         "price": 9.99,
         "description": "Charge your USB-C devices in your car with this compact and affordable USB-C car charger.",
         "stock": 50,
@@ -702,7 +702,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Car Charger with Multiple Ports",
+        "name": "Car Charger with Multiple Ports",
         "price": 19.99,
         "description": "Charge multiple devices at once with this car charger that has multiple ports.",
         "stock": 10,
@@ -726,7 +726,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Ultimate Car Cleaning Kit",
+        "name": "Ultimate Car Cleaning Kit",
         "price": 59.99,
         "description": "Get your car looking like new with our ultimate car cleaning kit! Includes everything you need for a deep clean, inside and out.",
         "stock": 100,
@@ -749,7 +749,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Quick & Easy Car Cleaning Kit",
+        "name": "Quick & Easy Car Cleaning Kit",
         "price": 29.99,
         "description": "Clean your car in no time with our quick and easy car cleaning kit! Perfect for a quick touch-up or regular maintenance.",
         "stock": 200,
@@ -773,7 +773,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Eco-Friendly Car Cleaning Kit",
+        "name": "Eco-Friendly Car Cleaning Kit",
         "price": 49.99,
         "description": "Clean your car while being kind to the environment with our eco-friendly car cleaning kit! Includes biodegradable cleaning products and reusable towels.",
         "stock": 50,
@@ -794,7 +794,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Luxury Car Cleaning Kit",
+        "name": "Luxury Car Cleaning Kit",
         "price": 99.99,
         "description": "Treat your car to the ultimate luxury cleaning experience with our luxury car cleaning kit! Includes premium cleaning products and soft microfiber towels.",
         "stock": 75,
@@ -818,7 +818,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Professional Car Cleaning Kit",
+        "name": "Professional Car Cleaning Kit",
         "price": 149.99,
         "description": "Get professional-grade cleaning results with our professional car cleaning kit! Includes heavy-duty cleaning products and detailing tools.",
         "stock": 30,
@@ -838,7 +838,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "New Car Scent Air Freshener",
+        "name": "New Car Scent Air Freshener",
         "price": 5.99,
         "description": "Bring the fresh scent of a new car to your vehicle with our new car scent air freshener! Easy to use and long-lasting.",
         "stock": 100,
@@ -861,7 +861,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Vanilla Bean Car Diffuser",
+        "name": "Vanilla Bean Car Diffuser",
         "price": 9.99,
         "description": "Enjoy the warm and inviting scent of vanilla in your car with our vanilla bean car diffuser! Includes natural essential oils for a high-quality fragrance.",
         "stock": 50,
@@ -888,7 +888,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Scented Car Perfume",
+        "name": "Leather Scented Car Perfume",
         "price": 12.99,
         "description": "Experience the luxurious scent of leather in your car with our leather scented car perfume! Designed to provide a long-lasting fragrance.",
         "stock": 30,
@@ -917,7 +917,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Citrus Grove Car Air Freshener",
+        "name": "Citrus Grove Car Air Freshener",
         "price": 7.99,
         "description": "Refresh your car with the invigorating scent of citrus with our citrus grove car air freshener! Contains natural citrus essential oils.",
         "stock": 80,
@@ -942,7 +942,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Lavender Fields Car Diffuser",
+        "name": "Lavender Fields Car Diffuser",
         "price": 14.99,
         "description": "Relax and unwind in your car with our lavender fields car diffuser! Contains natural lavender essential oils for a calming fragrance.",
         "stock": 20,
@@ -966,7 +966,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "LED Headlight Conversion Kit",
+        "name": "LED Headlight Conversion Kit",
         "price": 99.99,
         "description": "Upgrade your car's headlights with our LED headlight conversion kit! Provides brighter and more efficient lighting than traditional halogen bulbs.",
         "stock": 20,
@@ -993,7 +993,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Underglow LED Strip Lights",
+        "name": "Underglow LED Strip Lights",
         "price": 39.99,
         "description": "Add a stylish touch to your car with our underglow LED strip lights! Available in multiple colors and can be easily installed.",
         "stock": 50,
@@ -1021,7 +1021,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fog Light Upgrade Kit",
+        "name": "Fog Light Upgrade Kit",
         "price": 79.99,
         "description": "Improve your visibility in foggy conditions with our fog light upgrade kit! Designed to provide a wider and brighter beam pattern.",
         "stock": 15,
@@ -1041,7 +1041,7 @@ const productsData = [
         ]
     },
     {
-        "title": "HID Xenon Headlight Bulbs",
+        "name": "HID Xenon Headlight Bulbs",
         "price": 49.99,
         "description": "Experience brighter and clearer lighting with our HID xenon headlight bulbs! Available in multiple color temperatures to suit your preferences.",
         "stock": 25,
@@ -1065,7 +1065,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Interior LED Dome Light Kit",
+        "name": "Interior LED Dome Light Kit",
         "price": 29.99,
         "description": "Light up the interior of your car with our LED dome light kit! Available in multiple colors and can be easily installed.",
         "stock": 30,
@@ -1089,7 +1089,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Carbon Fiber Spoiler",
+        "name": "Carbon Fiber Spoiler",
         "price": 249.99,
         "description": "Upgrade the look of your car with our carbon fiber spoiler! Lightweight and durable, and adds a sporty touch to your vehicle.",
         "stock": 15,
@@ -1115,7 +1115,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Alloy Wheel Set",
+        "name": "Alloy Wheel Set",
         "price": 599.99,
         "description": "Transform the look of your car with our high-quality alloy wheel set! Available in various sizes and finishes.",
         "stock": 8,
@@ -1143,7 +1143,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Performance Exhaust System",
+        "name": "Performance Exhaust System",
         "price": 899.99,
         "description": "Upgrade the sound and performance of your car with our performance exhaust system! Made from high-quality materials and designed for maximum flow.",
         "stock": 5,
@@ -1166,7 +1166,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Racing Stripes Decal Kit",
+        "name": "Racing Stripes Decal Kit",
         "price": 69.99,
         "description": "Give your car a racing-inspired look with our vinyl decal kit! Available in multiple colors and easy to install.",
         "stock": 25,
@@ -1196,7 +1196,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Custom Car Cover",
+        "name": "Custom Car Cover",
         "price": 199.99,
         "description": "Protect your car while showing off your style with our custom car cover! Available in various colors and designs, and made from high-quality materials.",
         "stock": 20,
@@ -1220,7 +1220,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Matte Lipstick",
+        "name": "Matte Lipstick",
         "price": 9.99,
         "description": "Get a bold, matte lip with this long-lasting lipstick. Available in a range of vibrant shades.",
         "stock": 50,
@@ -1248,7 +1248,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Eyeshadow Palette",
+        "name": "Eyeshadow Palette",
         "price": 19.99,
         "description": "Create endless eye looks with this versatile eyeshadow palette. Features a mix of matte and shimmer shades.",
         "stock": 30,
@@ -1271,7 +1271,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Foundation",
+        "name": "Foundation",
         "price": 14.99,
         "description": "Achieve a flawless complexion with this buildable, medium-coverage foundation. Available in a variety of shades.",
         "stock": 40,
@@ -1294,7 +1294,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Mascara",
+        "name": "Mascara",
         "price": 12.99,
         "description": "Get bold, voluminous lashes with this lengthening mascara. Features a tapered brush for easy application.",
         "stock": 60,
@@ -1320,7 +1320,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Blush",
+        "name": "Blush",
         "price": 8.99,
         "description": "Add a natural flush to your cheeks with this silky powder blush. Available in a range of shades.",
         "stock": 70,
@@ -1349,7 +1349,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hydrating Facial Moisturizer",
+        "name": "Hydrating Facial Moisturizer",
         "price": 24.99,
         "description": "Restore moisture and nourish your skin with this hydrating facial moisturizer. Lightweight and fast-absorbing formula for all skin types.",
         "stock": 50,
@@ -1375,7 +1375,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Gentle Cleansing Foam",
+        "name": "Gentle Cleansing Foam",
         "price": 14.99,
         "description": "Cleanse and refresh your skin with this gentle cleansing foam. Removes impurities without stripping the skin's natural moisture.",
         "stock": 40,
@@ -1396,7 +1396,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Anti-Aging Serum",
+        "name": "Anti-Aging Serum",
         "price": 39.99,
         "description": "Reduce the appearance of fine lines and wrinkles with this powerful anti-aging serum. Formulated with potent ingredients for visible results.",
         "stock": 30,
@@ -1418,7 +1418,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Exfoliating Facial Scrub",
+        "name": "Exfoliating Facial Scrub",
         "price": 19.99,
         "description": "Revitalize your skin with this exfoliating facial scrub. Gently removes dead skin cells and promotes a smoother complexion.",
         "stock": 60,
@@ -1446,7 +1446,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Brightening Face Mask",
+        "name": "Brightening Face Mask",
         "price": 12.99,
         "description": "Achieve a brighter, more radiant complexion with this brightening face mask. Infused with antioxidants and natural extracts.",
         "stock": 70,
@@ -1467,7 +1467,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Shampoo",
+        "name": "Shampoo",
         "price": 12.99,
         "description": "Cleanse and nourish your hair with this revitalizing shampoo. Formulated with natural extracts to promote healthy and shiny locks.",
         "stock": 50,
@@ -1491,7 +1491,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Conditioner",
+        "name": "Conditioner",
         "price": 10.99,
         "description": "Hydrate and detangle your hair with this replenishing conditioner. Restores moisture and leaves your hair smooth and manageable.",
         "stock": 40,
@@ -1519,7 +1519,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hair Oil",
+        "name": "Hair Oil",
         "price": 19.99,
         "description": "Nourish and strengthen your hair with this luxurious hair oil. Adds shine, tames frizz, and protects against heat damage.",
         "stock": 30,
@@ -1542,7 +1542,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hair Mask",
+        "name": "Hair Mask",
         "price": 14.99,
         "description": "Revitalize and repair your hair with this deep conditioning hair mask. Restores moisture, improves elasticity, and reduces breakage.",
         "stock": 60,
@@ -1565,7 +1565,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Heat Protectant Spray",
+        "name": "Heat Protectant Spray",
         "price": 9.99,
         "description": "Shield your hair from heat styling damage with this protective spray. Forms a barrier to prevent breakage and maintain hair health.",
         "stock": 70,
@@ -1594,7 +1594,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Eau de Parfum",
+        "name": "Eau de Parfum",
         "price": 59.99,
         "description": "Experience the allure of this exquisite eau de parfum. A captivating blend of floral and woody notes that lingers throughout the day.",
         "stock": 50,
@@ -1617,7 +1617,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Cologne Spray",
+        "name": "Cologne Spray",
         "price": 39.99,
         "description": "Make a statement with this refreshing cologne spray. A harmonious fusion of citrus and aromatic accords for a burst of vitality.",
         "stock": 40,
@@ -1645,7 +1645,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Perfume Oil",
+        "name": "Perfume Oil",
         "price": 24.99,
         "description": "Indulge in the luxury of this concentrated perfume oil. Infused with rich and sensual notes that create a lasting and intimate fragrance experience.",
         "stock": 30,
@@ -1671,7 +1671,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Body Mist",
+        "name": "Body Mist",
         "price": 19.99,
         "description": "Refresh and invigorate your senses with this lightweight body mist. Leaves a delicate and lingering fragrance on your skin.",
         "stock": 60,
@@ -1699,7 +1699,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Solid Perfume",
+        "name": "Solid Perfume",
         "price": 14.99,
         "description": "Experience the convenience of this portable solid perfume. A blend of enchanting notes in a compact and travel-friendly form.",
         "stock": 70,
@@ -1724,7 +1724,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Body Wash",
+        "name": "Body Wash",
         "price": 8.99,
         "description": "Cleanse and refresh your skin with this invigorating body wash. Formulated with nourishing ingredients to leave your skin feeling soft and hydrated.",
         "stock": 50,
@@ -1751,7 +1751,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Body Lotion",
+        "name": "Body Lotion",
         "price": 12.99,
         "description": "Moisturize and nourish your skin with this luxurious body lotion. Absorbs quickly and leaves your skin smooth, supple, and delicately scented.",
         "stock": 40,
@@ -1779,7 +1779,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Bath Bombs",
+        "name": "Bath Bombs",
         "price": 6.99,
         "description": "Indulge in a relaxing bath experience with these delightful bath bombs. Effervescent and aromatic, they transform your bathwater into a soothing oasis.",
         "stock": 30,
@@ -1800,7 +1800,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Hand Soap",
+        "name": "Hand Soap",
         "price": 4.99,
         "description": "Keep your hands clean and nourished with this gentle and moisturizing hand soap. Leaves your hands feeling soft, refreshed, and lightly fragranced.",
         "stock": 60,
@@ -1826,7 +1826,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Body Scrub",
+        "name": "Body Scrub",
         "price": 14.99,
         "description": "Exfoliate and rejuvenate your skin with this invigorating body scrub. Removes dead skin cells and reveals smoother, brighter, and more radiant skin.",
         "stock": 70,
@@ -1850,7 +1850,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Beard Oil",
+        "name": "Beard Oil",
         "price": 14.99,
         "description": "Nourish and tame your beard with this conditioning beard oil. Softens and hydrates facial hair, promoting a healthy and well-groomed appearance.",
         "stock": 50,
@@ -1874,7 +1874,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Shaving Cream",
+        "name": "Shaving Cream",
         "price": 9.99,
         "description": "Achieve a close and comfortable shave with this rich shaving cream. Creates a protective lather for a smooth glide and minimizes skin irritation.",
         "stock": 40,
@@ -1900,7 +1900,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Aftershave Balm",
+        "name": "Aftershave Balm",
         "price": 12.99,
         "description": "Soothe and moisturize your skin after shaving with this calming aftershave balm. Helps reduce razor burn, redness, and provides hydration.",
         "stock": 30,
@@ -1927,7 +1927,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hair Styling Pomade",
+        "name": "Hair Styling Pomade",
         "price": 11.99,
         "description": "Style your hair with precision and hold using this versatile hair styling pomade. Provides a medium hold and a sleek, polished finish.",
         "stock": 60,
@@ -1955,7 +1955,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cologne",
+        "name": "Cologne",
         "price": 29.99,
         "description": "Add a touch of sophistication with this captivating cologne. Leaves a long-lasting, alluring scent that complements your personal style.",
         "stock": 70,
@@ -1982,7 +1982,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Makeup Brushes Set",
+        "name": "Makeup Brushes Set",
         "price": 24.99,
         "description": "Enhance your makeup application with this comprehensive set of high-quality makeup brushes. Includes a variety of brushes for face, eyes, and lips.",
         "stock": 50,
@@ -2009,7 +2009,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Eyelash Curler",
+        "name": "Eyelash Curler",
         "price": 9.99,
         "description": "Achieve stunning, curled lashes with this ergonomic eyelash curler. Designed to enhance the curl and lift of your lashes for a wide-eyed look.",
         "stock": 40,
@@ -2035,7 +2035,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Makeup Sponge",
+        "name": "Makeup Sponge",
         "price": 6.99,
         "description": "Achieve a flawless makeup application with this versatile and reusable makeup sponge. Helps blend foundation, concealer, and other complexion products seamlessly.",
         "stock": 30,
@@ -2055,7 +2055,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hair Styling Tools Kit",
+        "name": "Hair Styling Tools Kit",
         "price": 29.99,
         "description": "Create beautiful hairstyles with this all-in-one hair styling tools kit. Includes a hairdryer, flat iron, curling wand, and various styling accessories.",
         "stock": 60,
@@ -2080,7 +2080,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Makeup Organizer",
+        "name": "Makeup Organizer",
         "price": 14.99,
         "description": "Keep your makeup collection neat and organized with this spacious makeup organizer. Features compartments, drawers, and dividers for easy storage.",
         "stock": 70,
@@ -2104,7 +2104,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Electric Toothbrush",
+        "name": "Electric Toothbrush",
         "price": 39.99,
         "description": "Achieve optimal oral hygiene with this advanced electric toothbrush. Features multiple brushing modes, timer, and interchangeable brush heads.",
         "stock": 50,
@@ -2132,7 +2132,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Body Lotion",
+        "name": "Body Lotion",
         "price": 12.99,
         "description": "Nourish and moisturize your skin with this indulgent body lotion. Enriched with hydrating ingredients, it leaves your skin smooth and supple.",
         "stock": 40,
@@ -2155,7 +2155,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hand Sanitizer",
+        "name": "Hand Sanitizer",
         "price": 4.99,
         "description": "Keep your hands clean and germ-free with this effective hand sanitizer. Contains a high percentage of alcohol to kill bacteria and viruses.",
         "stock": 30,
@@ -2177,7 +2177,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Feminine Hygiene Products",
+        "name": "Feminine Hygiene Products",
         "price": 8.99,
         "description": "Stay comfortable and confident with these essential feminine hygiene products. Offers reliable protection and freshness during your menstrual cycle.",
         "stock": 60,
@@ -2202,7 +2202,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Deodorant",
+        "name": "Deodorant",
         "price": 7.99,
         "description": "Stay fresh and odor-free throughout the day with this long-lasting deodorant. Provides effective protection against sweat and body odor.",
         "stock": 70,
@@ -2225,7 +2225,7 @@ const productsData = [
         ]
     },
     {
-        "title": "SPF 50 Sunscreen Lotion",
+        "name": "SPF 50 Sunscreen Lotion",
         "price": 12.99,
         "description": "Protect your skin from harmful UV rays with this high-SPF sunscreen lotion. Provides broad-spectrum protection and is water-resistant.",
         "stock": 50,
@@ -2248,7 +2248,7 @@ const productsData = [
         ]
     },
     {
-        "title": "After Sun Cooling Gel",
+        "name": "After Sun Cooling Gel",
         "price": 9.99,
         "description": "Soothe and hydrate your skin after sun exposure with this cooling gel. Helps reduce redness, dryness, and discomfort caused by sunburn.",
         "stock": 40,
@@ -2278,7 +2278,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sun Hat",
+        "name": "Sun Hat",
         "price": 14.99,
         "description": "Stay protected and stylish with this wide-brimmed sun hat. Provides shade for your face and neck while adding a fashionable touch to your outfit.",
         "stock": 30,
@@ -2308,7 +2308,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Aloe Vera Sunburn Relief Spray",
+        "name": "Aloe Vera Sunburn Relief Spray",
         "price": 8.99,
         "description": "Relieve sunburn discomfort with this soothing aloe vera spray. Provides instant relief and helps promote healing for sun-damaged skin.",
         "stock": 60,
@@ -2333,7 +2333,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sun Protection Lip Balm",
+        "name": "Sun Protection Lip Balm",
         "price": 4.99,
         "description": "Keep your lips protected from the sun with this SPF lip balm. Nourishes and moisturizes your lips while shielding them from harmful UV rays.",
         "stock": 70,
@@ -2363,7 +2363,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Essential Oil Diffuser",
+        "name": "Essential Oil Diffuser",
         "price": 39.99,
         "description": "Create a calming and aromatic environment with this essential oil diffuser. Releases a fine mist of essential oils to enhance relaxation and well-being.",
         "stock": 50,
@@ -2391,7 +2391,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Yoga Mat",
+        "name": "Yoga Mat",
         "price": 29.99,
         "description": "Enhance your yoga practice with this high-quality yoga mat. Provides cushioning and a non-slip surface for optimal comfort and stability.",
         "stock": 40,
@@ -2417,7 +2417,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Meditation Cushion",
+        "name": "Meditation Cushion",
         "price": 19.99,
         "description": "Support your meditation practice with this comfortable meditation cushion. Helps maintain proper posture and provides a soft and supportive seat.",
         "stock": 30,
@@ -2440,7 +2440,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fitness Tracker",
+        "name": "Fitness Tracker",
         "price": 79.99,
         "description": "Track your daily activity and monitor your health with this advanced fitness tracker. Measures steps, heart rate, sleep quality, and more.",
         "stock": 60,
@@ -2465,7 +2465,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Herbal Tea Set",
+        "name": "Herbal Tea Set",
         "price": 14.99,
         "description": "Experience the soothing benefits of herbal tea with this set of handcrafted blends. Includes a variety of flavors to support relaxation and well-being.",
         "stock": 70,
@@ -2491,7 +2491,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Moto Jacket",
+        "name": "Leather Moto Jacket",
         "price": 149.99,
         "description": "This edgy leather jacket features a moto-inspired design and a cropped length. Perfect for adding some edge to any outfit.",
         "stock": 14,
@@ -2514,7 +2514,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Faux Leather Biker Jacket",
+        "name": "Faux Leather Biker Jacket",
         "price": 59.99,
         "description": "Add a touch of edge to your wardrobe with this chic faux leather biker jacket. Featuring a slim fit, zippered pockets, and an asymmetrical front zip closure, this jacket is perfect for layering over any outfit.",
         "stock": 25,
@@ -2536,7 +2536,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Fleece Sherpa Jacket",
+        "name": "Fleece Sherpa Jacket",
         "price": 44.99,
         "description": "Stay cozy in style with this fleece sherpa jacket. Featuring a classic collar, button front, and side pockets, this jacket is perfect for layering over your favorite outfit on colder days.",
         "stock": 80,
@@ -2558,7 +2558,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Quilted Puffer Jacket",
+        "name": "Quilted Puffer Jacket",
         "price": 89.99,
         "description": "Stay warm and stylish in this quilted puffer jacket. Featuring a stand-up collar, zippered pockets, and a snap button front closure, this jacket is perfect for layering over any outfit during the colder months.",
         "stock": 18,
@@ -2580,7 +2580,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Denim Jacket",
+        "name": "Denim Jacket",
         "price": 49.99,
         "description": "This classic denim jacket features a relaxed fit and a light wash. Perfect for layering over any outfit.",
         "stock": 90,
@@ -2600,7 +2600,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Faux Fur Coat",
+        "name": "Faux Fur Coat",
         "price": 99.99,
         "description": "This glamorous faux fur coat features a cropped length and a bold leopard print. Perfect for dressing up any outfit.",
         "stock": 19,
@@ -2623,7 +2623,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Faux Leather Moto Jacket",
+        "name": "Faux Leather Moto Jacket",
         "price": 79.99,
         "description": "This edgy moto jacket features faux leather, silver hardware, and a belted waist. Perfect for adding some edge to any outfit.",
         "stock": 14,
@@ -2645,7 +2645,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Floral Maxi Dress",
+        "name": "Floral Maxi Dress",
         "price": 59.99,
         "description": "This flowy maxi dress features a colorful floral pattern and a cinched waist for a flattering silhouette. Perfect for summer weddings or brunch dates.",
         "stock": 100,
@@ -2671,7 +2671,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Maxi Dress",
+        "name": "Maxi Dress",
         "price": 79.99,
         "description": "This flowy maxi dress features a bold floral print and a flattering V-neckline. Perfect for a summer wedding or a beach vacation.",
         "stock": 81,
@@ -2695,7 +2695,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wrap Dress",
+        "name": "Wrap Dress",
         "price": 59.99,
         "description": "This elegant wrap dress features a classic polka dot print and a tie waist for a customized fit. Perfect for a day at the office or a night out.",
         "stock": 71,
@@ -2723,7 +2723,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Midi Dress",
+        "name": "Midi Dress",
         "price": 69.99,
         "description": "This versatile midi dress features a flattering A-line silhouette and a chic abstract print. Perfect for any occasion, from brunch to a cocktail party.",
         "stock": 67,
@@ -2741,7 +2741,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Little Black Dress",
+        "name": "Little Black Dress",
         "price": 99.99,
         "description": "This classic little black dress features a flattering fit-and-flare silhouette and a lace bodice. Perfect for a special occasion or a night out.",
         "stock": 37,
@@ -2765,7 +2765,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Off-the-Shoulder Dress",
+        "name": "Off-the-Shoulder Dress",
         "price": 49.99,
         "description": "This trendy off-the-shoulder dress features a flirty ruffle neckline and a bold tropical print. Perfect for a vacation or a summer party.",
         "stock": 61,
@@ -2790,7 +2790,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wrap Top",
+        "name": "Wrap Top",
         "price": 29.99,
         "description": "This versatile wrap top can be dressed up or down. Featuring a flattering v-neckline and a tie closure at the waist, it pairs well with high-waisted pants or a39cf50b-b311-468e-8e43-eefb0ef53fe2.",
         "stock": 18,
@@ -2818,7 +2818,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Off - the - Shoulder Top",
+        "name": "Off - the - Shoulder Top",
         "price": 34.99,
         "description": "This trendy off - the - shoulder top features a smocked neckline and a flowy silhouette.Perfect for a beach vacation or a summer day.",
         "stock": 60,
@@ -2844,7 +2844,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Tie - Front Crop Top",
+        "name": "Tie - Front Crop Top",
         "price": 24.99,
         "description": "This cute tie - front crop top features a scoop neckline and a cropped length.Perfect for pairing with high - waisted jeans or a39cf50b-b311-468e-8e43-eefb0ef53fe2.",
         "stock": 93,
@@ -2873,7 +2873,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Off-the-Shoulder Top",
+        "name": "Off-the-Shoulder Top",
         "price": 29.99,
         "description": "This flirty off-the-shoulder top features a delicate floral print and a flowy silhouette. Perfect for a date night or a girls' night out.",
         "stock": 50,
@@ -2894,7 +2894,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Lace Blouse",
+        "name": "Lace Blouse",
         "price": 39.99,
         "description": "This elegant lace blouse features a scalloped hem and a flattering V-neckline. Perfect for a special occasion or a night out.",
         "stock": 30,
@@ -2920,7 +2920,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Crop Top",
+        "name": "Crop Top",
         "price": 24.99,
         "description": "This trendy crop top features a playful polka dot print and a flattering wrap design. Perfect for a summer music festival or a beach day.",
         "stock": 60,
@@ -2941,7 +2941,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Embroidered Tank Top",
+        "name": "Embroidered Tank Top",
         "price": 19.99,
         "description": "This cute tank top features colorful embroidery and a breezy silhouette. Perfect for a casual day out or a weekend brunch.",
         "stock": 90,
@@ -2967,7 +2967,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Denim Mini Skirt",
+        "name": "Denim Mini Skirt",
         "price": 29.99,
         "description": "A classic denim mini skirt that pairs well with any top.",
         "stock": 30,
@@ -2990,7 +2990,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Pleated Midi Skirt",
+        "name": "Pleated Midi Skirt",
         "price": 39.99,
         "description": "A sophisticated pleated midi skirt that's perfect for the office.",
         "stock": 50,
@@ -3015,7 +3015,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Pleated Midi Skirt",
+        "name": "Pleated Midi Skirt",
         "price": 44.99,
         "description": "This elegant pleated midi skirt features a high waist and a metallic finish.Perfect for a special occasion or a night out.",
         "stock": 50,
@@ -3040,7 +3040,7 @@ const productsData = [
         ]
     },
     {
-        "title": "A-Line Skirt",
+        "name": "A-Line Skirt",
         "price": 39.99,
         "description": "This classic A-line skirt features a high waist and a knee-length hem, perfect for the office or a night out. Made from a soft and stretchy fabric for comfort.",
         "stock": 50,
@@ -3058,7 +3058,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Floral A-Line Skirt",
+        "name": "Floral A-Line Skirt",
         "price": 24.99,
         "description": "A flowy floral A-line skirt that's perfect for spring.",
         "stock": 50,
@@ -3085,7 +3085,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Mini Skirt",
+        "name": "Leather Mini Skirt",
         "price": 49.99,
         "description": "A sleek and edgy leather mini skirt that's perfect for a night out.",
         "stock": 50,
@@ -3107,7 +3107,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Wrap Midi Skirt",
+        "name": "Wrap Midi Skirt",
         "price": 34.99,
         "description": "A versatile wrap midi skirt that can be dressed up or down.",
         "stock": 50,
@@ -3133,7 +3133,7 @@ const productsData = [
         ]
     },
     {
-        "title": "High - Waisted Jeans",
+        "name": "High - Waisted Jeans",
         "price": 59.99,
         "description": "These classic high - waisted jeans feature a straight - leg fit and a raw hem for a modern twist.Made from a stretchy denim for comfort.",
         "stock": 60,
@@ -3156,7 +3156,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "High-waisted skinny jeans",
+        "name": "High-waisted skinny jeans",
         "price": 49.99,
         "description": "These high-waisted skinny jeans are made with stretchy denim for a comfortable fit. Available in a variety of colors.",
         "stock": 60,
@@ -3182,7 +3182,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Straight leg jeans",
+        "name": "Straight leg jeans",
         "price": 59.99,
         "description": "These straight leg jeans have a relaxed fit and come in a faded, vintage-inspired wash.",
         "stock": 60,
@@ -3205,7 +3205,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "High-waisted wide-leg jeans",
+        "name": "High-waisted wide-leg jeans",
         "price": 69.99,
         "description": "These high-waisted wide-leg jeans have a retro feel and come in a medium wash denim.",
         "stock": 60,
@@ -3232,7 +3232,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Skinny jeans with distressed details",
+        "name": "Skinny jeans with distressed details",
         "price": 54.99,
         "description": "These skinny jeans have a distressed finish and are made with stretchy denim for a comfortable fit.",
         "stock": 60,
@@ -3254,7 +3254,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Off-Shoulder Sweater",
+        "name": "Off-Shoulder Sweater",
         "price": 52,
         "description": "Off-shoulder sweater with a relaxed fit and ribbed cuffs and hem. Made with a blend of wool and acrylic.",
         "stock": 16,
@@ -3280,7 +3280,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cable Knit Sweater",
+        "name": "Cable Knit Sweater",
         "price": 59.99,
         "description": "Stay cozy and stylish with this classic cable knit sweater, perfect for layering during the colder months.",
         "stock": 60,
@@ -3305,7 +3305,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Oversized Turtleneck Sweater",
+        "name": "Oversized Turtleneck Sweater",
         "price": 79.99,
         "description": "This oversized turtleneck sweater is perfect for snuggling up in on chilly days, with a soft and comfortable fabric.",
         "stock": 70,
@@ -3331,7 +3331,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cashmere V-Neck Sweater",
+        "name": "Cashmere V-Neck Sweater",
         "price": 149.99,
         "description": "Indulge in luxury with this cashmere V-neck sweater, with a classic and versatile design that will elevate any outfit.",
         "stock": 70,
@@ -3355,7 +3355,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Cropped Cardigan",
+        "name": "Cropped Cardigan",
         "price": 39.99,
         "description": "Add a touch of elegance to any outfit with this cropped cardigan, featuring a delicate knit design and a button-up front.",
         "stock": 70,
@@ -3382,7 +3382,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Suede Ankle Boots",
+        "name": "Suede Ankle Boots",
         "price": 79.99,
         "description": "Step up your style with these suede ankle boots featuring a chunky heel and side zipper closure.",
         "stock": 70,
@@ -3411,7 +3411,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Loafers",
+        "name": "Leather Loafers",
         "price": 89.99,
         "description": "These leather loafers offer both style and comfort, with a padded insole and classic design.",
         "stock": 70,
@@ -3434,7 +3434,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sneaker Wedges",
+        "name": "Sneaker Wedges",
         "price": 69.99,
         "description": "Get the best of both worlds with these sneaker wedges, featuring a stylish design and comfortable fit.",
         "stock": 70,
@@ -3463,7 +3463,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Classic Pumps",
+        "name": "Classic Pumps",
         "price": 99.99,
         "description": "Elevate your look with these classic pumps, featuring a pointed toe and stiletto heel.",
         "stock": 70,
@@ -3489,7 +3489,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Platform Sandals",
+        "name": "Platform Sandals",
         "price": 79.99,
         "description": "Step out in style with these platform sandals, featuring a strappy design and chunky heel.",
         "stock": 70,
@@ -3517,7 +3517,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Flat Sandals",
+        "name": "Flat Sandals",
         "price": 59.99,
         "description": "Stay comfortable and stylish with these flat sandals, featuring a strappy design and buckle closure.",
         "stock": 70,
@@ -3541,7 +3541,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Classic Brown Leather Boots",
+        "name": "Classic Brown Leather Boots",
         "price": 89.99,
         "description": "These classic brown leather boots are perfect for any occasion. Made from high-quality leather, they are durable and stylish. The cushioned insole ensures all-day comfort.",
         "stock": 70,
@@ -3570,7 +3570,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Suede Ankle Boots",
+        "name": "Suede Ankle Boots",
         "price": 59.99,
         "description": "These suede ankle boots are a stylish addition to any wardrobe. Featuring a comfortable block heel and a side zipper for easy on and off, these boots are perfect for a night out.",
         "stock": 70,
@@ -3595,7 +3595,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Slip-On Sneakers",
+        "name": "Slip-On Sneakers",
         "price": 39.99,
         "description": "These slip-on sneakers are perfect for a casual day out. With a breathable canvas upper and a comfortable rubber sole, these shoes will keep your feet cool and comfortable all day long.",
         "stock": 70,
@@ -3618,7 +3618,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "High-Top Sneakers",
+        "name": "High-Top Sneakers",
         "price": 49.99,
         "description": "These high-top sneakers are a trendy addition to your shoe collection. Featuring a sleek black design and a comfortable padded collar, these shoes will keep you looking stylish and feeling comfortable all day long.",
         "stock": 70,
@@ -3638,7 +3638,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Tote Bag",
+        "name": "Leather Tote Bag",
         "price": 99.99,
         "description": "This stylish leather tote bag is perfect for carrying all your daily essentials. It features a roomy interior with multiple pockets and a zippered closure to keep your belongings secure.",
         "stock": 70,
@@ -3667,7 +3667,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Backpack with USB Charging Port",
+        "name": "Backpack with USB Charging Port",
         "price": 49.99,
         "description": "This backpack is designed with a USB charging port, making it easy to charge your phone on the go. It also features a spacious interior with a padded laptop compartment and multiple pockets for organization.",
         "stock": 70,
@@ -3691,7 +3691,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Canvas Travel Bag",
+        "name": "Canvas Travel Bag",
         "price": 29.99,
         "description": "This canvas tote bag is perfect for carrying all your essentials. It features a spacious interior with a zippered closure and multiple pockets for organization. The sturdy canvas material is durable and long-lasting.",
         "stock": 70,
@@ -3715,7 +3715,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Rolling Duffel Bag",
+        "name": "Rolling Duffel Bag",
         "price": 89.99,
         "description": "This rolling duffel bag is perfect for travel. It features a spacious interior with multiple pockets for organization, and the durable wheels make it easy to maneuver through airports and hotels.",
         "stock": 55,
@@ -3739,7 +3739,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Messenger Bag",
+        "name": "Leather Messenger Bag",
         "price": 129.99,
         "description": "This leather messenger bag is perfect for work or school. It features a spacious interior with a padded laptop compartment and multiple pockets for organization. The adjustable shoulder strap allows for comfortable carrying.",
         "stock": 55,
@@ -3767,7 +3767,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Women's Mesh Panel Leggings",
+        "name": "Women's Mesh Panel Leggings",
         "price": 45.99,
         "description": "These leggings are perfect for a yoga class or a morning jog. They have a mesh panel design that allows for ventilation and breathability.",
         "stock": 55,
@@ -3790,7 +3790,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Women's Compression Shorts",
+        "name": "Women's Compression Shorts",
         "price": 29.99,
         "description": "These compression shorts provide support for your muscles during your workout, and the moisture-wicking fabric keeps you dry and comfortable.",
         "stock": 47,
@@ -3817,7 +3817,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Women's Racerback Tank Top",
+        "name": "Women's Racerback Tank Top",
         "price": 24.99,
         "description": "This racerback tank top is perfect for any type of workout. The moisture-wicking fabric keeps you cool and dry, and the racerback design allows for a full range of motion.",
         "stock": 47,
@@ -3842,7 +3842,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Women's Performance T-Shirt",
+        "name": "Women's Performance T-Shirt",
         "price": 34.99,
         "description": "This performance t-shirt is made with sweat-wicking fabric to keep you cool and comfortable during your workout. The seamless design reduces chafing and irritation.",
         "stock": 47,
@@ -3866,7 +3866,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Women's Yoga Pants",
+        "name": "Women's Yoga Pants",
         "price": 49.99,
         "description": "These yoga pants are made with a stretchy and breathable fabric that moves with you during your practice. The high waistband provides support and coverage.",
         "stock": 47,
@@ -3892,7 +3892,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Lace Bralette",
+        "name": "Lace Bralette",
         "price": 24.99,
         "description": "This gorgeous lace bralette features a delicate scalloped edge and adjustable straps.",
         "stock": 28,
@@ -3918,7 +3918,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sheer Babydoll Nightie",
+        "name": "Sheer Babydoll Nightie",
         "price": 39.99,
         "description": "This sheer babydoll nightie is the perfect combination of sexy and sweet. The delicate lace details and ruffled hem add a feminine touch.",
         "stock": 28,
@@ -3947,7 +3947,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Silk Chemise",
+        "name": "Silk Chemise",
         "price": 89.99,
         "description": "This luxurious silk chemise is perfect for a special occasion or a romantic night in. The delicate lace trim and adjustable straps add an extra touch of elegance.",
         "stock": 28,
@@ -3974,7 +3974,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Lace Thong",
+        "name": "Lace Thong",
         "price": 12.99,
         "description": "This sexy lace thong is perfect for everyday wear or a special occasion. The comfortable stretch lace and low-rise waist make it a must-have in your 8f1d8954-e266-49a4-a7a5-2ac1f8620aeb drawer.",
         "stock": 28,
@@ -4004,7 +4004,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cotton Briefs",
+        "name": "Cotton Briefs",
         "price": 9.99,
         "description": "These classic cotton briefs are a comfortable and practical addition to your lingerie collection. The full coverage and breathable fabric make them perfect for everyday wear.",
         "stock": 28,
@@ -4030,7 +4030,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Modern Sofa",
+        "name": "Modern Sofa",
         "price": 799.99,
         "description": "A stylish and comfortable sofa for your living room.",
         "stock": 10,
@@ -4055,7 +4055,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wooden Dining Table",
+        "name": "Wooden Dining Table",
         "price": 499.99,
         "description": "A sturdy dining table made from high-quality wood.",
         "stock": 5,
@@ -4077,7 +4077,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Recliner Chair",
+        "name": "Leather Recliner Chair",
         "price": 699.99,
         "description": "An elegant and comfortable recliner chair made from genuine leather.",
         "stock": 8,
@@ -4104,7 +4104,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Queen Size Bed",
+        "name": "Queen Size Bed",
         "price": 899.99,
         "description": "A luxurious queen size bed with a beautiful headboard.",
         "stock": 3,
@@ -4126,7 +4126,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Modern Bookshelf",
+        "name": "Modern Bookshelf",
         "price": 349.99,
         "description": "A sleek and contemporary bookshelf to display your favorite books and decor.",
         "stock": 6,
@@ -4144,7 +4144,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Stainless Steel Cookware Set",
+        "name": "Stainless Steel Cookware Set",
         "price": 249.99,
         "description": "A high-quality set of stainless steel pots and pans for all your cooking needs.",
         "stock": 3,
@@ -4170,7 +4170,7 @@ const productsData = [
         ]
     },
     {
-        "title": "6-Piece Glass Bowl Set",
+        "name": "6-Piece Glass Bowl Set",
         "price": 29.99,
         "description": "A set of six durable glass bowls in different sizes, perfect for mixing and serving.",
         "stock": 8,
@@ -4199,7 +4199,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Non-Stick Frying Pan",
+        "name": "Non-Stick Frying Pan",
         "price": 49.99,
         "description": "A high-quality non-stick frying pan that makes cooking and cleaning a breeze.",
         "stock": 5,
@@ -4225,7 +4225,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wooden Cutting Board",
+        "name": "Wooden Cutting Board",
         "price": 39.99,
         "description": "A sturdy and durable wooden cutting board with a beautiful design.",
         "stock": 10,
@@ -4253,7 +4253,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Electric Wine Opener",
+        "name": "Electric Wine Opener",
         "price": 69.99,
         "description": "A sleek and easy-to-use electric wine opener that makes opening bottles a breeze.",
         "stock": 2,
@@ -4282,7 +4282,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Modern Geometric Wall Art",
+        "name": "Modern Geometric Wall Art",
         "price": 29.99,
         "description": "Add a touch of elegance to your home with this modern geometric wall art.",
         "stock": 10,
@@ -4310,7 +4310,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Rustic Wooden Wall Shelf",
+        "name": "Rustic Wooden Wall Shelf",
         "price": 49.99,
         "description": "Bring a bit of the outdoors into your home with this rustic wooden wall shelf.",
         "stock": 5,
@@ -4333,7 +4333,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Decorative Glass Vase Set",
+        "name": "Decorative Glass Vase Set",
         "price": 39.99,
         "description": "This set of three decorative glass vases is perfect for adding a pop of color to any room.",
         "stock": 8,
@@ -4359,7 +4359,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Luxury Throw Pillow",
+        "name": "Luxury Throw Pillow",
         "price": 24.99,
         "description": "Snuggle up in style with this luxurious throw pillow.",
         "stock": 12,
@@ -4377,7 +4377,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Artificial Succulent Plant Set",
+        "name": "Artificial Succulent Plant Set",
         "price": 19.99,
         "description": "Bring the beauty of nature indoors with this set of artificial succulent plants.",
         "stock": 15,
@@ -4402,7 +4402,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Gardening Tool Set",
+        "name": "Gardening Tool Set",
         "price": 29.99,
         "description": "Get all the essential gardening tools in this set, perfect for any green thumb.",
         "stock": 8,
@@ -4428,7 +4428,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Raised Garden Bed",
+        "name": "Raised Garden Bed",
         "price": 99.99,
         "description": "Start your own garden with this easy-to-assemble raised garden bed.",
         "stock": 2,
@@ -4454,7 +4454,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Garden Hose",
+        "name": "Garden Hose",
         "price": 24.99,
         "description": "This durable garden hose is perfect for watering your plants and lawn.",
         "stock": 11,
@@ -4480,7 +4480,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Solar Garden Lights",
+        "name": "Solar Garden Lights",
         "price": 19.99,
         "description": "Light up your garden with these energy-efficient solar-powered lights.",
         "stock": 6,
@@ -4507,7 +4507,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Compost Bin",
+        "name": "Compost Bin",
         "price": 39.99,
         "description": "Reduce waste and create nutrient-rich soil with this easy-to-use compost bin.",
         "stock": 3,
@@ -4533,7 +4533,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Dog Harness",
+        "name": "Dog Harness",
         "price": 25.99,
         "description": "A sturdy and comfortable harness for dogs of all sizes.",
         "stock": 100,
@@ -4557,7 +4557,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Cat Scratching Post",
+        "name": "Cat Scratching Post",
         "price": 39.99,
         "description": "A durable and fun scratching post for cats.",
         "stock": 75,
@@ -4584,7 +4584,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fish Tank",
+        "name": "Fish Tank",
         "price": 99.99,
         "description": "A spacious and stylish fish tank for all your aquatic pets.",
         "stock": 50,
@@ -4602,7 +4602,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Bird Cage",
+        "name": "Bird Cage",
         "price": 49.99,
         "description": "A cozy and secure bird cage for your feathered friend.",
         "stock": 60,
@@ -4622,7 +4622,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hamster Wheel",
+        "name": "Hamster Wheel",
         "price": 12.99,
         "description": "A fun and durable wheel for your furry little friend to run on.",
         "stock": 150,
@@ -4642,7 +4642,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Electric Drill",
+        "name": "Electric Drill",
         "price": 69.99,
         "description": "A powerful and versatile electric drill for all your DIY projects.",
         "stock": 25,
@@ -4670,7 +4670,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Paint Rollers",
+        "name": "Paint Rollers",
         "price": 14.99,
         "description": "A set of high-quality paint rollers for a professional finish on your walls.",
         "stock": 50,
@@ -4692,7 +4692,7 @@ const productsData = [
         ]
     },
     {
-        "title": "LED Light Bulbs",
+        "name": "LED Light Bulbs",
         "price": 19.99,
         "description": "A pack of energy-efficient LED light bulbs for your home.",
         "stock": 100,
@@ -4715,7 +4715,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cordless Screwdriver",
+        "name": "Cordless Screwdriver",
         "price": 49.99,
         "description": "A compact and lightweight cordless screwdriver for quick and easy repairs.",
         "stock": 30,
@@ -4739,7 +4739,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Digital Multimeter",
+        "name": "Digital Multimeter",
         "price": 34.99,
         "description": "A versatile and accurate digital multimeter for electrical testing.",
         "stock": 10,
@@ -4768,7 +4768,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Luxury Egyptian Cotton Bed Sheets",
+        "name": "Luxury Egyptian Cotton Bed Sheets",
         "price": 129.99,
         "description": "Experience the comfort and luxury of these premium Egyptian cotton bed sheets. Available in various colors and sizes.",
         "stock": 100,
@@ -4791,7 +4791,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Fluffy White Bath Towels",
+        "name": "Fluffy White Bath Towels",
         "price": 29.99,
         "description": "Wrap yourself in the softness of these fluffy white bath towels. Made with 100% cotton for maximum absorbency.",
         "stock": 200,
@@ -4813,7 +4813,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Organic Bamboo Bath Mat",
+        "name": "Organic Bamboo Bath Mat",
         "price": 39.99,
         "description": "Step out of the shower onto this soft and absorbent organic bamboo bath mat. Non-slip backing keeps the mat in place.",
         "stock": 50,
@@ -4836,7 +4836,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Silk Pillowcases",
+        "name": "Silk Pillowcases",
         "price": 49.99,
         "description": "Sleep in ultimate luxury with these soft and smooth silk pillowcases. Hypoallergenic and gentle on skin and hair.",
         "stock": 150,
@@ -4856,7 +4856,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Extra Plush Down Alternative Comforter",
+        "name": "Extra Plush Down Alternative Comforter",
         "price": 149.99,
         "description": "Stay cozy and warm with this extra plush down alternative comforter. Hypoallergenic and easy to care for.",
         "stock": 75,
@@ -4880,7 +4880,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Spacious Closet Organizer",
+        "name": "Spacious Closet Organizer",
         "price": 59.99,
         "description": "Organize your closet with this spacious closet organizer. It has multiple shelves and compartments for storing clothes, shoes, and accessories.",
         "stock": 20,
@@ -4906,7 +4906,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Stackable Storage Bins",
+        "name": "Stackable Storage Bins",
         "price": 19.99,
         "description": "Keep your items organized with these stackable storage bins. They are perfect for storing toys, books, and other items.",
         "stock": 30,
@@ -4928,7 +4928,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Collapsible Fabric Storage Cubes",
+        "name": "Collapsible Fabric Storage Cubes",
         "price": 12.99,
         "description": "Maximize your storage space with these collapsible fabric storage cubes. They are great for storing clothes, toys, and other items.",
         "stock": 50,
@@ -4952,7 +4952,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Underbed Storage Bags",
+        "name": "Underbed Storage Bags",
         "price": 24.99,
         "description": "Store your extra bedding, clothes, and other items under your bed with these underbed storage bags. They are made of durable materials and have handles for easy carrying.",
         "stock": 10,
@@ -4979,7 +4979,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hanging Closet Organizer",
+        "name": "Hanging Closet Organizer",
         "price": 16.99,
         "description": "Maximize your closet space with this hanging closet organizer. It has multiple compartments for storing clothes, shoes, and accessories.",
         "stock": 15,
@@ -5005,7 +5005,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Modern Pendant Light",
+        "name": "Modern Pendant Light",
         "price": 79.99,
         "description": "A sleek and stylish pendant light with a modern design.",
         "stock": 25,
@@ -5029,7 +5029,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Rustic Table Lamp",
+        "name": "Rustic Table Lamp",
         "price": 49.99,
         "description": "A charming and rustic table lamp perfect for a cozy atmosphere.",
         "stock": 12,
@@ -5057,7 +5057,7 @@ const productsData = [
         ]
     },
     {
-        "title": "LED Floor Lamp",
+        "name": "LED Floor Lamp",
         "price": 119.99,
         "description": "A contemporary LED floor lamp that provides bright and energy-efficient lighting.",
         "stock": 8,
@@ -5079,7 +5079,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Globe Pendant Light",
+        "name": "Globe Pendant Light",
         "price": 69.99,
         "description": "A stylish and versatile globe pendant light that complements any decor.",
         "stock": 18,
@@ -5099,7 +5099,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Crystal Chandelier",
+        "name": "Crystal Chandelier",
         "price": 299.99,
         "description": "An elegant and glamorous crystal chandelier that adds a touch of luxury to any space.",
         "stock": 5,
@@ -5122,7 +5122,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Industrial Wall Sconce",
+        "name": "Industrial Wall Sconce",
         "price": 59.99,
         "description": "A rugged and industrial-style wall sconce with a vintage look.",
         "stock": 20,
@@ -5140,7 +5140,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Tide Laundry Detergent",
+        "name": "Tide Laundry Detergent",
         "price": 15.99,
         "description": "Powerful stain-fighting laundry detergent.",
         "stock": 100,
@@ -5160,7 +5160,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Swiffer WetJet Mop",
+        "name": "Swiffer WetJet Mop",
         "price": 29.99,
         "description": "Multipurpose mop for cleaning floors.",
         "stock": 50,
@@ -5182,7 +5182,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Lysol Disinfectant Spray",
+        "name": "Lysol Disinfectant Spray",
         "price": 7.99,
         "description": "Kills 99.9% of viruses and bacteria.",
         "stock": 150,
@@ -5206,7 +5206,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Clorox Bleach",
+        "name": "Clorox Bleach",
         "price": 4.99,
         "description": "Powerful bleach for cleaning and whitening clothes.",
         "stock": 200,
@@ -5230,7 +5230,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Dawn Dish Soap",
+        "name": "Dawn Dish Soap",
         "price": 2.99,
         "description": "Effective dish soap for cleaning dishes and surfaces.",
         "stock": 300,
@@ -5254,7 +5254,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Bounce Fabric Softener Sheets",
+        "name": "Bounce Fabric Softener Sheets",
         "price": 8.99,
         "description": "Helps reduce static cling and wrinkles.",
         "stock": 100,
@@ -5283,7 +5283,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Striped Button-Up Shirt",
+        "name": "Striped Button-Up Shirt",
         "price": 39.99,
         "description": "Classic striped button-up shirt with collar and long sleeves.",
         "stock": 50,
@@ -5307,7 +5307,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Slim Fit Oxford Shirt",
+        "name": "Slim Fit Oxford Shirt",
         "price": 49.99,
         "description": "Modern slim fit Oxford shirt with button-down collar and short sleeves.",
         "stock": 25,
@@ -5327,7 +5327,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Classic Polo Shirt",
+        "name": "Classic Polo Shirt",
         "price": 29.99,
         "description": "Comfortable and timeless classic polo shirt with short sleeves and collar.",
         "stock": 75,
@@ -5349,7 +5349,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Checked Flannel Shirt",
+        "name": "Checked Flannel Shirt",
         "price": 44.99,
         "description": "Warm and cozy flannel shirt with classic checked pattern and long sleeves.",
         "stock": 40,
@@ -5373,7 +5373,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Denim Shirt",
+        "name": "Denim Shirt",
         "price": 59.99,
         "description": "Stylish denim shirt with button-up front and long sleeves.",
         "stock": 30,
@@ -5393,7 +5393,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Classic White Shirt",
+        "name": "Classic White Shirt",
         "price": 59.99,
         "description": "A timeless white shirt that can be worn on any occasion.",
         "stock": 20,
@@ -5411,7 +5411,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Slim Fit Blue Shirt",
+        "name": "Slim Fit Blue Shirt",
         "price": 49.99,
         "description": "A stylish blue shirt with a slim fit.",
         "stock": 15,
@@ -5435,7 +5435,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Plaid Flannel Shirt",
+        "name": "Plaid Flannel Shirt",
         "price": 69.99,
         "description": "A warm and comfortable plaid flannel shirt.",
         "stock": 10,
@@ -5463,7 +5463,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Button-Down Oxford Shirt",
+        "name": "Button-Down Oxford Shirt",
         "price": 79.99,
         "description": "A sophisticated button-down Oxford shirt.",
         "stock": 25,
@@ -5487,7 +5487,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Striped Linen Shirt",
+        "name": "Striped Linen Shirt",
         "price": 89.99,
         "description": "A lightweight and breathable striped linen shirt.",
         "stock": 12,
@@ -5513,7 +5513,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Slim Fit Chinos",
+        "name": "Slim Fit Chinos",
         "price": 59.99,
         "description": "Cotton chinos in a slim fit design",
         "stock": 20,
@@ -5537,7 +5537,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Denim Shorts",
+        "name": "Denim Shorts",
         "price": 34.99,
         "description": "Classic denim shorts with a vintage look",
         "stock": 12,
@@ -5562,7 +5562,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sport Joggers",
+        "name": "Sport Joggers",
         "price": 49.99,
         "description": "Comfortable sport joggers made of moisture-wicking fabric",
         "stock": 15,
@@ -5586,7 +5586,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cargo Pants",
+        "name": "Cargo Pants",
         "price": 79.99,
         "description": "Durable cargo pants with multiple pockets",
         "stock": 10,
@@ -5612,7 +5612,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Stretch Leggings",
+        "name": "Stretch Leggings",
         "price": 29.99,
         "description": "Stretchy and breathable leggings for everyday wear",
         "stock": 18,
@@ -5639,7 +5639,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Dress Shoes",
+        "name": "Leather Dress Shoes",
         "price": 89.99,
         "description": "A pair of elegant leather dress shoes for men.",
         "stock": 10,
@@ -5669,7 +5669,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Canvas Sneakers",
+        "name": "Canvas Sneakers",
         "price": 39.99,
         "description": "Comfortable and stylish canvas sneakers for men.",
         "stock": 20,
@@ -5699,7 +5699,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hiking Boots",
+        "name": "Hiking Boots",
         "price": 129.99,
         "description": "Sturdy and durable hiking boots for men.",
         "stock": 8,
@@ -5720,7 +5720,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Athletic Running Shoes",
+        "name": "Athletic Running Shoes",
         "price": 79.99,
         "description": "Lightweight and comfortable running shoes for men.",
         "stock": 15,
@@ -5742,7 +5742,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Boots",
+        "name": "Leather Boots",
         "price": 149.99,
         "description": "Classy and stylish leather boots for men.",
         "stock": 6,
@@ -5770,7 +5770,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Classic Baseball Cap",
+        "name": "Classic Baseball Cap",
         "price": 29.99,
         "description": "A timeless classic, this baseball cap is perfect for any casual outfit.",
         "stock": 50,
@@ -5792,7 +5792,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wool Beanie",
+        "name": "Wool Beanie",
         "price": 19.99,
         "description": "Stay warm and stylish with this classic wool beanie.",
         "stock": 20,
@@ -5820,7 +5820,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Trucker Hat",
+        "name": "Trucker Hat",
         "price": 24.99,
         "description": "Get ready for a day out with this stylish trucker hat.",
         "stock": 30,
@@ -5844,7 +5844,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fedora Hat",
+        "name": "Fedora Hat",
         "price": 39.99,
         "description": "Make a statement with this classic fedora hat.",
         "stock": 15,
@@ -5870,7 +5870,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Flat Cap",
+        "name": "Flat Cap",
         "price": 29.99,
         "description": "Add a touch of sophistication to your outfit with this stylish flat cap.",
         "stock": 25,
@@ -5896,7 +5896,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Slim Fit Navy Blue Suit",
+        "name": "Slim Fit Navy Blue Suit",
         "price": 299,
         "description": "This slim fit navy blue suit is perfect for any formal occasion.",
         "stock": 20,
@@ -5920,7 +5920,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Charcoal Gray Double-Breasted Suit",
+        "name": "Charcoal Gray Double-Breasted Suit",
         "price": 399,
         "description": "This charcoal gray double-breasted suit is a classic addition to any wardrobe.",
         "stock": 15,
@@ -5948,7 +5948,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Slim Fit Black Suit",
+        "name": "Slim Fit Black Suit",
         "price": 299,
         "description": "This slim fit black suit is perfect for any formal occasion.",
         "stock": 25,
@@ -5972,7 +5972,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Gray Pinstripe Suit",
+        "name": "Gray Pinstripe Suit",
         "price": 349,
         "description": "This gray pinstripe suit is a sophisticated choice for any occasion.",
         "stock": 10,
@@ -5997,7 +5997,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Classic Fit Dark Blue Suit",
+        "name": "Classic Fit Dark Blue Suit",
         "price": 399,
         "description": "This classic fit dark blue suit is perfect for any formal occasion.",
         "stock": 30,
@@ -6018,7 +6018,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Dark Wash Skinny Jeans",
+        "name": "Dark Wash Skinny Jeans",
         "price": 59.99,
         "description": "These skinny jeans are made from high-quality denim with a dark wash finish. They have a slim fit and a stylish, on-trend look.",
         "stock": 20,
@@ -6047,7 +6047,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Distressed Straight Leg Jeans",
+        "name": "Distressed Straight Leg Jeans",
         "price": 49.99,
         "description": "These straight leg jeans feature distressed details for a rugged, casual look. They are made from soft, comfortable denim and have a relaxed fit.",
         "stock": 15,
@@ -6070,7 +6070,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Light Wash Bootcut Jeans",
+        "name": "Light Wash Bootcut Jeans",
         "price": 69.99,
         "description": "These bootcut jeans have a light wash finish and a comfortable fit. They are perfect for casual wear and can be dressed up or down depending on the occasion.",
         "stock": 10,
@@ -6092,7 +6092,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Slim Fit Jeans",
+        "name": "Slim Fit Jeans",
         "price": 79.99,
         "description": "These slim fit jeans have a sleek, modern look and are made from high-quality denim. They have a comfortable fit and are perfect for both casual and dressy occasions.",
         "stock": 25,
@@ -6112,7 +6112,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Black Skinny Jeans",
+        "name": "Black Skinny Jeans",
         "price": 54.99,
         "description": "These black skinny jeans have a clean, modern look and are made from stretchy, comfortable denim. They are perfect for both casual and dressy occasions.",
         "stock": 12,
@@ -6135,7 +6135,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Merino Wool Turtleneck Sweater",
+        "name": "Merino Wool Turtleneck Sweater",
         "price": 99.99,
         "description": "Stay warm and stylish in this luxurious merino wool turtleneck sweater.",
         "stock": 10,
@@ -6158,7 +6158,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cable Knit Crewneck Sweater",
+        "name": "Cable Knit Crewneck Sweater",
         "price": 79.99,
         "description": "This classic cable knit crewneck sweater is a versatile addition to any wardrobe.",
         "stock": 15,
@@ -6187,7 +6187,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Cashmere V-Neck Sweater",
+        "name": "Cashmere V-Neck Sweater",
         "price": 199.99,
         "description": "Indulge in the luxury of cashmere with this soft and comfortable V-neck sweater.",
         "stock": 5,
@@ -6212,7 +6212,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Chunky Knit Cardigan",
+        "name": "Chunky Knit Cardigan",
         "price": 89.99,
         "description": "Wrap yourself in cozy warmth with this chunky knit cardigan.",
         "stock": 8,
@@ -6233,7 +6233,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Wool Blend Zip-Up Sweater",
+        "name": "Wool Blend Zip-Up Sweater",
         "price": 119.99,
         "description": "Stay comfortable and stylish in this wool blend zip-up sweater with a modern fit.",
         "stock": 12,
@@ -6259,7 +6259,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Quilted Bomber Jacket",
+        "name": "Quilted Bomber Jacket",
         "price": 89.99,
         "description": "Stay warm and stylish with our Quilted Bomber Jacket. Features a sleek, modern design with a comfortable fit.",
         "stock": 20,
@@ -6284,7 +6284,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Leather Biker Jacket",
+        "name": "Leather Biker Jacket",
         "price": 179.99,
         "description": "Get that classic biker look with our Leather Biker Jacket. Made from high-quality leather for a durable, long-lasting fit.",
         "stock": 10,
@@ -6310,7 +6310,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hooded Parka",
+        "name": "Hooded Parka",
         "price": 129.99,
         "description": "Stay dry in any weather with our Hooded Parka. Made from water-resistant material and featuring a cozy hood for added protection.",
         "stock": 15,
@@ -6336,7 +6336,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Denim Trucker Jacket",
+        "name": "Denim Trucker Jacket",
         "price": 69.99,
         "description": "The perfect jacket for a casual day out. Made from high-quality denim and featuring a classic Trucker design.",
         "stock": 25,
@@ -6362,7 +6362,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Puffer Jacket",
+        "name": "Puffer Jacket",
         "price": 99.99,
         "description": "Stay warm and cozy with our Puffer Jacket. Made from high-quality materials and featuring a modern design.",
         "stock": 18,
@@ -6389,7 +6389,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Solid Color Oxford Dress Shirt",
+        "name": "Solid Color Oxford Dress Shirt",
         "price": 49.99,
         "description": "Classic dress shirt made from high-quality oxford fabric. Available in multiple colors.",
         "stock": 25,
@@ -6412,7 +6412,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Striped Dress Shirt with Contrast Collar",
+        "name": "Striped Dress Shirt with Contrast Collar",
         "price": 59.99,
         "description": "Elegant striped dress shirt with a contrasting collar. Perfect for formal occasions.",
         "stock": 20,
@@ -6435,7 +6435,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Slim-Fit Wrinkle-Resistant Dress Shirt",
+        "name": "Slim-Fit Wrinkle-Resistant Dress Shirt",
         "price": 39.99,
         "description": "Sophisticated dress shirt made from wrinkle-resistant fabric. Features a slim-fit design.",
         "stock": 35,
@@ -6459,7 +6459,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Checkered Dress Shirt with French Cuffs",
+        "name": "Checkered Dress Shirt with French Cuffs",
         "price": 69.99,
         "description": "Stylish checkered dress shirt with French cuffs. Made from premium cotton.",
         "stock": 15,
@@ -6488,7 +6488,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Classic White Dress Shirt",
+        "name": "Classic White Dress Shirt",
         "price": 44.99,
         "description": "Timeless white dress shirt made from high-quality cotton. A must-have in any wardrobe.",
         "stock": 30,
@@ -6512,7 +6512,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Classic Men's Hoodie",
+        "name": "Classic Men's Hoodie",
         "price": 49.99,
         "description": "Stay warm and comfortable with our classic men's hoodie.",
         "stock": 25,
@@ -6534,7 +6534,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Sports Men's Hoodie",
+        "name": "Sports Men's Hoodie",
         "price": 59.99,
         "description": "Ideal for sports and outdoor activities, our men's sports hoodie will keep you warm and comfortable.",
         "stock": 18,
@@ -6562,7 +6562,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Zip-Up Men's Hoodie",
+        "name": "Zip-Up Men's Hoodie",
         "price": 69.99,
         "description": "Our men's zip-up hoodie is perfect for casual wear and features a sleek design.",
         "stock": 12,
@@ -6588,7 +6588,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Pullover Men's Hoodie",
+        "name": "Pullover Men's Hoodie",
         "price": 79.99,
         "description": "Stay cozy and stylish with our pullover men's hoodie, made with high-quality materials.",
         "stock": 8,
@@ -6617,7 +6617,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fashionable Men's Hoodie",
+        "name": "Fashionable Men's Hoodie",
         "price": 89.99,
         "description": "Make a statement with our fashionable men's hoodie, designed to keep you comfortable and stylish.",
         "stock": 4,
@@ -6638,7 +6638,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Men's Running Shoes",
+        "name": "Men's Running Shoes",
         "price": 89.99,
         "description": "Lightweight and breathable, these running shoes are perfect for both casual jogs and intense training sessions.",
         "stock": 100,
@@ -6660,7 +6660,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Women's Yoga Pants",
+        "name": "Women's Yoga Pants",
         "price": 59.99,
         "description": "Made from a stretchy and moisture-wicking material, these yoga pants will keep you comfortable and dry during even the most strenuous workouts.",
         "stock": 75,
@@ -6684,7 +6684,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Men's Compression Shorts",
+        "name": "Men's Compression Shorts",
         "price": 39.99,
         "description": "Designed to provide support and reduce muscle fatigue, these compression shorts are a must-have for any serious athlete.",
         "stock": 50,
@@ -6704,7 +6704,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Women's Sports Bra",
+        "name": "Women's Sports Bra",
         "price": 29.99,
         "description": "This high-impact sports bra offers maximum support and comfort, making it perfect for intense workouts and sports.",
         "stock": 65,
@@ -6730,7 +6730,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Men's Athletic Shorts",
+        "name": "Men's Athletic Shorts",
         "price": 49.99,
         "description": "Whether you're hitting the gym or the basketball court, these athletic shorts will keep you cool and comfortable.",
         "stock": 80,
@@ -6753,7 +6753,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Resistance Bands Set",
+        "name": "Resistance Bands Set",
         "price": 29.99,
         "description": "This set of 5 resistance bands with different levels of resistance is perfect for adding variety and challenge to your home workouts.",
         "stock": 80,
@@ -6775,7 +6775,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Running Belt",
+        "name": "Running Belt",
         "price": 19.99,
         "description": "This adjustable running belt is perfect for holding your phone, keys, and other small items while you run.",
         "stock": 100,
@@ -6800,7 +6800,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Foam Roller",
+        "name": "Foam Roller",
         "price": 34.99,
         "description": "This high-density foam roller is perfect for massaging sore muscles and aiding in post-workout recovery.",
         "stock": 60,
@@ -6824,7 +6824,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Water Bottle",
+        "name": "Water Bottle",
         "price": 12.99,
         "description": "This durable and leak-proof water bottle is perfect for staying hydrated during your workouts.",
         "stock": 120,
@@ -6850,7 +6850,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Yoga Mat",
+        "name": "Yoga Mat",
         "price": 49.99,
         "description": "This high-quality yoga mat is made from a non-slip material that provides excellent grip and cushioning for your yoga practice.",
         "stock": 40,
@@ -6876,7 +6876,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Adjustable Dumbbell Set",
+        "name": "Adjustable Dumbbell Set",
         "price": 199.99,
         "description": "This set of adjustable dumbbells is perfect for home workouts, with a weight range of 5 to 25 pounds per dumbbell.",
         "stock": 30,
@@ -6901,7 +6901,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Compression Socks",
+        "name": "Compression Socks",
         "price": 24.99,
         "description": "These compression socks are designed to improve blood flow, reduce muscle soreness, and aid in post-workout recovery.",
         "stock": 80,
@@ -6930,7 +6930,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fitness Tracker",
+        "name": "Fitness Tracker",
         "price": 79.99,
         "description": "This fitness tracker tracks your steps, heart rate, and calories burned, and comes with a companion app for tracking your progress over time.",
         "stock": 50,
@@ -6953,7 +6953,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Jump Rope",
+        "name": "Jump Rope",
         "price": 14.99,
         "description": "This high-quality jump rope is perfect for adding cardio to your workouts, with adjustable length and comfortable handles.",
         "stock": 100,
@@ -6978,7 +6978,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Resistance Band Handles",
+        "name": "Resistance Band Handles",
         "price": 14.99,
         "description": "These resistance band handles are perfect for adding versatility and comfort to your resistance band workouts.",
         "stock": 70,
@@ -7004,7 +7004,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Basketball",
+        "name": "Basketball",
         "price": 29.99,
         "description": "This official-size basketball is perfect for competitive play or casual pickup games.",
         "stock": 20,
@@ -7028,7 +7028,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Soccer Ball",
+        "name": "Soccer Ball",
         "price": 24.99,
         "description": "This high-quality soccer ball is great for recreational play or practice, with a durable construction and responsive feel.",
         "stock": 30,
@@ -7048,7 +7048,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Football Helmet",
+        "name": "Football Helmet",
         "price": 79.99,
         "description": "Stay safe on the field with this high-quality football helmet, featuring a durable construction and comfortable fit.",
         "stock": 8,
@@ -7072,7 +7072,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Volleyball",
+        "name": "Volleyball",
         "price": 19.99,
         "description": "This high-quality volleyball is perfect for beach or indoor play, with a soft-touch cover and responsive feel.",
         "stock": 25,
@@ -7100,7 +7100,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hiking Boots",
+        "name": "Hiking Boots",
         "price": 89.99,
         "description": "These rugged hiking boots are perfect for any terrain, with a waterproof design and durable construction.",
         "stock": 12,
@@ -7125,7 +7125,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Camping Tent",
+        "name": "Camping Tent",
         "price": 149.99,
         "description": "Stay dry and comfortable on your next camping trip with this spacious and weather-resistant tent.",
         "stock": 5,
@@ -7154,7 +7154,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fishing Rod",
+        "name": "Fishing Rod",
         "price": 69.99,
         "description": "This high-quality fishing rod is perfect for any angler, with a lightweight design and responsive feel.",
         "stock": 7,
@@ -7174,7 +7174,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Kayak",
+        "name": "Kayak",
         "price": 399.99,
         "description": "Explore the great outdoors on the water with this versatile and durable kayak, perfect for any skill level.",
         "stock": 3,
@@ -7201,7 +7201,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Mountain Bike",
+        "name": "Mountain Bike",
         "price": 599.99,
         "description": "Hit the trails with confidence on this high-performance mountain bike, featuring a lightweight frame and responsive suspension.",
         "stock": 4,
@@ -7231,7 +7231,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Adjustable Dumbbell Set",
+        "name": "Adjustable Dumbbell Set",
         "price": 149.99,
         "description": "This set includes two adjustable dumbbells that can be easily customized to your desired weight. Perfect for home workouts.",
         "stock": 50,
@@ -7259,7 +7259,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Ab Roller Wheel",
+        "name": "Ab Roller Wheel",
         "price": 19.99,
         "description": "This ab roller wheel helps you strengthen your core and improve your balance. Compact and easy to store.",
         "stock": 100,
@@ -7284,7 +7284,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Resistance Band Set",
+        "name": "Resistance Band Set",
         "price": 29.99,
         "description": "This set includes five different resistance bands with varying levels of resistance. Perfect for toning and strengthening.",
         "stock": 75,
@@ -7310,7 +7310,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Adjustable Weight Bench",
+        "name": "Adjustable Weight Bench",
         "price": 199.99,
         "description": "This weight bench can be adjusted to different angles for a variety of workouts. Sturdy and comfortable.",
         "stock": 25,
@@ -7339,7 +7339,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Foam Roller",
+        "name": "Foam Roller",
         "price": 24.99,
         "description": "This foam roller can help relieve muscle tension and improve flexibility. Perfect for post-workout recovery.",
         "stock": 60,
@@ -7361,7 +7361,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Indoor Bike Trainer",
+        "name": "Indoor Bike Trainer",
         "price": 299.99,
         "description": "Bike trainer that allows you to turn your regular bike into an indoor exercise bike, with adjustable resistance levels.",
         "stock": 20,
@@ -7389,7 +7389,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Carbon Fiber Road Bike",
+        "name": "Carbon Fiber Road Bike",
         "price": 1899.99,
         "description": "Experience the speed and comfort of our top-of-the-line road bike, designed with a carbon fiber frame and Shimano Ultegra components.",
         "stock": 10,
@@ -7416,7 +7416,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Electric Mountain Bike",
+        "name": "Electric Mountain Bike",
         "price": 2499.99,
         "description": "Conquer any trail with ease on our electric mountain bike, featuring a powerful motor and high-performance suspension.",
         "stock": 5,
@@ -7440,7 +7440,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Beach Cruiser Bike",
+        "name": "Beach Cruiser Bike",
         "price": 599.99,
         "description": "Take a leisurely ride along the beach on our classic beach cruiser bike, complete with a comfortable seat and retro styling.",
         "stock": 20,
@@ -7458,7 +7458,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "BMX Bike",
+        "name": "BMX Bike",
         "price": 399.99,
         "description": "Get ready to hit the skate park with our high-performance BMX bike, featuring a lightweight frame and trick-ready components.",
         "stock": 15,
@@ -7480,7 +7480,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Folding Bike",
+        "name": "Folding Bike",
         "price": 799.99,
         "description": "Easily store and transport our folding bike, which collapses down to a compact size and is perfect for commuters and travelers.",
         "stock": 7,
@@ -7504,7 +7504,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Electric Commuter Scooter",
+        "name": "Electric Commuter Scooter",
         "price": 349.99,
         "description": "A lightweight and portable electric scooter perfect for daily commuting.",
         "stock": 50,
@@ -7524,7 +7524,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Foldable Kids' Scooter",
+        "name": "Foldable Kids' Scooter",
         "price": 59.99,
         "description": "A fun and colorful kids' scooter with a lightweight and foldable design.",
         "stock": 100,
@@ -7547,7 +7547,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Off-Road Electric Scooter",
+        "name": "Off-Road Electric Scooter",
         "price": 799.99,
         "description": "A powerful and rugged electric scooter designed for off-road adventures.",
         "stock": 25,
@@ -7569,7 +7569,7 @@ const productsData = [
         ]
     },
     {
-        "title": "3-Wheel Mobility Scooter",
+        "name": "3-Wheel Mobility Scooter",
         "price": 1599.99,
         "description": "A stable and comfortable mobility scooter with a 3-wheel design and adjustable seat.",
         "stock": 10,
@@ -7595,7 +7595,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Stunt Scooter",
+        "name": "Stunt Scooter",
         "price": 129.99,
         "description": "A lightweight and durable stunt scooter designed for performing tricks and stunts.",
         "stock": 20,
@@ -7615,7 +7615,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Xiaomi Mi Electric Scooter",
+        "name": "Xiaomi Mi Electric Scooter",
         "price": 349.99,
         "description": "The Xiaomi Mi Electric Scooter is a reliable and affordable electric scooter that can reach speeds of up to 15.5mph.",
         "stock": 20,
@@ -7645,7 +7645,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Surfboard - Pro Level",
+        "name": "Surfboard - Pro Level",
         "price": 850.99,
         "description": "Top-of-the-line surfboard designed for professional surfers",
         "stock": 10,
@@ -7668,7 +7668,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Kayak - Two Person",
+        "name": "Kayak - Two Person",
         "price": 550,
         "description": "Double seated kayak, perfect for two-person paddling trips",
         "stock": 15,
@@ -7688,7 +7688,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wakeboard - Intermediate Level",
+        "name": "Wakeboard - Intermediate Level",
         "price": 199.99,
         "description": "Ideal wakeboard for intermediate-level wakeboarders, with comfortable bindings",
         "stock": 20,
@@ -7713,7 +7713,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Stand-up Paddleboard",
+        "name": "Stand-up Paddleboard",
         "price": 699.5,
         "description": "High-quality paddleboard designed for stand-up paddling",
         "stock": 8,
@@ -7737,7 +7737,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Snorkel Set - Adult",
+        "name": "Snorkel Set - Adult",
         "price": 59.99,
         "description": "Complete snorkeling set with a mask, snorkel, and fins for adults",
         "stock": 25,
@@ -7763,7 +7763,7 @@ const productsData = [
         ]
     },
     {
-        "title": "TaylorMade SIM2 Max Driver",
+        "name": "TaylorMade SIM2 Max Driver",
         "price": 529.99,
         "description": "The TaylorMade SIM2 Max Driver features advanced materials and technologies to maximize distance and forgiveness off the tee.",
         "stock": 10,
@@ -7789,7 +7789,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Titleist Pro V1 Golf Balls",
+        "name": "Titleist Pro V1 Golf Balls",
         "price": 47.99,
         "description": "The Titleist Pro V1 Golf Balls provide exceptional distance, consistent flight, and incredible short game control.",
         "stock": 20,
@@ -7814,7 +7814,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Callaway Apex Pro Irons",
+        "name": "Callaway Apex Pro Irons",
         "price": 1299.99,
         "description": "The Callaway Apex Pro Irons offer premium craftsmanship and performance for the serious golfer.",
         "stock": 5,
@@ -7834,7 +7834,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "FootJoy Pro SL Golf Shoes",
+        "name": "FootJoy Pro SL Golf Shoes",
         "price": 179.99,
         "description": "The FootJoy Pro SL Golf Shoes provide excellent comfort, stability, and traction on the course.",
         "stock": 15,
@@ -7863,7 +7863,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Scotty Cameron Special Select Putter",
+        "name": "Scotty Cameron Special Select Putter",
         "price": 399.99,
         "description": "The Scotty Cameron Special Select Putter offers a classic look and modern performance for the discerning golfer.",
         "stock": 7,
@@ -7890,7 +7890,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Salomon QST 106 Skis",
+        "name": "Salomon QST 106 Skis",
         "price": 749.99,
         "description": "The Salomon QST 106 Skis are designed for advanced skiers who demand performance and versatility on any terrain.",
         "stock": 5,
@@ -7912,7 +7912,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Burton Custom Snowboard",
+        "name": "Burton Custom Snowboard",
         "price": 599.99,
         "description": "The Burton Custom Snowboard offers a classic all-mountain ride with updated technology and a responsive flex pattern.",
         "stock": 8,
@@ -7936,7 +7936,7 @@ const productsData = [
         ]
     },
     {
-        "title": "K2 Mindbender 120 Ski Boots",
+        "name": "K2 Mindbender 120 Ski Boots",
         "price": 699.99,
         "description": "The K2 Mindbender 120 Ski Boots provide unmatched performance and comfort for aggressive skiers seeking a precise, responsive fit.",
         "stock": 4,
@@ -7962,7 +7962,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Oakley Flight Deck Snow Goggles",
+        "name": "Oakley Flight Deck Snow Goggles",
         "price": 199.99,
         "description": "The Oakley Flight Deck Snow Goggles offer unrivaled clarity and protection with a wide field of view and helmet-compatible design.",
         "stock": 15,
@@ -7986,7 +7986,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Hestra Army Leather Heli Ski Gloves",
+        "name": "Hestra Army Leather Heli Ski Gloves",
         "price": 179.99,
         "description": "The Hestra Army Leather Heli Ski Gloves offer exceptional warmth and durability with a waterproof, breathable construction and reinforced palm.",
         "stock": 12,
@@ -8014,7 +8014,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Dell Inspiron 15",
+        "name": "Dell Inspiron 15",
         "price": 999.99,
         "description": "The Dell Inspiron 15 is a powerful and reliable laptop that is perfect for both work and play.",
         "stock": 50,
@@ -8042,7 +8042,7 @@ const productsData = [
         ]
     },
     {
-        "title": "HP Pavilion 14",
+        "name": "HP Pavilion 14",
         "price": 799.99,
         "description": "The HP Pavilion 14 is a slim and stylish laptop that is great for everyday use.",
         "stock": 100,
@@ -8064,7 +8064,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Apple MacBook Pro",
+        "name": "Apple MacBook Pro",
         "price": 1499.99,
         "description": "The Apple MacBook Pro is a high-end laptop that is perfect for professionals who need a powerful and reliable computer.",
         "stock": 20,
@@ -8084,7 +8084,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Acer Aspire 5",
+        "name": "Acer Aspire 5",
         "price": 699.99,
         "description": "The Acer Aspire 5 is an affordable and reliable laptop that is perfect for students and casual users.",
         "stock": 200,
@@ -8104,7 +8104,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Lenovo IdeaPad 3",
+        "name": "Lenovo IdeaPad 3",
         "price": 599.99,
         "description": "The Lenovo IdeaPad 3 is a budget-friendly laptop that is perfect for basic computing tasks.",
         "stock": 300,
@@ -8126,7 +8126,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Apple iPhone 13 Pro Max",
+        "name": "Apple iPhone 13 Pro Max",
         "price": 1299.99,
         "description": "The iPhone 13 Pro Max is the latest flagship smartphone from Apple, featuring a stunning 6.7-inch Super Retina XDR display and a powerful A15 Bionic chip.",
         "stock": 100,
@@ -8156,7 +8156,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Samsung Galaxy S21 Ultra",
+        "name": "Samsung Galaxy S21 Ultra",
         "price": 1199.99,
         "description": "The Samsung Galaxy S21 Ultra is a premium Android smartphone with a stunning 6.8-inch Dynamic AMOLED display and a powerful Exynos 2100 processor.",
         "stock": 50,
@@ -8176,7 +8176,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Google Pixel 6 Pro",
+        "name": "Google Pixel 6 Pro",
         "price": 1099.99,
         "description": "The Google Pixel 6 Pro is a high-end Android smartphone with a beautiful 6.7-inch OLED display and the latest Google Tensor processor.",
         "stock": 25,
@@ -8202,7 +8202,7 @@ const productsData = [
         ]
     },
     {
-        "title": "OnePlus 9 Pro",
+        "name": "OnePlus 9 Pro",
         "price": 999.99,
         "description": "The OnePlus 9 Pro is a premium Android smartphone with a 6.7-inch Fluid AMOLED display and a Snapdragon 888 processor.",
         "stock": 75,
@@ -8228,7 +8228,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Apple iPhone SE (2020)",
+        "name": "Apple iPhone SE (2020)",
         "price": 399.99,
         "description": "The iPhone SE (2020) is a budget-friendly iPhone with a 4.7-inch Retina display and the A13 Bionic chip.",
         "stock": 200,
@@ -8250,7 +8250,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Xiaomi Mi 11",
+        "name": "Xiaomi Mi 11",
         "price": 799.99,
         "description": "The Xiaomi Mi 11 is a flagship Android smartphone with a 6.81-inch AMOLED display and a Snapdragon 888 processor.",
         "stock": 100,
@@ -8268,7 +8268,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Sony Xperia 1 III",
+        "name": "Sony Xperia 1 III",
         "price": 1299.99,
         "description": "The Sony Xperia 1 III is a high-end Android smartphone with a 6.5-inch 4K OLED display and a Snapdragon 888 processor.",
         "stock": 50,
@@ -8292,7 +8292,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Apple iPhone 12 mini",
+        "name": "Apple iPhone 12 mini",
         "price": 699.99,
         "description": "The iPhone 12 mini is a compact iPhone with a 5.4-inch Super Retina XDR display and the A14 Bionic chip.",
         "stock": 150,
@@ -8316,7 +8316,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Samsung Galaxy Z Fold3 5G",
+        "name": "Samsung Galaxy Z Fold3 5G",
         "price": 1799.99,
         "description": "The Samsung Galaxy Z Fold3 5G is a foldable Android smartphone with a 7.6-inch Dynamic AMOLED display and a Snapdragon 888 processor.",
         "stock": 25,
@@ -8341,7 +8341,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Google Pixel 5a",
+        "name": "Google Pixel 5a",
         "price": 449.99,
         "description": "The Google Pixel 5a is a mid-range Android smartphone with a 6.34-inch OLED display and a Snapdragon 765G processor.",
         "stock": 100,
@@ -8365,7 +8365,7 @@ const productsData = [
         ]
     },
     {
-        "title": "HP Color LaserJet Pro MFP M283fdw",
+        "name": "HP Color LaserJet Pro MFP M283fdw",
         "price": 499.99,
         "description": "The HP Color LaserJet Pro MFP M283fdw is a multi-function color laser printer that can print, copy, scan, and fax.",
         "stock": 50,
@@ -8387,7 +8387,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Dell UltraSharp U2720Q",
+        "name": "Dell UltraSharp U2720Q",
         "price": 699.99,
         "description": "The Dell UltraSharp U2720Q is a 27-inch 4K monitor with a wide color gamut and USB-C connectivity.",
         "stock": 25,
@@ -8414,7 +8414,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Logitech MX Keys",
+        "name": "Logitech MX Keys",
         "price": 99.99,
         "description": "The Logitech MX Keys is a wireless keyboard with backlit keys and a comfortable typing experience.",
         "stock": 100,
@@ -8444,7 +8444,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fujitsu ScanSnap iX1600",
+        "name": "Fujitsu ScanSnap iX1600",
         "price": 449.99,
         "description": "The Fujitsu ScanSnap iX1600 is a high-speed document scanner with automatic document feeder and WiFi connectivity.",
         "stock": 20,
@@ -8471,7 +8471,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sony WH-1000XM4",
+        "name": "Sony WH-1000XM4",
         "price": 349.99,
         "description": "The Sony WH-1000XM4 is a noise-cancelling Bluetooth headphone with exceptional sound quality and comfort.",
         "stock": 50,
@@ -8491,7 +8491,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "PlayStation 5",
+        "name": "PlayStation 5",
         "price": 499.99,
         "description": "The PlayStation 5 is a next-generation gaming console with lightning-fast loading times and immersive 3D audio.",
         "stock": 20,
@@ -8517,7 +8517,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Xbox Series X",
+        "name": "Xbox Series X",
         "price": 499.99,
         "description": "The Xbox Series X is a powerful gaming console with support for 4K gaming and fast load times.",
         "stock": 25,
@@ -8543,7 +8543,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Nintendo Switch",
+        "name": "Nintendo Switch",
         "price": 299.99,
         "description": "The Nintendo Switch is a versatile gaming console that can be played on-the-go or on a TV.",
         "stock": 30,
@@ -8571,7 +8571,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Razer DeathAdder V2 Gaming Mouse",
+        "name": "Razer DeathAdder V2 Gaming Mouse",
         "price": 69.99,
         "description": "The Razer DeathAdder V2 Gaming Mouse is a high-precision mouse with customizable RGB lighting and programmable buttons.",
         "stock": 50,
@@ -8592,7 +8592,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "HyperX Cloud II Gaming Headset",
+        "name": "HyperX Cloud II Gaming Headset",
         "price": 99.99,
         "description": "The HyperX Cloud II Gaming Headset is a comfortable and immersive headset with 7.1 surround sound and noise-cancelling microphone.",
         "stock": 35,
@@ -8610,7 +8610,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Nintendo Switch Lite",
+        "name": "Nintendo Switch Lite",
         "price": 199.99,
         "description": "Handheld gaming system with built-in controllers, HD rumble, and amiibo support.",
         "stock": 100,
@@ -8634,7 +8634,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sony PSP",
+        "name": "Sony PSP",
         "price": 149.99,
         "description": "Portable gaming console with 4.3-inch LCD screen, Wi-Fi, and Bluetooth.",
         "stock": 50,
@@ -8655,7 +8655,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Nintendo 3DS XL",
+        "name": "Nintendo 3DS XL",
         "price": 179.99,
         "description": "Dual-screen handheld gaming system with glasses-free 3D display, StreetPass and SpotPass communication, and built-in software.",
         "stock": 75,
@@ -8683,7 +8683,7 @@ const productsData = [
         ]
     },
     {
-        "title": "PlayStation Vita",
+        "name": "PlayStation Vita",
         "price": 199.99,
         "description": "Handheld game console with front and rear cameras, Wi-Fi, and Bluetooth capabilities.",
         "stock": 60,
@@ -8709,7 +8709,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Nintendo Game & Watch: Super Mario Bros",
+        "name": "Nintendo Game & Watch: Super Mario Bros",
         "price": 49.99,
         "description": "Portable electronic game featuring Super Mario Bros, with a color LCD screen and modern features.",
         "stock": 30,
@@ -8734,7 +8734,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wireless Noise-Cancelling Headphones",
+        "name": "Wireless Noise-Cancelling Headphones",
         "price": 199.99,
         "description": "Experience immersive sound without any distractions with these wireless noise-cancelling headphones.",
         "stock": 100,
@@ -8757,7 +8757,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "4K Ultra HD Smart TV",
+        "name": "4K Ultra HD Smart TV",
         "price": 899.99,
         "description": "Get the ultimate viewing experience with this 4K Ultra HD Smart TV. With built-in apps and voice control, you can easily access your favorite content.",
         "stock": 50,
@@ -8784,7 +8784,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Bluetooth Soundbar",
+        "name": "Bluetooth Soundbar",
         "price": 149.99,
         "description": "Upgrade your home theater system with this Bluetooth soundbar. With high-quality sound and wireless connectivity, you can enjoy your favorite movies and shows like never before.",
         "stock": 200,
@@ -8812,7 +8812,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Portable Wireless Speaker",
+        "name": "Portable Wireless Speaker",
         "price": 79.99,
         "description": "Take your music anywhere with this portable wireless speaker. With a compact design and long battery life, you can enjoy your tunes on the go.",
         "stock": 300,
@@ -8837,7 +8837,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Wireless Video Doorbell",
+        "name": "Wireless Video Doorbell",
         "price": 199.99,
         "description": "Keep an eye on your home with this wireless video doorbell. With motion detection and two-way audio, you can see and speak to anyone at your doorstep from your smartphone.",
         "stock": 50,
@@ -8860,7 +8860,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Smartwatch X",
+        "name": "Smartwatch X",
         "price": 149.99,
         "description": "The Smartwatch X is a high-tech device that combines the best features of a fitness tracker and a smartwatch.",
         "stock": 100,
@@ -8883,7 +8883,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Fitness Tracker Y",
+        "name": "Fitness Tracker Y",
         "price": 79.99,
         "description": "The Fitness Tracker Y is the ultimate workout companion, with advanced features such as heart rate monitoring and GPS tracking.",
         "stock": 200,
@@ -8909,7 +8909,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Smart Glasses Z",
+        "name": "Smart Glasses Z",
         "price": 199.99,
         "description": "The Smart Glasses Z are the perfect combination of fashion and technology, with features such as voice commands and AR capabilities.",
         "stock": 50,
@@ -8936,7 +8936,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sleep Tracker W",
+        "name": "Sleep Tracker W",
         "price": 59.99,
         "description": "The Sleep Tracker W helps you get a better night's sleep by tracking your sleep patterns and providing personalized recommendations.",
         "stock": 150,
@@ -8960,7 +8960,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Smart Ring V",
+        "name": "Smart Ring V",
         "price": 129.99,
         "description": "The Smart Ring V is a stylish and discreet way to stay connected, with features such as message notifications and mobile payments.",
         "stock": 75,
@@ -8988,7 +8988,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Ergonomic VR Headset",
+        "name": "Ergonomic VR Headset",
         "price": 249.99,
         "description": "Experience virtual reality like never before with our ergonomic VR headset. Designed to fit comfortably on your head, it features high-quality lenses and an immersive audio system.",
         "stock": 50,
@@ -9018,7 +9018,7 @@ const productsData = [
         ]
     },
     {
-        "title": "VR Gaming Chair",
+        "name": "VR Gaming Chair",
         "price": 399.99,
         "description": "Get the ultimate gaming experience with our VR gaming chair. Equipped with built-in haptic feedback and motion tracking technology, it's the perfect addition to any VR setup.",
         "stock": 20,
@@ -9039,7 +9039,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Wireless VR Controllers",
+        "name": "Wireless VR Controllers",
         "price": 149.99,
         "description": "Take control of your virtual world with our wireless VR controllers. They feature precision sensors and ergonomic design for a seamless experience.",
         "stock": 100,
@@ -9067,7 +9067,7 @@ const productsData = [
         ]
     },
     {
-        "title": "VR Fitness Kit",
+        "name": "VR Fitness Kit",
         "price": 299.99,
         "description": "Get in shape while having fun with our VR fitness kit. It includes a VR headset, motion controllers, and a library of fitness games designed to get your heart pumping.",
         "stock": 30,
@@ -9092,7 +9092,7 @@ const productsData = [
         ]
     },
     {
-        "title": "VR Education Kit",
+        "name": "VR Education Kit",
         "price": 199.99,
         "description": "Bring learning to life with our VR education kit. It includes a VR headset and a library of educational experiences designed to make learning fun and engaging.",
         "stock": 25,
@@ -9114,7 +9114,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "Nikon D850 DSLR Camera",
+        "name": "Nikon D850 DSLR Camera",
         "price": 2999,
         "description": "This professional-level DSLR camera offers exceptional image quality, high-speed performance, and advanced features.",
         "stock": 10,
@@ -9141,7 +9141,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Canon EOS Rebel T8i DSLR Camera",
+        "name": "Canon EOS Rebel T8i DSLR Camera",
         "price": 799,
         "description": "With a 24.2 megapixel APS-C CMOS sensor and 45-point all cross-type AF system, this camera delivers stunning image quality and fast autofocus performance.",
         "stock": 20,
@@ -9164,7 +9164,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Fujifilm X-T4 Mirrorless Camera",
+        "name": "Fujifilm X-T4 Mirrorless Camera",
         "price": 1699,
         "description": "This mirrorless camera features a 26.1MP X-Trans CMOS 4 sensor, in-body image stabilization, and advanced video recording capabilities.",
         "stock": 15,
@@ -9192,7 +9192,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Sony Alpha a7 III Mirrorless Camera",
+        "name": "Sony Alpha a7 III Mirrorless Camera",
         "price": 1999,
         "description": "This mirrorless camera features a 24.2MP full-frame Exmor R BSI CMOS sensor and advanced autofocus system, delivering exceptional image quality and fast performance.",
         "stock": 8,
@@ -9215,7 +9215,7 @@ const productsData = [
         "sizes": []
     },
     {
-        "title": "GoPro HERO9 Black Action Camera",
+        "name": "GoPro HERO9 Black Action Camera",
         "price": 449,
         "description": "This action camera features a 23.6MP sensor and HyperSmooth 3.0 video stabilization, enabling you to capture smooth and steady footage in a variety of environments.",
         "stock": 30,
@@ -9238,7 +9238,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Stainless Steel Watch Band",
+        "name": "Stainless Steel Watch Band",
         "price": 25.99,
         "description": "This stainless steel watch band is compatible with Apple Watch Series 6, 5, 4, 3, 2, 1, SE. It is easy to install and has a stylish and durable design.",
         "stock": 100,
@@ -9261,7 +9261,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Laptop Cooling Pad",
+        "name": "Laptop Cooling Pad",
         "price": 39.99,
         "description": "This laptop cooling pad has 5 high-speed fans that keep your laptop cool and prevent overheating. It has adjustable height settings and a sleek design.",
         "stock": 50,
@@ -9286,7 +9286,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Phone Case with Card Holder",
+        "name": "Phone Case with Card Holder",
         "price": 19.99,
         "description": "This phone case is made of durable TPU and has a convenient card holder on the back. It fits iPhone X, XS, and 11 Pro.",
         "stock": 200,
@@ -9309,7 +9309,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Mechanical Keyboard Switches",
+        "name": "Mechanical Keyboard Switches",
         "price": 49.99,
         "description": "These mechanical keyboard switches have a tactile feel and a long lifespan. They are compatible with Cherry MX mechanical keyboards.",
         "stock": 75,
@@ -9334,7 +9334,7 @@ const productsData = [
         ]
     },
     {
-        "title": "Camera Tripod",
+        "name": "Camera Tripod",
         "price": 59.99,
         "description": "This camera tripod is made of lightweight aluminum and has adjustable height settings. It is compatible with most cameras and camcorders.",
         "stock": 30,

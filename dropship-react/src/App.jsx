@@ -8,6 +8,7 @@ import "./styles.scss" // Import Master css file
 import { useMobileWidthEffects } from "./helpers/MobileHelper/MobileHelper"
 import UseThemeEffects from "./helpers/ThemeHelper/ThemeHelper"
 import UserHelper from "./helpers/UserHelper/UserHelper"
+import { ACUser } from "./components/User/User"
 
 // COMPONENTS
 const Header = lazy(() => import("./components/Header/Header"))
@@ -48,19 +49,23 @@ function App() {
 
   return (
     <>
-      {role === "admin" ? (
+      {role === "Admin" ? (
         <main className="admin-dashboard">
           <BrowserRouter>
             <Suspense fallback={<></>}>
               <PageLoader></PageLoader>
+              {!showDropDown && <Notification></Notification>}
               <DashboardHeader></DashboardHeader>
               <AdminNav></AdminNav>
               <Routes>
                 <Route path="/" element={<AdminCategories />} />
                 <Route path="/sub" element={<AdminSub />} />
+                <Route path="/sub/:id" element={<AdminSub />} />
                 <Route path="/products" element={<AdminProducts />} />
                 <Route path="/orders" element={<AdminOrders />} />
                 <Route path="/users" element={<AdminUsers />} />
+                <Route path="/user" element={<ACUser />} />
+                <Route path="/settings" element={<UserSettings />} />
                 <Route
                   path="*"
                   element={
@@ -76,13 +81,16 @@ function App() {
             </Suspense>
           </BrowserRouter>
         </main>
-      ) : role === "courier" ? (
+      ) : role === "Courier" ? (
         <BrowserRouter>
           <Suspense fallback={<></>}>
             <PageLoader></PageLoader>
+            {!showDropDown && <Notification></Notification>}
             <DashboardHeader></DashboardHeader>
             <Routes>
               <Route path="/" element={<CourierDashboard />} />
+              <Route path="/user" element={<ACUser />} />
+              <Route path="/settings" element={<UserSettings />} />
               <Route
                 path="*"
                 element={
@@ -100,7 +108,7 @@ function App() {
       ) : (
         <BrowserRouter>
           <Suspense fallback={<></>}>
-            {/* <PageLoader></PageLoader> */}
+            <PageLoader></PageLoader>
             {!showDropDown && <Notification></Notification>}
             <ScrollToTop />
             <AccountDropDown />

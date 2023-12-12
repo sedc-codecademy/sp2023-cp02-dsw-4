@@ -55,7 +55,7 @@ function UserInfoForm({user, userInfo, handleInputEdit}) {
           <input
             name="phoneNumber"
             type="tel"
-            pattern="^[+0]\d+$"
+            pattern="^0\d+$"
             maxLength={14}
             minLength={9}
             inputMode="numeric"

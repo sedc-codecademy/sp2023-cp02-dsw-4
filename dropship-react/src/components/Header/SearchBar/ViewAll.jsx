@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 
 function ViewAll(props) {
     return (
         <li className='resultsViewAll'>
-            <Link>
+            <button onClick={props.handleClick}>
                 <p>
                     View All <span>({props.amount} more)</span>
                 </p>
-            </Link>
+            </button>
         </li>
     )
 }

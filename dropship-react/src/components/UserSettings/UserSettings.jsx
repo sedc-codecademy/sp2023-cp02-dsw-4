@@ -17,6 +17,7 @@ import {
 import { useLogout, useUpdateCard, useUpdateUser } from "../../helpers/UserHelper/UserHelper"
 
 import {
+  clearPasswordInfo,
   clearUser,
   updatePasswordInfo,
   updateUserInfo,
@@ -36,6 +37,7 @@ function UserSettings() {
   const logout = useLogout()
   const updateUser = useUpdateUser()
   const updateCard = useUpdateCard()
+  const role = useSelector((state) => state.role.role)
   const tokens = useSelector((state) => state.role.authTokens)
   const userid = useSelector(state => state.role.userid)
   const userCards = useSelector((state) => state.user.userCards)
@@ -151,7 +153,6 @@ function UserSettings() {
         return isInfoValid(cardInfoValidity, modifiedCard, keysToCheck)
       })
 
-      console.log(`All cards valid: ${allCardsValid}`) /////////////////////
       setUpdateCardsValid(allCardsValid)
     } else {
       setUpdateCardsValid(false)
@@ -236,7 +237,7 @@ function UserSettings() {
         dispatch(clearUser())
         break
       case "security":
-        console.log("pass info clear")
+        dispatch(clearPasswordInfo())
         break
       case "payment":
         dispatch(clearTempCards())
@@ -246,11 +247,10 @@ function UserSettings() {
     }
   }
 
-  const handleSubmitUserInfo = async () => {
+  const handleSubmitUserInfo = () => {
     let tempImage
     if (modifiedUser?.image?.base64) {
       const byteArray = new Uint8Array(atob(modifiedUser.image.base64).split("").map(char => char.charCodeAt(0)))
-      console.log(byteArray) ////////////
       tempImage = byteArray
     }
 
@@ -266,30 +266,31 @@ function UserSettings() {
       PostalCode: modifiedUser.postalCode || '',
       City: modifiedUser.city || '',
       Image: tempImage || '',
+      id: data.id
     }
-    await updateUser(tempUser)
+    updateUser(tempUser)
   }
 
   const handleSubmitUserCards = () => {
     const tempAsyncCards = modifiedCards.slice()
-    tempAsyncCards.forEach(async card => {
+    tempAsyncCards.forEach(card => {
       if (card.type || card.cardStatus || card.number || card.holder || card.cvc) {
         const tempCard = {
           Id: card.id,
-          CardType: card.type ? getCardTypeEnum(card.type) : '',
-          CardStatus: card.cardStatus ? getCardStatusEnum(card.cardStatus) : '',
-          CardNumber: card.number || '',
-          CardHolder: card.holder || '',
-          ExpirationDate: card.date || '',
-          SecurityCode: card.cvc || '',
+          CardType: card.type ? getCardTypeEnum(card.type) : null,
+          CardStatus: card.cardStatus ? getCardStatusEnum(card.cardStatus) : null,
+          CardNumber: card.number || null,
+          CardHolder: card.holder || null,
+          ExpirationDate: card.date || null,
+          SecurityCode: card.cvc || null,
           UserId: data.id,
         }
-        await updateCard(tempCard)
+        updateCard(tempCard)
       }
     })
   }
 
-  const handleSubmitUserPassword = async () => {
+  const handleSubmitUserPassword = () => {
     if (
       modifiedPassword &&
       modifiedPassword?.password !== data?.password &&
@@ -308,9 +309,10 @@ function UserSettings() {
         PostalCode: '',
         City: '',
         Image: '',
+        id: data.id
       }
 
-      await updateUser(tempUser)
+      updateUser(tempUser)
     }
   }
 
@@ -330,16 +332,16 @@ function UserSettings() {
     }
   }
 
-  const handleLogOutClick = async () => {
-    await logout()
+  const handleLogOutClick = () => {
+    logout()
   }
 
   const handleInputEdit = (e) => {
     dispatch(updateUserInfo({ name: e.target.name, value: e.target.value }))
   }
 
-  const handleInputImage = (name, value) => {
-    dispatch(updateUserInfo(name, value))
+  const handleInputImage = ({name, value}) => {
+    dispatch(updateUserInfo({name, value}))
   }
 
   const handlePasswordChange = (e) => {
@@ -386,20 +388,22 @@ function UserSettings() {
                 </svg>
               </button>
             </li>
-            <li>
-              <button
-                onClick={() => setCurrentPage("payment")}
-                disabled={currentPage === "payment"}
-              >
-                <h3>Cards and Payment</h3>
-                <svg viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M21 8V6H7v2h14m0 8v-5H7v5h14m0-12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2h14M3 20h15v2H3a2 2 0 0 1-2-2V9h2v11Z"
-                  />
-                </svg>
-              </button>
-            </li>
+            {role === 'User' &&
+              <li>
+                <button
+                  onClick={() => setCurrentPage("payment")}
+                  disabled={currentPage === "payment"}
+                >
+                  <h3>Cards and Payment</h3>
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M21 8V6H7v2h14m0 8v-5H7v5h14m0-12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2h14M3 20h15v2H3a2 2 0 0 1-2-2V9h2v11Z"
+                    />
+                  </svg>
+                </button>
+              </li>
+            }
             <li>
               <button
                 onClick={() => setCurrentPage("manage")}
@@ -445,6 +449,7 @@ function UserSettings() {
           ) : currentPage === "security" ? (
             <SecurityFu
               handlePasswordChange={handlePasswordChange}
+              passwordInfo={userPassword}
               user={data}
             ></SecurityFu>
           ) : currentPage === "payment" ? (
@@ -510,12 +515,13 @@ const AccountInfoFu = ({
   )
 }
 
-const SecurityFu = ({ handlePasswordChange }) => {
+const SecurityFu = ({ handlePasswordChange, passwordInfo }) => {
   return (
     <div className="dataContainer">
       <h2 className="subTitle">Change Password</h2>
       <PasswordInfoForm
         handlePasswordChange={handlePasswordChange}
+        passwordInfo={passwordInfo}
       ></PasswordInfoForm>
       <h2 className="subTitle">Security Settings</h2>
       <button className="checkButton stayButton">
@@ -545,6 +551,7 @@ const PaymentFu = ({ userCards, data }) => {
   const handleCreateCard = () => {
     dispatch(setCreateCard(true))
   }
+  
   return (
     <div className="dataContainer">
       <h2 className="subTitle">

@@ -25,6 +25,10 @@ function AccountDropDown() {
     const [recoveryEmail, setRecoveryEmail] = useState('')
     const [recoveryEmailValid, setRecoveryEmailValid] = useState(false)
 
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmpassword, setShowConfirmpassword] = useState(false)
+    const [showNewPassword, setShowNewPassword] = useState(false)
+
     useEffect(() => {
         if (showDropDown) {
             csstransitionRef.current.showModal()
@@ -70,7 +74,7 @@ function AccountDropDown() {
         setCurrentMode("forgotPass")
     }
 
-    const handleSignUp = async (e) => {
+    const handleSignUp = (e) => {
         if (currentMode === "default" || currentMode === "logIn") {
             e.preventDefault()
             setCurrentMode("createAccount")
@@ -81,7 +85,7 @@ function AccountDropDown() {
                 let tempRegisterInfo = {
                     Username: registerInfo.username,
                     Password: registerInfo.password,
-                    CurrentPassword: registerInfo.cpassword,
+                    ConfirmationPassword: registerInfo.cpassword,
                     Email: registerInfo.email,
                     PhoneNumber: '',
                     FirstName: registerInfo.firstName,
@@ -90,7 +94,7 @@ function AccountDropDown() {
                     City: '',
                     PostalCode: ''
                 }
-                await register(tempRegisterInfo)
+                register(tempRegisterInfo)
                 if (isMobile) {
                     setCurrentMode("logIn")
                 } else {
@@ -109,11 +113,10 @@ function AccountDropDown() {
         }
     }
 
-    const handleSignIn = async (e) => {
-        console.log(`Username: ${username}, Password: ${password}`)
+    const handleSignIn = (e) => {
         if (username.length >= 4 && password.length >= 8) {
             e.preventDefault()
-            await login({ username: username, password: password })
+            login({ username: username, password: password })
             handleCloseLogin()
             setUsername('')
             setPassword('')
@@ -122,7 +125,6 @@ function AccountDropDown() {
 
     const handleSendCode = (e) => {
         e.preventDefault()
-        console.log(recoveryEmail)
     }
 
     const handleRegisterInfoChange = (e) => {
@@ -236,8 +238,9 @@ function AccountDropDown() {
 
                         <div className="pass">
                             <input
+                                type={showPassword ? "text" : "password"}
                                 className="password"
-                                type="password"
+                                // type="password"
                                 maxLength="25"
                                 minLength="8"
                                 title="Must contain at least one number and one uppercase and lowercase letter, and at least one special character"
@@ -247,6 +250,7 @@ function AccountDropDown() {
                                 placeholder=""
                             ></input>
                             <label htmlFor="password">Enter password</label>
+                            <span className={showPassword ? 'active' : ''} onClick={() => setShowPassword(!showPassword)}><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M30.94 15.66A16.69 16.69 0 0 0 16 5A16.69 16.69 0 0 0 1.06 15.66a1 1 0 0 0 0 .68A16.69 16.69 0 0 0 16 27a16.69 16.69 0 0 0 14.94-10.66a1 1 0 0 0 0-.68ZM16 25c-5.3 0-10.9-3.93-12.93-9C5.1 10.93 10.7 7 16 7s10.9 3.93 12.93 9C26.9 21.07 21.3 25 16 25Z" /><path fill="currentColor" d="M16 10a6 6 0 1 0 6 6a6 6 0 0 0-6-6Zm0 10a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" /></svg></span>
                         </div>
                     </div>
 
@@ -392,7 +396,7 @@ function AccountDropDown() {
                         <div className="inputGroup">
                             <div className="pass">
                                 <input
-                                    type="password"
+                                    type={showNewPassword ? "text" : "password"}
                                     name="password"
                                     maxLength="25"
                                     minLength="8"
@@ -404,10 +408,11 @@ function AccountDropDown() {
                                     onChange={handleRegisterInfoChange}
                                 ></input>
                                 <label htmlFor="password">Enter password</label>
+                                <span className={showNewPassword ? 'active' : ''} onClick={() => setShowNewPassword(!showNewPassword)}><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M30.94 15.66A16.69 16.69 0 0 0 16 5A16.69 16.69 0 0 0 1.06 15.66a1 1 0 0 0 0 .68A16.69 16.69 0 0 0 16 27a16.69 16.69 0 0 0 14.94-10.66a1 1 0 0 0 0-.68ZM16 25c-5.3 0-10.9-3.93-12.93-9C5.1 10.93 10.7 7 16 7s10.9 3.93 12.93 9C26.9 21.07 21.3 25 16 25Z" /><path fill="currentColor" d="M16 10a6 6 0 1 0 6 6a6 6 0 0 0-6-6Zm0 10a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" /></svg></span>
                             </div>
-                            <div>
+                            <div className="pass">
                                 <input
-                                    type="password"
+                                    type={showConfirmpassword ? "text" : "password"}
                                     name="cpassword"
                                     maxLength="25"
                                     minLength="8"
@@ -419,6 +424,7 @@ function AccountDropDown() {
                                     onChange={handleRegisterInfoChange}
                                 ></input>
                                 <label htmlFor="cpassword">Confirm password</label>
+                                <span className={showConfirmpassword ? 'active' : ''} onClick={() => setShowConfirmpassword(!showConfirmpassword)}><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M30.94 15.66A16.69 16.69 0 0 0 16 5A16.69 16.69 0 0 0 1.06 15.66a1 1 0 0 0 0 .68A16.69 16.69 0 0 0 16 27a16.69 16.69 0 0 0 14.94-10.66a1 1 0 0 0 0-.68ZM16 25c-5.3 0-10.9-3.93-12.93-9C5.1 10.93 10.7 7 16 7s10.9 3.93 12.93 9C26.9 21.07 21.3 25 16 25Z" /><path fill="currentColor" d="M16 10a6 6 0 1 0 6 6a6 6 0 0 0-6-6Zm0 10a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" /></svg></span>
                             </div>
                         </div>
                         <p className="eula">By signing up you accept our <NavLink>Terms of Use </NavLink> &<NavLink> Privacy Policy</NavLink>.</p>

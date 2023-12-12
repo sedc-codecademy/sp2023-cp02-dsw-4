@@ -1,15 +1,25 @@
 import React from 'react'
 import ImageLoader from "../ImageLoader/ImageLoader"
 import { NavLink } from 'react-router-dom'
+import { useAcceptOrder, useUpdateOrder } from '../../helpers/UserHelper/UserHelper'
 
-function Order({ order }) {
+function Order({ order, userId }) {
+    const updateOrder = useUpdateOrder()
+    const acceptOrder = useAcceptOrder()
+    const handleUpdateOrder = (orderId) => {
+        updateOrder(orderId)
+    }
+
+    const handleAcceptOrder = () => {
+        acceptOrder({ ...order, userId })
+    }
     return (
         <li className="orderLi">
             <div className="infoDiv">
                 <div className="orderInfo">
                     <div>
                         <p>
-                            <span>Recipient:</span> {order.firstName} {order.lastName}
+                            <span>Recipient:</span> {order.recepient}
                         </p>
                         <p>
                             <span>Phone Number:</span> {order.phoneNumber}
@@ -26,7 +36,7 @@ function Order({ order }) {
                     </div>
                     <div>
                         <p>
-                            Total: <span>{order.total}$</span>
+                            Total: <span>{order.totalPrice}$</span>
                         </p>
                         <p>
                             Payment Method: <span>{
@@ -44,17 +54,17 @@ function Order({ order }) {
                     {order.status === "OnTheWay" ? (
                         <>
                             <p>Status: <span>On the way</span></p>
-                            <button>Mark Delivered</button>
+                            <button onClick={handleUpdateOrder}>Mark Delivered</button>
                         </>
                     ) : order.status === "Delivered" ? (
                         <div className='statusDiv'>
                             <svg className='completed' viewBox="0 0 24 24"><path fill="currentColor" d="m6 17.3l-4.25-4.25q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l3.55 3.55l1.4 1.4l-.725.7q-.3.275-.7.288T6 17.3Zm5.65 0L7.4 13.05q-.275-.275-.275-.688t.275-.712q.3-.3.713-.3t.712.3l3.525 3.525l8.5-8.5q.3-.3.7-.287t.7.312q.275.3.288.7t-.288.7l-9.2 9.2q-.3.3-.7.3t-.7-.3Zm.7-4.95l-1.425-1.4l4.25-4.25q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712L12.35 12.35Z" /></svg>
                             <p>Status: <span>Completed</span></p>
-                            </div>
+                        </div>
                     ) : (
                         <>
                             <p>Status: <span>Available</span></p>
-                            <button>Accept Order</button>
+                            <button onClick={handleAcceptOrder}>Accept Order</button>
                         </>
                     )}
                 </div>
@@ -65,14 +75,14 @@ function Order({ order }) {
                     <li key={orderItem.id}>
                         <ImageLoader
                             url={orderItem.image}
-                            alt={orderItem.title}
+                            alt={orderItem.name}
                             backupUrl="/imgs/404/product404.png"
                             backupAlt="Product Image 404"
                         ></ImageLoader>
                         <div>
-                            <p>{orderItem.title}</p>
-                            <p>Amount: {orderItem.amount || 1}</p>
-                            <h3>Price: {orderItem.total}$</h3>
+                            <p>{orderItem.name}</p>
+                            <p>Quantity: {orderItem.quantity || 1}</p>
+                            <h3>Total: {orderItem.total.toFixed()}$</h3>
                         </div>
                     </li>
                 )}
@@ -88,35 +98,38 @@ export function UserOrder({ order }) {
                 <div className="orderInfo">
                     <div>
                         <p>
-                            <span>Recipient:</span> {order.firstName} {order.lastName}
+                            <span>Recipient:</span> {order.recepient || `${order.firstName} ${order.lastName}`}
                         </p>
                         <p>
-                            <span>Phone Number:</span> {order.phoneNumber}
+                            <span>Phone Number:</span> {order.phoneNumber || 'Unset'}
                         </p>
                         <p>
-                            <span>City:</span> {order.city}
+                            <span>City:</span> {order.city || 'Unset'}
                         </p>
                         <p>
-                            <span>Street:</span> {order.address}
+                            <span>Street:</span> {order.address || 'Unset'}
                         </p>
                         <p>
-                            <span>Postal Code:</span> {order.postalCode}
+                            <span>Postal Code:</span> {order.postalCode || 'Unset'}
+                        </p>
+                        <p>
+                            <span>Courier:</span> {order.courier || 'Unavailable'}
                         </p>
                     </div>
                     <div>
                         <p>
-                            Total: <span>{order.total}$</span>
+                            Total: <span>{order.totalPrice || order.total}$</span>
                         </p>
                         <p>
                             Payment Method: <span>{
-                                order.paymentMethod === 'ondelivery' ? 'On-Delivery' : order.paymentMethod === 'prepaid' ? 'Pre-Paid' :
+                                order.paymentStatus === 'PayingOnDelivery' ? 'On-Delivery' : order.paymentStatus === 'Paid' ? 'Pre-Paid' :
                                     'Unset'
                             }</span>
                         </p>
                     </div>
                     <div className="orderNote">
                         <h3>Special Request</h3>
-                        <p>{order.note}</p>
+                        <p>{order.note || 'No special request'}</p>
                     </div>
                 </div>
                 <div className='statusDiv'>
@@ -147,17 +160,21 @@ export function UserOrder({ order }) {
             <ul className="orderItems">
                 {order.orderItems.map((orderItem) =>
                     <li key={orderItem.id}>
-                        <NavLink to={`/productDetails/${orderItem.id}`}>
+                        <NavLink to={`/productDetails/${orderItem.productId}`}>
                             <ImageLoader
                                 url={orderItem.image}
-                                alt={orderItem.title}
+                                alt={orderItem.name}
                                 backupUrl="/imgs/404/product404.png"
                                 backupAlt="Product Image 404"
                             ></ImageLoader>
                             <div>
-                                <p>{orderItem.title}</p>
-                                <p>Amount: {orderItem.amount || 1}</p>
-                                <h3>Price: {orderItem.total}$</h3>
+                                <p>{orderItem.productName}</p>
+                                <p>Quantity: {orderItem.quantity || 1}</p>
+                                <h3>Total: {orderItem.total.toFixed()}$</h3>
+                                <div className='pSizes'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill={orderItem.color} d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2" /></svg>
+                                    <p>Size: {orderItem.size}</p>
+                                </div>
                             </div>
                         </NavLink>
                     </li>
