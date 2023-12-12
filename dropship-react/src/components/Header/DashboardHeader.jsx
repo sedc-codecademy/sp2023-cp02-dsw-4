@@ -71,7 +71,7 @@ function DashboardHeader() {
                     </svg>
                 </Link>
             }
-            <h1>{role === 'admin' ? 'Admin' : 'Courier'} Dashboard</h1>
+            <h1>{role === 'Admin' ? 'Admin' : 'Courier'} Dashboard</h1>
             <Nav></Nav>
         </header>
     )

@@ -83,7 +83,7 @@ function CardHelper({ card, handleCardNumberChange, handleDateChange, handleSetI
                         type="text"
                         pattern="[0-9]*"
                         inputMode="numeric"
-                        maxLength={4}
+                        maxLength={3}
                         minLength={3}
                         required
                         placeholder=""
@@ -219,7 +219,7 @@ export function SettingsCardHelper({ cardID }) {
                                 type="text"
                                 pattern="[0-9]*"
                                 inputMode="numeric"
-                                maxLength={4}
+                                maxLength={3}
                                 minLength={3}
                                 required
                                 placeholder=""
@@ -429,7 +429,7 @@ export function NewCardHelper({ data }) {
                                 type="text"
                                 pattern="[0-9]*"
                                 inputMode="numeric"
-                                maxLength={4}
+                                maxLength={3}
                                 minLength={3}
                                 required
                                 placeholder=""

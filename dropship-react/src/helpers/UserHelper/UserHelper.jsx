@@ -29,7 +29,7 @@ export default function UserHelper() {
     const dispatch = useDispatch()
     const userQuery = useQuery({
         queryKey: ['userQuery', userid],
-        queryFn: () => getUser(userid),
+        queryFn: () => getUser(userid, tokens),
         enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     })
 
@@ -130,21 +130,25 @@ export const useLogin = () => {
     const dispatch = useDispatch()
     const logInMutate = useMutation({ mutationFn: logInApi })
 
-    const login = (credentials) => {
-        logInMutate.mutate(credentials,
-            {
-                onError: (err) => {
-                    dispatch(setNotificationData({ title: 'Login Error', success: '', error: err.message || 'Login has failed' }))
-                    dispatch(setShowNotification(true))
-                },
-                onSuccess: (data) => {
-                    // dispatch(setNotificationData({ title: 'Login Succesfull', success: 'Yu', error: '' }))
-                    dispatch(setAuthTokens({ accessToken: data.token, refreshToken: "dnb jakwbdjkwabjkdbjkwa" }))
-                    dispatch(setUserId(data.id))
-                    queryClient.resetQueries(["userQuery"])
-                    navigateToHome(navigate)
-                },
-            })
+    const login = async (credentials) => {
+        try {
+            await logInMutate.mutateAsync(credentials,
+                {
+                    onError: (err) => {
+                        dispatch(setNotificationData({ title: 'Login Error', success: '', error: err.message || 'Login has failed' }))
+                        dispatch(setShowNotification(true))
+                    },
+                    onSuccess: (data) => {
+                        dispatch(setAuthTokens({ accessToken: data.token, refreshToken: "dnb jakwbdjkwabjkdbjkwa" }))
+                        dispatch(setUserId(data.id))
+                        queryClient.resetQueries(["userQuery"])
+                        navigateToHome(navigate)
+                    },
+                })
+            return true
+        } catch (error) {
+            return false
+        }
     }
     return login
 }
@@ -292,7 +296,6 @@ export const useDeleteCard = () => {
 
             },
             onSuccess: (data) => {
-
                 dispatch(setNotificationData({ title: 'Successfully Deleted Card', success: data, error: '' }))
                 dispatch(setShowNotification(true))
                 queryClient.invalidateQueries(['userQuery'])
@@ -433,10 +436,8 @@ export const useUpdateOrder = () => {
             onError: (err) => {
                 dispatch(setNotificationData({ title: 'Error updating order', success: '', error: err.message || 'Order has not been updated' }))
                 dispatch(setShowNotification(true))
-
             },
             onSuccess: (data) => {
-
                 dispatch(setNotificationData({ title: 'Succesfully Updated', success: data || 'Order has beeen succesfully updated', error: '' }))
                 dispatch(setShowNotification(true))
                 queryClient.invalidateQueries(['userQuery'])
@@ -457,12 +458,11 @@ export const useAcceptOrder = () => {
             onError: (err) => {
                 dispatch(setNotificationData({ title: 'Error accepting order', success: '', error: err.message || 'Order has not been accepted' }))
                 dispatch(setShowNotification(true))
-
             },
             onSuccess: (data) => {
                 dispatch(setNotificationData({ title: 'Succesfully Accepted', success: data || 'This Order will be moved to pending orders', error: '' }))
                 dispatch(setShowNotification(true))
-                queryClient.invalidateQueries(['userQuery'])
+                queryClient.invalidateQueries(['purchasedOrders, userQuery'])
             },
         })
     }

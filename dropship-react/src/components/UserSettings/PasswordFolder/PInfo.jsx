@@ -18,7 +18,7 @@ function PasswordInfoForm({handlePasswordChange, passwordInfo}) {
             name="originalPassword"
             required
             placeholder=""
-            value={passwordInfo.orignalPassword}
+            value={passwordInfo.originalPassword}
             onChange={handlePasswordChange}
           ></input>
           <label htmlFor="originalPassword">Current Password</label>

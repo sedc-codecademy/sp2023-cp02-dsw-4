@@ -1174,7 +1174,7 @@ export const cardInfoValidity = [
   { inputName: "holder", max: 20, min: 6, regex: "[a-zA-Z ]+" }, /// 20 // Min 6
   { inputName: "number", max: 16, min: 16, regex: "^[0-9 ]*[0-9]$" }, /// 16
   { inputName: "date", max: 5, min: 5, regex: "[0-9\\/]*" }, // 5
-  { inputName: "cvc", max: 4, min: 3, regex: "[0-9]*" }, /// Min 3 // Max 4
+  { inputName: "cvc", max: 3, min: 3, regex: "[0-9]*" }, /// Min 3 // Max 4
 ]
 
 export const userInfoValidity = [
@@ -1186,7 +1186,7 @@ export const userInfoValidity = [
     min: 9,
     regex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", /// Min 9 // Max 40
   },
-  { inputName: "phoneNumber", max: 14, min: 9, regex: "^0\\d+$" }, /// Min 9 // Max 14
+  { inputName: "phoneNumber", max: 9, min: 9, regex: "^0\\d+$" }, /// Min 9 // Max 14
   { inputName: "address", max: 30, min: 3, regex: "" }, /// Max 30 //, Min 3
   { inputName: "city", max: 30, min: 4, regex: "^[a-zA-Z\\s ]*$" }, /// Min 4 // Max 30
   { inputName: "postalCode", max: 4, min: 4, regex: "[0-9]*" }, /// Min 4 // Max 4

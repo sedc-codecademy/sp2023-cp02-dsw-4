@@ -33,8 +33,11 @@ function User() {
     isSuccess: userSuccess,
     refetch: userRefetch,
   } = useQuery({
+    // queryKey: ['userQuery', userid],
+    // queryFn: () => getUser(userid),
+    // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     queryKey: ['userQuery', userid],
-    queryFn: () => getUser(userid),
+    queryFn: () => getUser(userid, tokens),
     enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
@@ -290,8 +293,11 @@ export function ACUser() {
   const userid = useSelector(state => state.role.userid)
 
   const { data } = useQuery({
+    // queryKey: ['userQuery', userid],
+    // queryFn: () => getUser(userid),
+    // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     queryKey: ['userQuery', userid],
-    queryFn: () => getUser(userid),
+    queryFn: () => getUser(userid, tokens),
     enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 

@@ -39,6 +39,7 @@
 
     .orderUl {
       display: flex;
+      flex-direction: column;
       gap: .5rem;
       overflow-x: auto;
       width: 100%;

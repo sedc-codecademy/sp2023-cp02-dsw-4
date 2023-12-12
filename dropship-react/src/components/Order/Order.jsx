@@ -6,21 +6,21 @@ import { useAcceptOrder, useUpdateOrder } from '../../helpers/UserHelper/UserHel
 function Order({ order, userId }) {
     const updateOrder = useUpdateOrder()
     const acceptOrder = useAcceptOrder()
-    const handleUpdateOrder = (orderId) => {
-        updateOrder(orderId)
+    const handleUpdateOrder = () => {
+        updateOrder(order.id)
     }
 
     const handleAcceptOrder = () => {
-        acceptOrder({ ...order, userId })
+        acceptOrder({ orderId: order.id, userId })
     }
     return (
         <li className="orderLi">
             <div className="infoDiv">
                 <div className="orderInfo">
                     <div>
-                        <p>
+                        {/* <p>
                             <span>Recipient:</span> {order.recepient}
-                        </p>
+                        </p> */}
                         <p>
                             <span>Phone Number:</span> {order.phoneNumber}
                         </p>
@@ -40,14 +40,14 @@ function Order({ order, userId }) {
                         </p>
                         <p>
                             Payment Method: <span>{
-                                order.paymentMethod === 'ondelivery' ? 'On-Delivery' : order.paymentMethod === 'prepaid' ? 'Pre-Paid' :
+                                order.paymentStatus === 'PayingOnDelivery' ? 'On-Delivery' : order.paymentStatus === 'Paid' ? 'Pre-Paid' :
                                     'Unset'
                             }</span>
                         </p>
                     </div>
                     <div className="orderNote">
                         <h3>Special Request</h3>
-                        <p>{order.note}</p>
+                        <p>{order.note || 'No special request'}</p>
                     </div>
                 </div>
                 <div>
@@ -112,9 +112,9 @@ export function UserOrder({ order }) {
                         <p>
                             <span>Postal Code:</span> {order.postalCode || 'Unset'}
                         </p>
-                        <p>
+                        {/* <p>
                             <span>Courier:</span> {order.courier || 'Unavailable'}
-                        </p>
+                        </p> */}
                     </div>
                     <div>
                         <p>

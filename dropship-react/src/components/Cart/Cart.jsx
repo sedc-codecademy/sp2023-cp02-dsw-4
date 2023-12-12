@@ -29,6 +29,10 @@ import { getPopularProducts } from "../../helpers/API/product-api"
 import { cardInfoValidity, getCardTypeEnum, isInfoValid, userInfoValidity } from "../UsefullComponents/Usefull"
 import { usePurchaseOrder } from "../../helpers/UserHelper/UserHelper"
 import { getUser } from "../../helpers/API/user-api"
+import { toggleCatDropDown } from "../../store/slices/dropdowns/catDropDownSlice"
+import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
+import { setShowShipping } from "../../store/slices/shipping/shippingSlice"
+import { setShowAccDropDown } from "../../store/slices/dropdowns/acDropDownSlice"
 
 // function getPaymentStatus(existingCard, orderInfo) {
 //     if (orderInfo.paymentMethod === 'ondelivery') {
@@ -51,8 +55,11 @@ function Cart() {
     const userid = useSelector(state => state.role.userid)
 
     const { data: userData } = useQuery({
+        // queryKey: ['userQuery', userid],
+        // queryFn: () => getUser(userid),
+        // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
         queryKey: ['userQuery', userid],
-        queryFn: () => getUser(userid),
+        queryFn: () => getUser(userid, tokens),
         enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     })
 
@@ -124,8 +131,8 @@ function Cart() {
 
         if (orderInfo.city.toLowerCase() === 'skopje') {
             calculatedShippingCost = 0;
-        // } else if (["prilep", "kumanovo", "shtip", "veles"].includes(orderInfo.city.toLowerCase())) {
-        //     calculatedShippingCost = 130;
+            // } else if (["prilep", "kumanovo", "shtip", "veles"].includes(orderInfo.city.toLowerCase())) {
+            //     calculatedShippingCost = 130;
         } else {
             calculatedShippingCost = 150;
         }
@@ -133,8 +140,8 @@ function Cart() {
         if (shippingLocation && !orderInfo.city) {
             if (shippingLocation.toLowerCase() === "Skopje") {
                 calculatedShippingCost = 0;
-            // } else if (["Prilep", "Kumanovo", "Shtip", "Veles"].includes(shippingLocation.toLowerCase())) {
-            //     calculatedShippingCost = 130;
+                // } else if (["Prilep", "Kumanovo", "Shtip", "Veles"].includes(shippingLocation.toLowerCase())) {
+                //     calculatedShippingCost = 130;
             } else {
                 calculatedShippingCost = 150;
             }
@@ -208,8 +215,12 @@ function Cart() {
             setCartState("payment")
         } else if (e.target.name === "paymentForm" && paymentFormValid) {
             if (collectionFormValid && paymentFormValid) {
-                dispatch(setFinalPaymentState(true))
-                setCartState("final")
+                if (isLoggedIn && userData) {
+                    dispatch(setFinalPaymentState(true))
+                    setCartState("final")
+                } else {
+                    dispatch(setShowAccDropDown(true))
+                }
             }
         }
     }
@@ -277,10 +288,10 @@ function Cart() {
             address: orderInfo.address,
             postalCode: orderInfo.postalCode,
             city: orderInfo.city,
-            phoneNumber: "012123123",
+            phoneNumber: orderInfo.phoneNumber,
             note: orderInfo.note || '',
-            paymentStatus: 2
-            
+            // paymentStatus: 2,
+            saveCard: orderInfo.saveCard
         }
 
         if (orderInfo.paymentMethod !== "ondelivery") {
@@ -289,11 +300,10 @@ function Cart() {
             orderData.cardNumber = cardObject.number
             orderData.expirationDate = cardObject.date
             orderData.securityCode = cardObject.cvc
-            orderData.paymentMethod = 1
-            orderData.saveCard = existingCard
+            orderData.paymentStatus = 1
             // orderData.existingCardId = existingCard && Object.keys(existingCard).length > 0 ? existingCard.id : ''
-        } else{
-            orderData.paymentMethod = 2
+        } else {
+            orderData.paymentStatus = 2
         }
 
         const purchaseStatus = await purchaseOrder(orderData)
@@ -467,7 +477,7 @@ function Cart() {
                                                     name="phoneNumber"
                                                     type="tel"
                                                     pattern="^0\d+$"
-                                                    maxLength={14}
+                                                    maxLength={9}
                                                     minLength={9}
                                                     inputMode="numeric"
                                                     value={orderInfo.phoneNumber}
@@ -483,7 +493,7 @@ function Cart() {
                                             <button
                                                 name="address"
                                                 onClick={(e) => handleCollectionAutofill(e)}
-                                                disabled={!isLoggedIn}
+                                                disabled={!isLoggedIn || (!userData.adress && !userData.city && !userData.postalCode)}
                                             >
                                                 <span>Autofill</span>
                                                 <svg viewBox="0 0 24 24">
@@ -666,7 +676,7 @@ function Cart() {
                                                                 card.holder === cardObject.holder &&
                                                                 card.number === cardObject.number &&
                                                                 card.date === cardObject.date
-                                                        ) || !paymentFormValid
+                                                        ) || !paymentFormValid || userData?.cards.length >= 2 || !isLoggedIn
                                                     }
                                                     onClick={handleSaveCard}
                                                 >

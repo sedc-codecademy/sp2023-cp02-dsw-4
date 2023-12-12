@@ -14,7 +14,7 @@ import {
   setCreateCard,
 } from "../../store/slices/cardSlice/cardSlice"
 
-import { useLogout, useUpdateCard, useUpdateUser } from "../../helpers/UserHelper/UserHelper"
+import { useDeleteCard, useLogout, useUpdateCard, useUpdateUser } from "../../helpers/UserHelper/UserHelper"
 
 import {
   clearPasswordInfo,
@@ -37,6 +37,7 @@ function UserSettings() {
   const logout = useLogout()
   const updateUser = useUpdateUser()
   const updateCard = useUpdateCard()
+  const removeCard = useDeleteCard()
   const role = useSelector((state) => state.role.role)
   const tokens = useSelector((state) => state.role.authTokens)
   const userid = useSelector(state => state.role.userid)
@@ -59,8 +60,11 @@ function UserSettings() {
   const [isClearButtonDisabled, setIsClearButtonDisabled] = useState(true)
 
   const { data } = useQuery({
+    // queryKey: ['userQuery', userid],
+    // queryFn: () => getUser(userid),
+    // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     queryKey: ['userQuery', userid],
-    queryFn: () => getUser(userid),
+    queryFn: () => getUser(userid, tokens),
     enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
@@ -96,9 +100,7 @@ function UserSettings() {
 
   useEffect(() => {
     if (
-      modifiedPassword &&
-      modifiedPassword?.password !== data?.password &&
-      modifiedPassword?.originalPassword === data?.password && modifiedPassword?.password === modifiedPassword?.cpassword
+      modifiedPassword && modifiedPassword?.password === modifiedPassword?.cpassword
     ) {
       setUserPasswordValid(
         isInfoValid(passwordInfoValidity, modifiedPassword, [
@@ -117,7 +119,7 @@ function UserSettings() {
       let modifiedCard = {}
       let originalCard = data?.cards.find((c) => c.id === card.id)
       for (let key in card) {
-        if (card[key] !== "" && key !== "removal" && key !== "originalStatus") {
+        if (card[key] !== "" && key !== "originalStatus") {
           if ((key === "cardStatus" && card[key] === card.originalStatus) ||
             (originalCard && card[key] === originalCard[key] && key !== "id")
           ) {
@@ -142,7 +144,7 @@ function UserSettings() {
   useEffect(() => {
     if (
       modifiedCards?.some(
-        (e) => e.holder || e.number || e.cardStatus || e.cvc || e.date
+        (e) => e.holder || e.number || e.cardStatus || e.cvc || e.date || e.removal
       )
     ) {
       const allCardsValid = modifiedCards.every((modifiedCard) => {
@@ -274,35 +276,37 @@ function UserSettings() {
   const handleSubmitUserCards = () => {
     const tempAsyncCards = modifiedCards.slice()
     tempAsyncCards.forEach(card => {
-      if (card.type || card.cardStatus || card.number || card.holder || card.cvc) {
-        const tempCard = {
-          Id: card.id,
-          CardType: card.type ? getCardTypeEnum(card.type) : null,
-          CardStatus: card.cardStatus ? getCardStatusEnum(card.cardStatus) : null,
-          CardNumber: card.number || null,
-          CardHolder: card.holder || null,
-          ExpirationDate: card.date || null,
-          SecurityCode: card.cvc || null,
-          UserId: data.id,
+      if (card.removal) {
+        removeCard(card.id)
+      } else {
+        if (card.type || card.cardStatus || card.number || card.holder || card.cvc) {
+          const tempCard = {
+            Id: card.id,
+            CardType: card.type ? getCardTypeEnum(card.type) : null,
+            CardStatus: card.cardStatus ? getCardStatusEnum(card.cardStatus) : null,
+            CardNumber: card.number || null,
+            CardHolder: card.holder || null,
+            ExpirationDate: card.date || null,
+            SecurityCode: card.cvc || null,
+            UserId: data.id,
+          }
+          updateCard(tempCard)
         }
-        updateCard(tempCard)
       }
     })
   }
 
   const handleSubmitUserPassword = () => {
     if (
-      modifiedPassword &&
-      modifiedPassword?.password !== data?.password &&
-      modifiedPassword?.originalPassword === data?.password && modifiedPassword?.password === modifiedPassword?.cpassword
+      modifiedPassword && modifiedPassword?.password === modifiedPassword?.cpassword
     ) {
       const tempUser = {
         FirstName: '',
         LastName: '',
         Username: '',
         Password: modifiedPassword.password,
-        ConfirmationPassword: modifiedPassword.cpassword,
-        OriginalPassword: modifiedPassword.orignalPassword,
+        ConfirmationPassword: modifiedPassword.originalPassword,
+        // OriginalPassword: modifiedPassword.orignalPassword,
         Email: '',
         PhoneNumber: '',
         Address: '',
@@ -340,8 +344,8 @@ function UserSettings() {
     dispatch(updateUserInfo({ name: e.target.name, value: e.target.value }))
   }
 
-  const handleInputImage = ({name, value}) => {
-    dispatch(updateUserInfo({name, value}))
+  const handleInputImage = ({ name, value }) => {
+    dispatch(updateUserInfo({ name, value }))
   }
 
   const handlePasswordChange = (e) => {
@@ -551,7 +555,7 @@ const PaymentFu = ({ userCards, data }) => {
   const handleCreateCard = () => {
     dispatch(setCreateCard(true))
   }
-  
+
   return (
     <div className="dataContainer">
       <h2 className="subTitle">

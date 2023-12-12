@@ -511,9 +511,27 @@ const CreateCategory = ({ categories }) => {
     const handleSubmit = (e) => {
         if (categoryValid) {
             e.preventDefault()
-            const category = {
-                
-            }
+            console.log(categoryObject)
+            const mapCategory = (categoryObject) => {
+                return {
+                    name: categoryObject.name || "",
+                    image: categoryObject.image || "",
+                    icon: categoryObject.icon || "",
+                    subcategories: categoryObject.subCategories.map(subcategory => ({
+                        name: subcategory.name || "",
+                        image: "",
+                        description: subcategory.description || "",
+                    })),
+                    manufacturers: categoryObject.manufacturers.map(manufacturer => ({
+                        name: manufacturer.name || "",
+                        image: ""
+                    }))
+                };
+            };
+
+            // usage
+            const mappedCategory = mapCategory(categoryObject);
+            console.log(mappedCategory)
             createCategory(categoryObject)
         }
     }

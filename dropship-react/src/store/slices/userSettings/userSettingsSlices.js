@@ -14,7 +14,7 @@ const initialState = {
 
   passwordInfo: {
     password: "",
-    orignalPassword: "",
+    originalPassword: "",
     cpassword: ""
   },
 }

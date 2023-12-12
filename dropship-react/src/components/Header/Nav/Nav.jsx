@@ -32,8 +32,11 @@ export default function Nav() {
     const userid = useSelector(state => state.role.userid)
 
     const { data: userData } = useQuery({
+        // queryKey: ['userQuery', userid],
+        // queryFn: () => getUser(userid),
+        // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
         queryKey: ['userQuery', userid],
-        queryFn: () => getUser(userid),
+        queryFn: () => getUser(userid, tokens),
         enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     })
 
@@ -59,7 +62,6 @@ export default function Nav() {
     const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
     const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
 
-    const showShipping = useSelector((state) => state.shipping.showShipping)
     const role = useSelector((state) => state.role.role)
 
     const csstransitionRef = useRef()
@@ -77,7 +79,6 @@ export default function Nav() {
     }
 
     const onAccountIconClick = () => {
-        if (showShipping) dispatch(setShowShipping(!showShipping))
         if (isMobile && showCatDropDown) {
             dispatch(toggleCatDropDown())
         }
@@ -246,7 +247,7 @@ export default function Nav() {
                                     onClick={closeSettings}
                                     className='cartLink'
                                 >
-                                    {!isMobile && <p className="cartP">Cart</p>}
+                                    {(!isMobile && isLoggedIn && userData?.username) && <p className="cartP">{userData.username}</p>}
                                     <svg viewBox="0 0 32 32">
                                         <circle cx="10" cy="28" r="2" fill="currentColor" />
                                         <circle cx="24" cy="28" r="2" fill="currentColor" />

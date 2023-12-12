@@ -113,11 +113,13 @@ function AccountDropDown() {
         }
     }
 
-    const handleSignIn = (e) => {
+    const handleSignIn = async (e) => {
         if (username.length >= 4 && password.length >= 8) {
             e.preventDefault()
-            login({ username: username, password: password })
-            handleCloseLogin()
+            const loginStatus = await login({ username: username, password: password })
+            if(loginStatus){
+                handleCloseLogin()
+            }
             setUsername('')
             setPassword('')
         }

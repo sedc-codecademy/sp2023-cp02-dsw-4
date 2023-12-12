@@ -15,7 +15,7 @@ function CourierDashboard() {
     isSuccess: userSuccess,
   } = useQuery({
     queryKey: ['userQuery', userid],
-    queryFn: () => getUser(userid),
+    queryFn: () => getUser(userid, tokens),
     enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
   })
 
@@ -28,7 +28,7 @@ function CourierDashboard() {
     refetch: pOrdersRefetch,
   } = useQuery({
     queryKey: ["purchasedOrders"],
-    queryFn: getPurchasedOrders,
+    queryFn: () => getPurchasedOrders(tokens),
   })
 
   return (
@@ -54,13 +54,13 @@ function CourierDashboard() {
         )}
       </div>
 
-      {userSuccess && userData?.orders?.length > 0 ? (
+      {userSuccess && userData?.userOrders?.length > 0 ? (
         <>
-          {userData.orders?.some(order => order.status === 'OnTheWay') ? (
+          {userData.userOrders?.some(order => order.status === 'OnTheWay') ? (
             <div className="orderList pending">
               <h2 className="title">Pending Orders</h2>
               <ul className="orderUl">
-                {userData.orders?.filter(order => order.status === 'OnTheWay').map((e) =>
+                {userData.userOrders?.filter(order => order.status === 'OnTheWay').map((e) =>
                   <Order key={e.id} order={e}></Order>
                 )}
               </ul>
@@ -70,11 +70,11 @@ function CourierDashboard() {
               <h1 className="title">No Pending Orders found</h1>
             </div>
           )}
-          {userData.orders?.some(order => order.status === 'Delivered') ? (
+          {userData.userOrders?.some(order => order.status === 'Delivered') ? (
             <div className="orderList completed">
               <h2 className="title">Completed Orders</h2>
               <ul className="orderUl">
-                {userData.orders?.filter(order => order.status === 'Delivered').map((e) =>
+                {userData.userOrders?.filter(order => order.status === 'Delivered').map((e) =>
                   <Order key={e.id} order={e}></Order>
                 )}
               </ul>
