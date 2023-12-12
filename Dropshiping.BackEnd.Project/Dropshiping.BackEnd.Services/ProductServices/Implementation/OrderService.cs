@@ -80,13 +80,13 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 
         public List<OrderDto> GetPurchased()
         {
-            var orders =  GetAll().Where(x => x.Status == "Purchased").ToList();
+            var orders = _orderRepository.GetAll().Where(x => x.Status == DeliveryStatusEnum.Purchased).ToList();
             if (orders.Count == 0)
             {
                 throw new ArgumentException("There are no new orders!");
             }
 
-            return orders;
+            return orders.Select(x => x.ToOrderDto()).ToList();
         }
 
         public OrderDto GetById(string id)

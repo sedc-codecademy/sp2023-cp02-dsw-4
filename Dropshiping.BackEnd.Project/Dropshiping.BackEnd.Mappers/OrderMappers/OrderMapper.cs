@@ -7,16 +7,16 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
     public static class OrderMapper
     {
         public static OrderDto ToOrderDto(this Order order)
-        {
+        {     
             var userOrderRecepient = order.UserOrders.FirstOrDefault(x => x.User.Role == RoleEnum.User);
             var userOrderCourier = order.UserOrders.FirstOrDefault(x => x.User.Role == RoleEnum.Courier);
 
-            if (userOrderRecepient == null)
-            {
-                throw new KeyNotFoundException("User info is not found!");
-            }
+            //if (userOrderRecepient == null)
+            //{
+            //    throw new KeyNotFoundException("User info is not found!");
+            //}
 
-            var user = userOrderRecepient.User;
+            //var user = userOrderRecepient.User;
 
             var orderDto = new OrderDto
             {
@@ -27,12 +27,18 @@ namespace Dropshiping.BackEnd.Mappers.OrderMappers
                 City = order.City,
                 PhoneNumber = order.PhoneNumber,
                 Note = order.Note,
-                Recepient = $"{user.FirstName} {user.LastName}",
-                Email = user.Email,
+                //Recepient = $"{user.FirstName} {user.LastName}",
+                //Email = user.Email,
                 Status = Enum.GetName(typeof(DeliveryStatusEnum), order.Status),
                 PaymentStatus = Enum.GetName(typeof(PaymentStatusEnum), order.PaymentStatus),
                 OrderItems = order.OrderItems.Select(x => x.ToOrderItemDto()).ToList()
             };
+
+            if (userOrderRecepient != null)
+            {
+                orderDto.Recepient = $"{userOrderRecepient.User.FirstName} {userOrderRecepient.User.LastName}";
+                orderDto.Email = $"{userOrderRecepient.User.Email}";
+            }
 
             if (userOrderCourier != null)
             {
