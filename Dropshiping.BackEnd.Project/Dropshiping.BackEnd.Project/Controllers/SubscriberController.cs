@@ -58,7 +58,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _subscriberService.Add(subscriberDto);
-                return Ok();
+                return Ok("Thank you for your subscription!");
             }
             catch (ArgumentNullException ex)
             {
@@ -77,7 +77,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _subscriberService.Update(subscriberDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Subscriber updated");
+                return Ok("Subscriber updated");
             }
 
             catch (ArgumentNullException ex)
@@ -97,7 +97,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             try
             {
                 _subscriberService.DeleteById(email);
-                return StatusCode(StatusCodes.Status204NoContent, "Category deleted");
+                return Ok("Subscriber deleted");
 
             }
             catch (KeyNotFoundException ex)

@@ -48,50 +48,50 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "technology",
-                            Icon = "https://i.ibb.co/XZh7XLg/technologysmall.jpg",
-                            Image = "https://i.ibb.co/MS3CdYh/technology.jpg",
+                            Icon = "/imgs/categories/technologysmall.jpg",
+                            Image = "/imgs/categories/technology.jpg",
                             Name = "Technology"
                         },
                         new
                         {
                             Id = "menswear",
-                            Icon = "https://i.ibb.co/2WTFYC7/mens-Wearsmall.jpg",
-                            Image = "https://i.ibb.co/3W6cbRJ/mensWear.jpg",
+                            Icon = "/imgs/categories/mens-Wearsmall.jpg",
+                            Image = "/imgs/categories/mensWear.jpg",
                             Name = "Men's Clothing"
                         },
                         new
                         {
                             Id = "womenswear",
-                            Icon = "https://i.ibb.co/CVWfwSW/womens-Wearsmall.jpg",
-                            Image = "https://i.ibb.co/QKK7cVn/womens-Wear.jpg",
+                            Icon = "/imgs/categories/womens-Wearsmall.jpg",
+                            Image = "/imgs/categories/womens-Wear.jpg",
                             Name = "Women's Clothing"
                         },
                         new
                         {
                             Id = "beauty",
-                            Icon = "https://i.ibb.co/gV2npD1/beautysmall.jpg",
-                            Image = "https://i.ibb.co/WytydBV/beauty.jpg",
+                            Icon = "/imgs/categories/beautysmall.jpg",
+                            Image = "/imgs/categories/beauty.jpg",
                             Name = "Beauty"
                         },
                         new
                         {
                             Id = "autoaccessories",
-                            Icon = "https://i.ibb.co/MBQ2gD9/autoaccsmall.jpg",
-                            Image = "https://i.ibb.co/m4tvvf8/autoacc.jpg",
+                            Icon = "/imgs/categories/autoaccsmall.jpg",
+                            Image = "/imgs/categories/autoacc.jpg",
                             Name = "Automobile Accessories"
                         },
                         new
                         {
                             Id = "sports",
-                            Icon = "https://i.ibb.co/C1r0BQV/sportssmall.jpg",
-                            Image = "https://i.ibb.co/bNfN5BQ/sports.jpg",
+                            Icon = "/imgs/categories/sportssmall.jpg",
+                            Image = "/imgs/categories/sports.jpg",
                             Name = "Sports"
                         },
                         new
                         {
                             Id = "homeandgarden",
-                            Icon = "https://i.ibb.co/w645hqv/homesmall.jpg",
-                            Image = "https://i.ibb.co/n6ycm1s/home.jpg",
+                            Icon = "/imgs/categories/homesmall.jpg",
+                            Image = "/imgs/categories/home.jpg",
                             Name = "Home & Garden"
                         });
                 });
@@ -230,217 +230,217 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "mensadidas",
-                            Image = "https://ibb.co/bWp0hfY",
+                            Image = "/imgs/manufacturers/adidas.jpg",
                             Name = "Adidas"
                         },
                         new
                         {
                             Id = "mensnike",
-                            Image = "https://ibb.co/bbrp9RM",
+                            Image = "/imgs/manufacturers/nike.jpg",
                             Name = "Nike"
                         },
                         new
                         {
                             Id = "mensclarks",
-                            Image = "https://ibb.co/cQkvh6g",
+                            Image = "/imgs/manufacturers/clarks.jpg",
                             Name = "Clarks"
                         },
                         new
                         {
                             Id = "menshugo",
-                            Image = "https://ibb.co/VMWn6PR",
+                            Image = "/imgs/manufacturers/hugo.jpg",
                             Name = "Hugo Boss"
                         },
                         new
                         {
                             Id = "menstom",
-                            Image = "https://ibb.co/GMyPGrb",
+                            Image = "/imgs/manufacturers/tom.jpg",
                             Name = "Tom Ford"
                         },
                         new
                         {
                             Id = "womenshm",
-                            Image = "https://ibb.co/dBdyMLZ",
+                            Image = "/imgs/manufacturers/h-m.jpg",
                             Name = "H&M"
                         },
                         new
                         {
                             Id = "womensvictoria",
-                            Image = "https://ibb.co/1mKyxFX",
+                            Image = "/imgs/manufacturers/victoria.jpg",
                             Name = "Victoria's Secret"
                         },
                         new
                         {
                             Id = "womenszara",
-                            Image = "https://ibb.co/SmwKDhq",
+                            Image = "/imgs/manufacturers/zara.jpg",
                             Name = "Zara"
                         },
                         new
                         {
                             Id = "womenschanel",
-                            Image = "https://ibb.co/R60gmNc",
+                            Image = "/imgs/manufacturers/chanel-1.jpg",
                             Name = "Chanel"
                         },
                         new
                         {
                             Id = "womensprada",
-                            Image = "https://ibb.co/ZffnnDK",
+                            Image = "/imgs/manufacturers/prada.jpg",
                             Name = "Prada"
                         },
                         new
                         {
                             Id = "techsamsung",
-                            Image = "https://ibb.co/6BKY2FC",
+                            Image = "/imgs/manufacturers/samsung.jpg",
                             Name = "Samsung"
                         },
                         new
                         {
                             Id = "technokia",
-                            Image = "https://ibb.co/NYWqrjv",
+                            Image = "/imgs/manufacturers/nokia.jpg",
                             Name = "Nokia"
                         },
                         new
                         {
                             Id = "techapple",
-                            Image = "https://ibb.co/PxHqDDF",
+                            Image = "/imgs/manufacturers/apple.jpg",
                             Name = "Apple"
                         },
                         new
                         {
                             Id = "techsony",
-                            Image = "https://ibb.co/gyWGcc1",
+                            Image = "/imgs/manufacturers/sony.jpg",
                             Name = "Sony"
                         },
                         new
                         {
                             Id = "techlg",
-                            Image = "https://ibb.co/xFr4K1c",
+                            Image = "/imgs/manufacturers/lg.jpg",
                             Name = "LG"
                         },
                         new
                         {
                             Id = "techxiaomi",
-                            Image = "https://ibb.co/vkvRrwg",
+                            Image = "/imgs/manufacturers/xiaomi.jpg",
                             Name = "Xiaomi"
                         },
                         new
                         {
                             Id = "autocraft",
-                            Image = "https://ibb.co/kg3kHN0",
+                            Image = "/imgs/manufacturers/covercraft.jpg",
                             Name = "Covercraft"
                         },
                         new
                         {
                             Id = "autopioneer",
-                            Image = "https://ibb.co/tY11zrN",
+                            Image = "/imgs/manufacturers/pioneer.jpg",
                             Name = "Pioneer"
                         },
                         new
                         {
                             Id = "automichelin",
-                            Image = "https://ibb.co/G2TTLVD",
+                            Image = "/imgs/manufacturers/michelin.jpg",
                             Name = "Michelin"
                         },
                         new
                         {
                             Id = "autobosch",
-                            Image = "https://ibb.co/5rkgx0S",
+                            Image = "/imgs/manufacturers/bosch.jpg",
                             Name = "Bosch"
                         },
                         new
                         {
                             Id = "autogarmin",
-                            Image = "https://ibb.co/JmGJdzt",
+                            Image = "/imgs/manufacturers/garmin-1.jpg",
                             Name = "Garmin"
                         },
                         new
                         {
                             Id = "sportsnorth",
-                            Image = "https://ibb.co/VqyrynX",
+                            Image = "/imgs/manufacturers/northface.jpg",
                             Name = "The North Face"
                         },
                         new
                         {
                             Id = "sportsmizuno",
-                            Image = "https://ibb.co/xjGyLwR",
+                            Image = "/imgs/manufacturers/mizuno.jpg",
                             Name = "Mizuno"
                         },
                         new
                         {
                             Id = "sportsrebook",
-                            Image = "https://ibb.co/XXWwqzf",
+                            Image = "/imgs/manufacturers/reebok.jpg",
                             Name = "Reebok"
                         },
                         new
                         {
                             Id = "sportspuma",
-                            Image = "https://ibb.co/b6YTxvw",
+                            Image = "/imgs/manufacturers/puma.jpg",
                             Name = "Puma"
                         },
                         new
                         {
                             Id = "sportsuarmour",
-                            Image = "https://ibb.co/xJnF2dg",
+                            Image = "/imgs/manufacturers/underarmour.jpg",
                             Name = "Under Armour"
                         },
                         new
                         {
                             Id = "beautyolay",
-                            Image = "https://ibb.co/Wtkzv9t",
+                            Image = "/imgs/manufacturers/olay.jpg",
                             Name = "Olay"
                         },
                         new
                         {
                             Id = "beautydove",
-                            Image = "https://ibb.co/r4fx2cN",
+                            Image = "/imgs/manufacturers/dove.jpg",
                             Name = "Dove"
                         },
                         new
                         {
                             Id = "beautygarnier",
-                            Image = "https://ibb.co/Hxzgd7M",
+                            Image = "/imgs/manufacturers/garnier.jpg",
                             Name = "Garnier"
                         },
                         new
                         {
                             Id = "beautyestee",
-                            Image = "https://ibb.co/4FR5Tr2",
+                            Image = "/imgs/manufacturers/este.jpg",
                             Name = "Esteѐ lauder"
                         },
                         new
                         {
                             Id = "beautyloreal",
-                            Image = "https://ibb.co/d5DfKc1",
+                            Image = "/imgs/manufacturers/loreal.jpg",
                             Name = "L'Oréal"
                         },
                         new
                         {
                             Id = "handgdecker",
-                            Image = "https://ibb.co/LYNZ19y",
+                            Image = "/imgs/manufacturers/black-decker-2.jpg",
                             Name = "Black & Decker"
                         },
                         new
                         {
                             Id = "handbehr",
-                            Image = "https://ibb.co/PhrHy45",
+                            Image = "/imgs/manufacturers/behr.jpg",
                             Name = "Behr"
                         },
                         new
                         {
                             Id = "handlowes",
-                            Image = "https://ibb.co/y4RD3r5",
+                            Image = "/imgs/manufacturers/lowes.jpg",
                             Name = "Lowe's"
                         },
                         new
                         {
                             Id = "handdepot",
-                            Image = "https://ibb.co/jRdKrDB",
+                            Image = "/imgs/manufacturers/homedepot.jpg",
                             Name = "Home Depot"
                         },
                         new
                         {
                             Id = "handikea",
-                            Image = "https://ibb.co/S75K0fj",
+                            Image = "/imgs/manufacturers/ikea.jpg",
                             Name = "IKEA"
                         });
                 });
@@ -504,7 +504,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PaymentStatus = 2,
                             PhoneNumber = "070123456",
                             PostalCode = "1234",
-                            PurchasedTime = new DateTime(2023, 12, 11, 18, 14, 51, 70, DateTimeKind.Local).AddTicks(2110),
+                            PurchasedTime = new DateTime(2023, 12, 12, 2, 56, 22, 445, DateTimeKind.Local).AddTicks(7445),
                             Status = 1
                         },
                         new
@@ -517,7 +517,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PaymentStatus = 2,
                             PhoneNumber = "070123456",
                             PostalCode = "1234",
-                            PurchasedTime = new DateTime(2023, 12, 11, 18, 14, 51, 70, DateTimeKind.Local).AddTicks(2154),
+                            PurchasedTime = new DateTime(2023, 12, 12, 2, 56, 22, 445, DateTimeKind.Local).AddTicks(7486),
                             Status = 1
                         },
                         new
@@ -530,7 +530,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PaymentStatus = 2,
                             PhoneNumber = "070123456",
                             PostalCode = "1234",
-                            PurchasedTime = new DateTime(2023, 12, 11, 18, 14, 51, 70, DateTimeKind.Local).AddTicks(2155),
+                            PurchasedTime = new DateTime(2023, 12, 12, 2, 56, 22, 445, DateTimeKind.Local).AddTicks(7488),
                             Status = 1
                         },
                         new
@@ -543,7 +543,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PaymentStatus = 2,
                             PhoneNumber = "070123456",
                             PostalCode = "1234",
-                            PurchasedTime = new DateTime(2023, 12, 11, 18, 14, 51, 70, DateTimeKind.Local).AddTicks(2157),
+                            PurchasedTime = new DateTime(2023, 12, 12, 2, 56, 22, 445, DateTimeKind.Local).AddTicks(7489),
                             Status = 1
                         },
                         new
@@ -556,7 +556,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             PaymentStatus = 2,
                             PhoneNumber = "070123456",
                             PostalCode = "1234",
-                            PurchasedTime = new DateTime(2023, 12, 11, 18, 14, 51, 70, DateTimeKind.Local).AddTicks(2159),
+                            PurchasedTime = new DateTime(2023, 12, 12, 2, 56, 22, 445, DateTimeKind.Local).AddTicks(7491),
                             Status = 1
                         });
                 });
@@ -739,7 +739,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "03b07a62-e987-4544-90b8-5955bc6051a3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2917),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2760),
                             Description = "This car cover is made from waterproof material and is designed to protect your car from rain, snow, and other elements.",
                             Discount = 0,
                             Image = "",
@@ -752,7 +752,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5da8b5c6-ddf6-4034-b745-be7d95f123c6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2957),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2832),
                             Description = "This car cover is designed to protect your car from the sun's harmful rays, keeping your car's interior cool and preventing fading.",
                             Discount = 4,
                             Image = "",
@@ -765,7 +765,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1fd49222-be5c-442a-ba8d-6d0d902be8df",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2961),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2836),
                             Description = "This heavy-duty car cover is made from durable material and is designed to protect your car from dust, dirt, and scratches.",
                             Discount = 3,
                             Image = "",
@@ -778,7 +778,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b0e9542f-d95e-4102-9fb4-118d1f821e2f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2964),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2838),
                             Description = "This indoor car cover is made from soft material and is designed to protect your car's paint from scratches and dust while it's parked in your garage.",
                             Discount = 0,
                             Image = "",
@@ -791,7 +791,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c86690f4-9702-44cb-a900-129d2e3ad99f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2970),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2840),
                             Description = "This car cover is made from breathable material and is designed to prevent moisture buildup and mildew, making it ideal for long-term storage.",
                             Discount = 0,
                             Image = "",
@@ -804,7 +804,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2e0a563c-03ef-456c-8bfc-c9e14283a5b9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2971),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2841),
                             Description = "These all-weather floor mats are designed to protect your car's interior from dirt, debris, and moisture, making them perfect for any season.",
                             Discount = 0,
                             Image = "",
@@ -817,7 +817,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b91fd86f-ea7f-467e-ad24-25ebb10dfd13",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2974),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2851),
                             Description = "These carpeted floor mats provide a comfortable and stylish addition to your car's interior, while also protecting the original carpet from wear and tear.",
                             Discount = 16,
                             Image = "",
@@ -830,7 +830,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "eb9d8d41-727d-45b1-94a3-aac67fbeaabb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2977),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2854),
                             Description = "These custom-fit floor mats are designed specifically for your make and model, ensuring a perfect fit and maximum protection for your car's interior.",
                             Discount = 0,
                             Image = "",
@@ -843,7 +843,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "af97e70f-98ed-455d-9db8-ff39d255e175",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2980),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2863),
                             Description = "These rubber floor mats are perfect for heavy-duty use, protecting your car's interior from mud, water, and other debris.",
                             Discount = 0,
                             Image = "",
@@ -856,7 +856,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5a5d00df-2745-4f6b-a7a6-40a93c3efb15",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2982),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2865),
                             Description = "These logo floor mats feature your favorite sports team or car brand logo, adding a personalized touch to your car's interior.",
                             Discount = 0,
                             Image = "",
@@ -869,7 +869,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "fe07bf5c-7ec9-4b18-a66d-fd71becdeedd",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2985),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2875),
                             Description = "These premium leather seat covers add a luxurious and elegant touch to your car's interior, while also providing protection against spills and stains.",
                             Discount = 0,
                             Image = "",
@@ -882,7 +882,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6fd73a11-7250-4291-b706-281c40efefcb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2987),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2877),
                             Description = "These sports-inspired seat covers provide a sleek and stylish look to your car's interior, while also offering protection and comfort during long drives.",
                             Discount = 15,
                             Image = "",
@@ -895,7 +895,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e6dfecee-1ffe-4a36-ac59-c183606b6218",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2990),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2880),
                             Description = "These custom fit seat covers are tailored to fit your car's seats perfectly, providing maximum protection and comfort for you and your passengers.",
                             Discount = 0,
                             Image = "",
@@ -908,7 +908,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d0722930-e054-433b-9fc3-2928b8e06ace",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2993),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2882),
                             Description = "These universal fit seat covers are designed to fit most cars, trucks, and SUVs, making them a versatile and affordable option for any car owner.",
                             Discount = 8,
                             Image = "",
@@ -921,7 +921,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2b265092-ee4f-490f-b7e9-0e8290d51c93",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2995),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2884),
                             Description = "These neoprene seat covers provide a durable and waterproof barrier against spills and stains, while also offering a sporty and rugged look to your car's interior.",
                             Discount = 0,
                             Image = "",
@@ -934,7 +934,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2eea9eb3-dbda-4069-b09b-70d1e802c715",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(2997),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2920),
                             Description = "Keep your trunk neat and organized with this spacious and durable trunk organizer. Features multiple compartments and foldable design for easy storage.",
                             Discount = 0,
                             Image = "",
@@ -947,7 +947,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bbeec1bf-5326-4616-8653-5ec68c4fb37b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3000),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2923),
                             Description = "This backseat organizer provides ample storage space for all your travel essentials, including water bottles, snacks, electronics, and more. Attaches easily to the back of the front seats.",
                             Discount = 0,
                             Image = "",
@@ -960,7 +960,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4778333f-2513-45ef-9b15-4a7ddb56ba16",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3002),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2929),
                             Description = "Keep your sunglasses, phone, and other small items within reach with this handy sun visor organizer. Features multiple pockets and a secure clip-on design.",
                             Discount = 0,
                             Image = "",
@@ -973,7 +973,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "61c6f600-1ea9-4a55-8df8-79ee71b6b4ad",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3004),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2931),
                             Description = "This seat gap filler prevents items from falling in between the seats and is a great way to keep your car clean and organized. Fits most cars and is easy to install.",
                             Discount = 0,
                             Image = "",
@@ -986,7 +986,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7b4f6627-3fc9-4aae-9a3d-fbae4463936e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3007),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2934),
                             Description = "Maximize your center console storage space with this handy organizer. Features multiple compartments and a non-slip bottom to keep items in place.",
                             Discount = 0,
                             Image = "",
@@ -999,7 +999,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a69bec07-9985-4829-aa84-f7b92ea5eaac",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3009),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2936),
                             Description = "The Belkin Car Vent Mount provides a safe, hands-free way to use your smartphone in the car. The adjustable brackets expand to fit most smartphones and keep them securely in place.",
                             Discount = 0,
                             Image = "",
@@ -1012,7 +1012,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6393507c-0aeb-45d1-93e6-a468f61084f7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3011),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2938),
                             Description = "The Spigen Magnetic Phone Mount uses powerful magnets to securely hold your phone in place while you drive. The mount can be attached to your car's dashboard or air vent for easy access.",
                             Discount = 0,
                             Image = "",
@@ -1025,7 +1025,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "13bee259-e388-4b18-8700-ecd3a0844858",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3013),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2939),
                             Description = "The iOttie Easy One Touch Car Mount features a universal design that fits most smartphones. The mount can be attached to your car's dashboard or windshield for maximum convenience.",
                             Discount = 0,
                             Image = "",
@@ -1038,7 +1038,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a4442552-fcbc-4767-9bcc-38c4172ce456",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3015),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2941),
                             Description = "The WizGear Dashboard Phone Mount provides a stable, non-slip surface for your phone while you drive. The mount can be attached to your car's dashboard with a strong adhesive.",
                             Discount = 12,
                             Image = "",
@@ -1051,7 +1051,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "05e6aed2-3e6d-430e-ba53-3108182378d1",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3018),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2943),
                             Description = "The Mpow Car Phone Holder features a flexible arm that can be adjusted to any angle for easy viewing. The mount can be attached to your car's air vent or dashboard for maximum convenience.",
                             Discount = 0,
                             Image = "",
@@ -1064,7 +1064,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1eb4379a-a87b-441d-bd49-af2bea052b50",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3020),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2945),
                             Description = "Charge your devices quickly and efficiently with this fast charging USB car charger.",
                             Discount = 6,
                             Image = "",
@@ -1077,7 +1077,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6b897bf1-077d-47ed-b8d0-84abcc0d29a7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3023),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2950),
                             Description = "Charge two devices at once with this dual USB car charger.",
                             Discount = 0,
                             Image = "",
@@ -1090,7 +1090,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3d39d7a3-8d8f-42c7-9f91-880a53a6a380",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3025),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2953),
                             Description = "Charge your phone wirelessly while on the go with this wireless car charger.",
                             Discount = 0,
                             Image = "",
@@ -1103,7 +1103,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "cdab4e47-7b03-4833-89d5-fe602a9e9558",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3028),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2955),
                             Description = "Charge your USB-C devices in your car with this compact and affordable USB-C car charger.",
                             Discount = 0,
                             Image = "",
@@ -1116,7 +1116,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b6bfa026-b6ed-4a81-b4c2-636ef1b81376",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3030),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2965),
                             Description = "Charge multiple devices at once with this car charger that has multiple ports.",
                             Discount = 0,
                             Image = "",
@@ -1129,7 +1129,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "35744787-3044-46a3-a613-126b4387419b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3034),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(2997),
                             Description = "Get your car looking like new with our ultimate car cleaning kit! Includes everything you need for a deep clean, inside and out.",
                             Discount = 0,
                             Image = "",
@@ -1142,7 +1142,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e53e3f4f-185d-4b53-a54f-03ada71e1d38",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3036),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3000),
                             Description = "Clean your car in no time with our quick and easy car cleaning kit! Perfect for a quick touch-up or regular maintenance.",
                             Discount = 5,
                             Image = "",
@@ -1155,7 +1155,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "af6f8587-30eb-4838-b1a5-efcb688390a6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3038),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3002),
                             Description = "Clean your car while being kind to the environment with our eco-friendly car cleaning kit! Includes biodegradable cleaning products and reusable towels.",
                             Discount = 0,
                             Image = "",
@@ -1168,7 +1168,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "43ba262d-15c7-4936-9bf5-eb9a06c0ee3d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3041),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3004),
                             Description = "Treat your car to the ultimate luxury cleaning experience with our luxury car cleaning kit! Includes premium cleaning products and soft microfiber towels.",
                             Discount = 0,
                             Image = "",
@@ -1181,7 +1181,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0a87621f-3066-4df1-ad90-4161cbd17b9c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3043),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3007),
                             Description = "Get professional-grade cleaning results with our professional car cleaning kit! Includes heavy-duty cleaning products and detailing tools.",
                             Discount = 0,
                             Image = "",
@@ -1194,7 +1194,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ba248d16-acf6-4294-a1da-7bd81bf5e967",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3046),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3009),
                             Description = "Bring the fresh scent of a new car to your vehicle with our new car scent air freshener! Easy to use and long-lasting.",
                             Discount = 0,
                             Image = "",
@@ -1207,7 +1207,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d5a19b81-af8e-4539-9ce5-a487a929810b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3048),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3011),
                             Description = "Enjoy the warm and inviting scent of vanilla in your car with our vanilla bean car diffuser! Includes natural essential oils for a high-quality fragrance.",
                             Discount = 0,
                             Image = "",
@@ -1220,7 +1220,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "385adbbf-3523-461e-8235-1d0ae0a0a752",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3050),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3014),
                             Description = "Experience the luxurious scent of leather in your car with our leather scented car perfume! Designed to provide a long-lasting fragrance.",
                             Discount = 0,
                             Image = "",
@@ -1233,7 +1233,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "888b70f7-d256-4890-8dfd-31f0dd9864c3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3053),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3015),
                             Description = "Refresh your car with the invigorating scent of citrus with our citrus grove car air freshener! Contains natural citrus essential oils.",
                             Discount = 0,
                             Image = "",
@@ -1246,7 +1246,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "eda99703-0611-4cd9-8f29-4c1e83978b37",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3055),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3017),
                             Description = "Relax and unwind in your car with our lavender fields car diffuser! Contains natural lavender essential oils for a calming fragrance.",
                             Discount = 0,
                             Image = "",
@@ -1259,7 +1259,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bb72eb62-6f41-4c7d-aad4-93941e42dd68",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3058),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3020),
                             Description = "Upgrade your car's headlights with our LED headlight conversion kit! Provides brighter and more efficient lighting than traditional halogen bulbs.",
                             Discount = 0,
                             Image = "",
@@ -1272,7 +1272,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "addf303c-15d4-4456-8ff5-97e9fc568f1e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3060),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3022),
                             Description = "Add a stylish touch to your car with our underglow LED strip lights! Available in multiple colors and can be easily installed.",
                             Discount = 0,
                             Image = "",
@@ -1285,7 +1285,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0ad310e2-48e2-4f76-a9cf-635c0384925c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3063),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3025),
                             Description = "Improve your visibility in foggy conditions with our fog light upgrade kit! Designed to provide a wider and brighter beam pattern.",
                             Discount = 0,
                             Image = "",
@@ -1298,7 +1298,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7447366f-649c-450a-ae99-c759057f8d8e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3065),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3027),
                             Description = "Experience brighter and clearer lighting with our HID xenon headlight bulbs! Available in multiple color temperatures to suit your preferences.",
                             Discount = 0,
                             Image = "",
@@ -1311,7 +1311,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "74be1b8d-a0b0-4788-89e3-9aa8476841fa",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3068),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3029),
                             Description = "Light up the interior of your car with our LED dome light kit! Available in multiple colors and can be easily installed.",
                             Discount = 0,
                             Image = "",
@@ -1324,7 +1324,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b9f6f25c-5573-4555-bc54-a5131d4a2b4f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3071),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3031),
                             Description = "Upgrade the look of your car with our carbon fiber spoiler! Lightweight and durable, and adds a sporty touch to your vehicle.",
                             Discount = 0,
                             Image = "",
@@ -1337,7 +1337,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "decc1764-3970-4b82-9c01-d8380b19d313",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3073),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3034),
                             Description = "Transform the look of your car with our high-quality alloy wheel set! Available in various sizes and finishes.",
                             Discount = 0,
                             Image = "",
@@ -1350,7 +1350,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0ac71d91-25ae-4d53-8a11-4118494224e0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3076),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3036),
                             Description = "Upgrade the sound and performance of your car with our performance exhaust system! Made from high-quality materials and designed for maximum flow.",
                             Discount = 0,
                             Image = "",
@@ -1363,7 +1363,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b60b2054-fe4d-4dfb-87d7-862e48faa272",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3078),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3038),
                             Description = "Give your car a racing-inspired look with our vinyl decal kit! Available in multiple colors and easy to install.",
                             Discount = 0,
                             Image = "",
@@ -1376,7 +1376,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a071b643-8c74-4f62-86ca-2f506ff71c89",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3081),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3040),
                             Description = "Protect your car while showing off your style with our custom car cover! Available in various colors and designs, and made from high-quality materials.",
                             Discount = 0,
                             Image = "",
@@ -1389,7 +1389,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f1c88c2d-8433-471b-abf9-b59f9a530e37",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3084),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3043),
                             Description = "Get a bold, matte lip with this long-lasting lipstick. Available in a range of vibrant shades.",
                             Discount = 0,
                             Image = "",
@@ -1402,7 +1402,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "58e26c93-1bdd-4ff1-aac7-761f71bd2ea2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3085),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3045),
                             Description = "Create endless eye looks with this versatile eyeshadow palette. Features a mix of matte and shimmer shades.",
                             Discount = 0,
                             Image = "",
@@ -1415,7 +1415,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a2ec9b8a-7a25-41cb-89f3-0cf7e89410e0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3087),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3047),
                             Description = "Achieve a flawless complexion with this buildable, medium-coverage foundation. Available in a variety of shades.",
                             Discount = 0,
                             Image = "",
@@ -1428,7 +1428,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c7c0c3bf-4646-4fee-82d3-816014e51d11",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3090),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3049),
                             Description = "Get bold, voluminous lashes with this lengthening mascara. Features a tapered brush for easy application.",
                             Discount = 0,
                             Image = "",
@@ -1441,7 +1441,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c7119e78-24e6-401a-b199-3b6845df17f3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3092),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3051),
                             Description = "Add a natural flush to your cheeks with this silky powder blush. Available in a range of shades.",
                             Discount = 0,
                             Image = "",
@@ -1454,7 +1454,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "264db346-d6cd-42bd-8710-934d194ffe21",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3098),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3054),
                             Description = "Restore moisture and nourish your skin with this hydrating facial moisturizer. Lightweight and fast-absorbing formula for all skin types.",
                             Discount = 2,
                             Image = "",
@@ -1467,7 +1467,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "809d8ffc-8fdf-4d04-a3cd-a1489c440c92",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3101),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3056),
                             Description = "Cleanse and refresh your skin with this gentle cleansing foam. Removes impurities without stripping the skin's natural moisture.",
                             Discount = 0,
                             Image = "",
@@ -1480,7 +1480,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "daa8dd3e-41e9-45b4-9651-19bd9796b4aa",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3103),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3058),
                             Description = "Reduce the appearance of fine lines and wrinkles with this powerful anti-aging serum. Formulated with potent ingredients for visible results.",
                             Discount = 0,
                             Image = "",
@@ -1493,7 +1493,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4909b5d1-d00d-44f9-9f2f-07b191e55ce9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3106),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3060),
                             Description = "Revitalize your skin with this exfoliating facial scrub. Gently removes dead skin cells and promotes a smoother complexion.",
                             Discount = 12,
                             Image = "",
@@ -1506,7 +1506,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bd35fa6e-7868-4e62-ad87-79829aedb100",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3109),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3063),
                             Description = "Achieve a brighter, more radiant complexion with this brightening face mask. Infused with antioxidants and natural extracts.",
                             Discount = 0,
                             Image = "",
@@ -1519,7 +1519,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "215eb3c6-55fc-4c2d-9746-6c9c6a012326",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3115),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3065),
                             Description = "Cleanse and nourish your hair with this revitalizing shampoo. Formulated with natural extracts to promote healthy and shiny locks.",
                             Discount = 0,
                             Image = "",
@@ -1532,7 +1532,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ab02e0d7-8890-4385-8dcb-4421ca0c8bb6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3117),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3067),
                             Description = "Hydrate and detangle your hair with this replenishing conditioner. Restores moisture and leaves your hair smooth and manageable.",
                             Discount = 0,
                             Image = "",
@@ -1545,7 +1545,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "21364990-c2e4-4598-a617-5286281f1885",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3120),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3069),
                             Description = "Nourish and strengthen your hair with this luxurious hair oil. Adds shine, tames frizz, and protects against heat damage.",
                             Discount = 0,
                             Image = "",
@@ -1558,7 +1558,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "896e2b2d-b43a-4d2a-8eaa-59c1a6fb0762",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3122),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3075),
                             Description = "Revitalize and repair your hair with this deep conditioning hair mask. Restores moisture, improves elasticity, and reduces breakage.",
                             Discount = 13,
                             Image = "",
@@ -1571,7 +1571,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e670fc37-95a1-4888-8d87-7f3dac3fbdc0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3125),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3077),
                             Description = "Shield your hair from heat styling damage with this protective spray. Forms a barrier to prevent breakage and maintain hair health.",
                             Discount = 0,
                             Image = "",
@@ -1584,7 +1584,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c935236b-6cb3-493c-874d-09b5d9961c34",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3127),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3079),
                             Description = "Experience the allure of this exquisite eau de parfum. A captivating blend of floral and woody notes that lingers throughout the day.",
                             Discount = 0,
                             Image = "",
@@ -1597,7 +1597,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f351bbc7-d6bd-4356-9824-ba4e4b4789eb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3129),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3081),
                             Description = "Make a statement with this refreshing cologne spray. A harmonious fusion of citrus and aromatic accords for a burst of vitality.",
                             Discount = 20,
                             Image = "",
@@ -1610,7 +1610,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "761b9633-ff86-4626-9563-ae92284f60ea",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3132),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3083),
                             Description = "Indulge in the luxury of this concentrated perfume oil. Infused with rich and sensual notes that create a lasting and intimate fragrance experience.",
                             Discount = 0,
                             Image = "",
@@ -1623,7 +1623,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "61829cb1-3692-4664-8727-d54f6bcc2a4f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3134),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3085),
                             Description = "Refresh and invigorate your senses with this lightweight body mist. Leaves a delicate and lingering fragrance on your skin.",
                             Discount = 17,
                             Image = "",
@@ -1636,7 +1636,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1a275ab8-9dc3-45b1-a52e-533d5f37c21f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3137),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3088),
                             Description = "Experience the convenience of this portable solid perfume. A blend of enchanting notes in a compact and travel-friendly form.",
                             Discount = 6,
                             Image = "",
@@ -1649,7 +1649,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f8ae5b26-dbb2-4baa-b052-93fb19488b00",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3139),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3089),
                             Description = "Cleanse and refresh your skin with this invigorating body wash. Formulated with nourishing ingredients to leave your skin feeling soft and hydrated.",
                             Discount = 0,
                             Image = "",
@@ -1662,7 +1662,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "dbf166c8-91b7-48c3-999b-cba45fdbaec1",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3141),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3091),
                             Description = "Moisturize and nourish your skin with this luxurious body lotion. Absorbs quickly and leaves your skin smooth, supple, and delicately scented.",
                             Discount = 0,
                             Image = "",
@@ -1675,7 +1675,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4bbe25a4-60b5-47f1-8a09-34b5b98a10be",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3144),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3093),
                             Description = "Indulge in a relaxing bath experience with these delightful bath bombs. Effervescent and aromatic, they transform your bathwater into a soothing oasis.",
                             Discount = 7,
                             Image = "",
@@ -1688,7 +1688,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2d5268af-e732-42f1-8ae8-b6e91677bcd4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3146),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3095),
                             Description = "Keep your hands clean and nourished with this gentle and moisturizing hand soap. Leaves your hands feeling soft, refreshed, and lightly fragranced.",
                             Discount = 13,
                             Image = "",
@@ -1701,7 +1701,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "05e4932f-b86e-40de-bc3a-d6edb461d109",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3149),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3097),
                             Description = "Exfoliate and rejuvenate your skin with this invigorating body scrub. Removes dead skin cells and reveals smoother, brighter, and more radiant skin.",
                             Discount = 0,
                             Image = "",
@@ -1714,7 +1714,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3f34d9bb-8858-45ab-ab66-7653cf4b4632",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3151),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3099),
                             Description = "Nourish and tame your beard with this conditioning beard oil. Softens and hydrates facial hair, promoting a healthy and well-groomed appearance.",
                             Discount = 0,
                             Image = "",
@@ -1727,7 +1727,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5da5d9d9-03f0-4b26-aa19-d0037d0a1e0b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3154),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3102),
                             Description = "Achieve a close and comfortable shave with this rich shaving cream. Creates a protective lather for a smooth glide and minimizes skin irritation.",
                             Discount = 0,
                             Image = "",
@@ -1740,7 +1740,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ef429ea8-025b-4475-b348-17fab65ee9a2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3156),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3103),
                             Description = "Soothe and moisturize your skin after shaving with this calming aftershave balm. Helps reduce razor burn, redness, and provides hydration.",
                             Discount = 0,
                             Image = "",
@@ -1753,7 +1753,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2b7b4c0e-3b2c-4ddf-8907-ff352aad28a3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3158),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3106),
                             Description = "Style your hair with precision and hold using this versatile hair styling pomade. Provides a medium hold and a sleek, polished finish.",
                             Discount = 21,
                             Image = "",
@@ -1766,7 +1766,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5116b20c-3b9c-42ae-875f-788bf14ea028",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3161),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3108),
                             Description = "Add a touch of sophistication with this captivating cologne. Leaves a long-lasting, alluring scent that complements your personal style.",
                             Discount = 0,
                             Image = "",
@@ -1779,7 +1779,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "42157d88-51ec-4a4a-a283-7951c56376ef",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3163),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3111),
                             Description = "Enhance your makeup application with this comprehensive set of high-quality makeup brushes. Includes a variety of brushes for face, eyes, and lips.",
                             Discount = 3,
                             Image = "",
@@ -1792,7 +1792,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7d4de95c-aef1-4a5c-b7e2-2f1d793c2862",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3166),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3112),
                             Description = "Achieve stunning, curled lashes with this ergonomic eyelash curler. Designed to enhance the curl and lift of your lashes for a wide-eyed look.",
                             Discount = 0,
                             Image = "",
@@ -1805,7 +1805,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0bea072a-0e26-48d0-9357-44cf35e056d4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3167),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3115),
                             Description = "Achieve a flawless makeup application with this versatile and reusable makeup sponge. Helps blend foundation, concealer, and other complexion products seamlessly.",
                             Discount = 0,
                             Image = "",
@@ -1818,7 +1818,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "86a47d55-c068-4cb0-b813-93234cc2600e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3170),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3118),
                             Description = "Create beautiful hairstyles with this all-in-one hair styling tools kit. Includes a hairdryer, flat iron, curling wand, and various styling accessories.",
                             Discount = 0,
                             Image = "",
@@ -1831,7 +1831,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1fe6f99d-afa0-47b5-ac53-8f7a0b36264b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3172),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3119),
                             Description = "Keep your makeup collection neat and organized with this spacious makeup organizer. Features compartments, drawers, and dividers for easy storage.",
                             Discount = 0,
                             Image = "",
@@ -1844,7 +1844,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b097c96c-048a-4f83-b9fe-706d5a3296db",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3178),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3122),
                             Description = "Achieve optimal oral hygiene with this advanced electric toothbrush. Features multiple brushing modes, timer, and interchangeable brush heads.",
                             Discount = 0,
                             Image = "",
@@ -1857,7 +1857,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ec7caaac-3acc-4e33-b44f-d9246988fe17",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3181),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3124),
                             Description = "Nourish and moisturize your skin with this indulgent body lotion. Enriched with hydrating ingredients, it leaves your skin smooth and supple.",
                             Discount = 0,
                             Image = "",
@@ -1870,7 +1870,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7067fe71-d0d0-4adb-b4b8-ee4891a74a1c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3183),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3126),
                             Description = "Keep your hands clean and germ-free with this effective hand sanitizer. Contains a high percentage of alcohol to kill bacteria and viruses.",
                             Discount = 0,
                             Image = "",
@@ -1883,7 +1883,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ca1d73fb-7574-4c2e-bf0d-6e020b064b28",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3186),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3127),
                             Description = "Stay comfortable and confident with these essential feminine hygiene products. Offers reliable protection and freshness during your menstrual cycle.",
                             Discount = 0,
                             Image = "",
@@ -1896,7 +1896,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "288a2013-d786-41fe-b4b9-a56c3a8e4187",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3188),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3130),
                             Description = "Stay fresh and odor-free throughout the day with this long-lasting deodorant. Provides effective protection against sweat and body odor.",
                             Discount = 0,
                             Image = "",
@@ -1909,7 +1909,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3a59b15b-2817-4432-be8a-097e614a243a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3190),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3132),
                             Description = "Protect your skin from harmful UV rays with this high-SPF sunscreen lotion. Provides broad-spectrum protection and is water-resistant.",
                             Discount = 0,
                             Image = "",
@@ -1922,7 +1922,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "de2ea13d-b216-41d2-b341-60182487738b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3193),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3134),
                             Description = "Soothe and hydrate your skin after sun exposure with this cooling gel. Helps reduce redness, dryness, and discomfort caused by sunburn.",
                             Discount = 13,
                             Image = "",
@@ -1935,7 +1935,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5498c1a5-f773-4bcc-8acb-10794c36694c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3194),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3136),
                             Description = "Stay protected and stylish with this wide-brimmed sun hat. Provides shade for your face and neck while adding a fashionable touch to your outfit.",
                             Discount = 0,
                             Image = "",
@@ -1948,7 +1948,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1ed9876d-fa08-4fb3-8dc7-261d1225548c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3197),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3139),
                             Description = "Relieve sunburn discomfort with this soothing aloe vera spray. Provides instant relief and helps promote healing for sun-damaged skin.",
                             Discount = 0,
                             Image = "",
@@ -1961,7 +1961,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "abc0945a-9294-4463-b11f-e881c4a57194",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3199),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3141),
                             Description = "Keep your lips protected from the sun with this SPF lip balm. Nourishes and moisturizes your lips while shielding them from harmful UV rays.",
                             Discount = 0,
                             Image = "",
@@ -1974,7 +1974,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a9488c66-4662-457c-9cc0-c5d34298f352",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3201),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3143),
                             Description = "Create a calming and aromatic environment with this essential oil diffuser. Releases a fine mist of essential oils to enhance relaxation and well-being.",
                             Discount = 0,
                             Image = "",
@@ -1987,7 +1987,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ad22c7f1-37a6-406f-9342-add77fd17234",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3204),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3146),
                             Description = "Enhance your yoga practice with this high-quality yoga mat. Provides cushioning and a non-slip surface for optimal comfort and stability.",
                             Discount = 0,
                             Image = "",
@@ -2000,7 +2000,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b4267088-0d92-40cb-a03f-9730aaa1fb8f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3205),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3148),
                             Description = "Support your meditation practice with this comfortable meditation cushion. Helps maintain proper posture and provides a soft and supportive seat.",
                             Discount = 0,
                             Image = "",
@@ -2013,7 +2013,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "db9950ed-5ae4-481d-9541-a9cf957da348",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3740),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3150),
                             Description = "Track your daily activity and monitor your health with this advanced fitness tracker. Measures steps, heart rate, sleep quality, and more.",
                             Discount = 0,
                             Image = "",
@@ -2026,7 +2026,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7ab36f6d-9c59-4aff-97c9-e406fc9b5ea5",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3770),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3152),
                             Description = "Experience the soothing benefits of herbal tea with this set of handcrafted blends. Includes a variety of flavors to support relaxation and well-being.",
                             Discount = 0,
                             Image = "",
@@ -2039,7 +2039,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c0c80075-e62c-44cf-8ad7-0f9e4c6de40d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3775),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3154),
                             Description = "This edgy leather jacket features a moto-inspired design and a cropped length. Perfect for adding some edge to any outfit.",
                             Discount = 0,
                             Image = "",
@@ -2052,7 +2052,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "810bbb00-b104-4b11-ab99-6f91b730029e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3783),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3157),
                             Description = "Add a touch of edge to your wardrobe with this chic faux leather biker jacket. Featuring a slim fit, zippered pockets, and an asymmetrical front zip closure, this jacket is perfect for layering over any outfit.",
                             Discount = 7,
                             Image = "",
@@ -2065,7 +2065,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "262c138c-f65d-4528-bd40-e54a28712b2a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3788),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3160),
                             Description = "Stay cozy in style with this fleece sherpa jacket. Featuring a classic collar, button front, and side pockets, this jacket is perfect for layering over your favorite outfit on colder days.",
                             Discount = 4,
                             Image = "",
@@ -2078,7 +2078,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9efe4fca-e34c-4824-9bc7-4bc31d10a7b7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3793),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3163),
                             Description = "Stay warm and stylish in this quilted puffer jacket. Featuring a stand-up collar, zippered pockets, and a snap button front closure, this jacket is perfect for layering over any outfit during the colder months.",
                             Discount = 0,
                             Image = "",
@@ -2091,7 +2091,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "45784ea5-0041-4bf1-9c23-2e93657963fc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3797),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3165),
                             Description = "This classic denim jacket features a relaxed fit and a light wash. Perfect for layering over any outfit.",
                             Discount = 21,
                             Image = "",
@@ -2104,7 +2104,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "051cd50e-5497-4c17-9a03-f094f96a76b3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3801),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3169),
                             Description = "This glamorous faux fur coat features a cropped length and a bold leopard print. Perfect for dressing up any outfit.",
                             Discount = 0,
                             Image = "",
@@ -2117,7 +2117,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ab363f5c-ce22-4689-9789-ff1bcc9e1d69",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3806),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3170),
                             Description = "This edgy moto jacket features faux leather, silver hardware, and a belted waist. Perfect for adding some edge to any outfit.",
                             Discount = 0,
                             Image = "",
@@ -2130,7 +2130,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b4cc6cd5-16c1-4e65-8dfc-647d19f2560e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3812),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3172),
                             Description = "This flowy maxi dress features a colorful floral pattern and a cinched waist for a flattering silhouette. Perfect for summer weddings or brunch dates.",
                             Discount = 0,
                             Image = "",
@@ -2143,7 +2143,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3606ba10-ae01-4789-a1b4-1e17bae8b384",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3818),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3174),
                             Description = "This flowy maxi dress features a bold floral print and a flattering V-neckline. Perfect for a summer wedding or a beach vacation.",
                             Discount = 0,
                             Image = "",
@@ -2156,7 +2156,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8c5fde29-0da8-44de-9dc3-769698d9fb8f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3823),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3176),
                             Description = "This elegant wrap dress features a classic polka dot print and a tie waist for a customized fit. Perfect for a day at the office or a night out.",
                             Discount = 0,
                             Image = "",
@@ -2169,7 +2169,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "db894224-e132-4289-9c3b-b3d629204850",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3827),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3177),
                             Description = "This versatile midi dress features a flattering A-line silhouette and a chic abstract print. Perfect for any occasion, from brunch to a cocktail party.",
                             Discount = 0,
                             Image = "",
@@ -2182,7 +2182,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e72f4279-4d1c-49ea-9ccb-9cc8027726ac",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3832),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3179),
                             Description = "This classic little black dress features a flattering fit-and-flare silhouette and a lace bodice. Perfect for a special occasion or a night out.",
                             Discount = 0,
                             Image = "",
@@ -2195,7 +2195,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a5a886da-209b-4bd3-a532-5e9ef25c7026",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3837),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3181),
                             Description = "This trendy off-the-shoulder dress features a flirty ruffle neckline and a bold tropical print. Perfect for a vacation or a summer party.",
                             Discount = 0,
                             Image = "",
@@ -2208,7 +2208,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "12e13234-2da4-475f-89ce-3b16125da53c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3840),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3183),
                             Description = "This versatile wrap top can be dressed up or down. Featuring a flattering v-neckline and a tie closure at the waist, it pairs well with high-waisted pants or a39cf50b-b311-468e-8e43-eefb0ef53fe2.",
                             Discount = 0,
                             Image = "",
@@ -2221,7 +2221,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "642f96e1-f879-4a87-8c34-b976d4c2d14d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3847),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3186),
                             Description = "This trendy off - the - shoulder top features a smocked neckline and a flowy silhouette.Perfect for a beach vacation or a summer day.",
                             Discount = 0,
                             Image = "",
@@ -2234,7 +2234,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "96c9fe94-aa22-4efd-8526-1bf2f064ad48",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3851),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3189),
                             Description = "This cute tie - front crop top features a scoop neckline and a cropped length.Perfect for pairing with high - waisted jeans or a39cf50b-b311-468e-8e43-eefb0ef53fe2.",
                             Discount = 0,
                             Image = "",
@@ -2247,7 +2247,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "06ff5983-84f7-4999-a812-9d21117478dc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3856),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3191),
                             Description = "This flirty off-the-shoulder top features a delicate floral print and a flowy silhouette. Perfect for a date night or a girls' night out.",
                             Discount = 0,
                             Image = "",
@@ -2260,7 +2260,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a6e0066b-0bf9-43f9-b4a3-f12bbeb6ddae",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3867),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3193),
                             Description = "This elegant lace blouse features a scalloped hem and a flattering V-neckline. Perfect for a special occasion or a night out.",
                             Discount = 0,
                             Image = "",
@@ -2273,7 +2273,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a4c9eeff-59dc-446d-909d-27e90053284b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3871),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3196),
                             Description = "This trendy crop top features a playful polka dot print and a flattering wrap design. Perfect for a summer music festival or a beach day.",
                             Discount = 8,
                             Image = "",
@@ -2286,7 +2286,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "60f4d55e-af8d-4b62-92bd-15c4f08fde39",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3878),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3198),
                             Description = "This cute tank top features colorful embroidery and a breezy silhouette. Perfect for a casual day out or a weekend brunch.",
                             Discount = 0,
                             Image = "",
@@ -2299,7 +2299,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e876b05c-3d86-4421-a4e0-e857933f11c2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3883),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3201),
                             Description = "A classic denim mini skirt that pairs well with any top.",
                             Discount = 15,
                             Image = "",
@@ -2312,7 +2312,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "faa67f45-3870-400c-add8-841489087883",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3888),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3203),
                             Description = "A sophisticated pleated midi skirt that's perfect for the office.",
                             Discount = 0,
                             Image = "",
@@ -2325,7 +2325,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "05d827ba-e6ed-4159-be96-04f2b71d27cc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3893),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3205),
                             Description = "This elegant pleated midi skirt features a high waist and a metallic finish.Perfect for a special occasion or a night out.",
                             Discount = 0,
                             Image = "",
@@ -2338,7 +2338,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "25a35a75-b84a-4556-97c4-faf1c32e4c90",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3897),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3207),
                             Description = "This classic A-line skirt features a high waist and a knee-length hem, perfect for the office or a night out. Made from a soft and stretchy fabric for comfort.",
                             Discount = 0,
                             Image = "",
@@ -2351,7 +2351,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "34bafd74-3e1c-4bf3-a832-270b4481eb8b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3902),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3208),
                             Description = "A flowy floral A-line skirt that's perfect for spring.",
                             Discount = 0,
                             Image = "",
@@ -2364,7 +2364,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f1b3f4cb-d222-44ad-a6cf-1ab3089cdd97",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3906),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3211),
                             Description = "A sleek and edgy leather mini skirt that's perfect for a night out.",
                             Discount = 0,
                             Image = "",
@@ -2377,7 +2377,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7fb1b26c-5bf9-459b-b8d0-647929818374",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3912),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3212),
                             Description = "A versatile wrap midi skirt that can be dressed up or down.",
                             Discount = 0,
                             Image = "",
@@ -2390,7 +2390,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "15b1e745-03cb-4873-892d-18a1dfc16fe2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3918),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3215),
                             Description = "These classic high - waisted jeans feature a straight - leg fit and a raw hem for a modern twist.Made from a stretchy denim for comfort.",
                             Discount = 0,
                             Image = "",
@@ -2403,7 +2403,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "fadecfd0-03cd-462b-be1f-6c68cc9d2659",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3922),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3217),
                             Description = "These high-waisted skinny jeans are made with stretchy denim for a comfortable fit. Available in a variety of colors.",
                             Discount = 0,
                             Image = "",
@@ -2416,7 +2416,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d578e99d-086c-4f8c-af98-6c823d605d5b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3926),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3219),
                             Description = "These straight leg jeans have a relaxed fit and come in a faded, vintage-inspired wash.",
                             Discount = 0,
                             Image = "",
@@ -2429,7 +2429,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d1559be9-4fae-4855-801b-d088886d4f3a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3930),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3221),
                             Description = "These high-waisted wide-leg jeans have a retro feel and come in a medium wash denim.",
                             Discount = 0,
                             Image = "",
@@ -2442,7 +2442,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "20855d33-7fba-4408-aa81-67c85af2b3aa",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3933),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3223),
                             Description = "These skinny jeans have a distressed finish and are made with stretchy denim for a comfortable fit.",
                             Discount = 0,
                             Image = "",
@@ -2455,7 +2455,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ef408df0-6877-4fea-a517-84ca2e67b019",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3939),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3225),
                             Description = "Off-shoulder sweater with a relaxed fit and ribbed cuffs and hem. Made with a blend of wool and acrylic.",
                             Discount = 0,
                             Image = "",
@@ -2468,7 +2468,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "58c9836c-3d54-4eaa-ab98-142a9023502b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3944),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3227),
                             Description = "Stay cozy and stylish with this classic cable knit sweater, perfect for layering during the colder months.",
                             Discount = 0,
                             Image = "",
@@ -2481,7 +2481,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7acf8f89-addb-4b53-80c9-c6f798020a11",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3953),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3230),
                             Description = "This oversized turtleneck sweater is perfect for snuggling up in on chilly days, with a soft and comfortable fabric.",
                             Discount = 0,
                             Image = "",
@@ -2494,7 +2494,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ffa08eea-3cf4-4d5a-8d1e-c4581b562d74",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3957),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3232),
                             Description = "Indulge in luxury with this cashmere V-neck sweater, with a classic and versatile design that will elevate any outfit.",
                             Discount = 0,
                             Image = "",
@@ -2507,7 +2507,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4266b4ca-1999-48c7-9a1c-94b82f5bdecc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3962),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3235),
                             Description = "Add a touch of elegance to any outfit with this cropped cardigan, featuring a delicate knit design and a button-up front.",
                             Discount = 0,
                             Image = "",
@@ -2520,7 +2520,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "38212e7c-d4f5-4729-a6ac-220340ba4ad0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3966),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3237),
                             Description = "Step up your style with these suede ankle boots featuring a chunky heel and side zipper closure.",
                             Discount = 0,
                             Image = "",
@@ -2533,7 +2533,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "623cf00a-bc37-4b40-b008-47c4936ee0fb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3970),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3239),
                             Description = "These leather loafers offer both style and comfort, with a padded insole and classic design.",
                             Discount = 9,
                             Image = "",
@@ -2546,7 +2546,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4dea614b-430c-4abd-a648-74226675ee09",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3975),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3241),
                             Description = "Get the best of both worlds with these sneaker wedges, featuring a stylish design and comfortable fit.",
                             Discount = 0,
                             Image = "",
@@ -2559,7 +2559,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c7834aa3-42f4-47eb-94b0-61a7c71f119e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3981),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3244),
                             Description = "Elevate your look with these classic pumps, featuring a pointed toe and stiletto heel.",
                             Discount = 0,
                             Image = "",
@@ -2572,7 +2572,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "86ec62c0-1363-43ca-b330-b2ee9df5c0a7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3986),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3247),
                             Description = "Step out in style with these platform sandals, featuring a strappy design and chunky heel.",
                             Discount = 0,
                             Image = "",
@@ -2585,7 +2585,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a1ead742-c2eb-44ae-85fe-bd97a79e5141",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3990),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3249),
                             Description = "Stay comfortable and stylish with these flat sandals, featuring a strappy design and buckle closure.",
                             Discount = 0,
                             Image = "",
@@ -2598,7 +2598,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a70a2e02-8a15-466e-b651-351845673b73",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(3994),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3252),
                             Description = "These classic brown leather boots are perfect for any occasion. Made from high-quality leather, they are durable and stylish. The cushioned insole ensures all-day comfort.",
                             Discount = 20,
                             Image = "",
@@ -2611,7 +2611,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bde7aff0-c7b5-48fc-9180-d3314fe0699f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4000),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3253),
                             Description = "These suede ankle boots are a stylish addition to any wardrobe. Featuring a comfortable block heel and a side zipper for easy on and off, these boots are perfect for a night out.",
                             Discount = 14,
                             Image = "",
@@ -2624,7 +2624,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "62e37b49-e838-41e2-84fa-64881c97c6a7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4007),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3255),
                             Description = "These slip-on sneakers are perfect for a casual day out. With a breathable canvas upper and a comfortable rubber sole, these shoes will keep your feet cool and comfortable all day long.",
                             Discount = 0,
                             Image = "",
@@ -2637,7 +2637,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f743b312-b58a-4b4b-a2c4-ceaff31fdd15",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4014),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3258),
                             Description = "These high-top sneakers are a trendy addition to your shoe collection. Featuring a sleek black design and a comfortable padded collar, these shoes will keep you looking stylish and feeling comfortable all day long.",
                             Discount = 0,
                             Image = "",
@@ -2650,7 +2650,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c8adafdb-7d5e-47cc-8bd0-267f50224cd6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4020),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3260),
                             Description = "This stylish leather tote bag is perfect for carrying all your daily essentials. It features a roomy interior with multiple pockets and a zippered closure to keep your belongings secure.",
                             Discount = 0,
                             Image = "",
@@ -2663,7 +2663,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6b7a7571-1a41-4feb-9d88-134a97007fcc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4024),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3262),
                             Description = "This backpack is designed with a USB charging port, making it easy to charge your phone on the go. It also features a spacious interior with a padded laptop compartment and multiple pockets for organization.",
                             Discount = 8,
                             Image = "",
@@ -2676,7 +2676,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "537e4172-3dee-41e8-97cd-27edc38bb2ac",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4034),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3271),
                             Description = "This canvas tote bag is perfect for carrying all your essentials. It features a spacious interior with a zippered closure and multiple pockets for organization. The sturdy canvas material is durable and long-lasting.",
                             Discount = 0,
                             Image = "",
@@ -2689,7 +2689,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "69cee78d-ba2e-4f14-ac65-6c50ea481778",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4039),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3273),
                             Description = "This rolling duffel bag is perfect for travel. It features a spacious interior with multiple pockets for organization, and the durable wheels make it easy to maneuver through airports and hotels.",
                             Discount = 4,
                             Image = "",
@@ -2702,7 +2702,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "aca3ee92-8f53-4c95-bf6f-63b7c8273f51",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4044),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3276),
                             Description = "This leather messenger bag is perfect for work or school. It features a spacious interior with a padded laptop compartment and multiple pockets for organization. The adjustable shoulder strap allows for comfortable carrying.",
                             Discount = 0,
                             Image = "",
@@ -2715,7 +2715,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "162db9c7-dc26-4427-929f-f06891adf285",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4048),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3280),
                             Description = "These leggings are perfect for a yoga class or a morning jog. They have a mesh panel design that allows for ventilation and breathability.",
                             Discount = 0,
                             Image = "",
@@ -2728,7 +2728,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "cc8f4a1b-c7fd-4e48-adf1-8b8113e6419f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4053),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3283),
                             Description = "These compression shorts provide support for your muscles during your workout, and the moisture-wicking fabric keeps you dry and comfortable.",
                             Discount = 0,
                             Image = "",
@@ -2741,7 +2741,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c3ab8002-f2d1-416e-bf81-35eec16134a3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4060),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3285),
                             Description = "This racerback tank top is perfect for any type of workout. The moisture-wicking fabric keeps you cool and dry, and the racerback design allows for a full range of motion.",
                             Discount = 0,
                             Image = "",
@@ -2754,7 +2754,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "efd1e2db-9b36-4ec8-8520-58d0ca85abde",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4065),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3287),
                             Description = "This performance t-shirt is made with sweat-wicking fabric to keep you cool and comfortable during your workout. The seamless design reduces chafing and irritation.",
                             Discount = 0,
                             Image = "",
@@ -2767,7 +2767,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "65a11451-4f8f-4224-8628-ae1407974f1e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4070),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3291),
                             Description = "These yoga pants are made with a stretchy and breathable fabric that moves with you during your practice. The high waistband provides support and coverage.",
                             Discount = 4,
                             Image = "",
@@ -2780,7 +2780,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "22342ce7-d548-4040-8a95-4ce837e0e8bb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4074),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3294),
                             Description = "This gorgeous lace bralette features a delicate scalloped edge and adjustable straps.",
                             Discount = 0,
                             Image = "",
@@ -2793,7 +2793,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8a722b88-6df3-4664-ab61-390cd0e28645",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4077),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3296),
                             Description = "This sheer babydoll nightie is the perfect combination of sexy and sweet. The delicate lace details and ruffled hem add a feminine touch.",
                             Discount = 0,
                             Image = "",
@@ -2806,7 +2806,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0e428c6f-64b3-41be-ab7d-b4031dc430cf",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4082),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3299),
                             Description = "This luxurious silk chemise is perfect for a special occasion or a romantic night in. The delicate lace trim and adjustable straps add an extra touch of elegance.",
                             Discount = 0,
                             Image = "",
@@ -2819,7 +2819,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "82f8f9bc-6d8f-4fc1-9626-c342dce64bbc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4090),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3300),
                             Description = "This sexy lace thong is perfect for everyday wear or a special occasion. The comfortable stretch lace and low-rise waist make it a must-have in your 8f1d8954-e266-49a4-a7a5-2ac1f8620aeb drawer.",
                             Discount = 0,
                             Image = "",
@@ -2832,7 +2832,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a769be06-7364-42b4-ae43-f4e743dc7cd0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4095),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3302),
                             Description = "These classic cotton briefs are a comfortable and practical addition to your lingerie collection. The full coverage and breathable fabric make them perfect for everyday wear.",
                             Discount = 0,
                             Image = "",
@@ -2845,7 +2845,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0de7b3ef-6a40-469f-a17a-2a9a663a4312",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4098),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3305),
                             Description = "A stylish and comfortable sofa for your living room.",
                             Discount = 0,
                             Image = "",
@@ -2858,7 +2858,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e77c09bd-4195-44bd-a8ff-e617ba5952fc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4101),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3307),
                             Description = "A sturdy dining table made from high-quality wood.",
                             Discount = 0,
                             Image = "",
@@ -2871,7 +2871,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "644ed6f5-1d49-46c8-8d4c-623bb5f44f06",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4106),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3309),
                             Description = "An elegant and comfortable recliner chair made from genuine leather.",
                             Discount = 0,
                             Image = "",
@@ -2884,7 +2884,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "013053e6-4e6b-4093-bb2a-4f5e007c44ca",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4110),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3311),
                             Description = "A luxurious queen size bed with a beautiful headboard.",
                             Discount = 0,
                             Image = "",
@@ -2897,7 +2897,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9db7c84e-94fd-4e3f-8a9b-726b557a93eb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4114),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3313),
                             Description = "A sleek and contemporary bookshelf to display your favorite books and decor.",
                             Discount = 0,
                             Image = "",
@@ -2910,7 +2910,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c0c50b46-e3fe-4c79-8352-0a211e7a0870",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4120),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3315),
                             Description = "A high-quality set of stainless steel pots and pans for all your cooking needs.",
                             Discount = 15,
                             Image = "",
@@ -2923,7 +2923,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6584ca3b-6f76-4237-a581-296624842641",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4125),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3318),
                             Description = "A set of six durable glass bowls in different sizes, perfect for mixing and serving.",
                             Discount = 0,
                             Image = "",
@@ -2936,7 +2936,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5e2b1649-ccef-48f0-af29-04480659a698",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4129),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3319),
                             Description = "A high-quality non-stick frying pan that makes cooking and cleaning a breeze.",
                             Discount = 0,
                             Image = "",
@@ -2949,7 +2949,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bb45a351-8caf-454c-acac-8afe9d2d7374",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4133),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3321),
                             Description = "A sturdy and durable wooden cutting board with a beautiful design.",
                             Discount = 0,
                             Image = "",
@@ -2962,7 +2962,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "41d72b4e-f572-4292-a90b-9c2ce51cce60",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4138),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3323),
                             Description = "A sleek and easy-to-use electric wine opener that makes opening bottles a breeze.",
                             Discount = 0,
                             Image = "",
@@ -2975,7 +2975,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "fcd352df-4c09-403d-b320-ad20518faf0f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4143),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3327),
                             Description = "Add a touch of elegance to your home with this modern geometric wall art.",
                             Discount = 2,
                             Image = "",
@@ -2988,7 +2988,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0e2160fc-e95f-4d9d-89a6-dce377ae7b34",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4147),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3330),
                             Description = "Bring a bit of the outdoors into your home with this rustic wooden wall shelf.",
                             Discount = 0,
                             Image = "",
@@ -3001,7 +3001,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "07ea471c-8970-4ebc-a242-255ef39de930",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4152),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3333),
                             Description = "This set of three decorative glass vases is perfect for adding a pop of color to any room.",
                             Discount = 0,
                             Image = "",
@@ -3014,7 +3014,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e0abceff-17f3-4244-8887-7a7a27e64a12",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4157),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3334),
                             Description = "Snuggle up in style with this luxurious throw pillow.",
                             Discount = 0,
                             Image = "",
@@ -3027,7 +3027,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "defb4623-4df5-4b58-84e3-fe8016598539",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4166),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3337),
                             Description = "Bring the beauty of nature indoors with this set of artificial succulent plants.",
                             Discount = 0,
                             Image = "",
@@ -3040,7 +3040,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b7b23326-9dc3-4fa2-b6b6-c296be64caa0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4170),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3339),
                             Description = "Get all the essential gardening tools in this set, perfect for any green thumb.",
                             Discount = 0,
                             Image = "",
@@ -3053,7 +3053,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "98912a2c-bf1d-4cfa-a605-fc3c2b4c2cc4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4174),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3342),
                             Description = "Start your own garden with this easy-to-assemble raised garden bed.",
                             Discount = 0,
                             Image = "",
@@ -3066,7 +3066,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "22921046-fc72-4dca-b4d8-23fb82b2c417",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4177),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3344),
                             Description = "This durable garden hose is perfect for watering your plants and lawn.",
                             Discount = 0,
                             Image = "",
@@ -3079,7 +3079,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d50cb6e4-3eea-4421-adaf-fb11e9f1def6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4181),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3346),
                             Description = "Light up your garden with these energy-efficient solar-powered lights.",
                             Discount = 0,
                             Image = "",
@@ -3092,7 +3092,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5c1b8585-54c8-4aa4-8659-bd7b6491ad6c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4185),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3348),
                             Description = "Reduce waste and create nutrient-rich soil with this easy-to-use compost bin.",
                             Discount = 0,
                             Image = "",
@@ -3105,7 +3105,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4cadf79f-bf8c-468c-b766-e4211e828330",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4189),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3351),
                             Description = "A sturdy and comfortable harness for dogs of all sizes.",
                             Discount = 0,
                             Image = "",
@@ -3118,7 +3118,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "712b1ac6-a732-45c4-94b7-2dbeb5c904bc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4192),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3354),
                             Description = "A durable and fun scratching post for cats.",
                             Discount = 0,
                             Image = "",
@@ -3131,7 +3131,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7cd3b4c0-7252-4873-b986-71e313667e8b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4197),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3356),
                             Description = "A spacious and stylish fish tank for all your aquatic pets.",
                             Discount = 0,
                             Image = "",
@@ -3144,7 +3144,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3e9f2e08-4819-4f98-add8-f94ea8909ef3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4200),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3359),
                             Description = "A cozy and secure bird cage for your feathered friend.",
                             Discount = 0,
                             Image = "",
@@ -3157,7 +3157,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "910a7763-e37d-4d64-a0e2-61a5a76804dc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4203),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3361),
                             Description = "A fun and durable wheel for your furry little friend to run on.",
                             Discount = 0,
                             Image = "",
@@ -3170,7 +3170,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5e38bece-7184-4889-9c94-ffebf7b2579d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4207),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3363),
                             Description = "A powerful and versatile electric drill for all your DIY projects.",
                             Discount = 0,
                             Image = "",
@@ -3183,7 +3183,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "08ca6a32-41a7-4317-8148-a58e733854e7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4212),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3366),
                             Description = "A set of high-quality paint rollers for a professional finish on your walls.",
                             Discount = 0,
                             Image = "",
@@ -3196,7 +3196,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bcd6600f-ee89-4185-87c2-a48afb18070a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4216),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3368),
                             Description = "A pack of energy-efficient LED light bulbs for your home.",
                             Discount = 5,
                             Image = "",
@@ -3209,7 +3209,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2d7e1567-2863-4073-ba87-1c09cd435400",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4220),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3369),
                             Description = "A compact and lightweight cordless screwdriver for quick and easy repairs.",
                             Discount = 0,
                             Image = "",
@@ -3222,7 +3222,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "08c0f380-042b-44ad-8f5b-c6a0fdb89089",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4224),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3373),
                             Description = "A versatile and accurate digital multimeter for electrical testing.",
                             Discount = 0,
                             Image = "",
@@ -3235,7 +3235,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5cd7422b-2901-46d5-987a-a2bdcce54223",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4228),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3376),
                             Description = "Experience the comfort and luxury of these premium Egyptian cotton bed sheets. Available in various colors and sizes.",
                             Discount = 0,
                             Image = "",
@@ -3248,7 +3248,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "62a66a93-cf80-4632-8cba-7126c7c996c4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4232),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3377),
                             Description = "Wrap yourself in the softness of these fluffy white bath towels. Made with 100% cotton for maximum absorbency.",
                             Discount = 0,
                             Image = "",
@@ -3261,7 +3261,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c3e0861d-1921-4971-84e4-7cf829ebbb37",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4241),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3381),
                             Description = "Step out of the shower onto this soft and absorbent organic bamboo bath mat. Non-slip backing keeps the mat in place.",
                             Discount = 0,
                             Image = "",
@@ -3274,7 +3274,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2d373ea8-695f-47cc-8ee8-2f672eef7609",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4244),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3382),
                             Description = "Sleep in ultimate luxury with these soft and smooth silk pillowcases. Hypoallergenic and gentle on skin and hair.",
                             Discount = 0,
                             Image = "",
@@ -3287,7 +3287,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6fa2b4f4-b767-4ac6-b22d-e50edf9438ea",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4247),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3385),
                             Description = "Stay cozy and warm with this extra plush down alternative comforter. Hypoallergenic and easy to care for.",
                             Discount = 0,
                             Image = "",
@@ -3300,7 +3300,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "56ae1e61-916f-4f02-87d3-f5220d0c2a0d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4257),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3388),
                             Description = "Organize your closet with this spacious closet organizer. It has multiple shelves and compartments for storing clothes, shoes, and accessories.",
                             Discount = 21,
                             Image = "",
@@ -3313,7 +3313,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8bda082a-7153-41bc-b04a-bde246de6877",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4261),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3390),
                             Description = "Keep your items organized with these stackable storage bins. They are perfect for storing toys, books, and other items.",
                             Discount = 0,
                             Image = "",
@@ -3326,7 +3326,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8e7e2151-0881-40e4-a21e-7536467e74a9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4265),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3393),
                             Description = "Maximize your storage space with these collapsible fabric storage cubes. They are great for storing clothes, toys, and other items.",
                             Discount = 6,
                             Image = "",
@@ -3339,7 +3339,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "393f691e-1ec3-4d6f-bba2-0c9e0ae624c3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4273),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3395),
                             Description = "Store your extra bedding, clothes, and other items under your bed with these underbed storage bags. They are made of durable materials and have handles for easy carrying.",
                             Discount = 0,
                             Image = "",
@@ -3352,7 +3352,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "cbbb3345-ee8a-4b55-8eb3-8f01e78f09c4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4277),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3397),
                             Description = "Maximize your closet space with this hanging closet organizer. It has multiple compartments for storing clothes, shoes, and accessories.",
                             Discount = 0,
                             Image = "",
@@ -3365,7 +3365,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0806ff69-ba2a-46d8-b828-d63cc6ccd01d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4282),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3399),
                             Description = "A sleek and stylish pendant light with a modern design.",
                             Discount = 0,
                             Image = "",
@@ -3378,7 +3378,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "99b652b9-77db-4989-a8a9-d0cad2c61976",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4285),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3401),
                             Description = "A charming and rustic table lamp perfect for a cozy atmosphere.",
                             Discount = 0,
                             Image = "",
@@ -3391,7 +3391,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "99adbca1-5e84-4b5d-977e-c33e8c56a57a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4289),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3403),
                             Description = "A contemporary LED floor lamp that provides bright and energy-efficient lighting.",
                             Discount = 0,
                             Image = "",
@@ -3404,7 +3404,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c9182801-e964-42b5-b8d2-bdc6396d7677",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4296),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3407),
                             Description = "A stylish and versatile globe pendant light that complements any decor.",
                             Discount = 0,
                             Image = "",
@@ -3417,7 +3417,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0a54bf68-791b-4573-aabf-583db9e83e05",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4300),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3409),
                             Description = "An elegant and glamorous crystal chandelier that adds a touch of luxury to any space.",
                             Discount = 0,
                             Image = "",
@@ -3430,7 +3430,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "61dd1f5e-bb22-45f8-a9c3-ffc5663f144f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4304),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3411),
                             Description = "A rugged and industrial-style wall sconce with a vintage look.",
                             Discount = 0,
                             Image = "",
@@ -3443,7 +3443,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b94d575c-d197-4a2b-8b05-961f549af20d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4310),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3412),
                             Description = "Powerful stain-fighting laundry detergent.",
                             Discount = 0,
                             Image = "",
@@ -3456,7 +3456,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "fc7809c8-a01f-428a-ace9-af8ec9ba3a7b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4318),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3414),
                             Description = "Multipurpose mop for cleaning floors.",
                             Discount = 0,
                             Image = "",
@@ -3469,7 +3469,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d3b5d0af-297a-42b0-aade-279a51f3542e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4322),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3417),
                             Description = "Kills 99.9% of viruses and bacteria.",
                             Discount = 21,
                             Image = "",
@@ -3482,7 +3482,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ff519d70-6019-46e1-b0b4-277a90b832e0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4328),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3420),
                             Description = "Powerful bleach for cleaning and whitening clothes.",
                             Discount = 0,
                             Image = "",
@@ -3495,7 +3495,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b962aa74-832a-4417-9941-100f0328322f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4333),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3425),
                             Description = "Effective dish soap for cleaning dishes and surfaces.",
                             Discount = 0,
                             Image = "",
@@ -3508,7 +3508,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1ad70921-3eaa-4272-b7d2-e3aec90862c2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4339),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3428),
                             Description = "Helps reduce static cling and wrinkles.",
                             Discount = 0,
                             Image = "",
@@ -3521,7 +3521,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9eabd2ca-d4c5-4c8b-8b56-e88d77ccd4bb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4347),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3430),
                             Description = "Classic striped button-up shirt with collar and long sleeves.",
                             Discount = 9,
                             Image = "",
@@ -3534,7 +3534,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ed14e83d-f3f1-4076-9ae5-4d8e49228d26",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4352),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3433),
                             Description = "Modern slim fit Oxford shirt with button-down collar and short sleeves.",
                             Discount = 0,
                             Image = "",
@@ -3547,7 +3547,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ffe0ed0b-2a3b-4dac-8b38-fc0b7ebd7a14",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4386),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3437),
                             Description = "Comfortable and timeless classic polo shirt with short sleeves and collar.",
                             Discount = 0,
                             Image = "",
@@ -3560,7 +3560,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5e528195-7626-4d59-bcec-93838a587789",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4390),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3439),
                             Description = "Warm and cozy flannel shirt with classic checked pattern and long sleeves.",
                             Discount = 0,
                             Image = "",
@@ -3573,7 +3573,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8de2c19f-6dc2-461b-a5a1-8acf2e3eca2d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4393),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3443),
                             Description = "Stylish denim shirt with button-up front and long sleeves.",
                             Discount = 0,
                             Image = "",
@@ -3586,7 +3586,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2f7e55f3-2fc1-43a0-8ed1-d8d092fe51da",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4399),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3445),
                             Description = "A timeless white shirt that can be worn on any occasion.",
                             Discount = 0,
                             Image = "",
@@ -3599,7 +3599,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "270f8981-0025-4016-9d4b-d962522ebcdd",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4402),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3450),
                             Description = "A stylish blue shirt with a slim fit.",
                             Discount = 0,
                             Image = "",
@@ -3612,7 +3612,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9d833dbe-06a0-482f-a841-c902c2ca4012",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4407),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3453),
                             Description = "A warm and comfortable plaid flannel shirt.",
                             Discount = 0,
                             Image = "",
@@ -3625,7 +3625,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "98857751-85f1-4921-b8a5-27f228ca295d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4410),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3456),
                             Description = "A sophisticated button-down Oxford shirt.",
                             Discount = 3,
                             Image = "",
@@ -3638,7 +3638,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1fa012e8-c124-46c4-a390-0a0d8ff118fa",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4414),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3459),
                             Description = "A lightweight and breathable striped linen shirt.",
                             Discount = 0,
                             Image = "",
@@ -3651,7 +3651,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2c163753-69b0-46d6-8f04-615b334a1ece",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4419),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3462),
                             Description = "Cotton chinos in a slim fit design",
                             Discount = 0,
                             Image = "",
@@ -3664,7 +3664,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "022e2163-a617-4324-b06a-ff80415bdf06",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4426),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3465),
                             Description = "Classic denim shorts with a vintage look",
                             Discount = 0,
                             Image = "",
@@ -3677,7 +3677,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "76fd81bd-c9e8-4348-9411-0323ca0ee333",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4433),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3469),
                             Description = "Comfortable sport joggers made of moisture-wicking fabric",
                             Discount = 0,
                             Image = "",
@@ -3690,7 +3690,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9f5f2a19-15bc-4057-a288-d1e88abfd16e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4437),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3473),
                             Description = "Durable cargo pants with multiple pockets",
                             Discount = 0,
                             Image = "",
@@ -3703,7 +3703,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ca5e28a0-fb51-4972-8059-300ef3c3444b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4440),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3475),
                             Description = "Stretchy and breathable leggings for everyday wear",
                             Discount = 0,
                             Image = "",
@@ -3716,7 +3716,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c312bba1-24b3-4561-ac77-e6845526a5b5",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4443),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3478),
                             Description = "A pair of elegant leather dress shoes for men.",
                             Discount = 21,
                             Image = "",
@@ -3729,7 +3729,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a36dc640-54d2-4b02-a01b-11841693f736",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4446),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3481),
                             Description = "Comfortable and stylish canvas sneakers for men.",
                             Discount = 0,
                             Image = "",
@@ -3742,7 +3742,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c8dd9cd1-9fb1-4036-8527-01d4df8bbeed",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4452),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3484),
                             Description = "Sturdy and durable hiking boots for men.",
                             Discount = 0,
                             Image = "",
@@ -3755,7 +3755,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "85af39fc-10c2-4016-867f-78bda66d6990",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4455),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3486),
                             Description = "Lightweight and comfortable running shoes for men.",
                             Discount = 0,
                             Image = "",
@@ -3768,7 +3768,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b9fbad4e-cf40-48ca-8a0c-0a468ddd27e0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4460),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3489),
                             Description = "Classy and stylish leather boots for men.",
                             Discount = 0,
                             Image = "",
@@ -3781,7 +3781,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8ee1a5b3-784f-4fe9-a5b4-e0c86991c2a0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4469),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3492),
                             Description = "A timeless classic, this baseball cap is perfect for any casual outfit.",
                             Discount = 0,
                             Image = "",
@@ -3794,7 +3794,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "daa3c78e-a3be-4894-b685-c3f41ca92003",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4472),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3496),
                             Description = "Stay warm and stylish with this classic wool beanie.",
                             Discount = 3,
                             Image = "",
@@ -3807,7 +3807,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a12803da-c155-431b-973f-0fb18133495d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4482),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3499),
                             Description = "Get ready for a day out with this stylish trucker hat.",
                             Discount = 0,
                             Image = "",
@@ -3820,7 +3820,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8b2bffe2-34d8-4ede-b2bd-16cfc25601d4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4488),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3504),
                             Description = "Make a statement with this classic fedora hat.",
                             Discount = 11,
                             Image = "",
@@ -3833,7 +3833,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "306df296-d233-4795-bb9c-6a5bb8ba1422",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4494),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3506),
                             Description = "Add a touch of sophistication to your outfit with this stylish flat cap.",
                             Discount = 0,
                             Image = "",
@@ -3846,7 +3846,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6a6e57ac-0995-4317-9a98-f52b0a3786a2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4501),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3511),
                             Description = "This slim fit navy blue suit is perfect for any formal occasion.",
                             Discount = 0,
                             Image = "",
@@ -3859,7 +3859,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e98a1b74-7f7a-4add-a282-199dc34120e4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4516),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3514),
                             Description = "This charcoal gray double-breasted suit is a classic addition to any wardrobe.",
                             Discount = 0,
                             Image = "",
@@ -3872,7 +3872,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e3c66d98-7589-4e69-8536-a41a79d713c7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4521),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3518),
                             Description = "This slim fit black suit is perfect for any formal occasion.",
                             Discount = 0,
                             Image = "",
@@ -3885,7 +3885,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "cd2d914e-5873-4356-9989-1cd93c1fb04a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4526),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3522),
                             Description = "This gray pinstripe suit is a sophisticated choice for any occasion.",
                             Discount = 0,
                             Image = "",
@@ -3898,7 +3898,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2cbfd742-d03e-44a5-bf0e-6bf1709e0599",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4529),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3525),
                             Description = "This classic fit dark blue suit is perfect for any formal occasion.",
                             Discount = 0,
                             Image = "",
@@ -3911,7 +3911,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c3e2a961-1479-4fd4-8f36-cd299e496d4e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4532),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3530),
                             Description = "These skinny jeans are made from high-quality denim with a dark wash finish. They have a slim fit and a stylish, on-trend look.",
                             Discount = 0,
                             Image = "",
@@ -3924,7 +3924,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "13ed769d-2c43-47fd-9525-27eb52505e51",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4536),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3534),
                             Description = "These straight leg jeans feature distressed details for a rugged, casual look. They are made from soft, comfortable denim and have a relaxed fit.",
                             Discount = 0,
                             Image = "",
@@ -3937,7 +3937,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "cd4c6e36-0fbe-417c-a83d-737defa6d36d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4545),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3538),
                             Description = "These bootcut jeans have a light wash finish and a comfortable fit. They are perfect for casual wear and can be dressed up or down depending on the occasion.",
                             Discount = 0,
                             Image = "",
@@ -3950,7 +3950,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9a1ef502-733c-40e6-8273-867971ae16d6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4549),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3540),
                             Description = "These slim fit jeans have a sleek, modern look and are made from high-quality denim. They have a comfortable fit and are perfect for both casual and dressy occasions.",
                             Discount = 0,
                             Image = "",
@@ -3963,7 +3963,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8d0d1487-da7c-49b0-8812-0acb418f6d04",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4552),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3543),
                             Description = "These black skinny jeans have a clean, modern look and are made from stretchy, comfortable denim. They are perfect for both casual and dressy occasions.",
                             Discount = 0,
                             Image = "",
@@ -3976,7 +3976,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c932eb6c-34be-469b-b2e3-b298d08b8e86",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4557),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3546),
                             Description = "Stay warm and stylish in this luxurious merino wool turtleneck sweater.",
                             Discount = 0,
                             Image = "",
@@ -3989,7 +3989,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "218db5cc-3555-4c1c-af09-d69f7ca1f4ae",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4565),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3549),
                             Description = "This classic cable knit crewneck sweater is a versatile addition to any wardrobe.",
                             Discount = 0,
                             Image = "",
@@ -4002,7 +4002,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "324b72d9-f597-4c3d-9490-a90225002406",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4570),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3553),
                             Description = "Indulge in the luxury of cashmere with this soft and comfortable V-neck sweater.",
                             Discount = 8,
                             Image = "",
@@ -4015,7 +4015,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0a2dafad-ef52-42b1-b760-b2f160f09e25",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4573),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3555),
                             Description = "Wrap yourself in cozy warmth with this chunky knit cardigan.",
                             Discount = 0,
                             Image = "",
@@ -4028,7 +4028,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6bac2be5-1291-45b4-a5d8-9d106c807e99",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4578),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3562),
                             Description = "Stay comfortable and stylish in this wool blend zip-up sweater with a modern fit.",
                             Discount = 0,
                             Image = "",
@@ -4041,7 +4041,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b760bf11-5ee0-4f02-b476-a95b233d3812",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4582),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3563),
                             Description = "Stay warm and stylish with our Quilted Bomber Jacket. Features a sleek, modern design with a comfortable fit.",
                             Discount = 3,
                             Image = "",
@@ -4054,7 +4054,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b1675b86-526f-4bdd-8106-2827be31c8cd",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4588),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3565),
                             Description = "Get that classic biker look with our Leather Biker Jacket. Made from high-quality leather for a durable, long-lasting fit.",
                             Discount = 0,
                             Image = "",
@@ -4067,7 +4067,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d88a15c6-dd91-4337-9585-a45a331b6c87",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4592),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3567),
                             Description = "Stay dry in any weather with our Hooded Parka. Made from water-resistant material and featuring a cozy hood for added protection.",
                             Discount = 0,
                             Image = "",
@@ -4080,7 +4080,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3bdb838f-1e89-40fe-85f4-61e978bd02d8",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4596),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3571),
                             Description = "The perfect jacket for a casual day out. Made from high-quality denim and featuring a classic Trucker design.",
                             Discount = 13,
                             Image = "",
@@ -4093,7 +4093,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d15202ef-72f5-4a8a-b7d0-ab7f1d8b14f1",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4600),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3574),
                             Description = "Stay warm and cozy with our Puffer Jacket. Made from high-quality materials and featuring a modern design.",
                             Discount = 0,
                             Image = "",
@@ -4106,7 +4106,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d2711937-d17e-4be6-bad9-d5532a34288b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4605),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3577),
                             Description = "Classic dress shirt made from high-quality oxford fabric. Available in multiple colors.",
                             Discount = 0,
                             Image = "",
@@ -4119,7 +4119,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "93e47b26-b2ed-44e3-b3f4-0519a8381d93",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4613),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3578),
                             Description = "Elegant striped dress shirt with a contrasting collar. Perfect for formal occasions.",
                             Discount = 0,
                             Image = "",
@@ -4132,7 +4132,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "86ffc244-8e3b-4a16-be97-47a5e372291e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4622),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3580),
                             Description = "Sophisticated dress shirt made from wrinkle-resistant fabric. Features a slim-fit design.",
                             Discount = 13,
                             Image = "",
@@ -4145,7 +4145,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5a9847e1-4d55-419b-aefc-a298fb196d7c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4626),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3582),
                             Description = "Stylish checkered dress shirt with French cuffs. Made from premium cotton.",
                             Discount = 0,
                             Image = "",
@@ -4158,7 +4158,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f778be19-5ee8-4282-b842-b05f4ab343f6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4632),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3584),
                             Description = "Timeless white dress shirt made from high-quality cotton. A must-have in any wardrobe.",
                             Discount = 0,
                             Image = "",
@@ -4171,7 +4171,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b0a36dae-6181-4455-82ac-a919fff997be",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4637),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3586),
                             Description = "Stay warm and comfortable with our classic men's hoodie.",
                             Discount = 0,
                             Image = "",
@@ -4184,7 +4184,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2a67a875-ec48-4295-9159-5021d48ef30c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4640),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3588),
                             Description = "Ideal for sports and outdoor activities, our men's sports hoodie will keep you warm and comfortable.",
                             Discount = 0,
                             Image = "",
@@ -4197,7 +4197,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4fc49f4b-3338-437e-9172-c5b2d061cb66",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4644),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3591),
                             Description = "Our men's zip-up hoodie is perfect for casual wear and features a sleek design.",
                             Discount = 0,
                             Image = "",
@@ -4210,7 +4210,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0e46225d-54e0-46bd-93ca-3226d3fe157e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4647),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3593),
                             Description = "Stay cozy and stylish with our pullover men's hoodie, made with high-quality materials.",
                             Discount = 0,
                             Image = "",
@@ -4223,7 +4223,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "69f88fc8-31ed-4dcc-b19a-e75731a2b47f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4651),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3595),
                             Description = "Make a statement with our fashionable men's hoodie, designed to keep you comfortable and stylish.",
                             Discount = 20,
                             Image = "",
@@ -4236,7 +4236,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f25c6022-40d9-4039-8d38-8b8bbebba68d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4657),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3597),
                             Description = "Lightweight and breathable, these running shoes are perfect for both casual jogs and intense training sessions.",
                             Discount = 0,
                             Image = "",
@@ -4249,7 +4249,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0754cac8-5d4b-4bb6-94fd-d8d15d4d1a5e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4661),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3600),
                             Description = "Made from a stretchy and moisture-wicking material, these yoga pants will keep you comfortable and dry during even the most strenuous workouts.",
                             Discount = 0,
                             Image = "",
@@ -4262,7 +4262,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8c23e709-b61d-4cff-84e7-9fe23a1a2076",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4665),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3601),
                             Description = "Designed to provide support and reduce muscle fatigue, these compression shorts are a must-have for any serious athlete.",
                             Discount = 0,
                             Image = "",
@@ -4275,7 +4275,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8173d005-a54a-4589-9775-ef8e7eb88a7d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4668),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3604),
                             Description = "This high-impact sports bra offers maximum support and comfort, making it perfect for intense workouts and sports.",
                             Discount = 0,
                             Image = "",
@@ -4288,7 +4288,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "60003e1d-68de-4f7a-937c-f636ab2b798d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4671),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3611),
                             Description = "Whether you're hitting the gym or the basketball court, these athletic shorts will keep you cool and comfortable.",
                             Discount = 0,
                             Image = "",
@@ -4301,7 +4301,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "88e8459e-4d19-4386-bce5-84b901685bb5",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4682),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3615),
                             Description = "This set of 5 resistance bands with different levels of resistance is perfect for adding variety and challenge to your home workouts.",
                             Discount = 0,
                             Image = "",
@@ -4314,7 +4314,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9bb4cc0f-b72b-4bce-969e-a442a2e47f07",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4686),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3617),
                             Description = "This adjustable running belt is perfect for holding your phone, keys, and other small items while you run.",
                             Discount = 7,
                             Image = "",
@@ -4327,7 +4327,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "16a06882-a2f4-43e5-afda-590971c6152e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4690),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3619),
                             Description = "This high-density foam roller is perfect for massaging sore muscles and aiding in post-workout recovery.",
                             Discount = 0,
                             Image = "",
@@ -4340,7 +4340,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bd4c7f1d-1f1f-4356-ac15-e4868edff5a6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4697),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3621),
                             Description = "This durable and leak-proof water bottle is perfect for staying hydrated during your workouts.",
                             Discount = 0,
                             Image = "",
@@ -4353,7 +4353,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "679b396d-e17e-40f1-a79d-6d9c4838c36a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4700),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3623),
                             Description = "This high-quality yoga mat is made from a non-slip material that provides excellent grip and cushioning for your yoga practice.",
                             Discount = 0,
                             Image = "",
@@ -4366,7 +4366,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "100a3b8d-61bc-47a3-9520-a37bbe2abc0f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4708),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3626),
                             Description = "This set of adjustable dumbbells is perfect for home workouts, with a weight range of 5 to 25 pounds per dumbbell.",
                             Discount = 0,
                             Image = "",
@@ -4379,7 +4379,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1324bca3-1eb0-4db9-a069-c33322753cf6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4712),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3628),
                             Description = "These compression socks are designed to improve blood flow, reduce muscle soreness, and aid in post-workout recovery.",
                             Discount = 0,
                             Image = "",
@@ -4392,7 +4392,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "0edc6010-603d-4a12-81e8-3fbeacbfa3c0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4715),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3630),
                             Description = "This fitness tracker tracks your steps, heart rate, and calories burned, and comes with a companion app for tracking your progress over time.",
                             Discount = 0,
                             Image = "",
@@ -4405,7 +4405,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "85cea852-e6fa-4e82-865b-0924b36713f2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4719),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3633),
                             Description = "This high-quality jump rope is perfect for adding cardio to your workouts, with adjustable length and comfortable handles.",
                             Discount = 0,
                             Image = "",
@@ -4418,7 +4418,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "698fe90c-e0a0-429a-846c-5e1cdd62dbf9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4722),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3635),
                             Description = "These resistance band handles are perfect for adding versatility and comfort to your resistance band workouts.",
                             Discount = 0,
                             Image = "",
@@ -4431,7 +4431,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5d90c324-ec2e-4272-a1c7-15007b491bcb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4725),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3637),
                             Description = "This official-size basketball is perfect for competitive play or casual pickup games.",
                             Discount = 0,
                             Image = "",
@@ -4444,7 +4444,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "870cff3a-4782-475f-abde-062a33cd95a2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4729),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3639),
                             Description = "This high-quality soccer ball is great for recreational play or practice, with a durable construction and responsive feel.",
                             Discount = 6,
                             Image = "",
@@ -4457,7 +4457,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2819ed17-0637-49e8-a797-04616be7e636",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4733),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3641),
                             Description = "Stay safe on the field with this high-quality football helmet, featuring a durable construction and comfortable fit.",
                             Discount = 0,
                             Image = "",
@@ -4470,7 +4470,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f372726b-105f-4af7-bf1d-edad558a7c91",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4736),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3643),
                             Description = "This high-quality volleyball is perfect for beach or indoor play, with a soft-touch cover and responsive feel.",
                             Discount = 0,
                             Image = "",
@@ -4483,7 +4483,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e32ad0d7-cf89-4e1f-81e7-d331d534eb1d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4740),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3645),
                             Description = "These rugged hiking boots are perfect for any terrain, with a waterproof design and durable construction.",
                             Discount = 0,
                             Image = "",
@@ -4496,7 +4496,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5c2635b2-1577-4eb0-89ba-9a6a2a330f02",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4743),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3646),
                             Description = "Stay dry and comfortable on your next camping trip with this spacious and weather-resistant tent.",
                             Discount = 0,
                             Image = "",
@@ -4509,7 +4509,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "28ad32de-e0aa-4454-a802-c756b4b0d8e1",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4748),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3649),
                             Description = "This high-quality fishing rod is perfect for any angler, with a lightweight design and responsive feel.",
                             Discount = 0,
                             Image = "",
@@ -4522,7 +4522,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d416f8d5-26a2-4c4d-87ba-2c5acecccc77",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4754),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3652),
                             Description = "Explore the great outdoors on the water with this versatile and durable kayak, perfect for any skill level.",
                             Discount = 0,
                             Image = "",
@@ -4535,7 +4535,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a3fd8116-9e1d-40c0-90b2-ba89eda95906",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4759),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3653),
                             Description = "Hit the trails with confidence on this high-performance mountain bike, featuring a lightweight frame and responsive suspension.",
                             Discount = 2,
                             Image = "",
@@ -4548,7 +4548,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e7b3822e-3e00-4717-8f49-4a924d1f1af6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4761),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3655),
                             Description = "This set includes two adjustable dumbbells that can be easily customized to your desired weight. Perfect for home workouts.",
                             Discount = 0,
                             Image = "",
@@ -4561,7 +4561,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5a17d26e-18fd-40d8-b487-1c8c7c699bcc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4764),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3658),
                             Description = "This ab roller wheel helps you strengthen your core and improve your balance. Compact and easy to store.",
                             Discount = 13,
                             Image = "",
@@ -4574,7 +4574,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1b6a9dbf-01b9-47b7-a7c8-3df7fd89da4e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4766),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3659),
                             Description = "This set includes five different resistance bands with varying levels of resistance. Perfect for toning and strengthening.",
                             Discount = 0,
                             Image = "",
@@ -4587,7 +4587,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "6c073e2c-3343-4fb4-a948-86dc83eb0af9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4769),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3662),
                             Description = "This weight bench can be adjusted to different angles for a variety of workouts. Sturdy and comfortable.",
                             Discount = 14,
                             Image = "",
@@ -4600,7 +4600,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4ab262eb-a388-4218-a411-f7c0cbfbc083",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4772),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3664),
                             Description = "This foam roller can help relieve muscle tension and improve flexibility. Perfect for post-workout recovery.",
                             Discount = 14,
                             Image = "",
@@ -4613,7 +4613,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3b3fbb68-f41e-4ac3-b9ef-93c59630e68d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4779),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3666),
                             Description = "Bike trainer that allows you to turn your regular bike into an indoor exercise bike, with adjustable resistance levels.",
                             Discount = 0,
                             Image = "",
@@ -4626,7 +4626,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "969d452a-fb83-4dde-a5e6-677d1f915912",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4781),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3668),
                             Description = "Experience the speed and comfort of our top-of-the-line road bike, designed with a carbon fiber frame and Shimano Ultegra components.",
                             Discount = 0,
                             Image = "",
@@ -4639,7 +4639,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a0f4efbb-56a3-4c5b-9bd5-4a0c15d29a61",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4784),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3670),
                             Description = "Conquer any trail with ease on our electric mountain bike, featuring a powerful motor and high-performance suspension.",
                             Discount = 0,
                             Image = "",
@@ -4652,7 +4652,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a2d10892-0ebf-4db4-80d9-5d240b325295",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4787),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3672),
                             Description = "Take a leisurely ride along the beach on our classic beach cruiser bike, complete with a comfortable seat and retro styling.",
                             Discount = 0,
                             Image = "",
@@ -4665,7 +4665,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "554ad846-8a31-43ae-a36b-6b5e329da7d9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4791),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3675),
                             Description = "Get ready to hit the skate park with our high-performance BMX bike, featuring a lightweight frame and trick-ready components.",
                             Discount = 0,
                             Image = "",
@@ -4678,7 +4678,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b17dd04c-c864-48d6-a6a2-aceed9e53a02",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4794),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3676),
                             Description = "Easily store and transport our folding bike, which collapses down to a compact size and is perfect for commuters and travelers.",
                             Discount = 0,
                             Image = "",
@@ -4691,7 +4691,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "dc24ecb6-993e-4f3d-b89a-35378cd261d5",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4798),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3678),
                             Description = "A lightweight and portable electric scooter perfect for daily commuting.",
                             Discount = 0,
                             Image = "",
@@ -4704,7 +4704,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9104c7e9-0646-4d84-831b-72215d9393ef",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4801),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3680),
                             Description = "A fun and colorful kids' scooter with a lightweight and foldable design.",
                             Discount = 0,
                             Image = "",
@@ -4717,7 +4717,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d9c90e83-72b6-460f-8e07-3337ab878eaf",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4804),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3681),
                             Description = "A powerful and rugged electric scooter designed for off-road adventures.",
                             Discount = 0,
                             Image = "",
@@ -4730,7 +4730,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "e8ad636f-f434-4649-8c22-728dd28d9814",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4807),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3683),
                             Description = "A stable and comfortable mobility scooter with a 3-wheel design and adjustable seat.",
                             Discount = 15,
                             Image = "",
@@ -4743,7 +4743,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "38f15679-ddd3-40ce-a148-5ddf31317f78",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4810),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3685),
                             Description = "A lightweight and durable stunt scooter designed for performing tricks and stunts.",
                             Discount = 0,
                             Image = "",
@@ -4756,7 +4756,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "df350e74-0d9f-4b51-a42c-c6614ce3558b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4813),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3687),
                             Description = "The Xiaomi Mi Electric Scooter is a reliable and affordable electric scooter that can reach speeds of up to 15.5mph.",
                             Discount = 2,
                             Image = "",
@@ -4769,7 +4769,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "10fbc819-c0b3-4a97-8999-f44840827446",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4817),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3689),
                             Description = "Top-of-the-line surfboard designed for professional surfers",
                             Discount = 0,
                             Image = "",
@@ -4782,7 +4782,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "23c0f84f-f9cd-4d1f-912b-d83d574b1c0c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4820),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3691),
                             Description = "Double seated kayak, perfect for two-person paddling trips",
                             Discount = 0,
                             Image = "",
@@ -4795,7 +4795,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5cf1420d-b916-4694-b1c9-c67ab7188033",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4824),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3693),
                             Description = "Ideal wakeboard for intermediate-level wakeboarders, with comfortable bindings",
                             Discount = 0,
                             Image = "",
@@ -4808,7 +4808,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bf0f4bf1-696e-4cc1-b89a-2531aa82e7e2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4827),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3694),
                             Description = "High-quality paddleboard designed for stand-up paddling",
                             Discount = 7,
                             Image = "",
@@ -4821,7 +4821,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "766ce0e4-60a1-4a63-8dd4-771f30de7041",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4830),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3696),
                             Description = "Complete snorkeling set with a mask, snorkel, and fins for adults",
                             Discount = 3,
                             Image = "",
@@ -4834,7 +4834,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9122246d-052a-4105-8c7e-605ff07a45b2",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4833),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3698),
                             Description = "The TaylorMade SIM2 Max Driver features advanced materials and technologies to maximize distance and forgiveness off the tee.",
                             Discount = 0,
                             Image = "",
@@ -4847,7 +4847,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ca421101-f4c9-456f-989d-2ed5cfc87da4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4836),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3699),
                             Description = "The Titleist Pro V1 Golf Balls provide exceptional distance, consistent flight, and incredible short game control.",
                             Discount = 0,
                             Image = "",
@@ -4860,7 +4860,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2f8ce754-9e39-478d-b8a3-69b0d672e2eb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4839),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3701),
                             Description = "The Callaway Apex Pro Irons offer premium craftsmanship and performance for the serious golfer.",
                             Discount = 0,
                             Image = "",
@@ -4873,7 +4873,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "10c930ed-f326-48da-a571-6889262104ca",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4842),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3703),
                             Description = "The FootJoy Pro SL Golf Shoes provide excellent comfort, stability, and traction on the course.",
                             Discount = 21,
                             Image = "",
@@ -4886,7 +4886,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7d129827-9823-4468-88e3-e6ef5c05487f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4846),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3704),
                             Description = "The Scotty Cameron Special Select Putter offers a classic look and modern performance for the discerning golfer.",
                             Discount = 0,
                             Image = "",
@@ -4899,7 +4899,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d89d7946-6753-45e7-b094-5d050a265d1e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4849),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3707),
                             Description = "The Salomon QST 106 Skis are designed for advanced skiers who demand performance and versatility on any terrain.",
                             Discount = 0,
                             Image = "",
@@ -4912,7 +4912,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "798629fb-9751-4d2f-a8fd-fedfa6b57c02",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4852),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3710),
                             Description = "The Burton Custom Snowboard offers a classic all-mountain ride with updated technology and a responsive flex pattern.",
                             Discount = 2,
                             Image = "",
@@ -4925,7 +4925,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "01b41576-5f8d-475f-88e8-122cd7e15b5c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4856),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3712),
                             Description = "The K2 Mindbender 120 Ski Boots provide unmatched performance and comfort for aggressive skiers seeking a precise, responsive fit.",
                             Discount = 0,
                             Image = "",
@@ -4938,7 +4938,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5b6113ba-889a-4aac-b50a-2796fb2c3c2d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4859),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3714),
                             Description = "The Oakley Flight Deck Snow Goggles offer unrivaled clarity and protection with a wide field of view and helmet-compatible design.",
                             Discount = 3,
                             Image = "",
@@ -4951,7 +4951,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d48dd083-5901-47bd-98c7-72fd01c7e481",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4863),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3716),
                             Description = "The Hestra Army Leather Heli Ski Gloves offer exceptional warmth and durability with a waterproof, breathable construction and reinforced palm.",
                             Discount = 0,
                             Image = "",
@@ -4964,7 +4964,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4866),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3718),
                             Description = "The Dell Inspiron 15 is a powerful and reliable laptop that is perfect for both work and play.",
                             Discount = 0,
                             Image = "https://ibb.co/sbpSc9k",
@@ -4977,7 +4977,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "3a97f708-2be7-498a-8d59-ada88e5e7c1b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4870),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3720),
                             Description = "The HP Pavilion 14 is a slim and stylish laptop that is great for everyday use.",
                             Discount = 11,
                             Image = "https://ibb.co/hCjWn7f",
@@ -4990,7 +4990,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "74bd7e24-0ac0-4414-918c-b1de0ac2a2df",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4875),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3721),
                             Description = "The Apple MacBook Pro is a high-end laptop that is perfect for professionals who need a powerful and reliable computer.",
                             Discount = 0,
                             Image = "https://ibb.co/8KZpKg5",
@@ -5003,7 +5003,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "1cdfeeae-13d4-40d4-9a70-60916ea4ba17",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4878),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3723),
                             Description = "The Acer Aspire 5 is an affordable and reliable laptop that is perfect for students and casual users.",
                             Discount = 6,
                             Image = "https://ibb.co/VVg4tKH",
@@ -5016,7 +5016,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b6891273-10bd-47ca-a139-27955175dfee",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4884),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3725),
                             Description = "The Lenovo IdeaPad 3 is a budget-friendly laptop that is perfect for basic computing tasks.",
                             Discount = 0,
                             Image = "https://ibb.co/52GbHN7",
@@ -5029,7 +5029,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a5bbfafe-f8b2-4b4e-bfb9-dc3947fd20bd",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4889),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3726),
                             Description = "The iPhone 13 Pro Max is the latest flagship smartphone from Apple, featuring a stunning 6.7-inch Super Retina XDR display and a powerful A15 Bionic chip.",
                             Discount = 0,
                             Image = "https://ibb.co/jvMP0jY",
@@ -5042,7 +5042,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "690d1d22-2bbd-4f27-9549-58862b320685",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4894),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3728),
                             Description = "The Samsung Galaxy S21 Ultra is a premium Android smartphone with a stunning 6.8-inch Dynamic AMOLED display and a powerful Exynos 2100 processor.",
                             Discount = 0,
                             Image = "https://ibb.co/cy7QXH3",
@@ -5055,7 +5055,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5f0f89ae-2136-4509-a334-951cfe495cd7",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4897),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3730),
                             Description = "The Google Pixel 6 Pro is a high-end Android smartphone with a beautiful 6.7-inch OLED display and the latest Google Tensor processor.",
                             Discount = 0,
                             Image = "https://ibb.co/7S70L3W",
@@ -5068,7 +5068,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "50f7e18f-a606-4935-95aa-2679cfa37999",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4900),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3732),
                             Description = "The OnePlus 9 Pro is a premium Android smartphone with a 6.7-inch Fluid AMOLED display and a Snapdragon 888 processor.",
                             Discount = 0,
                             Image = "https://ibb.co/qp4ZBBK",
@@ -5081,7 +5081,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4878b254-2d40-4128-b9ac-a4109ea1b1ca",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4904),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3733),
                             Description = "The iPhone SE (2020) is a budget-friendly iPhone with a 4.7-inch Retina display and the A13 Bionic chip.",
                             Discount = 8,
                             Image = "https://ibb.co/H7397yP",
@@ -5094,7 +5094,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ff269c57-2916-4536-a976-02864ffe9a5d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4908),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3735),
                             Description = "The Xiaomi Mi 11 is a flagship Android smartphone with a 6.81-inch AMOLED display and a Snapdragon 888 processor.",
                             Discount = 7,
                             Image = "https://ibb.co/KjMYrHx",
@@ -5107,7 +5107,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "61a20a3e-5e8d-47e6-8e2e-6af2b4d4d5ab",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4911),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3737),
                             Description = "The Sony Xperia 1 III is a high-end Android smartphone with a 6.5-inch 4K OLED display and a Snapdragon 888 processor.",
                             Discount = 0,
                             Image = "https://ibb.co/JdYWL5v",
@@ -5120,7 +5120,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d62efc95-bc43-41d1-bb0e-417003349616",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4915),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3739),
                             Description = "The iPhone 12 mini is a compact iPhone with a 5.4-inch Super Retina XDR display and the A14 Bionic chip.",
                             Discount = 0,
                             Image = "https://ibb.co/zr53xh4",
@@ -5133,7 +5133,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8c559d76-c84a-4144-b6b8-259d896a97cc",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4919),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3741),
                             Description = "The Samsung Galaxy Z Fold3 5G is a foldable Android smartphone with a 7.6-inch Dynamic AMOLED display and a Snapdragon 888 processor.",
                             Discount = 4,
                             Image = "https://ibb.co/bKnrdZx",
@@ -5146,7 +5146,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f0dd3651-99f3-4bac-abb3-8492b32d71ba",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4926),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3742),
                             Description = "The Google Pixel 5a is a mid-range Android smartphone with a 6.34-inch OLED display and a Snapdragon 765G processor.",
                             Discount = 0,
                             Image = "https://ibb.co/b7yRz7L",
@@ -5159,7 +5159,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5454868c-f8e4-4777-b90f-cb9d2e5c82fa",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4932),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3744),
                             Description = "The HP Color LaserJet Pro MFP M283fdw is a multi-function color laser printer that can print, copy, scan, and fax.",
                             Discount = 0,
                             Image = "",
@@ -5172,7 +5172,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "457d29fc-301b-4aa1-9337-610cd0144a9d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4940),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3746),
                             Description = "The Dell UltraSharp U2720Q is a 27-inch 4K monitor with a wide color gamut and USB-C connectivity.",
                             Discount = 4,
                             Image = "",
@@ -5185,7 +5185,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "370ff008-cbc0-4b3e-b8cb-687a246be0ea",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4945),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3748),
                             Description = "The Logitech MX Keys is a wireless keyboard with backlit keys and a comfortable typing experience.",
                             Discount = 0,
                             Image = "",
@@ -5198,7 +5198,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "391fadac-24e9-40ec-a0ed-6604ba61a0c9",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4948),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3750),
                             Description = "The Fujitsu ScanSnap iX1600 is a high-speed document scanner with automatic document feeder and WiFi connectivity.",
                             Discount = 0,
                             Image = "",
@@ -5211,7 +5211,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "081f8b76-f0a2-4172-a15d-07cbc7e33013",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4952),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3751),
                             Description = "The Sony WH-1000XM4 is a noise-cancelling Bluetooth headphone with exceptional sound quality and comfort.",
                             Discount = 0,
                             Image = "",
@@ -5224,7 +5224,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2c8676d4-55be-4090-ad12-9b66b88d188a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4955),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3753),
                             Description = "The PlayStation 5 is a next-generation gaming console with lightning-fast loading times and immersive 3D audio.",
                             Discount = 0,
                             Image = "",
@@ -5237,7 +5237,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "691785c7-f98c-4b26-a391-f2cfa65b3b60",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4959),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3755),
                             Description = "The Xbox Series X is a powerful gaming console with support for 4K gaming and fast load times.",
                             Discount = 0,
                             Image = "",
@@ -5250,7 +5250,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b4c1b2ca-8bf2-4aa7-91f6-af2ca4a164d3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4963),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3756),
                             Description = "The Nintendo Switch is a versatile gaming console that can be played on-the-go or on a TV.",
                             Discount = 0,
                             Image = "",
@@ -5263,7 +5263,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d0de30f9-c6ed-46a2-a1a6-4826156f8bf1",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4967),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3758),
                             Description = "The Razer DeathAdder V2 Gaming Mouse is a high-precision mouse with customizable RGB lighting and programmable buttons.",
                             Discount = 0,
                             Image = "",
@@ -5276,7 +5276,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d5613ac9-0c78-4869-9bf8-66877adfc306",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4971),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3760),
                             Description = "The HyperX Cloud II Gaming Headset is a comfortable and immersive headset with 7.1 surround sound and noise-cancelling microphone.",
                             Discount = 0,
                             Image = "",
@@ -5289,7 +5289,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "31d084b6-e885-4b46-b517-f2d9df72ab61",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4974),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3761),
                             Description = "Handheld gaming system with built-in controllers, HD rumble, and amiibo support.",
                             Discount = 0,
                             Image = "",
@@ -5302,7 +5302,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f7021be2-2cc2-4720-bd6b-a9e534dd241a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4977),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3763),
                             Description = "Portable gaming console with 4.3-inch LCD screen, Wi-Fi, and Bluetooth.",
                             Discount = 0,
                             Image = "",
@@ -5315,7 +5315,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "2a52ebff-9687-4309-8d9c-c32a585243d1",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4980),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3765),
                             Description = "Dual-screen handheld gaming system with glasses-free 3D display, StreetPass and SpotPass communication, and built-in software.",
                             Discount = 13,
                             Image = "",
@@ -5328,7 +5328,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d02ff2fc-a130-4060-bef3-ed1a27f0a94e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4984),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3766),
                             Description = "Handheld game console with front and rear cameras, Wi-Fi, and Bluetooth capabilities.",
                             Discount = 0,
                             Image = "",
@@ -5341,7 +5341,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "16672559-004b-47c0-8a4f-9f55fc129785",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4987),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3768),
                             Description = "Portable electronic game featuring Super Mario Bros, with a color LCD screen and modern features.",
                             Discount = 17,
                             Image = "",
@@ -5354,7 +5354,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "82cf8fdc-69af-4764-9466-3feaeb0edd3e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4990),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3770),
                             Description = "Experience immersive sound without any distractions with these wireless noise-cancelling headphones.",
                             Discount = 0,
                             Image = "",
@@ -5367,7 +5367,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a1872dcb-6d84-4185-aa18-508a8f2391bb",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4993),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3772),
                             Description = "Get the ultimate viewing experience with this 4K Ultra HD Smart TV. With built-in apps and voice control, you can easily access your favorite content.",
                             Discount = 0,
                             Image = "",
@@ -5380,7 +5380,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a8764e34-1e34-46ce-9597-3add5a802a03",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(4996),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3773),
                             Description = "Upgrade your home theater system with this Bluetooth soundbar. With high-quality sound and wireless connectivity, you can enjoy your favorite movies and shows like never before.",
                             Discount = 0,
                             Image = "",
@@ -5393,7 +5393,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c74e9cd9-8e2c-4fba-b981-384224c57174",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5001),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3775),
                             Description = "Take your music anywhere with this portable wireless speaker. With a compact design and long battery life, you can enjoy your tunes on the go.",
                             Discount = 20,
                             Image = "",
@@ -5406,7 +5406,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "7038fb12-03a9-4000-b94e-a25b85deb8f4",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5004),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3777),
                             Description = "Keep an eye on your home with this wireless video doorbell. With motion detection and two-way audio, you can see and speak to anyone at your doorstep from your smartphone.",
                             Discount = 0,
                             Image = "",
@@ -5419,7 +5419,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "8600635d-9264-4273-8906-75915a2396d0",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5010),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3779),
                             Description = "The Smartwatch X is a high-tech device that combines the best features of a fitness tracker and a smartwatch.",
                             Discount = 0,
                             Image = "",
@@ -5432,7 +5432,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "b69f3d89-1aea-4f5b-89a7-84a90a5c707d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5016),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3780),
                             Description = "The Fitness Tracker Y is the ultimate workout companion, with advanced features such as heart rate monitoring and GPS tracking.",
                             Discount = 3,
                             Image = "",
@@ -5445,7 +5445,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "58a34f33-1e5f-4f93-bc0d-2b5d06d4287c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5019),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3782),
                             Description = "The Smart Glasses Z are the perfect combination of fashion and technology, with features such as voice commands and AR capabilities.",
                             Discount = 0,
                             Image = "",
@@ -5458,7 +5458,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "bf0d288f-4a4d-4070-af7c-2256cb9e5586",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5023),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3784),
                             Description = "The Sleep Tracker W helps you get a better night's sleep by tracking your sleep patterns and providing personalized recommendations.",
                             Discount = 0,
                             Image = "",
@@ -5471,7 +5471,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "47c2cef5-cfc4-4e6d-84e3-56d618701eac",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5027),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3785),
                             Description = "The Smart Ring V is a stylish and discreet way to stay connected, with features such as message notifications and mobile payments.",
                             Discount = 0,
                             Image = "",
@@ -5484,7 +5484,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "50160b96-d21a-453e-afbb-4e31cc0a6abf",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5030),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3787),
                             Description = "Experience virtual reality like never before with our ergonomic VR headset. Designed to fit comfortably on your head, it features high-quality lenses and an immersive audio system.",
                             Discount = 0,
                             Image = "",
@@ -5497,7 +5497,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "dbfb7b60-b951-49d9-a194-f13cdd80fd1d",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5034),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3789),
                             Description = "Get the ultimate gaming experience with our VR gaming chair. Equipped with built-in haptic feedback and motion tracking technology, it's the perfect addition to any VR setup.",
                             Discount = 0,
                             Image = "",
@@ -5510,7 +5510,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "ea488074-4c36-47f4-b664-e9cda4250dde",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5040),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3790),
                             Description = "Take control of your virtual world with our wireless VR controllers. They feature precision sensors and ergonomic design for a seamless experience.",
                             Discount = 0,
                             Image = "",
@@ -5523,7 +5523,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "826eb83a-7fd4-42c0-9b0c-bb04961ccd12",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5044),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3792),
                             Description = "Get in shape while having fun with our VR fitness kit. It includes a VR headset, motion controllers, and a library of fitness games designed to get your heart pumping.",
                             Discount = 0,
                             Image = "",
@@ -5536,7 +5536,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c4c0a113-144d-4f61-8349-edbf046fb32a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5048),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3794),
                             Description = "Bring learning to life with our VR education kit. It includes a VR headset and a library of educational experiences designed to make learning fun and engaging.",
                             Discount = 0,
                             Image = "",
@@ -5549,7 +5549,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f4fff34e-0c3f-4044-8aa0-ab0483ac7304",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5051),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3795),
                             Description = "This professional-level DSLR camera offers exceptional image quality, high-speed performance, and advanced features.",
                             Discount = 0,
                             Image = "",
@@ -5562,7 +5562,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "a2f9b791-952a-45a8-9306-14ff5bb6692e",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5054),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3797),
                             Description = "With a 24.2 megapixel APS-C CMOS sensor and 45-point all cross-type AF system, this camera delivers stunning image quality and fast autofocus performance.",
                             Discount = 7,
                             Image = "",
@@ -5575,7 +5575,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "d81feb9d-338b-49aa-9f10-9581a6a24cd6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5059),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3799),
                             Description = "This mirrorless camera features a 26.1MP X-Trans CMOS 4 sensor, in-body image stabilization, and advanced video recording capabilities.",
                             Discount = 0,
                             Image = "",
@@ -5588,7 +5588,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "c3179d21-1741-4d68-9281-62cb8eabf58b",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5062),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3800),
                             Description = "This mirrorless camera features a 24.2MP full-frame Exmor R BSI CMOS sensor and advanced autofocus system, delivering exceptional image quality and fast performance.",
                             Discount = 0,
                             Image = "",
@@ -5601,7 +5601,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "16fdfb87-f4ee-4567-9904-af3164f203d6",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5067),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3802),
                             Description = "This action camera features a 23.6MP sensor and HyperSmooth 3.0 video stabilization, enabling you to capture smooth and steady footage in a variety of environments.",
                             Discount = 0,
                             Image = "",
@@ -5614,7 +5614,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "5a22f585-6379-4fcb-8059-736aee703ea3",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5071),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3804),
                             Description = "This stainless steel watch band is compatible with Apple Watch Series 6, 5, 4, 3, 2, 1, SE. It is easy to install and has a stylish and durable design.",
                             Discount = 4,
                             Image = "",
@@ -5627,7 +5627,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "4833de13-c027-4f25-ae67-ba6a8117282a",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5077),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3805),
                             Description = "This laptop cooling pad has 5 high-speed fans that keep your laptop cool and prevent overheating. It has adjustable height settings and a sleek design.",
                             Discount = 0,
                             Image = "",
@@ -5640,7 +5640,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "f3ee82c6-eb40-47cc-8738-4aab57b2200c",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5083),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3807),
                             Description = "This phone case is made of durable TPU and has a convenient card holder on the back. It fits iPhone X, XS, and 11 Pro.",
                             Discount = 7,
                             Image = "",
@@ -5653,7 +5653,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "9020264a-3348-4e4b-97c1-3463074c5e5f",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5086),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3809),
                             Description = "These mechanical keyboard switches have a tactile feel and a long lifespan. They are compatible with Cherry MX mechanical keyboards.",
                             Discount = 5,
                             Image = "",
@@ -5666,7 +5666,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         new
                         {
                             Id = "fe1a49f9-36a1-477b-be87-edb573326e03",
-                            DateOfCreation = new DateTime(2023, 12, 11, 18, 14, 51, 62, DateTimeKind.Local).AddTicks(5091),
+                            DateOfCreation = new DateTime(2023, 12, 12, 2, 56, 22, 438, DateTimeKind.Local).AddTicks(3810),
                             Description = "This camera tripod is made of lightweight aluminum and has adjustable height settings. It is compatible with most cameras and camcorders.",
                             Discount = 0,
                             Image = "",
@@ -14460,9 +14460,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "52333943-729e-4be6-9e01-20739d33a9df",
+                            Id = "3478edbf-2cf5-4823-a260-e1f51a4ef538",
                             Cons = "Average display quality, a bit heavy to carry around.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8053),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4277),
                             ProductId = "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
                             Pros = "Excellent performance, good battery life, sleek design.",
                             Rate = 4,
@@ -14471,9 +14471,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "906ea1dc-fd94-4c3f-aa50-47b4809ac1f5",
+                            Id = "ca499a24-3b81-4834-b6cc-22b52e98a875",
                             Cons = "Mediocre build quality, average speakers.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8093),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4290),
                             ProductId = "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
                             Pros = "Affordable price, decent performance.",
                             Rate = 3,
@@ -14482,9 +14482,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "ff542cb3-3b6d-41c9-bf2a-eb6508d7280f",
+                            Id = "b0d52518-9312-4ebb-81a0-da494f5fd825",
                             Cons = "Laggy performance, below-average battery.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8095),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4292),
                             ProductId = "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
                             Pros = "",
                             Rate = 2,
@@ -14493,9 +14493,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "97e368d0-f837-4433-ac9a-2401b7ebb1c1",
+                            Id = "cf6f0558-631a-4de5-a7a3-e841106679fd",
                             Cons = "Average battery life.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8096),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4294),
                             ProductId = "3a97f708-2be7-498a-8d59-ada88e5e7c1b",
                             Pros = "Sleek design, fast processing, lightweight.",
                             Rate = 5,
@@ -14504,9 +14504,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "0d30b618-e954-4001-8d99-2c47bef531de",
+                            Id = "8f2177e2-8058-4d3b-8768-565bca2248a9",
                             Cons = "Overheats quickly, noisy fan.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8098),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4296),
                             ProductId = "3a97f708-2be7-498a-8d59-ada88e5e7c1b",
                             Pros = "Good display, responsive keyboard.",
                             Rate = 3,
@@ -14515,9 +14515,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "42c15340-1696-45a0-a744-34a46cc2bb90",
+                            Id = "700bfbfa-30ba-47ed-9e4a-6181735694fe",
                             Cons = "Pricey, limited ports.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8100),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4297),
                             ProductId = "74bd7e24-0ac0-4414-918c-b1de0ac2a2df",
                             Pros = "Superb performance, stunning display, long-lasting battery.",
                             Rate = 1,
@@ -14526,9 +14526,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "508fc379-2d29-4a66-855f-a0e810a6fc34",
+                            Id = "4b4ddc86-b92a-4f34-ad63-1fc394509a11",
                             Cons = "High price tag.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8101),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4299),
                             ProductId = "74bd7e24-0ac0-4414-918c-b1de0ac2a2df",
                             Pros = "Smooth performance, sleek design.",
                             Rate = 4,
@@ -14537,9 +14537,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "48194f27-74df-4764-bcef-8fb3513f83dd",
+                            Id = "9f475849-6205-46d0-b227-dfea73af4591",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8103),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4300),
                             ProductId = "1cdfeeae-13d4-40d4-9a70-60916ea4ba17",
                             Pros = "",
                             Rate = 5,
@@ -14548,9 +14548,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "5d5dcfbe-49f5-4823-9816-8210de69d15b",
+                            Id = "8aea76f2-1b43-42ab-82ad-5a4cce0030a9",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8104),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4302),
                             ProductId = "b6891273-10bd-47ca-a139-27955175dfee",
                             Pros = "",
                             Rate = 2,
@@ -14559,9 +14559,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "efd8f20c-576f-42bc-9070-dec2bb323edc",
+                            Id = "7dcdbfb3-20eb-4700-bdea-c93d63de86bc",
                             Cons = "Hefty price, heavy to carry.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8106),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4304),
                             ProductId = "a5bbfafe-f8b2-4b4e-bfb9-dc3947fd20bd",
                             Pros = "Superb camera, powerful performance.",
                             Rate = 5,
@@ -14570,9 +14570,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "555a9851-7bc4-48a7-a525-c940926ef3a5",
+                            Id = "b5bd3285-6972-40e8-a164-144a29e52056",
                             Cons = "Average battery life.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8107),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4305),
                             ProductId = "a5bbfafe-f8b2-4b4e-bfb9-dc3947fd20bd",
                             Pros = "Great display, smooth interface.",
                             Rate = 4,
@@ -14581,9 +14581,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "552e3d7e-5a98-422a-a5c4-afe207559f28",
+                            Id = "2c037559-751c-469c-958a-be64036d7348",
                             Cons = "Slightly bulky, UI can be overwhelming.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8109),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4307),
                             ProductId = "690d1d22-2bbd-4f27-9549-58862b320685",
                             Pros = "Fantastic camera, gorgeous display.",
                             Rate = 2,
@@ -14592,9 +14592,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "5ca1b7d1-a88a-4867-a2f4-e49ec4864ffb",
+                            Id = "087c7d12-fd6f-4a4d-8da7-f7edf4dd84fe",
                             Cons = "Expensive, average battery life.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8110),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4308),
                             ProductId = "690d1d22-2bbd-4f27-9549-58862b320685",
                             Pros = "Nice display, powerful processor.",
                             Rate = 3,
@@ -14603,9 +14603,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "f0586fbe-1bd2-459f-93a0-7af7b72ce3dd",
+                            Id = "ad6103e7-b382-4ba9-9fa4-9ba96c977eab",
                             Cons = "Slightly expensive.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8112),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4310),
                             ProductId = "5f0f89ae-2136-4509-a334-951cfe495cd7",
                             Pros = "Outstanding camera, clean UI.",
                             Rate = 5,
@@ -14614,9 +14614,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "322461cd-e2cc-4bc9-b1f3-174240fa0dc1",
+                            Id = "0cbdbc17-3590-492c-851b-e8175d967f50",
                             Cons = "Poor battery optimization.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8113),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4312),
                             ProductId = "5f0f89ae-2136-4509-a334-951cfe495cd7",
                             Pros = "Good performance, nice design.",
                             Rate = 3,
@@ -14625,9 +14625,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "fd8d3619-1a03-4b01-a1f5-f8051c5a5fcc",
+                            Id = "2086eea3-a885-494d-a7b4-a62f7bcaa7af",
                             Cons = "Lacks some camera finesse.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8114),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4313),
                             ProductId = "50f7e18f-a606-4935-95aa-2679cfa37999",
                             Pros = "Speedy performance, smooth interface.",
                             Rate = 4,
@@ -14636,9 +14636,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "0cb68ba1-a203-4c5c-b995-e8dfe9f95af3",
+                            Id = "6c5d4146-77b3-45ab-b55b-7407506af692",
                             Cons = "Average camera quality.",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8116),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4315),
                             ProductId = "50f7e18f-a606-4935-95aa-2679cfa37999",
                             Pros = "Sleek design, good display.",
                             Rate = 1,
@@ -14647,9 +14647,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "ffd76b68-7a3f-48d2-be3b-54243147bfca",
+                            Id = "d76f6fb3-d6b0-4bd4-8fa9-14c184f823aa",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8117),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4316),
                             ProductId = "4878b254-2d40-4128-b9ac-a4109ea1b1ca",
                             Pros = "",
                             Rate = 2,
@@ -14658,9 +14658,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "bea8b20c-b76c-4d4b-81af-61704f1903a2",
+                            Id = "fafb86b0-5856-411b-9002-abe208bef6f4",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8119),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4318),
                             ProductId = "ff269c57-2916-4536-a976-02864ffe9a5d",
                             Pros = "",
                             Rate = 4,
@@ -14669,9 +14669,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "9f4153de-b626-457b-a40f-4832875676f7",
+                            Id = "b3773232-6649-40a5-8920-44b2e4811ee5",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8120),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4319),
                             ProductId = "61a20a3e-5e8d-47e6-8e2e-6af2b4d4d5ab",
                             Pros = "",
                             Rate = 5,
@@ -14680,9 +14680,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "b982a318-96f0-464b-a430-b54693e7867b",
+                            Id = "ed71a1be-ea92-4699-bf92-84b67a666641",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8122),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4321),
                             ProductId = "d62efc95-bc43-41d1-bb0e-417003349616",
                             Pros = "",
                             Rate = 2,
@@ -14691,9 +14691,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "b3c5e142-d76d-4d4e-bbf5-29b87eadca58",
+                            Id = "e16b6ce9-7852-40b2-a4d8-5658d46a14ef",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8123),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4322),
                             ProductId = "8c559d76-c84a-4144-b6b8-259d896a97cc",
                             Pros = "",
                             Rate = 1,
@@ -14702,9 +14702,9 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "679ca905-a697-4636-91d5-390cc026baf4",
+                            Id = "08f09f3d-2b5f-46ea-ae54-53947b9bc774",
                             Cons = "",
-                            Date = new DateTime(2023, 12, 11, 18, 14, 51, 71, DateTimeKind.Local).AddTicks(8124),
+                            Date = new DateTime(2023, 12, 12, 2, 56, 22, 446, DateTimeKind.Local).AddTicks(4324),
                             ProductId = "f0dd3651-99f3-4bac-abb3-8492b32d71ba",
                             Pros = "",
                             Rate = 4,
@@ -14877,7 +14877,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "0bd71a9c-6fe9-4bff-897c-4e96ee59974e",
                             CategoryId = "technology",
                             Description = "Get PCs, the latest components, PC accesories and everything else related to PCs.",
-                            Image = "https://i.ibb.co/qNNKfH1/pc.jpg",
+                            Image = "/imgs/subCategories/pc.jpg",
                             Name = "Personal Computers"
                         },
                         new
@@ -14885,7 +14885,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "cfc36e75-7f0b-4c4d-a4d9-a2d25f81b467",
                             CategoryId = "technology",
                             Description = "Discover the latest smartphones from top brands like Apple, Samsung, and more.",
-                            Image = "https://i.ibb.co/thRm3T5/phone.jpg",
+                            Image = "/imgs/subCategories/phone.jpg",
                             Name = "Smartphones"
                         },
                         new
@@ -14893,7 +14893,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "3edffd71-09a8-4fdb-a59e-add7c7ceb538",
                             CategoryId = "technology",
                             Description = "Get office electronics like printers, scanners, and projectors to help you run your business.",
-                            Image = "https://i.ibb.co/NW783cv/printer.jpg",
+                            Image = "/imgs/subCategories/printer.jpg",
                             Name = "Office Electronics"
                         },
                         new
@@ -14901,7 +14901,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "edb2e61a-ca1e-413d-a3a1-4bac24da99bf",
                             CategoryId = "technology",
                             Description = "Find the latest gaming consoles and accessories from top brands like Playstation, Xbox, and Nintendo.",
-                            Image = "https://i.ibb.co/pdmMks2/consoles.jpg",
+                            Image = "/imgs/subCategories/consoles.jpg",
                             Name = "Gaming Consoles & Accessories"
                         },
                         new
@@ -14909,7 +14909,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "57dcef31-e8c0-429f-8dea-0089afcbf945",
                             CategoryId = "technology",
                             Description = "Tablets, and other stuff.",
-                            Image = "https://i.ibb.co/s9QBSrV/handheld.jpg",
+                            Image = "/imgs/subCategories/handheld.jpg",
                             Name = "HandHeld entertainment"
                         },
                         new
@@ -14917,7 +14917,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "8f50d06c-cf95-442e-bebe-8a9e1311b9e5",
                             CategoryId = "technology",
                             Description = "Shop for speakers, headphones, TVs, projectors, and other audio & video equipment.",
-                            Image = "https://i.ibb.co/Jsgp4nm/audiovideo.jpg",
+                            Image = "/imgs/subCategories/audiovideo.jpg",
                             Name = "Audio & Video Equipment"
                         },
                         new
@@ -14925,7 +14925,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "1ba269cb-5d2b-4975-be75-0979930cb10e",
                             CategoryId = "technology",
                             Description = "Explore the latest wearable tech devices like smartwatches, fitness trackers, and more.",
-                            Image = "https://i.ibb.co/1Lqgz2C/watches.jpg",
+                            Image = "/imgs/subCategories/watches.jpg",
                             Name = "Wearable Technology"
                         },
                         new
@@ -14933,7 +14933,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "58b31959-1232-453f-b631-6411be333ed3",
                             CategoryId = "technology",
                             Description = "Explore virtual reality technology and accessories to enhance your gaming and entertainment experiences.",
-                            Image = "https://i.ibb.co/Lt61Vy9/vr.jpg",
+                            Image = "/imgs/subCategories/vr.jpg",
                             Name = "Virtual Reality"
                         },
                         new
@@ -14941,7 +14941,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "50292d51-a80b-40e0-ab12-47e7557cedb8",
                             CategoryId = "technology",
                             Description = "Shop for cameras, lenses, and other photography equipment for amateurs and professionals.",
-                            Image = "https://i.ibb.co/2c9SwMx/proffcamera.jpg",
+                            Image = "/imgs/subCategories/proffcamera.jpg",
                             Name = "Cameras & Photography"
                         },
                         new
@@ -14949,7 +14949,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "60c7be7d-55fe-4bff-8b8a-bd8c1c22f15a",
                             CategoryId = "technology",
                             Description = "Find accessories and replacement parts for your electronics, including chargers, cables, and batteries.",
-                            Image = "https://i.ibb.co/8zsJJfN/chargers.jpg",
+                            Image = "/imgs/subCategories/chargers.jpg",
                             Name = "Accessories & Parts"
                         },
                         new
@@ -14957,7 +14957,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "95448f8a-49ea-4930-b91f-193892a687e8",
                             CategoryId = "menswear",
                             Description = "Comfortable and versatile tops that come in a variety of styles, colors, and designs.",
-                            Image = "https://ibb.co/Tty2prS",
+                            Image = "/imgs/subCategories/shirt.jpg",
                             Name = "T-Shirts"
                         },
                         new
@@ -14965,7 +14965,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "c05c19eb-f67b-48f3-b4ca-922326df53ff",
                             CategoryId = "menswear",
                             Description = "Boots, jordans, sketchers adidas, nike and everyhing inbetween.",
-                            Image = "https://ibb.co/bHRqbhB",
+                            Image = "/imgs/subCategories/foot.jpg",
                             Name = "Foot Wear"
                         },
                         new
@@ -14973,7 +14973,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "fc160538-ed47-4b02-8ff9-32addec8b3a6",
                             CategoryId = "menswear",
                             Description = "Versatile pants that come in a variety of styles, including khakis, chinos, and cargo pants.",
-                            Image = "https://ibb.co/grVvTFy",
+                            Image = "/imgs/subCategories/pants.jpg",
                             Name = "Pants"
                         },
                         new
@@ -14981,7 +14981,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "e1adeac0-4152-4a32-a789-ca9a2c99921b",
                             CategoryId = "menswear",
                             Description = "Head wear, all kinds of hats. Stay protected in the summer and warm in the winter!",
-                            Image = "https://ibb.co/vVwGgd1",
+                            Image = "/imgs/subCategories/cap.jpg",
                             Name = "Head wear"
                         },
                         new
@@ -14989,7 +14989,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "2ec55d9f-c9dd-49c8-af86-10b7fd4f7dd3",
                             CategoryId = "menswear",
                             Description = "Formal outfits that typically consist of a jacket and matching pants, worn for business or formal occasions.",
-                            Image = "https://ibb.co/7tNBbCc",
+                            Image = "/imgs/subCategories/suit.jpg",
                             Name = "Suits"
                         },
                         new
@@ -14997,7 +14997,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "e72f789f-3032-43b1-bb90-1faacbaa6c9c",
                             CategoryId = "menswear",
                             Description = "Casual and versatile pants that come in a variety of styles, cuts, and washes.",
-                            Image = "https://ibb.co/MfrkVRj",
+                            Image = "/imgs/subCategories/jeans.jpg",
                             Name = "Jeans"
                         },
                         new
@@ -15005,7 +15005,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "24b62ef4-3d30-4f01-b621-1a849edc5f5e",
                             CategoryId = "menswear",
                             Description = "Warm and comfortable tops that come in a variety of styles, including pullovers, cardigans, and turtlenecks.",
-                            Image = "https://ibb.co/4SwkM0b",
+                            Image = "/imgs/subCategories/sweater.jpg",
                             Name = "Sweaters"
                         },
                         new
@@ -15013,7 +15013,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "eac02249-e78d-4f89-b949-7b2bacdbfd2a",
                             CategoryId = "menswear",
                             Description = "Outerwear that provides warmth and protection from the elements, including leather jackets, denim jackets, and bomber jackets.",
-                            Image = "https://ibb.co/dLbySwc",
+                            Image = "/imgs/subCategories/jacket.jpg",
                             Name = "Jackets"
                         },
                         new
@@ -15021,7 +15021,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "c886c2eb-fc04-4d2a-8c9e-1cb71bbac941",
                             CategoryId = "menswear",
                             Description = "Formal shirts that are typically worn with suits or dress pants for business or formal occasions.",
-                            Image = "https://ibb.co/hLWjyxf",
+                            Image = "/imgs/subCategories/dressshirt.jpg",
                             Name = "Dress Shirts"
                         },
                         new
@@ -15029,7 +15029,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "af8cd7b9-683a-48d9-8be4-25eb2237ee39",
                             CategoryId = "menswear",
                             Description = "Casual and comfortable tops that come with a hood and often feature a front pocket.",
-                            Image = "https://ibb.co/F58SbD2",
+                            Image = "/imgs/subCategories/hoodie.jpg",
                             Name = "Hoodies"
                         },
                         new
@@ -15037,7 +15037,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "a2bb30f6-be86-4e1c-b58f-e1599b8e30c3",
                             CategoryId = "womenswear",
                             Description = "All kinds of dresses and in all the colors they come in. We even have wedding dresses!",
-                            Image = "https://ibb.co/Ky45JRy",
+                            Image = "/imgs/subCategories/dress.jpg",
                             Name = "Dresses"
                         },
                         new
@@ -15045,7 +15045,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "2986c60e-1876-4c73-84be-95855807a23e",
                             CategoryId = "womenswear",
                             Description = "Every kind of shoe you can think of at great prices.",
-                            Image = "https://ibb.co/YtL8bTC",
+                            Image = "/imgs/subCategories/boots.jpg",
                             Name = "Foot wear"
                         },
                         new
@@ -15053,7 +15053,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "28bbdaaa-7997-4cf5-9336-0da1b3fc8026",
                             CategoryId = "womenswear",
                             Description = "All the purses you can think of at great prices.",
-                            Image = "https://ibb.co/fqf6MYB",
+                            Image = "/imgs/subCategories/purse.jpg",
                             Name = "Carry-ons"
                         },
                         new
@@ -15061,7 +15061,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "56feed6d-93a3-4ff1-a28b-bba8337a2ade",
                             CategoryId = "womenswear",
                             Description = "A range of styles, including jeans, leggings, and dress pants, suitable for various occasions and seasons.",
-                            Image = "https://ibb.co/Kj2mJLk",
+                            Image = "/imgs/subCategories/fjeans.jpg",
                             Name = "Jeans"
                         },
                         new
@@ -15069,7 +15069,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "68fda0af-4632-4bf5-94bc-cb18f8aef5f9",
                             CategoryId = "womenswear",
                             Description = "Warm and comfortable tops that come in a variety of styles, including pullovers, cardigans, and turtlenecks.",
-                            Image = "https://ibb.co/cgtktkp",
+                            Image = "/imgs/subCategories/fsweater.jpg",
                             Name = "Sweaters"
                         },
                         new
@@ -15077,7 +15077,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "4c9db19d-87b1-4380-846c-62547aeeb2de",
                             CategoryId = "womenswear",
                             Description = "A range of styles, from casual to formal, including t-shirts, blouses, and crop tops.",
-                            Image = "https://ibb.co/Bw4y01C",
+                            Image = "/imgs/subCategories/tops.jpg",
                             Name = "Tops"
                         },
                         new
@@ -15085,7 +15085,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "a39cf50b-b311-468e-8e43-eefb0ef53fe2",
                             CategoryId = "womenswear",
                             Description = "A classic wardrobe staple that comes in a variety of lengths, styles, and materials, including pencil skirts, midi skirts, and maxi skirts.",
-                            Image = "https://ibb.co/5rtVCG0",
+                            Image = "/imgs/subCategories/skirt.jpg",
                             Name = "Skirts"
                         },
                         new
@@ -15093,7 +15093,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "f641cfb0-5506-46ee-bb60-0c8150df3585",
                             CategoryId = "womenswear",
                             Description = "Outerwear that provides warmth and protection from the elements, including leather jackets, denim jackets, and blazers.",
-                            Image = "https://ibb.co/JyrLLSG",
+                            Image = "/imgs/subCategories/jackets.jpg",
                             Name = "Jackets"
                         },
                         new
@@ -15101,7 +15101,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "e666d9e6-3f05-410e-b93d-457a71cf0123",
                             CategoryId = "womenswear",
                             Description = "Comfortable and functional clothing designed for athletic and sports activities, including yoga pants, sports bras, and workout shirts.",
-                            Image = "https://ibb.co/VQxqmnS",
+                            Image = "/imgs/subCategories/active.jpg",
                             Name = "Activewear"
                         },
                         new
@@ -15109,7 +15109,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "8f1d8954-e266-49a4-a7a5-2ac1f8620aeb",
                             CategoryId = "womenswear",
                             Description = "Dress to impress in the office with a selection of tailored suits and work-appropriate attire.",
-                            Image = "https://ibb.co/RQ1DZLy",
+                            Image = "/imgs/subCategories/work.jpg",
                             Name = "Professional Chic"
                         },
                         new
@@ -15117,7 +15117,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "bf567f6d-aac6-4b7e-8abb-a3f830378df3",
                             CategoryId = "beauty",
                             Description = "Find makeup productids like foundation, lipstick, and mascara for any occasion.",
-                            Image = "https://ibb.co/8bmbkcm",
+                            Image = "/imgs/subCategories/makeup.jpg",
                             Name = "Makeup"
                         },
                         new
@@ -15125,7 +15125,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "54e5097e-6dcb-46fc-963d-24cc8a8372b1",
                             CategoryId = "beauty",
                             Description = "Get skincare productids like cleansers, moisturizers, and serums to keep your skin healthy and glowing.",
-                            Image = "https://ibb.co/n3gQb0S",
+                            Image = "/imgs/subCategories/skin.jpg",
                             Name = "Skincare"
                         },
                         new
@@ -15133,7 +15133,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "f01b6cc6-1917-40ff-9344-184e978a68d8",
                             CategoryId = "beauty",
                             Description = "Shop for hair care productids like shampoo, conditioner, and styling tools for any hair type.",
-                            Image = "https://ibb.co/B2NrcW7",
+                            Image = "/imgs/subCategories/hair.jpg",
                             Name = "Hair Care"
                         },
                         new
@@ -15141,7 +15141,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "8d12a370-ad82-4c33-a99a-006b040abbe2",
                             CategoryId = "beauty",
                             Description = "Find perfumes and colognes from top brands for men and women.",
-                            Image = "https://ibb.co/R7Kjv2w",
+                            Image = "/imgs/subCategories/fragrance.jpg",
                             Name = "Fragrances"
                         },
                         new
@@ -15149,7 +15149,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "c8e24060-a3cc-4909-a295-a20490698732",
                             CategoryId = "beauty",
                             Description = "Get bath and body productids like soaps, body wash, and lotions for a relaxing spa experience at home.",
-                            Image = "https://ibb.co/8DBLgT9",
+                            Image = "/imgs/subCategories/bath.jpg",
                             Name = "Bath & Body"
                         },
                         new
@@ -15157,7 +15157,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "67447359-bb55-4510-a696-06207f11625b",
                             CategoryId = "beauty",
                             Description = "Find grooming productids for men like razors, shaving cream, and aftershave.",
-                            Image = "https://ibb.co/7nHsXDj",
+                            Image = "/imgs/subCategories/mensgroom.jpg",
                             Name = "Men's Grooming"
                         },
                         new
@@ -15165,7 +15165,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "29a045e0-76cd-4fa8-9dd1-12a72fbac60b",
                             CategoryId = "beauty",
                             Description = "Shop for beauty tools like hair straighteners, curling irons, and makeup brushes.",
-                            Image = "https://ibb.co/rbwH7PZ",
+                            Image = "/imgs/subCategories/tools.jpg",
                             Name = "Beauty Tools & Accessories"
                         },
                         new
@@ -15173,7 +15173,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "b4294426-52a9-4ec8-9e9f-2efe6fe14489",
                             CategoryId = "beauty",
                             Description = "Get personal care productids like toothpaste, deodorant, and body powder.",
-                            Image = "https://ibb.co/SwNCh1w",
+                            Image = "/imgs/subCategories/personal.jpg",
                             Name = "Personal Care"
                         },
                         new
@@ -15181,7 +15181,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "248bc1e7-e25c-4d19-b1d8-ab1105938ed0",
                             CategoryId = "beauty",
                             Description = "Find sun care productids like sunscreen, after-sun lotion, and self-tanning productids.",
-                            Image = "https://ibb.co/zQf91Jz",
+                            Image = "/imgs/subCategories/sun.jpg",
                             Name = "Sun Care"
                         },
                         new
@@ -15189,7 +15189,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "31f30e8e-d7c3-43f7-8c57-eb00ae8b997a",
                             CategoryId = "beauty",
                             Description = "Shop for wellness productids like vitamins, supplements, and essential oils.",
-                            Image = "https://ibb.co/1spKD80",
+                            Image = "/imgs/subCategories/wellness.jpg",
                             Name = "Wellness"
                         },
                         new
@@ -15197,7 +15197,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "d3e3c11b-809b-4d22-98f8-58333377b784",
                             CategoryId = "autoaccessories",
                             Description = "Protective covers for cars to shield them from the elements and other hazards.",
-                            Image = "https://i.ibb.co/cxV9PCR/cover.jpg",
+                            Image = "/imgs/subCategories/cover.jpg",
                             Name = "Car Covers"
                         },
                         new
@@ -15205,7 +15205,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "10884d4e-343f-43f8-9094-2c2e12f072ef",
                             CategoryId = "autoaccessories",
                             Description = "Custom-fit floor mats to keep the interior of the car clean and tidy.",
-                            Image = "https://i.ibb.co/r37hXMh/mats.jpg",
+                            Image = "/imgs/subCategories/mats.jpg",
                             Name = "Floor Mats"
                         },
                         new
@@ -15213,7 +15213,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "ba523e6e-32cb-43a5-be44-734bd769aaa2",
                             CategoryId = "autoaccessories",
                             Description = "Protective covers for car seats to prevent wear and tear, stains, and damage.",
-                            Image = "https://i.ibb.co/b23dX0V/seatcover.jpg",
+                            Image = "/imgs/subCategories/seatcover.jpg",
                             Name = "Seat Covers"
                         },
                         new
@@ -15221,7 +15221,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "04dba8ac-a3ed-41a6-a268-3c984bd3ac6c",
                             CategoryId = "autoaccessories",
                             Description = "Storage solutions for cars, including trunk organizers, backseat organizers, and console organizers.",
-                            Image = "https://i.ibb.co/CtRnL6X/storage.jpg",
+                            Image = "/imgs/subCategories/storage.jpg",
                             Name = "Car Organizers"
                         },
                         new
@@ -15229,7 +15229,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "dcc14cf4-623e-46a5-b993-06722b09a093",
                             CategoryId = "autoaccessories",
                             Description = "Mounts and holders for smartphones and other devices to keep them secure and accessible while driving.",
-                            Image = "https://i.ibb.co/hDYPK7v/mount.jpg",
+                            Image = "/imgs/subCategories/mount.jpg",
                             Name = "Car Phone Mounts"
                         },
                         new
@@ -15237,7 +15237,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "ee83fee6-33fc-4509-b462-3fb11cc8e6a1",
                             CategoryId = "autoaccessories",
                             Description = "Chargers and adapters for charging phones, tablets, and other devices in the car.",
-                            Image = "https://i.ibb.co/h7zNfZn/carcharger.jpg",
+                            Image = "/imgs/subCategories/carcharger.jpg",
                             Name = "Car Chargers"
                         },
                         new
@@ -15245,7 +15245,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "4931c0cf-16e5-4d7f-88a4-a8af12dfe902",
                             CategoryId = "autoaccessories",
                             Description = "Kits containing everything needed to clean and detail the interior and exterior of a car.",
-                            Image = "https://i.ibb.co/nn3xsnV/cleaningkit.jpg",
+                            Image = "/imgs/subCategories/cleaningkit.jpg",
                             Name = "Car Cleaning Kits"
                         },
                         new
@@ -15253,7 +15253,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "d821754f-9e4d-4758-b162-52f0fee2d7f9",
                             CategoryId = "autoaccessories",
                             Description = "Air fresheners and scents to keep the car smelling fresh and pleasant.",
-                            Image = "https://i.ibb.co/s1jGGWJ/airfreshener.jpg",
+                            Image = "/imgs/subCategories/airfreshener.jpg",
                             Name = "Car Fragrances"
                         },
                         new
@@ -15261,7 +15261,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "b90e4c77-7c78-43b5-b8a8-9f25c6c6b24c",
                             CategoryId = "autoaccessories",
                             Description = "LED lights and bulbs for headlights, taillights, interior lighting, and decorative lighting.",
-                            Image = "https://i.ibb.co/mR9yvh2/carlight.jpg",
+                            Image = "/imgs/subCategories/carlight.jpg",
                             Name = "Car Lights"
                         },
                         new
@@ -15269,7 +15269,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "73b4c13c-0a3b-41bb-97f9-3a7a4fd632db",
                             CategoryId = "autoaccessories",
                             Description = "Decorative and functional accessories to enhance the appearance and performance of a car, including spoilers, grilles, and rims.",
-                            Image = "https://i.ibb.co/1fXzvRz/style.jpg",
+                            Image = "/imgs/subCategories/style.jpg",
                             Name = "Car Styling"
                         },
                         new
@@ -15277,7 +15277,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "bdfb4f4e-c9ae-4590-a62b-f491e4aea479",
                             CategoryId = "sports",
                             Description = "Shop for athletic apparel like workout clothes, running shoes, and more.",
-                            Image = "https://i.ibb.co/T0VM9df/apparel.jpg",
+                            Image = "/imgs/subCategories/apparel.jpg",
                             Name = "Athletic Apparel"
                         },
                         new
@@ -15285,7 +15285,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "a201ef9c-3206-4449-8eab-86ed6e2220a9",
                             CategoryId = "sports",
                             Description = "Find athletic accessories like water bottles, yoga mats, and resistance bands.",
-                            Image = "https://i.ibb.co/BN1260Q/accesories.jpg",
+                            Image = "/imgs/subCategories/accesories.jpg",
                             Name = "Athletic Accessories"
                         },
                         new
@@ -15293,7 +15293,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "2fcef4d6-0f0a-490b-9b12-57ad0eb0bc9a",
                             CategoryId = "sports",
                             Description = "Get gear for team sports like basketball, soccer, and football.",
-                            Image = "https://i.ibb.co/MfwV7gN/teams.jpg",
+                            Image = "/imgs/subCategories/teams.jpg",
                             Name = "Team Sports"
                         },
                         new
@@ -15301,7 +15301,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "24ffe98a-3970-4226-9895-bc0267f73cef",
                             CategoryId = "sports",
                             Description = "Find outdoor gear like camping equipment, backpacks, and hiking boots.",
-                            Image = "https://i.ibb.co/4JzxPwz/camping.jpg",
+                            Image = "/imgs/subCategories/camping.jpg",
                             Name = "Outdoor Recreation"
                         },
                         new
@@ -15309,7 +15309,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "8cec5cb9-b7ac-480d-9c60-899307478643",
                             CategoryId = "sports",
                             Description = "Shop for fitness equipment like treadmills, weights, and resistance machines.",
-                            Image = "https://i.ibb.co/RjsTXz7/gym.jpg",
+                            Image = "/imgs/subCategories/gym.jpg",
                             Name = "Fitness Equipment"
                         },
                         new
@@ -15317,7 +15317,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "7407db30-6510-4b5e-8e1e-0e8e72e78f2f",
                             CategoryId = "sports",
                             Description = "Find bikes for adults and kids, including road bikes, mountain bikes, and BMX bikes.",
-                            Image = "https://i.ibb.co/Jx091Qt/bicycle.jpg",
+                            Image = "/imgs/subCategories/bicycle.jpg",
                             Name = "Bikes"
                         },
                         new
@@ -15325,7 +15325,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "b29fd5c9-ea24-4d83-bf97-fc355f8c672c",
                             CategoryId = "sports",
                             Description = "Get electric and manual scooters for kids and adults.",
-                            Image = "https://i.ibb.co/YPSxW42/scooter.jpg",
+                            Image = "/imgs/subCategories/scooter.jpg",
                             Name = "Scooters"
                         },
                         new
@@ -15333,7 +15333,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "d3022cd3-e081-41f5-a7a9-06375898811e",
                             CategoryId = "sports",
                             Description = "Shop for water sports gear like paddleboards, kayaks, and snorkeling equipment.",
-                            Image = "https://i.ibb.co/zN01DbK/water.jpg",
+                            Image = "/imgs/subCategories/water.jpg",
                             Name = "Water Sports"
                         },
                         new
@@ -15341,7 +15341,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "413916b7-99d7-4d46-bd9b-86169ca97373",
                             CategoryId = "sports",
                             Description = "Find golf clubs, bags, and accessories for your next round.",
-                            Image = "https://i.ibb.co/188fh2P/golf.jpg",
+                            Image = "/imgs/subCategories/golf.jpg",
                             Name = "Golf"
                         },
                         new
@@ -15349,7 +15349,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "d9c023b9-ead8-4a2c-8acb-68ee100831d3",
                             CategoryId = "sports",
                             Description = "Get gear for winter sports like skiing, snowboarding, and ice skating.",
-                            Image = "https://i.ibb.co/7pSm5qS/winter.jpg",
+                            Image = "/imgs/subCategories/winter.jpg",
                             Name = "Winter Sports"
                         },
                         new
@@ -15357,7 +15357,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "8c9ac156-d7ef-46a5-b4da-0983fdc00f1a",
                             CategoryId = "homeandgarden",
                             Description = "Shop for sofas, chairs, tables, and other furniture pieces for your home or office.",
-                            Image = "https://ibb.co/hHcnQH3",
+                            Image = "/imgs/subCategories/furniture.jpg",
                             Name = "Furniture"
                         },
                         new
@@ -15365,7 +15365,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "21010f6a-2891-4fc9-969f-4886c993e95c",
                             CategoryId = "homeandgarden",
                             Description = "Find kitchen appliances, cookware, and dining essentials for your home.",
-                            Image = "https://ibb.co/JFLvFs9",
+                            Image = "/imgs/subCategories/kitchen.jpg",
                             Name = "Kitchen & Dining"
                         },
                         new
@@ -15373,7 +15373,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "86f9eabb-c453-4c95-bef2-e7538df76294",
                             CategoryId = "homeandgarden",
                             Description = "Shop for home decor items like curtains, rugs, wall art, and more.",
-                            Image = "https://ibb.co/HhWSdvt",
+                            Image = "/imgs/subCategories/decor.jpg",
                             Name = "Home Decor"
                         },
                         new
@@ -15381,7 +15381,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "c5f4fad6-1726-4b2b-a449-fcbd1002023c",
                             CategoryId = "homeandgarden",
                             Description = "Discover gardening tools, plants, and other essentials for your garden.",
-                            Image = "https://ibb.co/LRJfjj5",
+                            Image = "/imgs/subCategories/garden.jpg",
                             Name = "Gardening"
                         },
                         new
@@ -15389,7 +15389,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "84dd11a8-db4d-4302-aca9-fbeb00ddaf9b",
                             CategoryId = "homeandgarden",
                             Description = "Find pet food, toys, and other supplies for your furry friends.",
-                            Image = "https://ibb.co/gdZ0GBs",
+                            Image = "/imgs/subCategories/pets.jpg",
                             Name = "Pet Supplies"
                         },
                         new
@@ -15397,7 +15397,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "a1a8c3ea-7e6a-419c-aae3-75b17a577752",
                             CategoryId = "homeandgarden",
                             Description = "Get tools and supplies for home improvement projects like painting, plumbing, and electrical work.",
-                            Image = "https://ibb.co/MMn3FTF",
+                            Image = "/imgs/subCategories/hometools.jpg",
                             Name = "Home Improvement"
                         },
                         new
@@ -15405,7 +15405,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "19c1e093-d6a4-4af9-ad6d-3b5111a034d6",
                             CategoryId = "homeandgarden",
                             Description = "Shop for bedding sets, towels, and other bath essentials for your home.",
-                            Image = "https://ibb.co/3z373CN",
+                            Image = "/imgs/subCategories/beds.jpg",
                             Name = "Bedding & Bath"
                         },
                         new
@@ -15413,7 +15413,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "7cf5b026-3725-4149-8602-1a0f65da4bd0",
                             CategoryId = "homeandgarden",
                             Description = "Find storage solutions and organizational tools for your home or office.",
-                            Image = "https://ibb.co/rtf6zdZ",
+                            Image = "/imgs/subCategories/homestorage.jpg",
                             Name = "Storage & Organization"
                         },
                         new
@@ -15421,7 +15421,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "7d214c1c-09ac-4645-b389-16e146c4e9d2",
                             CategoryId = "homeandgarden",
                             Description = "Discover lighting solutions for your home, including lamps, light fixtures, and bulbs.",
-                            Image = "https://ibb.co/hYxJm3s",
+                            Image = "/imgs/subCategories/lights.jpg",
                             Name = "Lighting"
                         },
                         new
@@ -15429,7 +15429,7 @@ namespace Dropshiping.BackEnd.DataAccess.Migrations
                             Id = "0fc1779f-8256-402b-bfce-aa7938a7dce0",
                             CategoryId = "homeandgarden",
                             Description = "Get cleaning supplies and laundry essentials for your home.",
-                            Image = "https://ibb.co/4SVq1fp",
+                            Image = "/imgs/subCategories/homebath.jpg",
                             Name = "Cleaning & Laundry"
                         });
                 });
