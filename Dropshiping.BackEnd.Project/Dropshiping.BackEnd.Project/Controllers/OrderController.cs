@@ -112,16 +112,16 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
                 _orderService.Update(id);
                 var order = _orderService.GetById(id);
-                var status = Enum.GetName(typeof(DeliveryStatusEnum), order.Status);
+                
 
                 
-                return Ok($"Order status updated to: {status}!");
+                return Ok($"Order status updated to: {order.Status}!");
             }
             catch (KeyNotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }
