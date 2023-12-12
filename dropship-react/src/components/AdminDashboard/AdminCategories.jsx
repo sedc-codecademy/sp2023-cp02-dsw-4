@@ -511,28 +511,55 @@ const CreateCategory = ({ categories }) => {
     const handleSubmit = (e) => {
         if (categoryValid) {
             e.preventDefault()
-            console.log(categoryObject)
             const mapCategory = (categoryObject) => {
                 return {
                     name: categoryObject.name || "",
-                    image: categoryObject.image || "",
-                    icon: categoryObject.icon || "",
+                    image: "",
+                    icon: "",
                     subcategories: categoryObject.subCategories.map(subcategory => ({
                         name: subcategory.name || "",
-                        image: "",
+                        image: "image",
                         description: subcategory.description || "",
+                        categoryId: ""
                     })),
                     manufacturers: categoryObject.manufacturers.map(manufacturer => ({
                         name: manufacturer.name || "",
-                        image: ""
+                        image: "image"
                     }))
                 };
             };
+            
+            const mappedCategory = mapCategory(categoryObject)
+            
+            const mappedCat = {
+                name: categoryObject.name || "Kids and Toys",
+                icon: "/imgs/categories/kids-and-toys-icon.jpg",
+                image: "/imgs/categories/kids-and-toys.jpg",
+                subcategories: [
+                    {
+                        image: "/imgs/subCategories/educational-kids-toys.jpg",
+                        description: categoryObject.subCategories[0].description || "",
+                        name: categoryObject.subCategories[0].name || "",
+                        categoryId: ""
+                    },
+                    {
+                        image: "/imgs/subCategories/outdoor-kids-toys.jpg",
+                        description: categoryObject.subCategories[1].description || "",
+                        name: categoryObject.subCategories[1].name || "",
+                        categoryId: ""
+                    },
+                    {
+                        image: "/imgs/subCategories/action-figures-kids-toys.jpg",
+                        description: categoryObject.subCategories[2].description || "",
+                        name: categoryObject.subCategories[2].name || "",
+                        categoryId: ""
+                    }
+                ],
+                manufacturers: mappedCategory.manufacturers
+            }
+            console.log(mappedCat)
 
-            // usage
-            const mappedCategory = mapCategory(categoryObject);
-            console.log(mappedCategory)
-            createCategory(categoryObject)
+            createCategory(mappedCat)
         }
     }
 
@@ -783,7 +810,7 @@ const CreateCategory = ({ categories }) => {
                             {categoryObject.manufacturers.map((e) => (
                                 <li key={e.name}>
                                     <ImageLoader
-                                        url={URL.createObjectURL(dataURLtoFile('data:image/png;base64,' + e.image?.base64, e.image?.name))}
+                                        url={e.image}
                                         alt={e.name}
                                         backupUrl="/imgs/404/category404.png"
                                         backupAlt={e.name || "Manufacturer"}

@@ -40,7 +40,8 @@ export async function updateCategoryApi({ catData, tokens }) { // api/Category/U
 }
 
 export async function createCategoryApi({ catData, tokens }) { // api/Category/AddCategory
-    const url = `${mainURL}/category/create`
+    console.log(catData)
+    const url = `https://localhost:7168/api/Category/AddCategory`
 
     const response = await fetch(url, {
         method: 'POST',
@@ -55,7 +56,7 @@ export async function createCategoryApi({ catData, tokens }) { // api/Category/A
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
 export async function deleteCategoryApi({ ID, tokens }) { // api/Category/${ID}

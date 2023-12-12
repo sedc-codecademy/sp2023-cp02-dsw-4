@@ -483,10 +483,9 @@ export const useCreateCategory = () => {
                 onError: (err) => {
                     dispatch(setNotificationData({ title: 'Error creating category', success: '', error: err.message || 'Category has not been created' }))
                     dispatch(setShowNotification(true))
-
+                    console.log(err)
                 },
                 onSuccess: (data) => {
-
                     dispatch(setNotificationData({ title: 'Succesfully Created Category', success: data || 'The page will update soon, refresh if it does not', error: '' }))
                     dispatch(setShowNotification(true))
                     queryClient.invalidateQueries([['categoryQuery', catData.id], 'categoriesQuery'])

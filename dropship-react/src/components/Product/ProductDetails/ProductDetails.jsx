@@ -320,7 +320,7 @@ function ProductDetails() {
                     </p>
                   )}
                   <p className="product-total">
-                    <span>Total:</span> <span>${productData.discountedPrice}</span>
+                    <span>Total:</span> <span>${productData.discountedPrice * quantity}</span>
                   </p>
                 </div>
 
