@@ -1,1 +1,855 @@
-///////////  CART  ///////////// 
+///////////  Account DropDown  ///////////// 
+
+.loginDropdown {
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: .7rem;
+    border: none;
+    background-color: var(--tpPri2);
+    padding: .7rem;
+    gap: 1rem;
+    z-index: 55;
+    color: var(--secColor);
+    min-width: 40rem;
+    min-height: 36rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+    overflow: visible;
+
+    .closeLoginButton {
+        position: absolute;
+        z-index: 1;
+        top: .7rem;
+        right: .7rem;
+        background-color: var(--tpPri2);
+        padding: .3rem;
+        border-bottom-left-radius: .7rem;
+        border-left: .2rem solid var(--tpPri2);
+        border-bottom: .2rem solid var(--tpPri2);
+
+        display: flex;
+        align-items: center;
+
+        transition: background-color .3s;
+
+        svg {
+            width: 1.65rem;
+            height: 1.65rem;
+            color: var(--tpSec2);
+            transition: color .3s;
+        }
+
+        @media (min-width: 600px) {
+            &:hover {
+                svg {
+                    color: var(--tpPri);
+                }
+
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            &:active {
+                background-color: var(--tpPri2);
+
+                svg {
+                    color: var(--secColor);
+                }
+            }
+        }
+
+        &:focus-visible {
+            svg {
+                color: #fff;
+            }
+
+            background-color: var(--priColor);
+        }
+    }
+
+    .cancel,
+    .cancelFP {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--tpPri2);
+        padding: .3rem;
+        border-bottom-right-radius: .7rem;
+        border-right: .2rem solid var(--tpPri2);
+        border-bottom: .2rem solid var(--tpPri2);
+
+        display: flex;
+        align-items: center;
+
+        transition: background-color .3s;
+
+        svg {
+            color: var(--tpSec2);
+            width: 1.7rem;
+            height: 1.7rem;
+            transition: color .3s;
+        }
+
+        @media (min-width: 600px) {
+            &:hover {
+                svg {
+                    color: var(--tpPri);
+                }
+
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            &:active {
+                background-color: var(--tpPri2);
+
+                svg {
+                    color: var(--secColor);
+                }
+            }
+        }
+
+        &:focus-visible {
+            svg {
+                color: #fff;
+            }
+
+            background-color: var(--priColor);
+        }
+
+
+    }
+
+    form {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 3rem;
+        width: 50%;
+        gap: 2.5rem;
+        overflow: hidden;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        &.loginUi {
+            background-color: var(--tpPri);
+            border-radius: .5rem;
+
+            h1 {
+                letter-spacing: -0.1rem;
+                line-height: 1.5rem;
+
+                span {
+                    color: var(--accent);
+                }
+            }
+
+            .loginIcons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+
+                p {
+                    font-size: 1.1rem;
+                }
+
+                div {
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        svg {
+                            height: 2.3rem;
+                        }
+
+                        @media (min-width: 600px) {
+                            svg {
+                                opacity: .8;
+                                filter: grayscale(1);
+                                transition: filter .5s, opacity .5s;
+                            }
+
+                            &:focus-visible {
+                                outline: .1rem solid var(--accent);
+
+                                svg {
+                                    opacity: 1;
+                                    filter: grayscale(0);
+                                }
+                            }
+
+                            &:hover {
+                                svg {
+                                    opacity: 1;
+                                    filter: grayscale(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .buttonsDiv {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .forgotPassButton {
+                position: relative;
+                color: var(--tpSec);
+                font-size: .9rem;
+
+                @media(min-width: 600px) {
+                    transition: color .3s, scale .3s;
+
+                    &::after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        display: block;
+                        height: .125rem;
+                        width: 100%;
+                        background-color: var(--paleAccentTwo);
+                        opacity: 0.8;
+                        content: "";
+                        transform-origin: center;
+                        transform: scaleX(0);
+                        transition: transform .8s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
+                    }
+
+                    &:focus-visible {
+                        background-color: var(--paleAccentTwo);
+
+                        &::after {
+                            transform: scaleX(1);
+                            background-color: var(--priColor);
+                        }
+                    }
+
+                    &:hover {
+                        &::after {
+                            transform: scaleX(1);
+                        }
+                    }
+
+                    &:active {
+                        color: var(--accent);
+                        scale: .9;
+                    }
+                }
+            }
+
+            .signInButton,
+            .signUpButton {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                border-radius: .7rem;
+                letter-spacing: .1rem;
+                padding: .7rem;
+                background-color: var(--tpPri3);
+                color: var(--tpSec);
+                border: 0.15rem solid var(--tpPri2);
+
+                @media(min-width: 600px) {
+                    transition: border-color .3s, background-color .3s, color .3s;
+
+                    &:focus-visible {
+                        border-color: var(--accent);
+                        color: var(--accent);
+                        background-color: var(--tpPri);
+                    }
+
+                    &:hover {
+                        border-color: var(--paleAccent);
+                        color: var(--accent);
+                        background-color: var(--paleAccent);
+                    }
+
+                    &:active {
+                        border-color: var(--tpPri);
+                    }
+                }
+
+                &:disabled {
+                    pointer-events: none;
+                    border-color: var(--tpPri);
+                    opacity: .7;
+                }
+            }
+        }
+
+        &.registerUi {
+            position: relative;
+            text-align: center;
+            z-index: 0;
+
+            @media (min-width: 800px) {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: .5rem;
+                    background-image: linear-gradient(125deg,
+                            hsl(350deg 100% 60%) 13%,
+                            hsla(7, 100%, 62%, 0.624) 43%,
+                            hsla(22, 95%, 56%, 0.566) 49%,
+                            hsl(36deg 100% 47%) 50%,
+                            hsl(45deg 100% 43%) 50%,
+                            hsl(56deg 100% 39%) 50%,
+                            hsl(72deg 64% 49%) 50%,
+                            hsl(94deg 69% 60%) 51%,
+                            hsla(129, 82%, 68%, 0.936) 57%,
+                            hsla(160, 100%, 50%, 0.592) 87%);
+                    // background: var(--paleAccentTwo);
+                    z-index: -1;
+                }
+
+                overflow: hidden;
+            }
+
+            h1 {
+                color: var(--tpPri);
+                font-size: 3rem;
+                letter-spacing: -0.1rem;
+                line-height: 2.3rem;
+                user-select: none;
+                text-shadow: .1rem .1rem 0 var(--secColor);
+                color: #fff;
+                text-shadow: .1rem .1rem 0 black;
+
+                span {
+                    color: black;
+                    text-shadow: .1rem .1rem 0 #fff;
+                }
+            }
+
+            p {
+                max-width: 30ch;
+                font-weight: 600;
+                font-size: 1.2rem;
+                letter-spacing: .1rem;
+                color: #fff;
+                text-shadow: .05rem .05rem 0 black;
+
+                animation: fadeIn 1s;
+
+                &.eula {
+                    a {
+                        color: var(--secColor);
+                        pointer-events: all;
+                        text-shadow: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .registerButton {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: .5rem;
+                letter-spacing: .1rem;
+                padding: .7rem;
+                background-color: var(--tpPri);
+                border: 0.2rem solid var(--tpPri);
+
+                @media(min-width: 600px) {
+                    transition: border-color .3s, background-color .3s, color .3s;
+
+                    &:focus-visible {
+                        border-color: var(--accent);
+                        color: var(--accent);
+                        background-color: var(--tpPri);
+                    }
+
+                    &:hover {
+                        color: var(--tpPri);
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+
+                    &:active {
+                        border-color: var(--tpPri);
+                    }
+                }
+
+                &:disabled {
+                    pointer-events: none;
+                    color: var(--tpSec3);
+                    opacity: .7;
+                }
+            }
+
+            .inputGroup {
+                display: flex;
+                gap: .5rem;
+                flex-wrap: wrap;
+
+                @media(max-width: 500px) {
+                    gap: .5;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        &.forgotPass {
+            background-color: var(--tpPri);
+
+            .sendCodeButton {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                font-weight: 600;
+                border-radius: .5rem;
+                letter-spacing: .1rem;
+                padding: .7rem;
+                background-color: var(--tpPri4);
+                color: var(--tpSec);
+                border: 0.2rem solid var(--tpPri4);
+
+                @media(min-width: 600px) {
+                    transition: border-color .3s, background-color .3s, color .3s;
+
+                    &:focus-visible {
+                        border-color: var(--accent);
+                        color: var(--accent);
+                        background-color: var(--tpPri);
+                    }
+
+                    &:hover {
+                        color: var(--secColor);
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+
+                    &:active {
+                        border-color: var(--tpPri);
+                    }
+                }
+
+                &:disabled {
+                    pointer-events: none;
+                    color: var(--tpSec3);
+                    background-color: var(--tpPri3);
+                    border-color: var(--tpPri3);
+                }
+            }
+
+            span {
+                color: var(--accent);
+            }
+        }
+
+        .fields {
+            gap: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            animation: fadeIn 1s;
+
+            div {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                input {
+                    font-size: 1.1rem;
+                    text-indent: .7rem;
+                    padding: 1rem;
+                    background-color: transparent;
+                    color: var(--secColor);
+                    border: none;
+                    background-color: var(--tpPri4);
+                    border-top-right-radius: .5rem;
+                    border-top-left-radius: .5rem;
+                    border-bottom: 0.15rem solid var(--tpSec2);
+                    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+                    height: 100%;
+
+                    &::selection {
+                        background: var(--paleAccentTwo);
+                        color: var(--priColor);
+                    }
+
+                    &:invalid:not(:placeholder-shown) {
+                        border-color: red;
+
+                        ~ {
+                            label {
+                                opacity: 1;
+                                color: var(--priColor);
+                                background: red;
+                                transform: translateY(-105%);
+                            }
+                        }
+                    }
+
+                    &:valid {
+                        border-color: var(--paleAccentTwo);
+
+                        ~ {
+                            label {
+                                opacity: 1;
+                                color: var(--priColor);
+                                background: var(--paleAccentTwo);
+                                transform: translateY(-105%);
+                            }
+                        }
+                    }
+
+                    &:focus {
+                        border-color: var(--paleAccentTwo);
+
+                        ~ {
+                            label {
+                                opacity: 1;
+                                color: var(--priColor);
+                                background: var(--paleAccentTwo);
+                                transform: translateY(-105%);
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    color: var(--secColor);
+                    position: absolute;
+                    pointer-events: none;
+                    border-radius: .2rem;
+                    padding-inline: .3rem;
+                    transition: all .5s cubic-bezier(.19, 1, .22, 1);
+                    font-size: 1.1rem;
+                }
+
+                &.pass {
+
+                    span {
+                        position: absolute;
+                        right: .5rem;
+                        cursor: pointer;
+
+                        svg {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+
+                        @media (min-width: 600px) {
+                            transition: .3s color;
+
+                            &:hover {
+                                color: var(--accent);
+                            }
+
+                            &:active {
+                                color: var(--secAccent);
+                            }
+                        }
+
+                        &.active {
+                            color: var(--accent);
+                        }
+                    }
+
+                }
+            }
+
+            @media(max-width: 500px) {
+                gap: .5rem;
+            }
+        }
+
+        &.current {
+            width: 100%;
+        }
+    }
+
+    &.mobileLoginDP {
+        width: 100vw;
+        width: 100svw;
+        height: 100vh;
+        height: 100svh;
+        flex-direction: column;
+        margin: 0;
+        border-radius: 0;
+        min-width: unset;
+        min-height: unset;
+        max-width: unset;
+        max-height: unset;
+        box-shadow: none;
+
+        .closeLoginButton {
+            top: .7rem;
+            right: .7rem;
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        form {
+            width: unset;
+            height: max-content;
+            flex-grow: 1;
+            padding: 0;
+            padding-top: 3rem;
+            background-color: var(--tpPri);
+
+            &.registerUi {
+                background-color: var(--tpPri);
+
+                h1 {
+                    text-shadow: none;
+                    color: var(--secColor);
+
+                    span {
+                        text-shadow: none;
+                        color: var(--secColor);
+                    }
+                }
+
+                p {
+                    &.eula {
+                        color: var(--secColor);
+                        font-weight: 500;
+                        letter-spacing: unset;
+                        text-shadow: none;
+                        margin-top: 2rem;
+
+                        a {
+                            color: var(--accent);
+                        }
+                    }
+                }
+
+                .registerButton {
+                    font-size: 1.1rem;
+                    letter-spacing: .1rem;
+                    padding: .8rem;
+                    background-color: var(--tpPri2);
+                    color: var(--tpSec);
+                    border: 0.15rem solid var(--tpPri2);
+                }
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .cancel,
+            .cancelFP {
+                position: relative;
+                background: none;
+                border: none;
+
+                svg {
+                    color: var(--tpSec2);
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    transition: color .3s;
+                }
+            }
+        }
+    }
+
+    .notificationLogin {
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        min-width: 80%;
+        right: 0;
+        margin-inline: auto;
+        left: 0;
+        z-index: 444;
+        width: fit-content;
+
+        display: flex;
+        flex-direction: column;
+        padding: .2rem;
+        border-radius: .7rem;
+        background-color: var(--tpPri3);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+
+        h3 {
+            padding: .5rem;
+            background-color: var(--tpPri);
+            border-radius: .7rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            display: flex;
+            gap: .3rem;
+            align-items: center;
+
+            span {
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-size: clamp(1.3rem, 1.1765rem + 0.3294vw, 2rem);
+            }
+
+            svg {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+
+        p {
+            padding: .7rem;
+            border-radius: .7rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            font-size: clamp(1rem, 0.8765rem + 0.3294vw, 1.7rem);
+        }
+
+        &.errorNotify {
+            outline: .15rem solid rgb(245, 49, 49);
+
+            h3 {
+                svg {
+                    color: rgb(245, 49, 49);
+                }
+            }
+        }
+
+        &.successNotify {
+            outline: .15rem solid var(--paleAccentThree);
+
+            h3 {
+                svg {
+                    color: var(--paleAccentTwo);
+                }
+            }
+        }
+
+        @media(max-width: 500px) {
+            top: unset;
+            width: unset;
+            margin-inline: 1.5rem;
+            bottom: 1.5rem;
+        }
+    }
+
+    .notificationLogin-enter {
+        opacity: 0;
+        transform: translateX(-130vw) scale(0);
+    }
+
+    .notificationLogin-enter-active {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        transition: opacity 200ms, transform 200ms;
+    }
+
+    .notificationLogin-enter-done,
+    .notificationLogin-exit {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    .notificationLogin-exit-active {
+        opacity: 0;
+        transform: translateX(130vw) scale(0);
+        transition: opacity 200ms, transform 200ms;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.loginDropdown-enter {
+    opacity: 0;
+    transform: translateY(-130vh);
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(0rem);
+        }
+    }
+}
+
+.loginDropdown-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+
+    &::backdrop {
+        background-color: var(--backdropBackground);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(.2rem);
+        }
+
+        transition: backdrop-filter 300ms,
+        background-color 300ms;
+    }
+}
+
+.loginDropdown-enter-done {
+    opacity: 1;
+    transform: translateY(0);
+
+    &::backdrop {
+        background-color: var(--backdropBackground);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(.2rem);
+        }
+    }
+}
+
+.loginDropdown-exit {
+    opacity: 1;
+    transform: translateY(0);
+
+    &::backdrop {
+        background-color: var(--backdropBackground);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(.2rem);
+        }
+    }
+}
+
+.loginDropdown-exit-active {
+    opacity: 0;
+    transform: translateY(130vh);
+    transition: opacity 200ms, transform 200ms;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+
+        @supports(backdrop-filter: blur()) {
+            backdrop-filter: blur(0rem);
+        }
+
+        transition: backdrop-filter 200ms,
+        background-color 200ms;
+    }
+}

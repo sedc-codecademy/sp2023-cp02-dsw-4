@@ -1,18 +1,29 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { useSelector } from 'react-redux'
+import ImageLoader from '../../ImageLoader/ImageLoader'
 
-function SearchItem(props) {
+function SearchItem({ item, handleClick }) {
+    const isMobile = useSelector((state) => state.mobile.isMobile)
+
     return (
         <li>
-            <Link>
+            <button onClick={() => handleClick(item.id)}>
                 <div className="resultTitle">
-                    <img src={props.item.image} alt="product" />
-                    <h3>{props.item.title}</h3>
+                    {/* <img src={item.image} alt="product" /> */}
+                    <ImageLoader
+                        url={item.image}
+                        alt={item.name}
+                        backupUrl={'/imgs/404/category404.png'}
+                        backupAlt="Product"
+                        thirdBackupUrl={'/imgs/404/product404.png'}
+                    ></ImageLoader>
+                    <h3>{item.name}</h3>
                 </div>
                 <p>
-                    <span>{props.item.category}</span>|<span>{props.item.subcategory}</span>
+                    {!isMobile && <><span>{item.category.name}</span>|</>}
+                    <span>{item.subcategory.name}</span>
                 </p>
-            </Link>
+            </button>
         </li>
     )
 }

@@ -1,0 +1,207 @@
+//////////////// NEW ARRIVALS /////////////////////
+
+.newArrivals {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    gap: .5rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    background-color: var(--darkAccent);
+
+    ul {
+        display: flex;
+
+        @media(min-width:800px) {
+            gap: 1rem;
+            overflow: hidden;
+            --translateVar: 0%;
+
+            .product-card {
+                flex-grow: 0;
+                flex-shrink: 0;
+                width: 100%;
+                height: 100%;
+
+                @supports (translate: 0) {
+                    translate: var(--translateVar);
+                }
+
+                transition: translate .7s ease;
+
+                a {
+                    padding: .5rem;
+                    gap: .5rem;
+
+                    .infoDiv {
+                        gap: .3rem;
+                        color: var(--secColor);
+                        flex-grow: 1;
+
+                        .title {
+                            max-width: 25ch;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            transition: color .6s cubic-bezier(.19, 1, .22, 1);
+                        }
+
+                        div {
+                            &.ratingDiv {
+                                gap: .5rem;
+                                flex-wrap: wrap;
+
+                                .starsDiv {
+                                    width: fit-content;
+
+                                    svg {
+
+                                        height: clamp(1.5rem, 1.2353rem + 0.7059vw, 3rem);
+                                        width: clamp(1.5rem, 1.2353rem + 0.7059vw, 3rem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media(max-width:800px) {
+            gap: .5rem;
+            overflow-x: auto;
+
+            @supports (scrollbar-width: none) {
+                scrollbar-width: none;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .product-card {
+                a {
+                    padding: 1rem;
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+
+    @media(min-width:800px) {
+        .arrivalsBody {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: .3rem;
+
+            div {
+
+                &:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5rem;
+
+                    h1 {
+                        font-size: clamp(2.5rem, 0.8824rem + 5.6471vw, 15rem);
+                        letter-spacing: -0.3rem;
+                        line-height: clamp(2rem, 1.7059rem + 2.1176vw, 7rem);
+                        text-transform: lowercase;
+                        color: #fff;
+                        width: max-content;
+                        text-shadow: 0.1rem 0.1rem 0 black;
+                        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: .7rem;
+
+                        span:last-child {
+                            text-indent: 4rem;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    display: flex;
+                    gap: 1rem;
+
+                    button {
+                        background-color: var(--priColor);
+                        color: var(--tpSec2);
+
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        padding: .7rem;
+                        z-index: 15;
+                        box-shadow: var(--shadowColor) 0.12rem 0.2rem 0.5rem 0.1rem,
+                            var(--shadowColorTwo) 0 0.5rem 0.5rem -0.7rem;
+                        transition: background-color .3s, color .3s;
+
+                        &:focus-visible {
+                            opacity: 1;
+                            color: var(--secAccent);
+
+                            svg {
+                                outline: .15rem solid #fff;
+                            }
+                        }
+
+                        &:hover {
+                            color: var(--accent);
+                            background-color: var(--tpPri);
+                        }
+
+                        &:active {
+                            color: var(--secColor);
+                            background-color: var(--tpPri3);
+                        }
+
+                        &:disabled {
+                            pointer-events: none;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:800px) {
+        flex-direction: column;
+
+        .arrivalsBody {
+            div {
+                &:first-child {
+                    display: flex;
+                    flex-direction: column;
+
+                    h1 {
+                        font-size: 2.5rem;
+                        letter-spacing: -0.1rem;
+                        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        color: white;
+                        text-shadow: 0.1rem 0.1rem 0 black;
+                    }
+
+                    p {
+                        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 1.2rem;
+                        letter-spacing: 0.1rem;
+                        color: white;
+                        text-shadow: 0.05rem 0.05rem 0 black;
+                    }
+                }
+            }
+        }
+    }
+}

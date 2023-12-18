@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
 
 function Disclaimer() {
   return (
@@ -38,7 +38,7 @@ function Disclaimer() {
           </p>
         </div>
 
-        <div className="second-paragraph">
+        <div className="second paragraph">
           <h2>Consent</h2>
           <p>
             By using our website, you hereby consent to our disclaimer and agree
@@ -46,7 +46,7 @@ function Disclaimer() {
           </p>
         </div>
 
-        <div className="third-paragraph">
+        <div className="third paragraph">
           <h2>Update</h2>
           <p>
             Should we update, amend or make any changes to this document, those
@@ -55,7 +55,7 @@ function Disclaimer() {
         </div>
       </div>
     </main>
-  );
+  )
 }
 
 export default Disclaimer;

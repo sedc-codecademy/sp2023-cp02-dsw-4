@@ -1,39 +1,89 @@
-import React, { useRef } from "react"
-import { NavLink } from "react-router-dom"
+import React, { useEffect, useRef, useState } from "react"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { toggleDropDown } from "../../../store/slices/acDropDownSlice"
 
-import { setThemeMode } from "../../../store/slices/themeSlice"
-import { setIsSettingsOn } from "../../../store/slices/navSettingsSlice"
+import { setShowAccDropDown } from "../../../store/slices/dropdowns/acDropDownSlice"
+import { toggleCatDropDown, turnOffCatDP } from "../../../store/slices/dropdowns/catDropDownSlice"
+
+import { setThemeMode } from "../../../store/slices/theme/themeSlice"
+import { setIsSettingsOn } from "../../../store/slices/nav/navSettingsSlice"
+import { setShowShipping } from "../../../store/slices/shipping/shippingSlice"
+import { setShouldFocus } from "../../../store/slices/search/search"
+
+import {
+    CatDPMobile,
+    SubCatDP,
+    ViewAllSub,
+} from "../CatDropDown/CatDP"
 
 import { CSSTransition } from "react-transition-group"
+import { useLogout } from "../../../helpers/UserHelper/UserHelper"
+import { getUser } from "../../../helpers/API/user-api"
+import { useQuery } from "@tanstack/react-query"
+import ImageLoader from "../../ImageLoader/ImageLoader"
+import { getCategories } from "../../../helpers/API/category-api"
 
 export default function Nav() {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    let isLoggedIn = true
+    const logout = useLogout()
 
-    const showDropDown = useSelector((state) => state.acDropDown.showDropDown)
+    const tokens = useSelector(state => state.role.authTokens)
+    const userid = useSelector(state => state.role.userid)
+
+    const { data: userData } = useQuery({
+        // queryKey: ['userQuery', userid],
+        // queryFn: () => getUser(userid),
+        // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+        queryKey: ['userQuery', userid],
+        queryFn: () => getUser(userid, tokens),
+        enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
+    })
+
+    const {
+        data: allCatData,
+    } = useQuery({
+        queryKey: ["allCategories"],
+        queryFn: () => getCategories(),
+    })
+
+    const [currentCategory, setCurrentCategory] = useState(null)
+
+    useEffect(() => {
+        if (allCatData && currentCategory === null) {
+            setCurrentCategory(allCatData[0])
+        }
+    }, [allCatData, currentCategory])
+
+    const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+    const showDropDown = useSelector((state) => state.acDropDown.showAccDropDown)
     const themeMode = useSelector((state) => state.theme.themeMode)
     const isMobile = useSelector((state) => state.mobile.isMobile)
     const isSettingsOn = useSelector((state) => state.navSettings.isSettingsOn)
+    const showCatDropDown = useSelector((state) => state.catDropDown.showDropDown)
+
+    const role = useSelector((state) => state.role.role)
 
     const csstransitionRef = useRef()
+    const mobilecatref = useRef()
+    const activeLink = window.location.pathname
 
     const onLoginBtnClick = () => {
-        dispatch(toggleDropDown())
+        dispatch(setShowAccDropDown(true))
     }
 
     const closeSettings = () => {
-        if (isSettingsOn) {
+        setTimeout(() => {
             dispatch(setIsSettingsOn(false))
-        }
+        }, 100)
     }
 
     const onAccountIconClick = () => {
+        if (isMobile && showCatDropDown) {
+            dispatch(toggleCatDropDown())
+        }
         dispatch(setIsSettingsOn(!isSettingsOn))
     }
-
-    const activeLink = window.location.pathname
 
     const handleDarkClick = () => {
         dispatch(setThemeMode("dark"))
@@ -47,134 +97,268 @@ export default function Nav() {
         dispatch(setThemeMode("system"))
     }
 
+    const handleCategoriesClick = () => {
+        if (isMobile && isSettingsOn) {
+            dispatch(setIsSettingsOn(false))
+        }
+        dispatch(toggleCatDropDown())
+    }
+
+    const handleLogOutClick = () => {
+        logout()
+        if (isSettingsOn) {
+            dispatch(setIsSettingsOn(false))
+        }
+    }
+
+    const searchButtonClick = () => {
+        dispatch(setShouldFocus(true))
+    }
+
+    const handleCatClick = (e) => {
+        setCurrentCategory(allCatData.find(cat => cat.id === e))
+    }
+
+    const handleSubCatClick = (e) => {
+        setTimeout(() => {
+            navigate(`/subcategory/${e}`)
+        }, 300)
+        dispatch(turnOffCatDP())
+    }
+
+    const handleViewAllClick = (e) => {
+        dispatch(turnOffCatDP())
+        setTimeout(() => {
+            navigate(`/category/${e}`)
+        }, 300)
+    }
+
     return (
         <>
-            <nav className={`mainNav ${isMobile ? "mobileNav" : "normalNav"}`}>
-                <ul className={isLoggedIn ? "navigationLinks loggedIn" : "navigationLinks"}>
-                    {isMobile && (
-                        <li>
-                            <NavLink
-                                className="mobileLogo"
-                                to="/"
-                                exact="true"
-                                disabled={activeLink === "/"}
-                                onClick={closeSettings}
-                            >
-                                <svg viewBox="0 0 220 220">
-                                    <g clipPath="url(#clip0_201_15)">
+            <nav className={`mainNav ${isMobile ? "mobileNav" : "normalNav"} ${(role !== 'User' && isLoggedIn) && !isMobile && 'dashboardNav'}`}>
+                {role === "User" ? (
+                    <>
+                        <ul
+                            className={
+                                isLoggedIn ? "navigationLinks loggedIn" : "navigationLinks"
+                            }
+                        >
+                            {isMobile && (
+                                <li>
+                                    <NavLink
+                                        className="mobileLogo"
+                                        to="/"
+                                        exact="true"
+                                        disabled={activeLink === "/"}
+                                        onClick={closeSettings}
+                                    >
+                                        <svg viewBox="0 0 220 220">
+                                            <g clipPath="url(#clip0_201_15)">
+                                                <path
+                                                    d="M97.4204 114.878C100.124 116.886 102.932 118.895 105.636 120.918C113.448 126.292 120.941 132.116 128.077 138.361C119.257 148.932 111.465 157.993 98.6436 159.79C90.5492 160.953 77.7581 157.359 75.659 142.725C74.1489 132.124 82.7719 124.12 97.4204 114.878ZM220 110C220 131.754 213.55 153.02 201.465 171.108C189.38 189.196 172.203 203.295 152.106 211.622C132.008 219.949 109.893 222.13 88.5568 217.89C67.2201 213.649 47.6199 203.177 32.2343 187.798C16.8487 172.418 6.36869 152.823 2.1192 131.488C-2.13029 110.153 0.0416052 88.0369 8.3603 67.9362C16.679 47.8355 30.7709 30.6528 48.8544 18.5604C66.9378 6.46797 88.2007 0.00896897 109.955 9.33052e-06C124.404 -0.00594175 138.713 2.8349 152.064 8.36025C165.415 13.8856 177.547 21.9872 187.766 32.2022C197.985 42.4173 206.092 54.5456 211.622 67.8944C217.153 81.2431 220 95.5508 220 110ZM126.959 67.6249L125.781 84.8558L176.115 60.8745L128.499 30.1579L128.303 50.1222C124.996 50.4393 120.314 49.201 116.901 48.2194C110.367 46.0555 103.418 45.4403 96.6049 46.4223C79.7364 48.8385 63.9704 60.3611 66.4017 77.743C67.5344 85.6864 71.944 93.0862 80.5821 101.483C62.9133 112.764 47.6154 126.279 50.6508 147.407C54.7282 175.903 82.0621 185.538 99.2628 183.077C119.605 180.162 130.855 167.054 141.547 154.142C144.515 158.781 146.49 163.985 147.346 169.425L147.663 171.554L171.735 168.096L171.418 165.982C169.908 155.788 165.453 146.349 157.661 137.183C155.487 134.587 153.184 132.102 150.759 129.738C148.098 127.129 145.301 124.664 142.378 122.353C135.492 116.72 128.167 111.616 121.054 106.663C104.986 95.4572 91.1079 85.777 89.5827 75.1606C88.6615 68.7273 93.9017 64.9972 99.1571 64.2422C104.412 63.4871 109.139 64.6348 114.259 65.7523C118.411 66.8374 122.67 67.4654 126.959 67.6249Z"
+                                                    fill="url(#headerLogoMobile)"
+                                                    strokeWidth=".3rem"
+                                                />
+                                            </g>
+                                            <defs>
+                                                <linearGradient
+                                                    id="headerLogoMobile"
+                                                    x1="54.9849"
+                                                    y1="14.7241"
+                                                    x2="165"
+                                                    y2="205.276"
+                                                    gradientUnits="userSpaceOnUse"
+                                                >
+                                                    <stop offset="0.27" stopColor="#FF9F00" />
+                                                    <stop offset="1" stopColor="#FF7300" />
+                                                </linearGradient>
+                                                <clipPath id="clip0_201_15">
+                                                    <rect width="512" height="512" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </NavLink>
+                                </li>
+                            )}
+                            {isMobile && (
+                                <li>
+                                    <button onClick={searchButtonClick}>
+                                        <svg viewBox="0 0 32 32">
+                                            <path
+                                                fill="currentColor"
+                                                d="m29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9Z"
+                                            />
+                                        </svg>
+                                    </button>
+                                </li>
+                            )}
+                            <li>
+                                {isLoggedIn ? (
+                                    <button
+                                        className={`logInIcon ${isSettingsOn ? "active" : ""}`}
+                                        onClick={onAccountIconClick}
+                                    >
+                                        <ImageLoader
+                                            url={userData?.image}
+                                            alt={userData?.name}
+                                            backupUrl="/imgs/404/user404.png"
+                                            backupAlt="User"
+                                        ></ImageLoader>
+                                    </button>
+                                ) : (
+                                    <button
+                                        className={`logInButton ${showDropDown ? "active" : ""}`}
+                                        onClick={onLoginBtnClick}
+                                        disabled={showDropDown}
+                                    >
+                                        {!isMobile && <p>Log In</p>}
+                                        <svg viewBox="0 0 32 32">
+                                            <path
+                                                fill="currentColor"
+                                                d="M16 8a5 5 0 1 0 5 5a5 5 0 0 0-5-5Z"
+                                            />
+                                            <path
+                                                fill="currentColor"
+                                                d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2Zm7.992 22.926A5.002 5.002 0 0 0 19 20h-6a5.002 5.002 0 0 0-4.992 4.926a12 12 0 1 1 15.985 0Z"
+                                            />
+                                        </svg>
+                                    </button>
+                                )}
+                            </li>
+                            {isMobile && (
+                                <li>
+                                    <button
+                                        className="categoriesButton"
+                                        onClick={handleCategoriesClick}
+                                    >
+                                        <svg viewBox="0 0 32 32">
+                                            <path
+                                                fill="currentColor"
+                                                d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
+                                            />
+                                        </svg>
+                                    </button>
+                                </li>
+                            )}
+                            <li>
+                                <NavLink
+                                    to="/cart"
+                                    disabled={activeLink === "/cart"}
+                                    onClick={closeSettings}
+                                    className='cartLink'
+                                >
+                                    {(!isMobile && isLoggedIn && userData?.username) && <p className="cartP">{userData.username}</p>}
+                                    <svg viewBox="0 0 32 32">
+                                        <circle cx="10" cy="28" r="2" fill="currentColor" />
+                                        <circle cx="24" cy="28" r="2" fill="currentColor" />
                                         <path
-                                            d="M97.4204 114.878C100.124 116.886 102.932 118.895 105.636 120.918C113.448 126.292 120.941 132.116 128.077 138.361C119.257 148.932 111.465 157.993 98.6436 159.79C90.5492 160.953 77.7581 157.359 75.659 142.725C74.1489 132.124 82.7719 124.12 97.4204 114.878ZM220 110C220 131.754 213.55 153.02 201.465 171.108C189.38 189.196 172.203 203.295 152.106 211.622C132.008 219.949 109.893 222.13 88.5568 217.89C67.2201 213.649 47.6199 203.177 32.2343 187.798C16.8487 172.418 6.36869 152.823 2.1192 131.488C-2.13029 110.153 0.0416052 88.0369 8.3603 67.9362C16.679 47.8355 30.7709 30.6528 48.8544 18.5604C66.9378 6.46797 88.2007 0.00896897 109.955 9.33052e-06C124.404 -0.00594175 138.713 2.8349 152.064 8.36025C165.415 13.8856 177.547 21.9872 187.766 32.2022C197.985 42.4173 206.092 54.5456 211.622 67.8944C217.153 81.2431 220 95.5508 220 110ZM126.959 67.6249L125.781 84.8558L176.115 60.8745L128.499 30.1579L128.303 50.1222C124.996 50.4393 120.314 49.201 116.901 48.2194C110.367 46.0555 103.418 45.4403 96.6049 46.4223C79.7364 48.8385 63.9704 60.3611 66.4017 77.743C67.5344 85.6864 71.944 93.0862 80.5821 101.483C62.9133 112.764 47.6154 126.279 50.6508 147.407C54.7282 175.903 82.0621 185.538 99.2628 183.077C119.605 180.162 130.855 167.054 141.547 154.142C144.515 158.781 146.49 163.985 147.346 169.425L147.663 171.554L171.735 168.096L171.418 165.982C169.908 155.788 165.453 146.349 157.661 137.183C155.487 134.587 153.184 132.102 150.759 129.738C148.098 127.129 145.301 124.664 142.378 122.353C135.492 116.72 128.167 111.616 121.054 106.663C104.986 95.4572 91.1079 85.777 89.5827 75.1606C88.6615 68.7273 93.9017 64.9972 99.1571 64.2422C104.412 63.4871 109.139 64.6348 114.259 65.7523C118.411 66.8374 122.67 67.4654 126.959 67.6249Z"
-                                            fill="url(#headerLogoMobile)"
-                                            strokeWidth=".3rem"
+                                            fill="currentColor"
+                                            d="M28 7H5.82L5 2.8A1 1 0 0 0 4 2H0v2h3.18L7 23.2a1 1 0 0 0 1 .8h18v-2H8.82L8 18h18a1 1 0 0 0 1-.78l2-9A1 1 0 0 0 28 7Zm-2.8 9H7.62l-1.4-7h20.53Z"
                                         />
-                                    </g>
-                                    <defs>
-                                        <linearGradient
-                                            id="headerLogoMobile"
-                                            x1="54.9849"
-                                            y1="14.7241"
-                                            x2="165"
-                                            y2="205.276"
-                                            gradientUnits="userSpaceOnUse"
+                                    </svg>
+                                </NavLink>
+                            </li>
+                        </ul>
+
+                        <CSSTransition
+                            in={showCatDropDown && isMobile}
+                            timeout={200}
+                            classNames="categories-dp-mobile"
+                            unmountOnExit
+                            nodeRef={mobilecatref}
+                        >
+                            <div className="categories-dp-mobile" ref={mobilecatref}>
+                                <div className="categories-header">
+                                    <h2>Categories</h2>
+                                    <button onClick={handleCategoriesClick}>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="32"
+                                            height="32"
+                                            viewBox="0 0 32 32"
                                         >
-                                            <stop offset="0.27" stopColor="#FF9F00" />
-                                            <stop offset="1" stopColor="#FF7300" />
-                                        </linearGradient>
-                                        <clipPath id="clip0_201_15">
-                                            <rect width="512" height="512" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </NavLink>
-                        </li>
-                    )}
-                    {isMobile && (
+                                            <path
+                                                fill="currentColor"
+                                                d="M17.414 16L26 7.414L24.586 6L16 14.586L7.414 6L6 7.414L14.586 16L6 24.586L7.414 26L16 17.414L24.586 26L26 24.586L17.414 16z"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div className="divider"></div>
+                                <ul className="catsList">
+                                    {allCatData?.map((e) => (
+                                        <CatDPMobile key={e.id} category={e} currentCategory={currentCategory} handleCatClick={handleCatClick} />
+                                    ))}
+                                </ul>
+                                <div className="divider"></div>
+                                <div className="subCatsList">
+                                    <ul>
+                                        {currentCategory?.subcategory?.slice(0, 5).map((e) => (
+                                            <SubCatDP key={e.id} subCategory={e} handleSubCatClick={handleSubCatClick} />
+                                        ))}
+                                    </ul>
+                                    <ViewAllSub category={currentCategory} handleViewAllClick={handleViewAllClick}></ViewAllSub>
+                                </div>
+                            </div>
+                        </CSSTransition>
+                    </>
+                ) : (
+                    <ul
+                        className={
+                            isLoggedIn ? "navigationLinks loggedIn" : "navigationLinks"
+                        }
+                    >
                         <li>
-                            <button
-                                className="searchButtons"
-                                id="searchButton"
-                                onClick={closeSettings}
-                            >
-                                <svg viewBox="0 0 32 32">
-                                    <path
-                                        fill="currentColor"
-                                        d="m29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9Z"
-                                    />
-                                </svg>
-                            </button>
+                            <h3>{userData?.username}</h3>
                         </li>
-                    )}
-                    <li>
-                        {isLoggedIn ? (
+                        <li>
+
                             <button
                                 className={`logInIcon ${isSettingsOn ? "active" : ""}`}
                                 onClick={onAccountIconClick}
                             >
-                                <img src="imgs/user.png" alt="user" />
+                                <ImageLoader
+                                    url={userData?.image}
+                                    alt={userData?.name}
+                                    backupUrl="/imgs/404/user404.png"
+                                    backupAlt="User"
+                                ></ImageLoader>
                             </button>
-                        ) : (
-                            <button
-                                className={`logInButton ${showDropDown ? "active" : ""}`}
-                                onClick={onLoginBtnClick}
-                                disabled={showDropDown}
-                            >
-                                {!isMobile && <p>Log In</p>}
-                                <svg viewBox="0 0 32 32">
-                                    <path
-                                        fill="currentColor"
-                                        d="M16 8a5 5 0 1 0 5 5a5 5 0 0 0-5-5Z"
-                                    />
-                                    <path
-                                        fill="currentColor"
-                                        d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2Zm7.992 22.926A5.002 5.002 0 0 0 19 20h-6a5.002 5.002 0 0 0-4.992 4.926a12 12 0 1 1 15.985 0Z"
-                                    />
-                                </svg>
-                            </button>
-                        )}
-                    </li>
-                    {isMobile && <li>
-                        <button className="categoriesButton" onClick={closeSettings}>
-                            <svg viewBox="0 0 32 32">
-                                <path
-                                    fill="currentColor"
-                                    d="M12 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8H6V6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 8h-6V6h6zm-14 6H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8H6v-6h6zm14-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm0 8h-6v-6h6z"
-                                />
-                            </svg>
-                        </button>
-                    </li>}
-                    <li>
-                        <NavLink
-                            to="/cart"
-                            disabled={activeLink === "/cart"}
-                            onClick={closeSettings}
-                        >
-                            <svg viewBox="0 0 32 32">
-                                <circle cx="10" cy="28" r="2" fill="currentColor" />
-                                <circle cx="24" cy="28" r="2" fill="currentColor" />
-                                <path
-                                    fill="currentColor"
-                                    d="M28 7H5.82L5 2.8A1 1 0 0 0 4 2H0v2h3.18L7 23.2a1 1 0 0 0 1 .8h18v-2H8.82L8 18h18a1 1 0 0 0 1-.78l2-9A1 1 0 0 0 28 7Zm-2.8 9H7.62l-1.4-7h20.53Z"
-                                />
-                            </svg>
-                        </NavLink>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                )}
 
                 {isLoggedIn && (
                     <CSSTransition
                         in={isSettingsOn}
-                        timeout={250}
+                        timeout={500}
                         classNames="settingsContainer"
                         unmountOnExit
                         nodeRef={csstransitionRef}
                     >
                         <div
-                            className={`settingsContainer ${isMobile ? "mobileSettings" : "normalSettings"}`}
+                            className={`settingsContainer ${isMobile ? "mobileSettings" : "normalSettings"
+                                }`}
                             ref={csstransitionRef}
                         >
                             <ul className="accountSettings">
                                 <li>
-                                    <h3>Account</h3>
+                                    <h3>
+                                        Account
+                                        <button onClick={handleLogOutClick}>
+                                            <span>Logout</span>
+                                            <svg viewBox="0 0 32 32">
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M6 30h12a2.002 2.002 0 0 0 2-2v-3h-2v3H6V4h12v3h2V4a2.002 2.002 0 0 0-2-2H6a2.002 2.002 0 0 0-2 2v24a2.002 2.002 0 0 0 2 2Z"
+                                                />
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M20.586 20.586L24.172 17H10v-2h14.172l-3.586-3.586L22 10l6 6l-6 6l-1.414-1.414z"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </h3>
                                 </li>
                                 <li>
                                     <NavLink
@@ -200,8 +384,8 @@ export default function Nav() {
                                 {!isMobile && <li className="divider"></li>}
                                 <li>
                                     <NavLink
-                                        to="/user/settings"
-                                        disabled={activeLink === "/user/settings"}
+                                        to="/settings"
+                                        disabled={activeLink === "/settings"}
                                         onClick={closeSettings}
                                     >
                                         <svg viewBox="0 0 32 32">

@@ -1,70 +1,48 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  userImage: "",
-
   userInfo: {
     firstName: "",
     lastName: "",
     email: "",
     phoneNumber: "",
-    
+    address: "",
+    postalCode: "",
+    city: "",
+    image: "",
   },
 
   passwordInfo: {
     password: "",
+    originalPassword: "",
+    cpassword: ""
   },
-
-  addressInfo: {
-    address: "",
-    postalCode: "",
-    city: "",
-  },
-
-  cardInfo: {
-    cardNumber: "",
-    cardHolder: "",
-    expirationDate: "",
-    securityCode: "",
-    cardType: "",
-    cardStatus: "",
-  }
-};
+}
 
 export const userSettingsSlice = createSlice({
   name: "userSettings",
   initialState: initialState,
 
   reducers: {
-    updateUserImage (state, action) {
-      const { name, value } = action.payload;
-      state.userImage[name] = value
-    },
-    
-    updateUserInfo (state, action) {
-      // state.userInfo = action.payload
-
-      const { name, value } = action.payload;
+    updateUserInfo(state, action) {
+      const { name, value } = action.payload
       state.userInfo[name] = value
     },
-
-    updatePasswordInfo (state, action) {
-      const { name, value } = action.payload;
+    updatePasswordInfo(state, action) {
+      const { name, value } = action.payload
       state.passwordInfo[name] = value
     },
-
-    updateAddressInfo (state, action) {
-      const { name, value } = action.payload;
-      state.addressInfo[name] = value
+    clearUser: (state) => {
+      Object.keys(state.userInfo).forEach(key => {
+        state.userInfo[key] = ''
+      })
     },
-
-    updateCardInfo (state, action) {
-      const { name, value } = action.payload;
-      state.cardInfo[name] = value
+    clearPasswordInfo: (state) => {
+      state.passwordInfo = initialState.passwordInfo
     }
   },
-});
+})
 
-export const { updateUserImage, updateUserInfo, updatePasswordInfo, updateAddressInfo, updateCardInfo } = userSettingsSlice.actions;
+export const { clearUser, clearPasswordInfo, updateUserInfo, updatePasswordInfo, updateAddressInfo } = userSettingsSlice.actions
 
 export const userSettingsReducer = userSettingsSlice.reducer

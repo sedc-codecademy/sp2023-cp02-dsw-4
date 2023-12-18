@@ -1,11 +1,52 @@
 ///////////  STARS  ///////////// 
 
-
-.starsDiv{
+.starsDiv {
     display: flex;
-    color: var(--accent);
-    svg{
+    color: var(--secAccent);
+
+    svg {
         height: 2.5rem;
         width: 2.5rem;
+    }
+
+    &.editStars {
+        svg {
+            cursor: pointer;
+            transition: scale .1s;
+
+            .starGradient {
+                stop {
+                    transition: stop-color 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+                    -webkit-transition: none !important;
+                    -moz-transition: stop-color 0.7s cubic-bezier(0.19, 1, 0.22, 1)!important;
+                }
+            }
+
+            &.hover {
+                .starGradient {
+                    stop {
+                        stop-color: orange;
+                    }
+                }
+            }
+
+            &:active {
+                scale: 1.25;
+
+                .starGradient {
+                    stop {
+                        stop-color: var(--accent);
+                    }
+                }
+            }
+
+            &:hover~svg {
+                .starGradient {
+                    stop {
+                        stop-color: gray;
+                    }
+                }
+            }
+        }
     }
 }

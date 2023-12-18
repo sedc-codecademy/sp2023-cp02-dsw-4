@@ -1,258 +1,461 @@
+///////////  PRODUCT DETAILS  /////////////
+
 .user-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
-    margin-inline: auto;
-    border: .2rem solid var(--accent);
-    border-radius: 1.1rem;
-    width: 60%;
-    background-color: var(--tpPri3);
-    color: var(--tpSec2);
+    width: fit-content;
+    width: 100%;
+    gap: 2rem;
+    margin-block: 1.5rem 3rem;
 
-    .color-heading {
-        color: var(--accent);
-        font-size: 2rem;
-    }
+    --maxWidth: 67rem;
 
-    .color-title {
-        font-size: 1.35rem;
-        color: var(--accent);
-    }
-
+    /* USER DETAILS */
     .user-parent-info {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 5rem;
-        width: 100%;
+        gap: 2rem;
+        max-width: var(--maxWidth);
+        padding: 1rem;
+        padding-bottom: 0;
+        border-radius: .7rem;
 
-        img {
-            flex-grow: .27;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-            background-color: var(--additionallAccent);
+        .user-image {
+            display: flex;
+            align-items: center;
+
+            img {
+                position: sticky;
+                top: .5rem;
+                max-width: 100%;
+                border-radius: .7rem;
+            }
         }
 
         .user-info {
-            border: 1px solid var(--accent);
-            border-radius: 1.1rem;
-            padding: 15px;
-            background-color: var(--priColor);
-        }
-
-        h1,
-        h3,
-        p {
-            margin: 5px 0;
-            font-family: Roboto
-        }
-    }
-
-    .order-parent {
-        display: flex;
-        flex-direction: column;
-        border-radius: 1.1rem;
-        // DIME 
-        background-color: rgb(253, 223, 223);
-        width: 90%;
-        justify-content: center;
-        padding: 1.5rem;
-        gap: 1rem;
-        margin-block: 1rem;
-
-        .order-li {
+            padding: .5rem;
             display: flex;
-            flex-direction: column;
-            background-color: var(--priColor);
-            border-radius: .5rem;
             gap: .5rem;
-            padding: .3rem .5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            border-radius: .7rem;
+            flex-direction: column;
+            background-color: var(--tpPri3);
+            min-width: 30%;
 
-            .order-header {
+            .nameDiv {
                 display: flex;
-                align-items: center;
                 justify-content: space-between;
-                gap: 1rem;
-
-                h2 {
-                    font-size: 1.25rem;
-                }
+                align-items: flex-end;
+                text-transform: capitalize;
+                gap: 1.5rem;
+                padding: .5rem;
+                border-radius: .5rem;
 
                 h3 {
-                    font-size: 1.15rem;
-                    font-weight: 500;
-
-                    span {
-                        font-weight: 600;
-                    }
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    max-width: max-content;
+                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    width: 30ch;
                 }
 
                 p {
-                    font-size: 1.25rem;
-                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    color: var(--tpSec2);
                 }
+            }
+
+            .adressDiv,
+            .contactDiv {
+                background-color: var(--tpPri2);
+                padding: .3rem;
+                display: grid;
+                gap: .5rem;
+                border-radius: .5rem;
+                flex-grow: 1;
 
                 div {
                     display: flex;
                     align-items: center;
-                    gap: .5rem;
+                    justify-content: center;
+                    padding: .3rem;
+                    gap: .3rem;
+                    width: 100%;
+                    border-radius: .3rem;
+                    background-color: var(--tpPri3);
 
-                    .order-expand-btn {
-                        display: flex;
-                        align-items: center;
-                        border: .15rem solid var(--secColor);
-                        border-radius: 50%;
-
-                        svg {
-                            height: 1.5rem;
-                            width: 1.5rem;
-                            transition: transform 0.3s ease-in-out;
-                        }
+                    h3 {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        max-width: 100%;
+                        word-break: break-word;
                     }
-                    
-                    .order-expand-btn.expanded {
-                        svg {
-                            transform: rotate(180deg);
-                        }
-                    }
-                }
-
-                .view-cart-link {
-                    display: inline-block;
-                    padding: 10px 20px;
-                    background-color: var(--accent);
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    font-weight: bold;
-                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-                }
-
-
-                .view-cart-link:hover {
-                    // DIME
-                    background-color: #f0f0f0;
-                    color: pink;
-                }
-            }
-
-            .additional-order-info {
-                display: flex;
-                gap: 1rem;
-
-                p {
-                    font-size: 1.25rem;
-                }
-            }
-
-            .order-ul {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-
-                li {
-                    display: flex;
-                    align-items: center;
-                    gap: .5rem;
-
-                    img {
-                        height: 4.5rem;
-                        border: 1px solid black;
-                        border-radius: 50%;
-                        padding: .15rem;
-                        // DIME
-                        background-color: rgb(240, 240, 240);
-                    }
-
-                    p {
-                        font-size: 1.15rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .rating-parent {
-        display: flex;
-        flex-direction: column;
-        // DIME
-        background-color: rgb(253, 223, 223);
-        border-radius: 1.1rem;
-        width: 90%;
-        justify-content: center;
-        padding: 1.5rem;
-        gap: 1rem;
-
-        .rating-li {
-            display: flex;
-            flex-direction: column;
-            background-color: var(--priColor);
-            border-radius: .5rem;
-            gap: .5rem;
-            padding: .3rem;
-            box-shadow: 0 .18rem .38rem rgba(0, 0, 0, 0.4);
-
-            .rating-header {
-                display: flex;
-                gap: 1rem;
-                align-items: center;
-                background-color: var(--tpPri3);
-
-                img {
-                    height: 4.5rem;
-                    border: .1rem solid black;
-                    padding: .15rem;
-                    border-radius: 50%;
-                    // DIME
-                    background-color: rgb(240, 240, 240);
-                }
-
-                .rating-expand-btn {
-                    display: flex;
-                    align-items: center;
-                    margin-left: auto;
-                    border: .15rem solid var(--secColor);
-                    border-radius: 50%;
 
                     svg {
                         height: 1.5rem;
                         width: 1.5rem;
-                        transition: transform 0.3s ease-in-out;
                     }
                 }
-                
-                .rating-expand-btn.expanded {
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    overflow: hidden;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        border-radius: .3rem;
+                        background-color: var(--tpPri4);
+                        padding: 2rem;
+                        gap: .5rem;
+                        flex-grow: 1;
+                        min-width: max-content;
+                        color: var(--tpSec);
+                        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+                        svg {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            color: var(--tpSec2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .block-header {
+        background-color: var(--tpPri3);
+        width: 100%;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-inline: auto;
+            width: var(--maxWidth);
+            padding: 1.5rem;
+
+            button,
+            a {
+                color: var(--tpSec);
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                text-align: center;
+
+                svg {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                }
+
+                @media (min-width: 600px) {
+
+                    p,
                     svg {
-                        transform: rotate(180deg);
+                        transition: color .3s;
+                    }
+
+                    &:focus-visible {
+                        p {
+                            color: var(--accent);
+                        }
+
+                        svg {
+                            color: var(--paleAccentThree);
+                        }
+
+                        outline: .15rem solid var(--accent);
+                    }
+
+                    &:hover {
+                        p {
+                            color: var(--accent);
+                        }
+
+                        svg {
+                            color: var(--paleAccentThree);
+                        }
+                    }
+
+                    &:active {
+                        p {
+                            color: var(--tpSec3);
+                        }
+
+                        svg {
+                            color: var(--tpSec3);
+                        }
                     }
                 }
             }
 
-            .additional-rating-info {
+            h1 {
+                color: var(--tpSec);
+                font-size: clamp(1.8rem, 1.2353rem + 1.5059vw, 5rem);
+                letter-spacing: -0.15rem;
+                line-height: 2.8rem;
+                font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            }
+        }
+    }
+
+    /* REVIEWS */
+    .noDataIllustration {
+        display: flex;
+        gap: 1rem;
+        width: var(--maxWidth);
+
+        div {
+            margin-top: 8rem;
+
+            h3 {
+                font-size: 4rem;
+                letter-spacing: -0.3rem;
+                line-height: 2.8rem;
+                text-transform: lowercase;
+                font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            }
+
+            p {
+                position: relative;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 1.1rem;
+                letter-spacing: 0.2rem;
+                color: var(--tpSec);
+                width: max-content;
+                margin-top: .7rem;
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            }
+        }
+    }
+
+    .reviews {
+        width: var(--maxWidth);
+
+        .reviews-ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    /* ORDERS */
+    .ordersDiv {
+        display: grid;
+        padding-inline: 1rem;
+        gap: 1rem;
+
+        .orderCo {
+            max-width: var(--maxWidth);
+            min-width: var(--maxWidth);
+            display: grid;
+            overflow: hidden;
+            gap: .5rem;
+            padding: .5rem;
+            border-radius: .5rem;
+            background-color: var(--tpPri3);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0,
+                rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+            margin-inline: auto;
+
+            .titleButton {
                 display: flex;
-                flex-direction: column;
-                text-indent: 1rem;
-                gap: .5rem;
+                align-items: center;
+                justify-content: space-between;
+                padding: .5rem;
 
-                a {
-                    font-size: 1.3rem;
+                h2 {
+                    font-size: 1.6rem;
                     font-weight: 600;
+                    max-width: max-content;
+                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    width: 30ch;
                 }
 
-                p {
-                    font-size: 1.35rem;
+                svg {
+                    height: 1.7rem;
+                    transition: transform .6s cubic-bezier(.19, 1, .22, 1);
                 }
+
+                &.hidden {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &:focus-visible {
+                    outline: .3rem solid var(--accent);
+
+                    .infoDiv {
+                        p {
+                            color: var(--accent);
+                        }
+                    }
+                }
+
+                @media (min-width: 600px) {
+                    transition: color .6s cubic-bezier(.19, 1, .22, 1), transform .6s cubic-bezier(.19, 1, .22, 1);
+
+                    &:hover {
+
+                        color: var(--accent);
+                    }
+
+                    &:active {
+                        transform: scale(.97);
+                        color: var(--accent);
+                    }
+                }
+            }
+
+            &.draftDiv {
+                width: 100%;
+
+                .orderUL {
+                    border-bottom: 0 !important;
+                }
+            }
+
+            &.completedOrders,
+            &.pendingOrders {
+                .orderUL {
+                    display: grid;
+                    // grid-template-columns: repeat(4, 1fr);
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    gap: 1rem;
+
+                    &.single {
+                        max-width: unset;
+                        width: 100%;
+                        overflow-x: auto;
+                        display: unset;
+                        grid-template-columns: unset;
+
+                        li {
+                            width: 100%;
+                        }
+                    }
+
+                    .orderLi {
+                        box-shadow: none;
+                        border-color: var(--tpPri4);
+                    }
+
+                    @media (max-width: 800px) {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+
+            .orderUL-enter {
+                opacity: 0;
+                max-height: 0;
+                padding-bottom: 0;
+            }
+
+            .orderUL-enter-active {
+                opacity: 1;
+                max-height: 200vh;
+                padding-bottom: .5rem;
+                transition: opacity .6s cubic-bezier(.19, 1, .22, 1), max-height .6s cubic-bezier(.19, 1, .22, 1), padding-bottom .6s cubic-bezier(.19, 1, .22, 1);
+            }
+
+            .orderUL-enter-done,
+            .orderUL-exit {
+                opacity: 1;
+                max-height: 200vh;
+                padding-bottom: .5rem;
+            }
+
+            .orderUL-exit-active {
+                opacity: 0;
+                max-height: 0;
+                padding-bottom: 0;
+                transition: opacity 200ms, max-height 200ms, padding-bottom 200ms;
             }
         }
     }
 }
 
-.green-status {
-    color: green;
+@media(max-width: 1000px) {
+    .user-main {
+        --maxWidth: 80%;
+        width: 100%;
+
+        .user-parent-info {
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+
+            .user-image {
+                justify-content: center;
+
+                img {
+                    width: 30rem;
+                }
+            }
+
+            .user-info {
+                min-width: unset;
+            }
+        }
+
+        .reviews {
+            .reviews-ul {
+                padding-inline: 1rem;
+                gap: 1rem;
+            }
+        }
+
+        .ordersDiv {
+            width: 100%;
+
+            .orderCo {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    }
 }
 
-.red-status {
-    color: red;
+@media(max-width: 800px) {
+    .user-main {
+        --maxWidth: unset;
+
+        .noDataIllustration {
+            flex-direction: column-reverse;
+            padding-inline: 1rem;
+
+            div {
+                margin-top: 0;
+
+                h3 {
+                    font-size: 3rem;
+                    letter-spacing: -0.2rem;
+                    line-height: 2.5rem;
+                    text-align: center;
+                }
+
+                p {
+                    font-size: 1rem;
+                    letter-spacing: 0.17rem;
+                    width: fit-content;
+                    margin-top: .3rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }

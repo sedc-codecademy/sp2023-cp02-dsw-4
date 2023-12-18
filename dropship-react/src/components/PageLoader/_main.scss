@@ -1,0 +1,543 @@
+///////////  PAGE LOADER  ///////////// 
+
+.pageLoader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    width: 100svw;
+    height: 100vh;
+    height: 100svh;
+    background-color: var(--tpPri2);
+    z-index: 555;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    --letterSpacing: clamp(0.3rem, 0.4412rem + -0.3765vw, -0.4rem);
+    -webkit-user-select: none;
+    user-select: none;
+
+    .somethingWrong {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity .3s;
+
+        &.true {
+            opacity: 1;
+        }
+
+        p {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            color: var(--tpSec);
+            margin-top: .7rem;
+            font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        div{
+            display: flex;
+            gap: .5rem;
+        }
+
+        button {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5rem;
+            padding: .7rem;
+            background-color: var(--tpPri3);
+
+            span {
+                z-index: 1;
+                color: var(--secColor);
+                text-shadow: .05rem .05rem 0 #fff;
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-size: 1.3rem;
+                font-weight: 600;
+                letter-spacing: .1rem;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: .2rem;
+                opacity: 0;
+                border-radius: .5rem;
+                background-image: linear-gradient(160deg,
+                        hsl(350deg 100% 60%) 13%,
+                        hsla(7, 100%, 62%, 0.624) 43%,
+                        hsla(22, 95%, 56%, 0.566) 49%,
+                        hsl(36deg 100% 47%) 50%,
+                        hsl(45deg 100% 43%) 50%,
+                        hsl(56deg 100% 39%) 50%,
+                        hsl(72deg 64% 49%) 50%,
+                        hsl(94deg 69% 60%) 51%,
+                        hsla(129, 82%, 68%, 0.936) 57%,
+                        hsla(160, 100%, 50%, 0.592) 87%);
+            }
+
+            &:focus-visible {
+                outline: .2rem solid var(--accent);
+                color: var(--accent);
+                background-color: var(--tpPri);
+            }
+
+            @media(min-width: 600px) {
+                transition: background-color .5s, scale .3s;
+
+                &::before {
+                    transition: opacity .5s;
+                }
+
+                span {
+                    transition: color .5s, text-shadow .5s;
+                }
+
+                &:hover {
+                    span {
+                        color: #fff;
+                        text-shadow: .05rem .05rem 0 black;
+                    }
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+
+                &:active {
+                    &::before {
+                        opacity: .8;
+                    }
+
+                    scale: .9;
+
+                    background-color: var(--tpPri2);
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin-top: -5rem;
+        font-size: 11rem;
+        font-size: clamp(7rem, 5.5882rem + 3.7647vw, 15rem);
+        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+        @supports (height: fit-content) {
+            height: fit-content;
+        }
+
+        @supports not (height: fit-content) {
+            height: auto;
+        }
+
+        letter-spacing: var(--letterSpacing);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        width: 100%;
+
+        span:not(.svgSpan) {
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+        .svgSpan {
+            margin-inline: 1rem;
+        }
+    }
+
+    svg:not(.bigFooterLogo) {
+        height: 11rem;
+        font-size: clamp(7rem, 5.5882rem + 3.7647vw, 15rem);
+        filter: drop-shadow(.1rem .1rem 0 var(--secColor));
+
+        linearGradient {
+            stop:first-child {
+                animation: gradient 5s infinite;
+            }
+
+            stop:last-child {
+                animation: gradient1 5s infinite;
+            }
+        }
+    }
+
+    .bigFooterLogo{
+        max-width: 90%;
+        path:not(:first-child){
+            fill: var(--secColor);
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+        }
+        #paint0_linear_5_13{
+            stop:first-child {
+                animation: gradient 5s infinite;
+            }
+
+            stop:last-child {
+                animation: gradient1 5s infinite;
+            }
+        }
+    }
+    @keyframes waviy {
+
+        0%,
+        40%,
+        100% {
+            transform: translateY(0)
+        }
+
+        20% {
+            transform: translateY(-2rem)
+        }
+    }
+
+    @keyframes gradient {
+        0% {
+            stop-color: var(--logoAccentTwo);
+        }
+
+        50% {
+            stop-color: var(--logoReverseAccentTwo);
+        }
+
+        100% {
+            stop-color: var(--logoAccentTwo);
+        }
+    }
+
+    @keyframes gradient1 {
+        0% {
+            stop-color: var(--logoAccentOne);
+        }
+
+        50% {
+            stop-color: var(--logoReverseAccentOne);
+        }
+
+        100% {
+            stop-color: var(--logoAccentOne);
+        }
+    }
+
+    @media (max-width: 800px) {
+        h1 {
+            flex-direction: column;
+            gap: 0rem;
+
+            span:not(:nth-child(2)) {
+                text-align: center;
+                width: unset;
+
+                &:last-child {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.loadingDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    padding: 1rem;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    @supports (backdrop-filter: blur(0)) {
+        backdrop-filter: blur(.5rem);
+    }
+
+    &.scrollCatMain {
+        height: clamp(20rem, 17.3529rem + 7.0588vw, 35rem);
+        background-color: var(--paleAccent);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0.1rem 0.3rem 0, rgba(0, 0, 0, 0.06) 0 0.1rem 0.2rem 0;
+    }
+
+    &.pOrders {
+        height: clamp(20rem, 17.3529rem + 7.0588vw, 35rem);
+        background-color: var(--paleSecAccent);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0.1rem 0.3rem 0, rgba(0, 0, 0, 0.06) 0 0.1rem 0.2rem 0;
+    }
+
+    &.newArrivalsMain {
+        height: clamp(20rem, 17.3529rem + 7.0588vw, 35rem);
+        background-color: var(--darkAccent);
+    }
+
+    &.popularProductsMain {
+        height: clamp(25rem, 22.3529rem + 7.0588vw, 40rem);
+        background-color: var(--secAccent);
+    }
+
+    &.discountProductsMain {
+        height: clamp(25rem, 22.3529rem + 7.0588vw, 40rem);
+        background-color: var(--tertAccent);
+    }
+
+    &.relatedProductsMain {
+        height: clamp(20rem, 22.3529rem + 7.0588vw, 35rem);
+        width: 100%;
+        background-color: var(--paleAccent);
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 1.7941rem + 1.8824vw, 6.5rem);
+        letter-spacing: -0.2rem;
+        line-height: 2.8rem;
+        text-transform: lowercase;
+        color: #fff;
+        text-shadow: 0.1rem 0.1rem 0 black;
+        text-align: center;
+        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    }
+
+    p {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 0.2rem;
+        color: var(--tpSec);
+        margin-top: .7rem;
+        font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        text-shadow: 0.05rem 0.05rem 0 var(--tpPri);
+        text-align: center;
+    }
+
+    svg {
+        height: 3rem;
+        width: 3rem;
+        margin: 3.5rem;
+
+        rect {
+            stroke: #fff;
+            stroke-width: .05rem;
+        }
+    }
+
+    button {
+        padding: .7rem;
+        margin: 3rem;
+        font-size: 1.1rem;
+        background-color: var(--tpPri);
+        border-radius: .3rem;
+        color: var(--tpSec2);
+        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+        @media (min-width: 600px) {
+            transition: .3s border-color,
+                .3s background-color,
+                .3s, .3s color;
+
+            &:focus-visible {
+                color: var(--accent);
+                background-color: var(--tpPri4);
+                outline: .2rem solid #fff;
+            }
+
+            &:hover {
+                color: var(--secColor);
+                background-color: var(--tpPri3);
+            }
+
+            &:active {
+                background-color: var(--tpPri4);
+            }
+        }
+    }
+}
+
+.bigLoading {
+    display: flex;
+    padding: 1rem;
+    margin-inline: auto;
+    justify-content: center;
+    margin-block: 2rem 4rem;
+    height: 70svh;
+    --maxWidth: 90%;
+    width: var(--maxWidth);
+
+    button {
+        margin-top: 10%;
+
+        @supports (height: fit-content) {
+            height: fit-content;
+        }
+
+        @supports not (height: fit-content) {
+            height: auto;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 2rem + 2.6667vw, 7rem);
+            letter-spacing: -0.2rem;
+            line-height: 2.8rem;
+            text-transform: lowercase;
+            color: var(--secColor);
+            width: max-content;
+            font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        p {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            color: var(--tpSec);
+            margin-top: .7rem;
+            font-size: clamp(0.9rem, 0.625rem + 0.7333vw, 2rem);
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        @media (min-width: 600px) {
+
+            p,
+            h1 {
+                transition: .3s color;
+            }
+
+            &:focus-visible {
+                h1 {
+                    color: var(--accent);
+                }
+
+                p {
+                    color: var(--secAccent);
+                }
+            }
+
+            &:hover {
+                h1 {
+                    color: var(--tpSec);
+                }
+
+                p {
+                    color: var(--accent);
+                }
+            }
+
+            &:active {
+                h1 {
+                    color: var(--tpSec);
+                }
+
+                p {
+                    color: var(--paleSecAccent);
+                }
+            }
+        }
+
+        &:disabled {
+            pointer-events: none;
+        }
+    }
+
+    svg {
+        height: 100%
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes counter-spin {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    @keyframes wind {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(1deg);
+        }
+
+        75% {
+            transform: rotate(-1deg);
+        }
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: unset;
+        width: 100%;
+
+        button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1rem;
+
+            h1,
+            p {
+                text-align: center;
+                width: unset;
+            }
+        }
+
+        svg {
+            // height: 30%;
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 450px) {
+        svg {
+            width: 100%;
+        }
+    }
+
+    .pageLoader-enter {
+        opacity: 0;
+    }
+
+    .pageLoader-enter-active {
+        opacity: 1;
+        transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+    }
+
+    .pageLoader-enter-done,
+    .pageLoader-exit {
+        opacity: 1;
+    }
+
+    .pageLoader-exit-active {
+        opacity: 0;
+        transition: opacity .5s cubic-bezier(.19, 1, .22, 1);
+    }
+}

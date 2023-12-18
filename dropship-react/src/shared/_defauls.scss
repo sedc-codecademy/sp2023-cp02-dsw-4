@@ -11,6 +11,29 @@
     &:focus-visible {
         outline: none;
     }
+
+    &::-webkit-scrollbar {
+        width: .35rem;
+        height: .5rem;
+        background-color: var(--tertColor2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--accent);
+        border-radius: .1rem;
+    }
+
+    /* Buttons */
+    &::-webkit-scrollbar-button:single-button {
+        background-color: var(--tpSec3);
+        border-radius: .1rem;
+        display: block;
+        border-style: solid;
+        border-color: var(--tpSec2);
+        border-width: .15rem;
+        height: 1rem;
+        width: .7rem;
+    }
 }
 
 html {
@@ -20,17 +43,103 @@ html {
 body {
     scroll-behavior: smooth;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--priColor);
-    background: radial-gradient(circle at center, var(--priColor) 0%, var(--tpPri3) 100%);
+    background: radial-gradient(circle at center, var(--priColor) 0%, var(--tpPri4) 100%);
+
     color: var(--secColor);
     overflow-x: hidden;
 
+    &.noScroll {
+        overflow: hidden !important;
+    }
+
     #root {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
         min-height: 100svh;
+    }
+
+    .scrollableProductsList {
+        &.discountedProducts {
+            background-image: url("../components/Product/ScrollableProductsList/discount-min.png");
+        }
+    
+        &.popularProducts {
+            background-image: url("../components/Product/ScrollableProductsList/popular-min.png");
+        }
+    }
+
+    .newArrivals{
+        background-image: url("../components/Product/NewArrivals/sun-background-min.png");
+    }
+
+    .loadingDiv{
+        &.newArrivalsMain {
+            background-image: url("../components/PageLoader/loadingArrivals.png");
+        }
+    
+        &.popularProductsMain {
+            background-image: url("../components/PageLoader/loadingPopular.png");
+        }
+    
+        &.discountProductsMain {
+            background-image: url("../components/PageLoader/loadingDiscount.png");
+        }
+    }
+
+    &.dark-mode {
+        .newArrivals{
+            background-image: url("../components/Product/NewArrivals/sun-background-dark-min.png");
+        }
+    
+        .scrollableProductsList {
+            &.discountedProducts {
+                background-image: url("../components/Product/ScrollableProductsList/discount-dark-min.png");
+            }
+        
+            &.popularProducts {
+                background-image: url("../components/Product/ScrollableProductsList/popular-dark-min.png");
+            }
+        }
+
+        .loadingDiv{
+            &.newArrivalsMain {
+                background-image: url("../components/PageLoader/arLoadDark.png");
+            }
+        
+            &.popularProductsMain {
+                background-image: url("../components/PageLoader/popLoadDark.png");
+            }
+        
+            &.discountProductsMain {
+                background-image: url("../components/PageLoader/discLoadDark.png");
+            }
+        }
+    }
+}
+
+@media (min-width:3000px) {
+    body {
+        margin-inline: auto;
+        max-width: 3000px;
+
+        #root {
+            header {
+                .headerBackground {
+                    top: 0;
+                }
+
+                .logo {
+                    position: absolute;
+                }
+
+                nav {
+                    position: absolute;
+                }
+            }
+        }
     }
 }
 
@@ -39,6 +148,12 @@ body {
     src: local("Antique-Olive"),
         url("../fonts/Antique/Antique-Olive-Std-Black_3861.ttf") format("truetype");
     font-weight: bold;
+}
+
+@font-face {
+    font-family: "Matter";
+    src: local("Matter"),
+        url("../fonts/Matter/Matter-Regular.otf") format("truetype");
 }
 
 a,
@@ -69,4 +184,13 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
     display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s!important;
+    box-shadow: inset 0 0 20px 20px #23232329;
 }

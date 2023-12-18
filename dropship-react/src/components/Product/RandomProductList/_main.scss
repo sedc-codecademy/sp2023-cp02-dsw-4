@@ -1,0 +1,21 @@
+///////////  PRODUCT LIST  ///////////// 
+
+.randomProducts {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+        overflow-x: auto;
+
+        @media (max-width: 800px) {
+            grid-template-columns: repeat(3, 2fr);
+            @supports (scrollbar-width: none) {
+                scrollbar-width: none;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+////////// NOTIFICATION //////////////
+
+.notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 444;
+
+    display: flex;
+    flex-direction: column;
+    padding: .2rem;
+    border-radius: .7rem;
+    background-color: var(--tpPri);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+
+    h3 {
+        padding: .5rem;
+        background-color: var(--tpPri2);
+        border-radius: .7rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+
+        span {
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-size: clamp(1.3rem, 1.1765rem + 0.3294vw, 2rem);
+        }
+
+        svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            color: rgb(245, 49, 49);
+        }
+    }
+
+    p {
+        padding: .7rem;
+        border-radius: .7rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        font-size: clamp(1rem, 0.8765rem + 0.3294vw, 1.7rem);
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 70ch;
+    }
+
+    &.errorNotify {
+        outline: .15rem solid rgb(245, 49, 49);
+
+        h3 {
+            svg {
+                color: rgb(245, 49, 49);
+            }
+        }
+    }
+
+    &.successNotify {
+        outline: .15rem solid rgb(54, 196, 54);
+
+        h3 {
+            svg {
+                color: rgb(0, 170, 0);
+            }
+        }
+    }
+
+    @media(max-width: 500px) {
+        left: 0;
+        right: 0;
+        margin-inline: .5rem;
+        bottom: 4.5rem;
+    }
+}
+
+.notification-enter {
+    opacity: 0;
+    transform: translateX(-130vw) scale(0);
+}
+
+.notification-enter-active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition: opacity 200ms, transform 200ms;
+}
+
+.notification-enter-done,
+.notification-exit {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.notification-exit-active {
+    opacity: 0;
+    transform: translateX(130vw) scale(0);
+    transition: opacity 200ms, transform 200ms;
+}
