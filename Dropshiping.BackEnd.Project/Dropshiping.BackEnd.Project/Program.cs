@@ -1,4 +1,8 @@
+using System.Text;
 using Dropshiping.BackEnd.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace Dropshiping.BackEnd.Project
 {
@@ -13,16 +17,85 @@ namespace Dropshiping.BackEnd.Project
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
+
+            //builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(option =>
+            {
+                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter a valid token",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "Bearer"
+                });
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type=ReferenceType.SecurityScheme,
+                                Id="Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
+            });
+
+            //CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+
+                    });
+            });
+            
 
             //Ineject Configuration String - SQL server
-            DipendencyInjectionHelpers.InjectDbContext(builder.Services, builder.Configuration);
+            DependencyInjectionHelpers.InjectDbContext(builder.Services, builder.Configuration);
 
             //Inject Repository
-            DipendencyInjectionHelpers.InjectRepositories(builder.Services);
+            DependencyInjectionHelpers.InjectRepositories(builder.Services);
 
             //Inject Service
-            DipendencyInjectionHelpers.InjectService(builder.Services);
+            DependencyInjectionHelpers.InjectService(builder.Services);
+
+
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                //caches the token so that we can access it during the request lifetime
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                    //Check if the expiration time has passes
+                    ValidateLifetime = true,
+                    //Token musth have an expiration time
+                    RequireExpirationTime = true,
+                    //should be sto to true to validate the key
+                    ValidateIssuerSigningKey = true,
+                    // set the time buffer for client-server difference. default is 300 sec
+                    ClockSkew = TimeSpan.Zero,
+                    IssuerSigningKey = new SymmetricSecurityKey
+                    (Encoding.ASCII.GetBytes(builder.Configuration["AppSettings:SecretKey"]))
+                };
+            });
+
 
             var app = builder.Build();
 
@@ -34,7 +107,8 @@ namespace Dropshiping.BackEnd.Project
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors();
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

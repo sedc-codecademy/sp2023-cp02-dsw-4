@@ -1,15 +1,14 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Dtos.ProductDtos.CategoryDtos;
+﻿using Dropshiping.BackEnd.Dtos.CategoryDtos;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Interface
 {
     public interface ICategoryService
     {
         List<CategoryDto> GetAll();
-        CategoryDto GetById(string id);
-        List<ProductDto> GetByIdNested(string id);
-        void Add(CategoryDto categoryDto);
-        void Update(CategoryDto categoryDto);
+        FullCategoryDto GetById(string id);
+       
+        void Add(AddCategoryDto categoryDto);
+        void Update(UpdateCategoryDto categoryDto);
         void DeleteById(string id);
     }
 }

@@ -4,6 +4,7 @@
     {
         Visa = 1,
         Master,
-        Maestro
+        Maestro,
+        Default,
     }
 }

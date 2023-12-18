@@ -1,5 +1,7 @@
-﻿using Dropshiping.BackEnd.DataAccess.Interface;
+﻿
+using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.UserModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
@@ -17,25 +19,24 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public User GetById(string id)
         {
-            var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
 
-            if (user == null)
-            {
-                throw new KeyNotFoundException($"User with id {id} is not found");
-            }
+            var user = _dbContext.Users.Include(u => u.Ratings).ThenInclude(r => r.Product)
+                                       .Include(u => u.Cards)
+                                       .Include(u => u.UserOrders).ThenInclude(x => x.Order).ThenInclude(x => x.OrderItems).ThenInclude(x => x.ProductSize).ThenInclude(x => x.Product)
+                                       .FirstOrDefault(u => u.Id == id);
 
-            return user;
+            return user ?? throw new KeyNotFoundException($"User with id {id} does not exist");
         }
 
         public void Add(User entity)
         {
-            _dbContext.Add(entity);
+            _dbContext.Users.Add(entity);
             _dbContext.SaveChanges();
         }
 
         public void Update(User entity)
         {
-            _dbContext.Update(entity);
+            _dbContext.Users.Update(entity);
             _dbContext.SaveChanges();
         }
 
@@ -49,12 +50,16 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public User LoginUser(string username, string hashedPassword)
         {
-            throw new NotImplementedException();
+            var user = _dbContext.Users.FirstOrDefault(x => x.Username == username && x.Password == hashedPassword);
+
+            return user ?? throw new KeyNotFoundException($"The username or the password is incorrect"); 
         }
 
-        public User GetUserByUsername(string username)
+        public User GetUserByUserName(string userName)
         {
-            throw new NotImplementedException();
+            var user = _dbContext.Users.FirstOrDefault(x => x.Username.ToLower() == userName.ToLower());
+
+            return user;
         }
     }
 }

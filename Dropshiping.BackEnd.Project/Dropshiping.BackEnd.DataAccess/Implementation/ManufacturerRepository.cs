@@ -1,9 +1,10 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dropshiping.BackEnd.DataAccess.Implementation
 {
-    //  IT'S CHANGED FROM REGION TO MANUFACTURER, BUT IT'S NOT FINISHED *** DO THE REST ***
+
     public class ManufacturerRepository : IRepository<Manufacturer>
     {
         private DropshipingDbContext _dbContext;
@@ -20,15 +21,17 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public Manufacturer GetById(string id)
         {
-            var region = _dbContext.Manufacturers.FirstOrDefault(r => r.Id == id);
-            if (region == null)
-            {
-                throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
-            }
-          
-            return region;
+            var manufacturer = _dbContext.Manufacturers
+                .Include(x => x.Products).ThenInclude(x => x.ProductSizes).ThenInclude(x =>x.Color)
+                .Include(x => x.Products).ThenInclude(x => x.ProductSizes).ThenInclude(x => x.Size)
+                .Include(x => x.Products).ThenInclude(x => x.Ratings).ThenInclude(x => x.User)
+                .Include(x => x.Products).ThenInclude(x => x.Subcategory).ThenInclude(x => x.Category)
+                .FirstOrDefault(x => x.Id == id);
+
+            return manufacturer ?? throw new KeyNotFoundException($"Manufacturer id {id} does not exist");
         }
 
+      
         public void Add(Manufacturer entity)
         {
             _dbContext.Manufacturers.Add(entity);
@@ -43,12 +46,9 @@ namespace Dropshiping.BackEnd.DataAccess.Implementation
 
         public void Delete(string id)
         {
-            var region = GetById(id);
-            if (region == null)
-            {
-                throw new KeyNotFoundException($"Region id {id} does not exist");
-            }
-            _dbContext.Manufacturers.Remove(region);  
+            var manufacturer = GetById(id);
+            
+            _dbContext.Manufacturers.Remove(manufacturer);
             _dbContext.SaveChanges();
         }
     }

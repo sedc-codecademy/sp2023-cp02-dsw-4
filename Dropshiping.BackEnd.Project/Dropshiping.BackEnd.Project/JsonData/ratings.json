@@ -1,0 +1,186 @@
+[
+    {
+        "userId": "1",
+        "productId": "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
+        "review": "Great laptop overall. It runs smoothly and handles multitasking effortlessly.",
+        "pros": "Excellent performance, good battery life, sleek design.",
+        "cons": "Average display quality, a bit heavy to carry around.",
+        "rate": 4
+    },
+    {
+        "userId": "2",
+        "productId": "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
+        "review": "Decent laptop for everyday use. Gets the job done without any major issues.",
+        "pros": "Affordable price, decent performance.",
+        "cons": "Mediocre build quality, average speakers.",
+        "rate": 3
+    },
+    {
+        "userId": "3",
+        "productId": "a1c18a4a-70dd-4314-b74f-c0772966a8c7",
+        "review": "Not impressed with this model. Slow processing and poor battery life.",
+        "pros": "",
+        "cons": "Laggy performance, below-average battery.",
+        "rate": 2
+    },
+    {
+        "userId": "4",
+        "productId": "3a97f708-2be7-498a-8d59-ada88e5e7c1b",
+        "review": "Love the design and performance. Works like a charm!",
+        "pros": "Sleek design, fast processing, lightweight.",
+        "cons": "Average battery life.",
+        "rate": 5
+    },
+    {
+        "userId": "5",
+        "productId": "3a97f708-2be7-498a-8d59-ada88e5e7c1b",
+        "review": "Had high hopes, but disappointed with the heating issues.",
+        "pros": "Good display, responsive keyboard.",
+        "cons": "Overheats quickly, noisy fan.",
+        "rate": 3
+    },
+    {
+        "userId": "6",
+        "productId": "74bd7e24-0ac0-4414-918c-b1de0ac2a2df",
+        "review": "Absolute powerhouse! Great for creative work and heavy tasks.",
+        "pros": "Superb performance, stunning display, long-lasting battery.",
+        "cons": "Pricey, limited ports.",
+        "rate": 1
+    },
+    {
+        "userId": "7",
+        "productId": "74bd7e24-0ac0-4414-918c-b1de0ac2a2df",
+        "review": "Top-notch quality as expected from Apple. Love the user experience.",
+        "pros": "Smooth performance, sleek design.",
+        "cons": "High price tag.",
+        "rate": 4
+    },
+    {
+        "userId": "8",
+        "productId": "1cdfeeae-13d4-40d4-9a70-60916ea4ba17",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 5
+    },
+    {
+        "userId": "9",
+        "productId": "b6891273-10bd-47ca-a139-27955175dfee",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 2
+    },
+    {
+        "userId": "10",
+        "productId": "a5bbfafe-f8b2-4b4e-bfb9-dc3947fd20bd",
+        "review": "Stunning device! Camera quality is unmatched.",
+        "pros": "Superb camera, powerful performance.",
+        "cons": "Hefty price, heavy to carry.",
+        "rate": 5
+    },
+    {
+        "userId": "1",
+        "productId": "a5bbfafe-f8b2-4b4e-bfb9-dc3947fd20bd",
+        "review": "Impressive phone, but the battery drains quickly.",
+        "pros": "Great display, smooth interface.",
+        "cons": "Average battery life.",
+        "rate": 4
+    },
+    {
+        "userId": "2",
+        "productId": "690d1d22-2bbd-4f27-9549-58862b320685",
+        "review": "Exceptional features, especially the camera setup.",
+        "pros": "Fantastic camera, gorgeous display.",
+        "cons": "Slightly bulky, UI can be overwhelming.",
+        "rate": 2
+    },
+    {
+        "userId": "3",
+        "productId": "690d1d22-2bbd-4f27-9549-58862b320685",
+        "review": "Good phone, but not worth the high price tag.",
+        "pros": "Nice display, powerful processor.",
+        "cons": "Expensive, average battery life.",
+        "rate": 3
+    },
+    {
+        "userId": "4",
+        "productId": "5f0f89ae-2136-4509-a334-951cfe495cd7",
+        "review": "Incredible camera capabilities and a smooth user experience.",
+        "pros": "Outstanding camera, clean UI.",
+        "cons": "Slightly expensive.",
+        "rate": 5
+    },
+    {
+        "userId": "5",
+        "productId": "5f0f89ae-2136-4509-a334-951cfe495cd7",
+        "review": "Disappointing battery life despite the promising features.",
+        "pros": "Good performance, nice design.",
+        "cons": "Poor battery optimization.",
+        "rate": 3
+    },
+    {
+        "userId": "6",
+        "productId": "50f7e18f-a606-4935-95aa-2679cfa37999",
+        "review": "Fast and reliable. Great performance overall.",
+        "pros": "Speedy performance, smooth interface.",
+        "cons": "Lacks some camera finesse.",
+        "rate": 4
+    },
+    {
+        "userId": "7",
+        "productId": "50f7e18f-a606-4935-95aa-2679cfa37999",
+        "review": "Solid phone, but expected more for the price.",
+        "pros": "Sleek design, good display.",
+        "cons": "Average camera quality.",
+        "rate": 1
+    },
+    {
+        "userId": "8",
+        "productId": "4878b254-2d40-4128-b9ac-a4109ea1b1ca",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 2
+    },
+    {
+        "userId": "9",
+        "productId": "ff269c57-2916-4536-a976-02864ffe9a5d",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 4
+    },
+    {
+        "userId": "10",
+        "productId": "61a20a3e-5e8d-47e6-8e2e-6af2b4d4d5ab",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 5
+    },
+    {
+        "userId": "1",
+        "productId": "d62efc95-bc43-41d1-bb0e-417003349616",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 2
+    },
+    {
+        "userId": "2",
+        "productId": "8c559d76-c84a-4144-b6b8-259d896a97cc",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 1
+    },
+    {
+        "userId": "3",
+        "productId": "f0dd3651-99f3-4bac-abb3-8492b32d71ba",
+        "review": "",
+        "pros": "",
+        "cons": "",
+        "rate": 4
+    }
+]

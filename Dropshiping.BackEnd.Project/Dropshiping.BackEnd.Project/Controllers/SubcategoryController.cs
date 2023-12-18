@@ -1,6 +1,6 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
+﻿using Dropshiping.BackEnd.Dtos.SubcategoryDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -47,13 +47,14 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddSubcategory")]
-        public IActionResult AddSubcategory(SubcategoryDto subcategoryDto)
+        public IActionResult AddSubcategory(NewSubcategoryDto subcategoryDto)
         {
             try
             {
                 _subcategoryService.Add(subcategoryDto);
-                return Ok();
+                return Ok("Subcategory was created successfully");
             }
             catch (InvalidDataException ex)
             {
@@ -69,13 +70,14 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateSubcategory")]
         public IActionResult UpdateSubcategory([FromBody]SubcategoryDto subcategoryDto)
         {
             try
             {
                 _subcategoryService.Update(subcategoryDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Subcategory updated");
+                return Ok("Subcategory is updated successfully!");
             }
             catch (KeyNotFoundException ex)
             {
@@ -95,13 +97,14 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteSubcategory(string id)
         {
             try
             {
                 _subcategoryService.DeleteById(id);
-                return StatusCode(StatusCodes.Status204NoContent, "Subcategory deleted");
+                return Ok("Subcategory is deleted successfully!");
             }
             catch (ArgumentException ex)
             {

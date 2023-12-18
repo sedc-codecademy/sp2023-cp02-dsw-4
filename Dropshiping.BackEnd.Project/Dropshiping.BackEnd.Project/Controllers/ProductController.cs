@@ -1,5 +1,6 @@
 ﻿using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -48,13 +49,104 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [HttpGet("SearchProductsByName/{name}")]
+        public IActionResult GetSearchedProductsByName(string name)
+        {
+            try
+            {
+                var products = _productService.GetSearchedProductsByName(name);
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [HttpGet("SearchedProducts")]
+        public IActionResult GetSearchedProducts()
+        {
+            try
+            {
+                var products = _productService.GetSearchedProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [HttpGet("DiscountedProducts")]
+        public IActionResult GetAllDiscountedProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllDiscountedProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+        
+        [HttpGet("MostPopularProducts")]
+        public IActionResult GetAllMostPopularProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllMostPopularProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+        
+        [HttpGet("TopRatedProducts")]
+        public IActionResult GetAllTopRatedProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllTopRatedProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+        
+        [HttpGet("NewProducts")]
+        public IActionResult GetAllNewProducts()
+        {
+            try
+            {
+                var products = _productService.GetAllNewProducts();
+
+                return Ok(products);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddProduct")]
-        public IActionResult AddProduct(ProductDto productDto)
+        public IActionResult AddProduct(NewProductDto productDto)
         {
             try
             {
                 _productService.Add(productDto);
-                return Ok();
+                return Ok("Product is created successfully!");
             }
             catch (ArgumentNullException ex)
             {
@@ -70,14 +162,15 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateProduct")]
-        public IActionResult UpdateProduct([FromBody] ProductDto productDto)
+        public IActionResult UpdateProduct([FromBody] UpdateProductDto productDto)
         {
             try
             {
                 _productService.Update(productDto);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Product updated");
+                return Ok("Product is updated successfully!");
             }
             catch (KeyNotFoundException ex)
             {
@@ -97,6 +190,26 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [HttpPut("UpdateSearches/{id}")]
+        public IActionResult UpdateProductSearches(string id)
+        {
+            try
+            {
+                _productService.UpdateProductSearches(id);
+
+                return Ok();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(string id)
         {
@@ -105,7 +218,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
 
                 _productService.DeleteById(id);
 
-                return StatusCode(StatusCodes.Status204NoContent, "Product deleted");
+                return Ok("Product is deleted successfully!");
 
             }
             catch (ArgumentException ex)
@@ -121,5 +234,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
             }
         }
+
+
     }
 }

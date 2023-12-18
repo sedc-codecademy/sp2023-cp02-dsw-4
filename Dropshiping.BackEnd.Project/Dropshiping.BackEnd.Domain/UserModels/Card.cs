@@ -4,9 +4,10 @@ namespace Dropshiping.BackEnd.Domain.UserModels
 {
     public class Card : BaseEntity
     {
-        public int CardNumber { get; set; }
+        public long CardNumber { get; set; }
         public string CardHolder { get; set; }
-        public DateTime ExpirationDate { get; set; }
+        //string
+        public string ExpirationDate { get; set; }
         public int SecurityCode { get; set; }
         public CardStatusEnum CardStatus { get; set; }
         public CardTypeEnum CardType { get; set; }

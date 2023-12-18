@@ -1,0 +1,44 @@
+[
+    {
+        "id": "technology",
+        "name": "Technology",
+        "image": "/imgs/categories/technology.jpg",
+        "icon": "/imgs/categories/technologysmall.jpg"
+    },
+    {
+        "id": "menswear",
+        "name": "Men's Clothing",
+        "image": "/imgs/categories/mensWear.jpg",
+        "icon": "/imgs/categories/mens-Wearsmall.jpg"
+    },
+    {
+        "id": "womenswear",
+        "name": "Women's Clothing",
+        "image": "/imgs/categories/womens-Wear.jpg",
+        "icon": "/imgs/categories/womens-Wearsmall.jpg"
+    },
+    {
+        "id": "beauty",
+        "name": "Beauty",
+        "image": "/imgs/categories/beauty.jpg",
+        "icon": "/imgs/categories/beautysmall.jpg"
+    },
+    {
+        "id": "autoaccessories",
+        "name": "Automobile Accessories",
+        "image": "/imgs/categories/autoacc.jpg",
+        "icon": "/imgs/categories/autoaccsmall.jpg"
+    },
+    {
+        "id": "sports",
+        "name": "Sports",
+        "image": "/imgs/categories/sports.jpg",
+        "icon": "/imgs/categories/sportssmall.jpg"
+    },
+    {
+        "id": "homeandgarden",
+        "name": "Home & Garden",
+        "image": "/imgs/categories/home.jpg",
+        "icon": "/imgs/categories/homesmall.jpg"
+    }
+]

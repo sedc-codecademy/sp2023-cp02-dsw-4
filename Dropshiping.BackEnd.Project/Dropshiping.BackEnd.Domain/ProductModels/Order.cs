@@ -10,19 +10,15 @@ namespace Dropshiping.BackEnd.Domain.ProductModels
         public string Address { get; set; } 
         public string PostalCode{  get; set; }   
         public string City { get; set; }
-        public int PhoneNumber {  get; set; }
+        public string PhoneNumber {  get; set; }
         public string Note {  get; set; }
-        public decimal Shipping { get; set; }
-        public decimal Price { get; set; }
+        //public decimal Shipping {  get; set; }
+        //public decimal Price { get; set; }
 
-        public StatusEnum Status { get; set; }
+        public DeliveryStatusEnum Status { get; set; }
         public PaymentStatusEnum PaymentStatus { get; set; }
         public CardTypeEnum CardType { get; set; }
-        public int CardNumber { get; set; }
-        public string CardHolder { get; set; }
-        public DateTime ExpirationDate { get; set; }
-        public int SecurityCode { get; set; }
-
+        public long CardNumber { get; set; }
         //Relation conections
         public virtual ICollection<OrderItem> OrderItems { get; set; }
         public virtual ICollection<UserOrder> UserOrders { get; set; }

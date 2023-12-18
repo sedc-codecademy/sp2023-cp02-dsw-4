@@ -1,89 +1,60 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Implementation;
 using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
+using Dropshiping.BackEnd.Dtos.ManufacturerDtos;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
-{
-    //  IT'S CHANGED FROM REGION TO MANUFACTURER, BUT IT'S NOT FINISHED *** DO THE REST ***
-    public class ManufacturerService : IManufacturerService
+{  public class ManufacturerService : IManufacturerService
     {
+
         private IRepository<Manufacturer> _manufacturerRepository;
         public ManufacturerService(IRepository<Manufacturer> manufacturerRepository)
         {
             _manufacturerRepository = manufacturerRepository;
         }
 
-        public List<RegionDto> GetAll()
+        public List<ManufacturerDto> GetAll()
         {
-            var regions = _manufacturerRepository.GetAll();
-            return regions.Select(x => x.ToDtoRegion()).ToList();
+            var manufacturer = _manufacturerRepository.GetAll();
+            return manufacturer.Select(x => x.ToManufacturerDto()).ToList();
         }
 
-        public RegionDto GetById(string id)
+        public FullManufacturerDto GetById(string id)
         {
-            var region = _manufacturerRepository.GetById(id);
+            var manufacturer = _manufacturerRepository.GetById(id);
 
-            if (region == null)
-            {
-                throw new KeyNotFoundException($"Region with id {id} is not found");
-            }
-
-            return region.ToDtoRegion();
+            return manufacturer == null
+                ? throw new KeyNotFoundException($"Manufacturer with id {id} is not found")
+                : manufacturer.ToFullManufacturerDto();
         }
 
-        public void Add(RegionDto regionDto)
+        public void Add(NewManufacturerDto manufacturerDto)
         {
-            if (regionDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
+            manufacturerDto.ValidateManufacturer();
 
-            var region = new Manufacturer
-            {
-                Name = regionDto.Name,
-                
-            };
+            var manufacturer = manufacturerDto.ToManufacturerDomain();
 
-            _manufacturerRepository.Add(region);
+            _manufacturerRepository.Add(manufacturer);
         }
 
-        public void Update(RegionDto regionDto)
+        public void Update(ManufacturerDto manufacturerDto)
         {
-            var region = _manufacturerRepository.GetById(regionDto.Id);
+            var manufacturer = _manufacturerRepository.GetById(manufacturerDto.Id);
 
-            region.Id = regionDto.Id;
-            region.Name = regionDto.Name;
-            
+            var updatedManufacturer = manufacturerDto.ValidateUpdateManufacturer(manufacturer);
 
-            if (regionDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if ((int)regionDto.Shipping > 3 || (int)regionDto.Shipping < 1)
-            {
-                throw new InvalidOperationException("Shipping must be set");
-            }
-
-            _manufacturerRepository.Update(region);   
+            _manufacturerRepository.Update(updatedManufacturer);
         }
 
         public void DeleteById(string id)
         {
-            var region = GetById(id);
+            var manufacturer = GetById(id);
 
-            if (region.Id == null)
-            {
-                throw new KeyNotFoundException($"Region with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
-
-            _manufacturerRepository.Delete(region.Id);
+            _manufacturerRepository.Delete(id);
         }
     }
 }

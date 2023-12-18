@@ -1,5 +1,6 @@
-﻿using Dropshiping.BackEnd.Dtos.ProductDtos.CategoryDtos;
+﻿using Dropshiping.BackEnd.Dtos.CategoryDtos;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dropshiping.BackEnd.Project.Controllers
@@ -48,31 +49,14 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
-        [HttpGet("Nested{id}")]
-        public IActionResult GetByIdNested(string id)
-        {
-            try
-            {
-                var category = _categoryService.GetByIdNested(id);
-                return Ok(category);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error happend");
-            }
-        }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddCategory")]
-        public IActionResult AddCategory(CategoryDto categoryDto)
+        public IActionResult AddCategory(AddCategoryDto categoryDto)
         {
             try
             {
                 _categoryService.Add(categoryDto);
-                return Ok();
+                return Ok("Category is created successfully!");
             }
             catch(InvalidDataException ex)
             {
@@ -88,13 +72,14 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateCategory")]
-        public IActionResult UpdateCategory([FromBody]CategoryDto categoryDto)
+        public IActionResult UpdateCategory([FromBody]UpdateCategoryDto categoryDto)
         {
             try
             {
                 _categoryService.Update(categoryDto);
-                return StatusCode(StatusCodes.Status204NoContent, "Category updated");
+                return Ok("Category is updated successfully!");
             }
             catch (KeyNotFoundException ex)
             {
@@ -114,6 +99,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteCategory(string id)
         {
@@ -121,7 +107,7 @@ namespace Dropshiping.BackEnd.Project.Controllers
             {
 
                 _categoryService.DeleteById(id);
-                return StatusCode(StatusCodes.Status204NoContent, "Category deleted");
+                return Ok("Category is deleted");
 
             }
             catch (ArgumentException ex)

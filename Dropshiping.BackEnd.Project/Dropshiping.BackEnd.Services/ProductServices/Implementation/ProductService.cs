@@ -1,6 +1,7 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
 using Dropshiping.BackEnd.Dtos.ProductDtos;
+using Dropshiping.BackEnd.Helpers;
 using Dropshiping.BackEnd.Mappers.ProductMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
 
@@ -8,21 +9,25 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
     public class ProductService : IProductService
     {
-        private IRepository<Product> _productRepository;
-        public ProductService(IRepository<Product> productRepository)
+        private IProductRepository _productRepository;
+        private IRepository<Subcategory> _subcategoryRepository;
+        private IRepository<Manufacturer> _manufacturerRepository;
+        public ProductService(IProductRepository productRepository, IRepository<Subcategory> subcategoryRepository, IRepository<Manufacturer> manufacturerRepository)
         {
             _productRepository = productRepository;
+            _subcategoryRepository = subcategoryRepository;
+            _manufacturerRepository = manufacturerRepository;
         }
 
         //Get all products
         public List<ProductDto> GetAll()
         {
             var products = _productRepository.GetAll();
-            return products.Select(x => x.ToDto()).ToList();
+            return products.Select(x => x.ToProductDto()).ToList();
         }
 
         //Get product by ID
-        public ProductDto GetById(string id)
+        public FullProductDto GetById(string id)
         {
             var product = _productRepository.GetById(id);
 
@@ -30,74 +35,34 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
             {
                 throw new KeyNotFoundException($"Product with id {id} is not found");
             }
-            return product.ToDto();
+
+           return product.ToFullProductDto();
         }
 
         // Add new product
-        public void Add(ProductDto productDto)
+        public void Add(NewProductDto newProductDto)
         {
-            if (productDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if (productDto.Name.Length > 50)
-            {
-                throw new InvalidDataException("Name Length must not be more then 50 characters!");
-            }
-            if (productDto.Price == null)
-            {
-                throw new ArgumentNullException("Price must not be empty");
-            }
-            if (productDto.Description.Length > 250)
-            {
-                throw new InvalidDataException("Description Length must not be more then 250 characters!");
-            }
+            newProductDto.ValidateProductInfo();
+            var productSubcategory = _subcategoryRepository.GetById(newProductDto.SubcategoryId);
+            var productManufacturer = _manufacturerRepository.GetById(newProductDto.ManufacturerId);
 
-            var product = new Product
-            {
-                Name = productDto.Name,
-                Price = productDto.Price,
-                Description = productDto.Description,
-                Discount = productDto.Discount,
-                SubcategoryId = productDto.SubcategoryId,
-                RegoinId = productDto.RegoinId,
-            };
 
-            _productRepository.Add(product);
+            var product = newProductDto.ToProductDomain();
+          
+             _productRepository.Add(product);
+           
         }
 
+       
+
         // Update Product
-        public void Update(ProductDto productDto)
+        public void Update(UpdateProductDto updateProductDto)
         {
-            var product = _productRepository.GetById(productDto.Id);
+            var product = _productRepository.GetById(updateProductDto.Id);
+            var productSubcategory = _subcategoryRepository.GetById(updateProductDto.SubcategoryId);
+            var productManufacturer = _manufacturerRepository.GetById(updateProductDto.ManufacturerId);
 
-            product.Name = productDto.Name;
-            product.Price = productDto.Price;
-            product.Description = productDto.Description;
-            product.Discount = productDto.Discount;
-            product.SubcategoryId = productDto.SubcategoryId;
-            product.RegoinId = productDto.RegoinId;
-
-            if (product == null)
-            {
-                throw new KeyNotFoundException($"Product with id {productDto.Id} does not exist!");
-            }
-            if (productDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if (productDto.Name.Length > 50)
-            {
-                throw new ArgumentException("Name Length must not be more then 50 characters!");
-            }
-            if (productDto.Price == null)
-            {
-                throw new ArgumentNullException("Price must not be empty");
-            }
-            if (productDto.Description.Length > 250)
-            {
-                throw new ArgumentException("Description Length must not be more then 50 characters!");
-            }
+            var updatedProduct = updateProductDto.ValidateUpdatedProduct(product);
 
             _productRepository.Update(product);
         }
@@ -107,15 +72,57 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         {
             var product = _productRepository.GetById(id);
 
-            if (product.Id == null)
+            if (product == null)
             {
                 throw new KeyNotFoundException($"Product with id {id} was not found.");
             }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
-            _productRepository.Delete(product.Id);
+            
+            _productRepository.Delete(id);
         }
+
+        public void UpdateProductSearches(string id)
+        {
+            var product = _productRepository.GetById(id);
+
+            if (product == null)
+            {
+                throw new KeyNotFoundException($"Product with id {id} is not found");
+            }
+            product.Searches++;
+            _productRepository.Update(product);
+           
+        }
+
+        public List<ProductDto> GetAllDiscountedProducts()
+        {
+            return _productRepository.GetAllDiscountedProducts().Select(p => p.ToProductDto()).ToList();
+            
+        }
+
+        public List<ProductDto> GetAllMostPopularProducts()
+        {
+            return _productRepository.GetAllMostPopularProducts().Select(p => p.ToProductDto()).ToList();
+        }
+
+        public List<ProductDto> GetAllTopRatedProducts()
+        {
+            return _productRepository.GetAllTopRatedProducts().Select(p => p.ToProductDto()).ToList();
+        }
+
+        public List<ProductDto> GetAllNewProducts()
+        {
+            return _productRepository.GetAllNewProducts().Select(p => p.ToProductDto()).ToList();
+        }
+
+        public List<FullProductDto> GetSearchedProductsByName(string name)
+        {
+            return _productRepository.GetSearchedProductsByName(name).Select(p => p.ToFullProductDto()).ToList();
+        }
+
+        public List<ProductDto> GetSearchedProducts()
+        {
+            return _productRepository.GetSearchedProducts().Select(p => p.ToProductDto()).ToList();
+        }
+
     }
 }

@@ -4,7 +4,12 @@ namespace Dropshiping.BackEnd.Services.UserServices.Interface
 {
     public interface IUserService
     {
+        List<BasicUserDto> GetAll();
+        UserDto GetById(string id);
+        void Add(AddUserDto addUserDto);
+        void Update(string id, RegisterUserDto registerUserDto);
+        void DeleteById(string id);
         void RegisterUser(RegisterUserDto registerUserDto);
-        string LoginUser(LoginUserDto loginUserDto);
+        UserTokenDto LoginUser(LoginUserDto loginUserDto);
     }
 }

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "mensadidas",
+    "name": "Adidas",
+    "image": "/imgs/manufacturers/adidas.jpg"
+  },
+  {
+    "id": "mensnike",
+    "name": "Nike",
+    "image": "/imgs/manufacturers/nike.jpg"
+  },
+  {
+    "id": "mensclarks",
+    "name": "Clarks",
+    "image": "/imgs/manufacturers/clarks.jpg"
+  },
+  {
+    "id": "menshugo",
+    "name": "Hugo Boss",
+    "image": "/imgs/manufacturers/hugo.jpg"
+  },
+  {
+    "id": "menstom",
+    "name": "Tom Ford",
+    "image": "/imgs/manufacturers/tom.jpg"
+  },
+  {
+    "id": "womenshm",
+    "name": "H&M",
+    "image": "/imgs/manufacturers/h-m.jpg"
+  },
+  {
+    "id": "womensvictoria",
+    "name": "Victoria's Secret",
+    "image": "/imgs/manufacturers/victoria.jpg"
+  },
+  {
+    "id": "womenszara",
+    "name": "Zara",
+    "image": "/imgs/manufacturers/zara.jpg"
+  },
+  {
+    "id": "womenschanel",
+    "name": "Chanel",
+    "image": "/imgs/manufacturers/chanel-1.jpg"
+  },
+  {
+    "id": "womensprada",
+    "name": "Prada",
+    "image": "/imgs/manufacturers/prada.jpg"
+  },
+  {
+    "id": "techsamsung",
+    "name": "Samsung",
+    "image": "/imgs/manufacturers/samsung.jpg"
+  },
+  {
+    "id": "technokia",
+    "name": "Nokia",
+    "image": "/imgs/manufacturers/nokia.jpg"
+  },
+  {
+    "id": "techapple",
+    "name": "Apple",
+    "image": "/imgs/manufacturers/apple.jpg"
+  },
+  {
+    "id": "techsony",
+    "name": "Sony",
+    "image": "/imgs/manufacturers/sony.jpg"
+  },
+  {
+    "id": "techlg",
+    "name": "LG",
+    "image": "/imgs/manufacturers/lg.jpg"
+  },
+  {
+    "id": "techxiaomi",
+    "name": "Xiaomi",
+    "image": "/imgs/manufacturers/xiaomi.jpg"
+  },
+  {
+    "id": "autocraft",
+    "name": "Covercraft",
+    "image": "/imgs/manufacturers/covercraft.jpg"
+  },
+  {
+    "id": "autopioneer",
+    "name": "Pioneer",
+    "image": "/imgs/manufacturers/pioneer.jpg"
+  },
+  {
+    "id": "automichelin",
+    "name": "Michelin",
+    "image": "/imgs/manufacturers/michelin.jpg"
+  },
+  {
+    "id": "autobosch",
+    "name": "Bosch",
+    "image": "/imgs/manufacturers/bosch.jpg"
+  },
+  {
+    "id": "autogarmin",
+    "name": "Garmin",
+    "image": "/imgs/manufacturers/garmin-1.jpg"
+  },
+  {
+    "id": "sportsnorth",
+    "name": "The North Face",
+    "image": "/imgs/manufacturers/northface.jpg"
+  },
+  {
+    "id": "sportsmizuno",
+    "name": "Mizuno",
+    "image": "/imgs/manufacturers/mizuno.jpg"
+  },
+  {
+    "id": "sportsrebook",
+    "name": "Reebok",
+    "image": "/imgs/manufacturers/reebok.jpg"
+  },
+  {
+    "id": "sportspuma",
+    "name": "Puma",
+    "image": "/imgs/manufacturers/puma.jpg"
+  },
+  {
+    "id": "sportsuarmour",
+    "name": "Under Armour",
+    "image": "/imgs/manufacturers/underarmour.jpg"
+  },
+  {
+    "id": "beautyolay",
+    "name": "Olay",
+    "image": "/imgs/manufacturers/olay.jpg"
+  },
+  {
+    "id": "beautydove",
+    "name": "Dove",
+    "image": "/imgs/manufacturers/dove.jpg"
+  },
+  {
+    "id": "beautygarnier",
+    "name": "Garnier",
+    "image": "/imgs/manufacturers/garnier.jpg"
+  },
+  {
+    "id": "beautyestee",
+    "name": "Esteѐ lauder",
+    "image": "/imgs/manufacturers/este.jpg"
+  },
+  {
+    "id": "beautyloreal",
+    "name": "L'Oréal",
+    "image": "/imgs/manufacturers/loreal.jpg"
+  },
+  {
+    "id": "handgdecker",
+    "name": "Black & Decker",
+    "image": "/imgs/manufacturers/black-decker-2.jpg"
+  },
+  {
+    "id": "handbehr",
+    "name": "Behr",
+    "image": "/imgs/manufacturers/behr.jpg"
+  },
+  {
+    "id": "handlowes",
+    "name": "Lowe's",
+    "image": "/imgs/manufacturers/lowes.jpg"
+  },
+  {
+    "id": "handdepot",
+    "name": "Home Depot",
+    "image": "/imgs/manufacturers/homedepot.jpg"
+  },
+  {
+    "id": "handikea",
+    "name": "IKEA",
+    "image": "/imgs/manufacturers/ikea.jpg"
+  }
+]

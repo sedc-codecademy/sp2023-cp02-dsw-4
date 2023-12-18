@@ -1,65 +1,48 @@
 ﻿using Dropshiping.BackEnd.DataAccess.Interface;
 using Dropshiping.BackEnd.Domain.ProductModels;
-using Dropshiping.BackEnd.Dtos.ProductDtos;
-using Dropshiping.BackEnd.Mappers.ProductMappers;
+using Dropshiping.BackEnd.Dtos.SubcategoryDtos;
+using Dropshiping.BackEnd.Mappers.SubcategoryMappers;
 using Dropshiping.BackEnd.Services.ProductServices.Interface;
+using Dropshiping.BackEnd.Services.ProductServices.Validations;
 
 namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
 {
     public class SubcategoryService : ISubcategoryService
     {
         private IRepository<Subcategory> _subcategoryRepository;
-        public SubcategoryService(IRepository<Subcategory> subcategoryRepository)
+        private IRepository<Category> _categoryRepository;
+        public SubcategoryService(IRepository<Subcategory> subcategoryRepository, IRepository<Category> categoryRepository)
         {
             _subcategoryRepository = subcategoryRepository;
+            _categoryRepository = categoryRepository;
+
         }
 
         // Get all Subcategories
         public List<SubcategoryDto> GetAll()
         {
             var subcategories = _subcategoryRepository.GetAll();
-            return subcategories.Select(x => x.ToDtoSub()).ToList();
+            return subcategories.Select(x => x.ToSubcategoryDto()).ToList();
         }
 
         // Get Subcategory by Id
-        public SubcategoryDto GetById(string id)
+        public FullSubcategoryDto GetById(string id)
         {
             var subcategory = _subcategoryRepository.GetById(id);
 
-            if(subcategory == null)
-            {
-                throw new KeyNotFoundException($"Subcategory with id {id} is not found");
-            }
-
-            return subcategory.ToDtoSub();
+            return subcategory == null
+                ? throw new KeyNotFoundException($"The Subcategory does not exist!")
+                : subcategory.ToFullSubcategoryDto();
         }
 
         // Add Subcategory
-        public void Add(SubcategoryDto subcategoryDto)
+        public void Add(NewSubcategoryDto subcategoryDto)
         {
-            if (subcategoryDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if (subcategoryDto.Name.Length > 50)
-            {
-                throw new InvalidDataException("Name Length must not be more then 50 characters!");
-            }
-            if (subcategoryDto.Description == null)
-            {
-                throw new ArgumentNullException("Description must not be empty");
-            }
-            if (subcategoryDto.Description.Length > 250)
-            {
-                throw new InvalidDataException("Description Length must not be more then 250 characters!");
-            }
+            subcategoryDto.ValidateNewSubcategory();
 
-            var subcategory = new Subcategory
-            {
-                Name = subcategoryDto.Name,
-                Description = subcategoryDto.Description,
-                CategoryId = subcategoryDto.CategoryId,
-            };
+            var category = _categoryRepository.GetById(subcategoryDto.CategoryId) ?? throw new KeyNotFoundException("Category doesn't exist!");
+
+            var subcategory = subcategoryDto.ToSubcategoryDomain();
 
             _subcategoryRepository.Add(subcategory);
         }
@@ -68,47 +51,17 @@ namespace Dropshiping.BackEnd.Services.ProductServices.Implementation
         public void Update(SubcategoryDto subcategoryDto)
         {
             var subcategory = _subcategoryRepository.GetById(subcategoryDto.Id);
+            var _category = _categoryRepository.GetById(subcategoryDto.Category.Id);
 
-            subcategory.Id = subcategoryDto.Id;
-            subcategory.Name = subcategoryDto.Name;
-            subcategory.Description = subcategoryDto.Description;
-            subcategory.CategoryId = subcategoryDto.CategoryId;
-
-            if (subcategoryDto.Name == null)
-            {
-                throw new ArgumentNullException("Name must not be empty");
-            }
-            if (subcategoryDto.Name.Length > 50)
-            {
-                throw new InvalidDataException("Name Length must not be more then 50 characters!");
-            }
-            if (subcategoryDto.Description == null)
-            {
-                throw new ArgumentNullException("Description must not be empty");
-            }
-            if (subcategoryDto.Description.Length > 250)
-            {
-                throw new InvalidDataException("Description Length must not be more then 250 characters!");
-            }
-
-            _subcategoryRepository.Update(subcategory);
+           var updatedSubcategory = subcategoryDto.ValidateSubcategory(subcategory);
+            _subcategoryRepository.Update(updatedSubcategory);
         }
 
         //Delete Subcategory by Id
         public void DeleteById(string id)
         {
-            var subcategory = _subcategoryRepository.GetById(id);
-
-            if (subcategory.Id == null)
-            {
-                throw new KeyNotFoundException($"Subcategory with id {id} was not found.");
-            }
-            if (id == "")
-            {
-                throw new ArgumentException("You must enter id");
-            }
-
-            _subcategoryRepository.Delete(subcategory.Id);
+            var _subcategory = _subcategoryRepository.GetById(id) ?? throw new KeyNotFoundException($"Subcategory doesn't exist.");
+            _subcategoryRepository.Delete(id);
         } 
     }
 }

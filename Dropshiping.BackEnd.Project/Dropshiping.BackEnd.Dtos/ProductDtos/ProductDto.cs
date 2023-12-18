@@ -1,14 +1,29 @@
-﻿using Dropshiping.BackEnd.Domain;
-
+﻿
 namespace Dropshiping.BackEnd.Dtos.ProductDtos
 {
-    public class ProductDto : BaseEntity
+    public class ProductDto
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public string Description { get; set; }
-        public decimal Discount { get; set; } 
-        public string SubcategoryId { get; set; }
-       
+        public int DiscountPercentage { get; set; }
+        public decimal DiscountedPrice
+        {
+            get
+            {
+                if (DiscountPercentage == 0)
+                {
+                    return Price;
+                }
+                
+                decimal discount = Price * DiscountPercentage / 100; 
+
+                return Math.Round(Price - discount);
+            }
+        }
+        public string Image { get; set; }
+
+        public decimal Rating { get; set; }
+
     }
 }
