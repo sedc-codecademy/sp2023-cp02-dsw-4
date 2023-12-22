@@ -1,7 +1,7 @@
-const mainURL = 'https://localhost:7168/api/'
+const mainURL = process.env.REACT_APP_BASE_URL
 
-export async function getPurchasedOrders(tokens) { // api/Order/PurchasedOrders
-    const url = `https://localhost:7168/api/Order/PurchasedOrders`
+export async function getPurchasedOrders(tokens) {
+    const url = `${mainURL}/Order/PurchasedOrders`
     const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -18,7 +18,7 @@ export async function getPurchasedOrders(tokens) { // api/Order/PurchasedOrders
 }
 
 export async function purchaseOrderApi({ orderData, tokens }) {
-    const url = `https://localhost:7168/api/Order/NewOrder`
+    const url = `${mainURL}/Order/NewOrder`
     console.log(orderData)
 
     const response = await fetch(url, {
@@ -38,7 +38,7 @@ export async function purchaseOrderApi({ orderData, tokens }) {
 }
 
 export async function acceptOrderApi({ orderData, tokens }) {
-    const url = `https://localhost:7168/api/UserOrder/AssignCourier/${orderData.userId}/toOrder/${orderData.orderId}`
+    const url = `${mainURL}/UserOrder/AssignCourier/${orderData.userId}/toOrder/${orderData.orderId}`
 
     const response = await fetch(url, {
         method: 'POST',
@@ -46,7 +46,6 @@ export async function acceptOrderApi({ orderData, tokens }) {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${tokens.accessToken}`,
         },
-        // body: JSON.stringify(orderData),
     })
 
     if (!response.ok) {
@@ -56,8 +55,8 @@ export async function acceptOrderApi({ orderData, tokens }) {
     return await response.text()
 }
 
-export async function updateOrderApi({ orderId, tokens }) { // api/Order/UpdateUserOrder/${ID}
-    const url = `https://localhost:7168/api/Order/UpdateOrder/${orderId}`
+export async function updateOrderApi({ orderId, tokens }) {
+    const url = `${mainURL}/Order/UpdateOrder/${orderId}`
 
     const response = await fetch(url, {
         method: 'PUT',

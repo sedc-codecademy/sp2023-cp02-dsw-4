@@ -71,7 +71,7 @@ function CategoriesList() {
                             <ul className="manufacturer-logos">
                                 {manufacturers.map((e) => (
                                     <li key={e.id}>
-                                        <NavLink to={`/manufacturer/${e.id}`}>
+                                        <NavLink data-manufacturer={e.name} to={`/manufacturer/${e.id}`}>
                                             <ImageLoader
                                                 alt={e.name}
                                                 url={e.image}

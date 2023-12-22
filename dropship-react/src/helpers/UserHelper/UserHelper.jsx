@@ -20,6 +20,7 @@ const navigateToHome = (navigate) => {
         navigate('/')
     }, 1000)
 }
+
 ///// FETCH USER
 export default function UserHelper() {
     const tokens = useSelector(state => state.role.authTokens)
@@ -199,12 +200,10 @@ export const useUpdateUser = () => {
 }
 
 export const useDeleteUser = () => {
-    const navigate = useNavigate()
     const logout = useLogout()
     const dispatch = useDispatch()
     const tokens = useSelector(state => state.role.authTokens)
     const deleteUserMutate = useMutation({ mutationFn: deleteUserApi })
-    const queryClient = useQueryClient()
     const deleteUser = (userData) => {
         deleteUserMutate.mutate({ ID: userData.id, tokens }, {
             onError: (err) => {
@@ -212,14 +211,6 @@ export const useDeleteUser = () => {
                 dispatch(setShowNotification(true))
             },
             onSuccess: (data) => {
-                // dispatch(clearTokens())
-                // queryClient.resetQueries(["userQuery"])
-                // dispatch(setShowLoading(true))
-                // navigateToHome(navigate)
-                // dispatch(setIsFetching(false))
-                // dispatch(userLogOut())
-                // dispatch(setRole('User'))
-                // dispatch(setTempCards([]))
                 logout()
                 setTimeout(() => {
                     dispatch(setNotificationData({ title: 'Successfully Deleted User', success: data, error: '' }))
@@ -243,10 +234,8 @@ export const useCreateCard = () => {
             onError: (err) => {
                 dispatch(setNotificationData({ title: 'Error creating card', success: '', error: err.message || 'Card has not been created' }))
                 dispatch(setShowNotification(true))
-
             },
             onSuccess: (data) => {
-
                 dispatch(setNotificationData({ title: 'Succesfully Created Card', success: data, error: '' }))
                 dispatch(setShowNotification(true))
                 dispatch(setCreateCard(false))
@@ -271,7 +260,6 @@ export const useUpdateCard = () => {
                     dispatch(setShowNotification(true))
                 },
                 onSuccess: (data) => {
-
                     dispatch(setNotificationData({ title: 'Succesfully Updated Card', success: data, error: '' }))
                     dispatch(setShowNotification(true))
                     dispatch(clearTempCards())
@@ -293,7 +281,6 @@ export const useDeleteCard = () => {
             onError: (err) => {
                 dispatch(setNotificationData({ title: 'Error deleting card', success: '', error: err.message || 'Card has not been deleted' }))
                 dispatch(setShowNotification(true))
-
             },
             onSuccess: (data) => {
                 dispatch(setNotificationData({ title: 'Successfully Deleted Card', success: data, error: '' }))
@@ -319,10 +306,8 @@ export const useCreateReview = () => {
                     onError: (err) => {
                         dispatch(setNotificationData({ title: 'Error creating review', success: '', error: err.message || 'Review has not been created' }))
                         dispatch(setShowNotification(true))
-
                     },
                     onSuccess: (data) => {
-
                         dispatch(setNotificationData({ title: 'Succesfully Created Review', success: data || 'The page will update soon, refresh if it does not', error: '' }))
                         dispatch(setShowNotification(true))
                         queryClient.invalidateQueries(['productQuery', reviewData.productId])
@@ -350,7 +335,6 @@ export const useUpdateReview = () => {
                     dispatch(setShowNotification(true))
                 },
                 onSuccess: (data) => {
-
                     dispatch(setNotificationData({ title: 'Succesfully Updated Review', success: data || 'The page will update soon, refresh if it does not', error: '' }))
                     dispatch(setShowNotification(true))
                     queryClient.invalidateQueries(['productQuery', updatedData.productid])
@@ -378,7 +362,6 @@ export const useDeleteReview = () => {
                     dispatch(setShowNotification(true))
                 },
                 onSuccess: (data) => {
-
                     dispatch(setNotificationData({ title: 'Successfully Deleted Review', success: data || 'The page will update soon, refresh if it does not', error: '' }))
                     dispatch(setShowNotification(true))
                     queryClient.invalidateQueries([['productQuery', reviewData.productId], 'userQuery'])
@@ -409,7 +392,6 @@ export const usePurchaseOrder = () => {
 
                     },
                     onSuccess: (data) => {
-
                         dispatch(setNotificationData({ title: 'Succesfully Made Purchase', success: data || 'View the progress of your order in user settings', error: '' }))
                         dispatch(setShowNotification(true))
                         dispatch(clearCartCard())
@@ -506,10 +488,8 @@ export const useUpdateCategory = () => {
             onError: (err) => {
                 dispatch(setNotificationData({ title: 'Error updating category', success: '', error: err.message || 'Category has not been updated' }))
                 dispatch(setShowNotification(true))
-
             },
             onSuccess: (data) => {
-
                 dispatch(setNotificationData({ title: 'Succesfully Updated', success: data || 'Order has beeen succesfully updated', error: '' }))
                 dispatch(setShowNotification(true))
                 queryClient.invalidateQueries([['categoryQuery', catData.id], 'categoriesQuery'])
@@ -530,10 +510,8 @@ export const useDeleteCategory = () => {
             onError: (err) => {
                 dispatch(setNotificationData({ title: 'Error deleting category', success: '', error: err.message || 'Category has not been deleted' }))
                 dispatch(setShowNotification(true))
-
             },
             onSuccess: (data) => {
-
                 dispatch(setNotificationData({ title: 'Successfully Deleted Category', success: data || 'The page will update soon, refresh if it does not', error: '' }))
                 dispatch(setShowNotification(true))
                 queryClient.invalidateQueries([['categoryQuery', id], 'categoriesQuery'])

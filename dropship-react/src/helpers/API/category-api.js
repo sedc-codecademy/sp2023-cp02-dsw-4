@@ -1,7 +1,7 @@
-const mainURL = 'https://localhost:7168/api/Category'
+const mainURL = process.env.REACT_APP_BASE_URL
 
-export async function getCategories() { // /api/Category
-    const response = await fetch(mainURL)
+export async function getCategories() {
+    const response = await fetch(`${mainURL}/Category`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -10,8 +10,8 @@ export async function getCategories() { // /api/Category
     return await response.json()
 }
 
-export async function getCategoryByID(ID) { // /api/Category/{id}
-    const response = await fetch(mainURL + `/${ID}`)
+export async function getCategoryByID(ID) {
+    const response = await fetch(`${mainURL}/Category/${ID}`)
 
     if (!response.ok) {
         throw new Error(await response.text())
@@ -20,8 +20,8 @@ export async function getCategoryByID(ID) { // /api/Category/{id}
     return response.json()
 }
 
-export async function updateCategoryApi({ catData, tokens }) { // api/Category/UpdateCategory
-    const url = `${mainURL}/category/update/${catData.id}`
+export async function updateCategoryApi({ catData, tokens }) {
+    const url = `${mainURL}/Category/UpdateCategory`
 
     const response = await fetch(url, {
         method: 'PUT',
@@ -36,12 +36,11 @@ export async function updateCategoryApi({ catData, tokens }) { // api/Category/U
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }
 
-export async function createCategoryApi({ catData, tokens }) { // api/Category/AddCategory
-    console.log(catData)
-    const url = `https://localhost:7168/api/Category/AddCategory`
+export async function createCategoryApi({ catData, tokens }) {
+    const url = `${mainURL}/Category/AddCategory`
 
     const response = await fetch(url, {
         method: 'POST',
@@ -59,8 +58,8 @@ export async function createCategoryApi({ catData, tokens }) { // api/Category/A
     return await response.text()
 }
 
-export async function deleteCategoryApi({ ID, tokens }) { // api/Category/${ID}
-    const url = `${mainURL}/category/delete/${ID}`
+export async function deleteCategoryApi({ ID, tokens }) {
+    const url = `${mainURL}/Category/${ID}`
 
     const response = await fetch(url, {
         method: 'DELETE',
@@ -74,5 +73,5 @@ export async function deleteCategoryApi({ ID, tokens }) { // api/Category/${ID}
         throw new Error(await response.text())
     }
 
-    return await response.json()
+    return await response.text()
 }

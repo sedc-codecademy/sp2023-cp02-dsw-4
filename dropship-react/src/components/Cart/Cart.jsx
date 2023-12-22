@@ -29,24 +29,7 @@ import { getPopularProducts } from "../../helpers/API/product-api"
 import { cardInfoValidity, getCardTypeEnum, isInfoValid, userInfoValidity } from "../UsefullComponents/Usefull"
 import { usePurchaseOrder } from "../../helpers/UserHelper/UserHelper"
 import { getUser } from "../../helpers/API/user-api"
-import { toggleCatDropDown } from "../../store/slices/dropdowns/catDropDownSlice"
-import { setIsSettingsOn } from "../../store/slices/nav/navSettingsSlice"
-import { setShowShipping } from "../../store/slices/shipping/shippingSlice"
 import { setShowAccDropDown } from "../../store/slices/dropdowns/acDropDownSlice"
-
-// function getPaymentStatus(existingCard, orderInfo) {
-//     if (orderInfo.paymentMethod === 'ondelivery') {
-//         return 2
-//     } else if (orderInfo.paymentMethod === 'prepaid') {
-//         if (existingCard && Object.keys(existingCard).length > 0) return 1
-//         if (orderInfo.saveCard) {
-//             return 3
-//         } else {
-//             return 4
-//         }
-//     }
-//     return 1
-// }
 
 function Cart() {
     const dispatch = useDispatch()
@@ -55,9 +38,6 @@ function Cart() {
     const userid = useSelector(state => state.role.userid)
 
     const { data: userData } = useQuery({
-        // queryKey: ['userQuery', userid],
-        // queryFn: () => getUser(userid),
-        // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
         queryKey: ['userQuery', userid],
         queryFn: () => getUser(userid, tokens),
         enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)

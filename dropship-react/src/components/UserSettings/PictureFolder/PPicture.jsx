@@ -70,7 +70,7 @@ function ProfilePicture({ image, userInfo, handleInputEdit }) {
             </>
           )
         }
-        <input key={fileInputKey} type="file" accept="image/*" onChange={handleFileInputChange} />
+        {!userInfo?.image?.base64 && <input key={fileInputKey} type="file" accept="image/*" onChange={handleFileInputChange} />}
         {userInfo?.image?.base64 && <button onClick={handleCancel}>Cancel</button>}
       </div>
     </div>

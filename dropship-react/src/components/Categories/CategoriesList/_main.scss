@@ -328,6 +328,7 @@
                 width: 50%;
 
                 a {
+                    position: relative;
                     border-radius: .3rem;
                     width: 100%;
                     overflow: hidden;
@@ -343,7 +344,27 @@
                         }
 
                         width: 100%;
-                        transition: scale .5s;
+                        transition: scale .35s cubic-bezier(0.39, 0.575, 0.565, 1);
+                    }
+
+                    &::after {
+                        content: attr(data-manufacturer);
+                        position: absolute;
+                        inset: 0;
+                        background-color: var(--tpPri);
+                        color: var(--secColor);
+                        font-size: clamp(1.1rem, 0.8529rem + 0.6588vw, 2.5rem);
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity .5s;
+                        font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        -webkit-user-select: none;
+                        user-select: none;
+                        text-shadow: 0.15rem 0.15rem 0 var(--priColor);
                     }
 
                     &:focus-visible {
@@ -357,6 +378,10 @@
                     &:hover {
                         img {
                             scale: 1.15;
+                        }
+
+                        &::after {
+                            opacity: .9;
                         }
                     }
 
@@ -403,14 +428,15 @@
                 }
             }
         }
-        .popularCategories{
-            ul{
-                li{
-                    a{
-                        img{
+
+        .popularCategories {
+            ul {
+                li {
+                    a {
+                        img {
                             min-height: 10rem;
                             min-width: 10rem;
-    
+
                             &[alt] {
                                 min-height: 10rem;
                                 min-width: 10rem;

@@ -7,7 +7,6 @@ import { toggleCatDropDown, turnOffCatDP } from "../../../store/slices/dropdowns
 
 import { setThemeMode } from "../../../store/slices/theme/themeSlice"
 import { setIsSettingsOn } from "../../../store/slices/nav/navSettingsSlice"
-import { setShowShipping } from "../../../store/slices/shipping/shippingSlice"
 import { setShouldFocus } from "../../../store/slices/search/search"
 
 import {
@@ -32,9 +31,6 @@ export default function Nav() {
     const userid = useSelector(state => state.role.userid)
 
     const { data: userData } = useQuery({
-        // queryKey: ['userQuery', userid],
-        // queryFn: () => getUser(userid),
-        // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
         queryKey: ['userQuery', userid],
         queryFn: () => getUser(userid, tokens),
         enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
@@ -120,17 +116,17 @@ export default function Nav() {
     }
 
     const handleSubCatClick = (e) => {
+        dispatch(turnOffCatDP())
         setTimeout(() => {
             navigate(`/subcategory/${e}`)
-        }, 300)
-        dispatch(turnOffCatDP())
+        }, 500)
     }
 
     const handleViewAllClick = (e) => {
         dispatch(turnOffCatDP())
         setTimeout(() => {
             navigate(`/category/${e}`)
-        }, 300)
+        }, 500)
     }
 
     return (

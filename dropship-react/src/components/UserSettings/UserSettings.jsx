@@ -60,9 +60,6 @@ function UserSettings() {
   const [isClearButtonDisabled, setIsClearButtonDisabled] = useState(true)
 
   const { data } = useQuery({
-    // queryKey: ['userQuery', userid],
-    // queryFn: () => getUser(userid),
-    // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     queryKey: ['userQuery', userid],
     queryFn: () => getUser(userid, tokens),
     enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
@@ -72,24 +69,10 @@ function UserSettings() {
     if (data) {
       let modifiedTempUser = {}
       for (let key in userInfo) {
-        if (userInfo[key] !== "" && userInfo[key] !== data[key]) {
+        if (userInfo[key] !== "" && userInfo[key] !== data[key] && key !== 'image') {
           modifiedTempUser[key] = userInfo[key]
         }
       }
-      setModifiedUser(modifiedTempUser)
-    }
-  }, [userInfo, data])
-
-  useEffect(() => {
-    if (data) {
-      let modifiedTempUser = {}
-      for (let key in userInfo) {
-        if (userInfo[key] !== "" && userInfo[key] !== data[key]) {
-          modifiedTempUser[key] = userInfo[key]
-        }
-      }
-      // const byteArray = new Uint8Array(atob(modifiedTempUser.image.base64).split("").map(char => char.charCodeAt(0))); /////////////// SHOULD DO THIS WHEN SENDING IAMGE
-      // console.log(byteArray) ////////////
       setModifiedUser(modifiedTempUser)
     }
   }, [userInfo, data])
@@ -527,8 +510,8 @@ const SecurityFu = ({ handlePasswordChange, passwordInfo }) => {
         handlePasswordChange={handlePasswordChange}
         passwordInfo={passwordInfo}
       ></PasswordInfoForm>
-      <h2 className="subTitle">Security Settings</h2>
-      <button className="checkButton stayButton">
+      {/* <h2 className="subTitle">Security Settings</h2> */}
+      {/* <button className="checkButton stayButton">
         <p>Stay logged in</p>
         <svg viewBox="0 0 150 150">
           <path
@@ -544,7 +527,7 @@ const SecurityFu = ({ handlePasswordChange, passwordInfo }) => {
             fill="currentColor"
           />
         </svg>
-      </button>
+      </button> */}
     </div>
   )
 }

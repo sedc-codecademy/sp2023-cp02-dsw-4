@@ -29,9 +29,6 @@ function ProductDetails() {
   const [isInCart, setIsInCart] = useState(false)
 
   const { data: userData } = useQuery({
-    // queryKey: ['userQuery', userid],
-    // queryFn: () => getUser(userid),
-    // enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
     queryKey: ['userQuery', userid],
     queryFn: () => getUser(userid, tokens),
     enabled: !!(tokens?.accessToken && tokens?.refreshToken && userid?.length > 0)
