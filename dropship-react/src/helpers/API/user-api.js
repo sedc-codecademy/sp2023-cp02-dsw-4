@@ -1,7 +1,7 @@
-const mainURL = 'mockData/'
+const mainURL = process.env.REACT_APP_BASE_URL
 
 export async function getUser(ID, tokens) {
-    const url = `https://localhost:7168/api/User/${ID}`
+    const url = `${mainURL}/User/${ID}`
 
     const response = await fetch(url, {
         method: 'GET',
@@ -20,7 +20,7 @@ export async function getUser(ID, tokens) {
 
 /// LOGIN
 export async function logInApi(credentials) {
-    const url = `https://localhost:7168/api/User/Login`
+    const url = `${mainURL}/User/Login`
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -53,7 +53,7 @@ export async function logInApi(credentials) {
 
 /// REGISTER
 export async function registerApi(credentials) {
-    const url = `https://localhost:7168/api/User/Register`
+    const url = `${mainURL}/User/Register`
 
     const response = await fetch(url, {
         method: 'POST',
@@ -71,7 +71,7 @@ export async function registerApi(credentials) {
 }
 
 export async function deleteUserApi({ ID, tokens }) {
-    const url = `${mainURL}/user/delete/${ID}`
+    const url = `${mainURL}/User/${ID}`
 
     const response = await fetch(url, {
         method: 'DELETE',
@@ -86,7 +86,7 @@ export async function deleteUserApi({ ID, tokens }) {
 }
 
 export async function updateUserApi({ updatedData, tokens }) {
-    const url = `https://localhost:7168/api/User/UpdateUser/${updatedData.id}`
+    const url = `${mainURL}/User/UpdateUser/${updatedData.id}`
 
     const response = await fetch(url, {
         method: 'PUT',
@@ -105,7 +105,7 @@ export async function updateUserApi({ updatedData, tokens }) {
 }
 
 export async function deleteCardApi({ ID, tokens }) { // api/Card/${ID}
-    const url = `https://localhost:7168/api/Card/${ID}`
+    const url = `${mainURL}/Card/${ID}`
 
     const response = await fetch(url, {
         method: 'DELETE',
@@ -123,7 +123,7 @@ export async function deleteCardApi({ ID, tokens }) { // api/Card/${ID}
 }
 
 export async function updateCardApi({ updatedData, tokens }) { // api/Card/UpdateCard
-    const url = `https://localhost:7168/api/Card/UpdateCard`
+    const url = `${mainURL}/Card/UpdateCard`
     const response = await fetch(url, {
         method: 'PUT',
         headers: {
@@ -141,7 +141,7 @@ export async function updateCardApi({ updatedData, tokens }) { // api/Card/Updat
 }
 
 export async function createCardApi({ cardData, userID, tokens }) { // api/Card/AddCard/${ID}
-    const url = `https://localhost:7168/api/Card/AddCard/${userID}`
+    const url = `${mainURL}/Card/AddCard/${userID}`
 
     const response = await fetch(url, {
         method: 'POST',
@@ -160,7 +160,7 @@ export async function createCardApi({ cardData, userID, tokens }) { // api/Card/
 }
 
 export async function subscribeApi(subscriberData) {
-    const url = `https://localhost:7168/api/Subscriber/AddSubscriber`
+    const url = `${mainURL}/Subscriber/AddSubscriber`
 
     const response = await fetch(url, {
         method: 'POST',

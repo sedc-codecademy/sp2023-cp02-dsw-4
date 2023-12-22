@@ -194,7 +194,7 @@ function User() {
             {pendingOrders?.length > 0 &&
               <div className="pendingOrders orderCo">
                 <button onClick={() => setShowPending(!showPending)} className={`titleButton ${!showPending && 'hidden'}`}>
-                  <h2>Pending Order</h2>
+                  <h2>Pending Orders</h2>
                   <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z" /></svg>
                 </button>
                 <CSSTransition
@@ -213,7 +213,7 @@ function User() {
             {completedOrders?.length > 0 &&
               <div className="completedOrders orderCo">
                 <button onClick={() => setShowCompleted(!showCompleted)} className={`titleButton ${!showCompleted && 'hidden'}`}>
-                  <h2>Completed Order</h2>
+                  <h2>Completed Orders</h2>
                   <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 22L6 12l1.4-1.4l8.6 8.6l8.6-8.6L26 12z" /></svg>
                 </button>
                 <CSSTransition
