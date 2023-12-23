@@ -95,7 +95,7 @@ function SearchBar() {
         setShowLoading(true)
         handleInputChange.timeoutId = setTimeout(() => {
             setSearchValue(inputValue)
-        }, 500)
+        }, 700)
     }
 
     const handleFocus = () => {
@@ -205,16 +205,16 @@ function SearchBar() {
                 <h3>Frequent Searches</h3>
                 <ul>
                     <li>
-                        <NavLink>iphone</NavLink>
+                        <NavLink to={`/search/iphone`}>iphone</NavLink>
                     </li>
                     <li>
-                        <NavLink>supreme</NavLink>
+                        <NavLink to={`/search/denim`}>denim</NavLink>
                     </li>
                     <li>
-                        <NavLink>samsung</NavLink>
+                        <NavLink to={`/search/samsung`}>samsung</NavLink>
                     </li>
                     <li>
-                        <NavLink>basketball</NavLink>
+                        <NavLink to={`/search/apple`}>apple</NavLink>
                     </li>
                 </ul>
             </div>}

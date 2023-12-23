@@ -19,7 +19,7 @@ export default function ProductCard({ product, subCatImage }) {
           <p className='title'>{product.name}</p>
           <div className='ratingDiv'>
             <Stars initialRating={product.rating} id={product.id} shouldHover={false}></Stars>
-            <p>({product.ratings?.length || 0})</p>
+            {/* <p>({product.ratings?.length || 0})</p> */}
           </div>
           <div className='priceDiv'>
             {product.discountPercentage > 1 ?

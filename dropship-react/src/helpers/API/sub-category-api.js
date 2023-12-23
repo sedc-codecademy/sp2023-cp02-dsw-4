@@ -1,10 +1,11 @@
-export async function getSubCategoryByID(ID) { // api/Subcategory/{ID}
-    const response = await fetch(`https://localhost:7168/api/Subcategory/${ID}`)/// PLACEHOLDER
+const mainURL = process.env.REACT_APP_BASE_URL
+
+export async function getSubCategoryByID(ID) {
+    const response = await fetch(`${mainURL}/Subcategory/${ID}`)
 
     if (!response.ok) {
         throw new Error('Cannot find subcategory')
     }
 
-    /// PLACEHOLDER
     return response.json()
 }
